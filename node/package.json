@@ -1,0 +1,16 @@
+{
+  "name": "vtex.order-placed",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cookie": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.46",
+    "@types/node": "^10.11.7",
+    "tslint": "^5.11.0",
+    "tslint-config-vtex": "^2.0.0",
+    "typescript": "^3.1.3"
+  }
+}

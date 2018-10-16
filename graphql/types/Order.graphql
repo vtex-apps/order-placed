@@ -1,0 +1,165 @@
+type Order {
+  orderId: ID
+  orderGroup: String
+  state: String
+  shippingData: ShippingData
+  items: [OrderItem]
+  packageAttachment: PackageAttachment
+  paymentData: PaymentData
+  storePreferencesData: StorePreferencesData
+  creationDate: String
+  value: Int
+}
+
+type OrderItem {
+  uniqueId: String
+  id: String
+  productId: String
+  refId: String
+  name: String
+  skuName: String
+  tax: Float
+  price: Float
+  listPrice: Float
+  sellingPrice: Float
+  isGift: Boolean
+  quantity: Int
+  seller: String
+  imageUrl: String
+  detailUrl: String
+  measurementUnit: String
+  unitMultiplier: Int
+}
+
+type StorePreferencesData {
+  countryCode: String
+  currencyCode: String
+}
+
+type PaymentData {
+  transactions: [Transaction]
+}
+
+type Transaction {
+  transactionId: ID
+  payments: [Payment]
+}
+
+type Payment {
+  paymentSystemName: String
+  paymentSystem: String
+  value: Float
+  installments: Int
+  lastDigits: String
+  group: String
+}
+
+type ShippingData {
+  address: Address
+  logisticsInfo: [ItemLogistics]
+  selectedAddresses: [Address]
+}
+
+type ItemLogistics {
+  itemIndex: Int
+  shippingEstimate: String
+  shippingEstimateDate: String
+  selectedSla: String
+  slas: [ShippingSLA]
+  deliveryWindow: String
+  deliveryChannel: String
+  deliveryIds: [DeliveryIds]
+  addressId: String
+}
+
+type DeliveryIds {
+  courierId: ID
+  courierName: String
+  dockId: String
+  quantity: Int
+  warehouseId: String
+}
+
+type ShippingSLA {
+  id: String
+  name: String
+  shippingEstimate: String
+  deliveryWindow: String
+  price: Float
+  deliveryChannel: String
+  pickupStoreInfo: PickupStoreInfo
+}
+
+type PickupStoreInfo {
+  additionalInfo: String
+  address: String
+  dockId: String
+  friendlyName: String
+  isPickupStore: Boolean
+}
+
+type Address {
+  addressId: ID
+  addressType: String
+  receiverName: String
+  street: String
+  number: String
+  city: String
+  state: String
+  neighborhood: String
+  complement: String
+}
+
+type PackageAttachment {
+  packages: [Package]
+}
+
+type Package {
+  items: [PackageItem]
+  courier: String
+  invoiceNumber: String
+  invoiceValue: Int
+  invoiceUrl: String
+  issuanceDate: String
+  trackingNumber: String
+  trackingUrl: String
+  courierStatus: CourierStatus
+}
+
+type PackageItem {
+  itemIndex: Int
+  quantity: Int
+  price: Int
+  description: String
+}
+
+type CourierStatus {
+  finished: Boolean
+  status: String
+  data: [TrackingInformation]
+}
+
+type TrackingInformation {
+  lastChange: String
+  city: String
+  state: String
+  description: String
+}
+
+type OrdersListing {
+  paging: Paging
+  list: [OrderListing]!
+}
+
+type OrderListing {
+  orderId: ID
+  status: String
+  clientName: String
+}
+
+type Paging {
+  total: Int
+  pages: Int
+  currentPage: Int
+  perPage: Int
+}

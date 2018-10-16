@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "order-placed": {
+      "path": "/order-placed/:orderGroup"
+    }
+  },
+  "extensions": {
+    "order-placed": {
+      "component": "OrderPlaced"
+    }
+  }
+}

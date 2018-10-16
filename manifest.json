@@ -1,0 +1,29 @@
+{
+  "name": "order-placed",
+  "vendor": "vtex",
+  "version": "0.1.0",
+  "title": "Order Placed",
+  "description": "",
+  "mustUpdateAt": "2019-10-15",
+  "registries": [
+    "smartcheckout"
+  ],
+  "scripts": {
+    "postreleasy": "vtex publish --public"
+  },
+  "builders": {
+    "node": "3.x",
+    "graphql": "1.x",
+    "react": "2.x",
+    "pages": "0.x"
+  },
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.vtexcommercestable.com.br",
+        "path": "/api/checkout/pub/orders/*"
+      }
+    }
+  ]
+}
