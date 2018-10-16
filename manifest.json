@@ -17,6 +17,7 @@
     "react": "2.x",
     "pages": "0.x"
   },
+  "credentialType": "absolute",
   "policies": [
     {
       "name": "outbound-access",

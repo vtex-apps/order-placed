@@ -11,9 +11,9 @@ class OrderPlaced extends Component {
       <div>
         {this.props.data.loading
           ? "Carregando"
-          : this.props.data.orderGroup.length === 0
-          ? "Pedido não encontrado"
-          : JSON.stringify(this.props.data.orderGroup)
+          : this.props.data.orderGroup && this.props.data.orderGroup.length > 0
+          ? JSON.stringify(this.props.data.orderGroup)
+          : "Não autorizado"
         }
       </div>
     )

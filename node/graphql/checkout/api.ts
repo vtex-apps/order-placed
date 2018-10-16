@@ -1,8 +1,7 @@
 import axios from 'axios'
-import { parse as parseCookie } from 'cookie'
 
 export function getOrderGroup({ ioContext, orderGroup, cookie }) {
-  const parsedCookie = parseCookie(cookie)
+  const cookies = filterWhitelistedCookies({ account: ioContext.account, cookie })
 
   return axios({
     url: `http://${
@@ -10,15 +9,14 @@ export function getOrderGroup({ ioContext, orderGroup, cookie }) {
     }.vtexcommercestable.com.br/api/checkout/pub/orders/order-group/${orderGroup}`,
     method: 'get',
     headers: {
-      Authorization: `${ioContext.authToken}`,
       'Proxy-Authorization': ioContext.authToken,
-      VtexIdclientAutCookie: parsedCookie.VtexIdclientAutCookie,
+      Cookie: cookies,
     },
   }).then(({ data }) => data)
 }
 
 export function getOrder({ ioContext, orderId, cookie }) {
-  const parsedCookie = parseCookie(cookie)
+  const cookies = filterWhitelistedCookies({ account: ioContext.account, cookie })
 
   return axios({
     url: `http://${
@@ -26,9 +24,20 @@ export function getOrder({ ioContext, orderId, cookie }) {
     }.vtexcommercestable.com.br/api/checkout/pub/orders/${orderId}`,
     method: 'get',
     headers: {
-      Authorization: `${ioContext.authToken}`,
       'Proxy-Authorization': ioContext.authToken,
-      VtexIdclientAutCookie: parsedCookie.VtexIdclientAutCookie,
+      'Cookie': cookies
     },
   }).then(({ data }) => data)
+}
+
+function filterWhitelistedCookies({ account, cookie }){
+  const allowedCookies = [
+    `VtexIdclientAutCookie_${account}`,
+    'CheckoutDataAccess'
+  ]
+
+  return cookie.split(';').filter(currentCookie => {
+    const [key] = currentCookie.split('=')
+    return allowedCookies.indexOf(key.trim()) !== -1
+  }).join(';')
 }
