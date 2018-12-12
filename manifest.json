@@ -1,7 +1,7 @@
 {
   "name": "order-placed",
   "vendor": "vtex",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "title": "Order Placed",
   "description": "",
   "mustUpdateAt": "2019-10-15",
@@ -12,10 +12,11 @@
     "postreleasy": "vtex publish --public"
   },
   "builders": {
-    "node": "3.x",
-    "graphql": "1.x",
     "react": "2.x",
     "pages": "0.x"
+  },
+  "dependencies": {
+    "vtex.order-placed-graphql": "0.x"
   },
   "credentialType": "absolute",
   "policies": [
