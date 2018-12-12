@@ -1,4 +1,0 @@
-type Query {
-  orderGroup(orderGroup: String): [Order] @cacheControl(scope: PRIVATE)
-  order(orderId: String): Order @cacheControl(scope: PRIVATE)
-}
