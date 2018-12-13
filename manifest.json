@@ -16,7 +16,8 @@
     "pages": "0.x"
   },
   "dependencies": {
-    "vtex.order-placed-graphql": "0.x"
+    "vtex.order-placed-graphql": "0.x",
+    "vtex.styleguide": "8.x"
   },
   "credentialType": "absolute",
   "policies": [
