@@ -1,20 +1,16 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { compose, graphql } from 'react-apollo'
-import withNoSSR from './withNoSSR'
 
 import getOrderGroup from './graphql/getOrderGroup.graphql'
+import Header from './components/Header'
+import './styles.global.css'
 
 class OrderPlaced extends Component {
   render() {
     return (
-      <div>
-        {this.props.data.loading
-          ? "Carregando"
-          : this.props.data.orderGroup && this.props.data.orderGroup.length > 0
-          ? JSON.stringify(this.props.data.orderGroup)
-          : "Não autorizado"
-        }
+      <div className="w-70 center">
+        <Header />
       </div>
     )
   }
@@ -25,7 +21,7 @@ OrderPlaced.propTypes = {
 }
 
 export default compose(
-  withNoSSR,
+  OrderPlaced,
   graphql(getOrderGroup, {
     options({ params }) {
       return {
@@ -37,3 +33,5 @@ export default compose(
     },
   }),
 )(OrderPlaced)
+
+// export default OrderPlaced
