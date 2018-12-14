@@ -40,13 +40,17 @@ const BasicInfo = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-around mv9">
-        <Button className="center" variation="secondary">
-          Alterar pedido
-        </Button>
-        <Button className="center" variation="secondary">
-          Ir para seus pedidos
-        </Button>
+      <div className="flex justify-center mv9">
+        <div className="mr4-m">
+          <Button className="center" variation="secondary">
+            Alterar pedido
+          </Button>
+        </div>
+        <div className="ml4-m">
+          <Button className="center" variation="secondary">
+            Ir para seus pedidos
+          </Button>
+        </div>
       </div>
     </div>
   )
