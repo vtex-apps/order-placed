@@ -46,7 +46,7 @@ const Header = () => {
       <Warnings />
 
       {/* Order Summary (not always displayed) */}
-      {showSummary ? (<OrderSummary />) : <void />}
+      {showSummary ? (<OrderSummary />) : null}
     </div>
   )
 }

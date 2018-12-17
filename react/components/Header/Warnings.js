@@ -26,7 +26,7 @@ const Info = () => {
               Alguns itens da sua compra foram vendidos por lojas parceiras, logo eles tiveram que ser separados em outro pedido.
               Suas configurações da compra não foram impactadas.
           </li>
-          : <void />
+          : null
         }
 
       </ul>
