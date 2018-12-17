@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Tag } from 'vtex.styleguide'
 
 const OrderStatus = () => {
