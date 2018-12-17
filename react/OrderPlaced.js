@@ -5,14 +5,13 @@ import React, { Component } from 'react'
 // import getOrderGroup from './graphql/getOrderGroup.graphql'
 import Header from './components/Header/Header'
 import OrderInfo from './components/OrderInfo/OrderInfo'
-import './styles.global.css'
 
 class OrderPlaced extends Component {
   render() {
     return (
-      <div className="page-container">
+      <div className="w-50-ns w-95 center">
         <Header />
-        <hr className="bg-muted-5 w-95" size="1" />
+        <hr className="bg-muted-5 c-muted-5 w-95" size="1" />
         <OrderInfo />
       </div>
     )
