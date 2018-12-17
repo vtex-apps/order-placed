@@ -5,7 +5,7 @@ import { Tag } from 'vtex.styleguide'
 const OrderStatus = () => {
   return (
     <Tag type="warning">
-      Status do pedido (query)
+      Aguardando aprovação de pagamento
     </Tag>
   )
 }
