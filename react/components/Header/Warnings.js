@@ -1,6 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-
 import { IconWarning } from 'vtex.styleguide'
 
 const Info = () => {
