@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Box } from 'vtex.styleguide'
 
 import DeliveryIcon from '../Icons/DeliveryIcon'
@@ -6,7 +6,7 @@ import PickUpIcon from '../Icons/PickUpIcon'
 
 const OrderSummary = () => {
   return (
-    <div>
+    <Fragment>
       <p className="f5"><strong>Resumo da sua compra:</strong></p>
       <div className="flex justify-center mv8">
         <div className="mr4">
@@ -44,7 +44,7 @@ const OrderSummary = () => {
           </Box>
         </div>
       </div>
-    </div>
+    </Fragment>
   )
 }
 

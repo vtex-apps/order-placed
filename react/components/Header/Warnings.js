@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { IconWarning } from 'vtex.styleguide'
 
 const Info = () => {
   const twoOrders = true
   return (
-    <div>
+    <Fragment>
       <p><IconWarning color="#FFB100" /><strong className="pl3">Informações importantes:</strong></p>
       <ul className="mv9 list ml0 pl0">
         <li className="mv7">
@@ -30,7 +30,7 @@ const Info = () => {
         }
 
       </ul>
-    </div>
+    </Fragment>
   )
 }
 
