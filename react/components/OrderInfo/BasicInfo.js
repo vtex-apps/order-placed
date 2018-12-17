@@ -26,7 +26,7 @@ const BasicInfo = () => {
               </p>
             </Alert>
           </div>
-          : <void />
+          : null
       }
 
       <div className="flex justify-between">
