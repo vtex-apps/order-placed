@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="h-75 pt7 sans-serif">
 
-      <p className="tc serious-black t-heading-1">
+      <p className="tc c-on-base t-heading-1">
         Pedido realizado com sucesso!
       </p>
 
