@@ -9,7 +9,7 @@ import OrderInfo from './components/OrderInfo/OrderInfo'
 class OrderPlaced extends Component {
   render() {
     return (
-      <div className="w-50-ns w-95 center">
+      <div className="w-50-ns w-90 center">
         <Header />
         <hr className="bg-muted-5 c-muted-5 w-95" size="1" />
         <OrderInfo />

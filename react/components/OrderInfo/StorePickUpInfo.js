@@ -12,8 +12,8 @@ const ShippingInfo = () => {
       </h2>
       <div className="mb6">
         <Box>
-          <div className="flex flex-column justify-between">
-            <div className="flex justify-between">
+          <div className="flex flex-column flex-row-ns justify-between">
+            <div className="flex justify-between flex-column">
               <div>
                 <p>Praia de Botafogo, 300</p>
                 <p>CEP 22651-470 - Botafogo</p>

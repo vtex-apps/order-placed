@@ -2,15 +2,15 @@ import React from 'react'
 import { Button, Alert, IconCaretDown } from 'vtex.styleguide'
 
 const BasicInfo = () => {
-  const twoOrders = true
+  const twoOrders = false
 
   return (
     <div className="flex flex-column">
       <div className="order-number-date">
-        <p className="f4">
-          <strong>Número do pedido: "NUMERO DO PEDIDO"</strong>
+        <p className="t-heading-4-ns t-heading-5">
+          Número do pedido: "NUMERO DO PEDIDO"
           <br />
-          <small className="c-muted-2">
+          <small className="c-muted-2 t-small">
             Realizado em 15/12/2018 às 16:20
           </small>
         </p>
@@ -29,7 +29,7 @@ const BasicInfo = () => {
           : null
       }
 
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-column flex-row-l">
         <div>
           <strong>Dados pessoais</strong>
           <ul className="list pl0 c-on-base">
@@ -56,14 +56,14 @@ const BasicInfo = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-center mv9">
-        <div className="mr4-m">
-          <Button className="center" variation="secondary">
+      <div className="flex justify-center-ns mv9 flex-wrap flex-nowrap-l flex-column flex-row-l">
+        <div className="mr4-ns mb4 mb0-l center">
+          <Button variation="secondary">
             <span className="mr3">Solicitar atendimento</span> <IconCaretDown />
           </Button>
         </div>
-        <div className="ml4-m">
-          <Button className="center" variation="secondary">
+        <div className="ml4-ns mt4 mt0-l center">
+          <Button variation="secondary">
             Ir para seus pedidos
           </Button>
         </div>
