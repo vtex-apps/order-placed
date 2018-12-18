@@ -7,7 +7,7 @@ import Summary from './Summary'
 
 const OrderInfo = () => {
   return (
-    <div className="mv5">
+    <div className="mv6">
       <BasicInfo />
       <ShippingInfo />
       <StorePickUpInfo />
