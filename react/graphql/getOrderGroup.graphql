@@ -32,6 +32,13 @@ query GetOrderGroup($orderGroup: String) {
           shippingEstimate
           deliveryWindow
           deliveryChannel
+          pickupStoreInfo {
+            additionalInfo
+            address
+            dockId
+            friendlyName
+            isPickupStore
+          }
         }
         deliveryIds {
           courierId
