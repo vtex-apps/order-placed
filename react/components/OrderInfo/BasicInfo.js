@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Alert, IconCaretDown } from 'vtex.styleguide'
 
 const BasicInfo = () => {
-  const twoOrders = false
+  const twoOrders = true
 
   return (
     <div className="flex flex-column">
@@ -57,12 +57,12 @@ const BasicInfo = () => {
         </div>
       </div>
       <div className="flex justify-center-ns mv9 flex-wrap flex-nowrap-l flex-column flex-row-l">
-        <div className="mr4-ns mb4 mb0-l center">
+        <div className="mr4-l mb4 mb0-l center">
           <Button variation="secondary">
             <span className="mr3">Solicitar atendimento</span> <IconCaretDown />
           </Button>
         </div>
-        <div className="ml4-ns mt4 mt0-l center">
+        <div className="ml4-l mt4 mt0-l center">
           <Button variation="secondary">
             Ir para seus pedidos
           </Button>

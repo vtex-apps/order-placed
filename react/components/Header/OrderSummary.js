@@ -9,7 +9,7 @@ const OrderSummary = () => {
     <Fragment>
       <p className="t-heading-5"><strong>Resumo da sua compra:</strong></p>
       <div className="flex flex-wrap flex-nowrap-l justify-center mv8">
-        <div className="mr4-ns mb4-s mb0-l">
+        <div className="mr4-l mb4-s mb0-l">
           <Box>
             <h3 className="pv2">
               <DeliveryIcon />
@@ -26,7 +26,7 @@ const OrderSummary = () => {
             </div>
           </Box>
         </div>
-        <div className="ml4-ns mt4-s mt0-l">
+        <div className="ml4-l mt4-s mt0-l">
           <Box>
             <h3 className="pv2">
               <PickUpIcon />
