@@ -53,6 +53,13 @@ export const orderGroupQuery = {
                   'shippingEstimate': '4bd',
                   'deliveryWindow': null,
                   'deliveryChannel': 'delivery',
+                  'pickupStoreInfo': {
+                    'additionalInfo': null,
+                    'address': null,
+                    'dockId': null,
+                    'friendlyName': null,
+                    'isPickupStore': false,
+                  },
                 },
                 {
                   'id': 'Normal',
@@ -61,6 +68,13 @@ export const orderGroupQuery = {
                   'shippingEstimate': '3bd',
                   'deliveryWindow': null,
                   'deliveryChannel': 'delivery',
+                  'pickupStoreInfo': {
+                    'additionalInfo': null,
+                    'address': null,
+                    'dockId': null,
+                    'friendlyName': null,
+                    'isPickupStore': false,
+                  },
                 },
               ],
               'deliveryIds': null,
