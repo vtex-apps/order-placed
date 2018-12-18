@@ -5,7 +5,10 @@ const Info = () => {
   const twoOrders = true
   return (
     <Fragment>
-      <p className="t-heading-6"><IconWarning color="#FFB100" /><strong className="pl3">Informações importantes:</strong></p>
+      <p className="t-heading-6">
+        <span className="c-warning"><IconWarning /></span>
+        <strong className="pl3">Informações importantes:</strong>
+      </p>
       <ul className="mv7 list ml0 pl0 t-body">
         <li className="mv7">
           <strong> Aprovação do pagamento </strong><br />
