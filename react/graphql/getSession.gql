@@ -1,0 +1,12 @@
+query GetSession {
+  getSession {
+    profile {
+      id
+      firstName
+      lastName
+      email
+      document
+      phone
+    }
+  }
+}
