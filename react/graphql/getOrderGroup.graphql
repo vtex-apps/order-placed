@@ -25,6 +25,7 @@ query GetOrderGroup($orderGroup: String) {
         shippingEstimate
         shippingEstimateDate
         selectedSla
+        deliveryChannel
         slas {
           id
           name
