@@ -1,31 +1,28 @@
 import React, { Fragment } from 'react'
-import { IconWarning } from 'vtex.styleguide'
+import PropTypes from 'prop-types'
 
-const Info = () => {
-  const twoOrders = true
+const Info = ({ split }) => {
   return (
     <Fragment>
-      <p className="t-heading-6">
-        <span className="c-warning"><IconWarning /></span>
-        <strong className="pl3">Informações importantes:</strong>
-      </p>
-      <ul className="mv7 list ml0 pl0 t-body">
-        <li className="mv7">
-          <strong> Aprovação do pagamento </strong><br />
-          Pode demorar até 3 dias.
+      <ul className="mv7 list ml0 pl0 t-body bt bb b--muted-4">
+        <li className="tc pv2 mv0">
+          <p className="pv4">A aprovação do pagamento pode demorar até 3 dias.</p>
+          <hr className="mw4 c-muted-5" size="1" />
         </li>
-        <li className="mv7">
-          <strong> Prazo de entrega </strong><br />
-          Se inicia a partir do momento em que o pagamento é confirmado.
+        <li className="tc pv2 mv0">
+          <p className="pv4">O prazo de entrega se inicia a partir do momento em que o pagamento é confirmado.</p>
+          <hr className="mw4 c-muted-5" size="1" />
         </li>
-        <li className="mv7">
-          <strong> Rastreamento </strong><br />
-          Quando seu pedido estiver a caminho, o código de rastreamento será enviado no seu e-mail.
+        <li className="tc pv2 mv0">
+          <p className="pv4">Quando seu pedido estiver a caminho, o código de rastreamento será enviado para o seu e-mail.</p>
+          {
+            (split > 1)
+              ? <hr className="mw4 c-muted-5" size="1" /> : null
+          }
         </li>
 
-        {twoOrders
-          ? <li className="mv7">
-            <strong> Sua compra foi dividida em 2 pedidos </strong><br />
+        {(split > 1)
+          ? <li className="tc pv6 mv0">
               Alguns itens da sua compra foram vendidos por lojas parceiras, logo eles tiveram que ser separados em outro pedido.
               Suas configurações da compra não foram impactadas.
           </li>
@@ -35,6 +32,10 @@ const Info = () => {
       </ul>
     </Fragment>
   )
+}
+
+Info.propTypes = {
+  split: PropTypes.number.isRequired,
 }
 
 export default Info
