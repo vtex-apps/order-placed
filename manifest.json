@@ -19,7 +19,8 @@
     "vtex.order-placed-graphql": "0.x",
     "vtex.styleguide": "8.x",
     "vtex.store-graphql": "2.x",
-    "vtex.order-details": "0.x"
+    "vtex.order-details": "0.x",
+    "vtex.payment-flags": "1.x"
   },
   "credentialType": "absolute",
   "policies": [
