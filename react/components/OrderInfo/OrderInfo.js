@@ -1,19 +1,39 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import OrderHeader from './OrderHeader'
+import CustumerInfo from './CustumerInfo'
+import PaymentSummary from './PaymentSummary'
+// import ShippingInfo from './ShippingInfo'
+// import StorePickUpInfo from './StorePickUpInfo'
+// import Summary from './Summary'
 
-import BasicInfo from './BasicInfo'
-import ShippingInfo from './ShippingInfo'
-import StorePickUpInfo from './StorePickUpInfo'
-import Summary from './Summary'
-
-const OrderInfo = () => {
+const OrderInfo = ({ data, profile }) => {
   return (
     <div className="mv6">
-      <BasicInfo />
-      <ShippingInfo />
-      <StorePickUpInfo />
-      <Summary />
+      <OrderHeader orderInfo={data} />
+      <div bb b--muted-5>
+        <CustumerInfo profile={profile} />
+      </div>
+      <div className="bb b--muted-5">
+        <PaymentSummary paymentsData={data.paymentData.transactions[0].payments} />
+      </div>
+
+      {/* {(currOrder.shippingData.logisticsInfo.filter((item) => (item.delivery === 'shipping')).length)
+        ? <ShippingInfo data={currOrder} />
+        : null}
+
+      {currOrder.items.filter((item) => (item.delivery === 'pickup')).length
+        ? <StorePickUpInfo data={currOrder} />
+        : null}
+
+      <Summary data={currOrder} /> */}
     </div>
   )
+}
+
+OrderInfo.propTypes = {
+  data: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired,
 }
 
 export default OrderInfo
