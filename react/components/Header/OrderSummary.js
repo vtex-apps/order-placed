@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import { Box } from 'vtex.styleguide'
 
-import DeliveryIcon from '../Icons/DeliveryIcon'
-import PickUpIcon from '../Icons/PickUpIcon'
+import DeliveryIcon from '../../Icons/DeliveryIcon'
+import PickUpIcon from '../../Icons/PickUpIcon'
 
 const OrderSummary = () => {
   return (

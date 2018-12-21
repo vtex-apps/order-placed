@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Warnings from './Warnings'
-import SuccessIcon from '../Icons/Success'
+import SuccessIcon from '../../Icons/Success'
 import { Button } from 'vtex.styleguide'
 
 const Header = ({ data, profile }) => {

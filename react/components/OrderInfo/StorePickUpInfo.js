@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Box } from 'vtex.styleguide'
-import PickUpIcon from '../Icons/PickUpIcon'
+import PickUpIcon from '../../Icons/PickUpIcon'
 
 const ShippingInfo = () => {
   return (
