@@ -37,7 +37,7 @@ SuccessIcon.defaultProps = {
 
 SuccessIcon.propTypes = {
   color: PropTypes.string,
-  size: PropTypes.number,
+  size: PropTypes.string,
 }
 
 export default SuccessIcon
