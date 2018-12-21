@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import OrderHeader from './OrderHeader'
 import CustumerInfo from './CustumerInfo'
 import PaymentSummary from './PaymentSummary'
-// import ShippingInfo from './ShippingInfo'
+import ShippingInfo from './Shipping/ShippingInfo'
 // import StorePickUpInfo from './StorePickUpInfo'
 // import Summary from './Summary'
 
@@ -18,10 +18,11 @@ const OrderInfo = ({ data, profile }) => {
         <PaymentSummary paymentsData={data.paymentData.transactions[0].payments} />
       </div>
 
-      {/* {(currOrder.shippingData.logisticsInfo.filter((item) => (item.delivery === 'shipping')).length)
-        ? <ShippingInfo data={currOrder} />
-        : null}
+      <div>
+        <ShippingInfo data={data} />
+      </div>
 
+      {/*
       {currOrder.items.filter((item) => (item.delivery === 'pickup')).length
         ? <StorePickUpInfo data={currOrder} />
         : null}
