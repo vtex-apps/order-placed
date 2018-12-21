@@ -1,54 +1,52 @@
 import React from 'react'
-import OrderStatus from './OrderStatus'
+import PropTypes from 'prop-types'
 import Warnings from './Warnings'
-import OrderSummary from './OrderSummary'
-import PrinterIcon from '../Icons/PrinterIcon'
-import MailIcon from '../Icons/MailIcon'
+import SuccessIcon from '../Icons/Success'
+import { Button } from 'vtex.styleguide'
 
-const Header = () => {
-  const showSummary = true
-
+const Header = ({ data, profile }) => {
   return (
-    <div className="h-75 pt7 sans-serif">
+    <div className="pt7 sans-serif">
+
+      <div className="flex justify-center">
+        <SuccessIcon color="#8BC34A" size="50" />
+      </div>
 
       <p className="tc c-on-base t-heading-1">
-        Pedido realizado com sucesso!
+        Obrigado por sua compra!
       </p>
 
-      {/* Order status */}
-      <div className="flex justify-center mv8">
-        <OrderStatus />
-      </div>
-
       {/* E-mail reminder */}
-      <div className="center mt4 t-body">
+      <div className="center mt4 t-body tc c-muted-1">
         <p>
-          Você receberá um e-mail no endereço <strong className="nowrap">jane-doe@gmail.com</strong> com todos os detalhes do seu pedido em até 5 minutos.<br />
-        </p>
-        <p>
-        Lembre-se de conferir sua caixa de lixo eletrônico.
+          Você receberá um e-mail no endereço <strong className="nowrap">{profile.email}</strong> com todos os detalhes do seu pedido em até 5 minutos.<br />
+          Lembre-se de conferir sua caixa de lixo eletrônico.
         </p>
       </div>
 
-      {/* Icons */}
-      <div className="flex justify-end flex-wrap t-action">
-        <p className="tr c-action-primary">
-          <PrinterIcon />
-          <span className="pl4 mr4 truncate-s">IMPRIMIR PÁGINA</span>
+      {/* Actions */}
+      <div className="flex justify-center t-action">
+        <p className="tr c-action-primary mr2">
+          <Button variation="secondary">
+            Reenviar email
+          </Button>
         </p>
-        <p className="tr c-action-primary">
-          <MailIcon />
-          <span className="pl4 truncate-s">REENVIAR E-MAIL</span>
+        <p className="tr c-action-primary ml2">
+          <Button variation="secondary">
+            Imprimir página
+          </Button>
         </p>
       </div>
 
-      {/* Order important info */}
-      <Warnings />
-
-      {/* Order Summary (not always displayed) */}
-      {showSummary ? (<OrderSummary />) : null}
+      {/* Important warnings */}
+      <Warnings split={data.length} />
     </div>
   )
+}
+
+Header.propTypes = {
+  data: PropTypes.array.isRequired,
+  profile: PropTypes.object.isRequired,
 }
 
 export default Header
