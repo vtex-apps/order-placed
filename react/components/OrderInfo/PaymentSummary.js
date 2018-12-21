@@ -9,7 +9,7 @@ const PaymentSummary = ({ paymentsData }) => {
       {
         paymentsData.map((payment, index) => {
           return index > 0 ? (
-            <div className="flex items-center-ns flex-column flex-row-ns">
+            <div key={index} className="flex items-center-ns flex-column flex-row-ns">
               <div className="mr7-ns mt7 mt0-ns c-muted-3">
                 <IconPlusLines />
               </div>
@@ -23,7 +23,7 @@ const PaymentSummary = ({ paymentsData }) => {
 }
 
 PaymentSummary.propTypes = {
-  paymentsData: PropTypes.object.isRequired,
+  paymentsData: PropTypes.array.isRequired,
 }
 
 export default PaymentSummary
