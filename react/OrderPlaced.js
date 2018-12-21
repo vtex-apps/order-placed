@@ -30,7 +30,7 @@ class OrderPlaced extends Component {
 }
 
 OrderPlaced.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
 }
 
 // export default compose(
