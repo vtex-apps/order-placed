@@ -14,10 +14,10 @@ const paymentGroupSwitch = (payment) => {
   }
 }
 
-const PaymentMethod = ({ pay }) => (
+const PaymentMethod = ({ payment }) => (
   <div className="flex flex-column justify-around mr7-ns">
-    <p className="t-heading-6">{paymentGroupSwitch(pay.group)}</p>
-    <PaymentFlagPicker paymentSystem={pay.paymentSystem}>
+    <p className="t-heading-6">{paymentGroupSwitch(payment.group)}</p>
+    <PaymentFlagPicker paymentSystem={payment.paymentSystem}>
       {FlagComponent =>
         FlagComponent && (
           <div className="h2">
@@ -26,15 +26,15 @@ const PaymentMethod = ({ pay }) => (
         )
       }
     </PaymentFlagPicker>
-    <p>Final {pay.lastDigits}</p>
+    <p>Final {payment.lastDigits}</p>
     <div>
-      <FormattedPrice value={pay.value} currency="BRL" />{` (${pay.installments}x)`}
+      <FormattedPrice value={payment.value} currency="BRL" />{` (${payment.installments}x)`}
     </div>
   </div>
 )
 
 PaymentMethod.propTypes = {
-  pay: PropTypes.object.isRequired,
+  payment: PropTypes.object.isRequired,
 }
 
 export default PaymentMethod

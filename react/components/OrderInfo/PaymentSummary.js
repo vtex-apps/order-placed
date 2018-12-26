@@ -12,9 +12,9 @@ const PaymentSummary = ({ paymentsData }) => (
             <div className="mr7-ns mt7 mt0-ns c-muted-3">
               <IconPlusLines />
             </div>
-            <PaymentMethod pay={payment} />
+            <PaymentMethod payment={payment} />
           </div>
-        ) : (<PaymentMethod pay={payment} key={index} />)
+        ) : (<PaymentMethod payment={payment} key={index} />)
       })
     }
   </div>
