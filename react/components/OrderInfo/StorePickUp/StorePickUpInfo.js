@@ -1,6 +1,5 @@
 import React from 'react'
-
-import PickUpIcon from '../../Icons/PickUpIcon'
+import PickUpIcon from '../../../Icons/PickUpIcon'
 
 const ShippingInfo = () => (
   <div className="mv8 flex flex-column justify-between">
