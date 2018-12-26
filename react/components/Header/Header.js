@@ -1,15 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Warnings from './Warnings'
-import SuccessIcon from '../../Icons/Success'
-import { Button } from 'vtex.styleguide'
+import { Button, IconSuccess } from 'vtex.styleguide'
 
 const Header = ({ data, profile }) => {
   return (
     <div className="pt7 sans-serif">
 
       <div className="flex justify-center green">
-        <SuccessIcon size="50" />
+        <IconSuccess size="50" />
       </div>
 
       <p className="tc c-on-base t-heading-1">
