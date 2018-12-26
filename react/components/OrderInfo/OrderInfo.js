@@ -4,8 +4,6 @@ import OrderHeader from './OrderHeader'
 import CustumerInfo from './CustumerInfo'
 import PaymentSummary from './PaymentSummary'
 import ShippingInfo from './Shipping/ShippingInfo'
-// import StorePickUpInfo from './StorePickUpInfo'
-// import Summary from './Summary'
 
 const OrderInfo = ({ data, profile }) => {
   return (
@@ -21,13 +19,6 @@ const OrderInfo = ({ data, profile }) => {
       <div className="bb b--muted-5">
         <ShippingInfo data={data} />
       </div>
-
-      {/*
-      {currOrder.items.filter((item) => (item.delivery === 'pickup')).length
-        ? <StorePickUpInfo data={currOrder} />
-        : null}
-
-      <Summary data={currOrder} /> */}
     </div>
   )
 }
