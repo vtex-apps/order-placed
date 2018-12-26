@@ -10,7 +10,7 @@ class OrderPlaced extends Component {
       <div className="w-80-ns w-90 center">
         <Header data={orderGroupQuery.orderGroup} profile={profileQuery.profile} />
         {
-          orderGroupQuery.orderGroup.map((order) => {
+          orderGroupQuery.orderGroup.map(order => {
             return (
               <OrderInfo
                 data={order}
