@@ -16,17 +16,15 @@ const Info = ({ split }) => {
         <li className="tc pv2 mv0">
           <p className="pv4">Quando seu pedido estiver a caminho, o código de rastreamento será enviado para o seu e-mail.</p>
           {
-            (split > 1)
-              ? <hr className="mw4 c-muted-5" size="1" /> : null
+            (split > 1) && <hr className="mw4 c-muted-5" size="1" />
           }
         </li>
 
-        {(split > 1)
-          ? <li className="tc pv6 mv0">
+        {(split > 1) &&
+          <li className="tc pv6 mv0">
               Alguns itens da sua compra foram vendidos por lojas parceiras, logo eles tiveram que ser separados em outro pedido.
               Suas configurações da compra não foram impactadas.
           </li>
-          : null
         }
 
       </ul>
