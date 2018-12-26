@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import { compose, graphql } from 'react-apollo'
-
-// import getOrderGroup from './graphql/getOrderGroup.graphql'
 import Header from './components/Header/Header'
 import OrderInfo from './components/OrderInfo/OrderInfo'
 import { orderGroupQuery, profileQuery } from './test-cases/simple-out'
@@ -32,19 +29,5 @@ class OrderPlaced extends Component {
 OrderPlaced.propTypes = {
   data: PropTypes.object,
 }
-
-// export default compose(
-//   OrderPlaced,
-//   graphql(getOrderGroup, {
-//     options({ params }) {
-//       return {
-//         errorPolicy: params.orderGroup ? 'all' : 'none',
-//         variables: {
-//           orderGroup: params.orderGroup,
-//         },
-//       }
-//     },
-//   }),
-// )(OrderPlaced)
 
 export default OrderPlaced
