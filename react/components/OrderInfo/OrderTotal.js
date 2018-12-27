@@ -18,8 +18,15 @@ const ShippingTotals = ({ items }) => {
         <p>{`Subtotal (${numItems} itens)`}</p>
         <FormattedPrice value={totalValue} currency="BRL" />
       </div>
-      <p>Entrega</p>
-      <hr className="c-muted-4" size="1" />
+      <div className="flex justify-between items-center">
+        <p>Entrega</p>
+        <FormattedPrice value={0.0} currency="BRL" />
+      </div>
+      <div className="flex justify-between items-center">
+        <p>Retirada</p>
+        <FormattedPrice value={0.0} currency="BRL" />
+      </div>
+      <hr className="bg-muted-4 bt b--muted-4" />
       <div className="flex justify-between items-center">
         <p>Total</p>
         <FormattedPrice value={totalValue} currency="BRL" />

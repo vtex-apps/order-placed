@@ -4,6 +4,7 @@ import OrderHeader from './OrderHeader'
 import CustumerInfo from './CustumerInfo'
 import PaymentSummary from './Payment/PaymentSummary'
 import Shipping from './Shipping/Shipping'
+import OrderTotal from './OrderTotal'
 
 const OrderInfo = ({ data, profile }) => (
   <div className="mv6 w-80-ns w-90 center">
@@ -17,6 +18,7 @@ const OrderInfo = ({ data, profile }) => (
     <div className="bb b--muted-5">
       <Shipping data={data} />
     </div>
+    <OrderTotal items={data.items} />
   </div>
 )
 
