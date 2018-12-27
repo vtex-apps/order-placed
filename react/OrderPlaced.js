@@ -7,7 +7,7 @@ import { orderGroupQuery, profileQuery } from './test-cases/simple-out'
 class OrderPlaced extends Component {
   render() {
     return (
-      <div className="w-80-ns w-90 center">
+      <div className="center">
         <Header data={orderGroupQuery.orderGroup} profile={profileQuery.profile} />
         {
           orderGroupQuery.orderGroup.map(order => {

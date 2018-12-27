@@ -6,7 +6,7 @@ import PaymentSummary from './Payment/PaymentSummary'
 import Shipping from './Shipping/Shipping'
 
 const OrderInfo = ({ data, profile }) => (
-  <div className="mv6">
+  <div className="mv6 w-80-ns w-90 center">
     <OrderHeader orderInfo={data} />
     <div className="bb b--muted-5">
       <CustumerInfo profile={profile} />

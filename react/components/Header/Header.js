@@ -6,7 +6,7 @@ import { Button, IconSuccess } from 'vtex.styleguide'
 const Header = ({ data, profile }) => (
   <div className="pt7 sans-serif">
 
-    <div className="flex justify-center green">
+    <div className="flex justify-center c-success">
       <IconSuccess size={50} />
     </div>
 
@@ -33,8 +33,9 @@ const Header = ({ data, profile }) => (
         </Button>
       </p>
     </div>
-
-    <Warnings split={data.length} />
+    <div className="vw-100 bg-muted-5">
+      <Warnings split={data.length} />
+    </div>
   </div>
 )
 
