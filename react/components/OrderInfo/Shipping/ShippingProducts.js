@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import { Product } from 'vtex.order-details'
+import Product from '../Product'
 
 const ShippingProducts = ({ products }) => (
   <Fragment>
