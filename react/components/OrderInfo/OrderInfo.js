@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import OrderHeader from './OrderHeader'
 import CustumerInfo from './CustumerInfo'
-import PaymentSummary from './PaymentSummary'
-import ShippingInfo from './Shipping/ShippingInfo'
+import PaymentSummary from './Payment/PaymentSummary'
+import Shipping from './Shipping/Shipping'
 
 const OrderInfo = ({ data, profile }) => (
   <div className="mv6">
@@ -14,9 +14,8 @@ const OrderInfo = ({ data, profile }) => (
     <div className="bb b--muted-5">
       <PaymentSummary paymentsData={data.paymentData.transactions[0].payments} />
     </div>
-
     <div className="bb b--muted-5">
-      <ShippingInfo data={data} />
+      <Shipping data={data} />
     </div>
   </div>
 )
