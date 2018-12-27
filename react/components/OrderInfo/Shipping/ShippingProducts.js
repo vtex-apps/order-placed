@@ -6,15 +6,9 @@ import Product from '../Product'
 const ShippingProducts = ({ products, currency }) => (
   <Fragment>
     {
-      products.map(product => {
-        return (
-          <Product
-            productInfo={product}
-            currency={currency}
-            key={product.id}
-          />
-        )
-      })
+      products.map(product =>
+        <Product productInfo={product} currency={currency} key={product.id} />
+      )
     }
   </Fragment>
 )
