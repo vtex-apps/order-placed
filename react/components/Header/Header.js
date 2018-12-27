@@ -33,9 +33,7 @@ const Header = ({ data, profile }) => (
         </Button>
       </p>
     </div>
-    <div className="vw-100 bg-muted-5">
-      <Warnings split={data.length} />
-    </div>
+    <Warnings split={data.length} />
   </div>
 )
 

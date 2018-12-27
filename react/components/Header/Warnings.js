@@ -6,7 +6,7 @@ const Info = ({ split }) => {
 
   return (
     <Fragment>
-      <ul className="mv7 list ml0 pl0 t-body bt bb b--muted-5">
+      <ul className="mv7 list ml0 pl0 t-body bg-muted-5">
         <li className="tc pv2 mv0">
           <p className="pv4">A aprovação do pagamento pode demorar até 3 dias.</p>
           <hr className="w-80-ns w-90 bt b--muted-4" />
