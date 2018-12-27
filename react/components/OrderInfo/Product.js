@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { ProductImage, ProductPrice } from 'vtex.order-details'
 
-const Product = ({ productInfo }) => (
+const Product = ({ productInfo, currency }) => (
   <div className="flex items-center justify-between">
     <div className="flex items-center">
       <ProductImage
@@ -21,12 +21,13 @@ const Product = ({ productInfo }) => (
         </small>
       </p>
     </div>
-    <ProductPrice value={productInfo.price * productInfo.quantity} currency="BRL" />
+    <ProductPrice value={productInfo.price * productInfo.quantity} currency={currency} />
   </div>
 )
 
 Product.propTypes = {
   productInfo: PropTypes.object.isRequired,
+  currency: PropTypes.string.isRequired,
 }
 
 export default Product

@@ -22,7 +22,7 @@ const OrderInfo = ({ data, profile }) => (
     <div className="bb b--muted-5">
       <StorePickUp data={data} />
     </div>
-    <OrderTotal items={data.items} />
+    <OrderTotal items={data.items} currency={data.storePreferencesData.currencyCode} />
   </div>
 )
 
