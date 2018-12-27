@@ -6,7 +6,7 @@ import ShippingProducts from './ShippingProducts'
 const Shipping = ({ data }) => (
   <div className="mv8 flex flex-column justify-between">
     <ShippingHeader shippingData={data.shippingData} />
-    <ShippingProducts products={data.items} />
+    <ShippingProducts products={data.items} currency={data.storePreferencesData.currencyCode} />
   </div>
 )
 
