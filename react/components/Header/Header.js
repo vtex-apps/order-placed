@@ -6,8 +6,8 @@ import { Button, IconSuccess } from 'vtex.styleguide'
 const Header = ({ data, profile }) => (
   <div className="pt7 sans-serif">
 
-    <div className="flex justify-center c-success">
-      <IconSuccess size="50" />
+    <div className="flex justify-center green">
+      <IconSuccess size={50} />
     </div>
 
     <p className="tc c-on-base t-heading-1">
