@@ -155,7 +155,7 @@ export const orderGroupQuery = {
       },
     },
     {
-      'allowCancellation': true,
+      'allowCancellation': false,
       'orderId': '886772148808-01',
       'orderGroup': '886772148808',
       'state': 'payment-approved',

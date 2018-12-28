@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'vtex.styleguide'
+import { FormattedTime } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
 
 const OrderHeader = ({ orderInfo }) => (
@@ -10,6 +11,7 @@ const OrderHeader = ({ orderInfo }) => (
       <br />
       <small className="c-muted-2 t-small">
         Realizado em <FormattedDate date={orderInfo.creationDate} style="short" />
+        às <FormattedTime value={orderInfo.creationDate} />
       </small>
     </p>
     <div className="flex justify-between flex-wrap">
@@ -23,9 +25,12 @@ const OrderHeader = ({ orderInfo }) => (
             Ir para seus pedidos
         </Button>
       </div>
-      <Button variation="danger-tertiary">
+      {
+        orderInfo.allowCancellation &&
+        (<Button variation="danger-tertiary">
           Cancelar pedido
-      </Button>
+        </Button>)
+      }
     </div>
   </div>
 )
