@@ -285,6 +285,7 @@ export const orderGroupQuery = {
                 'value': 150600,
                 'lastDigits': '1234',
                 'group': 'creditCard',
+                'installments': 1,
               },
             ],
           },
