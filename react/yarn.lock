@@ -32,6 +32,20 @@
     msk "1.0.3"
     recompose "^0.27.1"
 
+"@vtex/delivery-packages@^2.16.2":
+  version "2.16.2"
+  resolved "https://registry.yarnpkg.com/@vtex/delivery-packages/-/delivery-packages-2.16.2.tgz#7ac6f8402e26ca75d9120c1b9dd1b7c1e10080e8"
+  integrity sha512-bgrsbAx/l+xTs1nN+pwWCwNVGs7Rw2mHRdlo3h9RvZcdzptuJvdWJDVN2YY2Klm/AZ9MxLhSgokhxrf7J4BJzQ==
+  dependencies:
+    "@vtex/estimate-calculator" "^1.0.8"
+
+"@vtex/estimate-calculator@^1.0.8":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@vtex/estimate-calculator/-/estimate-calculator-1.1.0.tgz#f1904e6681d72f7ae24745c85913f321507a1a19"
+  integrity sha512-kN1o20vCce6Xtqg8U6odwMQcgx9PE4sAezyfkREe8LnCM6MaPUmJjVByt/4KYDmoa4YX1Q2mI4DiSKPFlOuJnQ==
+  dependencies:
+    lodash "^4.17.5"
+
 "@vtex/styleguide@^5.6.2":
   version "5.6.2"
   resolved "https://registry.yarnpkg.com/@vtex/styleguide/-/styleguide-5.6.2.tgz#133ac2d7847b148f4b1bdb836b999cb90d667c22"
@@ -492,7 +506,7 @@ lodash.isequal@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
 
-lodash@^4.17.4:
+lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
