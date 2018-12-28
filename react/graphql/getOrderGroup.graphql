@@ -1,9 +1,25 @@
 query GetOrderGroup($orderGroup: String) {
   orderGroup(orderGroup: $orderGroup) {
+    allowCancellation
     orderId
     orderGroup
     state
+    salesChannel
     creationDate
+    timeZoneCreationDate
+    value
+    storePreferencesData {
+      currencyCode
+    }
+    sellers {
+      id
+      name
+    }
+    totals {
+      id
+      name
+      value
+    }
     items {
       uniqueId
       id
@@ -14,12 +30,27 @@ query GetOrderGroup($orderGroup: String) {
       price
       listPrice
       sellingPrice
+      isGift
       quantity
       seller
       imageUrl
       detailUrl
+      measurementUnit
+      unitMultiplier
     }
     shippingData {
+      address {
+        addressId
+        addressType
+        receiverName
+        city
+        state
+        street
+        number
+        neighborhood
+        complement
+        postalCode
+      }
       logisticsInfo {
         itemIndex
         shippingEstimate
@@ -48,17 +79,6 @@ query GetOrderGroup($orderGroup: String) {
           quantity
           warehouseId
         }
-      }
-      address {
-        addressId
-        addressType
-        receiverName
-        city
-        state
-        street
-        number
-        neighborhood
-        complement
       }
     }
     packageAttachment {
@@ -90,10 +110,6 @@ query GetOrderGroup($orderGroup: String) {
           group
         }
       }
-    }
-    value
-    storePreferencesData {
-      currencyCode
     }
   }
 }
