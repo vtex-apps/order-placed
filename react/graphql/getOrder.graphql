@@ -79,6 +79,7 @@ query Order($orderId: String) {
           paymentSystem
           lastDigits
           group
+          installments
         }
       }
     }
