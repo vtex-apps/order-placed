@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Header from './components/Header/Header'
 import OrderInfo from './components/OrderInfo/OrderInfo'
-import { orderGroupQuery, profileQuery } from './test-cases/two-payment'
+import { orderGroupQuery } from './test-cases/1-delivery'
+import { profileQuery } from './test-cases/profileQuery'
 
 class OrderPlaced extends Component {
   render() {
