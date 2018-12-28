@@ -10,8 +10,7 @@ const OrderHeader = ({ orderInfo }) => (
       Pedido #{orderInfo.orderId}
       <br />
       <small className="c-muted-2 t-small">
-        Realizado em <FormattedDate date={orderInfo.creationDate} style="short" />
-        às <FormattedTime value={orderInfo.creationDate} />
+        Realizado em <FormattedDate date={orderInfo.creationDate} style="short" /> às <FormattedTime value={orderInfo.creationDate} />
       </small>
     </p>
     <div className="flex justify-between flex-wrap">
