@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { PrettyAddress } from 'vtex.order-details'
+import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstimate'
 
 const ShippingHeader = ({ shippingData }) => (
   <div className="flex flex-column">
@@ -8,7 +9,7 @@ const ShippingHeader = ({ shippingData }) => (
       Entrega em casa
       <br />
       <small className="c-muted-2 t-small">
-        Em até {shippingData.shippingEstimate} dias úteis
+        <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} />
       </small>
     </p>
     <PrettyAddress address={shippingData.address} />

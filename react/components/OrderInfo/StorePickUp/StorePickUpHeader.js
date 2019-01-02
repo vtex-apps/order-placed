@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 
 const StorePickUpHeader = ({ shippingData }) => (
   <div className="flex flex-column flex-wrap">
@@ -7,7 +8,7 @@ const StorePickUpHeader = ({ shippingData }) => (
       Retirada no ponto
       <br />
       <small className="c-muted-2 t-small">
-        Pronto em até {shippingData.shippingEstimate} dias úteis
+        <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} isPickup />
       </small>
     </p>
   </div>
