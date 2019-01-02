@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import ShippingHeader from './ShippingHeader'
-import ShippingProducts from './ShippingProducts'
+import ProductList from '../ProductList'
 
 const Shipping = ({ data, currency }) => {
   data = data.filter(parcel => (parcel.deliveryChannel === 'delivery'))
@@ -11,7 +11,7 @@ const Shipping = ({ data, currency }) => {
         data.map((delivery, index) => (
           <div className="mv8 flex flex-column justify-between" key={index}>
             <ShippingHeader shippingData={delivery} />
-            <ShippingProducts products={delivery.items} currency={currency} />
+            <ProductList products={delivery.items} currency={currency} />
           </div>
         ))
       }
