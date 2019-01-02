@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
 import { FormattedPrice } from 'vtex.order-details'
 import { PaymentFlagPicker } from 'vtex.payment-flags'
+import { paymentShape } from '../../../proptypes/shapes'
 
 // Still needs to cover all posible values for `pay.group`
 const paymentGroupSwitch = (payment) => {
@@ -34,7 +33,7 @@ const PaymentMethod = ({ payment }) => (
 )
 
 PaymentMethod.propTypes = {
-  payment: PropTypes.object.isRequired,
+  payment: paymentShape.isRequired,
 }
 
 export default PaymentMethod

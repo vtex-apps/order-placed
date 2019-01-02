@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Warnings from './Warnings'
 import { Button, IconSuccess } from 'vtex.styleguide'
-import { profileType } from '../../proptypes/shapes'
+import { profileShape } from '../../proptypes/shapes'
 
 const Header = ({ data, profile }) => (
   <div className="pt7 sans-serif">
@@ -40,7 +40,7 @@ const Header = ({ data, profile }) => (
 
 Header.propTypes = {
   data: PropTypes.array.isRequired,
-  profile: profileType.isRequired,
+  profile: profileShape.isRequired,
 }
 
 export default Header
