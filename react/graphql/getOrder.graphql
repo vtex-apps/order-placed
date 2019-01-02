@@ -39,8 +39,9 @@ query Order($orderId: String) {
           quantity
           warehouseId
         }
+        addressId
       }
-      address {
+      selectedAddresses {
         addressId
         addressType
         receiverName
