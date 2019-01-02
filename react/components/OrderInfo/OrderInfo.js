@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import parcelify from '@vtex/delivery-packages'
 import OrderHeader from './OrderHeader'
 import CustumerInfo from './CustumerInfo'
 import PaymentSummary from './Payment/PaymentSummary'
 import Shipping from './Shipping/Shipping'
 import OrderTotal from './OrderTotal'
 import StorePickUp from './StorePickUp/StorePickUp'
-
-const parcelify = require('@vtex/delivery-packages')
 
 const OrderInfo = ({ data, profile, currency }) => {
   const parcels = parcelify(data)
