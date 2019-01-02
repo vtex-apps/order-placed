@@ -10,7 +10,7 @@ import StorePickUp from './StorePickUp/StorePickUp'
 
 import { profileShape } from '../../proptypes/shapes'
 
-const OrderInfo = ({ data, profile, currency }) => {
+const OrderInfo = ({ data, profile }) => {
   const parcels = parcelify(data)
   return (
     <div className="mv6 w-80-ns w-90 center">
@@ -22,14 +22,13 @@ const OrderInfo = ({ data, profile, currency }) => {
         <PaymentSummary paymentsData={data.paymentData.transactions[0].payments} />
       </div>
       <div className="bb b--muted-5">
-        <Shipping data={parcels} currency={currency} />
+        <Shipping data={parcels} />
       </div>
       <div className="bb b--muted-5">
-        <StorePickUp data={parcels} currency={currency} />
+        <StorePickUp data={parcels} />
       </div>
       <OrderTotal
         items={data.items}
-        currency={data.storePreferencesData.currencyCode}
         totals={data.totals}
         orderValue={data.value}
       />
@@ -40,7 +39,6 @@ const OrderInfo = ({ data, profile, currency }) => {
 OrderInfo.propTypes = {
   data: PropTypes.object.isRequired,
   profile: profileShape.isRequired,
-  currency: PropTypes.string.isRequired,
 }
 
 export default OrderInfo

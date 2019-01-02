@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import StorePickUpHeader from './StorePickUpHeader'
 import ProductList from '../ProductList'
 
-const StorePickUp = ({ data, currency }) => {
+const StorePickUp = ({ data }) => {
   const pickUpPackages = data.filter(parcel => (parcel.deliveryChannel === 'pickup-in-point'))
   return (
     <Fragment>
@@ -12,7 +12,7 @@ const StorePickUp = ({ data, currency }) => {
         pickUpPackages.map((pickup, index) => (
           <div className="mv8 flex flex-column justify-between" key={index}>
             <StorePickUpHeader shippingData={pickup} />
-            <ProductList products={pickup.items} currency={currency} />
+            <ProductList products={pickup.items} />
           </div>
         ))
       }
@@ -22,7 +22,6 @@ const StorePickUp = ({ data, currency }) => {
 
 StorePickUp.propTypes = {
   data: PropTypes.array.isRequired,
-  currency: PropTypes.string.isRequired,
 }
 
 export default StorePickUp
