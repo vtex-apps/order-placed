@@ -8,7 +8,7 @@ import Shipping from './Shipping/Shipping'
 import OrderTotal from './OrderTotal'
 import StorePickUp from './StorePickUp/StorePickUp'
 
-import { profileType } from '../../proptypes/shapes'
+import { profileShape } from '../../proptypes/shapes'
 
 const OrderInfo = ({ data, profile, currency }) => {
   const parcels = parcelify(data)
@@ -39,7 +39,7 @@ const OrderInfo = ({ data, profile, currency }) => {
 
 OrderInfo.propTypes = {
   data: PropTypes.object.isRequired,
-  profile: profileType.isRequired,
+  profile: profileShape.isRequired,
   currency: PropTypes.string.isRequired,
 }
 
