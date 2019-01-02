@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { profileType } from '../../proptypes/shapes'
 
 const CustumerInfo = ({ profile }) => (
   <div className="flex flex-column">
@@ -13,7 +13,7 @@ const CustumerInfo = ({ profile }) => (
 )
 
 CustumerInfo.propTypes = {
-  profile: PropTypes.object.isRequired,
+  profile: profileType.isRequired,
 }
 
 export default CustumerInfo
