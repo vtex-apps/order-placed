@@ -28,9 +28,7 @@ const PaymentMethod = ({ payment }) => (
         }
       </PaymentFlagPicker>
       <p>Final {payment.lastDigits}</p>
-      <div>
-        <FormattedPrice value={payment.value} currency={currency} />{` (${payment.installments}x)`}
-      </div>
+      <FormattedPrice value={payment.value} currency={currency} />{` (${payment.installments}x)`}
     </div>)}
   </CurrencyContext.Consumer>
 )
