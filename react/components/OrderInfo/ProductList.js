@@ -1,21 +1,16 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import Product from './Product'
 
-const ProductList = ({ products, currency }) => (
-  <Fragment>
-    {
-      products.map(product =>
-        <Product productInfo={product} currency={currency} key={product.id} />
-      )
-    }
-  </Fragment>
+const ProductList = ({ products }) => (
+  products.map(product =>
+    <Product productInfo={product} key={product.id} />
+  )
 )
 
 ProductList.propTypes = {
   products: PropTypes.array.isRequired,
-  currency: PropTypes.string.isRequired,
 }
 
 export default ProductList

@@ -14,7 +14,7 @@ const StorePickUpHeader = ({ shippingData }) => (
 )
 
 StorePickUpHeader.propTypes = {
-  shippingData: PropTypes.array.isRequired,
+  shippingData: PropTypes.object.isRequired,
 }
 
 export default StorePickUpHeader

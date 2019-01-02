@@ -2,6 +2,7 @@ import React from 'react'
 import { FormattedPrice } from 'vtex.order-details'
 import { PaymentFlagPicker } from 'vtex.payment-flags'
 import { paymentShape } from '../../../proptypes/shapes'
+import { CurrencyContext } from '../../../OrderPlaced'
 
 // Still needs to cover all posible values for `pay.group`
 const paymentGroupSwitch = (payment) => {
@@ -14,22 +15,24 @@ const paymentGroupSwitch = (payment) => {
 }
 
 const PaymentMethod = ({ payment }) => (
-  <div className="flex flex-column justify-around mr7-ns">
-    <p className="t-heading-6">{paymentGroupSwitch(payment.group)}</p>
-    <PaymentFlagPicker paymentSystem={payment.paymentSystem}>
-      {FlagComponent =>
-        FlagComponent && (
-          <div className="h2">
-            <FlagComponent />
-          </div>
-        )
-      }
-    </PaymentFlagPicker>
-    <p>Final {payment.lastDigits}</p>
-    <div>
-      <FormattedPrice value={payment.value} currency="BRL" />{` (${payment.installments}x)`}
-    </div>
-  </div>
+  <CurrencyContext.Consumer>
+    {currency => (<div className="flex flex-column justify-around mr7-ns">
+      <p className="t-heading-6">{paymentGroupSwitch(payment.group)}</p>
+      <PaymentFlagPicker paymentSystem={payment.paymentSystem}>
+        {FlagComponent =>
+          FlagComponent && (
+            <div className="h2">
+              <FlagComponent />
+            </div>
+          )
+        }
+      </PaymentFlagPicker>
+      <p>Final {payment.lastDigits}</p>
+      <div>
+        <FormattedPrice value={payment.value} currency={currency} />{` (${payment.installments}x)`}
+      </div>
+    </div>)}
+  </CurrencyContext.Consumer>
 )
 
 PaymentMethod.propTypes = {
