@@ -133,18 +133,32 @@ export const orderGroupQuery = {
         },
       ],
       'shippingData': {
-        'address': {
-          'addressId': '40196370878352',
-          'addressType': 'residential',
-          'receiverName': 'Victor Hugo',
-          'city': 'Rio de Janeiro',
-          'state': 'RJ',
-          'street': 'Praia de Botafogo',
-          'number': '3000',
-          'neighborhood': 'Botafogo',
-          'complement': null,
-          'postalCode': '22250-040',
-        },
+        'selectedAddresses': [
+          {
+            'addressId': '40196370878352',
+            'addressType': 'residential',
+            'receiverName': 'Victor Hugo',
+            'city': 'Rio de Janeiro',
+            'state': 'RJ',
+            'street': 'Praia de Botafogo',
+            'number': '3000',
+            'neighborhood': 'Botafogo',
+            'complement': null,
+            'postalCode': '22250-040',
+          },
+          {
+            'addressId': '141125d',
+            'addressType': 'pickup',
+            'receiverName': 'Victor Hugo',
+            'city': 'Rio de Janeiro',
+            'state': 'RJ',
+            'street': 'Rua General Azevedo Pimentel',
+            'number': '5',
+            'neighborhood': 'Copacabana',
+            'complement': '',
+            'postalCode': '22011050',
+          },
+        ],
         'logisticsInfo': [
           {
             'itemIndex': 0,
@@ -170,6 +184,7 @@ export const orderGroupQuery = {
               },
             ],
             'deliveryIds': null,
+            'addressId': '141125d',
           },
           {
             'itemIndex': 1,
@@ -195,6 +210,7 @@ export const orderGroupQuery = {
               },
             ],
             'deliveryIds': null,
+            'addressId': '141125d',
           },
           {
             'itemIndex': 2,
@@ -220,6 +236,7 @@ export const orderGroupQuery = {
               },
             ],
             'deliveryIds': null,
+            'addressId': '141125d',
           },
           {
             'itemIndex': 3,
@@ -245,6 +262,7 @@ export const orderGroupQuery = {
               },
             ],
             'deliveryIds': null,
+            'addressId': '40196370878352',
           },
           {
             'itemIndex': 4,
@@ -270,6 +288,7 @@ export const orderGroupQuery = {
               },
             ],
             'deliveryIds': null,
+            'addressId': '40196370878352',
           },
         ],
       },

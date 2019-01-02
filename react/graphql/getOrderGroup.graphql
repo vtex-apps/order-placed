@@ -39,7 +39,7 @@ query GetOrderGroup($orderGroup: String) {
       unitMultiplier
     }
     shippingData {
-      address {
+      selectedAddresses {
         addressId
         addressType
         receiverName
@@ -57,6 +57,7 @@ query GetOrderGroup($orderGroup: String) {
         shippingEstimateDate
         selectedSla
         deliveryChannel
+        addressId
         slas {
           id
           name
