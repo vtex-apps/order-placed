@@ -16,3 +16,22 @@ export const paymentShape = PropTypes.shape({
   value: PropTypes.number.isRequired,
   installments: PropTypes.number.isRequired,
 })
+
+// This should be made available by `@vtex/delivery-packages`
+export const parcelShape = PropTypes.shape({
+  address: PropTypes.object.isRequired,
+  listPrice: PropTypes.number,
+  price: PropTypes.number,
+  pickupFriendlyName: PropTypes.string,
+  seller: PropTypes.string,
+  items: PropTypes.arrayOf(Object).isRequired,
+  package: PropTypes.object,
+  selectedSla: PropTypes.string.isRequired,
+  selectedSlaObj: PropTypes.object.isRequired,
+  slas: PropTypes.arrayOf(Object),
+  shippingEstimate: PropTypes.string.isRequired,
+  shippingEstimateDate: PropTypes.string,
+  deliveryChannel: PropTypes.string.isRequired,
+  selectedSlaType: PropTypes.string,
+  deliveryIds: PropTypes.arrayOf(Object),
+})
