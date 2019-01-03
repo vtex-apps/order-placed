@@ -28,10 +28,10 @@ const OrderInfo = ({ data, profile }) => {
         <PaymentSummary paymentsData={data.paymentData.transactions[0].payments} />
       </div>
       <div className="bb b--muted-5">
-        <Shipping deliveryPackages={delivery} />
+        <StorePickUp pickUpPackages={pickup} />
       </div>
       <div className="bb b--muted-5">
-        <StorePickUp pickUpPackages={pickup} />
+        <Shipping deliveryPackages={delivery} />
       </div>
       <OrderTotal
         items={data.items}
