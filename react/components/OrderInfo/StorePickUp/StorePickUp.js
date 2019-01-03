@@ -4,8 +4,7 @@ import PropTypes from 'prop-types'
 import StorePickUpHeader from './StorePickUpHeader'
 import ProductList from '../ProductList'
 
-const StorePickUp = ({ data }) => {
-  const pickUpPackages = data.filter(parcel => (parcel.deliveryChannel === 'pickup-in-point'))
+const StorePickUp = ({ pickUpPackages }) => {
   return (
     <Fragment>
       {
@@ -21,7 +20,7 @@ const StorePickUp = ({ data }) => {
 }
 
 StorePickUp.propTypes = {
-  data: PropTypes.array.isRequired,
+  pickUpPackages: PropTypes.array.isRequired,
 }
 
 export default StorePickUp
