@@ -1,14 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { parcelShape } from '../../proptypes/shapes'
 import { Alert } from 'vtex.styleguide'
 
 const OrderSplitNotice = ({ deliveries, pickups, takeaways }) => {
   return (
     <Alert type="success">
       Separamos seu pedido em {`${deliveries} entregas`}
-      {pickups > 0 && `, além das suas ${pickups} retiradas no ponto`}
-      {takeaways > 0 && ` e ${takeaways} itens para levar agora`}
+      {pickups > 0 && `, além das suas ${pickups} retirada(s) no ponto`}
+      {takeaways > 0 && ` e ${takeaways} iten(s) para levar agora`}
       . Assim os produtos que estão mais próximos do endereço de entrega chegarão mais rápido!
     </Alert>
   )
