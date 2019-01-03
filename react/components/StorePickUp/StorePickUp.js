@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import StorePickUpHeader from './StorePickUpHeader'
-import ProductList from '../ProductList'
+import ProductList from '../OrderInfo/ProductList'
 
 const StorePickUp = ({ pickUpPackages }) => {
   return (
