@@ -6,14 +6,20 @@ import CustumerInfo from './CustumerInfo'
 import PaymentSummary from './Payment/PaymentSummary'
 import Shipping from './Shipping/Shipping'
 import OrderTotal from './OrderTotal'
+import OrderSummary from './OrderSummary'
 import StorePickUp from './StorePickUp/StorePickUp'
 
 import { profileShape } from '../../proptypes/shapes'
 
 const OrderInfo = ({ data, profile }) => {
   const parcels = parcelify(data)
+  const delivery = parcels.filter((deliveryPackage) => deliveryPackage.deliveryChannel === 'delivery')
+  const pickup = parcels.filter((pickupPackage) => pickupPackage.deliveryChannel === 'pickup-in-point')
   return (
     <div className="mv6 w-80-ns w-90 center">
+      <div className="bb b--muted-5">
+        <OrderSummary delivery={delivery} pickup={pickup} />
+      </div>
       <OrderHeader orderInfo={data} />
       <div className="bb b--muted-5">
         <CustumerInfo profile={profile} />
@@ -22,10 +28,10 @@ const OrderInfo = ({ data, profile }) => {
         <PaymentSummary paymentsData={data.paymentData.transactions[0].payments} />
       </div>
       <div className="bb b--muted-5">
-        <Shipping data={parcels} />
+        <Shipping deliveryPackages={delivery} />
       </div>
       <div className="bb b--muted-5">
-        <StorePickUp data={parcels} />
+        <StorePickUp pickUpPackages={pickup} />
       </div>
       <OrderTotal
         items={data.items}
