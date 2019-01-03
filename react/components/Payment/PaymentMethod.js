@@ -1,8 +1,8 @@
 import React from 'react'
 import { FormattedPrice } from 'vtex.order-details'
 import { PaymentFlagPicker } from 'vtex.payment-flags'
-import { paymentShape } from '../../../proptypes/shapes'
-import { CurrencyContext } from '../../../OrderPlaced'
+import { paymentShape } from '../../proptypes/shapes'
+import { CurrencyContext } from '../../OrderPlaced'
 
 // Still needs to cover all posible values for `pay.group`
 const paymentGroupSwitch = (payment) => {

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import PaymentMethod from './PaymentMethod'
 import { IconPlusLines } from 'vtex.styleguide'
-import { paymentShape } from '../../../proptypes/shapes'
+import { paymentShape } from '../../proptypes/shapes'
 
 const PaymentSummary = ({ paymentsData }) => (
   <div className="flex flex-column flex-row-ns pb6">
