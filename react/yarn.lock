@@ -39,7 +39,7 @@
   dependencies:
     "@vtex/estimate-calculator" "^1.0.8"
 
-"@vtex/estimate-calculator@^1.0.8":
+"@vtex/estimate-calculator@^1.0.8", "@vtex/estimate-calculator@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@vtex/estimate-calculator/-/estimate-calculator-1.1.0.tgz#f1904e6681d72f7ae24745c85913f321507a1a19"
   integrity sha512-kN1o20vCce6Xtqg8U6odwMQcgx9PE4sAezyfkREe8LnCM6MaPUmJjVByt/4KYDmoa4YX1Q2mI4DiSKPFlOuJnQ==
