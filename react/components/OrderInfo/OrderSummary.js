@@ -30,7 +30,6 @@ const OrderSummary = ({ delivery, pickup }) => {
           <small className="t-small">{`Em ${pickup[0].selectedSlaObj.friendlyName}`}</small>
         </Box>
       </div>
-
     </div>
   )
 }
