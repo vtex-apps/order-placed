@@ -8,6 +8,7 @@ import Shipping from '../Shipping/Shipping'
 import OrderTotal from './OrderTotal'
 import OrderSummary from './OrderSummary'
 import StorePickUp from '../StorePickUp/StorePickUp'
+import OrderSplitNotice from './OrderSplitNotice'
 
 import { profileShape } from '../../proptypes/shapes'
 
@@ -15,12 +16,22 @@ const OrderInfo = ({ data, profile }) => {
   const parcels = parcelify(data)
   const delivery = parcels.filter((deliveryPackage) => deliveryPackage.deliveryChannel === 'delivery')
   const pickup = parcels.filter((pickupPackage) => pickupPackage.deliveryChannel === 'pickup-in-point')
+  const takeaway = parcels.filter((takeawayPackage) => takeawayPackage.deliveryChannel === 'takeaway')
+  const multipleDeliveries = (delivery.length > 1)
   return (
     <div className="mv6 w-80-ns w-90 center">
       <div className="bb b--muted-5">
         <OrderSummary delivery={delivery} pickup={pickup} />
       </div>
       <OrderHeader orderInfo={data} />
+      {
+        multipleDeliveries
+        && <OrderSplitNotice
+            deliveries={delivery.length}
+            pickups={pickup.length}
+            takeaways={takeaway.length}
+          />
+      }
       <div className="bb b--muted-5">
         <CustumerInfo profile={profile} />
       </div>
