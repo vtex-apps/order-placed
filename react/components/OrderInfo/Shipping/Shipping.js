@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import ShippingHeader from './ShippingHeader'
 import ProductList from '../ProductList'
 
-const Shipping = ({ data }) => {
-  const deliveryPackages = data.filter(parcel => (parcel.deliveryChannel === 'delivery'))
+const Shipping = ({ deliveryPackages }) => {
   return (
     deliveryPackages.map((delivery, index) => (
       <div className="mv8 flex flex-column justify-between" key={index}>
@@ -16,7 +15,7 @@ const Shipping = ({ data }) => {
 }
 
 Shipping.propTypes = {
-  data: PropTypes.array.isRequired,
+  deliveryPackages: PropTypes.array.isRequired,
 }
 
 export default Shipping
