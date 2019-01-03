@@ -2,6 +2,7 @@
   "dependencies": {
     "@vtex/address-form": "^3.0.2",
     "@vtex/delivery-packages": "^2.16.2",
+    "@vtex/estimate-calculator": "^1.1.0",
     "apollo-boost": "^0.1.22",
     "apollo-client": "^2.4.7",
     "graphql": "^14.0.2",
