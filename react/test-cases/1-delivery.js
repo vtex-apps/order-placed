@@ -61,7 +61,8 @@ export const orderGroupQuery = {
         },
       ],
       'shippingData': {
-        'address': {
+        'selectedAddresses': [
+          {
           'addressId': '40196370878352',
           'addressType': 'residential',
           'receiverName': 'Victor Hugo',
@@ -72,7 +73,8 @@ export const orderGroupQuery = {
           'neighborhood': 'Botafogo',
           'complement': null,
           'postalCode': '22250-040',
-        },
+          }
+        ],
         'logisticsInfo': [
           {
             'itemIndex': 0,
@@ -98,6 +100,7 @@ export const orderGroupQuery = {
               },
             ],
             'deliveryIds': null,
+            'addressId': '40196370878352'
           },
         ],
       },
