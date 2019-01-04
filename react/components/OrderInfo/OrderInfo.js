@@ -9,6 +9,7 @@ import OrderTotal from './OrderTotal'
 import OrderSummary from './OrderSummary'
 import StorePickUp from '../StorePickUp/StorePickUp'
 import OrderSplitNotice from './OrderSplitNotice'
+import OrderSection from './OrderSection'
 
 import { profileShape } from '../../proptypes/shapes'
 
@@ -20,9 +21,9 @@ const OrderInfo = ({ data, profile }) => {
   const multipleDeliveries = (delivery.length > 1)
   return (
     <div className="mv6 w-80-ns w-90 center">
-      <div className="bb b--muted-5">
+      <OrderSection>
         <OrderSummary delivery={delivery} pickup={pickup} />
-      </div>
+      </OrderSection>
       <OrderHeader orderInfo={data} />
       {
         multipleDeliveries
@@ -32,18 +33,18 @@ const OrderInfo = ({ data, profile }) => {
             takeaways={takeaway.length}
           />
       }
-      <div className="bb b--muted-5">
+      <OrderSection>
         <CustumerInfo profile={profile} />
-      </div>
-      <div className="bb b--muted-5">
+      </OrderSection>
+      <OrderSection>
         <PaymentSummary paymentsData={data.paymentData.transactions[0].payments} />
-      </div>
-      <div className="bb b--muted-5">
+      </OrderSection>
+      <OrderSection>
         <StorePickUp pickUpPackages={pickup} />
-      </div>
-      <div className="bb b--muted-5">
+      </OrderSection>
+      <OrderSection>
         <Shipping deliveryPackages={delivery} />
-      </div>
+      </OrderSection>
       <OrderTotal
         items={data.items}
         totals={data.totals}
