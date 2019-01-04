@@ -4,7 +4,6 @@ import { PaymentFlagPicker } from 'vtex.payment-flags'
 import { paymentShape } from '../../proptypes/shapes'
 import { CurrencyContext } from '../../OrderPlaced'
 
-// Still needs to cover all posible values for `pay.group`
 const paymentGroupSwitch = (payment) => {
   switch (payment) {
     case 'creditCard':
