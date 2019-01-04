@@ -16,7 +16,7 @@ const OrderSummary = ({ delivery, pickup }) => {
   const longestPickUpEstimate = estimateCalculator.getLatestSla(pickup)
 
   return (
-    <div className="flex justify-around mv7 fleex-wrap">
+    <div className="flex justify-around mv7 flex-wrap">
       <div className="w-40-l w-90">
         <Box>
           <p className="t-heading-4 tc">A receber</p>
