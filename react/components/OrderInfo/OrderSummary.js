@@ -6,12 +6,8 @@ import estimateCalculator from '@vtex/estimate-calculator'
 import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstimate'
 
 const OrderSummary = ({ delivery, pickup }) => {
-  let deliveryItemsQuantity = 0
-  delivery.forEach(deliveryPackage => { deliveryItemsQuantity += deliveryPackage.items.length })
-
-  let pickUpItemsQuantity = 0
-  pickup.forEach(pickupPackage => { pickUpItemsQuantity += pickupPackage.items.length })
-
+  const deliveryItemsQuantity = delivery.reduce((acc, deliveryPackage) => acc + deliveryPackage.items.length, 0)
+  const pickUpItemsQuantity = pickup.reduce((acc, pickupPackage) => acc + pickupPackage.items.length, 0)
   const longestDeliveryEstimate = estimateCalculator.getLatestSla(delivery)
   const longestPickUpEstimate = estimateCalculator.getLatestSla(pickup)
 
