@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import { PrettyAddress } from 'vtex.order-details'
 import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstimate'
@@ -6,7 +6,7 @@ import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstima
 const ShippingHeader = ({ shippingData, index, numPackages }) => {
   const multipleDeliveries = (numPackages > 1)
   return (
-    <div className="flex flex-column">
+    <Fragment>
       <p className="t-heading-4-ns t-heading-5">
         Entrega em casa
         {
@@ -19,7 +19,7 @@ const ShippingHeader = ({ shippingData, index, numPackages }) => {
         </small>
       </p>
       <PrettyAddress address={shippingData.address} />
-    </div>
+    </Fragment>
 )}
 
 ShippingHeader.propTypes = {
