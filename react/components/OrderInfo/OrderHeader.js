@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Button } from 'vtex.styleguide'
 import { FormattedTime } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
+import { SplitOrderContext } from '../../OrderPlaced'
 
 const OrderHeader = ({ orderInfo }) => (
   <div className="flex justify-between items-center flex-wrap">
@@ -12,6 +13,16 @@ const OrderHeader = ({ orderInfo }) => (
       <small className="c-muted-2 t-small">
         Realizado em <FormattedDate date={orderInfo.creationDate} style="short" /> às <FormattedTime value={orderInfo.creationDate} />
       </small>
+      <br/>
+      <SplitOrderContext.Consumer>
+        {splitOrder =>
+          (splitOrder &&
+            <small className="c-muted-2 t-small">
+              Vendido e entregue por <span className="c-action-primary">{orderInfo.sellers[0].name}</span>
+            </small>
+          )
+        }
+      </SplitOrderContext.Consumer>
     </p>
     <div className="flex justify-between flex-wrap">
       <div className="mr3-ns mb4-s mb0-m">
@@ -21,7 +32,7 @@ const OrderHeader = ({ orderInfo }) => (
       </div>
       <div className="mr3-ns mb4-s mb0-m">
         <Button variation="secondary">
-            Ir para seus pedidos
+          Ir para seus pedidos
         </Button>
       </div>
       {
