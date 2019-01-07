@@ -6,15 +6,13 @@ import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstima
 import parcelify from '@vtex/delivery-packages'
 
 const OrderSummary = ({ data }) => {
+  const totalParcels = data.reduce((acc, currOrder) => {
+    acc.push(...parcelify(currOrder))
+    return acc
+  }, [])
 
-  let totParcels = []
-  data.forEach(order => {
-    totParcels.push(...parcelify(order))
-  });
-  // const totalParcels = data.reduce((acc, currOrder) => acc.push(...parcelify(currOrder)), [])
-
-  const delivery = totParcels.filter((deliveryPackage) => deliveryPackage.deliveryChannel === 'delivery')
-  const pickup = totParcels.filter((pickupPackage) => pickupPackage.deliveryChannel === 'pickup-in-point')
+  const delivery = totalParcels.filter((deliveryPackage) => deliveryPackage.deliveryChannel === 'delivery')
+  const pickup = totalParcels.filter((pickupPackage) => pickupPackage.deliveryChannel === 'pickup-in-point')
   const deliveryItemsQuantity = delivery.reduce((acc, deliveryPackage) => acc + deliveryPackage.items.length, 0)
   const pickUpItemsQuantity = pickup.reduce((acc, pickupPackage) => acc + pickupPackage.items.length, 0)
   const longestDeliveryEstimate = estimateCalculator.getLatestSla(delivery)
