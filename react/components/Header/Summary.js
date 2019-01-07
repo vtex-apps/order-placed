@@ -26,18 +26,18 @@ const OrderSummary = ({ data }) => {
         <Box>
           <p className="t-heading-4 tc">A receber</p>
           <hr className="bg-muted-4 bt b--muted-4" />
-          <p><strong>{`${deliveryItemsQuantity} itens`}</strong>{`, separados em ${delivery.length} entregas`}</p>
+          <p><strong>{`${deliveryItemsQuantity} itens`}</strong>, separados em <strong>{delivery.length} entregas</strong></p>
           <p className="t-heading-4"><TranslateEstimate shippingEstimate={longestDeliveryEstimate.shippingEstimate}/></p>
-          <small className="t-small">{`Em ${delivery[0].address.street}, ${delivery[0].address.number}`}</small>
+          <small className="t-small c-muted-2">{`Em ${delivery[0].address.street}, ${delivery[0].address.number}`}</small>
         </Box>
       </div>
       <div className="w-40-l w-90">
         <Box>
           <p className="t-heading-4 tc">A retirar</p>
           <hr className="bg-muted-4 bt b--muted-4" />
-          <p><strong>{`${pickUpItemsQuantity} itens`}</strong>{`, separados em ${pickup.length} retiradas`}</p>
+          <p><strong>{`${pickUpItemsQuantity} itens`}</strong>, separados em <strong>{pickup.length} retiradas</strong></p>
           <p className="t-heading-4"><TranslateEstimate shippingEstimate={longestPickUpEstimate.shippingEstimate}/></p>
-          <small className="t-small">{`Em ${pickup[0].pickupFriendlyName}`}</small>
+          <small className="t-small c-muted-2">{`Em ${pickup[0].pickupFriendlyName}`}</small>
         </Box>
       </div>
     </div>
