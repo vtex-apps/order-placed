@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Header from './components/Header/Header'
 import OrderInfo from './components/OrderInfo/OrderInfo'
-import { orderGroupQuery } from './test-cases/3-pickup-only-2-delivery-only'
+import { orderGroupQuery } from './test-cases/split-order-2-sellers'
 import { profileQuery } from './test-cases/profileQuery'
 
 export const CurrencyContext = React.createContext('BRL')
