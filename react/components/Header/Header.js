@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Warnings from './Warnings'
-import Summary from './Summary'
 import { Button } from 'vtex.styleguide'
 import SuccessIcon from '../../Icons/Success'
 import { profileShape } from '../../proptypes/shapes'
+import Warnings from './Warnings'
+import Summary from './Summary'
 
 const Header = ({ data, profile }) => {
   return (

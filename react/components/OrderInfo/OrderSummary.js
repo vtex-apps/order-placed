@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Box } from 'vtex.styleguide'
-import { parcelShape } from '../../proptypes/shapes'
 import estimateCalculator from '@vtex/estimate-calculator'
 import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstimate'
+import { parcelShape } from '../../proptypes/shapes'
 
 const OrderSummary = ({ delivery, pickup }) => {
   const deliveryItemsQuantity = delivery.reduce((acc, deliveryPackage) => acc + deliveryPackage.items.length, 0)

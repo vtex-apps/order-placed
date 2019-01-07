@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { CurrencyContext } from '../../OrderPlaced'
-
 import { FormattedPrice } from 'vtex.order-details'
+import { CurrencyContext } from '../../OrderPlaced'
 
 const ShippingTotals = ({ items, totals, orderValue }) => {
   const numItems = items.reduce((acc, item) => acc + item.quantity, 0)

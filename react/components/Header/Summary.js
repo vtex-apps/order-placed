@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Box } from 'vtex.styleguide'
-import estimateCalculator from '@vtex/estimate-calculator'
 import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstimate'
 import parcelify from '@vtex/delivery-packages'
+import estimateCalculator from '@vtex/estimate-calculator'
 
 const OrderSummary = ({ data }) => {
   const totalParcels = data.reduce((acc, currOrder) => {

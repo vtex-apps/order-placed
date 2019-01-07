@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { CurrencyContext } from '../../OrderPlaced'
-
 import { ProductImage, ProductPrice } from 'vtex.order-details'
+import { CurrencyContext } from '../../OrderPlaced'
 
 const Product = ({ productInfo }) => (
   <CurrencyContext.Consumer>
