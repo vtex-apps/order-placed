@@ -16,7 +16,7 @@ const paymentGroupSwitch = (payment) => {
 const PaymentMethod = ({ payment }) => (
   <CurrencyContext.Consumer>
     {currency => (<div className="flex flex-column justify-around mr7-ns">
-      <p className="t-heading-6">{paymentGroupSwitch(payment.group)}</p>
+      <p className="t-body c-on-base">{paymentGroupSwitch(payment.group)}</p>
       <PaymentFlagPicker paymentSystem={payment.paymentSystem}>
         {FlagComponent =>
           FlagComponent && (
