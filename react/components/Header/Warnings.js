@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const Info = ({ split }) => {
   const orderWasSplit = (split > 1)
-  const listItem = `tc mv0 w-80-ns w-90 center c-on-base`
-  const botBorder = `b--muted-4 bb`
+  const listItem = 'tc mv0 w-80-ns w-90 center c-on-base'
+  const botBorder = 'b--muted-4 bb'
 
   return (
     <Fragment>
