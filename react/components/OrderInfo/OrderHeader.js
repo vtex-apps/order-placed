@@ -6,10 +6,10 @@ import { FormattedDate } from 'vtex.order-details'
 import { SplitOrderContext } from '../../OrderPlaced'
 
 const OrderHeader = ({ orderInfo }) => (
-  <div className="flex justify-between items-center flex-wrap">
+  <div className="flex justify-between items-center flex-wrap mt7">
     <p className="t-heading-3-ns t-heading-4">
       Pedido #{orderInfo.orderId}
-      <br />
+      <br/>
       <small className="c-muted-2 t-small">
         Realizado em <FormattedDate date={orderInfo.creationDate} style="short" /> às <FormattedTime value={orderInfo.creationDate} />
       </small>
