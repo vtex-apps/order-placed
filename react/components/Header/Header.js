@@ -1,42 +1,48 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Warnings from './Warnings'
-import { Button, IconSuccess } from 'vtex.styleguide'
+import Summary from './Summary'
+import { Button } from 'vtex.styleguide'
+import SuccessIcon from '../../Icons/Success'
 import { profileShape } from '../../proptypes/shapes'
 
-const Header = ({ data, profile }) => (
-  <div className="pt7 sans-serif">
+const Header = ({ data, profile }) => {
+  return (
+    <div className="pt7 sans-serif">
+      <div className="flex justify-center c-success">
+        <SuccessIcon size={50} />
+      </div>
 
-    <div className="flex justify-center c-success">
-      <IconSuccess size={50} />
-    </div>
-
-    <p className="tc c-on-base t-heading-1">
+      <p className="tc c-on-base mt7 mb0 t-heading-4">
         Obrigado por sua compra!
-    </p>
+      </p>
 
-    <div className="center mt4 t-body tc c-muted-1">
-      <p>
-        Você receberá um e-mail no endereço <strong className="nowrap">{profile.email}</strong> com todos os detalhes do seu pedido em até 5 minutos.<br />
-        Lembre-se de conferir sua caixa de lixo eletrônico.
-      </p>
-    </div>
+      <div className="center mt2 t-body tc c-muted-1">
+        <p>
+          Você receberá um e-mail no endereço <strong className="nowrap">{profile.email}</strong> com todos os detalhes do seu pedido em até 5 minutos.<br />
+          Lembre-se de conferir sua caixa de lixo eletrônico.
+        </p>
+      </div>
 
-    <div className="flex justify-center t-action">
-      <p className="tr c-action-primary mr2">
-        <Button variation="secondary">
-          Reenviar email
-        </Button>
-      </p>
-      <p className="tr c-action-primary ml2">
-        <Button variation="secondary">
-          Imprimir página
-        </Button>
-      </p>
+      <div className="flex justify-center t-action mt7">
+        <p className="tr c-action-primary mr2">
+          <Button variation="secondary">
+            Reenviar email
+          </Button>
+        </p>
+        <p className="tr c-action-primary ml2">
+          <Button variation="secondary">
+            Imprimir página
+          </Button>
+        </p>
+      </div>
+      <Warnings split={data.length} />
+      <div className="w-80-ns w-90 center bb b--muted-4">
+        <Summary data={data} />
+      </div>
     </div>
-    <Warnings split={data.length} />
-  </div>
-)
+  )
+}
 
 Header.propTypes = {
   data: PropTypes.array.isRequired,
