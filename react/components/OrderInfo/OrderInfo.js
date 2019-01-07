@@ -9,7 +9,6 @@ import OrderTotal from './OrderTotal'
 import StorePickUp from '../StorePickUp/StorePickUp'
 import OrderSplitNotice from './OrderSplitNotice'
 import OrderSection from './OrderSection'
-
 import { profileShape } from '../../proptypes/shapes'
 
 const OrderInfo = ({ data, profile }) => {

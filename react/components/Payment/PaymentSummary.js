@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PaymentMethod from './PaymentMethod'
 import { IconPlusLines } from 'vtex.styleguide'
+import PaymentMethod from './PaymentMethod'
 import { paymentShape } from '../../proptypes/shapes'
 
 const PaymentSummary = ({ paymentsData }) => (

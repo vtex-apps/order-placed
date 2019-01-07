@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Button } from 'vtex.styleguide'
 import { FormattedTime } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
-import { SplitOrderContext } from '../../OrderPlaced'
 import { withRuntimeContext } from 'render'
+import { SplitOrderContext } from '../../OrderPlaced'
 
 const OrderHeader = ({ orderInfo, runtime }) => {
 
