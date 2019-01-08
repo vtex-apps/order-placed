@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import OrderInfo from './components/OrderInfo/OrderInfo'
 import { profileQuery } from './test-cases/profileQuery'
 import getOrderGroup from './graphql/getOrderGroup.graphql'
+import getSession from './graphql/getSession.gql'
 import withNoSSR from './withNoSSR'
 
 export const CurrencyContext = React.createContext('BRL')
@@ -12,8 +13,7 @@ export const SplitOrderContext = React.createContext(false)
 class OrderPlaced extends Component {
   render() {
     const { orderGroupQuery } = this.props
-    console.log(orderGroupQuery)
-    return orderGroupQuery.loading ? null
+    return (orderGroupQuery.loading) ? null
       : (
         <CurrencyContext.Provider value={orderGroupQuery.orderGroup[0].storePreferencesData.currencyCode}>
           <SplitOrderContext.Provider value={orderGroupQuery.orderGroup.length > 1}>
