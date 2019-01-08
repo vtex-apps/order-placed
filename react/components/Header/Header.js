@@ -36,7 +36,7 @@ const Header = ({ data, profile }) => {
           </Button>
         </p>
       </div>
-      <Warnings split={data.length} />
+      <Warnings data={data} />
       <Summary data={data} />
     </div>
   )
