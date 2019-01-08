@@ -1,8 +1,8 @@
 import React from 'react'
 import { NoSSR } from 'render'
 
-function withNoSSR(Component) {
-  class WithNoSSR extends Component {
+function withoutSSR(Component) {
+  class withoutSSR extends Component {
     render() {
       return (
         <NoSSR>
@@ -12,7 +12,7 @@ function withNoSSR(Component) {
     }
   }
 
-  return WithNoSSR
+  return withoutSSR
 }
 
-export default withNoSSR
+export default withoutSSR
