@@ -7,7 +7,6 @@ import { withRuntimeContext } from 'render'
 import { SplitOrderContext } from '../../OrderPlaced'
 
 const OrderHeader = ({ orderInfo, runtime }) => {
-
   const storeAccount = runtime.account
   const orderSeller = orderInfo.sellers[0].name
 
@@ -15,14 +14,14 @@ const OrderHeader = ({ orderInfo, runtime }) => {
     <div className="flex justify-between items-center flex-wrap mt7">
       <p className="t-heading-3-ns t-heading-4 lh-solid">
         Pedido #{orderInfo.orderId}
-        <br/>
+        <br />
         <small className="c-muted-2 t-small">
           Realizado em <FormattedDate date={orderInfo.creationDate} style="short" /> às <FormattedTime value={orderInfo.creationDate} />
         </small>
-        <br/>
+        <br />
         <SplitOrderContext.Consumer>
           {splitOrder =>
-            ((splitOrder && storeAccount != orderSeller) &&
+            ((splitOrder && storeAccount !== orderSeller) &&
               <small className="c-muted-2 t-small">
                 Vendido e entregue por <span className="c-action-primary">{orderSeller}</span>
               </small>
@@ -54,6 +53,7 @@ const OrderHeader = ({ orderInfo, runtime }) => {
 
 OrderHeader.propTypes = {
   orderInfo: PropTypes.object.isRequired,
+  runtime: PropTypes.object.isRequired,
 }
 
 export default withRuntimeContext(OrderHeader)
