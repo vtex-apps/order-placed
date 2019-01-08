@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box } from 'vtex.styleguide'
+import { PageBlock } from 'vtex.styleguide'
 import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstimate'
 import parcelify from '@vtex/delivery-packages'
 import estimateCalculator from '@vtex/estimate-calculator'
@@ -20,25 +20,23 @@ const OrderSummary = ({ data }) => {
 
   return (delivery.length > 0 && pickup.length > 0) &&
   (
-    <div className="flex justify-around mt7 mb9 flex-wrap w-80-ns w-90 center bb b--muted-4">
-      <div className="w-40-l w-90 mb8">
-        <Box>
+    <div className="w-80 center">
+      <PageBlock variation="half">
+        <div className="mb8 center">
           <p className="t-heading-4 tc">A receber</p>
           <hr className="bg-muted-4 bt b--muted-4" />
           <p><strong>{`${deliveryItemsQuantity} itens`}</strong>, separados em <strong>{delivery.length} entregas</strong></p>
           <p className="t-heading-4"><TranslateEstimate shippingEstimate={longestDeliveryEstimate.shippingEstimate} /></p>
           <small className="t-small c-muted-2">{`Em ${delivery[0].address.street}, ${delivery[0].address.number}`}</small>
-        </Box>
-      </div>
-      <div className="w-40-l w-90 mb8">
-        <Box>
+        </div>
+        <div className="mb8 center">
           <p className="t-heading-4 tc">A retirar</p>
           <hr className="bg-muted-4 bt b--muted-4" />
           <p><strong>{`${pickUpItemsQuantity} itens`}</strong>, separados em <strong>{pickup.length} retiradas</strong></p>
           <p className="t-heading-4"><TranslateEstimate shippingEstimate={longestPickUpEstimate.shippingEstimate} /></p>
           <small className="t-small c-muted-2">{`Em ${pickup[0].pickupFriendlyName}`}</small>
-        </Box>
-      </div>
+        </div>
+      </PageBlock>
     </div>
   )
 }
