@@ -12,7 +12,7 @@ const StorePickUpHeader = ({ shippingData }) => (
         <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} isPickup />
       </small>
     </p>
-    <PrettyAddress address={shippingData.address}/>
+    <PrettyAddress address={shippingData.address} />
   </div>
 )
 

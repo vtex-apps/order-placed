@@ -18,23 +18,24 @@ const OrderSummary = ({ data }) => {
   const longestDeliveryEstimate = estimateCalculator.getLatestSla(delivery)
   const longestPickUpEstimate = estimateCalculator.getLatestSla(pickup)
 
-  return (
-    <div className="flex justify-around mt7 mb9 flex-wrap">
-      <div className="w-40-l w-90">
+  return (delivery.length > 0 && pickup.length > 0) &&
+  (
+    <div className="flex justify-around mt7 mb9 flex-wrap w-80-ns w-90 center bb b--muted-4">
+      <div className="w-40-l w-90 mb8">
         <Box>
           <p className="t-heading-4 tc">A receber</p>
           <hr className="bg-muted-4 bt b--muted-4" />
           <p><strong>{`${deliveryItemsQuantity} itens`}</strong>, separados em <strong>{delivery.length} entregas</strong></p>
-          <p className="t-heading-4"><TranslateEstimate shippingEstimate={longestDeliveryEstimate.shippingEstimate}/></p>
+          <p className="t-heading-4"><TranslateEstimate shippingEstimate={longestDeliveryEstimate.shippingEstimate} /></p>
           <small className="t-small c-muted-2">{`Em ${delivery[0].address.street}, ${delivery[0].address.number}`}</small>
         </Box>
       </div>
-      <div className="w-40-l w-90">
+      <div className="w-40-l w-90 mb8">
         <Box>
           <p className="t-heading-4 tc">A retirar</p>
           <hr className="bg-muted-4 bt b--muted-4" />
           <p><strong>{`${pickUpItemsQuantity} itens`}</strong>, separados em <strong>{pickup.length} retiradas</strong></p>
-          <p className="t-heading-4"><TranslateEstimate shippingEstimate={longestPickUpEstimate.shippingEstimate}/></p>
+          <p className="t-heading-4"><TranslateEstimate shippingEstimate={longestPickUpEstimate.shippingEstimate} /></p>
           <small className="t-small c-muted-2">{`Em ${pickup[0].pickupFriendlyName}`}</small>
         </Box>
       </div>
@@ -43,7 +44,7 @@ const OrderSummary = ({ data }) => {
 }
 
 OrderSummary.propTypes = {
-  data: PropTypes.arrayOf(Object).isRequired
+  data: PropTypes.arrayOf(Object).isRequired,
 }
 
 export default OrderSummary

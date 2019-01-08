@@ -7,7 +7,7 @@ const Shipping = ({ deliveryPackages }) => {
   return (
     deliveryPackages.map((delivery, index) => (
       <div className="mv8 flex flex-column justify-between" key={index}>
-        <ShippingHeader shippingData={delivery} index={index} numPackages={deliveryPackages.length}/>
+        <ShippingHeader shippingData={delivery} index={index} numPackages={deliveryPackages.length} />
         <ProductList products={delivery.items} />
       </div>
     ))

@@ -22,12 +22,12 @@ const OrderInfo = ({ data, profile }) => {
       <div className="mv6 w-80-ns w-90 center">
         <OrderHeader orderInfo={data} />
         {
-          multipleDeliveries
-          && <OrderSplitNotice
-              deliveries={delivery.length}
-              pickups={pickup.length}
-              takeaways={takeaway.length}
-            />
+          multipleDeliveries &&
+          <OrderSplitNotice
+            deliveries={delivery.length}
+            pickups={pickup.length}
+            takeaways={takeaway.length}
+          />
         }
         <CustumerInfo profile={profile} />
         <OrderSection>

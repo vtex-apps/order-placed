@@ -16,7 +16,7 @@ const OrderSplitNotice = ({ deliveries, pickups, takeaways }) => {
 OrderSplitNotice.propTypes = {
   deliveries: PropTypes.number.isRequired,
   pickups: PropTypes.number.isRequired,
-  takeaways: PropTypes.number.isRequired
+  takeaways: PropTypes.number.isRequired,
 }
 
 export default OrderSplitNotice

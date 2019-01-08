@@ -18,8 +18,7 @@ const Info = ({ split }) => {
         <li className={`${listItem} ${(orderWasSplit && botBorder)}`}>
           <p className="pv2">Quando seu pedido estiver a caminho, o código de rastreamento será enviado para o seu e-mail.</p>
         </li>
-        {orderWasSplit
-          &&
+        {orderWasSplit &&
           <li className={listItem}>
             <p className="pt2">Sua compra foi dividida em 2 pedidos, pois alguns itens foram vendidos por lojas parceiras. Isso não afeta seus prazos de entrega.</p>
           </li>

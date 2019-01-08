@@ -37,9 +37,7 @@ const Header = ({ data, profile }) => {
         </p>
       </div>
       <Warnings split={data.length} />
-      <div className="w-80-ns w-90 center bb b--muted-4">
-        <Summary data={data} />
-      </div>
+      <Summary data={data} />
     </div>
   )
 }

@@ -63,17 +63,17 @@ export const orderGroupQuery = {
       'shippingData': {
         'selectedAddresses': [
           {
-          'addressId': '40196370878352',
-          'addressType': 'residential',
-          'receiverName': 'Victor Hugo',
-          'city': 'Rio de Janeiro',
-          'state': 'RJ',
-          'street': 'Praia de Botafogo',
-          'number': '3000',
-          'neighborhood': 'Botafogo',
-          'complement': null,
-          'postalCode': '22250-040',
-          }
+            'addressId': '40196370878352',
+            'addressType': 'residential',
+            'receiverName': 'Victor Hugo',
+            'city': 'Rio de Janeiro',
+            'state': 'RJ',
+            'street': 'Praia de Botafogo',
+            'number': '3000',
+            'neighborhood': 'Botafogo',
+            'complement': null,
+            'postalCode': '22250-040',
+          },
         ],
         'logisticsInfo': [
           {
@@ -100,7 +100,7 @@ export const orderGroupQuery = {
               },
             ],
             'deliveryIds': null,
-            'addressId': '40196370878352'
+            'addressId': '40196370878352',
           },
         ],
       },
