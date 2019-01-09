@@ -20,7 +20,7 @@ const Address = ({ address, pickup }) => {
         pickup && (<p className="c-on-base">{ pickup.pickupFriendlyName }</p>)
       }
       <p>
-        {street}, {number}{complement ? ` - ${complement}` : null}
+        {street}, {number}{complement && ` - ${complement}`}
       </p>
       <p>
         CEP {postalCode}, {neighborhood}
