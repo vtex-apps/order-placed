@@ -20,12 +20,19 @@ const Info = ({ data }) => {
         <li className={`${listItem} ${botBorder}`}>
           <p className="pb2">A aprovação do pagamento pode demorar até 3 dias</p>
         </li>
-        <li className={`${listItem} ${botBorder}`}>
-          <p className="pv2">O prazo de entrega se inicia a partir do momento em que o pagamento é confirmado</p>
-        </li>
-        <li className={`${listItem} ${((orderWasSplit || pickup.length > 0) && botBorder)}`}>
-          <p className="pv2">Quando seu pedido estiver a caminho, o código de rastreamento será enviado para o seu e-mail</p>
-        </li>
+        {delivery.length > 0 &&
+          (
+            <Fragment>
+              <li className={`${listItem} ${botBorder}`}>
+                <p className="pv2">O prazo de entrega se inicia a partir do momento em que o pagamento é confirmado</p>
+              </li>
+              <li className={`${listItem} ${((orderWasSplit || pickup.length > 0) && botBorder)}`}>
+                <p className="pv2">Quando seu pedido estiver a caminho, o código de rastreamento será enviado para o seu e-mail</p>
+              </li>
+            </Fragment>
+          )
+
+        }
         {pickup.length > 0 &&
           <li className={listItem}>
             <p className="pt2">O prazo de retirada se inicia a partir da confirmação do pagamento</p>
