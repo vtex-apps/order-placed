@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
-import { PrettyAddress } from 'vtex.order-details'
+import Address from '../Address'
 
 const StorePickUpHeader = ({ shippingData, index, numPackages }) => {
   const multiplePickups = (numPackages > 1)
@@ -18,7 +18,7 @@ const StorePickUpHeader = ({ shippingData, index, numPackages }) => {
           <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} />
         </small>
       </p>
-      <PrettyAddress address={shippingData.address} />
+      <Address address={shippingData.address} pickup={shippingData} />
     </Fragment>
   )
 }
