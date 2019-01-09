@@ -22,15 +22,14 @@ const Info = ({ data }) => {
               <li className={`${listItem} ${bottomBorder}`}>
                 <p className="pv2">O prazo de entrega se inicia a partir do momento em que o pagamento é confirmado</p>
               </li>
-              <li className={`${listItem} ${((orderWasSplit || pickup.length > 0) && bottomBorder)}`}>
+              <li className={`${listItem} ${((orderWasSplit || pickup.length > 0) ? bottomBorder : '')}`}>
                 <p className="pv2">Quando seu pedido estiver a caminho, o código de rastreamento será enviado para o seu e-mail</p>
               </li>
             </Fragment>
           )
-
         }
         {pickup.length > 0 &&
-          <li className={`${listItem} ${orderWasSplit && bottomBorder}`}>
+          <li className={`${listItem} ${orderWasSplit ? bottomBorder : ''}`}>
             <p className="pt2">O prazo de retirada se inicia a partir da confirmação do pagamento</p>
           </li>
         }
