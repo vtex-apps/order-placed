@@ -18,7 +18,7 @@ export const paymentShape = PropTypes.shape({
 })
 
 export const parcelShape = PropTypes.shape({
-  address: PropTypes.object.isRequired,
+  address: addressShape.isRequired,
   listPrice: PropTypes.number,
   price: PropTypes.number,
   pickupFriendlyName: PropTypes.string,
