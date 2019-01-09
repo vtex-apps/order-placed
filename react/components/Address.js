@@ -15,7 +15,7 @@ const Address = ({ address, pickup }) => {
   } = address
 
   return (
-    <div className="c-muted-1">
+    <div className="c-muted-1 mb3">
       {
         pickup && (<p className="c-on-base">{ pickup.pickupFriendlyName }</p>)
       }

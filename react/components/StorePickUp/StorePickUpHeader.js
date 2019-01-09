@@ -5,6 +5,9 @@ import Address from '../Address'
 
 const StorePickUpHeader = ({ shippingData, index, numPackages }) => {
   const multiplePickups = (numPackages > 1)
+  const receiverName = shippingData.address.receiverName
+  const additionalInfo =
+  shippingData.selectedSlaObj.pickupStoreInfo.additionalInfo
   return (
     <Fragment>
       <p className="t-heading-4-ns t-heading-5">
@@ -18,7 +21,13 @@ const StorePickUpHeader = ({ shippingData, index, numPackages }) => {
           <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} />
         </small>
       </p>
-      <Address address={shippingData.address} pickup={shippingData} />
+      <div className="flex flex-column justify-between flex-row-ns justify-start-l">
+        <Address address={shippingData.address} pickup={shippingData} />
+        <div className="c-on-base">
+          <p>{ receiverName }</p>
+          <p className="c-muted-1">{additionalInfo}</p>
+        </div>
+      </div>
     </Fragment>
   )
 }
