@@ -50,6 +50,7 @@ query GetOrderGroup($orderGroup: String) {
         neighborhood
         complement
         postalCode
+        country
       }
       logisticsInfo {
         itemIndex
