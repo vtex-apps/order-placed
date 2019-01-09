@@ -5,7 +5,7 @@ import { branch, renderComponent } from 'recompose'
 import { Loader } from 'vtex.order-details'
 import Header from './components/Header/Header'
 import OrderInfo from './components/OrderInfo/OrderInfo'
-import { profileQuery } from './test-cases/profileQuery'
+import { profileQuery } from './mocks/profileQuery'
 import getOrderGroup from './graphql/getOrderGroup.graphql'
 import withoutSSR from './withoutSSR'
 
@@ -44,7 +44,7 @@ const queryOptions = {
   name: 'orderGroupQuery',
   options: {
     variables: {
-      orderGroup: '900863205885',
+      orderGroup: '886801542094',
     },
   },
 }
