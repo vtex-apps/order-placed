@@ -34,3 +34,16 @@ export const parcelShape = PropTypes.shape({
   selectedSlaType: PropTypes.string,
   deliveryIds: PropTypes.arrayOf(Object),
 })
+
+export const addressShape = PropTypes.shape({
+  addressId: PropTypes.string.isRequired,
+  addressType: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  complement: PropTypes.string.isRequired,
+  neighborhood: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  postalCode: PropTypes.string.isRequired,
+  receiverName: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
+  street: PropTypes.string.isRequired,
+})
