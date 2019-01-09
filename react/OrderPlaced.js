@@ -18,18 +18,18 @@ class OrderPlaced extends Component {
       <CurrencyContext.Provider value={orderGroupQuery.orderGroup[0].storePreferencesData.currencyCode}>
         <SplitOrderContext.Provider value={orderGroupQuery.orderGroup.length > 1}>
           <div className="center">
-              <Header data={orderGroupQuery.orderGroup} profile={profileQuery.profile} />
-              {
-                orderGroupQuery.orderGroup.map(order => (
-                    <OrderInfo
-                      data={order}
-                      profile={profileQuery.profile}
-                      key={order.orderId}
-                    />
-                  )
-                )
-              }
-            </div>
+            <Header data={orderGroupQuery.orderGroup} profile={profileQuery.profile} />
+            {
+              orderGroupQuery.orderGroup.map(order => (
+                <OrderInfo
+                  data={order}
+                  profile={profileQuery.profile}
+                  key={order.orderId}
+                />
+              )
+              )
+            }
+          </div>
         </SplitOrderContext.Provider>
       </CurrencyContext.Provider>
     )

@@ -164,7 +164,7 @@ export const orderGroupQuery = {
             'itemIndex': 0,
             'shippingEstimate': null,
             'shippingEstimateDate': null,
-            'selectedSla': 'retirada na loja (141125d)',
+            'selectedSla': 'retirada na loja2 (141125d)',
             'deliveryChannel': null,
             'slas': [
               {
@@ -172,6 +172,21 @@ export const orderGroupQuery = {
                 'name': 'retirada na loja (141125d)',
                 'price': 0,
                 'shippingEstimate': '2bd',
+                'deliveryWindow': null,
+                'deliveryChannel': 'pickup-in-point',
+                'pickupStoreInfo': {
+                  'additionalInfo': 'traga a vasilha\n\nnão se esqueça',
+                  'address': '[object Object]',
+                  'dockId': '1c38481',
+                  'friendlyName': 'Loja em Copacabana no Rio de Janeiro',
+                  'isPickupStore': true,
+                },
+              },
+              {
+                'id': 'retirada na loja2 (141125d)',
+                'name': 'retirada na loja2 (141125d)',
+                'price': 0,
+                'shippingEstimate': '5bd',
                 'deliveryWindow': null,
                 'deliveryChannel': 'pickup-in-point',
                 'pickupStoreInfo': {
