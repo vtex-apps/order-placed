@@ -36,7 +36,7 @@ const Info = ({ data }) => {
         }
         {orderWasSplit &&
           <li className={listItem}>
-            <p className="pt2">Sua compra foi dividida em 2 pedidos, pois alguns itens foram vendidos por lojas parceiras. Isso não afeta seus prazos de entrega</p>
+            <p className="pt2">Sua compra foi dividida em { data.length } pedidos, pois alguns itens foram vendidos por lojas parceiras. Isso não afeta seus prazos de entrega</p>
           </li>
         }
       </ul>
