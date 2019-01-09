@@ -18,12 +18,12 @@ const StorePickUpHeader = ({ shippingData, index, numPackages }) => {
         }
         <br />
         <small className="c-muted-2 t-small">
-          <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} />
+          <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} isPickup />
         </small>
       </p>
       <div className="flex flex-column justify-between flex-row-ns justify-start-l">
         <Address address={shippingData.address} pickup={shippingData} />
-        <div className="c-on-base">
+        <div className="c-on-base ml9-l">
           <p>{ receiverName }</p>
           <p className="c-muted-1">{additionalInfo}</p>
         </div>
