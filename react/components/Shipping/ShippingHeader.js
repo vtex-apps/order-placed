@@ -18,7 +18,6 @@ const ShippingHeader = ({ shippingData, index, numPackages }) => {
           <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} />
         </small>
       </p>
-      {/* <PrettyAddress address={shippingData.address} /> */}
       <Address address={shippingData.address} />
     </Fragment>
   )
