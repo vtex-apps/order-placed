@@ -4,11 +4,7 @@ import parcelify from '@vtex/delivery-packages'
 
 const Info = ({ data }) => {
   const orderWasSplit = (data.length > 1)
-  const totalParcels = data.reduce((acc, currOrder) => {
-    acc.push(...parcelify(currOrder))
-    return acc
-  }, [])
-
+  const totalParcels = data.reduce((acc, currOrder) => ([...acc, ...parcelify(currOrder)]), [])
   const delivery = totalParcels.filter((deliveryPackage) => deliveryPackage.deliveryChannel === 'delivery')
   const pickup = totalParcels.filter((pickupPackage) => pickupPackage.deliveryChannel === 'pickup-in-point')
   const listItem = 'tc mv0 w-80-ns w-90 center c-on-base'
