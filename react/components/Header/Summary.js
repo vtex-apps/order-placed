@@ -6,11 +6,7 @@ import parcelify from '@vtex/delivery-packages'
 import estimateCalculator from '@vtex/estimate-calculator'
 
 const OrderSummary = ({ data }) => {
-  const totalParcels = data.reduce((acc, currOrder) => {
-    acc.push(...parcelify(currOrder))
-    return acc
-  }, [])
-
+  const totalParcels = data.reduce((acc, currOrder) => ([...acc, ...parcelify(currOrder)]), [])
   const delivery = totalParcels.filter((deliveryPackage) => deliveryPackage.deliveryChannel === 'delivery')
   const pickup = totalParcels.filter((pickupPackage) => pickupPackage.deliveryChannel === 'pickup-in-point')
   const deliveryItemsQuantity = delivery.reduce((acc, deliveryPackage) => acc + deliveryPackage.items.length, 0)
