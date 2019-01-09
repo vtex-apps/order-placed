@@ -17,6 +17,19 @@ export const paymentShape = PropTypes.shape({
   installments: PropTypes.number.isRequired,
 })
 
+export const addressShape = PropTypes.shape({
+  addressId: PropTypes.string.isRequired,
+  addressType: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  complement: PropTypes.string.isRequired,
+  neighborhood: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  postalCode: PropTypes.string.isRequired,
+  receiverName: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
+  street: PropTypes.string.isRequired,
+})
+
 export const parcelShape = PropTypes.shape({
   address: addressShape.isRequired,
   listPrice: PropTypes.number,
@@ -33,17 +46,4 @@ export const parcelShape = PropTypes.shape({
   deliveryChannel: PropTypes.string.isRequired,
   selectedSlaType: PropTypes.string,
   deliveryIds: PropTypes.arrayOf(Object),
-})
-
-export const addressShape = PropTypes.shape({
-  addressId: PropTypes.string.isRequired,
-  addressType: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  complement: PropTypes.string.isRequired,
-  neighborhood: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  postalCode: PropTypes.string.isRequired,
-  receiverName: PropTypes.string.isRequired,
-  state: PropTypes.string.isRequired,
-  street: PropTypes.string.isRequired,
 })
