@@ -9,7 +9,7 @@ const StorePickUp = ({ pickUpPackages }) => {
       {
         pickUpPackages.map((pickup, index) => (
           <div className="mv8 flex flex-column justify-between" key={index}>
-            <StorePickUpHeader shippingData={pickup} />
+            <StorePickUpHeader shippingData={pickup} index={index} numPackages={pickUpPackages.length} />
             <ProductList products={pickup.items} />
           </div>
         ))
