@@ -28,6 +28,7 @@ export const addressShape = PropTypes.shape({
   receiverName: PropTypes.string.isRequired,
   state: PropTypes.string.isRequired,
   street: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
 })
 
 export const parcelShape = PropTypes.shape({
