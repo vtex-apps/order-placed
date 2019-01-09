@@ -12,21 +12,21 @@ const Info = ({ data }) => {
   const delivery = totalParcels.filter((deliveryPackage) => deliveryPackage.deliveryChannel === 'delivery')
   const pickup = totalParcels.filter((pickupPackage) => pickupPackage.deliveryChannel === 'pickup-in-point')
   const listItem = 'tc mv0 w-80-ns w-90 center c-on-base'
-  const botBorder = 'b--muted-4 bb'
+  const bottomBorder = 'b--muted-4 bb'
 
   return (
     <Fragment>
       <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc">
-        <li className={`${listItem} ${botBorder}`}>
+        <li className={`${listItem} ${bottomBorder}`}>
           <p className="pb2">A aprovação do pagamento pode demorar até 3 dias</p>
         </li>
         {delivery.length > 0 &&
           (
             <Fragment>
-              <li className={`${listItem} ${botBorder}`}>
+              <li className={`${listItem} ${bottomBorder}`}>
                 <p className="pv2">O prazo de entrega se inicia a partir do momento em que o pagamento é confirmado</p>
               </li>
-              <li className={`${listItem} ${((orderWasSplit || pickup.length > 0) && botBorder)}`}>
+              <li className={`${listItem} ${((orderWasSplit || pickup.length > 0) && bottomBorder)}`}>
                 <p className="pv2">Quando seu pedido estiver a caminho, o código de rastreamento será enviado para o seu e-mail</p>
               </li>
             </Fragment>
