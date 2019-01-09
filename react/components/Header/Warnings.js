@@ -30,7 +30,7 @@ const Info = ({ data }) => {
 
         }
         {pickup.length > 0 &&
-          <li className={listItem}>
+          <li className={`${listItem} ${orderWasSplit && bottomBorder}`}>
             <p className="pt2">O prazo de retirada se inicia a partir da confirmação do pagamento</p>
           </li>
         }
