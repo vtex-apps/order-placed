@@ -2,5 +2,12 @@
   "header.thanks": "Obrigado por sua compra!",
   "header.email": "Você receberá um e-mail no endereço {userEmail} com todos os detalhes do seu pedido em até 5 minutos.{lineBreak}Lembre-se de conferir sua caixa de lixo eletrônico.",
   "header.email.button": "Reenviar email",
-  "header.print.button": "Imprimir página"
+  "header.print.button": "Imprimir página",
+  "summary.shipping": "A receber",
+  "summary.pickup": "A retirar",
+  "summary.items": "{itemsQuantity, plural, one {# item} other {# itens}}",
+  "summary.shipping.quantity": "{shippings, plural, one {.} other {, separados em # entregas}}",
+  "summary.shipping.address": "Em {addressStreet}, {addressNumber}",
+  "summary.pickup.quantity": "{pickups, plural, one {.} other {, separados em # retiradas}}",
+  "summary.pickup.friendlyName": "Em {friendlyName}"
 }
