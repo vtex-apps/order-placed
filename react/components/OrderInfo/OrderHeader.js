@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'vtex.styleguide'
-import { FormattedTime } from 'react-intl'
+import { injectIntl, intlShape, FormattedTime, FormattedMessage } from 'react-intl'
+import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
 import { withRuntimeContext } from 'render'
 import { SplitOrderContext } from '../../OrderPlaced'
@@ -13,17 +14,39 @@ const OrderHeader = ({ orderInfo, runtime }) => {
   return (
     <div className="flex justify-between items-center flex-wrap mt7">
       <p className="t-heading-3-ns t-heading-4 lh-solid">
-        Pedido #{orderInfo.orderId}
+        <FormattedMessage
+          id={'order.header.number'}
+          values={
+            { orderId: orderInfo.orderId }
+          }
+        />
         <br />
         <small className="c-muted-2 t-small">
-          Realizado em <FormattedDate date={orderInfo.creationDate} style="short" /> às <FormattedTime value={orderInfo.creationDate} />
+          <FormattedMessage
+            id={'order.header.date'}
+            values={{
+              orderDate: (
+                <FormattedDate date={orderInfo.creationDate} style="short" />
+              ),
+              orderTime: (
+                <FormattedTime value={orderInfo.creationDate} />
+              ),
+            }}
+          />
         </small>
         <br />
         <SplitOrderContext.Consumer>
           {splitOrder =>
             ((splitOrder && storeAccount !== orderSeller) &&
               <small className="c-muted-2 t-small">
-                Vendido e entregue por <span className="c-action-primary">{orderSeller}</span>
+                <FormattedMessage
+                  id={'order.header.seller'}
+                  values={{
+                    seller: (
+                      <span className="c-action-primary">{orderSeller}</span>
+                    ),
+                  }}
+                />
               </small>
             )
           }
@@ -32,18 +55,24 @@ const OrderHeader = ({ orderInfo, runtime }) => {
       <div className="flex justify-between flex-wrap">
         <div className="mr3-ns mb4-s mb0-m">
           <Button variation="secondary">
-            Alterar pedido
+            <FormattedMessage
+              id={'order.header.update.button'}
+            />
           </Button>
         </div>
         <div className="mr3-ns mb4-s mb0-m">
           <Button variation="secondary">
-            Ir para seus pedidos
+            <FormattedMessage
+              id={'order.header.myorders.button'}
+            />
           </Button>
         </div>
         {
           orderInfo.allowCancellation &&
           (<Button variation="danger-tertiary">
-            Cancelar pedido
+            <FormattedMessage
+              id={'order.header.cancel.button'}
+            />
           </Button>)
         }
       </div>
@@ -54,6 +83,10 @@ const OrderHeader = ({ orderInfo, runtime }) => {
 OrderHeader.propTypes = {
   orderInfo: PropTypes.object.isRequired,
   runtime: PropTypes.object.isRequired,
+  intl: intlShape.isRequired,
 }
 
-export default withRuntimeContext(OrderHeader)
+export default compose(
+  withRuntimeContext,
+  injectIntl
+)(OrderHeader)
