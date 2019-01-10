@@ -5,6 +5,7 @@ import SuccessIcon from '../../Icons/Success'
 import { profileShape } from '../../proptypes/shapes'
 import Warnings from './Warnings'
 import Summary from './Summary'
+import { FormattedMessage } from 'react-intl'
 
 const Header = ({ data, profile }) => {
   return (
@@ -14,25 +15,32 @@ const Header = ({ data, profile }) => {
       </div>
 
       <p className="tc c-on-base mt7 mb0 t-heading-4">
-        Obrigado por sua compra!
+        <FormattedMessage id={'header.thanks'} />
       </p>
 
-      <div className="center mt2 t-body tc c-muted-1">
-        <p>
-          Você receberá um e-mail no endereço <strong className="nowrap">{profile.email}</strong> com todos os detalhes do seu pedido em até 5 minutos.<br />
-          Lembre-se de conferir sua caixa de lixo eletrônico.
-        </p>
-      </div>
+      <p className="center mt4 t-body tc c-muted-1">
+        <FormattedMessage
+          id={'header.email'}
+          values={{
+            userEmail: (
+              <strong className="nowrap">{profile.email}</strong>
+            ),
+            lineBreak: (
+              <br />
+            ),
+          }}
+        />
+      </p>
 
       <div className="flex justify-center t-action mt7">
         <p className="tr c-action-primary mr2">
           <Button variation="secondary">
-            Reenviar email
+            <FormattedMessage id={'header.email.button'} />
           </Button>
         </p>
         <p className="tr c-action-primary ml2">
           <Button variation="secondary">
-            Imprimir página
+            <FormattedMessage id={'header.print.button'} />
           </Button>
         </p>
       </div>
