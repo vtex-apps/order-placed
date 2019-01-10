@@ -1,6 +1,6 @@
 import React from 'react'
 import { PaymentFlagPicker } from 'vtex.payment-flags'
-import { paymentShape } from '../../proptypes/shapes'
+import { paymentShape } from '../../shapes'
 import Price from './FormattedPrice'
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 
