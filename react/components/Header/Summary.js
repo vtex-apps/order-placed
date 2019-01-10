@@ -3,19 +3,21 @@ import PropTypes from 'prop-types'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { PageBlock } from 'vtex.styleguide'
 import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstimate'
-import parcelify from '@vtex/delivery-packages'
 import estimateCalculator from '@vtex/estimate-calculator'
+import { getTotalParcelsFromOrderGroup } from '../../utils'
 
 const OrderSummary = ({ data }) => {
-  const totalParcels = data.reduce((acc, currOrder) => ([...acc, ...parcelify(currOrder)]), [])
-  const delivery = totalParcels.filter((deliveryPackage) => deliveryPackage.deliveryChannel === 'delivery')
-  const pickup = totalParcels.filter((pickupPackage) => pickupPackage.deliveryChannel === 'pickup-in-point')
-  const deliveryItemsQuantity = delivery.reduce((acc, deliveryPackage) => acc + deliveryPackage.items.length, 0)
-  const pickUpItemsQuantity = pickup.reduce((acc, pickupPackage) => acc + pickupPackage.items.length, 0)
-  const longestDeliveryEstimate = estimateCalculator.getLatestSla(delivery)
-  const longestPickUpEstimate = estimateCalculator.getLatestSla(pickup)
+  const {
+    totalDeliveries,
+    totalPickUps,
+  } = getTotalParcelsFromOrderGroup(data)
 
-  return (delivery.length > 0 && pickup.length > 0) &&
+  const deliveryItemsQuantity = totalDeliveries.reduce((acc, deliveryPackage) => acc + deliveryPackage.items.length, 0)
+  const pickUpItemsQuantity = totalPickUps.reduce((acc, pickupPackage) => acc + pickupPackage.items.length, 0)
+  const longestDeliveryEstimate = estimateCalculator.getLatestSla(totalDeliveries)
+  const longestPickUpEstimate = estimateCalculator.getLatestSla(totalPickUps)
+
+  return (totalDeliveries.length > 0 && totalPickUps.length > 0) &&
   (
     <div className="w-80 center">
       <PageBlock variation="half">
@@ -34,7 +36,7 @@ const OrderSummary = ({ data }) => {
             <FormattedMessage
               id={'summary.shipping.quantity'}
               values={
-                { shippings: delivery.length }
+                { shippings: totalDeliveries.length }
               }
             />
           </p>
@@ -45,8 +47,8 @@ const OrderSummary = ({ data }) => {
             <FormattedMessage
               id={'summary.shipping.address'}
               values={{
-                addressStreet: delivery[0].address.street,
-                addressNumber: delivery[0].address.number,
+                addressStreet: totalDeliveries[0].address.street,
+                addressNumber: totalDeliveries[0].address.number,
               }}
             />
           </small>
@@ -66,7 +68,7 @@ const OrderSummary = ({ data }) => {
             <FormattedMessage
               id={'summary.pickup.quantity'}
               values={
-                { pickups: pickup.length }
+                { pickups: totalPickUps.length }
               }
             />
           </p>
@@ -76,7 +78,7 @@ const OrderSummary = ({ data }) => {
           <small className="t-small c-muted-2">
             <FormattedMessage
               id={'summary.pickup.friendlyName'}
-              values={{ friendlyName: pickup[0].pickupFriendlyName }}
+              values={{ friendlyName: totalPickUps[0].pickupFriendlyName }}
             />
           </small>
         </div>

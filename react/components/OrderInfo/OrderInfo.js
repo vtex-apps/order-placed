@@ -9,14 +9,16 @@ import OrderTotal from './OrderTotal'
 import StorePickUp from '../StorePickUp/StorePickUp'
 import OrderSplitNotice from './OrderSplitNotice'
 import OrderSection from './OrderSection'
-import { profileShape } from '../../proptypes/shapes'
+import { profileShape } from '../../shapes'
+import { getDeliveryPackagesFromParcels, getPickUpPackagesFromParcels, getTakeAwayPackagesFromParcels } from '../../utils'
 
 const OrderInfo = ({ data, profile }) => {
   const parcels = parcelify(data)
-  const delivery = parcels.filter((deliveryPackage) => deliveryPackage.deliveryChannel === 'delivery')
-  const pickup = parcels.filter((pickupPackage) => pickupPackage.deliveryChannel === 'pickup-in-point')
-  const takeaway = parcels.filter((takeawayPackage) => takeawayPackage.deliveryChannel === 'takeaway')
+  const delivery = getDeliveryPackagesFromParcels(parcels)
+  const pickup = getPickUpPackagesFromParcels(parcels)
+  const takeaway = getTakeAwayPackagesFromParcels(parcels)
   const multipleDeliveries = (delivery.length > 1)
+
   return (
     <Fragment>
       <div className="mv6 w-80-ns w-90 center">
