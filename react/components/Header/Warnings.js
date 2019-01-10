@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import parcelify from '@vtex/delivery-packages'
 
 const Info = ({ data }) => {
@@ -14,28 +15,51 @@ const Info = ({ data }) => {
     <Fragment>
       <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc">
         <li className={`${listItem} ${bottomBorder}`}>
-          <p className="pb2">A aprovação do pagamento pode demorar até 3 dias</p>
+          <p className="pb2">
+            <FormattedMessage
+              id={'warnings.payment.approval'}
+            />
+          </p>
         </li>
         {delivery.length > 0 &&
           (
             <Fragment>
               <li className={`${listItem} ${bottomBorder}`}>
-                <p className="pv2">O prazo de entrega se inicia a partir do momento em que o pagamento é confirmado</p>
+                <p className="pv2">
+                  <FormattedMessage
+                    id={'warnings.delivery.time'}
+                  />
+                </p>
               </li>
               <li className={`${listItem} ${((orderWasSplit || pickup.length > 0) ? bottomBorder : '')}`}>
-                <p className="pv2">Quando seu pedido estiver a caminho, o código de rastreamento será enviado para o seu e-mail</p>
+                <p className="pv2">
+                  <FormattedMessage
+                    id={'warnings.delivery.tracking'}
+                  />
+                </p>
               </li>
             </Fragment>
           )
         }
         {pickup.length > 0 &&
           <li className={`${listItem} ${orderWasSplit ? bottomBorder : ''}`}>
-            <p className="pt2">O prazo de retirada se inicia a partir da confirmação do pagamento</p>
+            <p className="pt2">
+              <FormattedMessage
+                id={'warnings.pickup.time'}
+              />
+            </p>
           </li>
         }
         {orderWasSplit &&
           <li className={listItem}>
-            <p className="pt2">Sua compra foi dividida em { data.length } pedidos, pois alguns itens foram vendidos por lojas parceiras. Isso não afeta seus prazos de entrega</p>
+            <p className="pt2">
+              <FormattedMessage
+                id={'warnings.order.split'}
+                values={
+                  { numOrders: data.length }
+                }
+              />
+            </p>
           </li>
         }
       </ul>
@@ -45,6 +69,7 @@ const Info = ({ data }) => {
 
 Info.propTypes = {
   data: PropTypes.object.isRequired,
+  intl: intlShape.isRequired,
 }
 
-export default Info
+export default injectIntl(Info)
