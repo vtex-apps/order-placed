@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { AddressSummary, AddressRules } from 'vtex.address-form'
-
-import { addressShape } from '../proptypes/shapes'
+import { addressShape } from '../shapes'
 
 const Address = ({ address, pickup }) => {
   return (
