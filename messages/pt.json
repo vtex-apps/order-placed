@@ -26,5 +26,10 @@
   "order.totals.delivery": "Entrega",
   "order.totals.pickup": "Retirada",
   "order.totals.pickup.free": "Grátis",
-  "order.totals.total": "Total"
+  "order.totals.total": "Total",
+  "shipping.header.title": "Entrega em casa",
+  "pickup.header.title": "Retirada no ponto",
+  "common.header.counter": " - n˚ {index} de {numPackages}",
+  "payments.creditcard": "Cartão de crédito",
+  "payments.creditcard.lastDigits": "Final {lastDigits}"
 }
