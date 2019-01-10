@@ -5,9 +5,9 @@ import SuccessIcon from '../../Icons/Success'
 import { profileShape } from '../../shapes'
 import Warnings from './Warnings'
 import Summary from './Summary'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 
-const Header = ({ data, profile }) => {
+const Header = ({ data, profile, intl }) => {
   return (
     <div className="pt7 sans-serif">
       <div className="flex justify-center c-success">
@@ -15,7 +15,7 @@ const Header = ({ data, profile }) => {
       </div>
 
       <p className="tc c-on-base mt7 mb0 t-heading-4">
-        <FormattedMessage id={'header.thanks'} />
+        { intl.formatMessage({ id: 'header.thanks' }) }
       </p>
 
       <p className="center mt4 t-body tc c-muted-1">
@@ -35,12 +35,12 @@ const Header = ({ data, profile }) => {
       <div className="flex justify-center t-action mt7">
         <p className="tr c-action-primary mr2">
           <Button variation="secondary">
-            <FormattedMessage id={'header.email.button'} />
+            { intl.formatMessage({ id: 'header.email.button' }) }
           </Button>
         </p>
         <p className="tr c-action-primary ml2">
           <Button variation="secondary">
-            <FormattedMessage id={'header.print.button'} />
+            { intl.formatMessage({ id: 'header.print.button' }) }
           </Button>
         </p>
       </div>
@@ -53,6 +53,7 @@ const Header = ({ data, profile }) => {
 Header.propTypes = {
   data: PropTypes.array.isRequired,
   profile: profileShape.isRequired,
+  intl: intlShape.isRequired,
 }
 
-export default Header
+export default injectIntl(Header)

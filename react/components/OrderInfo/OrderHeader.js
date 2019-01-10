@@ -6,20 +6,16 @@ import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
 import { withRuntimeContext } from 'render'
 import { SplitOrderContext } from '../../OrderPlaced'
+import { intlMessage } from '../../utils'
 
-const OrderHeader = ({ orderInfo, runtime }) => {
+const OrderHeader = ({ orderInfo, runtime, intl }) => {
   const storeAccount = runtime.account
   const orderSeller = orderInfo.sellers[0].name
 
   return (
     <div className="flex justify-between items-center flex-wrap mt7">
       <p className="t-heading-3-ns t-heading-4 lh-solid">
-        <FormattedMessage
-          id={'order.header.number'}
-          values={
-            { orderId: orderInfo.orderId }
-          }
-        />
+        { intlMessage(intl, 'order.header.number', { orderId: orderInfo.orderId }) }
         <br />
         <small className="c-muted-2 t-small">
           <FormattedMessage
@@ -55,24 +51,18 @@ const OrderHeader = ({ orderInfo, runtime }) => {
       <div className="flex justify-between flex-wrap">
         <div className="mr3-ns mb4-s mb0-m">
           <Button variation="secondary">
-            <FormattedMessage
-              id={'order.header.update.button'}
-            />
+            { intlMessage(intl, 'order.header.update.button') }
           </Button>
         </div>
         <div className="mr3-ns mb4-s mb0-m">
           <Button variation="secondary">
-            <FormattedMessage
-              id={'order.header.myorders.button'}
-            />
+            { intlMessage(intl, 'order.header.myorders.button') }
           </Button>
         </div>
         {
           orderInfo.allowCancellation &&
           (<Button variation="danger-tertiary">
-            <FormattedMessage
-              id={'order.header.cancel.button'}
-            />
+            { intlMessage(intl, 'order.header.cancel.button') }
           </Button>)
         }
       </div>

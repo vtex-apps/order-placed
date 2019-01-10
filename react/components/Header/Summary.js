@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
+import { injectIntl, intlShape } from 'react-intl'
 import { PageBlock } from 'vtex.styleguide'
 import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstimate'
 import estimateCalculator from '@vtex/estimate-calculator'
-import { getTotalParcelsFromOrderGroup } from '../../utils'
+import { getTotalParcelsFromOrderGroup, intlMessage } from '../../utils'
 
-const OrderSummary = ({ data }) => {
+const OrderSummary = ({ data, intl }) => {
   const {
     totalDeliveries,
     totalPickUps,
@@ -23,63 +23,39 @@ const OrderSummary = ({ data }) => {
       <PageBlock variation="half">
         <div className="mb8 center">
           <p className="t-heading-4 tc">
-            <FormattedMessage id={'summary.shipping'} />
+            { intlMessage(intl, 'summary.shipping') }
           </p>
           <hr className="bg-muted-4 bt b--muted-4" />
           <p>
-            <FormattedMessage
-              id={'summary.items'}
-              values={
-                { itemsQuantity: deliveryItemsQuantity }
-              }
-            />
-            <FormattedMessage
-              id={'summary.shipping.quantity'}
-              values={
-                { shippings: totalDeliveries.length }
-              }
-            />
+            { intlMessage(intl, 'summary.items', { itemsQuantity: deliveryItemsQuantity }) }
+            { intlMessage(intl, 'summary.shipping.quantity', { shippings: totalDeliveries.length }) }
           </p>
           <p className="t-heading-4">
             <TranslateEstimate shippingEstimate={longestDeliveryEstimate.shippingEstimate} />
           </p>
           <small className="t-small c-muted-2">
-            <FormattedMessage
-              id={'summary.shipping.address'}
-              values={{
+            {
+              intlMessage(intl, 'summary.shipping.address', {
                 addressStreet: totalDeliveries[0].address.street,
                 addressNumber: totalDeliveries[0].address.number,
-              }}
-            />
+              })
+            }
           </small>
         </div>
         <div className="mb8 center">
           <p className="t-heading-4 tc">
-            <FormattedMessage id={'summary.pickup'} />
+            { intlMessage(intl, 'summary.shipping') }
           </p>
           <hr className="bg-muted-4 bt b--muted-4" />
           <p>
-            <FormattedMessage
-              id={'summary.items'}
-              values={
-                { itemsQuantity: pickUpItemsQuantity }
-              }
-            />
-            <FormattedMessage
-              id={'summary.pickup.quantity'}
-              values={
-                { pickups: totalPickUps.length }
-              }
-            />
+            { intlMessage(intl, 'summary.items', { itemsQuantity: pickUpItemsQuantity }) }
+            { intlMessage(intl, 'summary.pickup.quantity', { pickups: totalPickUps.length }) }
           </p>
           <p className="t-heading-4">
             <TranslateEstimate shippingEstimate={longestPickUpEstimate.shippingEstimate} />
           </p>
           <small className="t-small c-muted-2">
-            <FormattedMessage
-              id={'summary.pickup.friendlyName'}
-              values={{ friendlyName: totalPickUps[0].pickupFriendlyName }}
-            />
+            { intlMessage(intl, 'summary.pickup.friendlyName', { friendlyName: totalPickUps[0].pickupFriendlyName }) }
           </small>
         </div>
       </PageBlock>

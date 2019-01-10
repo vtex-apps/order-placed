@@ -1,19 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Alert } from 'vtex.styleguide'
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
+import { injectIntl, intlShape } from 'react-intl'
+import { intlMessage } from '../../utils'
 
-const OrderSplitNotice = ({ deliveries, pickups, takeaways }) => {
+const OrderSplitNotice = ({ deliveries, pickups, takeaways, intl }) => {
   return (
     <Alert type="success">
-      <FormattedMessage
-        id={'order.split'}
-        values={{
-          deliveries,
-          pickups,
-          takeaways,
-        }}
-      />
+      { intlMessage(intl, 'order.split', {
+        deliveries,
+        pickups,
+        takeaways,
+      }
+      ) }
     </Alert>
   )
 }
