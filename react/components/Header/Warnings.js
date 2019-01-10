@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { getTotalParcelsFromOrderGroup } from '../../utils'
 
-const Info = ({ data }) => {
+const Warnings = ({ data }) => {
   const {
     totalDeliveries,
     totalPickUps,
@@ -68,9 +68,9 @@ const Info = ({ data }) => {
   )
 }
 
-Info.propTypes = {
+Warnings.propTypes = {
   data: PropTypes.object.isRequired,
   intl: intlShape.isRequired,
 }
 
-export default injectIntl(Info)
+export default injectIntl(Warnings)
