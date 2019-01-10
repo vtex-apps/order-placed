@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
-import { getTotalParcelsFromOrderGroup } from '../../utils'
+import { injectIntl, intlShape } from 'react-intl'
+import { getTotalParcelsFromOrderGroup, intlMessage } from '../../utils'
 
-const Warnings = ({ data }) => {
+const Warnings = ({ data, intl }) => {
   const {
     totalDeliveries,
     totalPickUps,
@@ -17,9 +17,7 @@ const Warnings = ({ data }) => {
       <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc">
         <li className={`${listItem} ${bottomBorder}`}>
           <p className="pb2">
-            <FormattedMessage
-              id={'warnings.payment.approval'}
-            />
+            { intlMessage(intl, 'warnings.payment.approval') }
           </p>
         </li>
         {totalDeliveries.length > 0 &&
@@ -27,16 +25,12 @@ const Warnings = ({ data }) => {
             <Fragment>
               <li className={`${listItem} ${bottomBorder}`}>
                 <p className="pv2">
-                  <FormattedMessage
-                    id={'warnings.delivery.time'}
-                  />
+                  { intlMessage(intl, 'warnings.delivery.time') }
                 </p>
               </li>
               <li className={`${listItem} ${((orderWasSplit || totalPickUps.length > 0) ? bottomBorder : '')}`}>
                 <p className="pv2">
-                  <FormattedMessage
-                    id={'warnings.delivery.tracking'}
-                  />
+                  { intlMessage(intl, 'warnings.delivery.tracking') }
                 </p>
               </li>
             </Fragment>
@@ -45,21 +39,14 @@ const Warnings = ({ data }) => {
         {totalPickUps.length > 0 &&
           <li className={`${listItem} ${orderWasSplit ? bottomBorder : ''}`}>
             <p className="pt2">
-              <FormattedMessage
-                id={'warnings.pickup.time'}
-              />
+              { intlMessage(intl, 'warnings.pickup.time') }
             </p>
           </li>
         }
         {orderWasSplit &&
           <li className={listItem}>
             <p className="pt2">
-              <FormattedMessage
-                id={'warnings.order.split'}
-                values={
-                  { numOrders: data.length }
-                }
-              />
+              { intlMessage(intl, 'warnings.order.split', { numOrders: data.length }) }
             </p>
           </li>
         }

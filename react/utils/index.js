@@ -16,3 +16,6 @@ export const getDeliveryPackagesFromParcels = (parcels) =>
 
 export const getTakeAwayPackagesFromParcels = (parcels) =>
   parcels.filter((takeawayPackage) => takeawayPackage.deliveryChannel === 'takeaway')
+
+export const intlMessage = (intl, id, values) =>
+  intl.formatMessage({ id }, values)
