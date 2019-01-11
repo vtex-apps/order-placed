@@ -23,10 +23,11 @@ const PaymentMethod = ({ payment, intl }) => {
 
   return (
     <div className="flex justify-between items-center">
-      <div>
-        <p className="t-body lh-copy c-muted-1">
-          <span className="c-on-base">{paymentGroupSwitch(payment.group, intl)}</span>
-          <br />
+      <div className="t-body">
+        <p className="c-on-base">
+          {paymentGroupSwitch(payment.group, intl)}
+        </p>
+        <p className="c-muted-1">
           {isCreditCard &&
             intlMessage(intl, 'payments.creditcard.lastDigits', { lastDigits: payment.lastDigits })
           }
