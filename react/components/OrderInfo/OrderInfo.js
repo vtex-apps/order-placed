@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import parcelify from '@vtex/delivery-packages'
 import OrderHeader from './OrderHeader'
 import CustumerInfo from './CustumerInfo'
-import PaymentSummary from '../Payment/PaymentSummary'
+import PaymentMethod from '../Payment/PaymentMethod'
 import Shipping from '../Shipping/Shipping'
 import OrderTotal from './OrderTotal'
 import StorePickUp from '../StorePickUp/StorePickUp'
@@ -18,6 +18,7 @@ const OrderInfo = ({ data, profile }) => {
   const pickup = getPickUpPackagesFromParcels(parcels)
   const takeaway = getTakeAwayPackagesFromParcels(parcels)
   const multipleDeliveries = (delivery.length > 1)
+  const paymentsData = data.paymentData.transactions[0].payments
 
   return (
     <Fragment>
@@ -33,7 +34,13 @@ const OrderInfo = ({ data, profile }) => {
         }
         <CustumerInfo profile={profile} />
         <OrderSection>
-          <PaymentSummary paymentsData={data.paymentData.transactions[0].payments} />
+          {
+            paymentsData.map((payment, index) => (
+              <div key={index} className="flex flex-column pb6">
+                <PaymentMethod payment={payment} />
+              </div>
+            ))
+          }
         </OrderSection>
         {
           (pickup.length > 0) &&
