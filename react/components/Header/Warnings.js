@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { injectIntl, intlShape } from 'react-intl'
-import { getTotalParcelsFromOrderGroup, intlMessage } from '../../utils'
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
+import { Button } from 'vtex.styleguide'
+import { getTotalParcelsFromOrderGroup, intlMessage, getPaymentGroupFromOrder } from '../../utils'
+import Price from '../Payment/FormattedPrice'
 
 const Warnings = ({ data, intl }) => {
   const {
@@ -9,6 +11,8 @@ const Warnings = ({ data, intl }) => {
     totalPickUps,
   } = getTotalParcelsFromOrderGroup(data)
   const orderWasSplit = (data.length > 1)
+  const bankInvoices = data.reduce((acc, currOrder) => ([...acc, getPaymentGroupFromOrder(currOrder)]), []).filter(order => order.paymentGroup === 'bankInvoice')
+  const hasBankInvoice = bankInvoices.length > 0
   const listItem = 'tc mv0 w-80-ns w-90 center c-on-base'
   const bottomBorder = 'b--muted-4 bb'
 
@@ -44,11 +48,42 @@ const Warnings = ({ data, intl }) => {
           </li>
         }
         {orderWasSplit &&
-          <li className={listItem}>
+          <li className={`${listItem} ${(hasBankInvoice ? bottomBorder : '')}`}>
             <p className="pt2">
               { intlMessage(intl, 'warnings.order.split', { numOrders: data.length }) }
             </p>
           </li>
+        }
+        {hasBankInvoice &&
+          (
+            <Fragment>
+              <li className={`${listItem} ${bottomBorder}`}>
+                <p className="pv2">
+                  { intlMessage(intl, 'warnings.payment.bankInvoice.approval') }
+                </p>
+              </li>
+              <li className={listItem}>
+                <div className="pt2 pb3">
+                  <p>
+                    <FormattedMessage
+                      id={'warnings.payment.bankInvoice.value'}
+                      values={{
+                        paymentValue: (
+                          <strong><Price value={bankInvoices[0].value} /></strong>
+                        ),
+                        paymentDueDate: (
+                          <strong>Due date</strong>
+                        ),
+                      }}
+                    />
+                  </p>
+                  <Button variation="primary">
+                    { intlMessage(intl, 'payments.bankinvoice.print') }
+                  </Button>
+                </div>
+              </li>
+            </Fragment>
+          )
         }
       </ul>
     </Fragment>
@@ -56,7 +91,7 @@ const Warnings = ({ data, intl }) => {
 }
 
 Warnings.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
   intl: intlShape.isRequired,
 }
 
