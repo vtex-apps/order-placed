@@ -4,13 +4,11 @@ import PaymentMethod from './PaymentMethod'
 import { paymentShape } from '../../shapes'
 
 const PaymentSummary = ({ paymentsData }) => (
-  paymentsData.map((payment, index) => {
-    return (
-      <div key={index} className="flex flex-column pb6">
-        <PaymentMethod payment={payment} />
-      </div>
-    )
-  })
+  paymentsData.map((payment, index) => (
+    <div key={index} className="flex flex-column pb6">
+      <PaymentMethod payment={payment} />
+    </div>
+  ))
 )
 
 PaymentSummary.propTypes = {
