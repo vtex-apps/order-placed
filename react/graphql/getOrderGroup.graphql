@@ -64,11 +64,26 @@ query GetOrderGroup($orderGroup: String) {
           name
           price
           shippingEstimate
-          deliveryWindow
+          deliveryWindow {
+            startDateUtc
+            endDateUtc
+          }
           deliveryChannel
           pickupStoreInfo {
             additionalInfo
-            address
+            address {
+              addressId
+              addressType
+              receiverName
+              city
+              state
+              street
+              number
+              neighborhood
+              complement
+              postalCode
+              country
+            }
             dockId
             friendlyName
             isPickupStore
