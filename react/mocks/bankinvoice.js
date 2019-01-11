@@ -4,7 +4,7 @@ export const orderGroupQuery = {
       'allowCancellation': true,
       'orderId': '902351339185-01',
       'orderGroup': '902351339185',
-      'state': 'on-order-completed',
+      'state': 'payment-approved',
       'salesChannel': '1',
       'creationDate': '2019-01-10T19:22:05.47142Z',
       'timeZoneCreationDate': '2019-01-10T17:22:05.47142',
@@ -115,18 +115,21 @@ export const orderGroupQuery = {
         },
       ],
       'shippingData': {
-        'address': {
-          'addressId': '40196370878352',
-          'addressType': 'residential',
-          'receiverName': 'Victor Hugo',
-          'city': 'Rio de Janeiro',
-          'state': 'RJ',
-          'street': 'Praia de Botafogo',
-          'number': '3000',
-          'neighborhood': 'Botafogo',
-          'complement': null,
-          'postalCode': '22250-040',
-        },
+        'selectedAddresses': [
+          {
+            'addressId': '40196370878352',
+            'addressType': 'residential',
+            'receiverName': 'Victor Hugo',
+            'city': 'Rio de Janeiro',
+            'state': 'RJ',
+            'street': 'Praia de Botafogo',
+            'number': '3000',
+            'neighborhood': 'Botafogo',
+            'complement': null,
+            'postalCode': '22250-040',
+            'country': 'BRA',
+          },
+        ],
         'logisticsInfo': [
           {
             'itemIndex': 0,
@@ -134,6 +137,7 @@ export const orderGroupQuery = {
             'shippingEstimateDate': null,
             'selectedSla': 'agendada-top',
             'deliveryChannel': null,
+            'addressId': '40196370878352',
             'slas': [
               {
                 'id': 'PAC',
@@ -200,7 +204,10 @@ export const orderGroupQuery = {
                 'name': 'agendada-top',
                 'price': 340,
                 'shippingEstimate': '0bd',
-                'deliveryWindow': '[object Object]',
+                'deliveryWindow': {
+                  'startDateUtc': '2019-01-11T08:00:00+00:00',
+                  'endDateUtc': '2019-01-11T09:00:00+00:00',
+                },
                 'deliveryChannel': 'delivery',
                 'pickupStoreInfo': {
                   'additionalInfo': null,
@@ -234,6 +241,7 @@ export const orderGroupQuery = {
             'shippingEstimateDate': null,
             'selectedSla': 'PAC',
             'deliveryChannel': null,
+            'addressId': '40196370878352',
             'slas': [
               {
                 'id': 'PAC',
@@ -259,6 +267,7 @@ export const orderGroupQuery = {
             'shippingEstimateDate': null,
             'selectedSla': 'PAC',
             'deliveryChannel': null,
+            'addressId': '40196370878352',
             'slas': [
               {
                 'id': 'PAC',
@@ -284,13 +293,17 @@ export const orderGroupQuery = {
             'shippingEstimateDate': null,
             'selectedSla': 'agendada',
             'deliveryChannel': null,
+            'addressId': '40196370878352',
             'slas': [
               {
                 'id': 'agendada',
                 'name': 'agendada',
                 'price': 340,
                 'shippingEstimate': '0bd',
-                'deliveryWindow': '[object Object]',
+                'deliveryWindow': {
+                  'startDateUtc': '2019-01-14T12:00:00+00:00',
+                  'endDateUtc': '2019-01-14T13:00:00+00:00',
+                },
                 'deliveryChannel': 'delivery',
                 'pickupStoreInfo': {
                   'additionalInfo': null,
@@ -328,7 +341,7 @@ export const orderGroupQuery = {
       'allowCancellation': true,
       'orderId': '902351339185-02',
       'orderGroup': '902351339185',
-      'state': 'on-order-completed',
+      'state': 'payment-approved',
       'salesChannel': '1',
       'creationDate': '2019-01-10T19:22:05.47142Z',
       'timeZoneCreationDate': '2019-01-10T17:22:05.47142',
@@ -385,18 +398,21 @@ export const orderGroupQuery = {
         },
       ],
       'shippingData': {
-        'address': {
-          'addressId': '40196370878352',
-          'addressType': 'residential',
-          'receiverName': 'Victor Hugo',
-          'city': 'Rio de Janeiro',
-          'state': 'RJ',
-          'street': 'Praia de Botafogo',
-          'number': '3000',
-          'neighborhood': 'Botafogo',
-          'complement': null,
-          'postalCode': '22250-040',
-        },
+        'selectedAddresses': [
+          {
+            'addressId': '40196370878352',
+            'addressType': 'residential',
+            'receiverName': 'Victor Hugo',
+            'city': 'Rio de Janeiro',
+            'state': 'RJ',
+            'street': 'Praia de Botafogo',
+            'number': '3000',
+            'neighborhood': 'Botafogo',
+            'complement': null,
+            'postalCode': '22250-040',
+            'country': 'BRA',
+          },
+        ],
         'logisticsInfo': [
           {
             'itemIndex': 0,
@@ -404,6 +420,7 @@ export const orderGroupQuery = {
             'shippingEstimateDate': null,
             'selectedSla': 'PAC',
             'deliveryChannel': null,
+            'addressId': '40196370878352',
             'slas': [
               {
                 'id': 'PAC',
