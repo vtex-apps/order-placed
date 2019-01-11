@@ -4,6 +4,8 @@
   "header.email.button": "Reenviar email",
   "header.print.button": "Imprimir página",
   "warnings.payment.approval": "A aprovação do pagamento pode demorar até 3 dias",
+  "warnings.payment.bankInvoice.approval": "A aprovação do pagamento do boleto pode demorar até 1 dia útil. Caso não seja pago até o vencimento, o pedido será automaticamente cancelado",
+  "warnings.payment.bankInvoice.value": "Efetue o pagamento no valor de {paymentValue} até {paymentDueDate}, utilizando os dados abaixo",
   "warnings.delivery.time": "O prazo de entrega se inicia a partir do momento em que o pagamento é confirmado",
   "warnings.delivery.tracking": "Quando seu pedido estiver a caminho, o código de rastreamento será enviado para o seu e-mail",
   "warnings.pickup.time": "O prazo de retirada se inicia a partir da confirmação do pagamento",
@@ -31,5 +33,9 @@
   "pickup.header.title": "Retirada no ponto",
   "common.header.counter": " - n˚ {index} de {numPackages}",
   "payments.creditcard": "Cartão de crédito",
-  "payments.creditcard.lastDigits": "Final {lastDigits}"
+  "payments.creditcard.lastDigits": "Final {lastDigits}",
+  "payments.bankinvoice": "Boleto bancário",
+  "payments.bankinvoice.print": "Abrir boleto",
+  "payments.promissory": "Dinheiro",
+  "payments.installments": "{installments, plural, one {à vista} other { (#x)}}"
 }
