@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { intlShape, injectIntl } from 'react-intl'
 import { IconCaretDown, Button } from 'vtex.styleguide'
 import { paymentShape } from '../../shapes'
@@ -47,7 +46,6 @@ const PaymentMethod = ({ payment, intl }) => {
 
 PaymentMethod.propTypes = {
   payment: paymentShape.isRequired,
-  hasAdditionalDetails: PropTypes.isRequired,
   intl: intlShape.isRequired,
 }
 
