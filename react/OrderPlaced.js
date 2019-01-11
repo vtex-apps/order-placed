@@ -5,7 +5,6 @@ import { branch, renderComponent } from 'recompose'
 import { Loader } from 'vtex.order-details'
 import Header from './components/Header/Header'
 import OrderInfo from './components/OrderInfo/OrderInfo'
-import { profileQuery } from './mocks/profileQuery'
 import getOrderGroup from './graphql/getOrderGroup.graphql'
 import withoutSSR from './withoutSSR'
 
@@ -18,12 +17,12 @@ class OrderPlaced extends Component {
       <CurrencyContext.Provider value={orderGroupQuery.orderGroup[0].storePreferencesData.currencyCode}>
         <SplitOrderContext.Provider value={orderGroupQuery.orderGroup.length > 1}>
           <div className="center">
-            <Header data={orderGroupQuery.orderGroup} profile={profileQuery.profile} />
+            <Header data={orderGroupQuery.orderGroup} profile={orderGroupQuery.orderGroup[0].clientProfileData} />
             {
               orderGroupQuery.orderGroup.map(order => (
                 <OrderInfo
                   data={order}
-                  profile={profileQuery.profile}
+                  profile={order.clientProfileData}
                   key={order.orderId}
                 />
               )
