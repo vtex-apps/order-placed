@@ -8,8 +8,17 @@ query GetOrderGroup($orderGroup: String) {
     creationDate
     timeZoneCreationDate
     value
+    clientProfileData {
+      email
+      firstName
+      lastName
+      document
+      documentType
+      phone
+    }
     storePreferencesData {
       currencyCode
+      countryCode
     }
     sellers {
       id
@@ -120,12 +129,19 @@ query GetOrderGroup($orderGroup: String) {
       transactions {
         transactionId
         payments {
-          paymentSystemName
           paymentSystem
+          paymentSystemName
           value
           lastDigits
           group
           installments
+          dueDate
+          url
+          tid
+          bankIssuedInvoiceIdentificationNumber
+          bankIssuedInvoiceIdentificationNumberFormatted
+          bankIssuedInvoiceBarCodeNumber
+          bankIssuedInvoiceBarCodeType
         }
       }
     }
