@@ -18,7 +18,7 @@ const Header = ({ data, profile, intl }) => {
         { intl.formatMessage({ id: 'header.thanks' }) }
       </p>
 
-      <p className="center mt4 t-body tc c-muted-1">
+      <p className="center mt4 t-body tc c-muted-1 lh-copy">
         <FormattedMessage
           id={'header.email'}
           values={{
