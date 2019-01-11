@@ -20,7 +20,7 @@ const Header = ({ data, profile, intl }) => {
 
       <p className="center mt4 t-body tc c-muted-1 lh-copy">
         <FormattedMessage
-          id={'header.email'}
+          id="header.email"
           values={{
             userEmail: (
               <strong className="nowrap">{profile.email}</strong>
