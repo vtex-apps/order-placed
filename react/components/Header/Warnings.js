@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
+import { FormattedDate } from 'vtex.order-details'
 import { Button } from 'vtex.styleguide'
 import { getTotalParcelsFromOrderGroup, intlMessage, getPaymentGroupFromOrder } from '../../utils'
 import Price from '../Payment/FormattedPrice'
@@ -32,7 +33,7 @@ const Warnings = ({ data, intl }) => {
                   { intlMessage(intl, 'warnings.delivery.time') }
                 </p>
               </li>
-              <li className={`${listItem} ${((orderWasSplit || totalPickUps.length > 0) ? bottomBorder : '')}`}>
+              <li className={`${listItem} ${((orderWasSplit || totalPickUps.length > 0 || hasBankInvoice) ? bottomBorder : '')}`}>
                 <p className="pv2">
                   { intlMessage(intl, 'warnings.delivery.tracking') }
                 </p>
@@ -72,7 +73,9 @@ const Warnings = ({ data, intl }) => {
                           <strong><Price value={bankInvoices[0].value} /></strong>
                         ),
                         paymentDueDate: (
-                          <strong>Due date</strong>
+                          <strong>
+                            <FormattedDate date={bankInvoices[0].dueDate} style="short" />
+                          </strong>
                         ),
                       }}
                     />
