@@ -20,24 +20,32 @@ const paymentGroupSwitch = (payment, intl) => {
 
 const PaymentMethod = ({ payment, intl }) => {
   const isCreditCard = payment.group === 'creditCard'
+  const isBankInvoice = payment.group === 'bankInvoice'
 
   return (
     <div className="flex justify-between items-center">
-      <div className="t-body">
+      <div className="t-body lh-solid">
         <p className="c-on-base">{paymentGroupSwitch(payment.group, intl)}</p>
-        <p className="c-muted-1">
-          {isCreditCard &&
-            intlMessage(intl, 'payments.creditcard.lastDigits', {
+        {isCreditCard && (
+          <p className="c-muted-1">
+            {intlMessage(intl, 'payments.creditcard.lastDigits', {
               lastDigits: payment.lastDigits,
             })}
+          </p>
+        )}
+        <p className="c-muted-1">
           <Price value={payment.value} />
           {` ${intlMessage(intl, 'payments.installments', {
             installments: payment.installments,
           })}`}
         </p>
-        <Button variation="primary">
-          {intlMessage(intl, 'payments.bankinvoice.print')}
-        </Button>
+        {isBankInvoice && (
+          <a href={payment.url}>
+            <Button variation="primary">
+              {intlMessage(intl, 'payments.bankinvoice.print')}
+            </Button>
+          </a>
+        )}
       </div>
       <div className="c-action-primary">
         <IconCaretDown />
