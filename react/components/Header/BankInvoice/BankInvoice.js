@@ -14,7 +14,9 @@ const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => {
         {intlMessage(intl, 'header.bankinvoice.header')}
       </p>
       <div className="flex justify-between items-center">
-        <BarCode barCodeNumber={invoiceBarCodeNumber} />
+        {invoiceBarCodeNumber && (
+          <BarCode barCodeNumber={invoiceBarCodeNumber} />
+        )}
         <a href={url}>
           <Button variation="secondary">
             <div className="mr3">
