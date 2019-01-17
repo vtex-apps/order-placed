@@ -1,4 +1,5 @@
 {
+  "country.BRA": "Brasil",
   "header.thanks": "Obrigado por sua compra!",
   "header.email": "Você receberá um e-mail no endereço {userEmail} com todos os detalhes do seu pedido em até 5 minutos.{lineBreak}Lembre-se de conferir sua caixa de lixo eletrônico.",
   "header.email.button": "Reenviar email",
