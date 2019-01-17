@@ -138,10 +138,9 @@ query GetOrderGroup($orderGroup: String) {
           dueDate
           url
           tid
-          bankIssuedInvoiceIdentificationNumber
           bankIssuedInvoiceIdentificationNumberFormatted
           bankIssuedInvoiceBarCodeNumber
-          bankIssuedInvoiceBarCodeType
+          bankIssuedInvoiceBarCodePNG
         }
       }
     }
