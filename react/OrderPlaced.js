@@ -10,6 +10,7 @@ import withoutSSR from './withoutSSR'
 
 export const CurrencyContext = React.createContext('BRL')
 export const SplitOrderContext = React.createContext(false)
+const orderGroupNumberToQuery = '886801542094'
 class OrderPlaced extends Component {
   render() {
     const { orderGroupQuery } = this.props
@@ -47,7 +48,7 @@ const queryOptions = {
   name: 'orderGroupQuery',
   options: {
     variables: {
-      orderGroup: '886801542094',
+      orderGroup: orderGroupNumberToQuery,
     },
   },
 }
