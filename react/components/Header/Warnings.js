@@ -2,13 +2,13 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
-import { Button } from 'vtex.styleguide'
 import {
   getTotalParcelsFromOrderGroup,
   intlMessage,
   getPaymentGroupFromOrder,
 } from '../../utils'
 import Price from '../Payment/FormattedPrice'
+import ButtonLink from '../ButtonLink'
 
 const Warnings = ({ data, intl }) => {
   const { totalDeliveries, totalPickUps } = getTotalParcelsFromOrderGroup(data)
@@ -107,11 +107,9 @@ const Warnings = ({ data, intl }) => {
                     />
                   )}
                 </p>
-                <a href={bankInvoices[0].url} target="_blank">
-                  <Button variation="primary">
-                    {intlMessage(intl, 'payments.bankinvoice.print')}
-                  </Button>
-                </a>
+                <ButtonLink url={bankInvoices[0].url} variation="primary">
+                  {intlMessage(intl, 'payments.bankinvoice.print')}
+                </ButtonLink>
               </div>
             </li>
           </Fragment>

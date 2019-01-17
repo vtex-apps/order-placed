@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'vtex.styleguide'
 import { injectIntl, intlShape } from 'react-intl'
 import { intlMessage } from '../../../utils'
 import PrinterIcon from '../../../Icons/PrinterIcon'
 import BarCode from './BarCode'
 import Embedded from './Embedded'
+import ButtonLink from '../../ButtonLink'
 
 const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => (
   <div className="pv4 w-80-ns w-90 center bb b--muted-5">
@@ -14,14 +14,9 @@ const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => (
     </p>
     <div className="flex justify-between items-center">
       {invoiceBarCodeNumber && <BarCode barCodeNumber={invoiceBarCodeNumber} />}
-      <a href={url} target="_blank">
-        <Button variation="secondary">
-          <div className="mr3">
-            <PrinterIcon />
-          </div>
-          {intlMessage(intl, 'header.bankinvoice.print')}
-        </Button>
-      </a>
+      <ButtonLink url={url} icon={<PrinterIcon />} variation="secondary">
+        {intlMessage(intl, 'header.bankinvoice.print')}
+      </ButtonLink>
     </div>
     <Embedded url={url} />
   </div>
