@@ -107,7 +107,7 @@ const Warnings = ({ data, intl }) => {
                     />
                   )}
                 </p>
-                <a href={bankInvoices[0].url}>
+                <a href={bankInvoices[0].url} target="_blank">
                   <Button variation="primary">
                     {intlMessage(intl, 'payments.bankinvoice.print')}
                   </Button>

@@ -14,7 +14,7 @@ const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => (
     </p>
     <div className="flex justify-between items-center">
       {invoiceBarCodeNumber && <BarCode barCodeNumber={invoiceBarCodeNumber} />}
-      <a href={url}>
+      <a href={url} target="_blank">
         <Button variation="secondary">
           <div className="mr3">
             <PrinterIcon />
