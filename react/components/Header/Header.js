@@ -15,7 +15,7 @@ const Header = ({ data, profile, intl }) => {
       (acc, currOrder) => [...acc, getPaymentGroupFromOrder(currOrder)],
       []
     )
-    .filter(order => order.paymentGroup === 'bankInvoice')
+    .filter(order => (!!order.url))
   const hasBankInvoice = bankInvoices.length > 0
 
   return (
