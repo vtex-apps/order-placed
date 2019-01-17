@@ -1,13 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import { Button } from 'vtex.styleguide'
-import SuccessIcon from '../../Icons/Success'
 import { profileShape } from '../../shapes'
+import { intlMessage, getPaymentGroupFromOrder } from '../../utils'
+import SuccessIcon from '../../Icons/Success'
 import Warnings from './Warnings'
 import Summary from './Summary'
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
+import BankInvoice from '../Header/BankInvoice/BankInvoice'
 
 const Header = ({ data, profile, intl }) => {
+  const bankInvoices = data
+    .reduce(
+      (acc, currOrder) => [...acc, getPaymentGroupFromOrder(currOrder)],
+      []
+    )
+    .filter(order => order.paymentGroup === 'bankInvoice')
+  const hasBankInvoice = bankInvoices.length > 0
+
   return (
     <div className="pt7 sans-serif">
       <div className="flex justify-center c-success">
@@ -15,19 +25,15 @@ const Header = ({ data, profile, intl }) => {
       </div>
 
       <p className="tc c-on-base mt7 mb0 t-heading-4">
-        { intl.formatMessage({ id: 'header.thanks' }) }
+        {intlMessage(intl, 'header.thanks')}
       </p>
 
       <p className="center mt4 t-body tc c-muted-1 lh-copy">
         <FormattedMessage
           id="header.email"
           values={{
-            userEmail: (
-              <strong className="nowrap">{profile.email}</strong>
-            ),
-            lineBreak: (
-              <br />
-            ),
+            userEmail: <strong className="nowrap">{profile.email}</strong>,
+            lineBreak: <br />,
           }}
         />
       </p>
@@ -35,17 +41,23 @@ const Header = ({ data, profile, intl }) => {
       <div className="flex justify-center t-action mt7">
         <p className="tr c-action-primary mr2">
           <Button variation="secondary">
-            { intl.formatMessage({ id: 'header.email.button' }) }
+            {intlMessage(intl, 'header.email.button')}
           </Button>
         </p>
         <p className="tr c-action-primary ml2">
           <Button variation="secondary">
-            { intl.formatMessage({ id: 'header.print.button' }) }
+            {intlMessage(intl, 'header.print.button')}
           </Button>
         </p>
       </div>
       <Warnings data={data} />
       <Summary data={data} />
+      {hasBankInvoice && (
+        <BankInvoice
+          url={bankInvoices[0].url}
+          invoiceBarCodeNumber={bankInvoices[0].barCodeNumber}
+        />
+      )}
     </div>
   )
 }
