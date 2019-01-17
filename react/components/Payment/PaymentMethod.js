@@ -40,7 +40,7 @@ const PaymentMethod = ({ payment, intl }) => {
           })}`}
         </p>
         {isBankInvoice && (
-          <a href={payment.url}>
+          <a href={payment.url} target="_blank">
             <Button variation="primary">
               {intlMessage(intl, 'payments.bankinvoice.print')}
             </Button>
