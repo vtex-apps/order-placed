@@ -1,9 +1,10 @@
 import React from 'react'
 import { intlShape, injectIntl } from 'react-intl'
-import { IconCaretDown, Button } from 'vtex.styleguide'
+import { IconCaretDown } from 'vtex.styleguide'
 import { paymentShape } from '../../shapes'
-import Price from './FormattedPrice'
 import { intlMessage } from '../../utils'
+import ButtonLink from '../ButtonLink'
+import Price from './FormattedPrice'
 
 const paymentGroupSwitch = (payment, intl) => {
   switch (payment) {
@@ -40,11 +41,9 @@ const PaymentMethod = ({ payment, intl }) => {
           })}`}
         </p>
         {isBankInvoice && (
-          <a href={payment.url} target="_blank">
-            <Button variation="primary">
-              {intlMessage(intl, 'payments.bankinvoice.print')}
-            </Button>
-          </a>
+          <ButtonLink url={payment.url} variation="primary">
+            {intlMessage(intl, 'payments.bankinvoice.print')}
+          </ButtonLink>
         )}
       </div>
       <div className="c-action-primary">
