@@ -14,20 +14,24 @@ class OrderPlaced extends Component {
   render() {
     const { orderGroupQuery } = this.props
     return (
-      <CurrencyContext.Provider value={orderGroupQuery.orderGroup[0].storePreferencesData.currencyCode}>
-        <SplitOrderContext.Provider value={orderGroupQuery.orderGroup.length > 1}>
+      <CurrencyContext.Provider
+        value={orderGroupQuery.orderGroup[0].storePreferencesData.currencyCode}
+      >
+        <SplitOrderContext.Provider
+          value={orderGroupQuery.orderGroup.length > 1}
+        >
           <div className="center">
-            <Header data={orderGroupQuery.orderGroup} profile={orderGroupQuery.orderGroup[0].clientProfileData} />
-            {
-              orderGroupQuery.orderGroup.map(order => (
-                <OrderInfo
-                  data={order}
-                  profile={order.clientProfileData}
-                  key={order.orderId}
-                />
-              )
-              )
-            }
+            <Header
+              data={orderGroupQuery.orderGroup}
+              profile={orderGroupQuery.orderGroup[0].clientProfileData}
+            />
+            {orderGroupQuery.orderGroup.map(order => (
+              <OrderInfo
+                data={order}
+                profile={order.clientProfileData}
+                key={order.orderId}
+              />
+            ))}
           </div>
         </SplitOrderContext.Provider>
       </CurrencyContext.Provider>
@@ -51,5 +55,8 @@ const queryOptions = {
 export default compose(
   withoutSSR,
   graphql(getOrderGroup, queryOptions),
-  branch(({ orderGroupQuery }) => orderGroupQuery.loading, renderComponent(Loader))
+  branch(
+    ({ orderGroupQuery }) => orderGroupQuery.loading,
+    renderComponent(Loader)
+  )
 )(OrderPlaced)
