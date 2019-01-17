@@ -12,6 +12,23 @@ export const orderGroupQuery = {
       storePreferencesData: {
         currencyCode: 'BRL',
       },
+      clientProfileData: {
+        email: 'tiaraju@vtex.com',
+        firstName: 'auto',
+        lastName: 'auto',
+        document: '12345678909',
+        documentType: 'cpf',
+        phone: '+552222222222',
+        corporateName: null,
+        tradeName: null,
+        corporateDocument: null,
+        stateInscription: null,
+        corporatePhone: null,
+        isCorporate: false,
+        profileCompleteOnLoading: true,
+        profileErrorOnLoading: false,
+        customerClass: null,
+      },
       sellers: [
         {
           id: '1',
@@ -82,18 +99,21 @@ export const orderGroupQuery = {
         },
       ],
       shippingData: {
-        address: {
-          addressId: '6188580533568',
-          addressType: 'residential',
-          receiverName: 'Victor Hugo',
-          city: 'Rio de Janeiro',
-          state: 'RJ',
-          street: 'Praia de Botafogo',
-          number: '3000',
-          neighborhood: 'Botafogo',
-          complement: null,
-          postalCode: '22250-040',
-        },
+        selectedAddresses: [
+          {
+            addressId: '40196370878352',
+            addressType: 'residential',
+            receiverName: 'Victor Hugo',
+            city: 'Rio de Janeiro',
+            state: 'RJ',
+            street: 'Praia de Botafogo',
+            number: '3000',
+            neighborhood: 'Botafogo',
+            complement: null,
+            postalCode: '22250-040',
+            country: 'BRA',
+          },
+        ],
         logisticsInfo: [
           {
             itemIndex: 0,
@@ -101,6 +121,7 @@ export const orderGroupQuery = {
             shippingEstimateDate: null,
             selectedSla: 'Expressa',
             deliveryChannel: null,
+            addressId: '40196370878352',
             slas: [
               {
                 id: 'Expressa',
@@ -141,6 +162,7 @@ export const orderGroupQuery = {
             shippingEstimateDate: null,
             selectedSla: 'PAC',
             deliveryChannel: null,
+            addressId: '40196370878352',
             slas: [
               {
                 id: 'PAC',
