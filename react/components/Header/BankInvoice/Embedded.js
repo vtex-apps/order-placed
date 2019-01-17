@@ -13,8 +13,7 @@ class Embedded extends Component {
 
   render() {
     const open = this.state.open
-    const url = this.props.url
-    const intl = this.props.intl
+    const { url, intl } = this.props
 
     return (
       <div className="mv9 flex flex-column b--muted-4 ba br3 bw1">
