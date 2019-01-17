@@ -4,7 +4,7 @@ import { injectIntl, intlShape } from 'react-intl'
 import { ButtonWithIcon, IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 import { intlMessage } from '../../../utils'
 
-class Embeded extends Component {
+class Embedded extends Component {
   state = { open: false }
 
   handleClick = () => {
@@ -43,9 +43,9 @@ class Embeded extends Component {
   }
 }
 
-Embeded.propTypes = {
+Embedded.propTypes = {
   url: PropType.string.isRequired,
   intl: intlShape.isRequired,
 }
 
-export default injectIntl(Embeded)
+export default injectIntl(Embedded)

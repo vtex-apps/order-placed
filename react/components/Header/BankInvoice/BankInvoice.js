@@ -5,7 +5,7 @@ import { injectIntl, intlShape } from 'react-intl'
 import { intlMessage } from '../../../utils'
 import PrinterIcon from '../../../Icons/PrinterIcon'
 import BarCode from './BarCode'
-import Embeded from './Embeded'
+import Embedded from './Embedded'
 
 const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => (
   <div className="pv4 w-80-ns w-90 center bb b--muted-5">
@@ -23,7 +23,7 @@ const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => (
         </Button>
       </a>
     </div>
-    <Embeded url={url} />
+    <Embedded url={url} />
   </div>
 )
 
