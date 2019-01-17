@@ -1,5 +1,5 @@
 export const orderGroupQuery = {
-  'orderGroup': [
+  orderGroup: [
     {
       orderId: '875322068843-01',
       orderGroup: '875322068843',
@@ -16,7 +16,8 @@ export const orderGroupQuery = {
           productId: '5',
           refId: null,
           ean: 'sku2caso2',
-          name: 'Produto Variação Valores inteiros Caso 2 SKU Variação 2 caso 2',
+          name:
+            'Produto Variação Valores inteiros Caso 2 SKU Variação 2 caso 2',
           skuName: 'SKU Variação 2 caso 2',
           modalType: null,
           parentItemIndex: null,
@@ -65,17 +66,16 @@ export const orderGroupQuery = {
           },
           quantity: 1,
           seller: '1',
-          sellerChain: [
-            '1',
-          ],
-          imageUrl: 'http://gatewayqa.vteximg.com.br/arquivos/ids/155333-55-55/blusaverde.jpg?v=635694523862500000',
+          sellerChain: ['1'],
+          imageUrl:
+            'http://gatewayqa.vteximg.com.br/arquivos/ids/155333-55-55/blusaverde.jpg?v=635694523862500000',
           detailUrl: '/produto-variacao-inteiros-copy-5-/p',
-          components: [ ],
-          bundleItems: [ ],
-          attachments: [ ],
-          attachmentOfferings: [ ],
-          offerings: [ ],
-          priceTags: [ ],
+          components: [],
+          bundleItems: [],
+          attachments: [],
+          attachmentOfferings: [],
+          offerings: [],
+          priceTags: [],
           availability: 'available',
           measurementUnit: 'un',
           unitMultiplier: 1,
@@ -128,8 +128,8 @@ export const orderGroupQuery = {
         customerClass: null,
       },
       ratesAndBenefitsData: {
-        rateAndBenefitsIdentifiers: [ ],
-        teaser: [ ],
+        rateAndBenefitsIdentifiers: [],
+        teaser: [],
       },
       shippingData: {
         address: {
@@ -145,7 +145,7 @@ export const orderGroupQuery = {
           neighborhood: 'Botafogo',
           complement: null,
           reference: null,
-          geoCoordinates: [ ],
+          geoCoordinates: [],
         },
         logisticsInfo: [
           {
@@ -170,7 +170,7 @@ export const orderGroupQuery = {
                 shippingEstimate: '3bd',
                 shippingEstimateDate: null,
                 lockTTL: '11d',
-                availableDeliveryWindows: [ ],
+                availableDeliveryWindows: [],
                 deliveryWindow: null,
                 price: 9449,
                 listPrice: 9449,
@@ -202,7 +202,7 @@ export const orderGroupQuery = {
                 shippingEstimate: '3bd',
                 shippingEstimateDate: null,
                 lockTTL: '11d',
-                availableDeliveryWindows: [ ],
+                availableDeliveryWindows: [],
                 deliveryWindow: null,
                 price: 9449,
                 listPrice: 9449,
@@ -234,7 +234,7 @@ export const orderGroupQuery = {
                 shippingEstimate: '0bd',
                 shippingEstimateDate: null,
                 lockTTL: '11d',
-                availableDeliveryWindows: [ ],
+                availableDeliveryWindows: [],
                 deliveryWindow: null,
                 price: 0,
                 listPrice: 0,
@@ -255,10 +255,7 @@ export const orderGroupQuery = {
                     neighborhood: 'Botafogo',
                     complement: '',
                     reference: null,
-                    geoCoordinates: [
-                      -43.1822662,
-                      -22.9459858,
-                    ],
+                    geoCoordinates: [-43.1822662, -22.9459858],
                   },
                   additionalInfo: '',
                   dockId: '1d98c80',
@@ -361,10 +358,7 @@ export const orderGroupQuery = {
                     neighborhood: 'Botafogo',
                     complement: '',
                     reference: null,
-                    geoCoordinates: [
-                      -43.1822662,
-                      -22.9459858,
-                    ],
+                    geoCoordinates: [-43.1822662, -22.9459858],
                   },
                   additionalInfo: '',
                   dockId: '1d98c80',
@@ -374,14 +368,7 @@ export const orderGroupQuery = {
                 polygonName: null,
               },
             ],
-            shipsTo: [
-              'BRA',
-              'CAN',
-              'USA',
-              'ARG',
-              'MEX',
-              'PRT',
-            ],
+            shipsTo: ['BRA', 'CAN', 'USA', 'ARG', 'MEX', 'PRT'],
             itemId: '19',
             deliveryChannels: [
               {
@@ -407,7 +394,7 @@ export const orderGroupQuery = {
             neighborhood: 'Botafogo',
             complement: null,
             reference: null,
-            geoCoordinates: [ ],
+            geoCoordinates: [],
           },
         ],
         availableAddresses: [
@@ -424,7 +411,7 @@ export const orderGroupQuery = {
             neighborhood: 'Botafogo',
             complement: null,
             reference: null,
-            geoCoordinates: [ ],
+            geoCoordinates: [],
           },
         ],
         pickupPoints: [
@@ -443,10 +430,7 @@ export const orderGroupQuery = {
               neighborhood: 'Botafogo',
               complement: '',
               reference: null,
-              geoCoordinates: [
-                -43.1822662,
-                -22.9459858,
-              ],
+              geoCoordinates: [-43.1822662, -22.9459858],
             },
             additionalInfo: '',
             id: '1_4',
@@ -481,7 +465,7 @@ export const orderGroupQuery = {
         ],
       },
       paymentData: {
-        giftCards: [ ],
+        giftCards: [],
         transactions: [
           {
             isActive: true,
@@ -494,7 +478,7 @@ export const orderGroupQuery = {
                 paymentSystemName: 'Boleto Bancário',
                 value: 9549,
                 installments: 1,
-                connectorResponses: { },
+                connectorResponses: {},
                 referenceValue: 9549,
                 cardHolder: null,
                 cardNumber: null,
@@ -503,7 +487,8 @@ export const orderGroupQuery = {
                 cvv2: null,
                 expireMonth: null,
                 expireYear: null,
-                url: 'https://homolog.meiosdepagamentobradesco.com.br/apiboleto/Bradesco?token=czh0OEhYaEdxNWtqc21JVTZKS3hIbUdudmk3YzBKbGd3d282eXpQV3JZQVM4Ri9uYzZueXdxVG1WZktyTVBHQQ..',
+                url:
+                  'https://homolog.meiosdepagamentobradesco.com.br/apiboleto/Bradesco?token=czh0OEhYaEdxNWtqc21JVTZKS3hIbUdudmk3YzBKbGd3d282eXpQV3JZQVM4Ri9uYzZueXdxVG1WZktyTVBHQQ..',
                 koinUrl: null,
                 tid: '606312-6m3bdw-1n29',
                 redemptionCode: null,
@@ -514,9 +499,12 @@ export const orderGroupQuery = {
                 dueDate: null,
                 accountId: null,
                 parentAccountId: null,
-                bankIssuedInvoiceIdentificationNumber: '23790001245000000008817123456703177090000009549',
-                bankIssuedInvoiceIdentificationNumberFormatted: '23790.00124 50000.000088 17123.456703 1 77090000009549',
-                bankIssuedInvoiceBarCodeNumber: '23791770900000095490001250000000081712345670',
+                bankIssuedInvoiceIdentificationNumber:
+                  '23790001245000000008817123456703177090000009549',
+                bankIssuedInvoiceIdentificationNumberFormatted:
+                  '23790.00124 50000.000088 17123.456703 1 77090000009549',
+                bankIssuedInvoiceBarCodeNumber:
+                  '23791770900000095490001250000000081712345670',
                 bankIssuedInvoiceBarCodeType: 'i25',
               },
             ],
@@ -552,14 +540,16 @@ export const orderGroupQuery = {
         items: [
           {
             id: '19',
-            name: 'Produto Variação Valores inteiros Caso 2 SKU Variação 2 caso 2',
+            name:
+              'Produto Variação Valores inteiros Caso 2 SKU Variação 2 caso 2',
             skuName: 'SKU Variação 2 caso 2',
             productId: '5',
             refId: null,
             ean: 'sku2caso2',
-            imageUrl: 'http://gatewayqa.vteximg.com.br/arquivos/ids/155333-55-55/blusaverde.jpg?v=635694523862500000',
+            imageUrl:
+              'http://gatewayqa.vteximg.com.br/arquivos/ids/155333-55-55/blusaverde.jpg?v=635694523862500000',
             detailUrl: '/produto-variacao-inteiros-copy-5-/p',
-            assemblyOptions: [ ],
+            assemblyOptions: [],
           },
         ],
       },

@@ -6,18 +6,16 @@ import Address from '../Address'
 import { intlMessage } from '../../utils'
 
 const ShippingHeader = ({ shippingData, index, numPackages, intl }) => {
-  const multipleDeliveries = (numPackages > 1)
+  const multipleDeliveries = numPackages > 1
   return (
     <Fragment>
       <p className="t-heading-4-ns t-heading-5">
-        { intlMessage(intl, 'shipping.header.title') }
-        {
-          multipleDeliveries &&
-            intlMessage(intl, 'common.header.counter', {
-              index: index + 1,
-              numPackages,
-            })
-        }
+        {intlMessage(intl, 'shipping.header.title')}
+        {multipleDeliveries &&
+          intlMessage(intl, 'common.header.counter', {
+            index: index + 1,
+            numPackages,
+          })}
         <br />
         <small className="c-muted-2 t-small">
           <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} />

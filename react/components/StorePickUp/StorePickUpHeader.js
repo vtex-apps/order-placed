@@ -6,30 +6,31 @@ import Address from '../Address'
 import { intlMessage } from '../../utils'
 
 const StorePickUpHeader = ({ shippingData, index, numPackages, intl }) => {
-  const multiplePickups = (numPackages > 1)
+  const multiplePickups = numPackages > 1
   const receiverName = shippingData.address.receiverName
   const additionalInfo =
-  shippingData.selectedSlaObj.pickupStoreInfo.additionalInfo
+    shippingData.selectedSlaObj.pickupStoreInfo.additionalInfo
   return (
     <Fragment>
       <p className="t-heading-4-ns t-heading-5">
-        { intlMessage(intl, 'pickup.header.title') }
-        {
-          multiplePickups &&
+        {intlMessage(intl, 'pickup.header.title')}
+        {multiplePickups &&
           intlMessage(intl, 'common.header.counter', {
             index: index + 1,
             numPackages,
-          })
-        }
+          })}
         <br />
         <small className="c-muted-2 t-small">
-          <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} isPickup />
+          <TranslateEstimate
+            shippingEstimate={shippingData.shippingEstimate}
+            isPickup
+          />
         </small>
       </p>
       <div className="flex flex-column justify-between flex-row-ns justify-start-l">
         <Address address={shippingData.address} pickup={shippingData} />
         <div className="c-on-base ml9-l">
-          <p>{ receiverName }</p>
+          <p>{receiverName}</p>
           <p className="c-muted-1">{additionalInfo}</p>
         </div>
       </div>

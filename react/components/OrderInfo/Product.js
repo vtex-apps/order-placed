@@ -19,12 +19,18 @@ const Product = ({ productInfo }) => (
               {productInfo.quantity}
               {productInfo.measurementUnit
                 ? productInfo.measurementUnit
-                : (productInfo.quantity > 1) ? ' unidades' : ' unidade' }
+                : productInfo.quantity > 1
+                  ? ' unidades'
+                  : ' unidade'}
             </small>
           </p>
         </div>
-        <ProductPrice value={productInfo.price * productInfo.quantity} currency={currency} />
-      </div>)}
+        <ProductPrice
+          value={productInfo.price * productInfo.quantity}
+          currency={currency}
+        />
+      </div>
+    )}
   </CurrencyContext.Consumer>
 )
 

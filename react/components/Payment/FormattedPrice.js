@@ -5,10 +5,13 @@ import { CurrencyContext } from '../../OrderPlaced'
 
 const Price = ({ value }) => (
   <CurrencyContext.Consumer>
-    {
-      currency =>
-        <FormattedNumber currency={currency} style="currency" value={value / 100} />
-    }
+    {currency => (
+      <FormattedNumber
+        currency={currency}
+        style="currency"
+        value={value / 100}
+      />
+    )}
   </CurrencyContext.Consumer>
 )
 
