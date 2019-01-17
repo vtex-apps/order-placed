@@ -107,9 +107,11 @@ const Warnings = ({ data, intl }) => {
                     />
                   )}
                 </p>
-                <Button variation="primary">
-                  {intlMessage(intl, 'payments.bankinvoice.print')}
-                </Button>
+                <a href={bankInvoices[0].url}>
+                  <Button variation="primary">
+                    {intlMessage(intl, 'payments.bankinvoice.print')}
+                  </Button>
+                </a>
               </div>
             </li>
           </Fragment>
