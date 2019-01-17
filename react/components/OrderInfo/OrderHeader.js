@@ -1,7 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'vtex.styleguide'
-import { injectIntl, intlShape, FormattedTime, FormattedMessage } from 'react-intl'
+import {
+  injectIntl,
+  intlShape,
+  FormattedTime,
+  FormattedMessage,
+} from 'react-intl'
 import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
 import { withRuntimeContext } from 'render'
@@ -15,7 +20,9 @@ const OrderHeader = ({ orderInfo, runtime, intl }) => {
   return (
     <div className="flex justify-between items-center flex-wrap mt7">
       <p className="t-heading-3-ns t-heading-4 lh-solid">
-        { intlMessage(intl, 'order.header.number', { orderId: orderInfo.orderId }) }
+        {intlMessage(intl, 'order.header.number', {
+          orderId: orderInfo.orderId,
+        })}
         <br />
         <small className="c-muted-2 t-small">
           <FormattedMessage
@@ -24,16 +31,15 @@ const OrderHeader = ({ orderInfo, runtime, intl }) => {
               orderDate: (
                 <FormattedDate date={orderInfo.creationDate} style="short" />
               ),
-              orderTime: (
-                <FormattedTime value={orderInfo.creationDate} />
-              ),
+              orderTime: <FormattedTime value={orderInfo.creationDate} />,
             }}
           />
         </small>
         <br />
         <SplitOrderContext.Consumer>
           {splitOrder =>
-            ((splitOrder && storeAccount !== orderSeller) &&
+            splitOrder &&
+            storeAccount !== orderSeller && (
               <small className="c-muted-2 t-small">
                 <FormattedMessage
                   id={'order.header.seller'}
@@ -51,20 +57,19 @@ const OrderHeader = ({ orderInfo, runtime, intl }) => {
       <div className="flex justify-between flex-wrap">
         <div className="mr3-ns mb4-s mb0-m">
           <Button variation="secondary">
-            { intlMessage(intl, 'order.header.update.button') }
+            {intlMessage(intl, 'order.header.update.button')}
           </Button>
         </div>
         <div className="mr3-ns mb4-s mb0-m">
           <Button variation="secondary">
-            { intlMessage(intl, 'order.header.myorders.button') }
+            {intlMessage(intl, 'order.header.myorders.button')}
           </Button>
         </div>
-        {
-          orderInfo.allowCancellation &&
-          (<Button variation="danger-tertiary">
-            { intlMessage(intl, 'order.header.cancel.button') }
-          </Button>)
-        }
+        {orderInfo.allowCancellation && (
+          <Button variation="danger-tertiary">
+            {intlMessage(intl, 'order.header.cancel.button')}
+          </Button>
+        )}
       </div>
     </div>
   )

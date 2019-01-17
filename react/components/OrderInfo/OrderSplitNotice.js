@@ -7,12 +7,11 @@ import { intlMessage } from '../../utils'
 const OrderSplitNotice = ({ deliveries, pickups, takeaways, intl }) => {
   return (
     <Alert type="success">
-      { intlMessage(intl, 'order.split', {
+      {intlMessage(intl, 'order.split', {
         deliveries,
         pickups,
         takeaways,
-      }
-      ) }
+      })}
     </Alert>
   )
 }

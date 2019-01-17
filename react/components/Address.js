@@ -6,12 +6,8 @@ import { addressShape } from '../shapes'
 const Address = ({ address, pickup }) => {
   return (
     <div className="c-muted-1 mb5">
-      {
-        pickup && (<p className="c-on-base">{ pickup.pickupFriendlyName }</p>)
-      }
-      <AddressRules
-        country={address.country}
-        shouldUseIOFetching>
+      {pickup && <p className="c-on-base">{pickup.pickupFriendlyName}</p>}
+      <AddressRules country={address.country} shouldUseIOFetching>
         <AddressSummary address={address} />
       </AddressRules>
     </div>

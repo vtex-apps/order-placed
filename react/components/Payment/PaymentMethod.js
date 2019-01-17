@@ -24,18 +24,19 @@ const PaymentMethod = ({ payment, intl }) => {
   return (
     <div className="flex justify-between items-center">
       <div className="t-body">
-        <p className="c-on-base">
-          {paymentGroupSwitch(payment.group, intl)}
-        </p>
+        <p className="c-on-base">{paymentGroupSwitch(payment.group, intl)}</p>
         <p className="c-muted-1">
           {isCreditCard &&
-            intlMessage(intl, 'payments.creditcard.lastDigits', { lastDigits: payment.lastDigits })
-          }
+            intlMessage(intl, 'payments.creditcard.lastDigits', {
+              lastDigits: payment.lastDigits,
+            })}
           <Price value={payment.value} />
-          {` ${intlMessage(intl, 'payments.installments', { installments: payment.installments })}`}
+          {` ${intlMessage(intl, 'payments.installments', {
+            installments: payment.installments,
+          })}`}
         </p>
         <Button variation="primary">
-          { intlMessage(intl, 'payments.bankinvoice.print') }
+          {intlMessage(intl, 'payments.bankinvoice.print')}
         </Button>
       </div>
       <div className="c-action-primary">

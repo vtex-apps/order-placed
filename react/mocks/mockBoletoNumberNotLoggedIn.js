@@ -1,5 +1,5 @@
 export const orderGroupQuery = {
-  'orderGroup': [
+  orderGroup: [
     {
       orderId: 'v1166269bdev-01',
       orderGroup: 'v1166269bdev',
@@ -42,17 +42,16 @@ export const orderGroupQuery = {
           },
           quantity: 1,
           seller: '1',
-          sellerChain: [
-            '1',
-          ],
-          imageUrl: 'https://basedevmkp.vteximg.com.br/arquivos/ids/170000-55-55/menu-bloco.png?v=635663496462100000',
+          sellerChain: ['1'],
+          imageUrl:
+            'https://basedevmkp.vteximg.com.br/arquivos/ids/170000-55-55/menu-bloco.png?v=635663496462100000',
           detailUrl: '/produto-treinamento-04/p',
-          components: [ ],
-          bundleItems: [ ],
-          attachments: [ ],
-          attachmentOfferings: [ ],
-          offerings: [ ],
-          priceTags: [ ],
+          components: [],
+          bundleItems: [],
+          attachments: [],
+          attachmentOfferings: [],
+          offerings: [],
+          priceTags: [],
           availability: 'available',
           measurementUnit: 'un',
           unitMultiplier: 1,
@@ -105,8 +104,8 @@ export const orderGroupQuery = {
         customerClass: null,
       },
       ratesAndBenefitsData: {
-        rateAndBenefitsIdentifiers: [ ],
-        teaser: [ ],
+        rateAndBenefitsIdentifiers: [],
+        teaser: [],
       },
       shippingData: {
         address: {
@@ -122,7 +121,7 @@ export const orderGroupQuery = {
           neighborhood: 'Bot*****',
           complement: '',
           reference: null,
-          geoCoordinates: [ ],
+          geoCoordinates: [],
         },
         logisticsInfo: [
           {
@@ -147,7 +146,7 @@ export const orderGroupQuery = {
                 shippingEstimate: '10bd',
                 shippingEstimateDate: null,
                 lockTTL: '12d',
-                availableDeliveryWindows: [ ],
+                availableDeliveryWindows: [],
                 deliveryWindow: null,
                 price: 0,
                 listPrice: 0,
@@ -164,9 +163,7 @@ export const orderGroupQuery = {
                 polygonName: null,
               },
             ],
-            shipsTo: [
-              'BRA',
-            ],
+            shipsTo: ['BRA'],
             itemId: '3000235',
             deliveryChannels: [
               {
@@ -189,7 +186,7 @@ export const orderGroupQuery = {
             neighborhood: 'Bot*****',
             complement: '',
             reference: null,
-            geoCoordinates: [ ],
+            geoCoordinates: [],
           },
         ],
         availableAddresses: [
@@ -206,13 +203,13 @@ export const orderGroupQuery = {
             neighborhood: 'Bot*****',
             complement: '',
             reference: null,
-            geoCoordinates: [ ],
+            geoCoordinates: [],
           },
         ],
-        pickupPoints: [ ],
+        pickupPoints: [],
       },
       paymentData: {
-        giftCards: [ ],
+        giftCards: [],
         transactions: [
           {
             isActive: true,
@@ -225,7 +222,7 @@ export const orderGroupQuery = {
                 paymentSystemName: 'Boleto Bancário',
                 value: 199,
                 installments: 1,
-                connectorResponses: { },
+                connectorResponses: {},
                 referenceValue: 199,
                 cardHolder: null,
                 cardNumber: null,
@@ -234,7 +231,8 @@ export const orderGroupQuery = {
                 cvv2: null,
                 expireMonth: null,
                 expireYear: null,
-                url: '*t*p*:*/*o*o*o*.*e*o*d*p*g*m*n*o*r*d*s*o*c*m*b*/*p*b*l*t*/*r*d*s*o*t*k*n*M*B*K*d*Q*t*c*l*a*Y*S*p*N*d*Y*w*Y*5*e*9*b*k*O*Z*b*8*N*J*U*h*a*N*Z*N*W*t*b*t*V*Z*Q*Q*b*.*',
+                url:
+                  '*t*p*:*/*o*o*o*.*e*o*d*p*g*m*n*o*r*d*s*o*c*m*b*/*p*b*l*t*/*r*d*s*o*t*k*n*M*B*K*d*Q*t*c*l*a*Y*S*p*N*d*Y*w*Y*5*e*9*b*k*O*Z*b*8*N*J*U*h*a*N*Z*N*W*t*b*t*V*Z*Q*Q*b*.*',
                 koinUrl: null,
                 tid: '1166269-27s45m8-ufq',
                 redemptionCode: null,
@@ -245,9 +243,12 @@ export const orderGroupQuery = {
                 dueDate: null,
                 accountId: null,
                 parentAccountId: null,
-                bankIssuedInvoiceIdentificationNumber: '23790001245000000000501123456707377350000000199',
-                bankIssuedInvoiceIdentificationNumberFormatted: '23790.00124 50000.000005 01123.456707 3 77350000000199',
-                bankIssuedInvoiceBarCodeNumber: '23793773500000001990001250000000000112345670',
+                bankIssuedInvoiceIdentificationNumber:
+                  '23790001245000000000501123456707377350000000199',
+                bankIssuedInvoiceIdentificationNumberFormatted:
+                  '23790.00124 50000.000005 01123.456707 3 77350000000199',
+                bankIssuedInvoiceBarCodeNumber:
+                  '23793773500000001990001250000000000112345670',
                 bankIssuedInvoiceBarCodeType: 'i25',
               },
             ],

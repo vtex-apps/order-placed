@@ -4,14 +4,16 @@ import ShippingHeader from './ShippingHeader'
 import ProductList from '../OrderInfo/ProductList'
 
 const Shipping = ({ deliveryPackages }) => {
-  return (
-    deliveryPackages.map((delivery, index) => (
-      <div className="mv8 flex flex-column justify-between" key={index}>
-        <ShippingHeader shippingData={delivery} index={index} numPackages={deliveryPackages.length} />
-        <ProductList products={delivery.items} />
-      </div>
-    ))
-  )
+  return deliveryPackages.map((delivery, index) => (
+    <div className="mv8 flex flex-column justify-between" key={index}>
+      <ShippingHeader
+        shippingData={delivery}
+        index={index}
+        numPackages={deliveryPackages.length}
+      />
+      <ProductList products={delivery.items} />
+    </div>
+  ))
 }
 
 Shipping.propTypes = {

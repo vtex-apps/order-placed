@@ -1,5 +1,5 @@
 export const orderGroupQuery = {
-  'orderGroup': [
+  orderGroup: [
     {
       orderId: '881550458708-01',
       orderGroup: '881550458708',
@@ -65,14 +65,13 @@ export const orderGroupQuery = {
           },
           quantity: 1,
           seller: '1',
-          sellerChain: [
-            '1',
-          ],
-          imageUrl: 'http://qamarketplace.vteximg.com.br/arquivos/ids/155400-55-55/Novalgina.jpg?v=635985172600570000',
+          sellerChain: ['1'],
+          imageUrl:
+            'http://qamarketplace.vteximg.com.br/arquivos/ids/155400-55-55/Novalgina.jpg?v=635985172600570000',
           detailUrl: '/novalgina/p',
-          components: [ ],
-          bundleItems: [ ],
-          attachments: [ ],
+          components: [],
+          bundleItems: [],
+          attachments: [],
           attachmentOfferings: [
             {
               name: 'Receita',
@@ -80,26 +79,21 @@ export const orderGroupQuery = {
               schema: {
                 Nome1: {
                   maximumNumberOfCharacters: 5,
-                  domain: [ ],
+                  domain: [],
                 },
                 Teste: {
                   maximumNumberOfCharacters: 10,
-                  domain: [
-                    '0987654321',
-                  ],
+                  domain: ['0987654321'],
                 },
                 Embalagem: {
                   maximumNumberOfCharacters: 6,
-                  domain: [
-                    'true',
-                    ' false',
-                  ],
+                  domain: ['true', ' false'],
                 },
               },
             },
           ],
-          offerings: [ ],
-          priceTags: [ ],
+          offerings: [],
+          priceTags: [],
           availability: 'available',
           measurementUnit: 'un',
           unitMultiplier: 1,
@@ -152,8 +146,8 @@ export const orderGroupQuery = {
         customerClass: null,
       },
       ratesAndBenefitsData: {
-        rateAndBenefitsIdentifiers: [ ],
-        teaser: [ ],
+        rateAndBenefitsIdentifiers: [],
+        teaser: [],
       },
       shippingData: {
         address: {
@@ -169,7 +163,7 @@ export const orderGroupQuery = {
           neighborhood: 'Botafogo',
           complement: null,
           reference: null,
-          geoCoordinates: [ ],
+          geoCoordinates: [],
         },
         logisticsInfo: [
           {
@@ -194,7 +188,7 @@ export const orderGroupQuery = {
                 shippingEstimate: '3h',
                 shippingEstimateDate: null,
                 lockTTL: '12d',
-                availableDeliveryWindows: [ ],
+                availableDeliveryWindows: [],
                 deliveryWindow: null,
                 price: 750,
                 listPrice: 750,
@@ -226,7 +220,7 @@ export const orderGroupQuery = {
                 shippingEstimate: '0bd',
                 shippingEstimateDate: null,
                 lockTTL: '12d',
-                availableDeliveryWindows: [ ],
+                availableDeliveryWindows: [],
                 deliveryWindow: null,
                 price: 1500,
                 listPrice: 1500,
@@ -258,7 +252,7 @@ export const orderGroupQuery = {
                 shippingEstimate: '0d',
                 shippingEstimateDate: null,
                 lockTTL: '12d',
-                availableDeliveryWindows: [ ],
+                availableDeliveryWindows: [],
                 deliveryWindow: null,
                 price: 1700,
                 listPrice: 1700,
@@ -290,7 +284,7 @@ export const orderGroupQuery = {
                 shippingEstimate: '3bd',
                 shippingEstimateDate: null,
                 lockTTL: '12d',
-                availableDeliveryWindows: [ ],
+                availableDeliveryWindows: [],
                 deliveryWindow: null,
                 price: 1153,
                 listPrice: 1153,
@@ -311,10 +305,7 @@ export const orderGroupQuery = {
                     neighborhood: 'Copacabana',
                     complement: '',
                     reference: null,
-                    geoCoordinates: [
-                      -43.18686,
-                      -22.9697781,
-                    ],
+                    geoCoordinates: [-43.18686, -22.9697781],
                   },
                   additionalInfo: '',
                   dockId: '1',
@@ -324,9 +315,7 @@ export const orderGroupQuery = {
                 polygonName: null,
               },
             ],
-            shipsTo: [
-              'BRA',
-            ],
+            shipsTo: ['BRA'],
             itemId: '15',
             deliveryChannels: [
               {
@@ -352,7 +341,7 @@ export const orderGroupQuery = {
             neighborhood: 'Botafogo',
             complement: null,
             reference: null,
-            geoCoordinates: [ ],
+            geoCoordinates: [],
           },
         ],
         availableAddresses: [
@@ -369,7 +358,7 @@ export const orderGroupQuery = {
             neighborhood: 'Botafogo',
             complement: null,
             reference: null,
-            geoCoordinates: [ ],
+            geoCoordinates: [],
           },
         ],
         pickupPoints: [
@@ -388,19 +377,16 @@ export const orderGroupQuery = {
               neighborhood: 'Copacabana',
               complement: '',
               reference: null,
-              geoCoordinates: [
-                -43.18686,
-                -22.9697781,
-              ],
+              geoCoordinates: [-43.18686, -22.9697781],
             },
             additionalInfo: '',
             id: '1_1efe51a',
-            businessHours: [ ],
+            businessHours: [],
           },
         ],
       },
       paymentData: {
-        giftCards: [ ],
+        giftCards: [],
         transactions: [
           {
             isActive: true,
@@ -413,7 +399,7 @@ export const orderGroupQuery = {
                 paymentSystemName: 'Boleto Bancário',
                 value: 6514,
                 installments: 1,
-                connectorResponses: { },
+                connectorResponses: {},
                 referenceValue: 6514,
                 cardHolder: null,
                 cardNumber: null,
@@ -422,7 +408,8 @@ export const orderGroupQuery = {
                 cvv2: null,
                 expireMonth: null,
                 expireYear: null,
-                url: 'https://qamarketplace.vtexpayments.com.br:443/BankIssuedInvoice/Transaction/B435F7822D254EBBB452DA84DFE60DCD/Payment/F3E16B58FA6F45558740D0046734B8B6/Installment/{Installment}',
+                url:
+                  'https://qamarketplace.vtexpayments.com.br:443/BankIssuedInvoice/Transaction/B435F7822D254EBBB452DA84DFE60DCD/Payment/F3E16B58FA6F45558740D0046734B8B6/Installment/{Installment}',
                 koinUrl: null,
                 tid: null,
                 redemptionCode: null,
@@ -476,9 +463,10 @@ export const orderGroupQuery = {
             productId: '19',
             refId: null,
             ean: 'Sku Entrega Agendada',
-            imageUrl: 'http://qamarketplace.vteximg.com.br/arquivos/ids/155368-55-55/Produto-com-entrega-agendada.png?v=635830207919730000',
+            imageUrl:
+              'http://qamarketplace.vteximg.com.br/arquivos/ids/155368-55-55/Produto-com-entrega-agendada.png?v=635830207919730000',
             detailUrl: '/produto-entregaga-agendada/p',
-            assemblyOptions: [ ],
+            assemblyOptions: [],
           },
           {
             id: '15',
@@ -487,7 +475,8 @@ export const orderGroupQuery = {
             productId: '4',
             refId: 'produtohomologação',
             ean: 'produtohomologação',
-            imageUrl: 'http://qamarketplace.vteximg.com.br/arquivos/ids/155400-55-55/Novalgina.jpg?v=635985172600570000',
+            imageUrl:
+              'http://qamarketplace.vteximg.com.br/arquivos/ids/155400-55-55/Novalgina.jpg?v=635985172600570000',
             detailUrl: '/novalgina/p',
             assemblyOptions: [
               {
@@ -497,20 +486,15 @@ export const orderGroupQuery = {
                 inputValues: {
                   Nome1: {
                     maximumNumberOfCharacters: 5,
-                    domain: [ ],
+                    domain: [],
                   },
                   Teste: {
                     maximumNumberOfCharacters: 10,
-                    domain: [
-                      '0987654321',
-                    ],
+                    domain: ['0987654321'],
                   },
                   Embalagem: {
                     maximumNumberOfCharacters: 6,
-                    domain: [
-                      'true',
-                      ' false',
-                    ],
+                    domain: ['true', ' false'],
                   },
                 },
                 composition: null,
