@@ -54,7 +54,7 @@ const OrderSummary = ({ data, intl }) => {
           </div>
           <div className="mb8 center">
             <p className="t-heading-4 tc">
-              {intlMessage(intl, 'summary.shipping')}
+              {intlMessage(intl, 'summary.pickup')}
             </p>
             <hr className="bg-muted-4 bt b--muted-4" />
             <p>
