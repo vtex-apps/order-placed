@@ -23,6 +23,7 @@ const StorePickUpHeader = ({ shippingData, index, numPackages, intl }) => {
         <small className="c-muted-2 t-small">
           <TranslateEstimate
             shippingEstimate={shippingData.shippingEstimate}
+            scheduled={shippingData.deliveryWindow}
             isPickup
           />
         </small>

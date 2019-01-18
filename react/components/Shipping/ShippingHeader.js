@@ -18,7 +18,10 @@ const ShippingHeader = ({ shippingData, index, numPackages, intl }) => {
           })}
         <br />
         <small className="c-muted-2 t-small">
-          <TranslateEstimate shippingEstimate={shippingData.shippingEstimate} />
+          <TranslateEstimate
+            shippingEstimate={shippingData.shippingEstimate}
+            scheduled={shippingData.deliveryWindow}
+          />
         </small>
       </p>
       <Address address={shippingData.address} />
