@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ShippingHeader from './ShippingHeader'
-import ProductList from '../OrderInfo/ProductList'
+import ProductList from '../Product/ProductList'
 
 const Shipping = ({ deliveryPackages }) => {
   return deliveryPackages.map((delivery, index) => (
