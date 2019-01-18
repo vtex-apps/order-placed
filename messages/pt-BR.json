@@ -44,5 +44,6 @@
   "payments.bankinvoice": "Boleto bancário",
   "payments.bankinvoice.print": "Abrir boleto",
   "payments.promissory": "Dinheiro",
-  "payments.installments": "{installments, plural, one {à vista} other { (#x)}}"
+  "payments.installments": "{installments, plural, one {à vista} other { (#x)}}",
+  "products.quantity": "{quantity, plural, one {# unidade} other {# unidades}}"
 }
