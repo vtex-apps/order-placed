@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 
 export const profileShape = PropTypes.shape({
-  id: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   document: PropTypes.string.isRequired,
+  documentType: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
 })
 
@@ -21,7 +21,7 @@ export const addressShape = PropTypes.shape({
   addressId: PropTypes.string.isRequired,
   addressType: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
-  complement: PropTypes.string.isRequired,
+  complement: PropTypes.string,
   neighborhood: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
   postalCode: PropTypes.string.isRequired,
