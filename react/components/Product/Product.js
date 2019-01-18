@@ -1,29 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { injectIntl, intlShape } from 'react-intl'
 import { ProductImage, ProductPrice } from 'vtex.order-details'
 import { CurrencyContext } from '../../OrderPlaced'
+import { intlMessage } from '../../utils'
 
-const Product = ({ productInfo }) => (
+const Product = ({ productInfo, intl }) => (
   <CurrencyContext.Consumer>
     {currency => (
-      <div className="flex items-center justify-between">
+      <div className="flex justify-between mv5">
         <div className="flex items-center">
           <ProductImage
             url={productInfo.imageUrl}
             alt={productInfo.name}
-            className="w3 mr5"
+            className="w3 h3 mr5"
           />
-          <p href={productInfo.detailUrl} className="t-body" target="_blank">
-            {productInfo.name} <br />
-            <small className="t-mini">
-              {productInfo.quantity}
-              {productInfo.measurementUnit
-                ? productInfo.measurementUnit
-                : productInfo.quantity > 1
-                  ? ' unidades'
-                  : ' unidade'}
+          <div className="flex flex-column justify-between">
+            <p
+              href={productInfo.detailUrl}
+              className="t-body c-muted-1 mt0"
+              target="_blank"
+            >
+              {productInfo.name}
+            </p>
+            <small className="t-mini c-muted-1">
+              {intlMessage(intl, 'products.quantity', {
+                quantity: productInfo.quantity,
+              })}
             </small>
-          </p>
+          </div>
         </div>
         <ProductPrice
           value={productInfo.price * productInfo.quantity}
@@ -36,6 +41,7 @@ const Product = ({ productInfo }) => (
 
 Product.propTypes = {
   productInfo: PropTypes.object.isRequired,
+  intl: intlShape.isRequired,
 }
 
-export default Product
+export default injectIntl(Product)
