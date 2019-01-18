@@ -44,5 +44,6 @@
   "payments.bankinvoice": "Bank Invoice",
   "payments.bankinvoice.print": "Open bank invoice",
   "payments.promissory": "Cash",
-  "payments.installments": "({installments}x)"
+  "payments.installments": "({installments}x)",
+  "products.quantity": "{quantity, plural, one {# unity} other {# unities}}"
 }
