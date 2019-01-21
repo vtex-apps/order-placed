@@ -22,6 +22,14 @@ const Product = ({ productInfo, intl }) => (
               target="_blank"
             >
               {productInfo.name}
+              {productInfo.measurementUnit !== 'un' && (
+                <small className="t-mini c-on-base">
+                  <br />
+                  {`${productInfo.unitMultiplier} ${
+                    productInfo.measurementUnit
+                  }`}
+                </small>
+              )}
             </p>
             <p className="t-mini c-muted-1">
               {intlMessage(intl, 'products.quantity', {
