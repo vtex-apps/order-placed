@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1-beta",
   "dependencies": {
     "@vtex/intl-equalizer": "^2.0.1",
     "babel-eslint": "^10.0.1",
