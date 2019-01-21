@@ -5,9 +5,7 @@
   "title": "Order Placed",
   "description": "",
   "mustUpdateAt": "2019-10-15",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },
@@ -21,10 +19,9 @@
     "vtex.styleguide": "9.x",
     "vtex.store-graphql": "2.x",
     "vtex.order-details": "0.0.1-beta",
-    "vtex.payment-flags": "1.x",
-    "vtex.shipping-estimate-translator": "1.x",
-    "vtex.address-form": "3.x",
-    "vtex.profile-form": "2.x"
+    "vtex.shipping-estimate-translator": "2.x",
+    "vtex.address-form": "4.x",
+    "vtex.profile-form": "3.x"
   },
   "credentialType": "absolute",
   "policies": [
