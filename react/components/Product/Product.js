@@ -8,32 +8,34 @@ import { intlMessage } from '../../utils'
 const Product = ({ productInfo, intl }) => (
   <CurrencyContext.Consumer>
     {currency => (
-      <div className="flex justify-between mv5">
+      <div className="flex justify-between mv4">
         <div className="flex items-center">
           <ProductImage
             url={productInfo.imageUrl}
             alt={productInfo.name}
-            className="w3 h3 mr5"
+            className="w3 mr5"
           />
-          <div className="flex flex-column justify-between">
+          <div className="flex flex-column items-between h-100">
             <p
               href={productInfo.detailUrl}
-              className="t-body c-muted-1 mt0"
+              className="t-body c-muted-1"
               target="_blank"
             >
               {productInfo.name}
             </p>
-            <small className="t-mini c-muted-1">
+            <p className="t-mini c-muted-1">
               {intlMessage(intl, 'products.quantity', {
                 quantity: productInfo.quantity,
               })}
-            </small>
+            </p>
           </div>
         </div>
-        <ProductPrice
-          value={productInfo.price * productInfo.quantity}
-          currency={currency}
-        />
+        <p>
+          <ProductPrice
+            value={productInfo.price * productInfo.quantity}
+            currency={currency}
+          />
+        </p>
       </div>
     )}
   </CurrencyContext.Consumer>
