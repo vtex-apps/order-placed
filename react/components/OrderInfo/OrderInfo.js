@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import parcelify from '@vtex/delivery-packages'
 import OrderHeader from './OrderHeader'
-import CustumerInfo from '../CustumerInfo'
+import CustomerInfo from '../CustomerInfo'
 import PaymentMethod from '../Payment/PaymentMethod'
 import Shipping from '../Shipping/Shipping'
 import OrderTotal from './OrderTotal'
@@ -35,7 +35,7 @@ const OrderInfo = ({ data, profile }) => {
             takeaways={takeaway.length}
           />
         )}
-        <CustumerInfo profile={profile} />
+        <CustomerInfo profile={profile} />
         <OrderSection>
           {paymentsData.map((payment, index) => (
             <div key={index} className="flex flex-column pb6">

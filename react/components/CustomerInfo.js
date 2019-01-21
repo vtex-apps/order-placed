@@ -3,13 +3,13 @@ import { profileShape } from '../shapes'
 import { intlShape, injectIntl } from 'react-intl'
 import { ProfileRules, ProfileSummary } from 'vtex.profile-form'
 
-const CustumerInfo = ({ profile, intl }) => (
+const CustomerInfo = ({ profile, intl }) => (
   <div className="flex flex-column c-on-base">
     <ProfileRules country={intl.locale} shouldUseIOFetching>
       <ProfileSummary profile={profile}>
         {({ personalData }) => (
-          <ul className="list pl0 c-on-base">
-            <li className="pv2 c-on-base">
+          <ul className="list pl0">
+            <li className="pv2">
               {`${personalData.firstName.value} ${personalData.lastName.value}`}
             </li>
             <li className="pv2 c-muted-2">{personalData.email.value}</li>
@@ -22,9 +22,9 @@ const CustumerInfo = ({ profile, intl }) => (
   </div>
 )
 
-CustumerInfo.propTypes = {
+CustomerInfo.propTypes = {
   profile: profileShape.isRequired,
   intl: intlShape.isRequired,
 }
 
-export default injectIntl(CustumerInfo)
+export default injectIntl(CustomerInfo)
