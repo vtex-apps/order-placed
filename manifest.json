@@ -18,7 +18,7 @@
     "vtex.order-placed-graphql": "0.x",
     "vtex.styleguide": "9.x",
     "vtex.store-graphql": "2.x",
-    "vtex.order-details": "0.x",
+    "vtex.order-details": "0.0.1-beta",
     "vtex.payment-flags": "1.x",
     "vtex.shipping-estimate-translator": "1.x",
     "vtex.address-form": "3.x",
