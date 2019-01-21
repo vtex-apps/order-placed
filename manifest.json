@@ -5,9 +5,7 @@
   "title": "Order Placed",
   "description": "",
   "mustUpdateAt": "2019-10-15",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },
@@ -23,7 +21,8 @@
     "vtex.order-details": "0.x",
     "vtex.payment-flags": "1.x",
     "vtex.shipping-estimate-translator": "1.x",
-    "vtex.address-form": "3.x"
+    "vtex.address-form": "3.x",
+    "vtex.profile-form": "2.x"
   },
   "credentialType": "absolute",
   "policies": [
