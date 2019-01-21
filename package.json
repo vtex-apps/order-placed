@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1-beta",
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "babylon": "^6.18.0",
