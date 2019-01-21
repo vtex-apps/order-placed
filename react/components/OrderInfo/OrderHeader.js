@@ -8,7 +8,7 @@ import {
 } from 'react-intl'
 import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
-import { withRuntimeContext } from 'render'
+import { withRuntimeContext } from 'vtex.render-runtime'
 import { intlMessage } from '../../utils'
 import OrderOptions from './OrderOptions'
 
