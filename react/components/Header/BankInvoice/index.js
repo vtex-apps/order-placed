@@ -8,21 +8,23 @@ import Embedded from './Embedded'
 import ButtonLink from '../../ButtonLink'
 
 const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => (
-  <div
+  <section
     data-testid="bank-invoice-info"
     className="pv4 w-80-ns w-90 center bb b--muted-5"
   >
-    <p className="t-heading-4">
+    <header className="t-heading-4">
       {intlMessage(intl, 'header.bankinvoice.header')}
-    </p>
-    <div className="flex justify-between items-center">
+    </header>
+    <article className="flex justify-between items-center">
       {invoiceBarCodeNumber && <BarCode barCodeNumber={invoiceBarCodeNumber} />}
       <ButtonLink url={url} icon={<PrinterIcon />} variation="secondary">
         {intlMessage(intl, 'header.bankinvoice.print')}
       </ButtonLink>
-    </div>
-    <Embedded url={url} />
-  </div>
+    </article>
+    <article>
+      <Embedded url={url} />
+    </article>
+  </section>
 )
 
 BankInvoice.propTypes = {
