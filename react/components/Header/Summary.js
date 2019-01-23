@@ -25,9 +25,9 @@ const OrderSummary = ({ data, intl }) => {
   return (
     totalDeliveries.length > 0 &&
     totalPickUps.length > 0 && (
-      <div className="w-80 center">
+      <section className="w-80 center">
         <PageBlock variation="half">
-          <div className="mb8 center">
+          <article className="mb8 center">
             <p className="t-heading-4 tc">
               {intlMessage(intl, 'summary.shipping')}
             </p>
@@ -51,8 +51,8 @@ const OrderSummary = ({ data, intl }) => {
                 addressNumber: totalDeliveries[0].address.number,
               })}
             </small>
-          </div>
-          <div className="mb8 center">
+          </article>
+          <article className="mb8 center">
             <p className="t-heading-4 tc">
               {intlMessage(intl, 'summary.pickup')}
             </p>
@@ -75,9 +75,9 @@ const OrderSummary = ({ data, intl }) => {
                 friendlyName: totalPickUps[0].pickupFriendlyName,
               })}
             </small>
-          </div>
+          </article>
         </PageBlock>
-      </div>
+      </section>
     )
   )
 }
