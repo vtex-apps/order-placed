@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function OrderSection({ children }) {
-  return <div className="bb b--muted-5">{children}</div>
+  return <section className="bb b--muted-5">{children}</section>
 }
 
 OrderSection.propTypes = {
