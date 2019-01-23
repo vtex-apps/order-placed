@@ -22,7 +22,7 @@ const customRender = (node, options) => {
 }
 
 // re-export everything
-module.exports = {
+export const render = customRender
+export default {
   ...reactTestingLibrary,
-  render: customRender,
 }
