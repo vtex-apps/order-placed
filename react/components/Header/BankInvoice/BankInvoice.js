@@ -8,7 +8,10 @@ import Embedded from './Embedded'
 import ButtonLink from '../../ButtonLink'
 
 const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => (
-  <div className="pv4 w-80-ns w-90 center bb b--muted-5">
+  <div
+    data-testid="bank-invoice-info"
+    className="pv4 w-80-ns w-90 center bb b--muted-5"
+  >
     <p className="t-heading-4">
       {intlMessage(intl, 'header.bankinvoice.header')}
     </p>

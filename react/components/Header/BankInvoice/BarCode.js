@@ -6,7 +6,10 @@ import { injectIntl, intlShape } from 'react-intl'
 import { intlMessage } from '../../../utils'
 
 const BarCode = ({ barCodeNumber, intl }) => (
-  <div className="flex b--muted-4 ba br3 bw1">
+  <div
+    data-testid="bank-invoice-barcode"
+    className="flex b--muted-4 ba br3 bw1"
+  >
     <div className="tc ph9">
       <p className="c-on-base">{barCodeNumber}</p>
     </div>

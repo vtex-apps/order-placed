@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { calcIconSize, baseClassname } from './utils'
+import { calcIconSize } from './utils'
 
 const iconBase = {
   width: 42,
@@ -14,7 +14,7 @@ class SuccessIcon extends PureComponent {
 
     return (
       <svg
-        className={`${baseClassname('mail')}`}
+        data-testid="sucessIcon"
         width={newSize.width}
         height={newSize.height}
         viewBox="0 0 42 42"
