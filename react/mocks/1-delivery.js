@@ -12,6 +12,23 @@ export const orderGroupQuery = {
       storePreferencesData: {
         currencyCode: 'BRL',
       },
+      clientProfileData: {
+        email: 'tiaraju@vtex.com',
+        firstName: 'auto',
+        lastName: 'auto',
+        document: '12345678909',
+        documentType: 'cpf',
+        phone: '+552222222222',
+        corporateName: null,
+        tradeName: null,
+        corporateDocument: null,
+        stateInscription: null,
+        corporatePhone: null,
+        isCorporate: false,
+        profileCompleteOnLoading: true,
+        profileErrorOnLoading: false,
+        customerClass: null,
+      },
       sellers: [
         {
           id: '1',
