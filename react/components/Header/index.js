@@ -7,7 +7,7 @@ import { intlMessage, getPaymentGroupFromOrder } from '../../utils'
 import SuccessIcon from '../../Icons/Success'
 import Warnings from './Warnings'
 import Summary from './Summary'
-import BankInvoice from '../Header/BankInvoice/BankInvoice'
+import BankInvoice from './BankInvoice/BankInvoice'
 
 const Header = ({ data, profile, intl }) => {
   const bankInvoices = data
@@ -15,7 +15,7 @@ const Header = ({ data, profile, intl }) => {
       (acc, currOrder) => [...acc, getPaymentGroupFromOrder(currOrder)],
       []
     )
-    .filter(order => (!!order.url))
+    .filter(order => !!order.url)
   const hasBankInvoice = bankInvoices.length > 0
 
   return (
@@ -38,17 +38,17 @@ const Header = ({ data, profile, intl }) => {
         />
       </p>
 
-      <div className="flex justify-center t-action mt7">
-        <p className="tr c-action-primary mr2">
+      <div className="flex justify-center t-action mv8">
+        <div className="tr c-action-primary mr2">
           <Button variation="secondary">
             {intlMessage(intl, 'header.email.button')}
           </Button>
-        </p>
-        <p className="tr c-action-primary ml2">
+        </div>
+        <div className="tr c-action-primary ml2">
           <Button variation="secondary">
             {intlMessage(intl, 'header.print.button')}
           </Button>
-        </p>
+        </div>
       </div>
       <Warnings data={data} />
       <Summary data={data} />
