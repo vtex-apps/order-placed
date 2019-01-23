@@ -24,7 +24,7 @@ const Warnings = ({ data, intl }) => {
   const bottomBorder = 'b--muted-4 bb'
 
   return (
-    <Fragment>
+    <section>
       <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc">
         <li className={`${listItem} ${bottomBorder}`}>
           <p className="pb2">
@@ -115,7 +115,7 @@ const Warnings = ({ data, intl }) => {
           </Fragment>
         )}
       </ul>
-    </Fragment>
+    </section>
   )
 }
 
