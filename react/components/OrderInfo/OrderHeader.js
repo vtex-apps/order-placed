@@ -10,11 +10,10 @@ import {
 import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
 import { withRuntimeContext } from 'render'
-import { SplitOrderContext } from '../../OrderPlaced'
 import { intlMessage } from '../../utils'
 
-const OrderHeader = ({ orderInfo, runtime, intl }) => {
-  const storeAccount = runtime.account
+const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
+  const storeAccount = runtime ? runtime.account : null
   const orderSeller = orderInfo.sellers[0].name
 
   return (
@@ -36,23 +35,16 @@ const OrderHeader = ({ orderInfo, runtime, intl }) => {
           />
         </small>
         <br />
-        <SplitOrderContext.Consumer>
-          {splitOrder =>
-            splitOrder &&
-            storeAccount !== orderSeller && (
-              <small className="c-muted-2 t-small">
-                <FormattedMessage
-                  id={'order.header.seller'}
-                  values={{
-                    seller: (
-                      <span className="c-action-primary">{orderSeller}</span>
-                    ),
-                  }}
-                />
-              </small>
-            )
-          }
-        </SplitOrderContext.Consumer>
+        {splitOrder && storeAccount !== orderSeller && (
+          <small className="c-muted-2 t-small">
+            <FormattedMessage
+              id={'order.header.seller'}
+              values={{
+                seller: <span className="c-action-primary">{orderSeller}</span>,
+              }}
+            />
+          </small>
+        )}
       </p>
       <div className="flex justify-between flex-wrap">
         <div className="mr3-ns mb4-s mb0-m">
@@ -77,6 +69,7 @@ const OrderHeader = ({ orderInfo, runtime, intl }) => {
 
 OrderHeader.propTypes = {
   orderInfo: PropTypes.object.isRequired,
+  splitOrder: PropTypes.bool.isRequired,
   runtime: PropTypes.object.isRequired,
   intl: intlShape.isRequired,
 }
