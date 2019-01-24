@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 export function FormattedDate() {
-  return <div>FormattedDate</div>
+  return <span>FormattedDate</span>
 }
 
 export class ProductImage extends Component {

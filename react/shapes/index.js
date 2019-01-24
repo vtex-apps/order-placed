@@ -12,9 +12,14 @@ export const profileShape = PropTypes.shape({
 export const paymentShape = PropTypes.shape({
   group: PropTypes.string.isRequired,
   paymentSystem: PropTypes.string.isRequired,
-  lastDigits: PropTypes.string.isRequired,
+  paymentSystemName: PropTypes.string.isRequired,
+  lastDigits: PropTypes.string,
   value: PropTypes.number.isRequired,
   installments: PropTypes.number.isRequired,
+  url: PropTypes.string,
+  bankIssuedInvoiceIdentificationNumberFormatted: PropTypes.string,
+  bankIssuedInvoiceBarCodeNumber: PropTypes.string,
+  bankIssuedInvoiceBarCodePNG: PropTypes.string,
 })
 
 export const addressShape = PropTypes.shape({
@@ -25,7 +30,7 @@ export const addressShape = PropTypes.shape({
   neighborhood: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
   postalCode: PropTypes.string.isRequired,
-  receiverName: PropTypes.string.isRequired,
+  receiverName: PropTypes.string,
   state: PropTypes.string.isRequired,
   street: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,

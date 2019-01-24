@@ -108,7 +108,6 @@ describe('Warnings', () => {
     const { queryByText } = render(
       <Warnings data={bankInvoiceDueDate.orderGroup} />
     )
-
     const bankInvoiceWarning = queryByText(
       /Please make a payment of \d+ up to \d{1,2}\/\d{1,2}\/\d{4} according to the data below/
     )
