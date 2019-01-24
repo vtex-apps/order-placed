@@ -9,7 +9,6 @@ import getOrderGroup from './graphql/getOrderGroup.graphql'
 import withoutSSR from './withoutSSR'
 
 export const CurrencyContext = React.createContext('BRL')
-export const SplitOrderContext = React.createContext(false)
 const orderGroupNumberToQuery = '902351339185'
 class OrderPlaced extends Component {
   render() {
@@ -18,23 +17,20 @@ class OrderPlaced extends Component {
       <CurrencyContext.Provider
         value={orderGroupQuery.orderGroup[0].storePreferencesData.currencyCode}
       >
-        <SplitOrderContext.Provider
-          value={orderGroupQuery.orderGroup.length > 1}
-        >
-          <div className="center">
-            <Header
-              data={orderGroupQuery.orderGroup}
-              profile={orderGroupQuery.orderGroup[0].clientProfileData}
+        <div className="center">
+          <Header
+            data={orderGroupQuery.orderGroup}
+            profile={orderGroupQuery.orderGroup[0].clientProfileData}
+          />
+          {orderGroupQuery.orderGroup.map(order => (
+            <OrderInfo
+              order={order}
+              profile={order.clientProfileData}
+              splitOrder={orderGroupQuery.orderGroup.length > 1}
+              key={order.orderId}
             />
-            {orderGroupQuery.orderGroup.map(order => (
-              <OrderInfo
-                data={order}
-                profile={order.clientProfileData}
-                key={order.orderId}
-              />
-            ))}
-          </div>
-        </SplitOrderContext.Provider>
+          ))}
+        </div>
       </CurrencyContext.Provider>
     )
   }
