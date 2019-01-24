@@ -12,6 +12,14 @@ export const orderGroupQuery = {
       storePreferencesData: {
         currencyCode: 'BRL',
       },
+      clientProfileData: {
+        email: 'minidog@mailinator.com',
+        firstName: 'Victor',
+        lastName: 'Hugo',
+        document: '12345678909',
+        documentType: 'cpf',
+        phone: '+551199999999',
+      },
       sellers: [
         {
           id: '1',

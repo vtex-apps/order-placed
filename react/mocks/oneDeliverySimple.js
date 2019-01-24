@@ -2,32 +2,24 @@ export const orderGroupQuery = {
   orderGroup: [
     {
       allowCancellation: true,
-      orderId: '886811094393-01',
-      orderGroup: '886811094393',
-      state: 'payment-approved',
+      orderId: '905691102273-01',
+      orderGroup: '905691102273',
+      state: 'payment-pending',
       salesChannel: '1',
-      creationDate: '2018-12-28T17:18:29.1177964Z',
-      timeZoneCreationDate: '2018-12-28T15:18:29.1177964',
-      value: 4100,
+      creationDate: '2019-01-24T17:17:53.0598206Z',
+      timeZoneCreationDate: '2019-01-24T15:17:53.0598206',
+      value: 1700,
+      clientProfileData: {
+        email: 'victorhmp@mailinator.com',
+        firstName: 'Victor',
+        lastName: 'Hugo',
+        document: '18430995005',
+        documentType: 'cpf',
+        phone: '+551112340909',
+      },
       storePreferencesData: {
         currencyCode: 'BRL',
-      },
-      clientProfileData: {
-        email: 'tiaraju@vtex.com',
-        firstName: 'auto',
-        lastName: 'auto',
-        document: '12345678909',
-        documentType: 'cpf',
-        phone: '+552222222222',
-        corporateName: null,
-        tradeName: null,
-        corporateDocument: null,
-        stateInscription: null,
-        corporatePhone: null,
-        isCorporate: false,
-        profileCompleteOnLoading: true,
-        profileErrorOnLoading: false,
-        customerClass: null,
+        countryCode: 'BRA',
       },
       sellers: [
         {
@@ -39,7 +31,7 @@ export const orderGroupQuery = {
         {
           id: 'Items',
           name: 'Total dos Itens',
-          value: 3600,
+          value: 1200,
         },
         {
           id: 'Discounts',
@@ -59,7 +51,7 @@ export const orderGroupQuery = {
       ],
       items: [
         {
-          uniqueId: '8A9DFD93931E48BCB4150FC52F220B02',
+          uniqueId: '5EA37F55BEEF4B588870977EBA404D33',
           id: '282',
           productId: '255',
           name: 'Delivery 1 SLA | 1 Tipo 1',
@@ -69,7 +61,7 @@ export const orderGroupQuery = {
           listPrice: 1200,
           sellingPrice: 1200,
           isGift: false,
-          quantity: 3,
+          quantity: 1,
           seller: '1',
           imageUrl:
             'http://vtexgame1.vteximg.com.br/arquivos/ids/155641-55-55/bola.jpg?v=636626686154400000',
@@ -81,16 +73,17 @@ export const orderGroupQuery = {
       shippingData: {
         selectedAddresses: [
           {
-            addressId: '40196370878352',
+            addressId: '3096700349398',
             addressType: 'residential',
             receiverName: 'Victor Hugo',
             city: 'Rio de Janeiro',
             state: 'RJ',
             street: 'Praia de Botafogo',
-            number: '3000',
+            number: '300',
             neighborhood: 'Botafogo',
             complement: null,
             postalCode: '22250-040',
+            country: 'BRA',
           },
         ],
         logisticsInfo: [
@@ -100,6 +93,7 @@ export const orderGroupQuery = {
             shippingEstimateDate: null,
             selectedSla: 'PAC',
             deliveryChannel: null,
+            addressId: '3096700349398',
             slas: [
               {
                 id: 'PAC',
@@ -118,7 +112,6 @@ export const orderGroupQuery = {
               },
             ],
             deliveryIds: null,
-            addressId: '40196370878352',
           },
         ],
       },
@@ -126,15 +119,21 @@ export const orderGroupQuery = {
       paymentData: {
         transactions: [
           {
-            transactionId: '82E453E5AC9242148D48D4FE245C0C3F',
+            transactionId: 'E4128A83A67F4594B82563BA03BED66D',
             payments: [
               {
-                paymentSystemName: 'Mastercard',
                 paymentSystem: '4',
-                value: 4100,
+                paymentSystemName: 'Mastercard',
+                value: 1700,
                 lastDigits: '1234',
                 group: 'creditCard',
                 installments: 1,
+                dueDate: null,
+                url: null,
+                tid: '61870040',
+                bankIssuedInvoiceIdentificationNumberFormatted: null,
+                bankIssuedInvoiceBarCodeNumber: null,
+                bankIssuedInvoiceBarCodePNG: null,
               },
             ],
           },
