@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape } from 'react-intl'
 import { PageBlock } from 'vtex.styleguide'
-import TranslateEstimate from 'vtex.shipping-estimate-translator/TranslateEstimate'
+import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import estimateCalculator from '@vtex/estimate-calculator'
 import { getTotalParcelsFromOrderGroup, intlMessage } from '../../utils'
 
