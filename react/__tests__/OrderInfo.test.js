@@ -3,12 +3,12 @@ import React from 'react'
 import { render } from '../testUtils'
 import OrderHeader from '../components/OrderInfo/OrderHeader'
 import OrderInfo from '../components/OrderInfo'
-import { orderGroupQuery as oneDelivery } from '../mocks/1-delivery'
-import { orderGroupQuery as onePickUp } from '../mocks/1-pickup'
-import { orderGroupQuery as twoCreditCards } from '../mocks/2-credit-cards'
-import { orderGroupQuery as splitOrder } from '../mocks/split-order-2-sellers'
-import { orderGroupQuery as promissory } from '../mocks/promissory-payment'
-import { orderGroupQuery as multipleDeliveries } from '../mocks/bankinvoice'
+import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
+import { orderGroupQuery as onePickUp } from '../mocks/onePickupSimple'
+import { orderGroupQuery as twoCreditCards } from '../mocks/twoCreditCards'
+import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
+import { orderGroupQuery as promissory } from '../mocks/promissoryPayment'
+import { orderGroupQuery as multipleDeliveries } from '../mocks/bankInvoice'
 
 const getOrderFromOrderGroup = (orderGroup, index) => {
   return orderGroup[index]
