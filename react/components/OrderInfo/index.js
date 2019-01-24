@@ -16,18 +16,18 @@ import {
   getTakeAwayPackagesFromParcels,
 } from '../../utils'
 
-const OrderInfo = ({ data, profile }) => {
-  const parcels = parcelify(data)
+const OrderInfo = ({ order, profile, splitOrder }) => {
+  const parcels = parcelify(order)
   const delivery = getDeliveryPackagesFromParcels(parcels)
   const pickup = getPickUpPackagesFromParcels(parcels)
   const takeaway = getTakeAwayPackagesFromParcels(parcels)
   const multipleDeliveries = delivery.length > 1
-  const paymentsData = data.paymentData.transactions[0].payments
+  const paymentsData = order.paymentData.transactions[0].payments
 
   return (
     <Fragment>
       <div className="mv6 w-80-ns w-90 center">
-        <OrderHeader orderInfo={data} />
+        <OrderHeader orderInfo={order} splitOrder={splitOrder} />
         {multipleDeliveries && (
           <OrderSplitNotice
             deliveries={delivery.length}
@@ -54,9 +54,9 @@ const OrderInfo = ({ data, profile }) => {
           </OrderSection>
         )}
         <OrderTotal
-          items={data.items}
-          totals={data.totals}
-          orderValue={data.value}
+          items={order.items}
+          totals={order.totals}
+          orderValue={order.value}
         />
       </div>
       <hr className="bg-muted-4 bt b--muted-4" />
@@ -65,8 +65,9 @@ const OrderInfo = ({ data, profile }) => {
 }
 
 OrderInfo.propTypes = {
-  data: PropTypes.object.isRequired,
+  order: PropTypes.object.isRequired,
   profile: profileShape.isRequired,
+  splitOrder: PropTypes.bool.isRequired,
 }
 
 export default OrderInfo
