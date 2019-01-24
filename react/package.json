@@ -26,13 +26,17 @@
     "regenerator-runtime": "^0.13.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/testUtils/setupTests.js",
     "moduleDirectories": [
       "node_modules",
       "testUtils"
+    ],
+    "collectCoverageFrom": [
+      "react/**/*.{js,jsx}"
     ],
     "transform": {
       "\\.(gql|graphql)$": "jest-transform-graphql",
