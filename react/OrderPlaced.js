@@ -9,7 +9,7 @@ import getOrderGroup from './graphql/getOrderGroup.graphql'
 import withoutSSR from './withoutSSR'
 
 export const CurrencyContext = React.createContext('BRL')
-const orderGroupNumberToQuery = '902351339185'
+const orderGroupNumberToQuery = '905710145606'
 class OrderPlaced extends Component {
   render() {
     const { orderGroupQuery } = this.props
