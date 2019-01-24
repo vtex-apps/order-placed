@@ -21,7 +21,7 @@ describe('OrderHeader', () => {
       <OrderHeader orderInfo={orderInfo} runtime={{ account: 'vtexgame1' }} />
     )
 
-    const orderId = 'Order #886811094393-01'
+    const orderId = 'Order #905691102273-01'
     const updateOrder = 'Update order'
     const myOrders = 'My Orders'
     const cancelOrder = 'Cancel order'
