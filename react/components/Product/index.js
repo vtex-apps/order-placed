@@ -6,7 +6,7 @@ import { intlMessage } from '../../utils'
 import FormattedPrice from '../Payment/FormattedPrice'
 
 const Product = ({ productInfo, intl }) => (
-  <div className="flex justify-between mv4">
+  <article className="flex justify-between mv4">
     <div className="flex items-center">
       <ProductImage
         url={productInfo.imageUrl}
@@ -39,7 +39,7 @@ const Product = ({ productInfo, intl }) => (
     <p>
       <FormattedPrice value={productInfo.price * productInfo.quantity} />
     </p>
-  </div>
+  </article>
 )
 
 Product.propTypes = {

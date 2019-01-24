@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
@@ -8,7 +8,7 @@ import { intlMessage } from '../../utils'
 const ShippingHeader = ({ shippingData, index, numPackages, intl }) => {
   const multipleDeliveries = numPackages > 1
   return (
-    <Fragment>
+    <header>
       <p data-testid="shipping-header" className="t-heading-4-ns t-heading-5">
         {intlMessage(intl, 'shipping.header.title')}
         {multipleDeliveries &&
@@ -25,7 +25,7 @@ const ShippingHeader = ({ shippingData, index, numPackages, intl }) => {
         </small>
       </p>
       <Address address={shippingData.address} />
-    </Fragment>
+    </header>
   )
 }
 
