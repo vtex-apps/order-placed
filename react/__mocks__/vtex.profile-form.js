@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export function ProfileRules(children) {
-  return children
+export class ProfileRules extends Component {
+  render() {
+    return this.props.children
+  }
 }
 
 export function ProfileSummary() {

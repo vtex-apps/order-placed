@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export function AddressSummary() {
-  return <div>AddressSummary</div>
+export class AddressSummary extends Component {
+  render() {
+    return <div>AddressSummary</div>
+  }
 }
 
-export function AddressRules(children) {
-  return children
+export class AddressRules extends Component {
+  render() {
+    return this.props.children
+  }
 }
