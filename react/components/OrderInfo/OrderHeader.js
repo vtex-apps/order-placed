@@ -17,7 +17,7 @@ const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
   const orderSeller = orderInfo.sellers[0].name
 
   return (
-    <div className="flex justify-between items-center flex-wrap mt7">
+    <header className="flex justify-between items-center flex-wrap mt7">
       <p className="t-heading-3-ns t-heading-4 lh-solid">
         {intlMessage(intl, 'order.header.number', {
           orderId: orderInfo.orderId,
@@ -63,7 +63,7 @@ const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
           </Button>
         )}
       </div>
-    </div>
+    </header>
   )
 }
 

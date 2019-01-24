@@ -24,7 +24,7 @@ const PaymentMethod = ({ payment, intl }) => {
   const isBankInvoice = payment.group === 'bankInvoice'
 
   return (
-    <div className="flex justify-between items-center">
+    <article className="flex justify-between items-center">
       <div className="t-body lh-solid">
         <p className="c-on-base">{paymentGroupSwitch(payment.group, intl)}</p>
         {isCreditCard && (
@@ -49,7 +49,7 @@ const PaymentMethod = ({ payment, intl }) => {
       <div className="c-action-primary">
         <IconCaretDown />
       </div>
-    </div>
+    </article>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import parcelify from '@vtex/delivery-packages'
 import OrderHeader from './OrderHeader'
@@ -25,7 +25,7 @@ const OrderInfo = ({ order, profile, splitOrder }) => {
   const paymentsData = order.paymentData.transactions[0].payments
 
   return (
-    <Fragment>
+    <section>
       <div className="mv6 w-80-ns w-90 center">
         <OrderHeader orderInfo={order} splitOrder={splitOrder} />
         {multipleDeliveries && (
@@ -60,7 +60,7 @@ const OrderInfo = ({ order, profile, splitOrder }) => {
         />
       </div>
       <hr className="bg-muted-4 bt b--muted-4" />
-    </Fragment>
+    </section>
   )
 }
 

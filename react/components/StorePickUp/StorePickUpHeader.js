@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
@@ -11,7 +11,7 @@ const StorePickUpHeader = ({ shippingData, index, numPackages, intl }) => {
   const additionalInfo =
     shippingData.selectedSlaObj.pickupStoreInfo.additionalInfo
   return (
-    <Fragment>
+    <header>
       <p
         data-testid="storepickup-header"
         className="t-heading-4-ns t-heading-5"
@@ -38,7 +38,7 @@ const StorePickUpHeader = ({ shippingData, index, numPackages, intl }) => {
           <p className="c-muted-1">{additionalInfo}</p>
         </div>
       </div>
-    </Fragment>
+    </header>
   )
 }
 
