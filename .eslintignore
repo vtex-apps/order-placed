@@ -1,0 +1,4 @@
+react/node_modules/*
+react/__mocks__/*
+react/coverage/*
+node_modules
