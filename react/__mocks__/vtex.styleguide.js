@@ -1,25 +1,37 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export function Button() {
-  return <div>Button</div>
+export class Button extends Component {
+  render() {
+    return <div>Button</div>
+  }
 }
 
-export function ButtonWithIcon() {
-  return <div>ButtonWithIcon</div>
+export class ButtonWithIcon extends Component {
+  render() {
+    return <div>ButtonWithIcon</div>
+  }
 }
 
-export function IconCaretDown() {
-  return <div>IconCaretDown</div>
+export class IconCaretDown extends Component {
+  render() {
+    return <div>IconCaretDown</div>
+  }
 }
 
-export function IconCaretUp() {
-  return <div>IconCaretUp</div>
+export class IconCaretUp extends Component {
+  render() {
+    return <div>IconCaretUp</div>
+  }
 }
 
-export function PageBlock() {
-  return <div data-testid="summary">PageBlock</div>
+export class PageBlock extends Component {
+  render() {
+    return <div data-testid="summary">PageBlock</div>
+  }
 }
 
-export function Alert() {
-  return <div>Alert</div>
+export class Alert extends Component {
+  render() {
+    return <div>Alert</div>
+  }
 }
