@@ -69,8 +69,8 @@ const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
 
 OrderHeader.propTypes = {
   orderInfo: PropTypes.object.isRequired,
-  splitOrder: PropTypes.bool.isRequired,
-  runtime: PropTypes.object.isRequired,
+  splitOrder: PropTypes.bool,
+  runtime: PropTypes.object,
   intl: intlShape.isRequired,
 }
 

@@ -72,7 +72,7 @@ export const orderGroupQuery = {
         },
         {
           uniqueId: '4ABAD28312824A54A0A405531267CCA0',
-          id: '307',
+          id: '308',
           productId: '276',
           name: 'Pickup múltiplas SLAs RJ Tipo 1',
           skuName: 'Tipo 1',
@@ -92,7 +92,7 @@ export const orderGroupQuery = {
         },
         {
           uniqueId: '4ABAD28312824A54A0A405531267CCA0',
-          id: '307',
+          id: '309',
           productId: '276',
           name: 'Pickup múltiplas SLAs RJ Tipo 1',
           skuName: 'Tipo 1',

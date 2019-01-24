@@ -15,7 +15,7 @@ const ButtonLink = ({ url, icon, variation, children }) => (
 )
 
 ButtonLink.propTypes = {
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   icon: PropTypes.node,
   variation: PropTypes.string,
   children: PropTypes.oneOfType([
