@@ -12,7 +12,10 @@ const StorePickUpHeader = ({ shippingData, index, numPackages, intl }) => {
     shippingData.selectedSlaObj.pickupStoreInfo.additionalInfo
   return (
     <Fragment>
-      <p className="t-heading-4-ns t-heading-5">
+      <p
+        data-testid="storepickup-header"
+        className="t-heading-4-ns t-heading-5"
+      >
         {intlMessage(intl, 'pickup.header.title')}
         {multiplePickups &&
           intlMessage(intl, 'common.header.counter', {
