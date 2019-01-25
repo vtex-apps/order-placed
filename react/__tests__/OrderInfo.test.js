@@ -59,7 +59,11 @@ describe('Order split notice', () => {
       />
     )
 
-    expect(getByText('Alert')).toBeDefined()
+    expect(
+      getByText(
+        'Your order was split into 3 deliveries. Products that are closer to their delivery address will arrive faster!'
+      )
+    ).toBeDefined()
   })
 })
 
