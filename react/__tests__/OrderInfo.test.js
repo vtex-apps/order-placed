@@ -64,30 +64,28 @@ describe('Order split notice', () => {
 })
 
 describe('Payment methods', () => {
-  it('should render credit card info (one or two)', () => {
-    let orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
-    const { getByText, queryAllByText, rerender } = render(
+  it('should render credit card info', () => {
+    const orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
+    const { getByText } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
         splitOrder={oneDelivery.orderGroup.length > 1}
       />
     )
+    expect(getByText('Credit card')).toBeDefined()
+  })
 
-    const singleCard = getByText('Credit card')
-
-    orderInfo = getOrderFromOrderGroup(twoCreditCards.orderGroup, 0)
-    rerender(
+  it('should render credit card info for two credit cards', () => {
+    const orderInfo = getOrderFromOrderGroup(twoCreditCards.orderGroup, 0)
+    const { queryAllByText } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
         splitOrder={twoCreditCards.orderGroup.length > 1}
       />
     )
-
-    const multipleCards = queryAllByText('Credit card')
-
-    expect(singleCard).toBeDefined() && expect(multipleCards.length).toEqual(2)
+    expect(queryAllByText('Credit card')).toHaveLength(2)
   })
 
   it('should render bank invoice payment method', () => {
@@ -118,9 +116,9 @@ describe('Payment methods', () => {
 })
 
 describe('Shippings', () => {
-  it('should render Shipping only if there are items for delivery', () => {
-    let orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
-    const { getByTestId, rerender, queryByTestId } = render(
+  it('should render Shipping if there are items for delivery', () => {
+    const orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
+    const { getByTestId } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -128,9 +126,11 @@ describe('Shippings', () => {
       />
     )
     expect(getByTestId('shipping-header')).toBeDefined()
+  })
 
-    orderInfo = getOrderFromOrderGroup(onePickUp.orderGroup, 0)
-    rerender(
+  it('should not render Shipping if there are no items for delivery', () => {
+    const orderInfo = getOrderFromOrderGroup(onePickUp.orderGroup, 0)
+    const { queryByTestId } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -142,19 +142,9 @@ describe('Shippings', () => {
 })
 
 describe('Store Pickups', () => {
-  it('should render StorePickUp only if there are items to be picked-up', () => {
-    let orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
-    const { rerender, queryByTestId } = render(
-      <OrderInfo
-        order={orderInfo}
-        profile={orderInfo.clientProfileData}
-        splitOrder={oneDelivery.orderGroup.length > 1}
-      />
-    )
-    expect(queryByTestId('storepickup-header')).toBeNull()
-
-    orderInfo = getOrderFromOrderGroup(onePickUp.orderGroup, 0)
-    rerender(
+  it('should render StorePickUp if there are items to be picked-up', () => {
+    const orderInfo = getOrderFromOrderGroup(onePickUp.orderGroup, 0)
+    const { queryByTestId } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -162,5 +152,17 @@ describe('Store Pickups', () => {
       />
     )
     expect(queryByTestId('storepickup-header')).toBeDefined()
+  })
+
+  it('should not render StorePickUp if there are no items for pickup', () => {
+    const orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
+    const { queryByTestId } = render(
+      <OrderInfo
+        order={orderInfo}
+        profile={orderInfo.clientProfileData}
+        splitOrder={oneDelivery.orderGroup.length > 1}
+      />
+    )
+    expect(queryByTestId('storepickup-header')).toBeNull()
   })
 })
