@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Product from '.'
+import Product from './Product'
 
 const ProductList = ({ products }) =>
   products.map(product => <Product productInfo={product} key={product.id} />)
