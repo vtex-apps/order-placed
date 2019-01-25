@@ -14,8 +14,8 @@ describe('Shipping (delivery)', () => {
     const delivery = getDeliveryPackagesFromParcels(parcels)
     const { getByText } = render(<Shipping deliveryPackages={delivery} />)
 
-    expect(getByText('Delivery')).toBeDefined() &&
-      expect(getByText('TranslateEstimate')).toBeDefined()
+    expect(getByText('Delivery')).toBeDefined()
+    expect(getByText('TranslateEstimate')).toBeDefined()
   })
 
   it('should render delivery counter when multiple deliveries', () => {
@@ -28,6 +28,16 @@ describe('Shipping (delivery)', () => {
     expect(getByText(/ - n˚ \d of \d/)).toBeDefined()
   })
 
+  it('should not render delivery counter when there is only one delivery', () => {
+    const order = oneDelivery.orderGroup[0]
+    const parcels = parcelify(order)
+    const delivery = getDeliveryPackagesFromParcels(parcels)
+
+    const { queryByText } = render(<Shipping deliveryPackages={delivery} />)
+
+    expect(queryByText(/ - n˚ \d of \d/)).toBeNull()
+  })
+
   it('should render product list', () => {
     const order = twoDeliveries.orderGroup[0]
     const parcels = parcelify(order)
@@ -36,11 +46,9 @@ describe('Shipping (delivery)', () => {
     const { getByText } = render(<Shipping deliveryPackages={delivery} />)
 
     expect(
-      getByText(
-        'Delivery entrega agendada e Delivery com várias SLAs Tipo 1'
-      ) &&
-        getByText('Camisa Seleção Brasileira') &&
-        getByText('Camisa America Vermelha')
+      getByText('Delivery entrega agendada e Delivery com várias SLAs Tipo 1')
     ).toBeDefined()
+    expect(getByText('Camisa Seleção Brasileira')).toBeDefined()
+    expect(getByText('Camisa America Vermelha')).toBeDefined()
   })
 })
