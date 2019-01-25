@@ -32,6 +32,6 @@ export class PageBlock extends Component {
 
 export class Alert extends Component {
   render() {
-    return <div>Alert</div>
+    return <div data-testid="alert">{this.props.children}</div>
   }
 }
