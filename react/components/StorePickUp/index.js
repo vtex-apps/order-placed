@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import StorePickUpHeader from './StorePickUpHeader'
-import ProductList from '../Product/ProductList'
+import ProductList from '../ProductList'
 
 const StorePickUp = ({ pickUpPackages }) => {
   return pickUpPackages.map((pickup, index) => (
