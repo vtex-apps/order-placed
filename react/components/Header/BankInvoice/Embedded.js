@@ -5,12 +5,12 @@ import { ButtonWithIcon, IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 import { intlMessage } from '../../../utils'
 
 class Embedded extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = { open: false }
   }
 
-  handleClick() {
+  handleClick = () => {
     this.setState(prevState => ({ open: !prevState.open }))
   }
 

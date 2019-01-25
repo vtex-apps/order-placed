@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import parcelify from '@vtex/delivery-packages'
+
 import OrderHeader from './OrderHeader'
 import CustomerInfo from '../CustomerInfo'
 import PaymentMethod from '../Payment/PaymentMethod'
