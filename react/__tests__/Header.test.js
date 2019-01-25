@@ -54,11 +54,11 @@ describe('Warnings', () => {
       'The delivery period starts from the moment your payment is confirmed'
     )
     const trackingDisclaimer = getByText(
-      'When your order is on its way, a traking code will be sent to your email'
+      'When your order is on its way, a tracking code will be sent to your email'
     )
 
-    expect(paymentDisclaimer).toBeDefined() &&
-      expect(trackingDisclaimer).toBeDefined()
+    expect(paymentDisclaimer).toBeDefined()
+    expect(trackingDisclaimer).toBeDefined()
   })
 
   it('should not render shipping estimate disclaimers if order has no shipping items', () => {
@@ -68,11 +68,11 @@ describe('Warnings', () => {
       'The delivery period starts from the moment your payment is confirmed'
     )
     const trackingDisclaimer = queryByText(
-      'When your order is on its way, a traking code will be sent to your email'
+      'When your order is on its way, a tracking code will be sent to your email'
     )
 
-    expect(paymentDisclaimer).toBeNull() &&
-      expect(trackingDisclaimer).toBeNull()
+    expect(paymentDisclaimer).toBeNull()
+    expect(trackingDisclaimer).toBeNull()
   })
 
   it('should render pickup estimate disclaimer if order has pickup items', () => {

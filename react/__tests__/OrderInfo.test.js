@@ -26,10 +26,10 @@ describe('OrderHeader', () => {
     const myOrders = 'My Orders'
     const cancelOrder = 'Cancel order'
 
-    expect(getByText(orderId)).toBeDefined() &&
-      expect(getByText(updateOrder)).toBeDefined() &&
-      expect(getByText(myOrders)).toBeDefined() &&
-      expect(getByText(cancelOrder)).toBeDefined()
+    expect(getByText(orderId)).toBeDefined()
+    expect(getByText(updateOrder)).toBeDefined()
+    expect(getByText(myOrders)).toBeDefined()
+    expect(getByText(cancelOrder)).toBeDefined()
   })
 
   it('should render seller name for an order processed by another seller', () => {
