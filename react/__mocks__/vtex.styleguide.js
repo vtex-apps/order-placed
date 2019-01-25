@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 export class Button extends Component {
   render() {
-    return <div>Button</div>
+    return <button>{this.props.children}</button>
   }
 }
 
 export class ButtonWithIcon extends Component {
   render() {
-    return <div>ButtonWithIcon</div>
+    return <button>{this.props.children}</button>
   }
 }
 
