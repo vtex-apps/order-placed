@@ -1,6 +1,7 @@
 import React from 'react'
 import * as reactTestingLibrary from 'react-testing-library'
 import { IntlProvider } from 'react-intl'
+
 import defaultStrings from '../../messages/en.json'
 
 const customRender = (node, options) => {

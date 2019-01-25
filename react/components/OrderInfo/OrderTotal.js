@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Price from '../Payment/FormattedPrice'
 import { injectIntl, intlShape } from 'react-intl'
+
 import { intlMessage } from '../../utils'
+import Price from '../Payment/FormattedPrice'
 
 const ShippingTotals = ({ items, totals, orderValue, intl }) => {
   const numItems = items.reduce((acc, item) => acc + item.quantity, 0)
