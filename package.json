@@ -5,7 +5,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "cd ./react && yarn lint",
-      "pre-push": "cd ./react && yarn test && yarn lint && yarn lint:locales"
+      "pre-push": "cd ./react && yarn test --verbose && yarn lint"
     }
   }
 }
