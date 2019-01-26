@@ -1,7 +1,7 @@
 import React from 'react'
 import { intlShape, injectIntl } from 'react-intl'
 import { IconCaretDown } from 'vtex.styleguide'
-import { paymentShape } from '../../shapes'
+import { paymentShape } from '../../types'
 import { intlMessage } from '../../utils'
 import ButtonLink from '../ButtonLink'
 import Price from './FormattedPrice'
