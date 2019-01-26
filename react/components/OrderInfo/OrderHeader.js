@@ -13,7 +13,7 @@ import { withRuntimeContext } from 'render'
 import { intlMessage } from '../../utils'
 
 const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
-  const storeAccount = runtime ? runtime.account : null
+  const storeAccount = runtime.account
   const orderSeller = orderInfo.sellers[0].name
 
   return (
@@ -70,7 +70,7 @@ const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
 OrderHeader.propTypes = {
   orderInfo: PropTypes.object.isRequired,
   splitOrder: PropTypes.bool,
-  runtime: PropTypes.object,
+  runtime: PropTypes.object.isRequired,
   intl: intlShape.isRequired,
 }
 
