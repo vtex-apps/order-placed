@@ -10,7 +10,7 @@ import OrderTotal from './OrderTotal'
 import StorePickUp from '../StorePickUp'
 import OrderSplitNotice from './OrderSplitNotice'
 import OrderSection from './OrderSection'
-import { profileShape } from '../../shapes'
+import { profileShape } from '../../types'
 import {
   getDeliveryPackagesFromParcels,
   getPickUpPackagesFromParcels,

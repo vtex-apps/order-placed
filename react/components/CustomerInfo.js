@@ -1,5 +1,5 @@
 import React from 'react'
-import { profileShape } from '../shapes'
+import { profileShape } from '../types'
 import { intlShape, injectIntl } from 'react-intl'
 import { ProfileRules, ProfileSummary } from 'vtex.profile-form'
 
