@@ -16,6 +16,7 @@ import {
   getPickUpPackagesFromParcels,
   getTakeAwayPackagesFromParcels,
 } from '../../utils'
+import OrderOptions from './OrderOptions'
 
 const OrderInfo = ({ order, profile, splitOrder }) => {
   const parcels = parcelify(order)
@@ -43,6 +44,11 @@ const OrderInfo = ({ order, profile, splitOrder }) => {
               <PaymentMethod payment={payment} />
             </div>
           ))}
+          <OrderOptions
+            className="dn-m mb4"
+            allowCancellation={order.allowCancellation}
+            blockButtons
+          />
         </OrderSection>
         {pickup.length > 0 && (
           <OrderSection>
