@@ -25,11 +25,11 @@ const Header = ({ data, profile, intl }) => {
           <SuccessIcon size={50} />
         </div>
 
-        <p className="tc c-on-base mt7 mb0 t-heading-4">
+        <p className="tc c-on-base mt7 mb0 t-heading-4 w-90 center">
           {intlMessage(intl, 'header.thanks')}
         </p>
 
-        <p className="center mt4 t-body tc c-muted-1 lh-copy">
+        <p className="center mt4 t-body tc c-muted-1 lh-copy w-90 center">
           <FormattedMessage
             id="header.email"
             values={{
@@ -39,7 +39,7 @@ const Header = ({ data, profile, intl }) => {
           />
         </p>
 
-        <div className="flex justify-center t-action mv8">
+        <div className="flex justify-center t-action mv8 w-90 center">
           <div className="tr c-action-primary mr2">
             <Button variation="secondary">
               {intlMessage(intl, 'header.email.button')}

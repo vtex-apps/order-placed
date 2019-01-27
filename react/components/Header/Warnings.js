@@ -20,12 +20,12 @@ const Warnings = ({ data, intl }) => {
     )
     .filter(order => order.paymentGroup === 'bankInvoice')
   const hasBankInvoice = bankInvoices.length > 0
-  const listItem = 'tc mv0 w-80-ns w-90 center c-on-base'
+  const listItem = 'mv0 w-80-ns w-90 center c-on-base'
   const bottomBorder = 'b--muted-4 bb'
 
   return (
     <section>
-      <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc">
+      <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc-m">
         <li className={`${listItem} ${bottomBorder}`}>
           <p className="pb2">
             {intlMessage(intl, 'warnings.payment.approval')}
