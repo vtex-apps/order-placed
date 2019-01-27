@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'vtex.styleguide'
 import {
   injectIntl,
   intlShape,
@@ -11,13 +10,14 @@ import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
 import { withRuntimeContext } from 'render'
 import { intlMessage } from '../../utils'
+import OrderOptions from './OrderOptions'
 
 const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
   const storeAccount = runtime.account
   const orderSeller = orderInfo.sellers[0].name
 
   return (
-    <header className="flex justify-between items-center flex-wrap mt7">
+    <header className="flex justify-between items-center mt7">
       <p className="t-heading-3-ns t-heading-4 lh-solid">
         {intlMessage(intl, 'order.header.number', {
           orderId: orderInfo.orderId,
@@ -46,23 +46,10 @@ const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
           </small>
         )}
       </p>
-      <div className="flex justify-between flex-wrap">
-        <div className="mr3-ns mb4-s mb0-m">
-          <Button variation="secondary">
-            {intlMessage(intl, 'order.header.update.button')}
-          </Button>
-        </div>
-        <div className="mr3-ns mb4-s mb0-m">
-          <Button variation="secondary">
-            {intlMessage(intl, 'order.header.myorders.button')}
-          </Button>
-        </div>
-        {orderInfo.allowCancellation && (
-          <Button variation="danger-tertiary">
-            {intlMessage(intl, 'order.header.cancel.button')}
-          </Button>
-        )}
-      </div>
+      <OrderOptions
+        className="dn-s flex-m"
+        allowCancellation={orderInfo.allowCancellation}
+      />
     </header>
   )
 }
