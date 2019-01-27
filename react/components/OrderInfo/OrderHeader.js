@@ -47,7 +47,7 @@ const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
         )}
       </p>
       <OrderOptions
-        className="dn-s flex-m"
+        className="dn-s flex-l"
         allowCancellation={orderInfo.allowCancellation}
       />
     </header>
