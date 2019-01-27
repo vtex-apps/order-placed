@@ -12,7 +12,7 @@ const ShippingTotals = ({ items, totals, orderValue, intl }) => {
   return (
     <div className="bg-muted-5 br2 pa5 mv9">
       <div className={totalsLine}>
-        {intlMessage(intl, 'order.totals.subtotal', { numItems })}
+        <p>{intlMessage(intl, 'order.totals.subtotal', { numItems })}</p>
         <Price value={totals[0].value} />
       </div>
       <div className={totalsLine}>

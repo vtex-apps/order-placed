@@ -45,7 +45,7 @@ const OrderInfo = ({ order, profile, splitOrder }) => {
             </div>
           ))}
           <OrderOptions
-            className="dn-m mb4"
+            className="dn-l mb4"
             allowCancellation={order.allowCancellation}
             blockButtons
           />
