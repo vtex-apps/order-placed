@@ -11,12 +11,12 @@ const OrderOptions = ({
   blockButtons,
 }) => (
   <div className={`${className} flex justify-between flex-wrap`}>
-    <div className="mr3-ns mb4-s mb0-m">
+    <div className="mr3-ns mb4-s mb0-m w-100 w-auto-m">
       <Button variation="secondary" block={blockButtons}>
         {intlMessage(intl, 'order.header.update.button')}
       </Button>
     </div>
-    <div className="mr3-ns mb4-s mb0-m">
+    <div className="mr3-ns mb4-s mb0-m w-100 w-auto-m">
       <Button variation="secondary" block={blockButtons}>
         {intlMessage(intl, 'order.header.myorders.button')}
       </Button>
