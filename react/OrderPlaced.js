@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import { compose, graphql } from 'react-apollo'
 import { branch, renderComponent } from 'recompose'
 import { Loader } from 'vtex.order-details'
+import { withRuntimeContext } from 'vtex.render-runtime'
 import Header from './components/Header'
 import OrderInfo from './components/OrderInfo'
 import getOrderGroup from './graphql/getOrderGroup.graphql'
 import withoutSSR from './withoutSSR'
 
 export const CurrencyContext = React.createContext('BRL')
-const orderGroupNumberToQuery = '905710145606'
 
 class OrderPlaced extends Component {
   render() {
@@ -39,20 +39,20 @@ class OrderPlaced extends Component {
 
 OrderPlaced.propTypes = {
   orderGroupQuery: PropTypes.object.isRequired,
-}
-
-const queryOptions = {
-  name: 'orderGroupQuery',
-  options: {
-    variables: {
-      orderGroup: orderGroupNumberToQuery,
-    },
-  },
+  runtime: PropTypes.object.isRequired,
 }
 
 export default compose(
+  withRuntimeContext,
   withoutSSR,
-  graphql(getOrderGroup, queryOptions),
+  graphql(getOrderGroup, {
+    name: 'orderGroupQuery',
+    options: ({ runtime }) => ({
+      variables: {
+        orderGroup: runtime.route.params.orderGroup,
+      },
+    }),
+  }),
   branch(
     ({ orderGroupQuery }) => orderGroupQuery.loading,
     renderComponent(Loader)
