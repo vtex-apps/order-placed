@@ -36,7 +36,7 @@ const Product = ({ productInfo, intl }) => (
         </p>
       </div>
     </div>
-    <p className="tc-s tr-m">
+    <p className="tc tr-m">
       <FormattedPrice value={productInfo.price * productInfo.quantity} />
     </p>
   </article>
