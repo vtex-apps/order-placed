@@ -18,20 +18,20 @@ class OrderPlaced extends Component {
       <CurrencyContext.Provider
         value={orderGroupQuery.orderGroup[0].storePreferencesData.currencyCode}
       >
-        <div className="center">
-          <Header
-            data={orderGroupQuery.orderGroup}
-            profile={orderGroupQuery.orderGroup[0].clientProfileData}
-          />
-          {orderGroupQuery.orderGroup.map(order => (
+        <Header
+          data={orderGroupQuery.orderGroup}
+          profile={orderGroupQuery.orderGroup[0].clientProfileData}
+        />
+        <main>
+          {orderGroupQuery.orderGroup.map((order, index) => (
             <OrderInfo
               order={order}
               profile={order.clientProfileData}
-              splitOrder={orderGroupQuery.orderGroup.length > 1}
-              key={order.orderId}
+              numOfOrders={orderGroupQuery.orderGroup.length}
+              key={index}
             />
           ))}
-        </div>
+        </main>
       </CurrencyContext.Provider>
     )
   }
