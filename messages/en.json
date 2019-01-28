@@ -10,7 +10,7 @@
   "header.bankinvoice.embeded.collapse": "Collapse",
   "header.bankinvoice.embeded.expand": "Expand",
   "warnings.payment.approval": "Payment approval may take up to 3 bussiness days",
-  "warnings.payment.bankInvoice.approval": "Payment approval for bank invoices may take 1 bussiness day. If payment is not due, your order will be automatically cancelled",
+  "warnings.payment.bankInvoice.approval": "Payment approval for bank invoices may take up to 3 bussiness days. If payment is not due, your order will be automatically cancelled",
   "warnings.payment.bankInvoice.value.duedate": "Please make a payment of {paymentValue} up to {paymentDueDate} according to the data below",
   "warnings.payment.bankInvoice.value": "Please make a payment of {paymentValue} up to the due date according to the data below",
   "warnings.delivery.time": "The delivery period starts from the moment your payment is confirmed",
