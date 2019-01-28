@@ -102,7 +102,7 @@ describe('Payment methods', () => {
       />
     )
 
-    expect(getByText('Bank Invoice')).toBeDefined()
+    expect(getByText('Boleto Bancário')).toBeDefined()
   })
 
   it('should render custom payment method (Cash)', () => {
