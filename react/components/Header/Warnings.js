@@ -26,11 +26,13 @@ const Warnings = ({ data, intl }) => {
   return (
     <section>
       <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc-m">
-        <li className={`${listItem} ${bottomBorder}`}>
-          <p className="pb2">
-            {intlMessage(intl, 'warnings.payment.approval')}
-          </p>
-        </li>
+        {!hasBankInvoice && (
+          <li className={`${listItem} ${bottomBorder}`}>
+            <p className="pb2">
+              {intlMessage(intl, 'warnings.payment.approval')}
+            </p>
+          </li>
+        )}
         {totalDeliveries.length > 0 && (
           <Fragment>
             <li className={`${listItem} ${bottomBorder}`}>
