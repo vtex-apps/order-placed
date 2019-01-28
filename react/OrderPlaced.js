@@ -10,6 +10,7 @@ import withoutSSR from './withoutSSR'
 
 export const CurrencyContext = React.createContext('BRL')
 const orderGroupNumberToQuery = '905710145606'
+
 class OrderPlaced extends Component {
   render() {
     const { orderGroupQuery } = this.props
