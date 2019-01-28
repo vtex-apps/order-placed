@@ -1,6 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { intlShape, injectIntl } from 'react-intl'
 import { IconCaretDown } from 'vtex.styleguide'
+
 import { paymentShape } from '../../types'
 import { intlMessage } from '../../utils'
 import ButtonLink from '../ButtonLink'
@@ -19,7 +21,7 @@ const paymentGroupSwitch = (payment, intl) => {
   }
 }
 
-const PaymentMethod = ({ payment, intl }) => {
+const PaymentMethod = ({ payment, transactionId, intl }) => {
   const isCreditCard = payment.group === 'creditCard'
   const isBankInvoice = payment.group === 'bankInvoice'
 
@@ -45,6 +47,10 @@ const PaymentMethod = ({ payment, intl }) => {
             {intlMessage(intl, 'payments.bankinvoice.print')}
           </ButtonLink>
         )}
+        <div>
+          <p className="c-muted-2">ID do pagamento: {payment.id}</p>
+          <p className="c-muted-2">ID da transação: {transactionId}</p>
+        </div>
       </div>
       <div className="c-action-primary">
         <IconCaretDown />
@@ -55,6 +61,7 @@ const PaymentMethod = ({ payment, intl }) => {
 
 PaymentMethod.propTypes = {
   payment: paymentShape.isRequired,
+  transactionId: PropTypes.string.isRequired,
   intl: intlShape.isRequired,
 }
 
