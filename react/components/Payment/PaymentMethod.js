@@ -9,15 +9,17 @@ import ButtonLink from '../ButtonLink'
 import Price from './FormattedPrice'
 
 const paymentGroupSwitch = (payment, intl) => {
-  switch (payment) {
+  switch (payment.group) {
     case 'creditCard':
       return intl.formatMessage({ id: 'payments.creditcard' })
     case 'bankInvoice':
-      return intl.formatMessage({ id: 'payments.bankinvoice' })
+      return payment.paymentSystemName
     case 'promissory':
-      return intl.formatMessage({ id: 'payments.promissory' })
+      return payment.paymentSystemName
+    case 'debitCard':
+      return intl.formatMessage({ id: 'payments.debitcard' })
     default:
-      break
+      return payment.paymentSystemName
   }
 }
 
@@ -31,14 +33,15 @@ class PaymentMethod extends Component {
   render() {
     const { payment, transactionId, intl } = this.props
     const open = this.state.open
-    const isCreditCard = payment.group === 'creditCard'
+    const hasLastDigits =
+      payment.group === 'creditCard' || payment.group === 'debitCard'
     const isBankInvoice = payment.group === 'bankInvoice'
 
     return (
       <article className="flex justify-between">
         <div className="t-body lh-solid">
-          <p className="c-on-base">{paymentGroupSwitch(payment.group, intl)}</p>
-          {isCreditCard && (
+          <p className="c-on-base">{paymentGroupSwitch(payment, intl)}</p>
+          {hasLastDigits && (
             <p className="c-muted-1">
               {intlMessage(intl, 'payments.creditcard.lastDigits', {
                 lastDigits: payment.lastDigits,
