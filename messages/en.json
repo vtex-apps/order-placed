@@ -40,10 +40,12 @@
   "pickup.header.title": "Pickup",
   "common.header.counter": " - n˚ {index} of {numPackages}",
   "payments.creditcard": "Credit card",
-  "payments.creditcard.lastDigits": "Last digits: {lastDigits}",
   "payments.bankinvoice": "Bank Invoice",
-  "payments.bankinvoice.print": "Open bank invoice",
+  "payments.id": "Payment ID: {id}",
   "payments.promissory": "Cash",
   "payments.installments": "({installments}x)",
+  "payments.bankinvoice.print": "Open bank invoice",
+  "payments.creditcard.lastDigits": "Last digits: {lastDigits}",
+  "payments.transaction.id": "Transaction ID: {id}",
   "products.quantity": "{quantity, plural, one {# unity} other {# unities}}"
 }

@@ -48,8 +48,14 @@ const PaymentMethod = ({ payment, transactionId, intl }) => {
           </ButtonLink>
         )}
         <div>
-          <p className="c-muted-2">ID do pagamento: {payment.id}</p>
-          <p className="c-muted-2">ID da transação: {transactionId}</p>
+          <p className="c-muted-2">
+            {intlMessage(intl, 'payments.id', { id: payment.id })}
+          </p>
+          <p className="c-muted-2">
+            {intlMessage(intl, 'payments.transaction.id', {
+              id: transactionId,
+            })}
+          </p>
         </div>
       </div>
       <div className="c-action-primary">
