@@ -47,7 +47,7 @@ const OrderInfo = ({ order, profile, splitOrder }) => {
           <OrderOptions
             className="dn-l mb4"
             allowCancellation={order.allowCancellation}
-            blockButtons
+            fullWidth
           />
         </OrderSection>
         {pickup.length > 0 && (
