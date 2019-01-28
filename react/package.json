@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.1-beta.0",
   "dependencies": {
     "@vtex/address-form": "^3.0.2",
     "@vtex/delivery-packages": "^2.16.2",
