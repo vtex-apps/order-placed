@@ -40,10 +40,12 @@
   "pickup.header.title": "Retirada no ponto",
   "common.header.counter": " - n˚ {index} de {numPackages}",
   "payments.creditcard": "Cartão de crédito",
-  "payments.creditcard.lastDigits": "Final {lastDigits}",
   "payments.bankinvoice": "Boleto bancário",
-  "payments.bankinvoice.print": "Abrir boleto",
+  "payments.id": "ID do pagamento: {id}",
   "payments.promissory": "Dinheiro",
   "payments.installments": "{installments, plural, one {à vista} other { (#x)}}",
+  "payments.bankinvoice.print": "Abrir boleto",
+  "payments.creditcard.lastDigits": "Final {lastDigits}",
+  "payments.transaction.id": "ID da transação: {id}",
   "products.quantity": "{quantity, plural, one {# unidade} other {# unidades}}"
 }
