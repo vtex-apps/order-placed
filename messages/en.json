@@ -40,6 +40,7 @@
   "pickup.header.title": "Pickup",
   "common.header.counter": " - n˚ {index} of {numPackages}",
   "payments.creditcard": "Credit card",
+  "payments.debitcard": "Debit card",
   "payments.bankinvoice": "Bank Invoice",
   "payments.id": "Payment ID: {id}",
   "payments.promissory": "Cash",

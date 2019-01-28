@@ -40,6 +40,7 @@
   "pickup.header.title": "Retirada no ponto",
   "common.header.counter": " - n˚ {index} de {numPackages}",
   "payments.creditcard": "Cartão de crédito",
+  "payments.debitcard": "Cartão de débito",
   "payments.bankinvoice": "Boleto bancário",
   "payments.id": "ID do pagamento: {id}",
   "payments.promissory": "Dinheiro",
