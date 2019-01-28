@@ -25,6 +25,7 @@ const OrderInfo = ({ order, profile, splitOrder }) => {
   const takeaway = getTakeAwayPackagesFromParcels(parcels)
   const multipleDeliveries = delivery.length > 1
   const paymentsData = order.paymentData.transactions[0].payments
+  const transactionId = order.paymentData.transactions[0].transactionId
 
   return (
     <section>
@@ -41,7 +42,7 @@ const OrderInfo = ({ order, profile, splitOrder }) => {
         <OrderSection>
           {paymentsData.map((payment, index) => (
             <div key={index} className="flex flex-column pb6">
-              <PaymentMethod payment={payment} />
+              <PaymentMethod payment={payment} transactionId={transactionId} />
             </div>
           ))}
           <OrderOptions
