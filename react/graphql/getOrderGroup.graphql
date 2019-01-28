@@ -129,6 +129,7 @@ query GetOrderGroup($orderGroup: String) {
       transactions {
         transactionId
         payments {
+          id
           paymentSystem
           paymentSystemName
           value
