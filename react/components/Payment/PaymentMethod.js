@@ -33,8 +33,7 @@ class PaymentMethod extends Component {
   render() {
     const { payment, transactionId, intl } = this.props
     const open = this.state.open
-    const hasLastDigits =
-      payment.group === 'creditCard' || payment.group === 'debitCard'
+    const hasLastDigits = !!payment.lastDigits
     const isBankInvoice = payment.group === 'bankInvoice'
 
     return (
