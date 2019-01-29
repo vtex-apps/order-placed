@@ -47,11 +47,15 @@ export default compose(
   withoutSSR,
   graphql(getOrderGroup, {
     name: 'orderGroupQuery',
-    options: ({ runtime }) => ({
-      variables: {
-        orderGroup: runtime.route.params.orderGroup,
-      },
-    }),
+    options: () => {
+      const params = new URLSearchParams(location.search)
+      const orderGroup = params.get('og')
+      return {
+        variables: {
+          orderGroup,
+        },
+      }
+    },
   }),
   branch(
     ({ orderGroupQuery }) => orderGroupQuery.loading,
