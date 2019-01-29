@@ -76,8 +76,8 @@ const OrderInfo = ({ order, profile, numOfOrders, key }) => {
 OrderInfo.propTypes = {
   order: PropTypes.object.isRequired,
   profile: profileShape.isRequired,
-  numOfOrders: PropTypes.number.isRequired,
-  key: PropTypes.number.isRequired,
+  numOfOrders: PropTypes.number,
+  key: PropTypes.number,
 }
 
 export default OrderInfo
