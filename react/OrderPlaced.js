@@ -4,6 +4,7 @@ import { compose, graphql } from 'react-apollo'
 import { branch, renderComponent } from 'recompose'
 import { Loader } from 'vtex.order-details'
 import { withRuntimeContext } from 'vtex.render-runtime'
+
 import Header from './components/Header'
 import OrderInfo from './components/OrderInfo'
 import getOrderGroup from './graphql/getOrderGroup.graphql'
