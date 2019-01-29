@@ -4,6 +4,7 @@ import { injectIntl, intlShape } from 'react-intl'
 import { PageBlock } from 'vtex.styleguide'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import estimateCalculator from '@vtex/estimate-calculator'
+
 import { getTotalParcelsFromOrderGroup, intlMessage } from '../../utils'
 
 const OrderSummary = ({ data, intl }) => {
@@ -25,56 +26,61 @@ const OrderSummary = ({ data, intl }) => {
   return (
     totalDeliveries.length > 0 &&
     totalPickUps.length > 0 && (
-      <section className="w-80 center">
+      <section className="w-80 center bb b--muted-4 pb8">
         <PageBlock variation="half">
-          <article className="mb8 center">
-            <p className="t-heading-4 tc">
-              {intlMessage(intl, 'summary.shipping')}
-            </p>
-            <hr className="bg-muted-4 bt b--muted-4" />
-            <p>
-              {intlMessage(intl, 'summary.items', {
-                itemsQuantity: deliveryItemsQuantity,
-              })}
-              {intlMessage(intl, 'summary.shipping.quantity', {
-                shippings: totalDeliveries.length,
-              })}
-            </p>
-            <p className="t-heading-4">
-              <TranslateEstimate
-                shippingEstimate={longestDeliveryEstimate.shippingEstimate}
-              />
-            </p>
-            <small className="t-small c-muted-2">
+          <article className="center flex flex-column">
+            <div>
+              <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
+                {intlMessage(intl, 'summary.shipping')}
+              </p>
+              <p className="mv0 pt5 t-body">
+                <strong>
+                  {intlMessage(intl, 'summary.items', {
+                    itemsQuantity: deliveryItemsQuantity,
+                  })}
+                </strong>
+                {intlMessage(intl, 'summary.shipping.quantity', {
+                  shippings: totalDeliveries.length,
+                })}
+              </p>
+              <p className="t-heading-4 mt4">
+                <TranslateEstimate
+                  shippingEstimate={longestDeliveryEstimate.shippingEstimate}
+                />
+              </p>
+            </div>
+            <p className="c-muted-2 self-baseline mb0">
               {intlMessage(intl, 'summary.shipping.address', {
                 addressStreet: totalDeliveries[0].address.street,
                 addressNumber: totalDeliveries[0].address.number,
               })}
-            </small>
+            </p>
           </article>
-          <article className="mb8 center">
-            <p className="t-heading-4 tc">
+          <article className="center flex flex-column">
+            <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
               {intlMessage(intl, 'summary.pickup')}
             </p>
-            <hr className="bg-muted-4 bt b--muted-4" />
-            <p>
-              {intlMessage(intl, 'summary.items', {
-                itemsQuantity: pickUpItemsQuantity,
-              })}
+
+            <p className="mv0 pt5 t-body">
+              <strong>
+                {intlMessage(intl, 'summary.items', {
+                  itemsQuantity: pickUpItemsQuantity,
+                })}
+              </strong>
               {intlMessage(intl, 'summary.pickup.quantity', {
                 pickups: totalPickUps.length,
               })}
             </p>
-            <p className="t-heading-4">
+            <p className="t-heading-4 mt4">
               <TranslateEstimate
                 shippingEstimate={longestPickUpEstimate.shippingEstimate}
               />
             </p>
-            <small className="t-small c-muted-2">
+            <p className="c-muted-2 self-baseline mb0">
               {intlMessage(intl, 'summary.pickup.friendlyName', {
                 friendlyName: totalPickUps[0].pickupFriendlyName,
               })}
-            </small>
+            </p>
           </article>
         </PageBlock>
       </section>
