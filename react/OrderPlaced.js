@@ -29,7 +29,8 @@ class OrderPlaced extends Component {
               order={order}
               profile={order.clientProfileData}
               numOfOrders={orderGroupQuery.orderGroup.length}
-              key={index}
+              index={index}
+              key={order.orderId}
             />
           ))}
         </main>

@@ -18,7 +18,7 @@ import {
 } from '../../utils'
 import OrderOptions from './OrderOptions'
 
-const OrderInfo = ({ order, profile, numOfOrders, key }) => {
+const OrderInfo = ({ order, profile, numOfOrders, index }) => {
   const splitOrder = numOfOrders > 1
   const parcels = parcelify(order)
   const delivery = getDeliveryPackagesFromParcels(parcels)
@@ -68,7 +68,7 @@ const OrderInfo = ({ order, profile, numOfOrders, key }) => {
           orderValue={order.value}
         />
       </div>
-      {key < numOfOrders - 1 && <hr className="bg-muted-4 bt b--muted-4" />}
+      {index < numOfOrders - 1 && <hr className="bg-muted-4 bt b--muted-4" />}
     </section>
   )
 }
@@ -77,7 +77,7 @@ OrderInfo.propTypes = {
   order: PropTypes.object.isRequired,
   profile: profileShape.isRequired,
   numOfOrders: PropTypes.number,
-  key: PropTypes.number,
+  index: PropTypes.number,
 }
 
 export default OrderInfo
