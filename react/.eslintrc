@@ -1,11 +1,7 @@
 {
   "parser": "babel-eslint",
   "root": true,
-  "extends": [
-    "vtex",
-    "vtex-react",
-    "plugin:import/recommended"
-  ],
+  "extends": ["vtex", "vtex-react", "plugin:import/recommended"],
   "plugins": ["import"],
   "rules": {
     "import/no-unresolved": [
@@ -15,7 +11,8 @@
         "amd": true,
         "ignore": ["^([a-zA-Z@]+[-\\.]?)+"]
       }
-    ]
+    ],
+    "no-console": ["error", { "allow": ["warn", "error"] }]
   },
   "env": {
     "browser": true,
