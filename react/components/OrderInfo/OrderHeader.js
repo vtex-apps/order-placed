@@ -9,7 +9,6 @@ import {
 import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
 import { withRuntimeContext } from 'vtex.render-runtime'
-import { intlMessage } from '../../utils'
 import OrderOptions from './OrderOptions'
 
 const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
@@ -19,9 +18,12 @@ const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
   return (
     <header className="flex justify-between items-center mt7">
       <p className="t-heading-3-ns t-heading-4 lh-solid">
-        {intlMessage(intl, 'order.header.number', {
-          orderId: orderInfo.orderId,
-        })}
+        {intl.formatMessage(
+          { id: 'order.header.number' },
+          {
+            orderId: orderInfo.orderId,
+          }
+        )}
         <br />
         <small className="c-muted-2 t-small">
           <FormattedMessage

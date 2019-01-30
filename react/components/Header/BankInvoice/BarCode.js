@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Button } from 'vtex.styleguide'
 import Clipboard from 'react-clipboard.js'
 import { injectIntl, intlShape } from 'react-intl'
-import { intlMessage } from '../../../utils'
 
 const BarCode = ({ barCodeNumber, intl }) => (
   <div
@@ -19,7 +18,7 @@ const BarCode = ({ barCodeNumber, intl }) => (
       className="b--muted-4 bl bw1 flex items-center"
     >
       <Button variation="tertiary">
-        {intlMessage(intl, 'header.bankinvoice.copy')}
+        {intl.formatMessage({ id: 'header.bankinvoice.copy' })}
       </Button>
     </Clipboard>
   </div>

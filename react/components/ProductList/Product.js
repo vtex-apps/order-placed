@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
-import { intlMessage } from '../../utils'
+
 import FormattedPrice from '../Payment/FormattedPrice'
 
 const Product = ({ productInfo, intl }) => {
@@ -36,9 +36,12 @@ const Product = ({ productInfo, intl }) => {
             </p>
           </a>
           <p className="t-mini c-muted-1 tc tl-m">
-            {intlMessage(intl, 'products.quantity', {
-              quantity: productInfo.quantity,
-            })}
+            {intl.formatMessage(
+              { id: 'products.quantity' },
+              {
+                quantity: productInfo.quantity,
+              }
+            )}
           </p>
         </div>
       </div>

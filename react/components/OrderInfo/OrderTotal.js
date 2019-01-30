@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape } from 'react-intl'
 
-import { intlMessage } from '../../utils'
 import Price from '../Payment/FormattedPrice'
 
 const ShippingTotals = ({ items, totals, orderValue, intl }) => {
@@ -12,21 +11,23 @@ const ShippingTotals = ({ items, totals, orderValue, intl }) => {
   return (
     <div className="bg-muted-5 br2 pa5 mv9">
       <div className={totalsLine}>
-        <p>{intlMessage(intl, 'order.totals.subtotal', { numItems })}</p>
+        <p>
+          {intl.formatMessage({ id: 'order.totals.subtotal' }, { numItems })}
+        </p>
         <Price value={totals[0].value} />
       </div>
       <div className={totalsLine}>
-        <p>{intlMessage(intl, 'order.totals.delivery')}</p>
+        <p>{intl.formatMessage({ id: 'order.totals.delivery' })}</p>
         <Price value={totals[2].value} />
       </div>
       <div className={totalsLine}>
-        <p>{intlMessage(intl, 'order.totals.pickup')}</p>
-        <p>{intlMessage(intl, 'order.totals.pickup.free')}</p>
+        <p>{intl.formatMessage({ id: 'order.totals.pickup' })}</p>
+        <p>{intl.formatMessage({ id: 'order.totals.pickup.free' })}</p>
       </div>
       <hr className="bg-muted-4 bt b--muted-4" />
       <div className="flex justify-between items-center c-on-base">
         <p>
-          <strong>{intlMessage(intl, 'order.totals.total')}</strong>
+          <strong>{intl.formatMessage({ id: 'order.totals.total' })}</strong>
         </p>
         <strong>
           <Price value={orderValue} />

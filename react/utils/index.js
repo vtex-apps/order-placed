@@ -30,9 +30,6 @@ export const getTakeAwayPackagesFromParcels = parcels =>
     takeawayPackage => takeawayPackage.deliveryChannel === 'takeaway'
   )
 
-export const intlMessage = (intl, id, values) =>
-  intl.formatMessage({ id }, values)
-
 export const getPaymentGroupFromOrder = order => ({
   paymentGroup: order.paymentData.transactions[0].payments[0].group,
   value: order.paymentData.transactions[0].payments[0].value,
