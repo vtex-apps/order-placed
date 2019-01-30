@@ -38,6 +38,7 @@
   "order.totals.total": "Total",
   "shipping.header.title": "Entrega em casa",
   "pickup.header.title": "Retirada no ponto",
+  "takeaway.header.title": "Levar agora",
   "common.header.counter": " - n˚ {index} de {numPackages}",
   "payments.creditcard": "Cartão de crédito",
   "payments.debitcard": "Cartão de débito",
