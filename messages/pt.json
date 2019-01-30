@@ -4,6 +4,7 @@
   "header.email": "Você receberá um e-mail no endereço {userEmail} com todos os detalhes do seu pedido em até 5 minutos.{lineBreak}Lembre-se de conferir sua caixa de lixo eletrônico.",
   "header.email.button": "Reenviar email",
   "header.print.button": "Imprimir página",
+  "header.newpurchase.button": "Iniciar nova venda",
   "header.bankinvoice.header": "Dados do #{paymentSystemName} a ser pago",
   "header.bankinvoice.print": "Imprimir #{paymentSystemName}",
   "header.bankinvoice.copy": "Copiar",
