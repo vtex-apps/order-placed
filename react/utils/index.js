@@ -17,7 +17,7 @@ export const getTotalParcelsFromOrderGroup = orderGroup => {
 
 export const getPickUpPackagesFromParcels = parcels =>
   parcels.filter(
-    pickupPackage => pickupPackage.deliveryChannel === 'pickup-in-point'
+    pickupPackage => pickupPackage.selectedSlaType === 'pickup-in-point'
   )
 
 export const getDeliveryPackagesFromParcels = parcels =>
@@ -27,7 +27,7 @@ export const getDeliveryPackagesFromParcels = parcels =>
 
 export const getTakeAwayPackagesFromParcels = parcels =>
   parcels.filter(
-    takeawayPackage => takeawayPackage.deliveryChannel === 'takeaway'
+    takeawayPackage => takeawayPackage.selectedSlaType === 'take-away'
   )
 
 export const getPaymentGroupFromOrder = order => ({
