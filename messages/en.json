@@ -4,6 +4,7 @@
   "header.email": "In up to 5 minutes, you'll receive an email at {userEmail} with all your purchase details.{lineBreak}Remember to check your spam inbox",
   "header.email.button": "Resend email",
   "header.print.button": "Print",
+  "header.newpurchase.button": "Start new order",
   "header.bankinvoice.header": "Information on your #{paymentSystemName}",
   "header.bankinvoice.print": "Print #{paymentSystemName}",
   "header.bankinvoice.copy": "Copy",
