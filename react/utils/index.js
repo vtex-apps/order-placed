@@ -32,6 +32,8 @@ export const getTakeAwayPackagesFromParcels = parcels =>
 
 export const getPaymentGroupFromOrder = order => ({
   paymentGroup: order.paymentData.transactions[0].payments[0].group,
+  paymentSystemName:
+    order.paymentData.transactions[0].payments[0].paymentSystemName,
   value: order.paymentData.transactions[0].payments[0].value,
   dueDate: order.paymentData.transactions[0].payments[0].dueDate,
   url: order.paymentData.transactions[0].payments[0].url,

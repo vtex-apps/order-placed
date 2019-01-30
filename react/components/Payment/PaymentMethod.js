@@ -60,7 +60,10 @@ class PaymentMethod extends Component {
           </p>
           {isBankInvoice && (
             <ButtonLink url={payment.url} variation="primary">
-              {intl.formatMessage({ id: 'payments.bankinvoice.print' })}
+              {intl.formatMessage(
+                { id: 'payments.bankinvoice.print' },
+                { paymentSystemName: payment.paymentSystemName }
+              )}
             </ButtonLink>
           )}
           <div hidden={!open}>

@@ -75,9 +75,12 @@ const Warnings = ({ data, intl }) => {
           <Fragment>
             <li className={`${listItem} ${bottomBorder}`}>
               <p className="pv2">
-                {intl.formatMessage({
-                  id: 'warnings.payment.bankInvoice.approval',
-                })}
+                {intl.formatMessage(
+                  {
+                    id: 'warnings.payment.bankInvoice.approval',
+                  },
+                  { paymentSystemName: bankInvoices[0].paymentSystemName }
+                )}
               </p>
             </li>
             <li className={listItem}>
@@ -116,7 +119,10 @@ const Warnings = ({ data, intl }) => {
                   )}
                 </p>
                 <ButtonLink url={bankInvoices[0].url} variation="primary">
-                  {intl.formatMessage({ id: 'payments.bankinvoice.print' })}
+                  {intl.formatMessage(
+                    { id: 'payments.bankinvoice.print' },
+                    { paymentSystemName: bankInvoices[0].paymentSystemName }
+                  )}
                 </ButtonLink>
               </div>
             </li>

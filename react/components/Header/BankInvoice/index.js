@@ -6,18 +6,24 @@ import BarCode from './BarCode'
 import Embedded from './Embedded'
 import ButtonLink from '../../ButtonLink'
 
-const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => (
+const BankInvoice = ({ url, invoiceBarCodeNumber, paymentSystem, intl }) => (
   <section
     data-testid="bank-invoice-info"
     className="pv4 w-80-ns w-90 center bb b--muted-5"
   >
     <header className="t-heading-4">
-      {intl.formatMessage({ id: 'header.bankinvoice.header' })}
+      {intl.formatMessage(
+        { id: 'header.bankinvoice.header' },
+        { paymentSystemName: paymentSystem }
+      )}
     </header>
     <article className="flex justify-between items-center">
       {invoiceBarCodeNumber && <BarCode barCodeNumber={invoiceBarCodeNumber} />}
       <ButtonLink url={url} icon={<PrinterIcon />} variation="secondary">
-        {intl.formatMessage({ id: 'header.bankinvoice.print' })}
+        {intl.formatMessage(
+          { id: 'header.bankinvoice.print' },
+          { paymentSystemName: paymentSystem }
+        )}
       </ButtonLink>
     </article>
     <article>
@@ -29,6 +35,7 @@ const BankInvoice = ({ url, invoiceBarCodeNumber, intl }) => (
 BankInvoice.propTypes = {
   url: PropTypes.string,
   invoiceBarCodeNumber: PropTypes.string,
+  paymentSystem: PropTypes.string.isRequired,
   intl: intlShape.isRequired,
 }
 
