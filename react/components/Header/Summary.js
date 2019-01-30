@@ -28,27 +28,25 @@ const OrderSummary = ({ data, intl }) => {
     totalPickUps.length > 0 && (
       <section className="w-80 center bb b--muted-4 pb8">
         <PageBlock variation="half">
-          <article className="center flex flex-column">
-            <div>
-              <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
-                {intlMessage(intl, 'summary.shipping')}
-              </p>
-              <p className="mv0 pt5 t-body">
-                <strong>
-                  {intlMessage(intl, 'summary.items', {
-                    itemsQuantity: deliveryItemsQuantity,
-                  })}
-                </strong>
-                {intlMessage(intl, 'summary.shipping.quantity', {
-                  shippings: totalDeliveries.length,
+          <article className="center">
+            <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
+              {intlMessage(intl, 'summary.shipping')}
+            </p>
+            <p className="mb0 pt5 t-body mt2">
+              <strong>
+                {intlMessage(intl, 'summary.items', {
+                  itemsQuantity: deliveryItemsQuantity,
                 })}
-              </p>
-              <p className="t-heading-4 mt4">
-                <TranslateEstimate
-                  shippingEstimate={longestDeliveryEstimate.shippingEstimate}
-                />
-              </p>
-            </div>
+              </strong>
+              {intlMessage(intl, 'summary.shipping.quantity', {
+                shippings: totalDeliveries.length,
+              })}
+            </p>
+            <p className="t-heading-4 mt4">
+              <TranslateEstimate
+                shippingEstimate={longestDeliveryEstimate.shippingEstimate}
+              />
+            </p>
             <p className="c-muted-2 self-baseline mb0">
               {intlMessage(intl, 'summary.shipping.address', {
                 addressStreet: totalDeliveries[0].address.street,
@@ -56,12 +54,11 @@ const OrderSummary = ({ data, intl }) => {
               })}
             </p>
           </article>
-          <article className="center flex flex-column">
+          <article className="center">
             <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
               {intlMessage(intl, 'summary.pickup')}
             </p>
-
-            <p className="mv0 pt5 t-body">
+            <p className="mb0 pt5 t-body mt2">
               <strong>
                 {intlMessage(intl, 'summary.items', {
                   itemsQuantity: pickUpItemsQuantity,
