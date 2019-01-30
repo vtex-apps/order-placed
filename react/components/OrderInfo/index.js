@@ -28,6 +28,7 @@ const OrderInfo = ({ order, profile, numOfOrders, index }) => {
   const multipleDeliveries = delivery.length > 1
   const paymentsData = order.paymentData.transactions[0].payments
   const transactionId = order.paymentData.transactions[0].transactionId
+  const hasCustomerName = profile.firstName && profile.lastName
 
   return (
     <section>
@@ -44,7 +45,7 @@ const OrderInfo = ({ order, profile, numOfOrders, index }) => {
             takeaways={takeaway.length}
           />
         )}
-        <CustomerInfo profile={profile} />
+        {hasCustomerName && <CustomerInfo profile={profile} />}
         <OrderSection>
           {paymentsData.map((payment, index) => (
             <div key={index} className="flex flex-column pb6">
