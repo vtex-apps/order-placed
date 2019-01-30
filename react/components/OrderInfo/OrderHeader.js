@@ -11,7 +11,7 @@ import { FormattedDate } from 'vtex.order-details'
 import { withRuntimeContext } from 'vtex.render-runtime'
 import OrderOptions from './OrderOptions'
 
-const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
+const OrderHeader = ({ orderInfo, splitOrder, takeaway, runtime, intl }) => {
   const storeAccount = runtime.account
   const orderSeller = orderInfo.sellers[0].name
 
@@ -47,10 +47,16 @@ const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
             />
           </small>
         )}
+        {takeaway && (
+          <a className="c-action-primary t-small" href="#">
+            {intl.formatMessage({ id: 'order.header.receipt' })}
+          </a>
+        )}
       </p>
       <OrderOptions
         className="dn-s flex-l"
         allowCancellation={orderInfo.allowCancellation}
+        takeaway={takeaway}
       />
     </header>
   )
@@ -59,6 +65,7 @@ const OrderHeader = ({ orderInfo, splitOrder, runtime, intl }) => {
 OrderHeader.propTypes = {
   orderInfo: PropTypes.object.isRequired,
   splitOrder: PropTypes.bool,
+  takeaway: PropTypes.bool,
   runtime: PropTypes.object.isRequired,
   intl: intlShape.isRequired,
 }
