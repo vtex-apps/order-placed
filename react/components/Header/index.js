@@ -61,6 +61,7 @@ const Header = ({ data, profile, intl }) => {
         <BankInvoice
           url={bankInvoices[0].url}
           invoiceBarCodeNumber={bankInvoices[0].barCodeNumber}
+          paymentSystem={bankInvoices[0].paymentSystemName}
         />
       )}
     </header>
