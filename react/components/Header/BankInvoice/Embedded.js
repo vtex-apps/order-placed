@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropType from 'prop-types'
 import { injectIntl, intlShape } from 'react-intl'
 import { ButtonWithIcon, IconCaretDown, IconCaretUp } from 'vtex.styleguide'
-import { intlMessage } from '../../../utils'
 
 class Embedded extends Component {
   state = { open: false }
@@ -26,7 +25,7 @@ class Embedded extends Component {
             variation="tertiary"
             onClick={this.handleClick}
           >
-            {intlMessage(intl, 'header.bankinvoice.embeded.collapse')}
+            {intl.formatMessage({ id: 'header.bankinvoice.embeded.collapse' })}
           </ButtonWithIcon>
         ) : (
           <ButtonWithIcon
@@ -34,7 +33,7 @@ class Embedded extends Component {
             variation="tertiary"
             onClick={this.handleClick}
           >
-            {intlMessage(intl, 'header.bankinvoice.embeded.expand')}
+            {intl.formatMessage({ id: 'header.bankinvoice.embeded.expand' })}
           </ButtonWithIcon>
         )}
       </div>

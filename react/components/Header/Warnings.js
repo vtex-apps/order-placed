@@ -4,7 +4,6 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
 import {
   getTotalParcelsFromOrderGroup,
-  intlMessage,
   getPaymentGroupFromOrder,
 } from '../../utils'
 import Price from '../Payment/FormattedPrice'
@@ -29,7 +28,7 @@ const Warnings = ({ data, intl }) => {
         {!hasBankInvoice && (
           <li className={`${listItem} ${bottomBorder}`}>
             <p className="pb2">
-              {intlMessage(intl, 'warnings.payment.approval')}
+              {intl.formatMessage({ id: 'warnings.payment.approval' })}
             </p>
           </li>
         )}
@@ -37,7 +36,7 @@ const Warnings = ({ data, intl }) => {
           <Fragment>
             <li className={`${listItem} ${bottomBorder}`}>
               <p className="pv2">
-                {intlMessage(intl, 'warnings.delivery.time')}
+                {intl.formatMessage({ id: 'warnings.delivery.time' })}
               </p>
             </li>
             <li
@@ -48,22 +47,27 @@ const Warnings = ({ data, intl }) => {
               }`}
             >
               <p className="pv2">
-                {intlMessage(intl, 'warnings.delivery.tracking')}
+                {intl.formatMessage({ id: 'warnings.delivery.tracking' })}
               </p>
             </li>
           </Fragment>
         )}
         {totalPickUps.length > 0 && (
           <li className={`${listItem} ${orderWasSplit ? bottomBorder : ''}`}>
-            <p className="pt2">{intlMessage(intl, 'warnings.pickup.time')}</p>
+            <p className="pt2">
+              {intl.formatMessage({ id: 'warnings.pickup.time' })}
+            </p>
           </li>
         )}
         {orderWasSplit && (
           <li className={`${listItem} ${hasBankInvoice ? bottomBorder : ''}`}>
             <p className="pt2">
-              {intlMessage(intl, 'warnings.order.split', {
-                numOrders: data.length,
-              })}
+              {intl.formatMessage(
+                { id: 'warnings.order.split' },
+                {
+                  numOrders: data.length,
+                }
+              )}
             </p>
           </li>
         )}
@@ -71,7 +75,9 @@ const Warnings = ({ data, intl }) => {
           <Fragment>
             <li className={`${listItem} ${bottomBorder}`}>
               <p className="pv2">
-                {intlMessage(intl, 'warnings.payment.bankInvoice.approval')}
+                {intl.formatMessage({
+                  id: 'warnings.payment.bankInvoice.approval',
+                })}
               </p>
             </li>
             <li className={listItem}>
@@ -110,7 +116,7 @@ const Warnings = ({ data, intl }) => {
                   )}
                 </p>
                 <ButtonLink url={bankInvoices[0].url} variation="primary">
-                  {intlMessage(intl, 'payments.bankinvoice.print')}
+                  {intl.formatMessage({ id: 'payments.bankinvoice.print' })}
                 </ButtonLink>
               </div>
             </li>

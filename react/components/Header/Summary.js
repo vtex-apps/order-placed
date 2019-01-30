@@ -5,7 +5,7 @@ import { PageBlock } from 'vtex.styleguide'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import estimateCalculator from '@vtex/estimate-calculator'
 
-import { getTotalParcelsFromOrderGroup, intlMessage } from '../../utils'
+import { getTotalParcelsFromOrderGroup } from '../../utils'
 
 const OrderSummary = ({ data, intl }) => {
   const { totalDeliveries, totalPickUps } = getTotalParcelsFromOrderGroup(data)
@@ -30,17 +30,23 @@ const OrderSummary = ({ data, intl }) => {
         <PageBlock variation="half">
           <article className="center">
             <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
-              {intlMessage(intl, 'summary.shipping')}
+              {intl.formatMessage({ id: 'summary.shipping' })}
             </p>
             <p className="mb0 pt5 t-body mt2">
               <strong>
-                {intlMessage(intl, 'summary.items', {
-                  itemsQuantity: deliveryItemsQuantity,
-                })}
+                {intl.formatMessage(
+                  { id: 'summary.items' },
+                  {
+                    itemsQuantity: deliveryItemsQuantity,
+                  }
+                )}
               </strong>
-              {intlMessage(intl, 'summary.shipping.quantity', {
-                shippings: totalDeliveries.length,
-              })}
+              {intl.formatMessage(
+                { id: 'summary.shipping.quantity' },
+                {
+                  shippings: totalDeliveries.length,
+                }
+              )}
             </p>
             <p className="t-heading-4 mt4">
               <TranslateEstimate
@@ -48,25 +54,34 @@ const OrderSummary = ({ data, intl }) => {
               />
             </p>
             <p className="c-muted-2 self-baseline mb0">
-              {intlMessage(intl, 'summary.shipping.address', {
-                addressStreet: totalDeliveries[0].address.street,
-                addressNumber: totalDeliveries[0].address.number,
-              })}
+              {intl.formatMessage(
+                { id: 'summary.shipping.address' },
+                {
+                  addressStreet: totalDeliveries[0].address.street,
+                  addressNumber: totalDeliveries[0].address.number,
+                }
+              )}
             </p>
           </article>
           <article className="center">
             <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
-              {intlMessage(intl, 'summary.pickup')}
+              {intl.formatMessage({ id: 'summary.pickup' })}
             </p>
             <p className="mb0 pt5 t-body mt2">
               <strong>
-                {intlMessage(intl, 'summary.items', {
-                  itemsQuantity: pickUpItemsQuantity,
-                })}
+                {intl.formatMessage(
+                  { id: 'summary.items' },
+                  {
+                    itemsQuantity: pickUpItemsQuantity,
+                  }
+                )}
               </strong>
-              {intlMessage(intl, 'summary.pickup.quantity', {
-                pickups: totalPickUps.length,
-              })}
+              {intl.formatMessage(
+                { id: 'summary.pickup.quantity' },
+                {
+                  pickups: totalPickUps.length,
+                }
+              )}
             </p>
             <p className="t-heading-4 mt4">
               <TranslateEstimate
@@ -74,9 +89,12 @@ const OrderSummary = ({ data, intl }) => {
               />
             </p>
             <p className="c-muted-2 self-baseline mb0">
-              {intlMessage(intl, 'summary.pickup.friendlyName', {
-                friendlyName: totalPickUps[0].pickupFriendlyName,
-              })}
+              {intl.formatMessage(
+                { id: 'summary.pickup.friendlyName' },
+                {
+                  friendlyName: totalPickUps[0].pickupFriendlyName,
+                }
+              )}
             </p>
           </article>
         </PageBlock>

@@ -4,7 +4,6 @@ import { intlShape, injectIntl } from 'react-intl'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
 import { paymentShape } from '../../types'
-import { intlMessage } from '../../utils'
 import ButtonLink from '../ButtonLink'
 import Price from './FormattedPrice'
 
@@ -42,30 +41,39 @@ class PaymentMethod extends Component {
           <p className="c-on-base">{paymentGroupSwitch(payment, intl)}</p>
           {hasLastDigits && (
             <p className="c-muted-1">
-              {intlMessage(intl, 'payments.creditcard.lastDigits', {
-                lastDigits: payment.lastDigits,
-              })}
+              {intl.formatMessage(
+                { id: 'payments.creditcard.lastDigits' },
+                {
+                  lastDigits: payment.lastDigits,
+                }
+              )}
             </p>
           )}
           <p className="c-muted-1">
             <Price value={payment.value} />
-            {` ${intlMessage(intl, 'payments.installments', {
-              installments: payment.installments,
-            })}`}
+            {` ${intl.formatMessage(
+              { id: 'payments.installments' },
+              {
+                installments: payment.installments,
+              }
+            )}`}
           </p>
           {isBankInvoice && (
             <ButtonLink url={payment.url} variation="primary">
-              {intlMessage(intl, 'payments.bankinvoice.print')}
+              {intl.formatMessage({ id: 'payments.bankinvoice.print' })}
             </ButtonLink>
           )}
           <div hidden={!open}>
             <p className="c-muted-2">
-              {intlMessage(intl, 'payments.id', { id: payment.id })}
+              {intl.formatMessage({ id: 'payments.id' }, { id: payment.id })}
             </p>
             <p className="c-muted-2">
-              {intlMessage(intl, 'payments.transaction.id', {
-                id: transactionId,
-              })}
+              {intl.formatMessage(
+                { id: 'payments.transaction.id' },
+                {
+                  id: transactionId,
+                }
+              )}
             </p>
           </div>
         </div>

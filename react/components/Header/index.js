@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 import { profileShape } from '../../types'
-import { intlMessage, getPaymentGroupFromOrder } from '../../utils'
+import { getPaymentGroupFromOrder } from '../../utils'
 import SuccessIcon from '../../Icons/Success'
 import Warnings from './Warnings'
 import Summary from './Summary'
@@ -26,7 +26,7 @@ const Header = ({ data, profile, intl }) => {
         </div>
 
         <p className="tc c-on-base mt7 mb0 t-heading-4 w-90 center">
-          {intlMessage(intl, 'header.thanks')}
+          {intl.formatMessage({ id: 'header.thanks' })}
         </p>
 
         <p className="center mt4 t-body tc c-muted-1 lh-copy w-90 center">
@@ -42,12 +42,12 @@ const Header = ({ data, profile, intl }) => {
         <div className="flex justify-center t-action mv8 w-90 center">
           <div className="tr c-action-primary mr2">
             <Button variation="secondary">
-              {intlMessage(intl, 'header.email.button')}
+              {intl.formatMessage({ id: 'header.email.button' })}
             </Button>
           </div>
           <div className="tr c-action-primary ml2">
             <Button variation="secondary">
-              {intlMessage(intl, 'header.print.button')}
+              {intl.formatMessage({ id: 'header.print.button' })}
             </Button>
           </div>
         </div>

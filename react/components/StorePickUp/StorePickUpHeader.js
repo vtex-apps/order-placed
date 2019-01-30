@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
+
 import Address from '../Address'
-import { intlMessage } from '../../utils'
 
 const StorePickUpHeader = ({ shippingData, index, numPackages, intl }) => {
   const multiplePickups = numPackages > 1
@@ -16,12 +16,15 @@ const StorePickUpHeader = ({ shippingData, index, numPackages, intl }) => {
         data-testid="storepickup-header"
         className="t-heading-4-ns t-heading-5"
       >
-        {intlMessage(intl, 'pickup.header.title')}
+        {intl.formatMessage({ id: 'pickup.header.title' })}
         {multiplePickups &&
-          intlMessage(intl, 'common.header.counter', {
-            index: index + 1,
-            numPackages,
-          })}
+          intl.formatMessage(
+            { id: 'common.header.counter' },
+            {
+              index: index + 1,
+              numPackages,
+            }
+          )}
         <br />
         <small className="c-muted-2 t-small">
           <TranslateEstimate
