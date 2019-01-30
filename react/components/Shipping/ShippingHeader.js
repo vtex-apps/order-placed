@@ -23,6 +23,8 @@ const ShippingHeader = ({ shippingData, index, numPackages, intl }) => {
             scheduled={shippingData.deliveryWindow}
           />
         </small>
+        <br />
+        <small className="c-muted-2 t-small">{shippingData.selectedSla}</small>
       </p>
       <Address address={shippingData.address} />
     </header>
