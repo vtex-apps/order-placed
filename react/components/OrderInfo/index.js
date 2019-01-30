@@ -8,6 +8,7 @@ import PaymentMethod from '../Payment/PaymentMethod'
 import Shipping from '../Shipping'
 import OrderTotal from './OrderTotal'
 import StorePickUp from '../StorePickUp'
+import TakeAway from '../TakeAway'
 import OrderSplitNotice from './OrderSplitNotice'
 import OrderSection from './OrderSection'
 import { profileShape } from '../../types'
@@ -31,7 +32,11 @@ const OrderInfo = ({ order, profile, numOfOrders, index }) => {
   return (
     <section>
       <div className="mv6 w-80-ns w-90 center">
-        <OrderHeader orderInfo={order} splitOrder={splitOrder} />
+        <OrderHeader
+          orderInfo={order}
+          splitOrder={splitOrder}
+          takeaway={takeaway.length > 0}
+        />
         {multipleDeliveries && (
           <OrderSplitNotice
             deliveries={delivery.length}
@@ -60,6 +65,11 @@ const OrderInfo = ({ order, profile, numOfOrders, index }) => {
         {delivery.length > 0 && (
           <OrderSection>
             <Shipping deliveryPackages={delivery} />
+          </OrderSection>
+        )}
+        {takeaway.length > 0 && (
+          <OrderSection>
+            <TakeAway takeAwayPackages={takeaway} />
           </OrderSection>
         )}
         <OrderTotal

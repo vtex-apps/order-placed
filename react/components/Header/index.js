@@ -9,7 +9,7 @@ import Warnings from './Warnings'
 import Summary from './Summary'
 import BankInvoice from './BankInvoice'
 
-const Header = ({ data, profile, intl }) => {
+const Header = ({ data, profile, inStore, intl }) => {
   const bankInvoices = data
     .reduce(
       (acc, currOrder) => [...acc, getPaymentGroupFromOrder(currOrder)],
@@ -40,16 +40,23 @@ const Header = ({ data, profile, intl }) => {
         </p>
 
         <div className="flex justify-center t-action mv8 w-90 center">
-          <div className="tr c-action-primary mr2">
+          <div className="tr c-action-primary">
             <Button variation="secondary">
               {intl.formatMessage({ id: 'header.email.button' })}
             </Button>
           </div>
-          <div className="tr c-action-primary ml2">
+          <div className="tr c-action-primary ml4">
             <Button variation="secondary">
               {intl.formatMessage({ id: 'header.print.button' })}
             </Button>
           </div>
+          {inStore && (
+            <div className="tr c-action-primary ml4">
+              <Button variation="primary">
+                {intl.formatMessage({ id: 'header.newpurchase.button' })}
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -71,6 +78,7 @@ const Header = ({ data, profile, intl }) => {
 Header.propTypes = {
   data: PropTypes.array.isRequired,
   profile: profileShape.isRequired,
+  inStore: PropTypes.bool,
   intl: intlShape.isRequired,
 }
 
