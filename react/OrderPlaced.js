@@ -14,7 +14,7 @@ export const CurrencyContext = React.createContext('BRL')
 
 class OrderPlaced extends Component {
   render() {
-    const { orderGroupQuery } = this.props
+    const { orderGroupQuery, inStore } = this.props
     return (
       <CurrencyContext.Provider
         value={orderGroupQuery.orderGroup[0].storePreferencesData.currencyCode}
@@ -22,6 +22,7 @@ class OrderPlaced extends Component {
         <Header
           data={orderGroupQuery.orderGroup}
           profile={orderGroupQuery.orderGroup[0].clientProfileData}
+          inStore={inStore}
         />
         <main>
           {orderGroupQuery.orderGroup.map((order, index) => (
@@ -41,6 +42,7 @@ class OrderPlaced extends Component {
 
 OrderPlaced.propTypes = {
   orderGroupQuery: PropTypes.object.isRequired,
+  inStore: PropTypes.bool,
   runtime: PropTypes.object.isRequired,
 }
 
