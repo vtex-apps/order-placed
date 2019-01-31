@@ -72,7 +72,9 @@ const Header = ({ data, profile, inStore, intl }) => {
         </div>
       </section>
 
-      {(hasDelivery || hasPickUp) && <Warnings data={data} />}
+      {(hasDelivery || hasPickUp) && (
+        <Warnings data={data} hasDelivery={hasDelivery} hasPickUp={hasPickUp} />
+      )}
 
       {hasDelivery && hasPickUp && <Summary data={data} />}
 

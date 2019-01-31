@@ -2,7 +2,6 @@ import React from 'react'
 
 import { render } from '../testUtils'
 import Header from '../components/Header'
-import Warnings from '../components/Header/Warnings'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
 import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
@@ -10,6 +9,7 @@ import { orderGroupQuery as bankInvoiceDueDate } from '../mocks/bankInvoiceLogge
 import { orderGroupQuery as bankInvoiceNumber } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as bankInvoiceNoDueDate } from '../mocks/bankInvoice'
 import { orderGroupQuery as deliveryAndPickup } from '../mocks/pickupAndDelivery'
+import { orderGroupQuery as takeAwayOnly } from '../mocks/takeaway'
 
 describe('Confirmation messages', () => {
   it('should render success icon', () => {
@@ -39,7 +39,12 @@ describe('Confirmation messages', () => {
 
 describe('Warnings', () => {
   it('should render payment confirmation estimate', () => {
-    const { getByText } = render(<Warnings data={oneDelivery.orderGroup} />)
+    const { getByText } = render(
+      <Header
+        data={oneDelivery.orderGroup}
+        profile={oneDelivery.orderGroup[0].clientProfileData}
+      />
+    )
 
     const paymentApproval = getByText(
       /Payment approval may take up to \d bussiness days/i
@@ -48,7 +53,12 @@ describe('Warnings', () => {
   })
 
   it('should render shipping estimate disclaimers if order has shipping items', () => {
-    const { getByText } = render(<Warnings data={oneDelivery.orderGroup} />)
+    const { getByText } = render(
+      <Header
+        data={oneDelivery.orderGroup}
+        profile={oneDelivery.orderGroup[0].clientProfileData}
+      />
+    )
 
     const paymentDisclaimer = getByText(
       'The delivery period starts from the moment your payment is confirmed'
@@ -62,7 +72,12 @@ describe('Warnings', () => {
   })
 
   it('should not render shipping estimate disclaimers if order has no shipping items', () => {
-    const { queryByText } = render(<Warnings data={onePickup.orderGroup} />)
+    const { queryByText } = render(
+      <Header
+        data={onePickup.orderGroup}
+        profile={onePickup.orderGroup[0].clientProfileData}
+      />
+    )
 
     const paymentDisclaimer = queryByText(
       'The delivery period starts from the moment your payment is confirmed'
@@ -76,7 +91,12 @@ describe('Warnings', () => {
   })
 
   it('should render pickup estimate disclaimer if order has pickup items', () => {
-    const { getByText } = render(<Warnings data={onePickup.orderGroup} />)
+    const { getByText } = render(
+      <Header
+        data={onePickup.orderGroup}
+        profile={onePickup.orderGroup[0].clientProfileData}
+      />
+    )
 
     const paymentDisclaimer = getByText(
       'The store pickup period starts from the moment your payment is confirmed'
@@ -86,7 +106,12 @@ describe('Warnings', () => {
   })
 
   it('should not render pickup estimate disclaimers if order has no pickup items', () => {
-    const { queryByText } = render(<Warnings data={oneDelivery.orderGroup} />)
+    const { queryByText } = render(
+      <Header
+        data={oneDelivery.orderGroup}
+        profile={oneDelivery.orderGroup[0].clientProfileData}
+      />
+    )
 
     const paymentDisclaimer = queryByText(
       'The store pickup period starts from the moment your payment is confirmed'
@@ -96,7 +121,12 @@ describe('Warnings', () => {
   })
 
   it('should render disclaimer for split orders', () => {
-    const { queryByText } = render(<Warnings data={splitOrder.orderGroup} />)
+    const { queryByText } = render(
+      <Header
+        data={splitOrder.orderGroup}
+        profile={splitOrder.orderGroup[0].clientProfileData}
+      />
+    )
 
     const splitOrderDisclaimer = queryByText(
       /Your purchase was split into \d orders as some of the items were sold by partners. This does not affect shipping estimates/
@@ -106,7 +136,10 @@ describe('Warnings', () => {
 
   it('should render warning for bank invoices with due date', () => {
     const { queryByText } = render(
-      <Warnings data={bankInvoiceDueDate.orderGroup} />
+      <Header
+        data={bankInvoiceDueDate.orderGroup}
+        profile={bankInvoiceDueDate.orderGroup[0].clientProfileData}
+      />
     )
     const bankInvoiceWarning = queryByText(
       /Please make a payment of \d+ up to \d{1,2}\/\d{1,2}\/\d{4} according to the data below/
@@ -116,13 +149,27 @@ describe('Warnings', () => {
 
   it('should render warning for bank invoices without due date', () => {
     const { queryByText } = render(
-      <Warnings data={bankInvoiceNoDueDate.orderGroup} />
+      <Header
+        data={bankInvoiceNoDueDate.orderGroup}
+        profile={bankInvoiceNoDueDate.orderGroup[0].clientProfileData}
+      />
     )
 
     const bankInvoiceWarning = queryByText(
       /Please make a payment of \d+ up to the due date according to the data below/
     )
     expect(bankInvoiceWarning).toBeDefined()
+  })
+
+  it('should not render Warnings if that are only take away items', () => {
+    const { queryByTestId } = render(
+      <Header
+        data={takeAwayOnly.orderGroup}
+        profile={takeAwayOnly.orderGroup[0].clientProfileData}
+      />
+    )
+
+    expect(queryByTestId('warnings-section')).toBeNull()
   })
 })
 
