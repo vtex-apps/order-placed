@@ -9,10 +9,13 @@ export const getTotalParcelsFromOrderGroup = orderGroup => {
     deliveryPackage => deliveryPackage.deliveryChannel === 'delivery'
   )
   const totalPickUps = totalParcels.filter(
-    pickupPackage => pickupPackage.deliveryChannel === 'pickup-in-point'
+    pickupPackage => pickupPackage.selectedSlaType === 'pickup-in-point'
+  )
+  const totalTakeAways = totalParcels.filter(
+    takeawayPackage => takeawayPackage.selectedSlaType === 'take-away'
   )
 
-  return { totalParcels, totalDeliveries, totalPickUps }
+  return { totalParcels, totalDeliveries, totalPickUps, totalTakeAways }
 }
 
 export const getPickUpPackagesFromParcels = parcels =>
