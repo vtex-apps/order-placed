@@ -9,6 +9,7 @@ import { orderGroupQuery as twoCreditCards } from '../mocks/twoCreditCards'
 import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
 import { orderGroupQuery as promissory } from '../mocks/promissoryPayment'
 import { orderGroupQuery as multipleDeliveries } from '../mocks/bankInvoice'
+import { orderGroupQuery as takeAwayOnly } from '../mocks/takeaway'
 
 const getOrderFromOrderGroup = (orderGroup, index) => {
   return orderGroup[index]
@@ -29,6 +30,23 @@ describe('OrderHeader', () => {
     expect(getByText(orderId)).toBeDefined()
     expect(getByText(updateOrder)).toBeDefined()
     expect(getByText(myOrders)).toBeDefined()
+    expect(getByText(cancelOrder)).toBeDefined()
+  })
+
+  it('should render different buttons for take away orders', () => {
+    const orderInfo = getOrderFromOrderGroup(takeAwayOnly.orderGroup, 0)
+    const { getByText } = render(
+      <OrderHeader
+        orderInfo={orderInfo}
+        runtime={{ account: 'vtexgame1' }}
+        takeaway
+      />
+    )
+
+    const reprintReceipt = 'Reprint receipt'
+    const cancelOrder = 'Cancel purchase'
+
+    expect(getByText(reprintReceipt)).toBeDefined()
     expect(getByText(cancelOrder)).toBeDefined()
   })
 
