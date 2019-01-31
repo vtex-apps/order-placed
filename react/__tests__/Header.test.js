@@ -9,7 +9,7 @@ import { orderGroupQuery as bankInvoiceDueDate } from '../mocks/bankInvoiceLogge
 import { orderGroupQuery as bankInvoiceNumber } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as bankInvoiceNoDueDate } from '../mocks/bankInvoice'
 import { orderGroupQuery as deliveryAndPickup } from '../mocks/pickupAndDelivery'
-import { orderGroupQuery as takeAwayOnly } from '../mocks/takeaway'
+import { orderGroupQuery as takeAwayOnly } from '../mocks/oneTakeAway'
 
 describe('Confirmation messages', () => {
   it('should render success icon', () => {

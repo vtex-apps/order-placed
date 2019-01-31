@@ -9,7 +9,7 @@ import { orderGroupQuery as twoCreditCards } from '../mocks/twoCreditCards'
 import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
 import { orderGroupQuery as promissory } from '../mocks/promissoryPayment'
 import { orderGroupQuery as multipleDeliveries } from '../mocks/bankInvoice'
-import { orderGroupQuery as takeAwayOnly } from '../mocks/takeaway'
+import { orderGroupQuery as takeAwayOnly } from '../mocks/oneTakeAway'
 
 const getOrderFromOrderGroup = (orderGroup, index) => {
   return orderGroup[index]
