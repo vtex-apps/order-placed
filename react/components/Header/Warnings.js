@@ -2,15 +2,11 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
-import {
-  getTotalParcelsFromOrderGroup,
-  getPaymentGroupFromOrder,
-} from '../../utils'
+import { getPaymentGroupFromOrder } from '../../utils'
 import Price from '../Payment/FormattedPrice'
 import ButtonLink from '../ButtonLink'
 
-const Warnings = ({ data, intl }) => {
-  const { totalDeliveries, totalPickUps } = getTotalParcelsFromOrderGroup(data)
+const Warnings = ({ data, hasDelivery, hasPickUp, intl }) => {
   const orderWasSplit = data.length > 1
   const bankInvoices = data
     .reduce(
@@ -32,7 +28,7 @@ const Warnings = ({ data, intl }) => {
             </p>
           </li>
         )}
-        {totalDeliveries.length > 0 && (
+        {hasDelivery && (
           <Fragment>
             <li className={`${listItem} ${bottomBorder}`}>
               <p className="pv2">
@@ -41,9 +37,7 @@ const Warnings = ({ data, intl }) => {
             </li>
             <li
               className={`${listItem} ${
-                orderWasSplit || totalPickUps.length > 0 || hasBankInvoice
-                  ? bottomBorder
-                  : ''
+                orderWasSplit || hasPickUp || hasBankInvoice ? bottomBorder : ''
               }`}
             >
               <p className="pv2">
@@ -52,7 +46,7 @@ const Warnings = ({ data, intl }) => {
             </li>
           </Fragment>
         )}
-        {totalPickUps.length > 0 && (
+        {hasPickUp && (
           <li className={`${listItem} ${orderWasSplit ? bottomBorder : ''}`}>
             <p className="pt2">
               {intl.formatMessage({ id: 'warnings.pickup.time' })}
@@ -135,6 +129,8 @@ const Warnings = ({ data, intl }) => {
 
 Warnings.propTypes = {
   data: PropTypes.array.isRequired,
+  hasDelivery: PropTypes.bool.isRequired,
+  hasPickUp: PropTypes.bool.isRequired,
   intl: intlShape.isRequired,
 }
 
