@@ -19,7 +19,7 @@ const Warnings = ({ data, hasDelivery, hasPickUp, intl }) => {
   const bottomBorder = 'b--muted-4 bb'
 
   return (
-    <section>
+    <section data-testid="warnings-section">
       <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc-m">
         {!hasBankInvoice && (
           <li className={`${listItem} ${bottomBorder}`}>
