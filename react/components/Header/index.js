@@ -3,13 +3,21 @@ import PropTypes from 'prop-types'
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 import { profileShape } from '../../types'
-import { getPaymentGroupFromOrder } from '../../utils'
+import {
+  getTotalParcelsFromOrderGroup,
+  getPaymentGroupFromOrder,
+} from '../../utils'
 import SuccessIcon from '../../Icons/Success'
 import Warnings from './Warnings'
 import Summary from './Summary'
 import BankInvoice from './BankInvoice'
 
 const Header = ({ data, profile, inStore, intl }) => {
+  const {
+    totalDeliveries,
+    totalPickUps,
+    totalTakeAways,
+  } = getTotalParcelsFromOrderGroup(data)
   const bankInvoices = data
     .reduce(
       (acc, currOrder) => [...acc, getPaymentGroupFromOrder(currOrder)],
@@ -17,10 +25,14 @@ const Header = ({ data, profile, inStore, intl }) => {
     )
     .filter(order => !!order.url)
   const hasBankInvoice = bankInvoices.length > 0
+  const hasDelivery = totalDeliveries.length > 0
+  const hasPickUp = totalPickUps.length > 0
+  const hasTakeAway = totalTakeAways.length > 0
+  const onlyTakeAway = !hasDelivery && !hasPickUp && hasTakeAway
 
   return (
-    <header className="pt7 sans-serif">
-      <section>
+    <header className="pt9 sans-serif">
+      <section className={onlyTakeAway ? 'bb b--muted-4 pb6' : ''}>
         <div className="flex justify-center c-success">
           <SuccessIcon size={50} />
         </div>
@@ -60,9 +72,9 @@ const Header = ({ data, profile, inStore, intl }) => {
         </div>
       </section>
 
-      <Warnings data={data} />
+      {(hasDelivery || hasPickUp) && <Warnings data={data} />}
 
-      <Summary data={data} />
+      {hasDelivery && hasPickUp && <Summary data={data} />}
 
       {hasBankInvoice && (
         <BankInvoice
