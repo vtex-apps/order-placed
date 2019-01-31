@@ -24,82 +24,79 @@ const OrderSummary = ({ data, intl }) => {
   const longestPickUpEstimate = estimateCalculator.getLatestSla(totalPickUps)
 
   return (
-    totalDeliveries.length > 0 &&
-    totalPickUps.length > 0 && (
-      <section className="w-80 center bb b--muted-4 pb8">
-        <PageBlock variation="half">
-          <article className="center">
-            <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
-              {intl.formatMessage({ id: 'summary.shipping' })}
-            </p>
-            <p className="mb0 pt5 t-body mt2">
-              <strong>
-                {intl.formatMessage(
-                  { id: 'summary.items' },
-                  {
-                    itemsQuantity: deliveryItemsQuantity,
-                  }
-                )}
-              </strong>
+    <section className="w-80 center bb b--muted-4 pb8">
+      <PageBlock variation="half">
+        <article className="center">
+          <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
+            {intl.formatMessage({ id: 'summary.shipping' })}
+          </p>
+          <p className="mb0 pt5 t-body mt2">
+            <strong>
               {intl.formatMessage(
-                { id: 'summary.shipping.quantity' },
+                { id: 'summary.items' },
                 {
-                  shippings: totalDeliveries.length,
+                  itemsQuantity: deliveryItemsQuantity,
                 }
               )}
-            </p>
-            <p className="t-heading-4 mt4">
-              <TranslateEstimate
-                shippingEstimate={longestDeliveryEstimate.shippingEstimate}
-              />
-            </p>
-            <p className="c-muted-2 self-baseline mb0">
+            </strong>
+            {intl.formatMessage(
+              { id: 'summary.shipping.quantity' },
+              {
+                shippings: totalDeliveries.length,
+              }
+            )}
+          </p>
+          <p className="t-heading-4 mt4">
+            <TranslateEstimate
+              shippingEstimate={longestDeliveryEstimate.shippingEstimate}
+            />
+          </p>
+          <p className="c-muted-2 self-baseline mb0">
+            {intl.formatMessage(
+              { id: 'summary.shipping.address' },
+              {
+                addressStreet: totalDeliveries[0].address.street,
+                addressNumber: totalDeliveries[0].address.number,
+              }
+            )}
+          </p>
+        </article>
+        <article className="center">
+          <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
+            {intl.formatMessage({ id: 'summary.pickup' })}
+          </p>
+          <p className="mb0 pt5 t-body mt2">
+            <strong>
               {intl.formatMessage(
-                { id: 'summary.shipping.address' },
+                { id: 'summary.items' },
                 {
-                  addressStreet: totalDeliveries[0].address.street,
-                  addressNumber: totalDeliveries[0].address.number,
+                  itemsQuantity: pickUpItemsQuantity,
                 }
               )}
-            </p>
-          </article>
-          <article className="center">
-            <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
-              {intl.formatMessage({ id: 'summary.pickup' })}
-            </p>
-            <p className="mb0 pt5 t-body mt2">
-              <strong>
-                {intl.formatMessage(
-                  { id: 'summary.items' },
-                  {
-                    itemsQuantity: pickUpItemsQuantity,
-                  }
-                )}
-              </strong>
-              {intl.formatMessage(
-                { id: 'summary.pickup.quantity' },
-                {
-                  pickups: totalPickUps.length,
-                }
-              )}
-            </p>
-            <p className="t-heading-4 mt4">
-              <TranslateEstimate
-                shippingEstimate={longestPickUpEstimate.shippingEstimate}
-              />
-            </p>
-            <p className="c-muted-2 self-baseline mb0">
-              {intl.formatMessage(
-                { id: 'summary.pickup.friendlyName' },
-                {
-                  friendlyName: totalPickUps[0].pickupFriendlyName,
-                }
-              )}
-            </p>
-          </article>
-        </PageBlock>
-      </section>
-    )
+            </strong>
+            {intl.formatMessage(
+              { id: 'summary.pickup.quantity' },
+              {
+                pickups: totalPickUps.length,
+              }
+            )}
+          </p>
+          <p className="t-heading-4 mt4">
+            <TranslateEstimate
+              shippingEstimate={longestPickUpEstimate.shippingEstimate}
+            />
+          </p>
+          <p className="c-muted-2 self-baseline mb0">
+            {intl.formatMessage(
+              { id: 'summary.pickup.friendlyName' },
+              {
+                friendlyName: totalPickUps[0].pickupFriendlyName,
+              }
+            )}
+          </p>
+        </article>
+      </PageBlock>
+    </section>
   )
 }
 
