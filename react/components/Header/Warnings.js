@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
+
 import { getPaymentGroupFromOrder } from '../../utils'
 import Price from '../Payment/FormattedPrice'
 import ButtonLink from '../ButtonLink'
