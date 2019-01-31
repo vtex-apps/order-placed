@@ -48,7 +48,7 @@ const OrderInfo = ({ order, profile, numOfOrders, index }) => {
         {hasCustomerName && <CustomerInfo profile={profile} />}
         <OrderSection>
           {paymentsData.map((payment, index) => (
-            <div key={index} className="flex flex-column pb6">
+            <div key={index} className="flex flex-column pb8">
               <PaymentMethod payment={payment} transactionId={transactionId} />
             </div>
           ))}
