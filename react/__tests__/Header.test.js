@@ -35,6 +35,19 @@ describe('Confirmation messages', () => {
     const thankYouMessage = getByText(/Thanks for the purchase!/)
     expect(thankYouMessage.textContent).toBeDefined()
   })
+
+  it('should render "Start new order" button if inStore', () => {
+    const { getByText } = render(
+      <Header
+        data={takeAwayOnly.orderGroup}
+        profile={takeAwayOnly.orderGroup[0].clientProfileData}
+        inStore
+      />
+    )
+
+    const newOrder = getByText('Start new order')
+    expect(newOrder.textContent).toBeDefined()
+  })
 })
 
 describe('Warnings', () => {
