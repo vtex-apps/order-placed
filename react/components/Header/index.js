@@ -26,6 +26,9 @@ const Header = ({ data, profile, inStore, intl }) => {
     )
     .filter(order => !!order.url)
   const hasBankInvoice = bankInvoices.length > 0
+  const encrypted =
+    hasBankInvoice && bankInvoices[0].url.match(/(\*.\*.)+\*\w\*/g)
+  const hideBankInvoiceInfo = encrypted && !bankInvoices[0].barCodeNumber
   const hasDelivery = totalDeliveries.length > 0
   const hasPickUp = totalPickUps.length > 0
   const hasTakeAway = totalTakeAways.length > 0
@@ -79,9 +82,10 @@ const Header = ({ data, profile, inStore, intl }) => {
 
       {hasDelivery && hasPickUp && <Summary data={data} />}
 
-      {hasBankInvoice && (
+      {hasBankInvoice && !hideBankInvoiceInfo && (
         <BankInvoice
           url={bankInvoices[0].url}
+          encrypted={encrypted}
           invoiceBarCodeNumber={bankInvoices[0].barCodeNumber}
           paymentSystem={bankInvoices[0].paymentSystemName}
         />

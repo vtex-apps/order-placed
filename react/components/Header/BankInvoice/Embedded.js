@@ -17,7 +17,12 @@ class Embedded extends Component {
     return (
       <div className="mv9 flex flex-column b--muted-4 ba br3 bw1">
         <div className="bg-muted-1 flex justify-center">
-          <embed width="80%" height={open ? 900 : 300} src={url} />
+          <embed
+            width="80%"
+            height={open ? 900 : 300}
+            src={url}
+            data-testid="embedded-bank-invoice"
+          />
         </div>
         {open ? (
           <ButtonWithIcon
