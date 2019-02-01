@@ -9,11 +9,7 @@
 }
 
 .skeleton-shimmer {
-  width: 200%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: -100%;
+  animation: shimmer-anim 0.7s linear infinite;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0),
@@ -21,5 +17,9 @@
     rgba(255, 255, 255, 0)
   );
   background-size: 50% 100%;
-  animation: shimmer-anim 0.7s linear infinite;
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  top: 0;
+  width: 200%;
 }
