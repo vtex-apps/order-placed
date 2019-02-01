@@ -43,6 +43,9 @@
     "lint:locales": "intl-equalizer"
   },
   "jest": {
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
     "setupTestFrameworkScriptFile": "./testUtils/setupTests.js",
     "collectCoverageFrom": [
       "react/**/*.{js,jsx}"
