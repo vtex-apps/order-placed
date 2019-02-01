@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { compose, graphql } from 'react-apollo'
 import { branch, renderComponent } from 'recompose'
-import { Loader } from 'vtex.order-details'
 import { withRuntimeContext } from 'vtex.render-runtime'
 
 import Header from './components/Header'
 import OrderInfo from './components/OrderInfo'
+import Skeleton from './Skeleton'
 import getOrderGroup from './graphql/getOrderGroup.graphql'
 import withoutSSR from './withoutSSR'
 
@@ -63,6 +63,6 @@ export default compose(
   }),
   branch(
     ({ orderGroupQuery }) => orderGroupQuery.loading,
-    renderComponent(Loader)
+    renderComponent(Skeleton)
   )
 )(OrderPlaced)
