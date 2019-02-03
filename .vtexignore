@@ -5,6 +5,6 @@ node_modules/
 README.md
 react/**/__tests__/**
 react/**/__mocks__/**
-react/**/*.test.js
+react/**/*.test.tsx
 react/testUtils/**/*
 react/.babelrc
