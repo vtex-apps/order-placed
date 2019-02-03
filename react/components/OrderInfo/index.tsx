@@ -1,25 +1,35 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import parcelify from '@vtex/delivery-packages'
+import React, { FunctionComponent } from 'react'
 
-import OrderHeader from './OrderHeader'
-import CustomerInfo from '../CustomerInfo'
-import PaymentMethod from '../Payment/PaymentMethod'
-import Shipping from '../Shipping'
-import OrderTotal from './OrderTotal'
-import StorePickUp from '../StorePickUp'
-import TakeAway from '../TakeAway'
-import OrderSplitNotice from './OrderSplitNotice'
-import OrderSection from './OrderSection'
-import { profileShape } from '../../types'
 import {
   getDeliveryPackagesFromParcels,
   getPickUpPackagesFromParcels,
-  getTakeAwayPackagesFromParcels,
+  getTakeAwayPackagesFromParcels
 } from '../../utils'
+import CustomerInfo from '../CustomerInfo'
+import PaymentMethod from '../Payment/PaymentMethod'
+import Shipping from '../Shipping'
+import StorePickUp from '../StorePickUp'
+import TakeAway from '../TakeAway'
+import OrderHeader from './OrderHeader'
 import OrderOptions from './OrderOptions'
+import OrderSection from './OrderSection'
+import OrderSplitNotice from './OrderSplitNotice'
+import OrderTotal from './OrderTotal'
 
-const OrderInfo = ({ order, profile, numOfOrders, index }) => {
+interface Props {
+  order: Order
+  profile: ClientProfile
+  numOfOrders: number
+  index: number
+}
+
+const OrderInfo: FunctionComponent<Props> = ({
+  order,
+  profile,
+  numOfOrders,
+  index,
+}) => {
   const splitOrder = numOfOrders > 1
   const parcels = parcelify(order)
   const delivery = getDeliveryPackagesFromParcels(parcels)
@@ -47,8 +57,8 @@ const OrderInfo = ({ order, profile, numOfOrders, index }) => {
         )}
         {hasCustomerName && <CustomerInfo profile={profile} />}
         <OrderSection>
-          {paymentsData.map((payment, index) => (
-            <div key={index} className="flex flex-column pb8">
+          {paymentsData.map((payment, idx) => (
+            <div key={idx} className="flex flex-column pb8">
               <PaymentMethod payment={payment} transactionId={transactionId} />
             </div>
           ))}
@@ -82,13 +92,6 @@ const OrderInfo = ({ order, profile, numOfOrders, index }) => {
       {index < numOfOrders - 1 && <hr className="bg-muted-4 bt b--muted-4" />}
     </section>
   )
-}
-
-OrderInfo.propTypes = {
-  order: PropTypes.object.isRequired,
-  profile: profileShape.isRequired,
-  numOfOrders: PropTypes.number,
-  index: PropTypes.number,
 }
 
 export default OrderInfo

@@ -1,17 +1,25 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FunctionComponent } from 'react'
 import {
-  injectIntl,
-  intlShape,
-  FormattedTime,
   FormattedMessage,
+  FormattedTime,
+  InjectedIntlProps,
+  injectIntl
 } from 'react-intl'
 import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
-import { withRuntimeContext } from 'vtex.render-runtime'
+import { RenderContextProps, withRuntimeContext } from 'vtex.render-runtime'
+
 import OrderOptions from './OrderOptions'
 
-const OrderHeader = ({ orderInfo, splitOrder, takeaway, runtime, intl }) => {
+interface Props {
+  orderInfo: Order
+  splitOrder: boolean
+  takeaway: boolean
+}
+
+const OrderHeader: FunctionComponent<
+  Props & InjectedIntlProps & RenderContextProps
+> = ({ orderInfo, splitOrder, takeaway, intl, runtime }) => {
   const storeAccount = runtime.account
   const orderSeller = orderInfo.sellers[0].name
 
@@ -62,15 +70,7 @@ const OrderHeader = ({ orderInfo, splitOrder, takeaway, runtime, intl }) => {
   )
 }
 
-OrderHeader.propTypes = {
-  orderInfo: PropTypes.object.isRequired,
-  splitOrder: PropTypes.bool,
-  takeaway: PropTypes.bool,
-  runtime: PropTypes.object.isRequired,
-  intl: intlShape.isRequired,
-}
-
-export default compose(
+export default compose<Props & InjectedIntlProps & RenderContextProps, Props>(
   withRuntimeContext,
   injectIntl
 )(OrderHeader)

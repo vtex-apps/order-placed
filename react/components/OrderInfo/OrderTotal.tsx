@@ -1,10 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { injectIntl, intlShape } from 'react-intl'
+import React, { FunctionComponent } from 'react'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
 
 import Price from '../Payment/FormattedPrice'
 
-const ShippingTotals = ({ items, totals, orderValue, intl }) => {
+interface Props {
+  items: OrderItem[]
+  totals: OrderItemTotal[]
+  orderValue: number
+}
+
+const ShippingTotals: FunctionComponent<Props & InjectedIntlProps> = ({
+  items,
+  totals,
+  orderValue,
+  intl,
+}) => {
   const numItems = items.reduce((acc, item) => acc + item.quantity, 0)
   const totalsLine = 'flex justify-between items-center c-muted-1'
 
@@ -35,14 +45,6 @@ const ShippingTotals = ({ items, totals, orderValue, intl }) => {
       </div>
     </div>
   )
-}
-
-ShippingTotals.propTypes = {
-  items: PropTypes.array,
-  currency: PropTypes.string,
-  totals: PropTypes.array,
-  orderValue: PropTypes.number,
-  intl: intlShape.isRequired,
 }
 
 export default injectIntl(ShippingTotals)
