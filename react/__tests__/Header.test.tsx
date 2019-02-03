@@ -3,7 +3,6 @@ import React from 'react'
 import Header from '../components/Header'
 import { orderGroupQuery as bankInvoiceNoDueDate } from '../mocks/bankInvoice'
 import { orderGroupQuery as bankInvoiceDueDate } from '../mocks/bankInvoiceLoggedIn'
-import { orderGroupQuery as bankInvoiceNumber } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
 import { orderGroupQuery as takeAwayOnly } from '../mocks/oneTakeAway'
@@ -198,30 +197,5 @@ describe('Purchase summary', () => {
     const summaryPageBlock = getByTestId('summary')
 
     expect(summaryPageBlock).toBeDefined()
-  })
-})
-
-describe('Bank Invoice details', () => {
-  it('should render bank invoice details if present in payment methods (with url)', () => {
-    const { getByTestId } = render(
-      <Header
-        data={bankInvoiceDueDate.orderGroup}
-        profile={bankInvoiceDueDate.orderGroup[0].clientProfileData}
-      />
-    )
-    const bankInvoiceInfo = getByTestId('bank-invoice-info')
-    expect(bankInvoiceInfo).toBeDefined()
-  })
-
-  it('should render bank invoice barcode number when available', () => {
-    const { getByTestId } = render(
-      <Header
-        data={bankInvoiceNumber.orderGroup}
-        profile={bankInvoiceNumber.orderGroup[0].clientProfileData}
-      />
-    )
-    const bankInvoiceInfo = getByTestId('bank-invoice-info')
-    const bankInvoiceBarCode = getByTestId('bank-invoice-barcode')
-    expect(bankInvoiceInfo).toContain(bankInvoiceBarCode)
   })
 })
