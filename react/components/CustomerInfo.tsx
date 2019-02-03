@@ -3,7 +3,7 @@ import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { ProfileRules, ProfileSummary } from 'vtex.profile-form'
 
 interface Props {
-  profile: Profile
+  profile: ClientProfile
 }
 
 const CustomerInfo: FunctionComponent<Props & InjectedIntlProps> = ({
