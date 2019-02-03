@@ -1,10 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Button } from 'vtex.styleguide'
+import React, { FunctionComponent } from 'react'
 import Clipboard from 'react-clipboard.js'
-import { injectIntl, intlShape } from 'react-intl'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { Button } from 'vtex.styleguide'
 
-const BarCode = ({ barCodeNumber, intl }) => (
+interface Props {
+  barCodeNumber: string
+}
+
+const BarCode: FunctionComponent<Props & InjectedIntlProps> = ({
+  barCodeNumber,
+  intl,
+}) => (
   <div
     data-testid="bank-invoice-barcode"
     className="flex b--muted-4 ba br3 bw1"
@@ -23,10 +29,5 @@ const BarCode = ({ barCodeNumber, intl }) => (
     </Clipboard>
   </div>
 )
-
-BarCode.propTypes = {
-  barCodeNumber: PropTypes.string,
-  intl: intlShape.isRequired,
-}
 
 export default injectIntl(BarCode)

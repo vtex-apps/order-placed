@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
-import PropType from 'prop-types'
-import { injectIntl, intlShape } from 'react-intl'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { ButtonWithIcon, IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
-class Embedded extends Component {
-  state = { open: false }
+interface Props {
+  url: string
+}
 
-  handleClick = () => {
-    this.setState(prevState => ({ open: !prevState.open }))
+interface State {
+  open: boolean
+}
+
+class Embedded extends Component<Props & InjectedIntlProps> {
+  public state = { open: false }
+
+  public handleClick = () => {
+    this.setState((prevState: State) => ({ open: !prevState.open }))
   }
 
-  render() {
+  public render() {
     const open = this.state.open
     const { url, intl } = this.props
 
@@ -44,11 +51,6 @@ class Embedded extends Component {
       </div>
     )
   }
-}
-
-Embedded.propTypes = {
-  url: PropType.string.isRequired,
-  intl: intlShape.isRequired,
 }
 
 export default injectIntl(Embedded)

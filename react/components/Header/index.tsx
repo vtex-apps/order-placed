@@ -1,19 +1,28 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
+import React, { FunctionComponent } from 'react'
+import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
-import { profileShape } from '../../types'
-import {
-  getTotalParcelsFromOrderGroup,
-  getPaymentGroupFromOrder,
-} from '../../utils'
 import SuccessIcon from '../../Icons/Success'
-import Warnings from './Warnings'
-import Summary from './Summary'
+import {
+  getPaymentGroupFromOrder,
+  getTotalParcelsFromOrderGroup
+} from '../../utils'
 import BankInvoice from './BankInvoice'
+import Summary from './Summary'
+import Warnings from './Warnings'
 
-const Header = ({ data, profile, inStore, intl }) => {
+interface Props {
+  data: Order[]
+  profile: Profile
+  inStore: boolean
+}
+
+const Header: FunctionComponent<Props & InjectedIntlProps> = ({
+  data,
+  profile,
+  inStore,
+  intl,
+}) => {
   const {
     totalDeliveries,
     totalPickUps,
@@ -24,7 +33,7 @@ const Header = ({ data, profile, inStore, intl }) => {
       (acc, currOrder) => [...acc, getPaymentGroupFromOrder(currOrder)],
       []
     )
-    .filter(order => !!order.url)
+    .filter((order: any) => !!order.url)
   const hasBankInvoice = bankInvoices.length > 0
   const encrypted =
     hasBankInvoice && bankInvoices[0].url.match(/(\*.\*.)+\*\w\*/g)
@@ -49,8 +58,8 @@ const Header = ({ data, profile, inStore, intl }) => {
           <FormattedMessage
             id="header.email"
             values={{
-              userEmail: <strong className="nowrap">{profile.email}</strong>,
               lineBreak: <br />,
+              userEmail: <strong className="nowrap">{profile.email}</strong>,
             }}
           />
         </p>
@@ -92,13 +101,6 @@ const Header = ({ data, profile, inStore, intl }) => {
       )}
     </header>
   )
-}
-
-Header.propTypes = {
-  data: PropTypes.array.isRequired,
-  profile: profileShape.isRequired,
-  inStore: PropTypes.bool,
-  intl: intlShape.isRequired,
 }
 
 export default injectIntl(Header)

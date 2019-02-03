@@ -1,20 +1,30 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
+import React, { Fragment, FunctionComponent } from 'react'
+import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
 
 import { getPaymentGroupFromOrder } from '../../utils'
-import Price from '../Payment/FormattedPrice'
 import ButtonLink from '../ButtonLink'
+import Price from '../Payment/FormattedPrice'
 
-const Warnings = ({ data, hasDelivery, hasPickUp, intl }) => {
+interface Props {
+  data: Order[]
+  hasDelivery: boolean
+  hasPickUp: boolean
+}
+
+const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
+  data,
+  hasDelivery,
+  hasPickUp,
+  intl,
+}) => {
   const orderWasSplit = data.length > 1
   const bankInvoices = data
     .reduce(
       (acc, currOrder) => [...acc, getPaymentGroupFromOrder(currOrder)],
       []
     )
-    .filter(order => order.paymentGroup === 'bankInvoice')
+    .filter((order: any) => order.paymentGroup === 'bankInvoice')
   const hasBankInvoice = bankInvoices.length > 0
   const listItem = 'mv0 w-80-ns w-90 center c-on-base'
   const bottomBorder = 'b--muted-4 bb'
@@ -85,17 +95,17 @@ const Warnings = ({ data, hasDelivery, hasPickUp, intl }) => {
                     <FormattedMessage
                       id={'warnings.payment.bankInvoice.value.duedate'}
                       values={{
-                        paymentValue: (
-                          <strong>
-                            <Price value={bankInvoices[0].value} />
-                          </strong>
-                        ),
                         paymentDueDate: (
                           <strong>
                             <FormattedDate
                               date={bankInvoices[0].dueDate}
                               style="short"
                             />
+                          </strong>
+                        ),
+                        paymentValue: (
+                          <strong>
+                            <Price value={bankInvoices[0].value} />
                           </strong>
                         ),
                       }}
@@ -126,13 +136,6 @@ const Warnings = ({ data, hasDelivery, hasPickUp, intl }) => {
       </ul>
     </section>
   )
-}
-
-Warnings.propTypes = {
-  data: PropTypes.array.isRequired,
-  hasDelivery: PropTypes.bool.isRequired,
-  hasPickUp: PropTypes.bool.isRequired,
-  intl: intlShape.isRequired,
 }
 
 export default injectIntl(Warnings)
