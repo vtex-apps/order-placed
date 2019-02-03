@@ -1,13 +1,19 @@
-import React from 'react'
-import { profileShape } from '../types'
-import { intlShape, injectIntl } from 'react-intl'
+import React, { FunctionComponent } from 'react'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { ProfileRules, ProfileSummary } from 'vtex.profile-form'
 
-const CustomerInfo = ({ profile, intl }) => (
+interface Props {
+  profile: Profile
+}
+
+const CustomerInfo: FunctionComponent<Props & InjectedIntlProps> = ({
+  profile,
+  intl,
+}) => (
   <div className="flex flex-column c-on-base">
     <ProfileRules country={intl.locale} shouldUseIOFetching>
       <ProfileSummary profile={profile}>
-        {({ personalData }) => (
+        {({ personalData }: any) => (
           <ul className="list pl0">
             <li className="pv2">
               {`${personalData.firstName.value} ${personalData.lastName.value}`}
@@ -21,10 +27,5 @@ const CustomerInfo = ({ profile, intl }) => (
     </ProfileRules>
   </div>
 )
-
-CustomerInfo.propTypes = {
-  profile: profileShape.isRequired,
-  intl: intlShape.isRequired,
-}
 
 export default injectIntl(CustomerInfo)
