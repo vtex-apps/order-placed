@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-export function withRuntimeContext(WrappedComponent) {
+export function withRuntimeContext(WrappedComponent: any) {
   return class withRuntimeContext extends Component {
-    render() {
+    public render() {
       return (
         <WrappedComponent {...this.props} runtime={{ account: 'vtexgame1' }} />
       )

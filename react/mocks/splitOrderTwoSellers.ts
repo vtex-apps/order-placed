@@ -182,7 +182,7 @@ export const orderGroupQuery = {
                 deliveryChannel: 'pickup-in-point',
                 pickupStoreInfo: {
                   additionalInfo: 'não entre de sunga\nnão entre sem sunga',
-                  address: '[object Object]',
+                  address: null,
                   dockId: '11dbf12',
                   friendlyName: 'Loja no Flamengo do Rio de Janeiro',
                   isPickupStore: true,
@@ -197,7 +197,7 @@ export const orderGroupQuery = {
                 deliveryChannel: 'pickup-in-point',
                 pickupStoreInfo: {
                   additionalInfo: 'traga a vasilha\n\nnão se esqueça',
-                  address: '[object Object]',
+                  address: null,
                   dockId: '1c38481',
                   friendlyName: 'Loja em Copacabana no Rio de Janeiro',
                   isPickupStore: true,
@@ -212,7 +212,7 @@ export const orderGroupQuery = {
                 deliveryChannel: 'pickup-in-point',
                 pickupStoreInfo: {
                   additionalInfo: 'traga a vasilha\n\nnão se esqueça',
-                  address: '[object Object]',
+                  address: null,
                   dockId: '1c38481',
                   friendlyName: 'Loja em Copacabana no Rio de Janeiro',
                   isPickupStore: true,
@@ -238,7 +238,7 @@ export const orderGroupQuery = {
                 deliveryChannel: 'pickup-in-point',
                 pickupStoreInfo: {
                   additionalInfo: 'traga a vasilha\n\nnão se esqueça',
-                  address: '[object Object]',
+                  address: null,
                   dockId: '1c38481',
                   friendlyName: 'Loja em Copacabana no Rio de Janeiro',
                   isPickupStore: true,
@@ -286,6 +286,14 @@ export const orderGroupQuery = {
           name: 'Parceiro01',
         },
       ],
+      clientProfileData: {
+        email: 'minidog@mailinator.com',
+        firstName: 'Victor',
+        lastName: 'Hugo',
+        document: '12345678909',
+        documentType: 'cpf',
+        phone: '+551199999999',
+      },
       totals: [
         {
           id: 'Items',
