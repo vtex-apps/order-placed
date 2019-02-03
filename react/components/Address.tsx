@@ -1,9 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { AddressSummary, AddressRules } from 'vtex.address-form'
-import { addressShape } from '../types'
+import React, { FunctionComponent } from 'react'
+import { AddressRules, AddressSummary } from 'vtex.address-form'
 
-const Address = ({ address, pickup }) => {
+interface Props {
+  address: Address
+  pickup?: Parcel
+}
+
+const Address: FunctionComponent<Props> = ({ address, pickup }) => {
   return (
     <div className="c-muted-1 mb5">
       {pickup && <p className="c-on-base">{pickup.pickupFriendlyName}</p>}
@@ -12,11 +15,6 @@ const Address = ({ address, pickup }) => {
       </AddressRules>
     </div>
   )
-}
-
-Address.propTypes = {
-  address: addressShape.isRequired,
-  pickup: PropTypes.object,
 }
 
 export default Address
