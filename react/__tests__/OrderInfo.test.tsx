@@ -1,17 +1,17 @@
 import React from 'react'
 
-import { render } from '../testUtils'
-import OrderHeader from '../components/OrderInfo/OrderHeader'
 import OrderInfo from '../components/OrderInfo'
+import OrderHeader from '../components/OrderInfo/OrderHeader'
+import { orderGroupQuery as multipleDeliveries } from '../mocks/bankInvoice'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as onePickUp } from '../mocks/onePickupSimple'
-import { orderGroupQuery as twoCreditCards } from '../mocks/twoCreditCards'
-import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
-import { orderGroupQuery as promissory } from '../mocks/promissoryPayment'
-import { orderGroupQuery as multipleDeliveries } from '../mocks/bankInvoice'
 import { orderGroupQuery as takeAwayOnly } from '../mocks/oneTakeAway'
+import { orderGroupQuery as promissory } from '../mocks/promissoryPayment'
+import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
+import { orderGroupQuery as twoCreditCards } from '../mocks/twoCreditCards'
+import { render } from '../testUtils'
 
-const getOrderFromOrderGroup = (orderGroup, index) => {
+const getOrderFromOrderGroup = (orderGroup: Order[], index: number) => {
   return orderGroup[index]
 }
 
@@ -73,7 +73,8 @@ describe('Order split notice', () => {
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
-        splitOrder={multipleDeliveries.orderGroup.length > 1}
+        numOfOrders={1}
+        index={0}
       />
     )
 
@@ -92,7 +93,8 @@ describe('Payment methods', () => {
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
-        splitOrder={oneDelivery.orderGroup.length > 1}
+        numOfOrders={1}
+        index={0}
       />
     )
     expect(getByText('Credit card')).toBeDefined()
@@ -104,7 +106,8 @@ describe('Payment methods', () => {
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
-        splitOrder={twoCreditCards.orderGroup.length > 1}
+        numOfOrders={1}
+        index={0}
       />
     )
     expect(queryAllByText('Credit card')).toHaveLength(2)
@@ -116,7 +119,8 @@ describe('Payment methods', () => {
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
-        splitOrder={multipleDeliveries.orderGroup.length > 1}
+        numOfOrders={1}
+        index={0}
       />
     )
 
@@ -129,7 +133,8 @@ describe('Payment methods', () => {
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
-        splitOrder={promissory.orderGroup.length > 1}
+        numOfOrders={1}
+        index={0}
       />
     )
 
@@ -144,7 +149,8 @@ describe('Shippings', () => {
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
-        splitOrder={oneDelivery.orderGroup.length > 1}
+        numOfOrders={1}
+        index={0}
       />
     )
     expect(getByTestId('shipping-header')).toBeDefined()
@@ -156,7 +162,8 @@ describe('Shippings', () => {
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
-        splitOrder={onePickUp.orderGroup.length > 1}
+        numOfOrders={1}
+        index={0}
       />
     )
     expect(queryByTestId('shipping-header')).toBeNull()
@@ -170,7 +177,8 @@ describe('Store Pickups', () => {
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
-        splitOrder={onePickUp.orderGroup.length > 1}
+        numOfOrders={1}
+        index={0}
       />
     )
     expect(queryByTestId('storepickup-header')).toBeDefined()
@@ -182,7 +190,8 @@ describe('Store Pickups', () => {
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
-        splitOrder={oneDelivery.orderGroup.length > 1}
+        numOfOrders={1}
+        index={0}
       />
     )
     expect(queryByTestId('storepickup-header')).toBeNull()

@@ -1,11 +1,11 @@
-import React from 'react'
 import parcelify from '@vtex/delivery-packages'
+import React from 'react'
 
-import { render } from '../testUtils'
 import Shipping from '../components/Shipping'
-import { getDeliveryPackagesFromParcels } from '../utils'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as twoDeliveries } from '../mocks/twoDeliveries'
+import { render } from '../testUtils'
+import { getDeliveryPackagesFromParcels } from '../utils'
 
 describe('Shipping (delivery)', () => {
   it('should render ShippingHeader with shipping estimate', () => {
