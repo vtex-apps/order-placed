@@ -1,19 +1,27 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { compose, graphql } from 'react-apollo'
 import { branch, renderComponent } from 'recompose'
 import { withRuntimeContext } from 'vtex.render-runtime'
 
 import Header from './components/Header'
 import OrderInfo from './components/OrderInfo'
-import Skeleton from './Skeleton'
 import getOrderGroup from './graphql/getOrderGroup.graphql'
-import withoutSSR from './withoutSSR'
+import Skeleton from './Skeleton'
+import withoutSSR from './WithoutSSR'
 
 export const CurrencyContext = React.createContext('BRL')
 
-class OrderPlaced extends Component {
-  render() {
+interface OrderGroupQuery {
+  orderGroup: [Order]
+}
+
+interface Props {
+  orderGroupQuery: OrderGroupQuery
+  inStore: boolean
+}
+
+class OrderPlaced extends Component<Props> {
+  public render() {
     const { orderGroupQuery, inStore } = this.props
     return (
       <CurrencyContext.Provider
@@ -25,7 +33,7 @@ class OrderPlaced extends Component {
           inStore={inStore}
         />
         <main>
-          {orderGroupQuery.orderGroup.map((order, index) => (
+          {orderGroupQuery.orderGroup.map((order: Order, index: number) => (
             <OrderInfo
               order={order}
               profile={order.clientProfileData}
@@ -38,12 +46,6 @@ class OrderPlaced extends Component {
       </CurrencyContext.Provider>
     )
   }
-}
-
-OrderPlaced.propTypes = {
-  orderGroupQuery: PropTypes.object.isRequired,
-  inStore: PropTypes.bool,
-  runtime: PropTypes.object.isRequired,
 }
 
 export default compose(
