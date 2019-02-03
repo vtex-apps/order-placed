@@ -13,7 +13,7 @@ import Warnings from './Warnings'
 
 interface Props {
   data: Order[]
-  profile: Profile
+  profile: ClientProfile
   inStore: boolean
 }
 
