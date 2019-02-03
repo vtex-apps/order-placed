@@ -1,11 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { injectIntl, intlShape } from 'react-intl'
+import React, { FunctionComponent } from 'react'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 
 import FormattedPrice from '../Payment/FormattedPrice'
 
-const Product = ({ productInfo, intl }) => {
+interface Props {
+  productInfo: OrderItem
+}
+
+const Product: FunctionComponent<Props & InjectedIntlProps> = ({
+  productInfo,
+  intl,
+}) => {
   const showMeasurementUnit =
     productInfo.unitMultiplier !== 1 || productInfo.measurementUnit !== 'un'
 
@@ -50,11 +56,6 @@ const Product = ({ productInfo, intl }) => {
       </p>
     </article>
   )
-}
-
-Product.propTypes = {
-  productInfo: PropTypes.object.isRequired,
-  intl: intlShape.isRequired,
 }
 
 export default injectIntl(Product)
