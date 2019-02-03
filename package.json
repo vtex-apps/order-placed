@@ -9,7 +9,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "cd ./react && yarn lint",
-      "pre-push": "yarn lint:messages && cd ./react && yarn test --verbose && yarn lint"
+      "pre-push": "yarn lint:messages && cd ./react && yarn test && yarn lint"
     }
   }
 }
