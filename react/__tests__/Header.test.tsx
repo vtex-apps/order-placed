@@ -1,15 +1,15 @@
 import React from 'react'
 
-import { render } from '../testUtils'
 import Header from '../components/Header'
-import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
-import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
-import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
+import { orderGroupQuery as bankInvoiceNoDueDate } from '../mocks/bankInvoice'
 import { orderGroupQuery as bankInvoiceDueDate } from '../mocks/bankInvoiceLoggedIn'
 import { orderGroupQuery as bankInvoiceNumber } from '../mocks/bankInvoiceNumberLoggedIn'
-import { orderGroupQuery as bankInvoiceNoDueDate } from '../mocks/bankInvoice'
-import { orderGroupQuery as deliveryAndPickup } from '../mocks/pickupAndDelivery'
+import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
+import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
 import { orderGroupQuery as takeAwayOnly } from '../mocks/oneTakeAway'
+import { orderGroupQuery as deliveryAndPickup } from '../mocks/pickupAndDelivery'
+import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
+import { render } from '../testUtils'
 
 describe('Confirmation messages', () => {
   it('should render success icon', () => {
@@ -222,6 +222,6 @@ describe('Bank Invoice details', () => {
     )
     const bankInvoiceInfo = getByTestId('bank-invoice-info')
     const bankInvoiceBarCode = getByTestId('bank-invoice-barcode')
-    expect(bankInvoiceInfo).toContainElement(bankInvoiceBarCode)
+    expect(bankInvoiceInfo).toContain(bankInvoiceBarCode)
   })
 })

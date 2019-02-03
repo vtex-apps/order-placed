@@ -1,11 +1,11 @@
-import React from 'react'
 import parcelify from '@vtex/delivery-packages'
+import React from 'react'
 
-import { render } from '../testUtils'
 import StorePickUp from '../components/StorePickUp'
-import { getPickUpPackagesFromParcels } from '../utils'
 import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
 import { orderGroupQuery as twoPickups } from '../mocks/twoPickups'
+import { render } from '../testUtils'
+import { getPickUpPackagesFromParcels } from '../utils'
 
 describe('Store Pickup', () => {
   it('should render StorePickUpHeader with shipping estimate and receiver info', () => {
