@@ -1,13 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { injectIntl, intlShape } from 'react-intl'
-import { PageBlock } from 'vtex.styleguide'
-import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import estimateCalculator from '@vtex/estimate-calculator'
+import React, { FunctionComponent } from 'react'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
+import { PageBlock } from 'vtex.styleguide'
 
 import { getTotalParcelsFromOrderGroup } from '../../utils'
 
-const OrderSummary = ({ data, intl }) => {
+interface Props {
+  data: Order[]
+}
+
+const OrderSummary: FunctionComponent<Props & InjectedIntlProps> = ({
+  data,
+  intl,
+}) => {
   const { totalDeliveries, totalPickUps } = getTotalParcelsFromOrderGroup(data)
 
   const deliveryItemsQuantity = totalDeliveries.reduce(
@@ -55,8 +61,8 @@ const OrderSummary = ({ data, intl }) => {
             {intl.formatMessage(
               { id: 'summary.shipping.address' },
               {
-                addressStreet: totalDeliveries[0].address.street,
                 addressNumber: totalDeliveries[0].address.number,
+                addressStreet: totalDeliveries[0].address.street,
               }
             )}
           </p>
@@ -98,11 +104,6 @@ const OrderSummary = ({ data, intl }) => {
       </PageBlock>
     </section>
   )
-}
-
-OrderSummary.propTypes = {
-  data: PropTypes.arrayOf(Object).isRequired,
-  intl: intlShape.isRequired,
 }
 
 export default injectIntl(OrderSummary)
