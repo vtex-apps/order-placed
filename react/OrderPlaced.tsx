@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { compose, graphql } from 'react-apollo'
 import { branch, renderComponent } from 'recompose'
 import { withRuntimeContext } from 'vtex.render-runtime'
 
 import Header from './components/Header'
 import OrderInfo from './components/OrderInfo'
-import getOrderGroup from './graphql/getOrderGroup.graphql'
+import * as getOrderGroup from './graphql/getOrderGroup.graphql'
 import Skeleton from './Skeleton'
 import withoutSSR from './WithoutSSR'
 
@@ -20,7 +20,7 @@ interface Props {
   inStore: boolean
 }
 
-class OrderPlaced extends Component<Props> {
+class OrderPlaced extends React.Component<Props> {
   public render() {
     const { orderGroupQuery, inStore } = this.props
     return (
@@ -51,7 +51,7 @@ class OrderPlaced extends Component<Props> {
 export default compose(
   withRuntimeContext,
   withoutSSR,
-  graphql(getOrderGroup, {
+  graphql(getOrderGroup.default, {
     name: 'orderGroupQuery',
     options: () => {
       const params = new URLSearchParams(location.search)
