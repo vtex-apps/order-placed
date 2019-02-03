@@ -3,34 +3,33 @@ interface Order {
   orderId: string
   orderGroup: string
   state: string
-  salesChannel: string
-  shippingData: ShippingData
-  items: OrderItem[]
-  sellers: OrderItemSeller[]
-  totals: OrderItemTotal[]
-  clientProfileData: ClientProfile
-  packageAttachment: PackageAttachment
-  paymentData: PaymentData
-  storePreferencesData: StorePreferencesData
   creationDate: string
   timeZoneCreationDate: string
   value: number
+  clientProfileData: ClientProfile
+  storePreferencesData: StorePreferencesData
+  sellers: OrderItemSeller[]
+  totals: OrderItemTotal[]
+  items: OrderItem[]
+  shippingData: ShippingData
+  salesChannel: string
+  packageAttachment?: PackageAttachment | null
+  paymentData: PaymentData
 }
 
 interface ClientProfile {
   email: string
-  firstName: string
-  lastName: string
-  document: string
-  documentType: string
-  phone: string
+  firstName: string | null
+  lastName: string | null
+  document: string | null
+  documentType: string | null
+  phone: string | null
 }
 
 interface OrderItem {
   uniqueId: string
   id: string
   productId: string
-  refId: string
   name: string
   skuName: string
   tax: number
@@ -47,7 +46,7 @@ interface OrderItem {
 }
 
 interface StorePreferencesData {
-  countryCode: string
+  countryCode?: string | null
   currencyCode: string
 }
 
@@ -61,21 +60,19 @@ interface Transaction {
 }
 
 interface ShippingData {
-  address: Address
-  logisticsInfo: ItemLogistics[]
   selectedAddresses: Address[]
+  logisticsInfo: ItemLogistics[]
 }
 
 interface ItemLogistics {
   itemIndex: number
-  shippingEstimate: string
-  shippingEstimateDate: string
+  shippingEstimate?: string | null
+  shippingEstimateDate?: string | null
   selectedSla: string
+  deliveryChannel?: string | null
+  addressId: string | null
   slas: ShippingSLA[]
-  deliveryWindow: DeliveryWindow
-  deliveryChannel: string
-  deliveryIds: DeliveryIds[]
-  addressId: string
+  deliveryIds?: DeliveryIds[] | null
 }
 
 interface DeliveryIds {
@@ -88,27 +85,25 @@ interface DeliveryIds {
 
 interface DeliveryWindow {
   endDateUtc: string
-  listPrice: number
-  price: number
   startDateUtc: string
 }
 
 interface ShippingSLA {
   id: string
   name: string
-  shippingEstimate: string
-  deliveryWindow: DeliveryWindow
   price: number
+  shippingEstimate: string
+  deliveryWindow: DeliveryWindow | null
   deliveryChannel: string
   pickupStoreInfo: PickupStoreInfo
 }
 
 interface PickupStoreInfo {
-  additionalInfo: string
-  address: Address
-  dockId: string
-  friendlyName: string
-  isPickupStore: boolean
+  additionalInfo: string | null
+  address: Address | null
+  dockId: string | null
+  friendlyName: string | null
+  isPickupStore: boolean | null
 }
 
 interface PackageAttachment {
@@ -116,15 +111,17 @@ interface PackageAttachment {
 }
 
 interface Package {
-  items: PackageItem[]
+  items: Array<{
+    itemIndex: number;
+    quantity: number;
+    price: number;
+  }>
+  courierStatus: { finished: boolean; status: string }
   courier: string
   invoiceNumber: string
-  invoiceValue: number
-  invoiceUrl: string
-  issuanceDate: string
-  trackingNumber: string
   trackingUrl: string
-  courierStatus: CourierStatus
+  trackingNumber: string
+  invoiceUrl: string
 }
 
 interface PackageItem {
@@ -137,7 +134,6 @@ interface PackageItem {
 interface OrderItemSeller {
   id: string
   name: string
-  logo: string
 }
 
 interface OrderItemTotal {
@@ -147,32 +143,32 @@ interface OrderItemTotal {
 }
 
 interface Payment {
-  id: string
-  dueDate: string
-  group: string
+  id?: string
   paymentSystem: string
   paymentSystemName: string
-  lastDigits: string
   value: number
+  lastDigits: string | null
+  group: string
   installments: number
-  url: string
-  bankIssuedInvoiceIdentificationNumberFormatted: string
-  bankIssuedInvoiceBarCodeNumber: string
-  bankIssuedInvoiceBarCodePNG: string
+  dueDate?: string | null
+  url?: string | null
+  bankIssuedInvoiceIdentificationNumberFormatted?: string | null
+  bankIssuedInvoiceBarCodeNumber?: string | null
+  bankIssuedInvoiceBarCodePNG?: string | null
 }
 
 interface Address {
   addressId: string
   addressType: string
+  receiverName: string | null
   city: string
-  complement: string
-  neighborhood: string
-  number: string
-  postalCode: string
-  receiverName: string
   state: string
   street: string
-  country: string
+  number: string
+  neighborhood: string
+  complement?: string | null
+  postalCode: string
+  country?: string | null
 }
 
 interface Parcel {

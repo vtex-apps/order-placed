@@ -13,8 +13,8 @@ import Summary from './Summary'
 import Warnings from './Warnings'
 
 interface Props {
-  data: Order[]
-  profile: ClientProfile
+  data: Order[] | any
+  profile: ClientProfile | any
   inStore?: boolean
 }
 

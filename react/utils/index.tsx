@@ -55,11 +55,11 @@ export const getPaymentGroupFromOrder = (order: Order) => ({
 })
 
 export interface PaymentGroupInfo {
-  barCodeNumber?: string
-  barCodePNG?: string
-  dueDate?: string
+  barCodeNumber?: string | null
+  barCodePNG?: string | null
+  dueDate?: string | null
   paymentGroup: string
   paymentSystemName: string
-  url: string
+  url?: string | null
   value: number
 }

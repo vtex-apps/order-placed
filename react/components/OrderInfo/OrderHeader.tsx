@@ -13,8 +13,9 @@ import OrderOptions from './OrderOptions'
 
 interface Props {
   orderInfo: Order
-  splitOrder: boolean
-  takeaway: boolean
+  splitOrder?: boolean
+  takeaway?: boolean
+  runtime?: { account: string }
 }
 
 const OrderHeader: FunctionComponent<
