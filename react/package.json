@@ -9,7 +9,7 @@
     "apollo-boost": "^0.1.22",
     "apollo-client": "^2.4.7",
     "graphql": "^14.0.2",
-    "graphql-tag": "^2.10.0",
+    "graphql-tag": "^2.10.1",
     "react": "^16.6.3",
     "react-apollo": "^2.3.2",
     "react-clipboard.js": "^2.0.2",
@@ -43,15 +43,15 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.ts"
     },
     "setupTestFrameworkScriptFile": "./testUtils/setupTests.ts",
     "collectCoverageFrom": [
       "react/**/*.{ts, tsx}"
     ],
     "transform": {
-      "^.+\\.tsx?$": "ts-jest",
-      "\\.(gql|graphql)$": "jest-transform-graphql"
+      "\\.(gql|graphql)$": "jest-transform-graphql",
+      "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
     "moduleFileExtensions": [
@@ -60,7 +60,8 @@
       "js",
       "jsx",
       "json",
-      "node"
+      "node",
+      "graphql"
     ]
   }
 }
