@@ -146,15 +146,6 @@ interface OrderItemTotal {
   value: number
 }
 
-interface Profile {
-  firstName: string
-  lastName: string
-  email: string
-  document: string
-  documenType: string
-  phone: string
-}
-
 interface Payment {
   id: string
   dueDate: string
@@ -205,5 +196,5 @@ interface Parcel {
 
 interface IconProps {
   color?: string
-  size: number
+  size?: number
 }
