@@ -64,7 +64,7 @@ export default compose(
     },
   }),
   branch(
-    ({ orderGroupQuery }) => orderGroupQuery.loading,
+    ({ orderGroupQuery }: any) => orderGroupQuery.loading,
     renderComponent(Skeleton)
   )
 )(OrderPlaced)
