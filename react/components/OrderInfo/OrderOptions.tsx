@@ -1,9 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FunctionComponent } from 'react'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { Button } from 'vtex.styleguide'
-import { injectIntl, intlShape } from 'react-intl'
 
-const OrderOptions = ({
+interface Props {
+  allowCancellation: boolean
+  takeaway?: boolean
+  className?: string
+  fullWidth?: boolean
+}
+
+const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
   allowCancellation,
   takeaway,
   intl,
@@ -15,8 +21,8 @@ const OrderOptions = ({
       <Button variation="secondary" block={fullWidth}>
         {takeaway
           ? intl.formatMessage({
-            id: 'order.header.takeaway.printreceipt.button',
-          })
+              id: 'order.header.takeaway.printreceipt.button',
+            })
           : intl.formatMessage({ id: 'order.header.update.button' })}
       </Button>
     </div>
@@ -38,13 +44,5 @@ const OrderOptions = ({
     )}
   </div>
 )
-
-OrderOptions.propTypes = {
-  allowCancellation: PropTypes.bool,
-  intl: intlShape.isRequired,
-  className: PropTypes.string,
-  fullWidth: PropTypes.bool,
-  takeaway: PropTypes.bool,
-}
 
 export default injectIntl(OrderOptions)
