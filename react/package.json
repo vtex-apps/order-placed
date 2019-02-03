@@ -17,16 +17,11 @@
     "recompose": "^0.30.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@types/jest": "^23.3.13",
     "@types/node": "^10.12.21",
     "@types/prop-types": "^15.5.8",
     "@types/react": "^16.8.1",
     "@types/react-intl": "^2.3.15",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react-app": "^3.1.0",
-    "babylon": "^6.18.0",
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
     "jest-transform-graphql": "^2.1.0",
@@ -34,6 +29,7 @@
     "react-dom": "^16.7.0",
     "react-testing-library": "^5.4.4",
     "regenerator-runtime": "^0.13.1",
+    "ts-jest": "^23.10.5",
     "tslint": "^5.12.1",
     "tslint-config-vtex": "^2.1.0",
     "tslint-eslint-rules": "^5.4.0",
@@ -49,13 +45,22 @@
     "moduleNameMapper": {
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     },
-    "setupTestFrameworkScriptFile": "./testUtils/setupTests.js",
+    "setupTestFrameworkScriptFile": "./testUtils/setupTests.ts",
     "collectCoverageFrom": [
-      "react/**/*.{js,jsx}"
+      "react/**/*.{ts, tsx}"
     ],
     "transform": {
-      "\\.(gql|graphql)$": "jest-transform-graphql",
-      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest"
-    }
+      "^.+\\.tsx?$": "ts-jest",
+      "\\.(gql|graphql)$": "jest-transform-graphql"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
