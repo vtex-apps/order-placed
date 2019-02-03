@@ -53,3 +53,13 @@ export const getPaymentGroupFromOrder = (order: Order) => ({
   url: order.paymentData.transactions[0].payments[0].url,
   value: order.paymentData.transactions[0].payments[0].value,
 })
+
+export interface PaymentGroupInfo {
+  barCodeNumber?: string
+  barCodePNG?: string
+  dueDate?: string
+  paymentGroup: string
+  paymentSystemName: string
+  url?: string
+  value: number
+}
