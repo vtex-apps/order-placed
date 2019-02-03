@@ -126,12 +126,14 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
                     />
                   )}
                 </p>
-                <ButtonLink url={bankInvoices[0].url} variation="primary">
-                  {intl.formatMessage(
-                    { id: 'payments.bankinvoice.print' },
-                    { paymentSystemName: bankInvoices[0].paymentSystemName }
-                  )}
-                </ButtonLink>
+                {bankInvoices[0].url && (
+                  <ButtonLink url={bankInvoices[0].url} variation="primary">
+                    {intl.formatMessage(
+                      { id: 'payments.bankinvoice.print' },
+                      { paymentSystemName: bankInvoices[0].paymentSystemName }
+                    )}
+                  </ButtonLink>
+                )}
               </div>
             </li>
           </Fragment>
