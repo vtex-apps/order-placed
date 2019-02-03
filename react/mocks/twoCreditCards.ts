@@ -147,7 +147,7 @@ export const orderGroupQuery = {
                 deliveryChannel: 'pickup-in-point',
                 pickupStoreInfo: {
                   additionalInfo: 'traga a vasilha\n\nnão se esqueça',
-                  address: '[object Object]',
+                  address: null,
                   dockId: '1c38481',
                   friendlyName: 'Loja em Copacabana no Rio de Janeiro',
                   isPickupStore: true,
