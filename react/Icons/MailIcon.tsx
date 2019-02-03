@@ -1,20 +1,18 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { calcIconSize, baseClassname } from './utils'
+import { calcIconSize } from './utils'
 
 const iconBase = {
-  width: 16,
   height: 14,
+  width: 16,
 }
 
-class MailIcon extends PureComponent {
-  render() {
-    const { color, size } = this.props
+class MailIcon extends PureComponent<IconProps> {
+  public render() {
+    const { color = 'currentColor', size = 16 } = this.props
     const newSize = calcIconSize(iconBase, size)
 
     return (
       <svg
-        className={`${baseClassname('mail')}`}
         width={newSize.width}
         height={newSize.height}
         viewBox="0 0 16 14"
@@ -32,20 +30,6 @@ class MailIcon extends PureComponent {
       </svg>
     )
   }
-}
-
-MailIcon.defaultProps = {
-  color: 'currentColor',
-  size: 16,
-  solid: false,
-  block: false,
-}
-
-MailIcon.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.number,
-  solid: PropTypes.bool,
-  block: PropTypes.bool,
 }
 
 export default MailIcon

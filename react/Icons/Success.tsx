@@ -1,15 +1,14 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import { calcIconSize } from './utils'
 
 const iconBase = {
-  width: 42,
   height: 42,
+  width: 42,
 }
 
-class SuccessIcon extends PureComponent {
-  render() {
-    const { color, size } = this.props
+class SuccessIcon extends PureComponent<IconProps> {
+  public render() {
+    const { color = 'currentColor', size = 42 } = this.props
     const newSize = calcIconSize(iconBase, size)
 
     return (
@@ -38,16 +37,6 @@ class SuccessIcon extends PureComponent {
       </svg>
     )
   }
-}
-
-SuccessIcon.defaultProps = {
-  color: 'currentColor',
-  size: 42,
-}
-
-SuccessIcon.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.number,
 }
 
 export default SuccessIcon
