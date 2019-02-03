@@ -15,7 +15,7 @@ import Warnings from './Warnings'
 interface Props {
   data: Order[]
   profile: ClientProfile
-  inStore: boolean
+  inStore?: boolean
 }
 
 const Header: FunctionComponent<Props & InjectedIntlProps> = ({
