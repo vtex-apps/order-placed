@@ -60,8 +60,8 @@ export const orderGroupQuery = {
           preSaleDate: null,
           productCategoryIds: '/4/5/',
           productCategories: {
-            4: 'Departamento 2',
-            5: 'Categoria 2.3 (Campo Produto)',
+            '4': 'Departamento 2',
+            '5': 'Categoria 2.3 (Campo Produto)',
           },
           quantity: 1,
           seller: '1',
