@@ -1,10 +1,10 @@
-import React from 'react'
-import * as reactTestingLibrary from 'react-testing-library'
+import React, { ReactNode } from 'react'
 import { IntlProvider } from 'react-intl'
+import * as reactTestingLibrary from 'react-testing-library'
 
-import defaultStrings from '../../messages/en.json'
+import * as defaultStrings from '../../messages/en.json'
 
-const customRender = (node, options) => {
+const customRender = (node: ReactNode, options?: any) => {
   const rendered = reactTestingLibrary.render(
     <IntlProvider messages={defaultStrings} locale="en-US">
       {node}
@@ -14,10 +14,10 @@ const customRender = (node, options) => {
 
   return {
     ...rendered,
-    rerender: newUi =>
+    rerender: (newUi: any) =>
       customRender(newUi, {
-        container: rendered.container,
         baseElement: rendered.baseElement,
+        container: rendered.container,
       }),
   }
 }
