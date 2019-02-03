@@ -202,3 +202,8 @@ interface Parcel {
   selectedSlaType: string
   deliveryIds: DeliveryIds[]
 }
+
+interface IconProps {
+  color?: string
+  size: number
+}

@@ -1,20 +1,18 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { calcIconSize, baseClassname } from './utils'
+import { calcIconSize } from './utils'
 
 const iconBase = {
-  width: 16,
   height: 16,
+  width: 16,
 }
 
-class PrinterIcon extends PureComponent {
-  render() {
-    const { color, size } = this.props
+class PrinterIcon extends PureComponent<IconProps> {
+  public render() {
+    const { color = 'currentColor', size = 16 } = this.props
     const newSize = calcIconSize(iconBase, size)
 
     return (
       <svg
-        className={`${baseClassname('printer')}`}
         width={newSize.width}
         height={newSize.height}
         viewBox="0 0 16 16"
@@ -29,20 +27,6 @@ class PrinterIcon extends PureComponent {
       </svg>
     )
   }
-}
-
-PrinterIcon.defaultProps = {
-  color: 'currentColor',
-  size: 16,
-  solid: false,
-  block: false,
-}
-
-PrinterIcon.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.number,
-  solid: PropTypes.bool,
-  block: PropTypes.bool,
 }
 
 export default PrinterIcon

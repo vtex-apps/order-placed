@@ -1,20 +1,18 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { calcIconSize, baseClassname } from './utils'
+import { calcIconSize } from './utils'
 
 const iconBase = {
-  width: 30,
   height: 22,
+  width: 30,
 }
 
-class DeliveryIcon extends PureComponent {
-  render() {
-    const { color, size } = this.props
+class DeliveryIcon extends PureComponent<IconProps> {
+  public render() {
+    const { color = 'currentColor', size = 30 } = this.props
     const newSize = calcIconSize(iconBase, size)
 
     return (
       <svg
-        className={`${baseClassname('delivery')}`}
         width={newSize.width}
         height={newSize.height}
         viewBox="0 0 30 22"
@@ -66,20 +64,6 @@ class DeliveryIcon extends PureComponent {
       </svg>
     )
   }
-}
-
-DeliveryIcon.defaultProps = {
-  color: 'currentColor',
-  size: 30,
-  solid: false,
-  block: false,
-}
-
-DeliveryIcon.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.number,
-  solid: PropTypes.bool,
-  block: PropTypes.bool,
 }
 
 export default DeliveryIcon

@@ -1,20 +1,18 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { calcIconSize, baseClassname } from './utils'
+import { calcIconSize } from './utils'
 
 const iconBase = {
-  width: 26,
   height: 24,
+  width: 26,
 }
 
-class PickUpIcon extends PureComponent {
-  render() {
-    const { color, size } = this.props
+class PickUpIcon extends PureComponent<IconProps> {
+  public render() {
+    const { color = 'currentColor', size = 26 } = this.props
     const newSize = calcIconSize(iconBase, size)
 
     return (
       <svg
-        className={`${baseClassname('printer')}`}
         width={newSize.width}
         height={newSize.height}
         viewBox="0 0 26 24"
@@ -52,20 +50,6 @@ class PickUpIcon extends PureComponent {
       </svg>
     )
   }
-}
-
-PickUpIcon.defaultProps = {
-  color: 'currentColor',
-  size: 26,
-  solid: false,
-  block: false,
-}
-
-PickUpIcon.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.number,
-  solid: PropTypes.bool,
-  block: PropTypes.bool,
 }
 
 export default PickUpIcon
