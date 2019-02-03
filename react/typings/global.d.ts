@@ -156,6 +156,7 @@ interface Profile {
 }
 
 interface Payment {
+  id: string
   dueDate: string
   group: string
   paymentSystem: string
@@ -196,6 +197,7 @@ interface Parcel {
   slas: ShippingSLA[]
   shippingEstimate: string
   shippingEstimateDate: string
+  deliveryWindow: DeliveryWindow
   deliveryChannel: string
   selectedSlaType: string
   deliveryIds: DeliveryIds[]
