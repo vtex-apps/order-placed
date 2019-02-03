@@ -1,11 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { injectIntl, intlShape } from 'react-intl'
+import React, { FunctionComponent } from 'react'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 
 import Address from '../Address'
 
-const ShippingHeader = ({ shippingData, index, numPackages, intl }) => {
+interface Props {
+  shippingData: Parcel
+  index: number
+  numPackages: number
+}
+
+const ShippingHeader: FunctionComponent<Props & InjectedIntlProps> = ({
+  shippingData,
+  index,
+  numPackages,
+  intl,
+}) => {
   const multipleDeliveries = numPackages > 1
   return (
     <header>
@@ -32,13 +42,6 @@ const ShippingHeader = ({ shippingData, index, numPackages, intl }) => {
       <Address address={shippingData.address} />
     </header>
   )
-}
-
-ShippingHeader.propTypes = {
-  shippingData: PropTypes.object.isRequired,
-  index: PropTypes.number.isRequired,
-  numPackages: PropTypes.number.isRequired,
-  intl: intlShape.isRequired,
 }
 
 export default injectIntl(ShippingHeader)
