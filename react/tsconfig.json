@@ -1,29 +1,29 @@
 {
   "compilerOptions": {
-    "lib": ["es2017", "dom"],
-    "types": ["node", "render"],
-    "typeRoots": ["node_modules/@types"],
-    "target": "es2017",
-    "module": "es6",
-    "sourceMap": true,
-    "moduleResolution": "node",
-    "jsx": "react",
     "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "jsx": "react",
+    "lib": ["es2017", "dom"],
+    "module": "es6",
+    "moduleResolution": "node",
     "noEmitOnError": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
+    "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
     "skipLibCheck": true,
-    "strictPropertyInitialization": true
-  },
-  "typeAcquisition": {
-    "enable": false
+    "sourceMap": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "target": "es2017",
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node"]
   },
   "exclude": ["node_modules"],
-  "include": ["./typings/*.d.ts", "./**/*.tsx"]
+  "include": ["./typings/*.d.ts", "./**/*.tsx"],
+  "typeAcquisition": {
+    "enable": false
+  }
 }
