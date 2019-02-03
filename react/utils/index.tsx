@@ -60,6 +60,6 @@ export interface PaymentGroupInfo {
   dueDate?: string
   paymentGroup: string
   paymentSystemName: string
-  url?: string
+  url: string
   value: number
 }

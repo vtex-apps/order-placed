@@ -2,7 +2,7 @@ import React, { Fragment, FunctionComponent } from 'react'
 import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
 
-import { getPaymentGroupFromOrder } from '../../utils'
+import { getPaymentGroupFromOrder, PaymentGroupInfo } from '../../utils'
 import ButtonLink from '../ButtonLink'
 import Price from '../Payment/FormattedPrice'
 
@@ -21,7 +21,10 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
   const orderWasSplit = data.length > 1
   const bankInvoices = data
     .reduce(
-      (acc, currOrder) => [...acc, getPaymentGroupFromOrder(currOrder)],
+      (acc: PaymentGroupInfo[], currOrder: Order) => [
+        ...acc,
+        getPaymentGroupFromOrder(currOrder),
+      ],
       []
     )
     .filter((order: any) => order.paymentGroup === 'bankInvoice')

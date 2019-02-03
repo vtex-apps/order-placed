@@ -108,7 +108,7 @@ interface PickupStoreInfo {
   address: Address
   dockId: string
   friendlyName: string
-  isPickupStore: Boolean
+  isPickupStore: boolean
 }
 
 interface PackageAttachment {

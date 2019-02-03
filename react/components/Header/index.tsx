@@ -5,7 +5,8 @@ import { Button } from 'vtex.styleguide'
 import SuccessIcon from '../../Icons/Success'
 import {
   getPaymentGroupFromOrder,
-  getTotalParcelsFromOrderGroup
+  getTotalParcelsFromOrderGroup,
+  PaymentGroupInfo
 } from '../../utils'
 import BankInvoice from './BankInvoice'
 import Summary from './Summary'
@@ -30,7 +31,10 @@ const Header: FunctionComponent<Props & InjectedIntlProps> = ({
   } = getTotalParcelsFromOrderGroup(data)
   const bankInvoices = data
     .reduce(
-      (acc, currOrder) => [...acc, getPaymentGroupFromOrder(currOrder)],
+      (acc: PaymentGroupInfo[], currOrder: Order) => [
+        ...acc,
+        getPaymentGroupFromOrder(currOrder),
+      ],
       []
     )
     .filter((order: any) => !!order.url)
@@ -94,7 +98,7 @@ const Header: FunctionComponent<Props & InjectedIntlProps> = ({
       {hasBankInvoice && !hideBankInvoiceInfo && (
         <BankInvoice
           url={bankInvoices[0].url}
-          encrypted={encrypted}
+          encrypted={!!encrypted}
           invoiceBarCodeNumber={bankInvoices[0].barCodeNumber}
           paymentSystem={bankInvoices[0].paymentSystemName}
         />
