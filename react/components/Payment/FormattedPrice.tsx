@@ -1,9 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FunctionComponent } from 'react'
 import { FormattedNumber } from 'react-intl'
+
 import { CurrencyContext } from '../../OrderPlaced'
 
-const Price = ({ value }) => (
+interface Props {
+  value: number
+}
+
+const Price: FunctionComponent<Props> = ({ value }) => (
   <CurrencyContext.Consumer>
     {currency => (
       <FormattedNumber
@@ -14,10 +18,5 @@ const Price = ({ value }) => (
     )}
   </CurrencyContext.Consumer>
 )
-
-Price.propTypes = {
-  value: PropTypes.number,
-  currency: PropTypes.string,
-}
 
 export default Price

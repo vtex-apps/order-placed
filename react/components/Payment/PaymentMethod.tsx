@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { intlShape, injectIntl } from 'react-intl'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
-import { paymentShape } from '../../types'
 import ButtonLink from '../ButtonLink'
 import Price from './FormattedPrice'
 
-const paymentGroupSwitch = (payment, intl) => {
+interface Props {
+  payment: Payment
+  transactionId: string
+}
+
+interface State {
+  open: boolean
+}
+
+const paymentGroupSwitch = (payment: Payment, intl: any) => {
   switch (payment.group) {
     case 'creditCard':
       return intl.formatMessage({ id: 'payments.creditcard' })
@@ -22,14 +29,14 @@ const paymentGroupSwitch = (payment, intl) => {
   }
 }
 
-class PaymentMethod extends Component {
-  state = { open: false }
+class PaymentMethod extends Component<Props & InjectedIntlProps> {
+  public state = { open: false }
 
-  handleClick = () => {
-    this.setState(prevState => ({ open: !prevState.open }))
+  public handleClick = () => {
+    this.setState((prevState: State) => ({ open: !prevState.open }))
   }
 
-  render() {
+  public render() {
     const { payment, transactionId, intl } = this.props
     const open = this.state.open
     const hasLastDigits = !!payment.lastDigits
@@ -86,12 +93,6 @@ class PaymentMethod extends Component {
       </article>
     )
   }
-}
-
-PaymentMethod.propTypes = {
-  payment: paymentShape.isRequired,
-  transactionId: PropTypes.string.isRequired,
-  intl: intlShape.isRequired,
 }
 
 export default injectIntl(PaymentMethod)
