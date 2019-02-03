@@ -42,7 +42,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "tsc --noEmit && tslint -c tslint.json './**/*.ts'",
+    "lint": "tsc --noEmit && tslint -c tslint.json -e './mocks/*.ts' './**/*.ts'",
     "lint:locales": "intl-equalizer"
   },
   "jest": {
