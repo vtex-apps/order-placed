@@ -30,7 +30,12 @@ const BankInvoice: FunctionComponent<Props & InjectedIntlProps> = ({
     </header>
     <article className="flex justify-between items-center">
       {invoiceBarCodeNumber && <BarCode barCodeNumber={invoiceBarCodeNumber} />}
-      <ButtonLink url={url} icon={<PrinterIcon />} variation="secondary">
+      <ButtonLink
+        url={url}
+        icon={<PrinterIcon />}
+        variation="secondary"
+        openNewWindow
+      >
         {intl.formatMessage(
           { id: 'header.bankinvoice.print' },
           { paymentSystemName: paymentSystem }
