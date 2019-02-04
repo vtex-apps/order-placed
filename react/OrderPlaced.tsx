@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { compose, graphql } from 'react-apollo'
 import { branch, renderComponent } from 'recompose'
 import { withRuntimeContext } from 'vtex.render-runtime'
