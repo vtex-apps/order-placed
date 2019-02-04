@@ -8,6 +8,7 @@ import {
   getTotalParcelsFromOrderGroup,
   PaymentGroupInfo
 } from '../../utils'
+import ButtonLink from '../ButtonLink'
 import BankInvoice from './BankInvoice'
 import Summary from './Summary'
 import Warnings from './Warnings'
@@ -81,9 +82,9 @@ const Header: FunctionComponent<Props & InjectedIntlProps> = ({
           </div>
           {inStore && (
             <div className="tr c-action-primary ml4">
-              <Button variation="primary">
+              <ButtonLink variation="primary" url="/checkout/instore#/">
                 {intl.formatMessage({ id: 'header.newpurchase.button' })}
-              </Button>
+              </ButtonLink>
             </div>
           )}
         </div>
