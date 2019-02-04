@@ -75,7 +75,7 @@ const Header: FunctionComponent<Props & InjectedIntlProps> = ({
             </Button>
           </div>
           <div className="tr c-action-primary ml4">
-            <Button variation="secondary">
+            <Button variation="secondary" onClick={() => window.print()}>
               {intl.formatMessage({ id: 'header.print.button' })}
             </Button>
           </div>
