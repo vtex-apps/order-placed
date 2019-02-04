@@ -32,10 +32,6 @@ const paymentGroupSwitch = (payment: Payment, intl: any) => {
 class PaymentMethod extends Component<Props & InjectedIntlProps> {
   public state = { open: false }
 
-  public handleClick = () => {
-    this.setState((prevState: State) => ({ open: !prevState.open }))
-  }
-
   public render() {
     const { payment, transactionId, intl } = this.props
     const open = this.state.open
@@ -92,6 +88,9 @@ class PaymentMethod extends Component<Props & InjectedIntlProps> {
         </div>
       </article>
     )
+  }
+  private handleClick = () => {
+    this.setState((prevState: State) => ({ open: !prevState.open }))
   }
 }
 
