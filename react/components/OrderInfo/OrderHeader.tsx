@@ -65,6 +65,7 @@ const OrderHeader: FunctionComponent<
       <OrderOptions
         className="dn-s flex-l"
         allowCancellation={orderInfo.allowCancellation}
+        orderId={orderInfo.orderId}
         takeaway={takeaway}
       />
     </header>
