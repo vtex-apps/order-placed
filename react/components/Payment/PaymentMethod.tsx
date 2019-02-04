@@ -62,7 +62,7 @@ class PaymentMethod extends Component<Props & InjectedIntlProps> {
             )}`}
           </p>
           {isBankInvoice && payment.url && (
-            <ButtonLink url={payment.url} variation="primary">
+            <ButtonLink url={payment.url} variation="primary" openNewWindow>
               {intl.formatMessage(
                 { id: 'payments.bankinvoice.print' },
                 { paymentSystemName: payment.paymentSystemName }

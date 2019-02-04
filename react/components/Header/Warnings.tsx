@@ -127,7 +127,11 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
                   )}
                 </p>
                 {bankInvoices[0].url && (
-                  <ButtonLink url={bankInvoices[0].url} variation="primary">
+                  <ButtonLink
+                    url={bankInvoices[0].url}
+                    variation="primary"
+                    openNewWindow
+                  >
                     {intl.formatMessage(
                       { id: 'payments.bankinvoice.print' },
                       { paymentSystemName: bankInvoices[0].paymentSystemName }
