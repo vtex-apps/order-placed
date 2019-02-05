@@ -1,149 +1,149 @@
-query GetOrderGroup($orderGroup: String) {
+query getOrderGroup($orderGroup: String) {
   orderGroup(orderGroup: $orderGroup) {
-    allowCancellation
-    orderId
-    orderGroup
-    state
-    salesChannel
-    creationDate
-    timeZoneCreationDate
-    value
-    clientProfileData {
-      email
-      firstName
-      lastName
-      document
-      documentType
-      phone
-    }
-    storePreferencesData {
-      currencyCode
-      countryCode
-    }
-    sellers {
-      id
-      name
-    }
-    totals {
-      id
-      name
+    orders {
+      allowCancellation
+      orderId
+      deliveryParcels {
+        ...parcelDetails
+      }
+      pickUpParcels {
+        ...parcelDetails
+      }
+      takeAwayParcels {
+        ...parcelDetails
+      }
+      items {
+        ...itemDetails
+      }
+      sellers {
+        id
+        name
+      }
+      totals {
+        id
+        name
+        value
+      }
+      clientProfileData {
+        email
+        firstName
+        lastName
+        document
+        documentType
+        phone
+      }
+      paymentData {
+        transactions {
+          transactionId
+          payments {
+            id
+            paymentSystem
+            paymentSystemName
+            value
+            installments
+            lastDigits
+            group
+            dueDate
+            url
+            bankIssuedInvoiceBarCodePNG
+            bankIssuedInvoiceBarCodeNumber
+            bankIssuedInvoiceIdentificationNumberFormatted
+          }
+        }
+      }
+      storePreferencesData {
+        countryCode
+        currencyCode
+      }
+      creationDate
       value
     }
-    items {
-      uniqueId
-      id
-      productId
-      name
-      skuName
-      tax
-      price
-      listPrice
-      sellingPrice
-      isGift
-      quantity
-      seller
-      imageUrl
-      detailUrl
-      measurementUnit
-      unitMultiplier
+    totalPickUpParcels {
+      ...parcelDetails
     }
-    shippingData {
-      selectedAddresses {
-        addressId
-        addressType
-        receiverName
-        city
-        state
-        street
-        number
-        neighborhood
-        complement
-        postalCode
-        country
-      }
-      logisticsInfo {
-        itemIndex
-        shippingEstimate
-        shippingEstimateDate
-        selectedSla
-        deliveryChannel
-        addressId
-        slas {
-          id
-          name
-          price
-          shippingEstimate
-          deliveryWindow {
-            startDateUtc
-            endDateUtc
-          }
-          deliveryChannel
-          pickupStoreInfo {
-            additionalInfo
-            address {
-              addressId
-              addressType
-              receiverName
-              city
-              state
-              street
-              number
-              neighborhood
-              complement
-              postalCode
-              country
-            }
-            dockId
-            friendlyName
-            isPickupStore
-          }
-        }
-        deliveryIds {
-          courierId
-          courierName
-          dockId
-          quantity
-          warehouseId
-        }
-      }
+    totalDeliveryParcels {
+      ...parcelDetails
     }
-    packageAttachment {
-      packages {
-        items {
-          itemIndex
-          quantity
-          price
-        }
-        courierStatus {
-          finished
-          status
-        }
-        courier
-        invoiceNumber
-        trackingUrl
-        trackingNumber
-        invoiceUrl
-      }
-    }
-    paymentData {
-      transactions {
-        transactionId
-        payments {
-          id
-          paymentSystem
-          paymentSystemName
-          value
-          lastDigits
-          group
-          installments
-          dueDate
-          url
-          tid
-          bankIssuedInvoiceIdentificationNumberFormatted
-          bankIssuedInvoiceBarCodeNumber
-          bankIssuedInvoiceBarCodePNG
-        }
-      }
+    totalTakeAwayParcels {
+      ...parcelDetails
     }
   }
+}
+
+fragment itemDetails on OrderItem {
+  id
+  skuName
+  name
+  price
+  listPrice
+  isGift
+  quantity
+  seller
+  imageUrl
+  detailUrl
+  measurementUnit
+  unitMultiplier
+}
+
+fragment SlaDetails on ShippingSLA {
+  id
+  name
+  shippingEstimate
+  deliveryWindow {
+    endDateUtc
+    startDateUtc
+  }
+  price
+  deliveryChannel
+  pickupStoreInfo {
+    additionalInfo
+    address {
+      addressId
+      addressType
+      receiverName
+      street
+      number
+      city
+      state
+      postalCode
+      neighborhood
+      complement
+      country
+    }
+    friendlyName
+    isPickupStore
+  }
+}
+
+fragment parcelDetails on Parcel {
+  address {
+    addressType
+    receiverName
+    state
+    street
+    number
+    city
+    postalCode
+    neighborhood
+    complement
+    country
+  }
+  price
+  pickupFriendlyName
+  seller
+  items {
+    ...itemDetails
+  }
+  selectedSla
+  selectedSlaObj {
+    ...SlaDetails
+  }
+  shippingEstimate
+  shippingEstimateDate
+  deliveryWindow {
+    endDateUtc
+    startDateUtc
+  }
+  deliveryChannel
+  selectedSlaType
 }
