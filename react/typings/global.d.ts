@@ -1,20 +1,24 @@
+interface OrderGroup {
+  orders: Order[]
+  totalDeliveryParcels: Parcel[]
+  totalPickUpParcels: Parcel[]
+  totalTakeAwayParcels: Parcel[]
+}
+
 interface Order {
   allowCancellation: boolean
   orderId: string
-  orderGroup: string
-  state: string
-  creationDate: string
-  timeZoneCreationDate: string
-  value: number
-  clientProfileData: ClientProfile
-  storePreferencesData: StorePreferencesData
+  deliveryParcels: Parcel[]
+  pickUpParcels: Parcel[]
+  takeAwayParcels: Parcel[]
+  items: OrderItem[]
   sellers: OrderItemSeller[]
   totals: OrderItemTotal[]
-  items: OrderItem[]
-  shippingData: ShippingData
-  salesChannel: string
-  packageAttachment?: PackageAttachment | null
+  clientProfileData: ClientProfile
   paymentData: PaymentData
+  storePreferencesData: StorePreferencesData
+  creationDate: string
+  value: number
 }
 
 interface ClientProfile {
@@ -27,15 +31,11 @@ interface ClientProfile {
 }
 
 interface OrderItem {
-  uniqueId: string
   id: string
-  productId: string
-  name: string
   skuName: string
-  tax: number
+  name: string
   price: number
   listPrice: number
-  sellingPrice: number
   isGift: boolean
   quantity: number
   seller: string
@@ -59,30 +59,6 @@ interface Transaction {
   payments: Payment[]
 }
 
-interface ShippingData {
-  selectedAddresses: Address[]
-  logisticsInfo: ItemLogistics[]
-}
-
-interface ItemLogistics {
-  itemIndex: number
-  shippingEstimate?: string | null
-  shippingEstimateDate?: string | null
-  selectedSla: string
-  deliveryChannel?: string | null
-  addressId: string | null
-  slas: ShippingSLA[]
-  deliveryIds?: DeliveryIds[] | null
-}
-
-interface DeliveryIds {
-  courierId: string
-  courierName: string
-  dockId: string
-  quantity: number
-  warehouseId: string
-}
-
 interface DeliveryWindow {
   endDateUtc: string
   startDateUtc: string
@@ -91,9 +67,9 @@ interface DeliveryWindow {
 interface ShippingSLA {
   id: string
   name: string
-  price: number
   shippingEstimate: string
   deliveryWindow: DeliveryWindow | null
+  price: number
   deliveryChannel: string
   pickupStoreInfo: PickupStoreInfo
 }
@@ -101,34 +77,8 @@ interface ShippingSLA {
 interface PickupStoreInfo {
   additionalInfo: string | null
   address: Address | null
-  dockId: string | null
   friendlyName: string | null
   isPickupStore: boolean | null
-}
-
-interface PackageAttachment {
-  packages: Package[]
-}
-
-interface Package {
-  items: Array<{
-    itemIndex: number;
-    quantity: number;
-    price: number;
-  }>
-  courierStatus: { finished: boolean; status: string }
-  courier: string
-  invoiceNumber: string
-  trackingUrl: string
-  trackingNumber: string
-  invoiceUrl: string
-}
-
-interface PackageItem {
-  itemIndex: number
-  quantity: number
-  price: number
-  description: string
 }
 
 interface OrderItemSeller {
@@ -158,36 +108,31 @@ interface Payment {
 }
 
 interface Address {
-  addressId: string
   addressType: string
-  receiverName: string | null
-  city: string
+  receiverName: string
   state: string
   street: string
   number: string
-  neighborhood: string
-  complement?: string | null
+  city: string
   postalCode: string
-  country?: string | null
+  neighborhood: string
+  complement: string
+  country: string
 }
 
 interface Parcel {
   address: Address
-  listPrice: number
   price: number
   pickupFriendlyName: string
   seller: string
   items: OrderItem[]
-  package: Package
   selectedSla: string
   selectedSlaObj: ShippingSLA
-  slas: ShippingSLA[]
   shippingEstimate: string
   shippingEstimateDate: string
   deliveryWindow: DeliveryWindow
   deliveryChannel: string
   selectedSlaType: string
-  deliveryIds: DeliveryIds[]
 }
 
 interface IconProps {
