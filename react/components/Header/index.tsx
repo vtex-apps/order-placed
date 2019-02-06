@@ -3,34 +3,25 @@ import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
 import SuccessIcon from '../../Icons/Success'
-import {
-  getPaymentGroupFromOrder,
-  getTotalParcelsFromOrderGroup,
-  PaymentGroupInfo
-} from '../../utils'
+import { getPaymentGroupFromOrder, PaymentGroupInfo } from '../../utils'
 import ButtonLink from '../ButtonLink'
 import BankInvoice from './BankInvoice'
 import Summary from './Summary'
 import Warnings from './Warnings'
 
 interface Props {
-  data: Order[] | any
-  profile: ClientProfile | any
+  orderGroup: OrderGroup
+  profile: ClientProfile
   inStore?: boolean
 }
 
 const Header: FunctionComponent<Props & InjectedIntlProps> = ({
-  data,
+  orderGroup,
   profile,
   inStore,
   intl,
 }) => {
-  const {
-    totalDeliveries,
-    totalPickUps,
-    totalTakeAways,
-  } = getTotalParcelsFromOrderGroup(data)
-  const bankInvoices = data
+  const bankInvoices = orderGroup.orders
     .reduce(
       (acc: PaymentGroupInfo[], currOrder: Order) => [
         ...acc,
@@ -41,11 +32,13 @@ const Header: FunctionComponent<Props & InjectedIntlProps> = ({
     .filter((order: any) => !!order.url)
   const hasBankInvoice = bankInvoices.length > 0
   const encrypted =
-    hasBankInvoice && bankInvoices[0].url.match(/(\*.\*.)+\*\w\*/g)
+    hasBankInvoice &&
+    bankInvoices[0].url &&
+    bankInvoices[0].url.match(/(\*.\*.)+\*\w\*/g)
   const hideBankInvoiceInfo = encrypted && !bankInvoices[0].barCodeNumber
-  const hasDelivery = totalDeliveries.length > 0
-  const hasPickUp = totalPickUps.length > 0
-  const hasTakeAway = totalTakeAways.length > 0
+  const hasDelivery = orderGroup.totalDeliveryParcels.length > 0
+  const hasPickUp = orderGroup.totalPickUpParcels.length > 0
+  const hasTakeAway = orderGroup.totalTakeAwayParcels.length > 0
   const onlyTakeAway = !hasDelivery && !hasPickUp && hasTakeAway
 
   return (
@@ -91,12 +84,22 @@ const Header: FunctionComponent<Props & InjectedIntlProps> = ({
       </section>
 
       {(hasDelivery || hasPickUp) && (
-        <Warnings data={data} hasDelivery={hasDelivery} hasPickUp={hasPickUp} />
+        <Warnings
+          numOfOrders={orderGroup.orders.length}
+          hasDelivery={hasDelivery}
+          hasPickUp={hasPickUp}
+          bankInvoices={bankInvoices}
+        />
       )}
 
-      {hasDelivery && hasPickUp && <Summary data={data} />}
+      {hasDelivery && hasPickUp && (
+        <Summary
+          totalDeliveries={orderGroup.totalDeliveryParcels}
+          totalPickUps={orderGroup.totalPickUpParcels}
+        />
+      )}
 
-      {hasBankInvoice && !hideBankInvoiceInfo && (
+      {hasBankInvoice && bankInvoices[0].url && !hideBankInvoiceInfo && (
         <BankInvoice
           url={bankInvoices[0].url}
           encrypted={!!encrypted}

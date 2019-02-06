@@ -1,11 +1,5 @@
-import parcelify from '@vtex/delivery-packages'
 import React, { FunctionComponent } from 'react'
 
-import {
-  getDeliveryPackagesFromParcels,
-  getPickUpPackagesFromParcels,
-  getTakeAwayPackagesFromParcels
-} from '../../utils'
 import CustomerInfo from '../CustomerInfo'
 import PaymentMethod from '../Payment/PaymentMethod'
 import Shipping from '../Shipping'
@@ -30,11 +24,12 @@ const OrderInfo: FunctionComponent<Props> = ({
   numOfOrders,
   index,
 }) => {
+  const {
+    deliveryParcels: delivery,
+    pickUpParcels: pickup,
+    takeAwayParcels: takeaway,
+  } = order
   const splitOrder = numOfOrders > 1
-  const parcels = parcelify(order)
-  const delivery = getDeliveryPackagesFromParcels(parcels)
-  const pickup = getPickUpPackagesFromParcels(parcels)
-  const takeaway = getTakeAwayPackagesFromParcels(parcels)
   const multipleDeliveries = delivery.length > 1
   const paymentsData = order.paymentData.transactions[0].payments
   const transactionId = order.paymentData.transactions[0].transactionId

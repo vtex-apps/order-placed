@@ -4,18 +4,16 @@ import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import { PageBlock } from 'vtex.styleguide'
 
-import { getTotalParcelsFromOrderGroup } from '../../utils'
-
 interface Props {
-  data: Order[]
+  totalDeliveries: Parcel[]
+  totalPickUps: Parcel[]
 }
 
 const OrderSummary: FunctionComponent<Props & InjectedIntlProps> = ({
-  data,
+  totalDeliveries,
+  totalPickUps,
   intl,
 }) => {
-  const { totalDeliveries, totalPickUps } = getTotalParcelsFromOrderGroup(data)
-
   const deliveryItemsQuantity = totalDeliveries.reduce(
     (acc, deliveryPackage) => acc + deliveryPackage.items.length,
     0
@@ -24,6 +22,7 @@ const OrderSummary: FunctionComponent<Props & InjectedIntlProps> = ({
     (acc, pickupPackage) => acc + pickupPackage.items.length,
     0
   )
+
   const longestDeliveryEstimate = estimateCalculator.getLatestSla(
     totalDeliveries
   )
