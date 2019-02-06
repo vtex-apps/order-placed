@@ -12,28 +12,29 @@ import withoutSSR from './WithoutSSR'
 export const CurrencyContext = React.createContext('BRL')
 
 interface Props {
-  orderGroupQuery: OrderGroup
+  orderGroupQuery: any
   inStore: boolean
 }
 
 class OrderPlaced extends React.Component<Props> {
   public render() {
     const { orderGroupQuery, inStore } = this.props
+    const { orderGroup } = orderGroupQuery
     return (
       <CurrencyContext.Provider
-        value={orderGroupQuery.orders[0].storePreferencesData.currencyCode}
+        value={orderGroup.orders[0].storePreferencesData.currencyCode}
       >
         <Header
-          orderGroup={orderGroupQuery}
-          profile={orderGroupQuery.orders[0].clientProfileData}
+          orderGroup={orderGroup}
+          profile={orderGroup.orders[0].clientProfileData}
           inStore={inStore}
         />
         <main>
-          {orderGroupQuery.orders.map((order: Order, index: number) => (
+          {orderGroup.orders.map((order: Order, index: number) => (
             <OrderInfo
               order={order}
               profile={order.clientProfileData}
-              numOfOrders={orderGroupQuery.orders.length}
+              numOfOrders={orderGroup.orders.length}
               index={index}
               key={order.orderId}
             />
