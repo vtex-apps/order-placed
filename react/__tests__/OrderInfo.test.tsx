@@ -2,17 +2,18 @@ import React from 'react'
 
 import OrderInfo from '../components/OrderInfo'
 import OrderHeader from '../components/OrderInfo/OrderHeader'
-import { orderGroupQuery as multipleDeliveries } from '../mocks/bankInvoice'
+import { orderGroupQuery as bankInvoicePayment } from '../mocks/bankInvoiceLoggedIn'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as onePickUp } from '../mocks/onePickupSimple'
-import { orderGroupQuery as takeAwayOnly } from '../mocks/oneTakeAway'
+// import { orderGroupQuery as takeAwayOnly } from '../mocks/oneTakeAway'
 import { orderGroupQuery as promissory } from '../mocks/promissoryPayment'
 import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
 import { orderGroupQuery as twoCreditCards } from '../mocks/twoCreditCards'
+import { orderGroupQuery as multipleDeliveries } from '../mocks/twoDeliveries'
 import { render } from '../testUtils'
 
-const getOrderFromOrderGroup = (orderGroup: Order[], index: number) => {
-  return orderGroup[index]
+const getOrderFromOrderGroup = (orderGroup: OrderGroup, index: number) => {
+  return orderGroup.orders[index]
 }
 
 describe('OrderHeader', () => {
@@ -33,25 +34,25 @@ describe('OrderHeader', () => {
     expect(getByText(cancelOrder)).toBeDefined()
   })
 
-  it('should render different buttons for take away orders', () => {
-    const orderInfo = getOrderFromOrderGroup(takeAwayOnly.orderGroup, 0)
-    const { getByText } = render(
-      <OrderHeader
-        orderInfo={orderInfo}
-        runtime={{ account: 'vtexgame1' }}
-        takeaway
-      />
-    )
+  // it('should render different buttons for take away orders', () => {
+  //   const orderInfo = getOrderFromOrderGroup(takeAwayOnly.orderGroup, 0)
+  //   const { getByText } = render(
+  //     <OrderHeader
+  //       orderInfo={orderInfo}
+  //       runtime={{ account: 'vtexgame1' }}
+  //       takeaway
+  //     />
+  //   )
 
-    const reprintReceipt = 'Reprint receipt'
-    const cancelOrder = 'Cancel purchase'
+  //   const reprintReceipt = 'Reprint receipt'
+  //   const cancelOrder = 'Cancel purchase'
 
-    expect(getByText(reprintReceipt)).toBeDefined()
-    expect(getByText(cancelOrder)).toBeDefined()
-  })
+  //   expect(getByText(reprintReceipt)).toBeDefined()
+  //   expect(getByText(cancelOrder)).toBeDefined()
+  // })
 
   it('should render seller name for an order processed by another seller', () => {
-    const orderInfo = getOrderFromOrderGroup(splitOrder.orderGroup, 1)
+    const orderInfo = getOrderFromOrderGroup(splitOrder.orderGroup, 0)
     const { getByText } = render(
       <OrderHeader
         orderInfo={orderInfo}
@@ -80,7 +81,7 @@ describe('Order split notice', () => {
 
     expect(
       getByText(
-        'Your order was split into 3 deliveries. Products that are closer to their delivery address will arrive faster!'
+        'Your order was split into 2 deliveries. Products that are closer to their delivery address will arrive faster!'
       )
     ).toBeDefined()
   })
@@ -114,7 +115,7 @@ describe('Payment methods', () => {
   })
 
   it('should render bank invoice payment method', () => {
-    const orderInfo = getOrderFromOrderGroup(multipleDeliveries.orderGroup, 0)
+    const orderInfo = getOrderFromOrderGroup(bankInvoicePayment.orderGroup, 0)
     const { getByText } = render(
       <OrderInfo
         order={orderInfo}
