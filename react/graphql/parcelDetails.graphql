@@ -1,0 +1,35 @@
+# import itemDetails from './itemDetails.graphql'
+# import slaDetails from './slaDetails.graphql'
+
+fragment parcelDetails on Parcel {
+  address {
+    addressType
+    receiverName
+    state
+    street
+    number
+    city
+    postalCode
+    neighborhood
+    complement
+    country
+  }
+  price
+  pickupFriendlyName
+  seller
+  items {
+    ...itemDetails
+  }
+  selectedSla
+  selectedSlaObj {
+    ...slaDetails
+  }
+  shippingEstimate
+  shippingEstimateDate
+  deliveryWindow {
+    endDateUtc
+    startDateUtc
+  }
+  deliveryChannel
+  selectedSlaType
+}

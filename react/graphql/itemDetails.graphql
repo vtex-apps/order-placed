@@ -1,0 +1,14 @@
+fragment itemDetails on OrderItem {
+  id
+  skuName
+  name
+  price
+  listPrice
+  isGift
+  quantity
+  seller
+  imageUrl
+  detailUrl
+  measurementUnit
+  unitMultiplier
+}
