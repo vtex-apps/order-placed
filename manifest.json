@@ -17,7 +17,6 @@
   "dependencies": {
     "vtex.order-placed-graphql": "0.x",
     "vtex.styleguide": "9.x",
-    "vtex.store-graphql": "2.x",
     "vtex.order-details": "0.0.1-beta",
     "vtex.shipping-estimate-translator": "2.x",
     "vtex.address-form": "4.x",
