@@ -12,7 +12,7 @@
   "builders": {
     "react": "3.x",
     "store": "0.x",
-    "messages": "0.x"
+    "messages": "1.x"
   },
   "dependencies": {
     "vtex.order-placed-graphql": "0.x",
