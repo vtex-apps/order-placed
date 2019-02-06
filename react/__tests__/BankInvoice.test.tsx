@@ -13,8 +13,8 @@ describe('Bank invoice scenarios', () => {
   it('should render embedded bank invoice for logged in customer, but no number', () => {
     const { getByTestId, queryByTestId } = render(
       <Header
-        data={bankInvoiceLoggedIn.orderGroup}
-        profile={bankInvoiceLoggedIn.orderGroup[0].clientProfileData}
+        orderGroup={bankInvoiceLoggedIn.orderGroup}
+        profile={bankInvoiceLoggedIn.orderGroup.orders[0].clientProfileData}
       />
     )
 
@@ -29,8 +29,10 @@ describe('Bank invoice scenarios', () => {
   it('should render embedded bank invoice for logged in customer, along with barcode number', () => {
     const { getByTestId, queryByTestId } = render(
       <Header
-        data={bankInvoiceNumberLoggedIn.orderGroup}
-        profile={bankInvoiceNumberLoggedIn.orderGroup[0].clientProfileData}
+        orderGroup={bankInvoiceNumberLoggedIn.orderGroup}
+        profile={
+          bankInvoiceNumberLoggedIn.orderGroup.orders[0].clientProfileData
+        }
       />
     )
 
@@ -45,8 +47,8 @@ describe('Bank invoice scenarios', () => {
   it('should not render embedded bank invoice for customer not logged in', () => {
     const { queryByTestId } = render(
       <Header
-        data={bankInvoiceNotLoggedIn.orderGroup}
-        profile={bankInvoiceNotLoggedIn.orderGroup[0].clientProfileData}
+        orderGroup={bankInvoiceNotLoggedIn.orderGroup}
+        profile={bankInvoiceNotLoggedIn.orderGroup.orders[0].clientProfileData}
       />
     )
 
@@ -61,8 +63,10 @@ describe('Bank invoice scenarios', () => {
   it('should render bank invoice barcode number for user not logged in', () => {
     const { queryByTestId } = render(
       <Header
-        data={bankInvoiceNumberNotLoggedIn.orderGroup}
-        profile={bankInvoiceNumberNotLoggedIn.orderGroup[0].clientProfileData}
+        orderGroup={bankInvoiceNumberNotLoggedIn.orderGroup}
+        profile={
+          bankInvoiceNumberNotLoggedIn.orderGroup.orders[0].clientProfileData
+        }
       />
     )
 
@@ -77,8 +81,8 @@ describe('Bank invoice scenarios', () => {
   it('should not render bank invoice section for user not logged in if there is no barcode number', () => {
     const { queryByTestId } = render(
       <Header
-        data={bankInvoiceNotLoggedIn.orderGroup}
-        profile={bankInvoiceNotLoggedIn.orderGroup[0].clientProfileData}
+        orderGroup={bankInvoiceNotLoggedIn.orderGroup}
+        profile={bankInvoiceNotLoggedIn.orderGroup.orders[0].clientProfileData}
       />
     )
 
