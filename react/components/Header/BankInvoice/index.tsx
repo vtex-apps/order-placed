@@ -7,7 +7,7 @@ import Embedded from './Embedded'
 interface Props {
   url: string
   encrypted: boolean
-  invoiceBarCodeNumber?: string
+  invoiceBarCodeNumber: string | null
   paymentSystem: string
 }
 

@@ -2,32 +2,25 @@ import React, { Fragment, FunctionComponent } from 'react'
 import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
 
-import { getPaymentGroupFromOrder, PaymentGroupInfo } from '../../utils'
+import { PaymentGroupInfo } from '../../utils'
 import ButtonLink from '../ButtonLink'
 import Price from '../Payment/FormattedPrice'
 
 interface Props {
-  data: Order[]
+  numOfOrders: number
   hasDelivery: boolean
   hasPickUp: boolean
+  bankInvoices: PaymentGroupInfo[]
 }
 
 const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
-  data,
+  numOfOrders,
   hasDelivery,
   hasPickUp,
+  bankInvoices,
   intl,
 }) => {
-  const orderWasSplit = data.length > 1
-  const bankInvoices = data
-    .reduce(
-      (acc: PaymentGroupInfo[], currOrder: Order) => [
-        ...acc,
-        getPaymentGroupFromOrder(currOrder),
-      ],
-      []
-    )
-    .filter((order: any) => order.paymentGroup === 'bankInvoice')
+  const orderWasSplit = numOfOrders > 1
   const hasBankInvoice = bankInvoices.length > 0
   const listItem = 'mv0 w-80-ns w-90 center c-on-base'
   const bottomBorder = 'b--muted-4 bb'
@@ -73,7 +66,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
               {intl.formatMessage(
                 { id: 'warnings.order.split' },
                 {
-                  numOrders: data.length,
+                  numOrders: numOfOrders,
                 }
               )}
             </p>
