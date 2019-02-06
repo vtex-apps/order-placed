@@ -60,8 +60,8 @@ interface Transaction {
 }
 
 interface DeliveryWindow {
-  endDateUtc: string
-  startDateUtc: string
+  endDateUtc: string | null
+  startDateUtc: string | null
 }
 
 interface ShippingSLA {
@@ -109,28 +109,28 @@ interface Payment {
 
 interface Address {
   addressType: string
-  receiverName: string
+  receiverName: string | null
   state: string
   street: string
   number: string
   city: string
   postalCode: string
-  neighborhood: string
-  complement: string
-  country: string
+  neighborhood: string | null
+  complement: string | null
+  country: string | null
 }
 
 interface Parcel {
   address: Address
   price: number
-  pickupFriendlyName: string
+  pickupFriendlyName: string | null
   seller: string
   items: OrderItem[]
   selectedSla: string
   selectedSlaObj: ShippingSLA
-  shippingEstimate: string
-  shippingEstimateDate: string
-  deliveryWindow: DeliveryWindow
+  shippingEstimate: string | null
+  shippingEstimateDate: string | null
+  deliveryWindow: DeliveryWindow | null
   deliveryChannel: string
   selectedSlaType: string
 }
