@@ -5,7 +5,6 @@ import { orderGroupQuery as bankInvoiceDueDate } from '../mocks/bankInvoiceLogge
 import { orderGroupQuery as bankInvoiceNoDueDate } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
-// import { orderGroupQuery as takeAwayOnly } from '../mocks/oneTakeAway'
 import { orderGroupQuery as deliveryAndPickup } from '../mocks/pickupAndDelivery'
 import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
 import { render } from '../testUtils'
@@ -34,19 +33,6 @@ describe('Confirmation messages', () => {
     const thankYouMessage = getByText(/Thanks for the purchase!/)
     expect(thankYouMessage.textContent).toBeDefined()
   })
-
-  // it('should render "Start new order" button if inStore', () => {
-  //   const { getByText } = render(
-  //     <Header
-  //       orderGroup={takeAwayOnly.orderGroup}
-  //       profile={takeAwayOnly.orderGroup[0].clientProfileData}
-  //       inStore
-  //     />
-  //   )
-
-  //   const newOrder = getByText('Start new order')
-  //   expect(newOrder.textContent).toBeDefined()
-  // })
 })
 
 describe('Warnings', () => {
@@ -172,17 +158,6 @@ describe('Warnings', () => {
     )
     expect(bankInvoiceWarning).toBeDefined()
   })
-
-  // it('should not render Warnings if that are only take away items', () => {
-  //   const { queryByTestId } = render(
-  //     <Header
-  //       orderGroup={takeAwayOnly.orderGroup}
-  //       profile={takeAwayOnly.orderGroup.orders[0].clientProfileData}
-  //     />
-  //   )
-
-  //   expect(queryByTestId('warnings-section')).toBeNull()
-  // })
 })
 
 describe('Purchase summary', () => {
