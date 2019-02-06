@@ -46,7 +46,7 @@ interface OrderItem {
 }
 
 interface StorePreferencesData {
-  countryCode?: string | null
+  countryCode: string | null
   currencyCode: string
 }
 
@@ -93,18 +93,18 @@ interface OrderItemTotal {
 }
 
 interface Payment {
-  id?: string
+  id: string
   paymentSystem: string
   paymentSystemName: string
   value: number
   lastDigits: string | null
   group: string
   installments: number
-  dueDate?: string | null
-  url?: string | null
-  bankIssuedInvoiceIdentificationNumberFormatted?: string | null
-  bankIssuedInvoiceBarCodeNumber?: string | null
-  bankIssuedInvoiceBarCodePNG?: string | null
+  dueDate: string | null
+  url: string | null
+  bankIssuedInvoiceIdentificationNumberFormatted: string | null
+  bankIssuedInvoiceBarCodeNumber: string | null
+  bankIssuedInvoiceBarCodePNG: string | null
 }
 
 interface Address {
