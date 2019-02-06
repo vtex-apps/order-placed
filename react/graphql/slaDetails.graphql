@@ -1,0 +1,29 @@
+fragment slaDetails on ShippingSLA {
+  id
+  name
+  shippingEstimate
+  deliveryWindow {
+    endDateUtc
+    startDateUtc
+  }
+  price
+  deliveryChannel
+  pickupStoreInfo {
+    additionalInfo
+    address {
+      addressId
+      addressType
+      receiverName
+      street
+      number
+      city
+      state
+      postalCode
+      neighborhood
+      complement
+      country
+    }
+    friendlyName
+    isPickupStore
+  }
+}

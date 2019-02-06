@@ -1,19 +1,231 @@
+# import itemDetails from './itemDetails.graphql'
+# import parcelDetails from './parcelDetails.graphql'
+
 query getOrderGroup($orderGroup: String) {
   orderGroup(orderGroup: $orderGroup) {
     orders {
       allowCancellation
       orderId
       deliveryParcels {
-        ...parcelDetails
+        address {
+          addressType
+          receiverName
+          state
+          street
+          number
+          city
+          postalCode
+          neighborhood
+          complement
+          country
+        }
+        price
+        pickupFriendlyName
+        seller
+        items {
+          id
+          skuName
+          name
+          price
+          listPrice
+          isGift
+          quantity
+          seller
+          imageUrl
+          detailUrl
+          measurementUnit
+          unitMultiplier
+        }
+        selectedSla
+        selectedSlaObj {
+          id
+          name
+          shippingEstimate
+          deliveryWindow {
+            endDateUtc
+            startDateUtc
+          }
+          price
+          deliveryChannel
+          pickupStoreInfo {
+            additionalInfo
+            address {
+              addressId
+              addressType
+              receiverName
+              street
+              number
+              city
+              state
+              postalCode
+              neighborhood
+              complement
+              country
+            }
+            friendlyName
+            isPickupStore
+          }
+        }
+        shippingEstimate
+        shippingEstimateDate
+        deliveryWindow {
+          endDateUtc
+          startDateUtc
+        }
+        deliveryChannel
+        selectedSlaType
       }
       pickUpParcels {
-        ...parcelDetails
+        address {
+          addressType
+          receiverName
+          state
+          street
+          number
+          city
+          postalCode
+          neighborhood
+          complement
+          country
+        }
+        price
+        pickupFriendlyName
+        seller
+        items {
+          id
+          skuName
+          name
+          price
+          listPrice
+          isGift
+          quantity
+          seller
+          imageUrl
+          detailUrl
+          measurementUnit
+          unitMultiplier
+        }
+        selectedSla
+        selectedSlaObj {
+          id
+          name
+          shippingEstimate
+          deliveryWindow {
+            endDateUtc
+            startDateUtc
+          }
+          price
+          deliveryChannel
+          pickupStoreInfo {
+            additionalInfo
+            address {
+              addressId
+              addressType
+              receiverName
+              street
+              number
+              city
+              state
+              postalCode
+              neighborhood
+              complement
+              country
+            }
+            friendlyName
+            isPickupStore
+          }
+        }
+        shippingEstimate
+        shippingEstimateDate
+        deliveryWindow {
+          endDateUtc
+          startDateUtc
+        }
+        deliveryChannel
+        selectedSlaType
       }
       takeAwayParcels {
-        ...parcelDetails
+        address {
+          addressType
+          receiverName
+          state
+          street
+          number
+          city
+          postalCode
+          neighborhood
+          complement
+          country
+        }
+        price
+        pickupFriendlyName
+        seller
+        items {
+          id
+          skuName
+          name
+          price
+          listPrice
+          isGift
+          quantity
+          seller
+          imageUrl
+          detailUrl
+          measurementUnit
+          unitMultiplier
+        }
+        selectedSla
+        selectedSlaObj {
+          id
+          name
+          shippingEstimate
+          deliveryWindow {
+            endDateUtc
+            startDateUtc
+          }
+          price
+          deliveryChannel
+          pickupStoreInfo {
+            additionalInfo
+            address {
+              addressId
+              addressType
+              receiverName
+              street
+              number
+              city
+              state
+              postalCode
+              neighborhood
+              complement
+              country
+            }
+            friendlyName
+            isPickupStore
+          }
+        }
+        shippingEstimate
+        shippingEstimateDate
+        deliveryWindow {
+          endDateUtc
+          startDateUtc
+        }
+        deliveryChannel
+        selectedSlaType
       }
       items {
-        ...itemDetails
+        id
+        skuName
+        name
+        price
+        listPrice
+        isGift
+        quantity
+        seller
+        imageUrl
+        detailUrl
+        measurementUnit
+        unitMultiplier
       }
       sellers {
         id
@@ -59,91 +271,211 @@ query getOrderGroup($orderGroup: String) {
       value
     }
     totalPickUpParcels {
-      ...parcelDetails
+      address {
+        addressType
+        receiverName
+        state
+        street
+        number
+        city
+        postalCode
+        neighborhood
+        complement
+        country
+      }
+      price
+      pickupFriendlyName
+      seller
+      items {
+        id
+        skuName
+        name
+        price
+        listPrice
+        isGift
+        quantity
+        seller
+        imageUrl
+        detailUrl
+        measurementUnit
+        unitMultiplier
+      }
+      selectedSla
+      selectedSlaObj {
+        id
+        name
+        shippingEstimate
+        deliveryWindow {
+          endDateUtc
+          startDateUtc
+        }
+        price
+        deliveryChannel
+        pickupStoreInfo {
+          additionalInfo
+          address {
+            addressId
+            addressType
+            receiverName
+            street
+            number
+            city
+            state
+            postalCode
+            neighborhood
+            complement
+            country
+          }
+          friendlyName
+          isPickupStore
+        }
+      }
+      shippingEstimate
+      shippingEstimateDate
+      deliveryWindow {
+        endDateUtc
+        startDateUtc
+      }
+      deliveryChannel
+      selectedSlaType
     }
     totalDeliveryParcels {
-      ...parcelDetails
+      address {
+        addressType
+        receiverName
+        state
+        street
+        number
+        city
+        postalCode
+        neighborhood
+        complement
+        country
+      }
+      price
+      pickupFriendlyName
+      seller
+      items {
+        id
+        skuName
+        name
+        price
+        listPrice
+        isGift
+        quantity
+        seller
+        imageUrl
+        detailUrl
+        measurementUnit
+        unitMultiplier
+      }
+      selectedSla
+      selectedSlaObj {
+        id
+        name
+        shippingEstimate
+        deliveryWindow {
+          endDateUtc
+          startDateUtc
+        }
+        price
+        deliveryChannel
+        pickupStoreInfo {
+          additionalInfo
+          address {
+            addressId
+            addressType
+            receiverName
+            street
+            number
+            city
+            state
+            postalCode
+            neighborhood
+            complement
+            country
+          }
+          friendlyName
+          isPickupStore
+        }
+      }
+      shippingEstimate
+      shippingEstimateDate
+      deliveryWindow {
+        endDateUtc
+        startDateUtc
+      }
+      deliveryChannel
+      selectedSlaType
     }
     totalTakeAwayParcels {
-      ...parcelDetails
+      address {
+        addressType
+        receiverName
+        state
+        street
+        number
+        city
+        postalCode
+        neighborhood
+        complement
+        country
+      }
+      price
+      pickupFriendlyName
+      seller
+      items {
+        id
+        skuName
+        name
+        price
+        listPrice
+        isGift
+        quantity
+        seller
+        imageUrl
+        detailUrl
+        measurementUnit
+        unitMultiplier
+      }
+      selectedSla
+      selectedSlaObj {
+        id
+        name
+        shippingEstimate
+        deliveryWindow {
+          endDateUtc
+          startDateUtc
+        }
+        price
+        deliveryChannel
+        pickupStoreInfo {
+          additionalInfo
+          address {
+            addressId
+            addressType
+            receiverName
+            street
+            number
+            city
+            state
+            postalCode
+            neighborhood
+            complement
+            country
+          }
+          friendlyName
+          isPickupStore
+        }
+      }
+      shippingEstimate
+      shippingEstimateDate
+      deliveryWindow {
+        endDateUtc
+        startDateUtc
+      }
+      deliveryChannel
+      selectedSlaType
     }
   }
-}
-
-fragment itemDetails on OrderItem {
-  id
-  skuName
-  name
-  price
-  listPrice
-  isGift
-  quantity
-  seller
-  imageUrl
-  detailUrl
-  measurementUnit
-  unitMultiplier
-}
-
-fragment SlaDetails on ShippingSLA {
-  id
-  name
-  shippingEstimate
-  deliveryWindow {
-    endDateUtc
-    startDateUtc
-  }
-  price
-  deliveryChannel
-  pickupStoreInfo {
-    additionalInfo
-    address {
-      addressId
-      addressType
-      receiverName
-      street
-      number
-      city
-      state
-      postalCode
-      neighborhood
-      complement
-      country
-    }
-    friendlyName
-    isPickupStore
-  }
-}
-
-fragment parcelDetails on Parcel {
-  address {
-    addressType
-    receiverName
-    state
-    street
-    number
-    city
-    postalCode
-    neighborhood
-    complement
-    country
-  }
-  price
-  pickupFriendlyName
-  seller
-  items {
-    ...itemDetails
-  }
-  selectedSla
-  selectedSlaObj {
-    ...SlaDetails
-  }
-  shippingEstimate
-  shippingEstimateDate
-  deliveryWindow {
-    endDateUtc
-    startDateUtc
-  }
-  deliveryChannel
-  selectedSlaType
 }
