@@ -1,45 +1,3 @@
-import parcelify from '@vtex/delivery-packages'
-
-export const getTotalParcelsFromOrderGroup = (orderGroup: Order[]) => {
-  const totalParcels: Parcel[] = orderGroup.reduce(
-    (acc: Parcel[], currOrder: Order) => [...acc, ...parcelify(currOrder)],
-    []
-  )
-  const totalDeliveries: Parcel[] = totalParcels.filter(
-    (deliveryPackage: Parcel) => deliveryPackage.deliveryChannel === 'delivery'
-  )
-  const totalPickUps: Parcel[] = totalParcels.filter(
-    (pickupPackage: Parcel) =>
-      pickupPackage.selectedSlaType === 'pickup-in-point'
-  )
-  const totalTakeAways: Parcel[] = totalParcels.filter(
-    (takeawayPackage: Parcel) => takeawayPackage.selectedSlaType === 'take-away'
-  )
-
-  return {
-    totalDeliveries,
-    totalParcels,
-    totalPickUps,
-    totalTakeAways,
-  }
-}
-
-export const getPickUpPackagesFromParcels = (parcels: Parcel[]) =>
-  parcels.filter(
-    (pickupPackage: Parcel) =>
-      pickupPackage.selectedSlaType === 'pickup-in-point'
-  )
-
-export const getDeliveryPackagesFromParcels = (parcels: Parcel[]) =>
-  parcels.filter(
-    (deliveryPackage: Parcel) => deliveryPackage.deliveryChannel === 'delivery'
-  )
-
-export const getTakeAwayPackagesFromParcels = (parcels: Parcel[]) =>
-  parcels.filter(
-    (takeawayPackage: Parcel) => takeawayPackage.selectedSlaType === 'take-away'
-  )
-
 export const getPaymentGroupFromOrder = (order: Order) => ({
   barCodeNumber:
     order.paymentData.transactions[0].payments[0]
@@ -55,11 +13,11 @@ export const getPaymentGroupFromOrder = (order: Order) => ({
 })
 
 export interface PaymentGroupInfo {
-  barCodeNumber?: string | null
-  barCodePNG?: string | null
-  dueDate?: string | null
+  barCodeNumber: string | null
+  barCodePNG: string | null
+  dueDate: string | null
   paymentGroup: string
   paymentSystemName: string
-  url?: string | null
+  url: string | null
   value: number
 }
