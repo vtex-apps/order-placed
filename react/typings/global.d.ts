@@ -14,11 +14,21 @@ interface Order {
   items: OrderItem[]
   sellers: OrderItemSeller[]
   totals: OrderItemTotal[]
+  giftRegistryData?: GiftRegistry | null
   clientProfileData: ClientProfile
   paymentData: PaymentData
   storePreferencesData: StorePreferencesData
   creationDate: string
   value: number
+}
+
+interface GiftRegistry {
+  attachmentId: string
+  giftRegistryId: string
+  giftRegistryType: string
+  giftRegistryTypeName: string
+  addressId: string
+  description: string
 }
 
 interface ClientProfile {
@@ -108,13 +118,14 @@ interface Payment {
 }
 
 interface Address {
-  addressType: string
+  addressId?: string
+  addressType: string | null
   receiverName: string | null
-  state: string
-  street: string
-  number: string
-  city: string
-  postalCode: string
+  state: string | null
+  street: string | null
+  number: string | null
+  city: string | null
+  postalCode: string | null
   neighborhood: string | null
   complement: string | null
   country: string | null

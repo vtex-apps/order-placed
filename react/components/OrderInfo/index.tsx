@@ -28,6 +28,7 @@ const OrderInfo: FunctionComponent<Props> = ({
     deliveryParcels: delivery,
     pickUpParcels: pickup,
     takeAwayParcels: takeaway,
+    giftRegistryData,
   } = order
   const splitOrder = numOfOrders > 1
   const multipleDeliveries = delivery.length > 1
@@ -70,7 +71,10 @@ const OrderInfo: FunctionComponent<Props> = ({
         )}
         {delivery.length > 0 && (
           <OrderSection>
-            <Shipping deliveryPackages={delivery} />
+            <Shipping
+              deliveryPackages={delivery}
+              giftRegistryData={giftRegistryData}
+            />
           </OrderSection>
         )}
         {takeaway.length > 0 && (

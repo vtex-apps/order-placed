@@ -8,12 +8,14 @@ interface Props {
   shippingData: Parcel
   index: number
   numPackages: number
+  giftRegistry?: GiftRegistry | null
 }
 
 const ShippingHeader: FunctionComponent<Props & InjectedIntlProps> = ({
   shippingData,
   index,
   numPackages,
+  giftRegistry,
   intl,
 }) => {
   const multipleDeliveries = numPackages > 1
@@ -39,7 +41,17 @@ const ShippingHeader: FunctionComponent<Props & InjectedIntlProps> = ({
         <br />
         <small className="c-muted-2 t-small">{shippingData.selectedSla}</small>
       </p>
-      <Address address={shippingData.address} />
+      {giftRegistry &&
+      giftRegistry.addressId === shippingData.address.addressId ? (
+        <p className="c-muted-1">
+          {intl.formatMessage(
+            { id: 'shipping.header.wishlist.address' },
+            { giftRegistryName: giftRegistry.description }
+          )}
+        </p>
+      ) : (
+        <Address address={shippingData.address} />
+      )}
     </header>
   )
 }
