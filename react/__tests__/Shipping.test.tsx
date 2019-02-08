@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Shipping from '../components/Shipping'
+import { orderGroupQuery as giftRegistry } from '../mocks/giftRegistry'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as twoDeliveries } from '../mocks/twoDeliveries'
 import { render } from '../testUtils'
@@ -44,5 +45,18 @@ describe('Shipping (delivery)', () => {
     ).toBeDefined()
     expect(getByText('Camisa Seleção Brasileira')).toBeDefined()
     expect(getByText('Camisa America Vermelha')).toBeDefined()
+  })
+
+  it('should render correct messsage when order is from a Gift Registry and not render address component', () => {
+    const order = giftRegistry.orderGroup.orders[0]
+    const delivery = order.deliveryParcels
+    const registry = order.giftRegistryData
+
+    const { queryByText, queryByTestId } = render(
+      <Shipping deliveryPackages={delivery} giftRegistryData={registry} />
+    )
+
+    expect(queryByText('Address from: Lista Lucas QA')).toBeDefined()
+    expect(queryByTestId('address-component')).toBeNull()
   })
 })
