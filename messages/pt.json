@@ -41,6 +41,7 @@
   "order.totals.pickup.free": "Grátis",
   "order.totals.total": "Total",
   "shipping.header.title": "Entrega em casa",
+  "shipping.header.wishlist.address": "Endereço de: {giftRegistryName}",
   "pickup.header.title": "Retirada no ponto",
   "takeaway.header.title": "Levar agora",
   "common.header.counter": " - n˚ {index} de {numPackages}",
