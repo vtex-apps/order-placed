@@ -41,6 +41,7 @@
   "order.totals.pickup.free": "Free",
   "order.totals.total": "Total",
   "shipping.header.title": "Delivery",
+  "shipping.header.wishlist.address": "Address from: {giftRegistryName}",
   "pickup.header.title": "Pickup",
   "takeaway.header.title": "Take Away",
   "common.header.counter": " - n˚ {index} of {numPackages}",

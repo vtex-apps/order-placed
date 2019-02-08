@@ -41,6 +41,7 @@
   "order.totals.pickup.free": "Free",
   "order.totals.total": "Total",
   "shipping.header.title": "Delivery",
+  "shipping.header.wishlist.address": "Let the user know this order will ship to the address provided in Gift Registry selected",
   "pickup.header.title": "Pickup",
   "takeaway.header.title": "Take Away",
   "common.header.counter": "Counter for multiple deliveries and/or pickups",
