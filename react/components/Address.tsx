@@ -8,7 +8,7 @@ interface Props {
 
 const Address: FunctionComponent<Props> = ({ address, pickup }) => {
   return (
-    <div className="c-muted-1 mb5">
+    <div className="c-muted-1 mb5" data-testid="address-component">
       {pickup && <p className="c-on-base">{pickup.pickupFriendlyName}</p>}
       <AddressRules country={address.country} shouldUseIOFetching>
         <AddressSummary address={address} />
