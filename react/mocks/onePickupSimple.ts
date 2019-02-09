@@ -31,6 +31,8 @@ export const orderGroupQuery = {
                 listPrice: 50000,
                 isGift: false,
                 quantity: 1,
+                attachments: [],
+                bundleItems: [],
                 seller: '1',
                 imageUrl:
                   'http://vtexgame1.vteximg.com.br/arquivos/ids/155657-55-55/prancha.jpg?v=636657805466200000',
@@ -84,6 +86,8 @@ export const orderGroupQuery = {
             listPrice: 50000,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155657-55-55/prancha.jpg?v=636657805466200000',
@@ -186,6 +190,8 @@ export const orderGroupQuery = {
             listPrice: 50000,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155657-55-55/prancha.jpg?v=636657805466200000',

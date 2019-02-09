@@ -30,6 +30,8 @@ export const orderGroupQuery = {
                 listPrice: 1200,
                 isGift: false,
                 quantity: 1,
+                attachments: [],
+                bundleItems: [],
                 seller: '1',
                 imageUrl:
                   'http://vtexgame1.vteximg.com.br/arquivos/ids/155641-55-55/bola.jpg?v=636626686154400000',
@@ -71,6 +73,8 @@ export const orderGroupQuery = {
             listPrice: 1200,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155641-55-55/bola.jpg?v=636626686154400000',
@@ -173,6 +177,8 @@ export const orderGroupQuery = {
             listPrice: 1200,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155641-55-55/bola.jpg?v=636626686154400000',
