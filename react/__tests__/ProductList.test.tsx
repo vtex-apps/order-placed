@@ -63,21 +63,4 @@ describe('Product List component', () => {
     expect(queryByText('[TESTE QA]')).toBeDefined()
     expect(queryByText('1 semana')).toBeDefined()
   })
-
-  it('should not render CarretDown and additional info for a bundle item that has no attachments', () => {
-    const orderInfo = getOrderFromOrderGroup(
-      serviceWithNoAttachments.orderGroup,
-      0
-    )
-    const { queryByTestId } = render(
-      <OrderInfo
-        order={orderInfo}
-        profile={orderInfo.clientProfileData}
-        numOfOrders={1}
-        index={0}
-      />
-    )
-
-    expect(queryByTestId('icon-caret-down')).toBeNull()
-  })
 })
