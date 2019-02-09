@@ -30,6 +30,28 @@ query getOrderGroup($orderGroup: String) {
           listPrice
           isGift
           quantity
+          attachments {
+            content {
+              text
+              periodo
+            }
+            name
+          }
+          bundleItems {
+            id
+            attachments {
+              content {
+                text
+              }
+              name
+            }
+            name
+            price
+            quantity
+            imageUrl
+            measurementUnit
+            unitMultiplier
+          }
           seller
           imageUrl
           detailUrl
@@ -99,6 +121,28 @@ query getOrderGroup($orderGroup: String) {
           listPrice
           isGift
           quantity
+          attachments {
+            content {
+              text
+              periodo
+            }
+            name
+          }
+          bundleItems {
+            id
+            attachments {
+              content {
+                text
+              }
+              name
+            }
+            name
+            price
+            quantity
+            imageUrl
+            measurementUnit
+            unitMultiplier
+          }
           seller
           imageUrl
           detailUrl
@@ -168,6 +212,28 @@ query getOrderGroup($orderGroup: String) {
           listPrice
           isGift
           quantity
+          attachments {
+            content {
+              text
+              periodo
+            }
+            name
+          }
+          bundleItems {
+            id
+            attachments {
+              content {
+                text
+              }
+              name
+            }
+            name
+            price
+            quantity
+            imageUrl
+            measurementUnit
+            unitMultiplier
+          }
           seller
           imageUrl
           detailUrl
@@ -221,6 +287,28 @@ query getOrderGroup($orderGroup: String) {
         listPrice
         isGift
         quantity
+        attachments {
+          content {
+            text
+            periodo
+          }
+          name
+        }
+        bundleItems {
+          id
+          attachments {
+            content {
+              text
+            }
+            name
+          }
+          name
+          price
+          quantity
+          imageUrl
+          measurementUnit
+          unitMultiplier
+        }
         seller
         imageUrl
         detailUrl
@@ -294,6 +382,28 @@ query getOrderGroup($orderGroup: String) {
         listPrice
         isGift
         quantity
+        attachments {
+          content {
+            text
+            periodo
+          }
+          name
+        }
+        bundleItems {
+          id
+          attachments {
+            content {
+              text
+            }
+            name
+          }
+          name
+          price
+          quantity
+          imageUrl
+          measurementUnit
+          unitMultiplier
+        }
         seller
         imageUrl
         detailUrl
@@ -363,6 +473,28 @@ query getOrderGroup($orderGroup: String) {
         listPrice
         isGift
         quantity
+        attachments {
+          content {
+            text
+            periodo
+          }
+          name
+        }
+        bundleItems {
+          id
+          attachments {
+            content {
+              text
+            }
+            name
+          }
+          name
+          price
+          quantity
+          imageUrl
+          measurementUnit
+          unitMultiplier
+        }
         seller
         imageUrl
         detailUrl
@@ -432,6 +564,28 @@ query getOrderGroup($orderGroup: String) {
         listPrice
         isGift
         quantity
+        attachments {
+          content {
+            text
+            periodo
+          }
+          name
+        }
+        bundleItems {
+          id
+          attachments {
+            content {
+              text
+            }
+            name
+          }
+          name
+          price
+          quantity
+          imageUrl
+          measurementUnit
+          unitMultiplier
+        }
         seller
         imageUrl
         detailUrl
