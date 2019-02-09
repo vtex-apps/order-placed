@@ -40,6 +40,9 @@
     "typescript": "^3.3.1",
     "typescript-babel-jest": "^1.0.5"
   },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
