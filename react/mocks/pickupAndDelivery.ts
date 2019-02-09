@@ -30,6 +30,8 @@ export const orderGroupQuery = {
                 listPrice: 3999,
                 isGift: false,
                 quantity: 1,
+                attachments: [],
+                bundleItems: [],
                 seller: '1',
                 imageUrl:
                   'http://vtexgame1.vteximg.com.br/arquivos/ids/155369-55-55/Azul-Talla-S_0.jpg?v=635833511570300000',
@@ -86,6 +88,8 @@ export const orderGroupQuery = {
                 listPrice: 1000,
                 isGift: false,
                 quantity: 1,
+                attachments: [],
+                bundleItems: [],
                 seller: '1',
                 imageUrl:
                   'http://vtexgame1.vteximg.com.br/arquivos/ids/155647-55-55/download--1-.jpg?v=636626821858700000',
@@ -139,6 +143,8 @@ export const orderGroupQuery = {
             listPrice: 1000,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155647-55-55/download--1-.jpg?v=636626821858700000',
@@ -155,6 +161,8 @@ export const orderGroupQuery = {
             listPrice: 3999,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155369-55-55/Azul-Talla-S_0.jpg?v=635833511570300000',
@@ -256,6 +264,8 @@ export const orderGroupQuery = {
             listPrice: 1000,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155647-55-55/download--1-.jpg?v=636626821858700000',
@@ -325,6 +335,8 @@ export const orderGroupQuery = {
             listPrice: 3999,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155369-55-55/Azul-Talla-S_0.jpg?v=635833511570300000',

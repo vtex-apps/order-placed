@@ -30,6 +30,8 @@ export const orderGroupQuery = {
                 listPrice: 3999,
                 isGift: false,
                 quantity: 1,
+                attachments: [],
+                bundleItems: [],
                 seller: '1',
                 imageUrl:
                   'http://vtexgame1.vteximg.com.br/arquivos/ids/155369-55-55/Azul-Talla-S_0.jpg?v=635833511570300000',
@@ -84,6 +86,8 @@ export const orderGroupQuery = {
                 listPrice: 1150,
                 isGift: false,
                 quantity: 1,
+                attachments: [],
+                bundleItems: [],
                 seller: '1',
                 imageUrl:
                   'http://vtexgame1.vteximg.com.br/arquivos/ids/155634-55-55/camisaamericavermelha.jpg?v=636517255685600000',
@@ -125,6 +129,8 @@ export const orderGroupQuery = {
             listPrice: 3999,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155369-55-55/Azul-Talla-S_0.jpg?v=635833511570300000',
@@ -140,6 +146,8 @@ export const orderGroupQuery = {
             listPrice: 1150,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155634-55-55/camisaamericavermelha.jpg?v=636517255685600000',
@@ -256,6 +264,8 @@ export const orderGroupQuery = {
             listPrice: 3999,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155369-55-55/Azul-Talla-S_0.jpg?v=635833511570300000',
@@ -310,6 +320,8 @@ export const orderGroupQuery = {
             listPrice: 1150,
             isGift: false,
             quantity: 1,
+            attachments: [],
+            bundleItems: [],
             seller: '1',
             imageUrl:
               'http://vtexgame1.vteximg.com.br/arquivos/ids/155634-55-55/camisaamericavermelha.jpg?v=636517255685600000',
