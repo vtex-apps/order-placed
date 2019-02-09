@@ -42,10 +42,12 @@ interface ClientProfile {
 
 interface OrderItem {
   id: string
+  attachments: Attachment[]
   skuName: string
   name: string
   price: number
   listPrice: number
+  bundleItems: Bundle[]
   isGift: boolean
   quantity: number
   seller: string
@@ -53,6 +55,22 @@ interface OrderItem {
   detailUrl: string
   measurementUnit: string
   unitMultiplier: number
+}
+
+interface Bundle {
+  id
+  attachments: Attachment[] | null
+  name: string
+  price: number
+  quantity: number
+  imageUrl: string | null
+  measurementUnit: string
+  unitMultiplier: number
+}
+
+interface Attachment {
+  content: any
+  name: string
 }
 
 interface StorePreferencesData {
