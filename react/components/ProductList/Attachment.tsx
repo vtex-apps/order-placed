@@ -35,7 +35,7 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
                     alt={bundleItem.name}
                   />
                 )}
-                <p className="block c-on-base">{bundleItem.name}</p>
+                <p className="c-on-base">{bundleItem.name}</p>
                 <div className="flex items-center">
                   <Price value={bundleItem.price} />
                   {hasAttachments && (
@@ -79,7 +79,7 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
             key={attachmentItem.name}
           >
             <div className="flex justify-between">
-              <p className="block c-on-base">{attachmentItem.name}</p>
+              <p className="c-on-base">{attachmentItem.name}</p>
               <div className="flex items-center">
                 <p className="mr5">
                   {intl.formatMessage({ id: 'order.totals.pickup.free' })}
