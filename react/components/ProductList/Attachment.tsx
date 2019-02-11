@@ -21,9 +21,11 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
     <Fragment>
       {bundleInfo &&
         bundleInfo.map(bundleItem => {
-          const isMessage = bundleItem.name === 'message'
           const hasAttachments =
             bundleItem.attachments && bundleItem.attachments.length > 0
+          const isMessage =
+            hasAttachments && bundleItem.attachments[0].name === 'message'
+
           return (
             <article className="bg-muted-5 pv3 ph5 br2 mv4" key={bundleItem.id}>
               <div className="flex justify-between">
