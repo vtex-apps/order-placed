@@ -31,18 +31,13 @@ query getOrderGroup($orderGroup: String) {
           isGift
           quantity
           attachments {
-            content {
-              text
-              periodo
-            }
+            content
             name
           }
           bundleItems {
             id
             attachments {
-              content {
-                text
-              }
+              content
               name
             }
             name
@@ -122,18 +117,13 @@ query getOrderGroup($orderGroup: String) {
           isGift
           quantity
           attachments {
-            content {
-              text
-              periodo
-            }
+            content
             name
           }
           bundleItems {
             id
             attachments {
-              content {
-                text
-              }
+              content
               name
             }
             name
@@ -213,18 +203,13 @@ query getOrderGroup($orderGroup: String) {
           isGift
           quantity
           attachments {
-            content {
-              text
-              periodo
-            }
+            content
             name
           }
           bundleItems {
             id
             attachments {
-              content {
-                text
-              }
+              content
               name
             }
             name
@@ -288,18 +273,13 @@ query getOrderGroup($orderGroup: String) {
         isGift
         quantity
         attachments {
-          content {
-            text
-            periodo
-          }
+          content
           name
         }
         bundleItems {
           id
           attachments {
-            content {
-              text
-            }
+            content
             name
           }
           name
@@ -383,18 +363,13 @@ query getOrderGroup($orderGroup: String) {
         isGift
         quantity
         attachments {
-          content {
-            text
-            periodo
-          }
+          content
           name
         }
         bundleItems {
           id
           attachments {
-            content {
-              text
-            }
+            content
             name
           }
           name
@@ -474,18 +449,13 @@ query getOrderGroup($orderGroup: String) {
         isGift
         quantity
         attachments {
-          content {
-            text
-            periodo
-          }
+          content
           name
         }
         bundleItems {
           id
           attachments {
-            content {
-              text
-            }
+            content
             name
           }
           name
@@ -565,18 +535,13 @@ query getOrderGroup($orderGroup: String) {
         isGift
         quantity
         attachments {
-          content {
-            text
-            periodo
-          }
+          content
           name
         }
         bundleItems {
           id
           attachments {
-            content {
-              text
-            }
+            content
             name
           }
           name
