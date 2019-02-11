@@ -57,17 +57,29 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
                 <p className="mr5">
                   {intl.formatMessage({ id: 'order.totals.pickup.free' })}
                 </p>
-                <div
-                  className="c-action-primary"
-                  onClick={() => setIsOpen(!isOpen)}
-                >
-                  {isOpen ? <IconCaretUp /> : <IconCaretDown />}
-                </div>
+                {attachmentItem.content && (
+                  <div
+                    className="c-action-primary"
+                    onClick={() => setIsOpen(!isOpen)}
+                  >
+                    {isOpen ? <IconCaretUp /> : <IconCaretDown />}
+                  </div>
+                )}
               </div>
             </div>
-            <div hidden={!isOpen}>
-              <p className="c-muted-1">{attachmentItem.content.periodo}</p>
-            </div>
+            {attachmentItem.content && (
+              <div hidden={!isOpen}>
+                {Object.keys(attachmentItem.content).map(key => {
+                  const contentLabel = key
+                  const contentValue = attachmentItem.content[key]
+                  return (
+                    <p className="c-muted-1">
+                      {`${contentLabel}: ${contentValue}`}
+                    </p>
+                  )
+                })}
+              </div>
+            )}
           </article>
         ))}
     </Fragment>
