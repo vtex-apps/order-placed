@@ -10,8 +10,8 @@ const ProductList: FunctionComponent<Props> = ({ products }) => {
   return (
     <Fragment>
       {products.map((product: OrderItem) => (
-        <Fragment>
-          <Product productInfo={product} key={product.id} />
+        <Fragment key={product.id}>
+          <Product productInfo={product} />
           {(product.bundleItems || product.attachments) && (
             <ProductAttachment
               attachmentsInfo={product.attachments}

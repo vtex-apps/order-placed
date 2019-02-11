@@ -25,7 +25,7 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
           const hasAttachments =
             bundleItem.attachments && bundleItem.attachments.length > 0
           return (
-            <article className="bg-muted-5 pv3 ph5 br2 mv4">
+            <article className="bg-muted-5 pv3 ph5 br2 mv4" key={bundleItem.id}>
               <div className="flex justify-between">
                 {bundleItem.imageUrl && (
                   <ProductImage
@@ -59,7 +59,7 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
                         const contentLabel = key
                         const contentValue = attachmentItem.content[key]
                         return (
-                          <p className="c-muted-1">
+                          <p className="c-muted-1" key={key}>
                             {`${contentLabel}: ${contentValue}`}
                           </p>
                         )
@@ -72,7 +72,10 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
         })}
       {attachmentsInfo.length > 0 &&
         attachmentsInfo.map(attachmentItem => (
-          <article className="bg-muted-5 pv3 ph5 br2 mv4">
+          <article
+            className="bg-muted-5 pv3 ph5 br2 mv4"
+            key={attachmentItem.name}
+          >
             <div className="flex justify-between">
               <p className="block c-on-base">{attachmentItem.name}</p>
               <div className="flex items-center">
@@ -95,7 +98,7 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
                   const contentLabel = key
                   const contentValue = attachmentItem.content[key]
                   return (
-                    <p className="c-muted-1">
+                    <p className="c-muted-1" key={key}>
                       {`${contentLabel}: ${contentValue}`}
                     </p>
                   )
