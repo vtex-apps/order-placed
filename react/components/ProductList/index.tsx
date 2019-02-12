@@ -8,10 +8,13 @@ interface Props {
 
 const ProductList: FunctionComponent<Props> = ({ products }) => {
   return (
-    <Fragment>
-      {products.map((product: OrderItem) => (
+    <div className="flex flex-column justify-between w-75">
+      {products.map((product: OrderItem, index: number) => (
         <Fragment key={product.id}>
-          <Product productInfo={product} />
+          <Product
+            productInfo={product}
+            useBorder={index !== products.length - 1}
+          />
           {(product.bundleItems || product.attachments) && (
             <ProductAttachment
               attachmentsInfo={product.attachments}
@@ -20,7 +23,8 @@ const ProductList: FunctionComponent<Props> = ({ products }) => {
           )}
         </Fragment>
       ))}
-    </Fragment>
+    </div>
   )
 }
+
 export default ProductList
