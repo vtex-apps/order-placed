@@ -19,7 +19,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
 
   return (
     <article
-      className={`flex justify-between flex-column-s flex-row-m pv4 ${
+      className={`flex justify-between flex-column-s flex-row-m pv5 ${
         useBorder ? 'bb b--muted-5 pb4' : ''
       }`}
     >
