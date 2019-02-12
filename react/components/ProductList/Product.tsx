@@ -6,18 +6,24 @@ import FormattedPrice from '../Payment/FormattedPrice'
 
 interface Props {
   productInfo: OrderItem
+  useBorder: boolean
 }
 
 const Product: FunctionComponent<Props & InjectedIntlProps> = ({
   productInfo,
+  useBorder,
   intl,
 }) => {
   const showMeasurementUnit =
     productInfo.unitMultiplier !== 1 || productInfo.measurementUnit !== 'un'
 
   return (
-    <article className="flex justify-between mv4 flex-column-s flex-row-m">
-      <div className="flex items-center flex-column flex-row-m">
+    <article
+      className={`flex justify-between flex-column-s flex-row-m pv4 ${
+        useBorder ? 'bb b--muted-5 pb4' : ''
+      }`}
+    >
+      <div className="flex items-center flex-column flex-row-m mr8-m">
         <ProductImage
           url={productInfo.imageUrl}
           alt={productInfo.name}

@@ -13,7 +13,7 @@ const Shipping: FunctionComponent<Props> = ({
 }) => (
   <Fragment>
     {deliveryPackages.map((delivery, index) => (
-      <section className="mv8 flex flex-column justify-between" key={index}>
+      <section className="mv8 flex justify-between" key={index}>
         <ShippingHeader
           shippingData={delivery}
           index={index}

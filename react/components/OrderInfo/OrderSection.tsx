@@ -5,7 +5,7 @@ interface Props {
 }
 
 const OrderSection: FunctionComponent<Props> = ({ children }) => (
-  <section className="bb b--muted-5">{children}</section>
+  <section className="bb b--muted-4">{children}</section>
 )
 
 export default OrderSection

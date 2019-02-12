@@ -10,7 +10,7 @@ interface Props {
 const StorePickUp: FunctionComponent<Props> = ({ pickUpPackages }) => (
   <Fragment>
     {pickUpPackages.map((pickup: Parcel, index: number) => (
-      <section className="mv8 flex flex-column justify-between" key={index}>
+      <section className="mv8 flex justify-between" key={index}>
         <StorePickUpHeader
           shippingData={pickup}
           index={index}
