@@ -21,7 +21,7 @@ const StorePickUpHeader: FunctionComponent<Props & InjectedIntlProps> = ({
   const additionalInfo =
     shippingData.selectedSlaObj.pickupStoreInfo.additionalInfo
   return (
-    <header className="felx flex-column-m flex-row">
+    <header className="flex flex-column-m flex-row">
       <p
         data-testid="storepickup-header"
         className="t-heading-4-ns t-heading-5"
