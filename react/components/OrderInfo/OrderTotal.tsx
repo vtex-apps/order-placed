@@ -20,7 +20,7 @@ const ShippingTotals: FunctionComponent<Props & InjectedIntlProps> = ({
 
   return (
     <div className="flex flex-row justify-end w-100">
-      <div className="br2 pa5 mv9 w-70 ">
+      <div className="br2 pa5 mv9 w-100 w-70-m">
         <div className={totalsLine}>
           <p className="mv3">
             {intl.formatMessage({ id: 'order.totals.subtotal' }, { numItems })}
