@@ -1,7 +1,17 @@
-import React from 'react'
+import { IntlProvider } from 'react-intl'
 
-import SubsMockComponent from '../__mocks__/SubsMockComponent'
-import { render } from '../testUtils'
+import * as defaultStrings from '../../messages/en.json'
+import { getSubscriptionInfo } from '../utils'
+
+const intlProvider = new IntlProvider(
+  {
+    locale: 'en-US',
+    messages: defaultStrings,
+  },
+  {}
+)
+
+const { intl } = intlProvider.getChildContext()
 
 const mockAttachmentItemNoSubscription = {
   content: {
@@ -33,59 +43,50 @@ const mockItemSubscriptionComplete = {
 
 describe('getSubscriptionInfo function tests', () => {
   it('should return correct object for attachmentItem that is not a subscription', () => {
-    const fn = jest.fn()
+    const {
+      isSubscription,
+      subsFrequency,
+      subsPurchaseDay,
+      subsValidityBegin,
+      subsValidityEnd,
+    } = getSubscriptionInfo(mockAttachmentItemNoSubscription, intl)
 
-    render(
-      <SubsMockComponent
-        attachmentItem={mockAttachmentItemNoSubscription}
-        children={fn}
-      />
-    )
-
-    const params = fn.mock.calls[0][0]
-
-    expect(params.isSubscription).toBe(false)
-    expect(params.subsFrequency).toBeUndefined()
-    expect(params.subsPurchaseDay).toBeUndefined()
-    expect(params.subsValidityBegin).toBeUndefined()
-    expect(params.subsValidityEnd).toBeUndefined()
+    expect(isSubscription).toBe(false)
+    expect(subsFrequency).toBeUndefined()
+    expect(subsPurchaseDay).toBeUndefined()
+    expect(subsValidityBegin).toBeUndefined()
+    expect(subsValidityEnd).toBeUndefined()
   })
 
   it('should return correct object for subscription with no purchaseDay', () => {
-    const fn = jest.fn()
+    const {
+      isSubscription,
+      subsFrequency,
+      subsPurchaseDay,
+      subsValidityBegin,
+      subsValidityEnd,
+    } = getSubscriptionInfo(mockItemSubscriptionNoPurchaseDay, intl)
 
-    render(
-      <SubsMockComponent
-        attachmentItem={mockItemSubscriptionNoPurchaseDay}
-        children={fn}
-      />
-    )
-
-    const params = fn.mock.calls[0][0]
-
-    expect(params.isSubscription).toBe(true)
-    expect(params.subsFrequency).toBe('Every 1 week')
-    expect(params.subsPurchaseDay).toBeNull()
-    expect(params.subsValidityBegin).toBe('2019-02-13')
-    expect(params.subsValidityEnd).toBe('2019-10-16')
+    expect(isSubscription).toBe(true)
+    expect(subsFrequency).toBe('Every 1 week')
+    expect(subsPurchaseDay).toBeNull()
+    expect(subsValidityBegin).toBe('2019-02-13')
+    expect(subsValidityEnd).toBe('2019-10-16')
   })
 
   it('should return correct object for a complete subscription attachment', () => {
-    const fn = jest.fn()
+    const {
+      isSubscription,
+      subsFrequency,
+      subsPurchaseDay,
+      subsValidityBegin,
+      subsValidityEnd,
+    } = getSubscriptionInfo(mockItemSubscriptionComplete, intl)
 
-    render(
-      <SubsMockComponent
-        attachmentItem={mockItemSubscriptionComplete}
-        children={fn}
-      />
-    )
-
-    const params = fn.mock.calls[0][0]
-
-    expect(params.isSubscription).toBe(true)
-    expect(params.subsFrequency).toBe('Every 1 week')
-    expect(params.subsPurchaseDay).toBe('Charged monthly at day 12')
-    expect(params.subsValidityBegin).toBe('2019-02-13')
-    expect(params.subsValidityEnd).toBe('2019-10-16')
+    expect(isSubscription).toBe(true)
+    expect(subsFrequency).toBe('Every 1 week')
+    expect(subsPurchaseDay).toBe('Charged monthly at day 12')
+    expect(subsValidityBegin).toBe('2019-02-13')
+    expect(subsValidityEnd).toBe('2019-10-16')
   })
 })
