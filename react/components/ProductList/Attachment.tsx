@@ -3,8 +3,9 @@ import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
-import { getSubscriptionInfo } from '../../utils'
+import { isSubscription } from '../../utils'
 import Price from '../Payment/FormattedPrice'
+import Subscription from './Subscription'
 
 interface Props {
   attachmentsInfo: Attachment[]
@@ -75,25 +76,15 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
         })}
       {attachmentsInfo.length > 0 &&
         attachmentsInfo.map(attachmentItem => {
-          const {
-            isSubscription,
-            subsFrequency,
-            subsPurchaseDay,
-          } = getSubscriptionInfo(attachmentItem, intl)
-
-          return (
+          return isSubscription(attachmentItem) ? (
+            <Subscription attachmentItem={attachmentItem} />
+          ) : (
             <article
               className="bg-muted-5 pv3 ph5 br2 mv4"
               key={attachmentItem.name}
             >
               <div className="flex justify-between">
-                <p className="c-on-base">
-                  {isSubscription
-                    ? intl.formatMessage({
-                        id: 'items.attachments.subscription',
-                      })
-                    : attachmentItem.name}
-                </p>
+                <p className="c-on-base">{attachmentItem.name}</p>
                 <div className="flex items-center">
                   <p className="mr5">
                     {intl.formatMessage({ id: 'order.totals.pickup.free' })}
@@ -110,24 +101,15 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
               </div>
               {attachmentItem.content && (
                 <div hidden={!isOpen}>
-                  {isSubscription ? (
-                    <Fragment>
-                      <p className="c-muted-1">{subsFrequency}</p>
-                      {subsPurchaseDay && (
-                        <p className="c-muted-1">{subsPurchaseDay}</p>
-                      )}
-                    </Fragment>
-                  ) : (
-                    Object.keys(attachmentItem.content).map(key => {
-                      const contentLabel = key
-                      const contentValue = attachmentItem.content[key]
-                      return (
-                        <p className="c-muted-1" key={key}>
-                          {`${contentLabel}: ${contentValue}`}
-                        </p>
-                      )
-                    })
-                  )}
+                  {Object.keys(attachmentItem.content).map(key => {
+                    const contentLabel = key
+                    const contentValue = attachmentItem.content[key]
+                    return (
+                      <p className="c-muted-1" key={key}>
+                        {`${contentLabel}: ${contentValue}`}
+                      </p>
+                    )
+                  })}
                 </div>
               )}
             </article>

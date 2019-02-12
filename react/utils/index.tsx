@@ -22,13 +22,15 @@ export interface PaymentGroupInfo {
   value: number
 }
 
+export const isSubscription = (attachmentItem: Attachment) =>
+  attachmentItem.name.indexOf('vtex.subscription') === 0
+
 export const getSubscriptionInfo = (
   attachmentItem: Attachment,
   intl: ReactIntl.InjectedIntl
 ) => {
-  const isSubscription = attachmentItem.name.indexOf('vtex.subscription') === 0
-  if (!isSubscription) {
-    return { isSubscription: false }
+  if (!isSubscription(attachmentItem)) {
+    return {}
   }
   const vtexSubsPrefix = 'vtex.subscription.key.'
   const subsFrequency: string =
@@ -47,34 +49,33 @@ export const getSubscriptionInfo = (
 
   const subsFrequencyString = numberPeriodRegex.test(subsFrequency)
     ? intl.formatMessage(
-      {
-        id: `items.attachments.subscription.frequency.${
-          (numberPeriodRegex.exec(subsFrequency) || [])[2]
+        {
+          id: `items.attachments.subscription.frequency.${
+            (numberPeriodRegex.exec(subsFrequency) || [])[2]
           }`,
-      },
-      {
-        frequencyNumber: parseInt(
-          (numberPeriodRegex.exec(subsFrequency) || [])[1],
-          10
-        ),
-      }
-    )
+        },
+        {
+          frequencyNumber: parseInt(
+            (numberPeriodRegex.exec(subsFrequency) || [])[1],
+            10
+          ),
+        }
+      )
     : intl.formatMessage({
-      id: `items.attachments.subscription.frequency.${
-        (wordlyPeriodRegex.exec(subsFrequency) || [])[1]
+        id: `items.attachments.subscription.frequency.${
+          (wordlyPeriodRegex.exec(subsFrequency) || [])[1]
         }`,
-    })
+      })
 
   const subsPurchaseDayString =
     subsPurchaseDay !== ''
       ? intl.formatMessage(
-        { id: 'items.attachments.subscription.purchaseday' },
-        { purchaseday: subsPurchaseDay }
-      )
+          { id: 'items.attachments.subscription.purchaseday' },
+          { purchaseday: subsPurchaseDay }
+        )
       : null
 
   return {
-    isSubscription: true,
     subsFrequency: subsFrequencyString,
     subsPurchaseDay: subsPurchaseDayString,
     subsValidityBegin,
