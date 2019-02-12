@@ -44,14 +44,12 @@ const mockItemSubscriptionComplete = {
 describe('getSubscriptionInfo function tests', () => {
   it('should return correct object for attachmentItem that is not a subscription', () => {
     const {
-      isSubscription,
       subsFrequency,
       subsPurchaseDay,
       subsValidityBegin,
       subsValidityEnd,
     } = getSubscriptionInfo(mockAttachmentItemNoSubscription, intl)
 
-    expect(isSubscription).toBe(false)
     expect(subsFrequency).toBeUndefined()
     expect(subsPurchaseDay).toBeUndefined()
     expect(subsValidityBegin).toBeUndefined()
@@ -60,14 +58,12 @@ describe('getSubscriptionInfo function tests', () => {
 
   it('should return correct object for subscription with no purchaseDay', () => {
     const {
-      isSubscription,
       subsFrequency,
       subsPurchaseDay,
       subsValidityBegin,
       subsValidityEnd,
     } = getSubscriptionInfo(mockItemSubscriptionNoPurchaseDay, intl)
 
-    expect(isSubscription).toBe(true)
     expect(subsFrequency).toBe('Every 1 week')
     expect(subsPurchaseDay).toBeNull()
     expect(subsValidityBegin).toBe('2019-02-13')
@@ -76,14 +72,12 @@ describe('getSubscriptionInfo function tests', () => {
 
   it('should return correct object for a complete subscription attachment', () => {
     const {
-      isSubscription,
       subsFrequency,
       subsPurchaseDay,
       subsValidityBegin,
       subsValidityEnd,
     } = getSubscriptionInfo(mockItemSubscriptionComplete, intl)
 
-    expect(isSubscription).toBe(true)
     expect(subsFrequency).toBe('Every 1 week')
     expect(subsPurchaseDay).toBe('Charged monthly at day 12')
     expect(subsValidityBegin).toBe('2019-02-13')
