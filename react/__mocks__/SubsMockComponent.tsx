@@ -1,10 +1,13 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { getSubscriptionInfo } from '../utils'
 
 const SubsMockComponent: FunctionComponent<
-  { attachmentItem: Attachment } & InjectedIntlProps
-> = ({ attachmentItem, intl }) => {
+  {
+    attachmentItem: Attachment;
+    children: jest.Mock;
+  } & InjectedIntlProps
+> = ({ attachmentItem, children, intl }) => {
   const {
     isSubscription,
     subsFrequency,
@@ -13,15 +16,15 @@ const SubsMockComponent: FunctionComponent<
     subsValidityEnd,
   } = getSubscriptionInfo(attachmentItem, intl)
 
-  return (
-    <ul>
-      <li>{isSubscription}</li>
-      <li>{subsFrequency || 'empty'}</li>
-      <li>{subsPurchaseDay || 'empty'}</li>
-      <li>{subsValidityBegin || 'empty'}</li>
-      <li>{subsValidityEnd || 'empty'}</li>
-    </ul>
-  )
+  children({
+    isSubscription,
+    subsFrequency,
+    subsPurchaseDay,
+    subsValidityBegin,
+    subsValidityEnd,
+  })
+
+  return null
 }
 
 export default injectIntl(SubsMockComponent)
