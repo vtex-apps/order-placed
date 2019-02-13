@@ -63,11 +63,6 @@ const Header: FunctionComponent<Props & InjectedIntlProps> = ({
         </p>
 
         <div className="flex justify-center t-action mv8 w-90 center">
-          <div className="tr c-action-primary">
-            <Button variation="secondary">
-              {intl.formatMessage({ id: 'header.email.button' })}
-            </Button>
-          </div>
           <div className="tr c-action-primary ml4">
             <Button variation="secondary" onClick={() => window.print()}>
               {intl.formatMessage({ id: 'header.print.button' })}
