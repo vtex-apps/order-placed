@@ -75,7 +75,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
             )}
           </ButtonLink>
         )}
-        <div hidden={!isOpen} className="z-9999">
+        <div hidden={!isOpen} className="mt3 z-9999 absolute">
           <AdditionalInfo
             paymentId={payment.id}
             transactionId={transactionId}
