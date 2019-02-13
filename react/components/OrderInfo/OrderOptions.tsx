@@ -30,7 +30,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
-          url={`/account#/orders/${orderId}`}
+              url={`/account#/orders/${orderId}/edit`}
         >
           {intl.formatMessage({ id: 'order.header.update.button' })}
         </ButtonLink>
