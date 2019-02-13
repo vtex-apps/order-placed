@@ -6,16 +6,18 @@ import Tooltip from '../../Icons/Tooltip'
 interface Props {
   paymentId: string
   transactionId: string
+  showTooltip?: boolean
 }
 
 const AdditionalInfo: FunctionComponent<Props & InjectedIntlProps> = ({
   paymentId,
   transactionId,
+  showTooltip,
   intl,
 }) => {
   return (
     <div className="flex flex-column items-center">
-      <Tooltip />
+      {showTooltip && <Tooltip />}
       <div className="bg-base--inverted pa4 br2">
         <p className="white tc">
           {intl.formatMessage({ id: 'payments.id' }, { id: paymentId })}
