@@ -14,25 +14,23 @@ const AdditionalInfo: FunctionComponent<Props & InjectedIntlProps> = ({
   transactionId,
   showTooltip,
   intl,
-}) => {
-  return (
-    <div className="flex flex-column">
-      {showTooltip && <Tooltip />}
-      <div className="bg-base--inverted pa4 br2">
-        <p className="white tc">
-          {intl.formatMessage({ id: 'payments.id' }, { id: paymentId })}
-        </p>
-        <p className="white tc">
-          {intl.formatMessage(
-            { id: 'payments.transaction.id' },
-            {
-              id: transactionId,
-            }
-          )}
-        </p>
-      </div>
+}) => (
+  <div className="flex flex-column">
+    {showTooltip && <Tooltip />}
+    <div className="bg-base--inverted pa4 br2">
+      <p className="c-on-base--inverted tc">
+        {intl.formatMessage({ id: 'payments.id' }, { id: paymentId })}
+      </p>
+      <p className="c-on-base--inverted tc">
+        {intl.formatMessage(
+          { id: 'payments.transaction.id' },
+          {
+            id: transactionId,
+          }
+        )}
+      </p>
     </div>
-  )
-}
+  </div>
+)
 
 export default injectIntl(AdditionalInfo)
