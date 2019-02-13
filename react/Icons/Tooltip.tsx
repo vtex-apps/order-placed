@@ -2,9 +2,11 @@ import React, { FunctionComponent } from 'react'
 
 import { baseClassname } from './utils'
 
-const Tooltip: FunctionComponent = () => (
+const Tooltip: FunctionComponent<{ colorToken?: string }> = ({
+  colorToken,
+}) => (
   <svg
-    className={`${baseClassname('tooltip')}`}
+    className={`${baseClassname('tooltip')} ${colorToken ? colorToken : ''}`}
     width="20"
     height="9"
     viewBox="0 0 20 9"

@@ -16,7 +16,7 @@ const AdditionalInfo: FunctionComponent<Props & InjectedIntlProps> = ({
   intl,
 }) => (
   <div className="flex flex-column">
-    {showTooltip && <Tooltip />}
+    {showTooltip && <Tooltip colorToken="c-on-base" />}
     <div className="bg-base--inverted pa4 br2">
       <p className="c-on-base--inverted tc">
         {intl.formatMessage({ id: 'payments.id' }, { id: paymentId })}
