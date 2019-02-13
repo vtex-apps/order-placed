@@ -64,7 +64,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
           >
-            <InfoIcon />
+            <InfoIcon colorToken="c-muted-3" />
           </div>
         </div>
         {isBankInvoice && payment.url && (
