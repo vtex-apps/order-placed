@@ -53,11 +53,16 @@ const OrderInfo: FunctionComponent<Props> = ({
         )}
         {hasCustomerName && <CustomerInfo profile={profile} />}
         <OrderSection>
-          {paymentsData.map((payment, idx) => (
-            <div key={idx} className="flex flex-column pb8">
-              <PaymentMethod payment={payment} transactionId={transactionId} />
-            </div>
-          ))}
+          <div className="flex flex-column flex-row-m">
+            {paymentsData.map((payment, idx) => (
+              <div key={idx} className="flex flex-column pb8-s mr9-m">
+                <PaymentMethod
+                  payment={payment}
+                  transactionId={transactionId}
+                />
+              </div>
+            ))}
+          </div>
           <OrderOptions
             className="dn-l mb4"
             allowCancellation={order.allowCancellation}
