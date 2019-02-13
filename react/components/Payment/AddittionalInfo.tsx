@@ -17,14 +17,7 @@ const AdditionalInfo: FunctionComponent<Props & InjectedIntlProps> = ({
 }) => {
   return (
     <div className="flex flex-column">
-      {showTooltip && (
-        <div
-          className="w-100 mv0 pv0 bw0"
-          style={{ paddingLeft: `${7.75}rem` }}
-        >
-          <Tooltip />
-        </div>
-      )}
+      {showTooltip && <Tooltip />}
       <div className="bg-base--inverted pa4 br2">
         <p className="white tc">
           {intl.formatMessage({ id: 'payments.id' }, { id: paymentId })}
