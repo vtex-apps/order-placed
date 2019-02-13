@@ -55,7 +55,7 @@ const OrderInfo: FunctionComponent<Props> = ({
         <OrderSection>
           <div className="flex flex-column flex-row-m">
             {paymentsData.map((payment, idx) => (
-              <div key={idx} className="flex flex-column pb8-s mr9-m">
+              <div key={idx} className="pb8-s mr9-m">
                 <PaymentMethod
                   payment={payment}
                   transactionId={transactionId}

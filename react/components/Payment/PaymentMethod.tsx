@@ -11,7 +11,7 @@ interface Props {
   transactionId: string
 }
 
-const paymentGroupSwitch = (payment: Payment, intl: any) => {
+const paymentGroupSwitch = (payment: Payment, intl: ReactIntl.InjectedIntl) => {
   switch (payment.group) {
     case 'creditCard':
       return intl.formatMessage({ id: 'payments.creditcard' })

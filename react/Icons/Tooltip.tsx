@@ -1,7 +1,10 @@
 import React, { FunctionComponent } from 'react'
 
+import { baseClassname } from './utils'
+
 const Tooltip: FunctionComponent = () => (
   <svg
+    className={`${baseClassname('tooltip')}`}
     width="20"
     height="9"
     viewBox="0 0 20 9"
@@ -11,7 +14,7 @@ const Tooltip: FunctionComponent = () => (
   >
     <path
       d="M12.1213 1.12132L20 9L0 9L7.87868 1.12132C9.05025 -0.050251 10.9497 -0.0502493 12.1213 1.12132Z"
-      fill="#3F3F40"
+      fill="currentColor"
     />
   </svg>
 )
