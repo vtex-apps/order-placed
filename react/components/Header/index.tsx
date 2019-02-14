@@ -52,7 +52,7 @@ const Header: FunctionComponent<Props & InjectedIntlProps> = ({
           {intl.formatMessage({ id: 'header.thanks' })}
         </p>
 
-        <p className="center mt4 t-body tc c-muted-1 lh-copy w-90 center">
+        <p className="center mt5 t-body tc c-muted-1 lh-copy w-90 center">
           <FormattedMessage
             id="header.email"
             values={{
