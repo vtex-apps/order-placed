@@ -27,10 +27,10 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
 
   return (
     <section data-testid="warnings-section">
-      <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc-m">
+      <ul className="mt7 mb9 list ml0 pl0 t-body bg-muted-5 pv4 tc-m lh-copy">
         {!hasBankInvoice && (
           <li className={`${listItem} ${bottomBorder}`}>
-            <p className="pb2">
+            <p className="pb4">
               {intl.formatMessage({ id: 'warnings.payment.approval' })}
             </p>
           </li>
@@ -38,7 +38,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
         {hasDelivery && (
           <Fragment>
             <li className={`${listItem} ${bottomBorder}`}>
-              <p className="pv2">
+              <p className="pv4">
                 {intl.formatMessage({ id: 'warnings.delivery.time' })}
               </p>
             </li>
@@ -47,7 +47,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
                 orderWasSplit || hasPickUp || hasBankInvoice ? bottomBorder : ''
               }`}
             >
-              <p className="pv2">
+              <p className="pv4">
                 {intl.formatMessage({ id: 'warnings.delivery.tracking' })}
               </p>
             </li>
@@ -55,14 +55,14 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
         )}
         {hasPickUp && (
           <li className={`${listItem} ${orderWasSplit ? bottomBorder : ''}`}>
-            <p className="pt2">
+            <p className="pt4">
               {intl.formatMessage({ id: 'warnings.pickup.time' })}
             </p>
           </li>
         )}
         {orderWasSplit && (
           <li className={`${listItem} ${hasBankInvoice ? bottomBorder : ''}`}>
-            <p className="pt2">
+            <p className="pv4">
               {intl.formatMessage(
                 { id: 'warnings.order.split' },
                 {
@@ -75,7 +75,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
         {hasBankInvoice && (
           <Fragment>
             <li className={`${listItem} ${bottomBorder}`}>
-              <p className="pv2">
+              <p className="pv4">
                 {intl.formatMessage(
                   {
                     id: 'warnings.payment.bankInvoice.approval',
@@ -85,7 +85,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
               </p>
             </li>
             <li className={listItem}>
-              <div className="pt2 pb3">
+              <div className="pv4">
                 <p>
                   {bankInvoices[0].dueDate ? (
                     <FormattedMessage
