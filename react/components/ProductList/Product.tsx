@@ -18,11 +18,13 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
   return (
     <div className="flex justify-between flex-column-s flex-row-m pv5">
       <div className="flex items-center flex-column flex-row-m mr8-m">
-        <ProductImage
-          url={productInfo.imageUrl}
-          alt={productInfo.name}
-          className="w3 mr5"
-        />
+        <div className="mw4 mr5">
+          <ProductImage
+            url={productInfo.imageUrl}
+            alt={productInfo.name}
+            className="mr5"
+          />
+        </div>
         <div className="flex flex-column items-between h-100">
           <a
             href={productInfo.detailUrl}
