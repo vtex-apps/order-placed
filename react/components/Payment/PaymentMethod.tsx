@@ -68,12 +68,14 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
           </div>
         </div>
         {isBankInvoice && payment.url && (
-          <ButtonLink url={payment.url} variation="primary" openNewWindow>
-            {intl.formatMessage(
-              { id: 'payments.bankinvoice.print' },
-              { paymentSystemName: payment.paymentSystemName }
-            )}
-          </ButtonLink>
+          <div className="mt5">
+            <ButtonLink url={payment.url} variation="primary" openNewWindow>
+              {intl.formatMessage(
+                { id: 'payments.bankinvoice.print' },
+                { paymentSystemName: payment.paymentSystemName }
+              )}
+            </ButtonLink>
+          </div>
         )}
         <div hidden={!isOpen} className="mt2 z-9999 absolute">
           <AdditionalInfo
