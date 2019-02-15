@@ -28,7 +28,7 @@ const BankInvoice: FunctionComponent<Props & InjectedIntlProps> = ({
         { paymentSystemName: paymentSystem }
       )}
     </header>
-    <article className="flex justify-between items-center">
+    <article className="flex justify-between items-center mt6">
       {invoiceBarCodeNumber && <BarCode barCodeNumber={invoiceBarCodeNumber} />}
       <ButtonLink
         url={url}
