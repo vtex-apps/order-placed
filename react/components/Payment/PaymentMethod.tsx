@@ -3,7 +3,7 @@ import { InjectedIntlProps, injectIntl } from 'react-intl'
 
 import InfoIcon from '../../Icons/Info'
 import ButtonLink from '../ButtonLink'
-import AdditionalInfo from './AddittionalInfo'
+import AdditionalInfo from './AdditionalInfo'
 import Price from './FormattedPrice'
 
 interface Props {
