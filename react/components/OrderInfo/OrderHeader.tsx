@@ -26,7 +26,7 @@ const OrderHeader: FunctionComponent<
 
   return (
     <header className="flex justify-between items-center mt7">
-      <p className="t-heading-3-ns t-heading-4 lh-solid">
+      <p className="t-heading-3 lh-copy">
         {intl.formatMessage(
           { id: 'order.header.number' },
           {
@@ -34,7 +34,7 @@ const OrderHeader: FunctionComponent<
           }
         )}
         <br />
-        <small className="c-muted-2 t-small">
+        <small className="c-muted-2 t-body">
           <FormattedMessage
             id={'order.header.date'}
             values={{
@@ -47,7 +47,7 @@ const OrderHeader: FunctionComponent<
         </small>
         <br />
         {splitOrder && storeAccount !== orderSeller && (
-          <small className="c-muted-2 t-small">
+          <small className="c-muted-2 t-body">
             <FormattedMessage
               id={'order.header.seller'}
               values={{

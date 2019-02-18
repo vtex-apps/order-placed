@@ -64,7 +64,7 @@ const OrderInfo: FunctionComponent<Props> = ({
             ))}
           </div>
           <OrderOptions
-            className="dn-l mb4"
+            className="dn-l mb8"
             allowCancellation={order.allowCancellation}
             fullWidth
           />
