@@ -45,7 +45,7 @@ describe('Warnings', () => {
     )
 
     const paymentApproval = getByText(
-      /Payment approval may take up to \d bussiness days/i
+      /Payment approval may take from \d minutes up to \d bussiness days/i
     )
     expect(paymentApproval).toBeDefined()
   })
@@ -59,10 +59,10 @@ describe('Warnings', () => {
     )
 
     const paymentDisclaimer = getByText(
-      'The delivery period starts from the moment your payment is confirmed'
+      'The delivery period starts to count from the moment your payment is confirmed'
     )
     const trackingDisclaimer = getByText(
-      'When your order is on its way, a tracking code will be sent to your email'
+      'A tracking code will be sent to your email when the delivery process begins.'
     )
 
     expect(paymentDisclaimer).toBeDefined()
@@ -78,10 +78,10 @@ describe('Warnings', () => {
     )
 
     const paymentDisclaimer = queryByText(
-      'The delivery period starts from the moment your payment is confirmed'
+      'The delivery period starts to count from the moment your payment is confirmed'
     )
     const trackingDisclaimer = queryByText(
-      'When your order is on its way, a tracking code will be sent to your email'
+      'A tracking code will be sent to your email when the delivery process begins.'
     )
 
     expect(paymentDisclaimer).toBeNull()
@@ -127,7 +127,7 @@ describe('Warnings', () => {
     )
 
     const splitOrderDisclaimer = queryByText(
-      /Your purchase was split into \d orders as some of the items were sold by partners. This does not affect shipping estimates/
+      /Your purchase was split into \d orders as some of the items were sold by partners. But this does not affect shipping estimates/
     )
     expect(splitOrderDisclaimer).toBeDefined()
   })
