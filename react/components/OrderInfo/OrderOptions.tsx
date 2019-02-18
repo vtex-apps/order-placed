@@ -18,8 +18,8 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
   fullWidth,
   orderId,
 }) => (
-  <div className={`${className} flex flex-wrap justify-between flex-nowrap-m`}>
-    <div className="mr3-ns mb4-s mb0-m w-100 w-auto-m">
+  <div className={`${className} flex flex-wrap justify-center flex-nowrap-m`}>
+    <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
       {takeaway ? (
         <ButtonLink variation="secondary" fullWidth={fullWidth} url="">
           {intl.formatMessage({
@@ -37,7 +37,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
       )}
     </div>
     {!takeaway && (
-      <div className="mr3-ns mb4-s mb0-m w-100 w-auto-m">
+      <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
