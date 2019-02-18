@@ -2,6 +2,8 @@ import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { Alert } from 'vtex.styleguide'
 
+import { orderSplitMessage } from '../../utils'
+
 interface Props {
   deliveries: number
   pickups: number
@@ -16,14 +18,7 @@ const OrderSplitNotice: FunctionComponent<Props & InjectedIntlProps> = ({
 }) => {
   return (
     <Alert type="success">
-      {intl.formatMessage(
-        { id: 'order.split' },
-        {
-          deliveries,
-          pickups,
-          takeaways,
-        }
-      )}
+      {orderSplitMessage({ deliveries, pickups, takeaways, intl })}
     </Alert>
   )
 }

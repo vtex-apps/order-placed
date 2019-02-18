@@ -82,3 +82,40 @@ export const getSubscriptionInfo = (
     subsValidityEnd,
   }
 }
+
+export const orderSplitMessage = ({
+  deliveries,
+  pickups,
+  takeaways,
+  intl,
+}: {
+  deliveries: number;
+  pickups: number;
+  takeaways: number;
+  intl: ReactIntl.InjectedIntl;
+}) => {
+  const nPickups = pickups > 1
+  const nTakeaways = takeaways > 1
+
+  if (nPickups && nTakeaways) {
+    return intl.formatMessage(
+      { id: 'order.split.n.pickup.n.takeaway' },
+      { deliveries, pickups, takeaways }
+    )
+  } else if (nTakeaways) {
+    return intl.formatMessage(
+      { id: 'order.split.no.pickup.n.takeaway' },
+      { deliveries, pickups, takeaways }
+    )
+  } else if (nPickups) {
+    return intl.formatMessage(
+      { id: 'order.split.n.pickup.no.takeaway' },
+      { deliveries, pickups, takeaways }
+    )
+  }
+
+  return intl.formatMessage(
+    { id: 'order.split.no.pickup.no.takeaway' },
+    { deliveries, pickups, takeaways }
+  )
+}
