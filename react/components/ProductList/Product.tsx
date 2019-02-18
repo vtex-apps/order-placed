@@ -16,16 +16,20 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
     productInfo.unitMultiplier !== 1 || productInfo.measurementUnit !== 'un'
 
   return (
-    <div className="flex justify-between flex-column-s flex-row-m pv5">
+    <article
+      className="flex justify-between flex-column-s flex-row-m pv6"
+    >
       <div className="flex items-center flex-column flex-row-m mr8-m">
-        <div className="mw4 mr5">
+        <div className="w4 mr5">
           <ProductImage
-            url={productInfo.imageUrl}
-            alt={productInfo.name}
-            className="mr5"
-          />
+          url={productInfo.imageUrl}
+          alt={productInfo.name}
+          className="w4 mr6"
+        />
         </div>
-        <div className="flex flex-column items-between h-100">
+        <div className={`flex flex-column items-between justify-between h-100 ${
+        useBorder ? 'bb b--muted-4 pb4' : ''
+      }`}>
           <a
             href={productInfo.detailUrl}
             className="t-body c-muted-1 no-underline"
