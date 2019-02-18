@@ -44,9 +44,9 @@ const StorePickUpHeader: FunctionComponent<Props & InjectedIntlProps> = ({
           />
         </small>
       </p>
-      <div className="flex flex-column justify-between justify-start-l">
+      <div className="flex justify-left-m flex-column-s flex-column-l flex-row-m justify-between-l justify-start-l">
         <Address address={shippingData.address} pickup={shippingData} />
-        <div className="c-on-base">
+        <div className="c-on-base lh-copy">
           <p>{receiverName}</p>
           <p className="c-muted-1">{additionalInfo}</p>
         </div>
