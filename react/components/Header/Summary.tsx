@@ -29,7 +29,7 @@ const OrderSummary: FunctionComponent<Props & InjectedIntlProps> = ({
   const longestPickUpEstimate = estimateCalculator.getLatestSla(totalPickUps)
 
   return (
-    <section className="w-80 center bb b--muted-4 pb8">
+    <section className="w-90 w-80-ns center bb b--muted-4 pb8">
       <PageBlock variation="half">
         <article className="center">
           <p className="t-heading-4 tc bb b--muted-5 mv0 pb5 c-on-base">
