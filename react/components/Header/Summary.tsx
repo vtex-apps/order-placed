@@ -33,10 +33,10 @@ const OrderSummary: FunctionComponent<Props & InjectedIntlProps> = ({
       className="w-90 w-80-ns center bb b--muted-4 pb8 flex justify-between flex-wrap flex-nowrap-m"
     >
       <article className="ba b--muted-5 bw1 br3 w-50-m w-100 mr4-m mb4 mb0-m">
-        <p className="t-heading-4 tc bb b--muted-5 bw1 pb5 c-on-base">
+        <p className="t-heading-5 tc bb b--muted-5 bw1 pb5 c-on-base">
           {intl.formatMessage({ id: 'summary.shipping' })}
         </p>
-        <p className="mb0 t-body ph6">
+        <p className="mb0 t-body ph6 mt6">
           <strong>
             {intl.formatMessage(
               { id: 'summary.items' },
@@ -52,12 +52,12 @@ const OrderSummary: FunctionComponent<Props & InjectedIntlProps> = ({
             }
           )}
         </p>
-        <p className="t-heading-4 mt3 mb9 ph6">
+        <p className="t-heading-5 mt4 mb8 ph6">
           <TranslateEstimate
             shippingEstimate={longestDeliveryEstimate.shippingEstimate}
           />
         </p>
-        <p className="c-muted-2 self-baseline mt6 ph6">
+        <p className="c-muted-2 self-baseline mv6 lh-copy ph6">
           {intl.formatMessage(
             { id: 'summary.shipping.address' },
             {
@@ -68,10 +68,10 @@ const OrderSummary: FunctionComponent<Props & InjectedIntlProps> = ({
         </p>
       </article>
       <article className="ba b--muted-5 bw1 br3 w-50-m w-100 ml4-m mt4 mt0-m">
-        <p className="t-heading-4 tc bb b--muted-5 bw1 pb5 c-on-base">
+        <p className="t-heading-5 tc bb b--muted-5 bw1 pb5 c-on-base">
           {intl.formatMessage({ id: 'summary.pickup' })}
         </p>
-        <p className="mb0 t-body ph6">
+        <p className="mb0 t-body ph6 mt6">
           <strong>
             {intl.formatMessage(
               { id: 'summary.items' },
@@ -87,12 +87,12 @@ const OrderSummary: FunctionComponent<Props & InjectedIntlProps> = ({
             }
           )}
         </p>
-        <p className="t-heading-4 mt3 mb9 ph6">
+        <p className="t-heading-5 mt4 mb8 ph6">
           <TranslateEstimate
             shippingEstimate={longestPickUpEstimate.shippingEstimate}
           />
         </p>
-        <p className="c-muted-2 self-baseline mt6 ph6">
+        <p className="c-muted-2 self-baseline mv6 lh-copy ph6">
           {intl.formatMessage(
             { id: 'summary.pickup.friendlyName' },
             {
