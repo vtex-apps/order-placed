@@ -18,7 +18,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
   return (
     <article className="flex justify-between flex-column-s flex-row-m pv6">
       <div className="flex items-center flex-column flex-row-m mr8-m">
-        <div className="w4 mr5">
+        <div>
           <ProductImage
             url={productInfo.imageUrl}
             alt={productInfo.name}
@@ -43,7 +43,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
               )}
             </p>
           </a>
-          <p className="t-mini c-muted-1 tc tl-m">
+          <p className="t-mini c-muted-1 tc tl-m mb0">
             {intl.formatMessage(
               { id: 'products.quantity' },
               {
