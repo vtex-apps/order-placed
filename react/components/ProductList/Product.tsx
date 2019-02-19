@@ -22,7 +22,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
           <ProductImage
             url={productInfo.imageUrl}
             alt={productInfo.name}
-            className="w4 mr6"
+            className="w4 mr6-m"
           />
         </div>
         <div className="flex flex-column items-between justify-between h-100">
