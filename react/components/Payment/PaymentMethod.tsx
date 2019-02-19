@@ -67,6 +67,13 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
             <InfoIcon colorToken="c-muted-3" />
           </div>
         </div>
+        <div hidden={!isOpen} className="mt2 z-9999 absolute">
+          <AdditionalInfo
+            paymentId={payment.id}
+            transactionId={transactionId}
+            showTooltip={true}
+          />
+        </div>
         {isBankInvoice && payment.url && (
           <div className="mt5">
             <ButtonLink url={payment.url} variation="primary" openNewWindow>
@@ -77,13 +84,6 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
             </ButtonLink>
           </div>
         )}
-        <div hidden={!isOpen} className="mt2 z-9999 absolute">
-          <AdditionalInfo
-            paymentId={payment.id}
-            transactionId={transactionId}
-            showTooltip={true}
-          />
-        </div>
       </div>
     </article>
   )
