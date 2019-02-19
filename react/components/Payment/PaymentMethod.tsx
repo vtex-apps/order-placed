@@ -40,7 +40,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
       <div className="t-body lh-solid">
         <p className="c-on-base">{paymentGroupSwitch(payment, intl)}</p>
         {hasLastDigits && (
-          <p className="c-muted-1">
+          <p className="c-muted-1 mb3">
             {intl.formatMessage(
               { id: 'payments.creditcard.lastDigits' },
               {

@@ -16,7 +16,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
     productInfo.unitMultiplier !== 1 || productInfo.measurementUnit !== 'un'
 
   return (
-    <article className="flex justify-between flex-column-s flex-row-m pv6">
+    <article className="flex justify-between flex-column-s flex-row-m pv7">
       <div className="flex items-center flex-column flex-row-m mr8-m">
         <div>
           <ProductImage
@@ -31,7 +31,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
             className="t-body c-muted-1 no-underline"
             target="_blank"
           >
-            <p>
+            <p className="mt3">
               {productInfo.name}
               {showMeasurementUnit && (
                 <small className="t-mini c-on-base tc tl-m">
@@ -43,7 +43,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
               )}
             </p>
           </a>
-          <p className="t-mini c-muted-1 tc tl-m mb0">
+          <p className="t-mini c-muted-1 tc tl-m mb3">
             {intl.formatMessage(
               { id: 'products.quantity' },
               {
@@ -53,7 +53,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
           </p>
         </div>
       </div>
-      <p className="tc tr-m">
+      <p className="tc tr-m mt3">
         <FormattedPrice value={productInfo.price * productInfo.quantity} />
       </p>
     </article>

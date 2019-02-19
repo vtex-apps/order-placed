@@ -19,7 +19,7 @@ const ShippingTotals: FunctionComponent<Props & InjectedIntlProps> = ({
   const totalsLine = 'flex justify-between items-center c-muted-1'
 
   return (
-    <div className="flex-l flex-row justify-end w-100">
+    <div className="flex-l justify-end pl6-l w-60-l w-100">
       <div className="mv8 w-100">
         <div className={totalsLine}>
           <p className="mv3">

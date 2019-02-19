@@ -8,12 +8,10 @@ interface Props {
 
 const ProductList: FunctionComponent<Props> = ({ products }) => {
   return (
-    <div className="flex flex-column justify-between w-75-m w-100">
+    <div className="flex flex-column justify-between w-60-l w-100">
       {products.map((product: OrderItem, index: number) => (
         <article
-          className={`${
-            index !== products.length - 1 ? 'bb b--muted-5 pb4' : ''
-          }`}
+          className={`${index !== products.length - 1 ? 'bb b--muted-4' : ''}`}
           key={product.id}
         >
           <Product productInfo={product} />
