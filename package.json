@@ -1,4 +1,5 @@
 {
+  "version": "0.0.1",
   "devDependencies": {
     "@vtex/intl-equalizer": "^2.0.1",
     "husky": "^1.3.1"

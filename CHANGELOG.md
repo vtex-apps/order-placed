@@ -7,8 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Added
+
+- Release first public version
+
 ## [0.0.1-beta.0] - 2019-01-25
 
 ## [0.0.1-beta] - 2019-01-21
+
 ### Added
+
 - Initialize repo, with vtex.order-placed-graphql as a dependency.
