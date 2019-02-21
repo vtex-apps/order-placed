@@ -67,7 +67,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
             <InfoIcon colorToken="c-muted-3" />
           </div>
         </div>
-        <div hidden={!isOpen} className="mt2 z-9999 absolute">
+        <div hidden={!isOpen} className="mt2 z-2 absolute">
           <AdditionalInfo
             paymentId={payment.id}
             transactionId={transactionId}
