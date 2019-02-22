@@ -5,9 +5,7 @@
   "title": "Order Placed",
   "description": "",
   "mustUpdateAt": "2019-10-15",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },
@@ -17,7 +15,7 @@
     "messages": "1.x"
   },
   "dependencies": {
-    "vtex.order-placed-graphql": "0.x",
+    "vtex.order-placed-graphql": "1.x",
     "vtex.styleguide": "9.x",
     "vtex.order-details": "0.x",
     "vtex.shipping-estimate-translator": "2.x",
