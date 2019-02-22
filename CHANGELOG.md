@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fix
 
+- Inconsistent product image height
+
+### Fix
+
 - Layout fix on Warnings component
 
 ## [0.1.3] - 2019-02-22
