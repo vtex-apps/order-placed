@@ -55,7 +55,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
         )}
         {hasPickUp && (
           <li className={`${listItem} ${orderWasSplit ? bottomBorder : ''}`}>
-            <p className="pt4">
+            <p className="pv4">
               {intl.formatMessage({ id: 'warnings.pickup.time' })}
             </p>
           </li>
