@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fix
+
+- Small layout bug on OrderTotals
+
 ## [0.1.2] - 2019-02-22
 
 ## [0.1.1] - 2019-02-21
