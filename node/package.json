@@ -1,0 +1,10 @@
+{
+  "name": "vtex.order-placed",
+  "version": "0.1.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "^7.0.8",
+    "tslint": "^5.8.0",
+    "tslint-config-vtex": "^2.0.0"
+  }
+}

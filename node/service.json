@@ -1,0 +1,10 @@
+{
+  "stack": "nodejs",
+  "memory": 256,
+  "routes": {
+    "enabled": {
+      "path": "/_v/orderPlaced/enabled",
+      "public": true
+    }
+  }
+}
