@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { ButtonLink } from 'vtex.order-details'
 
 import InfoIcon from '../../Icons/Info'
-import ButtonLink from '../ButtonLink'
 import AdditionalInfo from './AdditionalInfo'
 import Price from './FormattedPrice'
 
@@ -76,7 +76,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
         </div>
         {isBankInvoice && payment.url && (
           <div className="mt5">
-            <ButtonLink url={payment.url} variation="primary" openNewWindow>
+            <ButtonLink to={payment.url} variation="primary" openNewWindow>
               {intl.formatMessage(
                 { id: 'payments.bankinvoice.print' },
                 { paymentSystemName: payment.paymentSystemName }

@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { ButtonLink } from 'vtex.order-details'
+
 import PrinterIcon from '../../../Icons/PrinterIcon'
-import ButtonLink from '../../ButtonLink'
 import BarCode from './BarCode'
 import Embedded from './Embedded'
 interface Props {
@@ -31,7 +32,7 @@ const BankInvoice: FunctionComponent<Props & InjectedIntlProps> = ({
     <article className="flex justify-between items-center mt6">
       {invoiceBarCodeNumber && <BarCode barCodeNumber={invoiceBarCodeNumber} />}
       <ButtonLink
-        url={url}
+        to={url}
         icon={<PrinterIcon />}
         variation="secondary"
         openNewWindow

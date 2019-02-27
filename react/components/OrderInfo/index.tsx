@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
+import { CustomerInfo } from 'vtex.order-details'
 
-import CustomerInfo from '../CustomerInfo'
 import PaymentMethod from '../Payment/PaymentMethod'
 import Shipping from '../Shipping'
 import StorePickUp from '../StorePickUp'
