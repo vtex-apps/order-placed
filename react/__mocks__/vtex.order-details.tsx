@@ -5,7 +5,21 @@ export function FormattedDate() {
 }
 
 export class ProductImage extends Component {
-  render() {
+  public render() {
     return <div>ProductImage</div>
   }
+}
+
+export function Address() {
+  return <span>Address</span>
+}
+
+export class ButtonLink extends Component {
+  public render() {
+    return <span>{this.props.children}</span>
+  }
+}
+
+export function CustomerInfo() {
+  return <span>CustomerInfo</span>
 }

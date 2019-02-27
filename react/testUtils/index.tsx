@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { IntlProvider } from 'react-intl'
 import * as reactTestingLibrary from 'react-testing-library'
 
-import * as defaultStrings from '../../messages/en.json'
+import defaultStrings from '../../messages/en.json'
 
 const customRender = (node: ReactNode, options?: any) => {
   const rendered = reactTestingLibrary.render(
