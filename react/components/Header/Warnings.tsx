@@ -1,9 +1,9 @@
 import React, { Fragment, FunctionComponent } from 'react'
 import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
+import { ButtonLink } from 'vtex.order-details'
 
 import { PaymentGroupInfo } from '../../utils'
-import ButtonLink from '../ButtonLink'
 import Price from '../Payment/FormattedPrice'
 
 interface Props {
@@ -121,7 +121,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
                 </p>
                 {bankInvoices[0].url && (
                   <ButtonLink
-                    url={bankInvoices[0].url}
+                    to={bankInvoices[0].url}
                     variation="primary"
                     openNewWindow
                   >

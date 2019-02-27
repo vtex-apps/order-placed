@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 
-import Address from '../Address'
+import { Address } from 'vtex.order-details'
 
 interface Props {
   shippingData: Parcel
@@ -50,7 +50,9 @@ const ShippingHeader: FunctionComponent<Props & InjectedIntlProps> = ({
           )}
         </p>
       ) : (
-        <Address address={shippingData.address} />
+        <div className="mb5 mr10-m">
+          <Address address={shippingData.address} />
+        </div>
       )}
     </header>
   )

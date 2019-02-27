@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
-import ButtonLink from '../ButtonLink'
+import { ButtonLink } from 'vtex.order-details'
 
 interface Props {
   allowCancellation: boolean
@@ -21,7 +21,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
   <div className={`${className} flex flex-wrap justify-center flex-nowrap-m`}>
     <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
       {takeaway ? (
-        <ButtonLink variation="secondary" fullWidth={fullWidth} url="">
+        <ButtonLink variation="secondary" fullWidth={fullWidth} to="">
           {intl.formatMessage({
             id: 'order.header.takeaway.printreceipt.button',
           })}
@@ -30,7 +30,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
-          url={`/account#/orders/${orderId}/edit`}
+          to={`/account#/orders/${orderId}/edit`}
         >
           {intl.formatMessage({ id: 'order.header.update.button' })}
         </ButtonLink>
@@ -41,7 +41,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
-          url="/account#/orders/"
+          to="/account#/orders/"
         >
           {intl.formatMessage({ id: 'order.header.myorders.button' })}
         </ButtonLink>
@@ -50,7 +50,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
     {allowCancellation && (
       <div className="w-100 w-auto-m">
         {takeaway ? (
-          <ButtonLink variation="danger-tertiary" fullWidth={fullWidth} url="">
+          <ButtonLink variation="danger-tertiary" fullWidth={fullWidth} to="">
             {intl.formatMessage({
               id: 'order.header.takeaway.cancel.button',
             })}
@@ -59,7 +59,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
           <ButtonLink
             variation="danger-tertiary"
             fullWidth={fullWidth}
-            url={`/account#/orders/${orderId}/cancel`}
+            to={`/account#/orders/${orderId}/cancel`}
           >
             {intl.formatMessage({ id: 'order.header.cancel.button' })}
           </ButtonLink>

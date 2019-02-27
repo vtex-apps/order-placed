@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react'
 import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
+import { ButtonLink } from 'vtex.order-details'
 import { Button } from 'vtex.styleguide'
 
 import SuccessIcon from '../../Icons/Success'
 import { getPaymentGroupFromOrder, PaymentGroupInfo } from '../../utils'
-import ButtonLink from '../ButtonLink'
 import BankInvoice from './BankInvoice'
 import Summary from './Summary'
 import Warnings from './Warnings'
@@ -70,7 +70,7 @@ const Header: FunctionComponent<Props & InjectedIntlProps> = ({
           </div>
           {inStore && (
             <div className="tr c-action-primary ml4">
-              <ButtonLink variation="primary" url="/checkout/instore#/">
+              <ButtonLink variation="primary" to="/checkout/instore#/">
                 {intl.formatMessage({ id: 'header.newpurchase.button' })}
               </ButtonLink>
             </div>
