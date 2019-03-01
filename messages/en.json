@@ -36,6 +36,7 @@
   "order.totals.pickup.free": "Free",
   "order.totals.subtotal": "Subtotal ({numItems, plural, one {# item} other {# items}})",
   "order.totals.total": "Total",
+  "page.title": "Order Placed",
   "payments.bankinvoice.print": "Open {paymentSystemName}",
   "payments.creditcard": "Credit card",
   "payments.creditcard.lastDigits": "Last digits: {lastDigits}",
