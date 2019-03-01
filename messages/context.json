@@ -36,6 +36,7 @@
   "order.totals.pickup.free": "Free",
   "order.totals.subtotal": "Subtotal and number of items purchased",
   "order.totals.total": "Total",
+  "page.title": "Order Placed",
   "payments.bankinvoice.print": "Button to link the user into PDF visualization of his/her bank invoice",
   "payments.creditcard": "Credit card",
   "payments.creditcard.lastDigits": "Last digits for credit ou debit card",

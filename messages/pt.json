@@ -36,6 +36,7 @@
   "order.totals.pickup.free": "Grátis",
   "order.totals.subtotal": "Subtotal ({numItems, plural, one {# item} other {# itens}})",
   "order.totals.total": "Total",
+  "page.title": "Pedido confirmado",
   "payments.bankinvoice.print": "Abrir {paymentSystemName}",
   "payments.creditcard": "Cartão de crédito",
   "payments.creditcard.lastDigits": "Final {lastDigits}",
