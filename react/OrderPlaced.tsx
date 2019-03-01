@@ -1,8 +1,10 @@
 import React from 'react'
 import { compose, graphql } from 'react-apollo'
+import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { branch, renderComponent } from 'recompose'
-import { withRuntimeContext } from 'vtex.render-runtime'
+import { Helmet, withRuntimeContext } from 'vtex.render-runtime'
 
+import AnalyticsWrapper from './Analytics'
 import Header from './components/Header'
 import OrderInfo from './components/OrderInfo'
 import * as getOrderGroup from './graphql/getOrderGroup.graphql'
@@ -16,14 +18,18 @@ interface Props {
   inStore: boolean
 }
 
-class OrderPlaced extends React.Component<Props> {
+class OrderPlaced extends React.Component<Props & InjectedIntlProps> {
   public render() {
-    const { orderGroupQuery, inStore } = this.props
+    const { orderGroupQuery, inStore, intl } = this.props
     const { orderGroup } = orderGroupQuery
     return (
       <CurrencyContext.Provider
         value={orderGroup.orders[0].storePreferencesData.currencyCode}
       >
+        <Helmet>
+          <title>{intl.formatMessage({ id: 'page.title' })}</title>
+        </Helmet>
+        <AnalyticsWrapper eventList={orderGroup.analyticsData} />
         <Header
           orderGroup={orderGroup}
           profile={orderGroup.orders[0].clientProfileData}
@@ -46,6 +52,7 @@ class OrderPlaced extends React.Component<Props> {
 }
 
 export default compose(
+  injectIntl,
   withRuntimeContext,
   withoutSSR,
   graphql(getOrderGroup.default, {

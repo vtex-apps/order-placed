@@ -596,5 +596,6 @@ query getOrderGroup($orderGroup: String) {
       deliveryChannel
       selectedSlaType
     }
+    analyticsData
   }
 }

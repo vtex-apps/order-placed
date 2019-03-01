@@ -3,6 +3,7 @@ interface OrderGroup {
   totalDeliveryParcels: Parcel[]
   totalPickUpParcels: Parcel[]
   totalTakeAwayParcels: Parcel[]
+  analyticsData?: any[]
 }
 
 interface Order {

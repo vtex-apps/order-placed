@@ -20,7 +20,8 @@
     "vtex.order-details": "1.x",
     "vtex.shipping-estimate-translator": "2.x",
     "vtex.address-form": "4.x",
-    "vtex.profile-form": "3.x"
+    "vtex.profile-form": "3.x",
+    "vtex.pixel-manager": "0.x"
   },
   "credentialType": "absolute",
   "policies": [
