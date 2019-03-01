@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Analytics support for Google Tag Manager
+
+### Changed
+
+- GraphQL query `orderGroup`
+
 ## [0.1.4] - 2019-02-22
 
 ### Fix
