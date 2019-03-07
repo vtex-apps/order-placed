@@ -1,4 +1,6 @@
-import { Component } from 'react'
+// Do not remove the React variable
+// @ts-ignore
+import React, { Component } from 'react'
 import { Pixel } from 'vtex.pixel-manager/PixelContext'
 import { withRuntimeContext } from 'vtex.render-runtime'
 
