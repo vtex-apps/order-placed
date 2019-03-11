@@ -4,14 +4,13 @@ import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { branch, renderComponent } from 'recompose'
 import { Helmet, withRuntimeContext } from 'vtex.render-runtime'
 
-import AnalyticsWrapper from './Analytics'
+import Analytics from './components/Analytics'
 import Header from './components/Header'
 import OrderInfo from './components/OrderInfo'
 import * as getOrderGroup from './graphql/getOrderGroup.graphql'
-import Skeleton from './Skeleton'
-import withoutSSR from './WithoutSSR'
-
-export const CurrencyContext = React.createContext('BRL')
+import Skeleton from './components/Skeleton'
+import withoutSSR from './components/WithoutSSR'
+import CurrencyContext from './components/CurrencyContext'
 
 interface Props {
   orderGroupQuery: any
@@ -26,10 +25,7 @@ class OrderPlaced extends React.Component<Props & InjectedIntlProps> {
       <CurrencyContext.Provider
         value={orderGroup.orders[0].storePreferencesData.currencyCode}
       >
-        <Helmet>
-          <title>{intl.formatMessage({ id: 'page.title' })}</title>
-        </Helmet>
-        <AnalyticsWrapper eventList={orderGroup.analyticsData} />
+        <Analytics eventList={orderGroup.analyticsData} />
         <Header
           orderGroup={orderGroup}
           profile={orderGroup.orders[0].clientProfileData}

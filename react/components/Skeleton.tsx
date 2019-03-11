@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.global.css'
+import '../styles.global.css'
 
 const Skeleton = () => {
   const baseSkeletonPiece = 'pa3 br2 relative overflow-hidden'

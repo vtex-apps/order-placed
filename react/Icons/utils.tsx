@@ -1,5 +1,10 @@
+interface IconSize {
+  height: number,
+  width: number,
+}
+
 export const calcIconSize = (
-  iconBase: { height: number; width: number },
+  iconBase: IconSize,
   newSize: number
 ) => {
   const isHorizontal = iconBase.width >= iconBase.height
