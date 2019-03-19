@@ -1,9 +1,9 @@
+import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
 import StorePickUp from '../components/StorePickUp'
 import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
 import { orderGroupQuery as twoPickups } from '../mocks/twoPickups'
-import { render } from '../testUtils'
 
 describe('Store Pickup', () => {
   it('should render StorePickUpHeader with shipping estimate and receiver info', () => {

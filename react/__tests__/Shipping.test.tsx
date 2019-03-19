@@ -1,10 +1,10 @@
+import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
 import Shipping from '../components/Shipping'
 import { orderGroupQuery as giftRegistry } from '../mocks/giftRegistry'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as twoDeliveries } from '../mocks/twoDeliveries'
-import { render } from '../testUtils'
 
 describe('Shipping (delivery)', () => {
   it('should render ShippingHeader with shipping estimate', () => {

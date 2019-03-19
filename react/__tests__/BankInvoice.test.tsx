@@ -1,6 +1,5 @@
+import { render } from '@vtex/test-tools/react'
 import React from 'react'
-
-import { render } from '../testUtils'
 
 import { orderGroupQuery as bankInvoiceLoggedIn } from '../mocks/bankInvoiceLoggedIn'
 import { orderGroupQuery as bankInvoiceNotLoggedIn } from '../mocks/bankInvoiceNotLoggedIn'

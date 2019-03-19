@@ -1,3 +1,4 @@
+import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
 import Header from '../components/Header'
@@ -7,7 +8,6 @@ import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
 import { orderGroupQuery as deliveryAndPickup } from '../mocks/pickupAndDelivery'
 import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
-import { render } from '../testUtils'
 
 describe('Confirmation messages', () => {
   it('should render success icon', () => {
