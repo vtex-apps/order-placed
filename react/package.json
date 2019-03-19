@@ -2,14 +2,12 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "vtex-test-tools test",
+    "test:watch": "vtex-test-tools test --watch",
     "lint": "tsc --noEmit && eslint --ext ts,tsx .",
     "lint:locales": "intl-equalizer"
   },
   "dependencies": {
-    "@types/graphql": "^14.0.5",
-    "@types/recompose": "^0.30.3",
     "@vtex/address-form": "^3.0.2",
     "@vtex/delivery-packages": "^2.16.2",
     "@vtex/estimate-calculator": "^1.1.0",
@@ -24,54 +22,18 @@
     "recompose": "^0.30.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.1.0",
-    "@types/jest": "^23.3.13",
+    "@types/graphql": "^14.0.5",
     "@types/node": "^10.12.21",
     "@types/prop-types": "^15.5.8",
     "@types/react": "^16.8.1",
     "@types/react-intl": "^2.3.15",
-    "babel-jest": "^24.1.0",
     "eslint": "^5.15.3",
     "eslint-config-vtex-react": "^4.0.0",
-    "jest": "^23.6.0",
-    "jest-dom": "^3.0.0",
-    "jest-transform-graphql": "^2.1.0",
+    "@types/recompose": "^0.30.3",
+    "@vtex/test-tools": "^0.1.4",
     "prettier": "^1.16.1",
     "react-dom": "^16.7.0",
-    "react-testing-library": "^5.4.4",
     "regenerator-runtime": "^0.13.1",
-    "typescript": "^3.3.1",
-    "typescript-babel-jest": "^1.0.5"
-  },
-  "resolutions": {
-    "babel-core": "^7.0.0-bridge.0"
-  },
-  "jest": {
-    "verbose": true,
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.ts"
-    },
-    "setupTestFrameworkScriptFile": "./testUtils/setupTests.ts",
-    "collectCoverageFrom": [
-      "react/**/*.{ts, tsx}"
-    ],
-    "transform": {
-      "\\.(gql|graphql)$": "jest-transform-graphql",
-      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.(ts|tsx)$": "typescript-babel-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node",
-      "graphql"
-    ]
+    "typescript": "^3.3.1"
   }
 }

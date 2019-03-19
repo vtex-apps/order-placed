@@ -1,3 +1,4 @@
+import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
 import OrderInfo from '../components/OrderInfo'
@@ -9,7 +10,6 @@ import { orderGroupQuery as promissory } from '../mocks/promissoryPayment'
 import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
 import { orderGroupQuery as twoCreditCards } from '../mocks/twoCreditCards'
 import { orderGroupQuery as multipleDeliveries } from '../mocks/twoDeliveries'
-import { render } from '../testUtils'
 
 const getOrderFromOrderGroup = (orderGroup: OrderGroup, index: number) => {
   return orderGroup.orders[index]
