@@ -3,7 +3,7 @@ import {
   FormattedMessage,
   FormattedTime,
   InjectedIntlProps,
-  injectIntl
+  injectIntl,
 } from 'react-intl'
 import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
@@ -57,6 +57,7 @@ const OrderHeader: FunctionComponent<
           </small>
         )}
         {takeaway && (
+          // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a className="c-action-primary t-small" href="#">
             {intl.formatMessage({ id: 'order.header.receipt' })}
           </a>

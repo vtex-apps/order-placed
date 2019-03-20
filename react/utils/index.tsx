@@ -35,8 +35,7 @@ export const getSubscriptionInfo = (
   const vtexSubsPrefix = 'vtex.subscription.key.'
   const subsFrequency: string =
     attachmentItem.content[`${vtexSubsPrefix}frequency`]
-  const subsPurchaseDay =
-    attachmentItem.content[`${vtexSubsPrefix}purchaseday`]
+  const subsPurchaseDay = attachmentItem.content[`${vtexSubsPrefix}purchaseday`]
   const subsValidityBegin =
     attachmentItem.content[`${vtexSubsPrefix}validity.begin`]
   const subsValidityEnd =
@@ -89,10 +88,10 @@ export const orderSplitMessage = ({
   takeaways,
   intl,
 }: {
-  deliveries: number;
-  pickups: number;
-  takeaways: number;
-  intl: ReactIntl.InjectedIntl;
+  deliveries: number
+  pickups: number
+  takeaways: number
+  intl: ReactIntl.InjectedIntl
 }) => {
   const nPickups = pickups > 1
   const nTakeaways = takeaways > 1

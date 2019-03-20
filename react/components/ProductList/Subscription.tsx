@@ -14,6 +14,14 @@ const SubscriptionAttachment: FunctionComponent<
     intl
   )
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== ' ' && e.key !== 'Enter') {
+      return
+    }
+
+    setIsOpen(!isOpen)
+  }
+
   return (
     <article className="bg-muted-5 pv3 ph5 br2 mv4" key={attachmentItem.name}>
       <div className="flex justify-between">
@@ -26,7 +34,13 @@ const SubscriptionAttachment: FunctionComponent<
           <p className="mr5">
             {intl.formatMessage({ id: 'order.totals.pickup.free' })}
           </p>
-          <div className="c-action-primary" onClick={() => setIsOpen(!isOpen)}>
+          <div
+            role="button"
+            tabIndex={0}
+            className="c-action-primary"
+            onClick={() => setIsOpen(!isOpen)}
+            onKeyDown={handleKeyDown}
+          >
             {isOpen ? <IconCaretUp /> : <IconCaretDown />}
           </div>
         </div>

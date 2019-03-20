@@ -4,7 +4,7 @@ declare module 'vtex.render-runtime' {
 
   export interface RenderContextProps {
     runtime: {
-      account: string;
+      account: string
     }
   }
 
