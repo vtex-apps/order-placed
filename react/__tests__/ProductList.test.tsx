@@ -48,10 +48,7 @@ describe('Product List component', () => {
   })
 
   it('should render attachments from item and also bundle items', () => {
-    const orderInfo = getOrderFromOrderGroup(
-      serviceAndAttachment.orderGroup,
-      0
-    )
+    const orderInfo = getOrderFromOrderGroup(serviceAndAttachment.orderGroup, 0)
     const { queryByText } = render(
       <OrderInfo
         order={orderInfo}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 export class ProfileRules extends Component {
-  render() {
+  public render() {
     return this.props.children
   }
 }

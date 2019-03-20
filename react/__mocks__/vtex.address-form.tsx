@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
 export class AddressSummary extends Component {
-  render() {
+  public render() {
     return <div>AddressSummary</div>
   }
 }
 
 export class AddressRules extends Component {
-  render() {
+  public render() {
     return this.props.children
   }
 }

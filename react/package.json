@@ -1,5 +1,12 @@
 {
+  "private": true,
   "version": "0.0.1",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "tsc --noEmit && eslint --ext ts,tsx .",
+    "lint:locales": "intl-equalizer"
+  },
   "dependencies": {
     "@types/graphql": "^14.0.5",
     "@types/recompose": "^0.30.3",
@@ -27,6 +34,8 @@
     "@types/react": "^16.8.1",
     "@types/react-intl": "^2.3.15",
     "babel-jest": "^24.1.0",
+    "eslint": "^5.15.3",
+    "eslint-config-vtex-react": "^4.0.0",
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
     "jest-transform-graphql": "^2.1.0",
@@ -34,20 +43,11 @@
     "react-dom": "^16.7.0",
     "react-testing-library": "^5.4.4",
     "regenerator-runtime": "^0.13.1",
-    "tslint": "^5.12.1",
-    "tslint-config-vtex": "^2.1.0",
-    "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.3.1",
     "typescript-babel-jest": "^1.0.5"
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
-  },
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "lint": "tsc --noEmit && tslint -c tslint.json -e './mocks/*.ts' './**/*.ts'",
-    "lint:locales": "intl-equalizer"
   },
   "jest": {
     "verbose": true,

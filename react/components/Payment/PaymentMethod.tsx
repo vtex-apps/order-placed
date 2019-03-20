@@ -71,7 +71,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
           <AdditionalInfo
             paymentId={payment.id}
             transactionId={transactionId}
-            showTooltip={true}
+            showTooltip
           />
         </div>
         {isBankInvoice && payment.url && (

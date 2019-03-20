@@ -19,6 +19,14 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== ' ' && e.key !== 'Enter') {
+      return
+    }
+
+    setIsOpen(!isOpen)
+  }
+
   return (
     <Fragment>
       {bundleInfo &&
@@ -42,7 +50,10 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
                   <Price value={bundleItem.price} />
                   {hasAttachments && (
                     <div
+                      role="button"
+                      tabIndex={0}
                       className="c-action-primary ml5"
+                      onKeyDown={handleKeyDown}
                       onClick={() => setIsOpen(!isOpen)}
                     >
                       {isOpen ? <IconCaretUp /> : <IconCaretDown />}
@@ -91,7 +102,10 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
                   </p>
                   {attachmentItem.content && (
                     <div
+                      role="button"
+                      tabIndex={0}
                       className="c-action-primary"
+                      onKeyDown={handleKeyDown}
                       onClick={() => setIsOpen(!isOpen)}
                     >
                       {isOpen ? <IconCaretUp /> : <IconCaretDown />}
