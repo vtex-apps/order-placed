@@ -7,9 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Spanish messages
+
 ### Changed
 
 - Testing is now made with @vtex/test-tools
+
+### Fixed
+
+- Unnecessary keys were removed
+- Missing pontuation on a few messages
 
 ## [1.0.1] - 2019-03-22
 
