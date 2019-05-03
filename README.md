@@ -21,3 +21,7 @@ This app depends on:
 - `vtex.address-form`
 - `vtex.profile-form`
 - `vtex.pixel-manager`
+
+## Contributing
+
+Check it out [how to contribute](https://github.com/vtex-apps/awesome-io#contributing) with this project. 
