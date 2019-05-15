@@ -9,3 +9,7 @@ export function withRuntimeContext(WrappedComponent: any) {
     }
   }
 }
+
+export function NoSSR({ children }: any) {
+  return <div>{children}</div>
+}
