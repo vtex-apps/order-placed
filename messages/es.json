@@ -34,6 +34,8 @@
   "order.totals.pickup.free": "Gratis",
   "order.totals.subtotal": "Total parcial ({numItems, plural, one {# articulo} other {# artículos}})",
   "order.totals.total": "Total",
+  "order.invalid": "Orden no válido.",
+  "order.not-logged-in": "Usted debe estar conectado para acceder a esta orden. Redireccionando a la página de inicio de sesión...",
   "page.title": "Orden colocada",
   "payments.bankinvoice.print": "Mostrar {paymentSystemName}",
   "payments.creditcard": "Tarjeta de crédito",

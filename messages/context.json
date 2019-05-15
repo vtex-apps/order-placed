@@ -36,6 +36,8 @@
   "order.totals.pickup.free": "Free",
   "order.totals.subtotal": "Subtotal and number of items purchased",
   "order.totals.total": "Total",
+  "order.invalid": "Invalid order.",
+  "order.not-logged-in": "You must be logged-in to see this order. You are now being redirected to the login page.",
   "page.title": "Order Placed",
   "payments.bankinvoice.print": "Button to link the user into PDF visualization of his/her bank invoice",
   "payments.creditcard": "Credit card",

@@ -34,6 +34,8 @@
   "order.totals.pickup.free": "Grátis",
   "order.totals.subtotal": "Subtotal ({numItems, plural, one {# item} other {# itens}})",
   "order.totals.total": "Total",
+  "order.invalid": "Pedido inválido.",
+  "order.not-logged-in": "Você precisa estar logado para acessar este pedido. Redirecionando para o login...",
   "page.title": "Pedido confirmado",
   "payments.bankinvoice.print": "Abrir {paymentSystemName}",
   "payments.creditcard": "Cartão de crédito",

@@ -34,6 +34,8 @@
   "order.totals.pickup.free": "Free",
   "order.totals.subtotal": "Subtotal ({numItems, plural, one {# item} other {# items}})",
   "order.totals.total": "Total",
+  "order.invalid": "Invalid order.",
+  "order.not-logged-in": "You must be logged-in to see this order. Redirecting to the login page...",
   "page.title": "Order Placed",
   "payments.bankinvoice.print": "Open {paymentSystemName}",
   "payments.creditcard": "Credit card",
