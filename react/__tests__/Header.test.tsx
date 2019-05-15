@@ -59,7 +59,7 @@ describe('Warnings', () => {
     )
 
     const paymentDisclaimer = getByText(
-      'The delivery period starts to count from the moment your payment is confirmed'
+      'The delivery period starts to count from the moment your payment is confirmed.'
     )
     const trackingDisclaimer = getByText(
       'A tracking code will be sent to your email when the delivery process begins.'
@@ -97,7 +97,7 @@ describe('Warnings', () => {
     )
 
     const paymentDisclaimer = getByText(
-      'The store pickup period starts from the moment your payment is confirmed'
+      'The store pickup period starts from the moment your payment is confirmed.'
     )
 
     expect(paymentDisclaimer).toBeDefined()
@@ -112,7 +112,7 @@ describe('Warnings', () => {
     )
 
     const paymentDisclaimer = queryByText(
-      'The store pickup period starts from the moment your payment is confirmed'
+      'The store pickup period starts from the moment your payment is confirmed.'
     )
 
     expect(paymentDisclaimer).toBeNull()
