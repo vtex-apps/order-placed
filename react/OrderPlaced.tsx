@@ -76,11 +76,14 @@ export default compose(
     renderComponent(Skeleton)
   ),
   /** if query errored display an error alert */
-  branch(
-    ({ orderGroupQuery: { error } }: any) =>
-      error && error.message && error.message.includes('403'),
-    renderComponent(() => <ErrorMessage errorId="order.not-logged-in" />)
-  ),
+  branch(({ orderGroupQuery: { error } }: any) => {
+    if (!error) return
+
+    return (
+      (error.extensions && error.extensions.response.status === 403) ||
+      (error.message && error.message.includes('403'))
+    )
+  }, renderComponent(() => <ErrorMessage errorId="order.not-logged-in" />)),
   /** if query resulted in an invalid orderGroup display an error alert*/
   branch(
     ({ orderGroupQuery: { orderGroup } }: any) =>
