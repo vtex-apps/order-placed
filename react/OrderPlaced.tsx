@@ -9,9 +9,9 @@ import Header from './components/Header'
 import OrderInfo from './components/OrderInfo'
 import Skeleton from './Skeleton'
 import withoutSSR from './WithoutSSR'
+import ErrorMessage from './components/ErrorMessage'
 
 import * as getOrderGroup from './graphql/getOrderGroup.graphql'
-import ErrorMessage from './components/ErrorMessage'
 
 export const CurrencyContext = React.createContext('BRL')
 
