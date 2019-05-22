@@ -24,6 +24,7 @@
     "vtex.address-form": "4.x",
     "vtex.profile-form": "3.x",
     "vtex.pixel-manager": "1.x"
+    "vtex.shop-review-interfaces":"0.x"
   },
   "credentialType": "absolute",
   "policies": [

@@ -4,7 +4,10 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "jsx": "react",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "module": "es6",
     "moduleResolution": "node",
     "noEmitOnError": true,
@@ -19,11 +22,22 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "target": "es2017",
-    "typeRoots": ["node_modules"],
-    "types": ["node", "jest", "graphql"]
+    "typeRoots": [
+      "node_modules"
+    ],
+    "types": [
+      "node",
+      "jest",
+      "graphql"
+    ]
   },
-  "exclude": ["node_modules"],
-  "include": ["./typings/*.d.ts", "./**/*.tsx"],
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./typings/*.d.ts",
+    "./**/*.tsx"
+  ],
   "typeAcquisition": {
     "enable": false
   }

@@ -1,5 +1,6 @@
 {
   "order-placed": {
-    "component": "OrderPlaced"
+    "component": "OrderPlaced",
+    "allowed":["shop-review-form"]
   }
 }
