@@ -1,7 +1,7 @@
 {
   "name": "order-placed",
   "vendor": "vtex",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "title": "Order Placed",
   "description": "",
   "mustUpdateAt": "2019-10-15",
