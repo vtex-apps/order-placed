@@ -40,15 +40,14 @@ describe('OrderPlaced', () => {
       },
     }
 
-    const { queryByTestId, queryByText } = render(<OrderPlaced />, {
+    const { queryByText } = render(<OrderPlaced />, {
       // @ts-ignore
       graphql: { mocks: [mockRequest] },
     })
 
     await new Promise(resolve => setTimeout(resolve, 0))
 
-    expect(queryByTestId('alert')).toBeTruthy()
-    expect(queryByText(/logged in/)).toBeTruthy()
+    expect(queryByText(/permission/)).toBeTruthy()
   })
 
   test('should render an alert for invalid orders', async () => {
@@ -61,14 +60,13 @@ describe('OrderPlaced', () => {
       },
     }
 
-    const { queryByTestId, queryByText } = render(<OrderPlaced />, {
+    const { queryByText } = render(<OrderPlaced />, {
       // @ts-ignore
       graphql: { mocks: [mockRequest] },
     })
 
     await new Promise(resolve => setTimeout(resolve, 0))
 
-    expect(queryByTestId('alert')).toBeTruthy()
-    expect(queryByText(/Invalid order/)).toBeTruthy()
+    expect(queryByText(/not found/)).toBeTruthy()
   })
 })

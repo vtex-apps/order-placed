@@ -34,8 +34,14 @@
   "order.totals.pickup.free": "Gratis",
   "order.totals.subtotal": "Total parcial ({numItems, plural, one {# articulo} other {# artículos}})",
   "order.totals.total": "Total",
-  "order.invalid": "Orden no válido.",
-  "order.not-logged-in": "Usted debe estar conectado para acceder a esta orden. Redireccionando a la página de inicio de sesión...",
+
+  "order.error.invalid.title": "Página no encontrada",
+  "order.error.invalid.message": "Parece que esta página ya no existe. Sugerimos que vuelva a la página de inicio.",
+  "order.error.not-logged-in.title": "Usted no tiene permiso",
+  "order.error.not-logged-in.message": "No tiene permiso para acceder a esta página. Ingrese su cuenta e inténtelo de nuevo.",
+  "go-to-login": "Hacer login",
+  "go-to-home": "Ir a la página principal",
+
   "page.title": "Orden colocada",
   "payments.bankinvoice.print": "Mostrar {paymentSystemName}",
   "payments.creditcard": "Tarjeta de crédito",

@@ -34,8 +34,14 @@
   "order.totals.pickup.free": "Free",
   "order.totals.subtotal": "Subtotal ({numItems, plural, one {# item} other {# items}})",
   "order.totals.total": "Total",
-  "order.invalid": "Invalid order.",
-  "order.not-logged-in": "You must be logged in to see this order. Redirecting to the login page...",
+
+  "order.error.invalid.title": "Page not found",
+  "order.error.invalid.message": "Seems like the page you were looking for doesn't exist. We suggest that you return to the home page.",
+  "order.error.not-logged-in.title": "You don't have permission",
+  "order.error.not-logged-in.message": "Seems like you don't have permission to access this page. Try to login and access again.",
+  "go-to-login": "Go to login page",
+  "go-to-home": "Go to home page",
+
   "page.title": "Order Placed",
   "payments.bankinvoice.print": "Open {paymentSystemName}",
   "payments.creditcard": "Credit card",

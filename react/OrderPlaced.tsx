@@ -2,7 +2,9 @@ import React from 'react'
 import { compose, graphql } from 'react-apollo'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { branch, renderComponent } from 'recompose'
+
 import { Helmet, withRuntimeContext } from 'vtex.render-runtime'
+import { Button } from 'vtex.styleguide'
 
 import AnalyticsWrapper from './Analytics'
 import Header from './components/Header'
@@ -12,6 +14,9 @@ import withoutSSR from './WithoutSSR'
 import ErrorMessage from './components/ErrorMessage'
 
 import * as getOrderGroup from './graphql/getOrderGroup.graphql'
+
+import NotFound from './Icons/NotFound'
+import Forbidden from './Icons/Forbidden'
 
 export const CurrencyContext = React.createContext('BRL')
 
@@ -76,18 +81,41 @@ export default compose(
     renderComponent(Skeleton)
   ),
   /** if query errored display an error alert */
-  branch(({ orderGroupQuery: { error } }: any) => {
-    if (!error) return
+  branch(
+    ({ orderGroupQuery: { error } }: any) => {
+      if (!error) return
 
-    return (
-      (error.extensions && error.extensions.response.status === 403) ||
-      (error.message && error.message.includes('403'))
-    )
-  }, renderComponent(() => <ErrorMessage errorId="order.not-logged-in" />)),
+      return (
+        (error.extensions && error.extensions.response.status === 403) ||
+        (error.message && error.message.includes('403'))
+      )
+    },
+    renderComponent(({ intl }: any) => (
+      <ErrorMessage
+        icon={<Forbidden />}
+        errorId="order.error.not-logged-in.title"
+        messageId="order.error.not-logged-in.message"
+      >
+        <a href={`/login?returnUrl=${window.location.href}`}>
+          <Button>{intl.formatMessage({ id: 'go-to-login' })}</Button>
+        </a>
+      </ErrorMessage>
+    ))
+  ),
   /** if query resulted in an invalid orderGroup display an error alert*/
   branch(
     ({ orderGroupQuery: { orderGroup } }: any) =>
       orderGroup == null || orderGroup.orders == null,
-    renderComponent(() => <ErrorMessage errorId="order.invalid" />)
+    renderComponent(({ intl }: any) => (
+      <ErrorMessage
+        icon={<NotFound />}
+        errorId="order.error.invalid.title"
+        messageId="order.error.invalid.message"
+      >
+        <a href="/">
+          <Button>{intl.formatMessage({ id: 'go-to-home' })}</Button>
+        </a>
+      </ErrorMessage>
+    ))
   )
 )(OrderPlaced)

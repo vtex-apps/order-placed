@@ -34,8 +34,14 @@
   "order.totals.pickup.free": "Grátis",
   "order.totals.subtotal": "Subtotal ({numItems, plural, one {# item} other {# itens}})",
   "order.totals.total": "Total",
-  "order.invalid": "Pedido inválido.",
-  "order.not-logged-in": "Você precisa estar logado para acessar este pedido. Redirecionando para o login...",
+
+  "order.error.invalid.title": "Página não encontrada",
+  "order.error.invalid.message": "Parece que essa página não existe mais. Sugerimos que você retorne à página inicial.",
+  "order.error.not-logged-in.title": "Você não tem permissão",
+  "order.error.not-logged-in.message": "Você não tem permissão para acessar essa página. Entre com sua conta e tente novamente.",
+  "go-to-login": "Fazer login",
+  "go-to-home": "Ir para a página principal",
+
   "page.title": "Pedido confirmado",
   "payments.bankinvoice.print": "Abrir {paymentSystemName}",
   "payments.creditcard": "Cartão de crédito",
