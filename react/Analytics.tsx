@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Pixel } from 'vtex.pixel-manager/PixelContext'
+import { withPixel } from 'vtex.pixel-manager/PixelContext'
 import { withRuntimeContext } from 'vtex.render-runtime'
 
 interface Props {
@@ -30,4 +30,4 @@ class AnalyticsWrapper extends Component<Props> {
   }
 }
 
-export default Pixel(withRuntimeContext(AnalyticsWrapper))
+export default withPixel(withRuntimeContext(AnalyticsWrapper))
