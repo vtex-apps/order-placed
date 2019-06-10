@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.1] - 2019-06-10
+
+### Fixed
+
+- Order placed page breaking when user is not logged in.
+
 ## [1.2.0] - 2019-05-27
 
 ### Changed
