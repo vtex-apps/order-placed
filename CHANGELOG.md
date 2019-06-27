@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Wrong translation of `unit` and `units`.
+
 ## [1.2.1] - 2019-06-10
 
 ### Fixed
