@@ -51,7 +51,7 @@
   "payments.installments": "({installments}x)",
   "payments.transaction.id": "Transaction ID: {id}",
   "pickup.header.title": "Pickup",
-  "products.quantity": "{quantity, plural, one {# unity} other {# unities}}",
+  "products.quantity": "{quantity, plural, one {# unit} other {# units}}",
   "shipping.header.title": "Delivery",
   "shipping.header.wishlist.address": "Address from: {giftRegistryName}",
   "summary.items": "{itemsQuantity, plural, one {# item} other {# items}}",
