@@ -1,16 +1,18 @@
-export const getPaymentGroupFromOrder = (order: Order) => ({
-  barCodeNumber:
-    order.paymentData.transactions[0].payments[0]
-      .bankIssuedInvoiceBarCodeNumber,
-  barCodePNG:
-    order.paymentData.transactions[0].payments[0].bankIssuedInvoiceBarCodePNG,
-  dueDate: order.paymentData.transactions[0].payments[0].dueDate,
-  paymentGroup: order.paymentData.transactions[0].payments[0].group,
-  paymentSystemName:
-    order.paymentData.transactions[0].payments[0].paymentSystemName,
-  url: order.paymentData.transactions[0].payments[0].url,
-  value: order.paymentData.transactions[0].payments[0].value,
-})
+import get from 'lodash/get'
+
+export const getPaymentGroupFromOrder = (order: Order) => {
+  const base = 'paymentData.transactions[0].payments[0]'
+
+  return {
+    barCodeNumber: get(order, `${base}.bankIssuedInvoiceBarCodeNumber`, null),
+    barCodePNG: get(order, `${base}.bankIssuedInvoiceBarCodePNG`, null),
+    dueDate: get(order, `${base}.dueDate`, null),
+    paymentGroup: get(order, `${base}.group`, null),
+    paymentSystemName: get(order, `${base}.paymentSystemName`, null),
+    url: get(order, `${base}.url`, null),
+    value: get(order, `${base}.value`, null),
+  }
+}
 
 export interface PaymentGroupInfo {
   barCodeNumber: string | null
