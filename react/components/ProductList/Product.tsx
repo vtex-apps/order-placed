@@ -1,17 +1,10 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 
 import FormattedPrice from '../Payment/FormattedPrice'
 
-interface Props {
-  productInfo: OrderItem
-}
-
-const Product: FunctionComponent<Props & InjectedIntlProps> = ({
-  productInfo,
-  intl,
-}) => {
+const Product: FunctionComponent<Props> = ({ productInfo }) => {
   const showMeasurementUnit =
     productInfo.unitMultiplier !== 1 || productInfo.measurementUnit !== 'un'
 
@@ -45,12 +38,12 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
             </p>
           </a>
           <p className="t-mini c-muted-1 tc tl-m mb3">
-            {intl.formatMessage(
-              { id: 'products.quantity' },
-              {
+            <FormattedMessage
+              id="store/products.quantity"
+              values={{
                 quantity: productInfo.quantity,
-              }
-            )}
+              }}
+            />
           </p>
         </div>
       </div>
@@ -61,4 +54,8 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
   )
 }
 
-export default injectIntl(Product)
+interface Props {
+  productInfo: OrderItem
+}
+
+export default Product

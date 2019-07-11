@@ -1,23 +1,21 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
+
 import ProductList from '../ProductList'
 
-interface Props {
-  takeAwayPackages: Parcel[]
-}
-
-const TakeAway: FunctionComponent<Props & InjectedIntlProps> = ({
-  takeAwayPackages,
-  intl,
-}) => (
+const TakeAway: FunctionComponent<Props> = ({ takeAwayPackages }) => (
   <section className="mv8 flex flex-column justify-between">
     <header>
       <p data-testid="shipping-header" className="t-heading-4-ns t-heading-5">
-        {intl.formatMessage({ id: 'takeaway.header.title' })}
+        <FormattedMessage id="store/takeaway.header.title" />
       </p>
     </header>
     <ProductList products={takeAwayPackages[0].items} />
   </section>
 )
 
-export default injectIntl(TakeAway)
+interface Props {
+  takeAwayPackages: Parcel[]
+}
+
+export default TakeAway

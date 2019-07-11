@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { compose, graphql } from 'react-apollo'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { injectIntl, InjectedIntlProps, defineMessages } from 'react-intl'
 import { branch, renderComponent } from 'recompose'
 
 import { Helmet, withRuntimeContext } from 'vtex.render-runtime'
@@ -20,47 +20,54 @@ import Forbidden from './Icons/Forbidden'
 
 export const CurrencyContext = React.createContext('BRL')
 
+const message = defineMessages({
+  title: {
+    id: 'store/page.title',
+    defaultMessage: '',
+  },
+})
+
+const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
+  orderGroupQuery,
+  inStore,
+  intl,
+}) => {
+  const { orderGroup } = orderGroupQuery
+
+  return (
+    <CurrencyContext.Provider
+      value={orderGroup.orders[0].storePreferencesData.currencyCode}
+    >
+      <Helmet>
+        <title>{intl.formatMessage(message.title)}</title>
+      </Helmet>
+      <AnalyticsWrapper eventList={orderGroup.analyticsData} />
+      <Header
+        orderGroup={orderGroup}
+        profile={orderGroup.orders[0].clientProfileData}
+        inStore={inStore}
+      />
+      <main>
+        {orderGroup.orders.map((order: Order, index: number) => (
+          <OrderInfo
+            order={order}
+            profile={order.clientProfileData}
+            numOfOrders={orderGroup.orders.length}
+            index={index}
+            key={order.orderId}
+          />
+        ))}
+      </main>
+    </CurrencyContext.Provider>
+  )
+}
+
 interface Props {
   orderGroupQuery: any
   inStore: boolean
 }
 
-class OrderPlaced extends React.Component<Props & InjectedIntlProps> {
-  public render() {
-    const { orderGroupQuery, inStore, intl } = this.props
-    const { orderGroup } = orderGroupQuery
-
-    return (
-      <CurrencyContext.Provider
-        value={orderGroup.orders[0].storePreferencesData.currencyCode}
-      >
-        <Helmet>
-          <title>{intl.formatMessage({ id: 'page.title' })}</title>
-        </Helmet>
-        <AnalyticsWrapper eventList={orderGroup.analyticsData} />
-        <Header
-          orderGroup={orderGroup}
-          profile={orderGroup.orders[0].clientProfileData}
-          inStore={inStore}
-        />
-        <main>
-          {orderGroup.orders.map((order: Order, index: number) => (
-            <OrderInfo
-              order={order}
-              profile={order.clientProfileData}
-              numOfOrders={orderGroup.orders.length}
-              index={index}
-              key={order.orderId}
-            />
-          ))}
-        </main>
-      </CurrencyContext.Provider>
-    )
-  }
-}
-
 export default compose(
-  injectIntl,
   withRuntimeContext,
   withoutSSR,
   graphql(getOrderGroup.default, {
@@ -80,6 +87,7 @@ export default compose(
     ({ orderGroupQuery }: any) => orderGroupQuery.loading,
     renderComponent(Skeleton)
   ),
+  injectIntl,
   /** if query errored display an error alert */
   branch(
     ({ orderGroupQuery: { error } }: any) => {

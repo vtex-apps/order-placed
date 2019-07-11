@@ -1,6 +1,46 @@
 import get from 'lodash/get'
+import { defineMessages } from 'react-intl'
 
-export const getPaymentGroupFromOrder = (order: Order) => {
+const messages = defineMessages({
+  frequencyDay: {
+    id: 'store/items.attachments.subscription.frequency.day',
+    defaultMessage: '',
+  },
+  frequencyMonth: {
+    id: 'store/items.attachments.subscription.frequency.month',
+    defaultMessage: '',
+  },
+  frequencyWeek: {
+    id: 'store/items.attachments.subscription.frequency.week',
+    defaultMessage: '',
+  },
+  frequencyYear: {
+    id: 'store/items.attachments.subscription.frequency.year',
+    defaultMessage: '',
+  },
+  purchaseDay: {
+    id: 'store/items.attachments.subscription.purchaseday',
+    defaultMessage: '',
+  },
+  splitPickup: {
+    id: 'store/order.split.n.pickup.n.takeaway',
+    defaultMessage: '',
+  },
+  splitNoPickup: {
+    id: 'store/order.split.no.pickup.n.takeaway',
+    defaultMessage: '',
+  },
+  splitPickupNoTakeaway: {
+    id: 'store/order.split.n.pickup.no.takeaway',
+    defaultMessage: '',
+  },
+  splitNoPickupNoTakeaway: {
+    id: 'store/order.split.no.pickup.no.takeaway',
+    defaultMessage: '',
+  },
+})
+
+export function getPaymentGroupFromOrder(order: Order) {
   const base = 'paymentData.transactions[0].payments[0]'
 
   return {
@@ -24,13 +64,14 @@ export interface PaymentGroupInfo {
   value: number
 }
 
-export const isSubscription = (attachmentItem: Attachment) =>
-  attachmentItem.name.indexOf('vtex.subscription') === 0
+export function isSubscription(attachmentItem: Attachment) {
+  return attachmentItem.name.indexOf('vtex.subscription') === 0
+}
 
-export const getSubscriptionInfo = (
+export function getSubscriptionInfo(
   attachmentItem: Attachment,
   intl: ReactIntl.InjectedIntl
-) => {
+) {
   if (!isSubscription(attachmentItem)) {
     return {}
   }
@@ -51,7 +92,7 @@ export const getSubscriptionInfo = (
   const subsFrequencyString = numberPeriodRegex.test(subsFrequency)
     ? intl.formatMessage(
         {
-          id: `items.attachments.subscription.frequency.${
+          id: `store/items.attachments.subscription.frequency.${
             (numberPeriodRegex.exec(subsFrequency) || [])[2]
           }`,
         },
@@ -63,17 +104,16 @@ export const getSubscriptionInfo = (
         }
       )
     : intl.formatMessage({
-        id: `items.attachments.subscription.frequency.${
+        id: `store/items.attachments.subscription.frequency.${
           (wordlyPeriodRegex.exec(subsFrequency) || [])[1]
         }`,
       })
 
   const subsPurchaseDayString =
     subsPurchaseDay !== ''
-      ? intl.formatMessage(
-          { id: 'items.attachments.subscription.purchaseday' },
-          { purchaseday: subsPurchaseDay }
-        )
+      ? intl.formatMessage(messages.purchaseDay, {
+          purchaseday: subsPurchaseDay,
+        })
       : null
 
   return {
@@ -84,7 +124,7 @@ export const getSubscriptionInfo = (
   }
 }
 
-export const orderSplitMessage = ({
+export function orderSplitMessage({
   deliveries,
   pickups,
   takeaways,
@@ -94,29 +134,33 @@ export const orderSplitMessage = ({
   pickups: number
   takeaways: number
   intl: ReactIntl.InjectedIntl
-}) => {
+}) {
   const nPickups = pickups > 1
   const nTakeaways = takeaways > 1
 
   if (nPickups && nTakeaways) {
-    return intl.formatMessage(
-      { id: 'order.split.n.pickup.n.takeaway' },
-      { deliveries, pickups, takeaways }
-    )
+    return intl.formatMessage(messages.splitPickup, {
+      deliveries,
+      pickups,
+      takeaways,
+    })
   } else if (nTakeaways) {
-    return intl.formatMessage(
-      { id: 'order.split.no.pickup.n.takeaway' },
-      { deliveries, pickups, takeaways }
-    )
+    return intl.formatMessage(messages.splitNoPickup, {
+      deliveries,
+      pickups,
+      takeaways,
+    })
   } else if (nPickups) {
-    return intl.formatMessage(
-      { id: 'order.split.n.pickup.no.takeaway' },
-      { deliveries, pickups, takeaways }
-    )
+    return intl.formatMessage(messages.splitPickupNoTakeaway, {
+      deliveries,
+      pickups,
+      takeaways,
+    })
   }
 
-  return intl.formatMessage(
-    { id: 'order.split.no.pickup.no.takeaway' },
-    { deliveries, pickups, takeaways }
-  )
+  return intl.formatMessage(messages.splitNoPickupNoTakeaway, {
+    deliveries,
+    pickups,
+    takeaways,
+  })
 }

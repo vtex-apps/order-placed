@@ -1,33 +1,26 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { ButtonLink } from 'vtex.order-details'
 
 import PrinterIcon from '../../../Icons/PrinterIcon'
 import BarCode from './BarCode'
 import Embedded from './Embedded'
-interface Props {
-  url: string
-  encrypted: boolean
-  invoiceBarCodeNumber: string | null
-  paymentSystem: string
-}
 
-const BankInvoice: FunctionComponent<Props & InjectedIntlProps> = ({
+const BankInvoice: FunctionComponent<Props> = ({
   url,
   encrypted,
   invoiceBarCodeNumber,
   paymentSystem,
-  intl,
 }) => (
   <section
     data-testid="bank-invoice-info"
     className="pv4 w-80-ns w-90 center bb b--muted-5"
   >
     <header className="t-heading-4">
-      {intl.formatMessage(
-        { id: 'header.bankinvoice.header' },
-        { paymentSystemName: paymentSystem }
-      )}
+      <FormattedMessage
+        id="store/header.bankinvoice.header"
+        values={{ paymentSystemName: paymentSystem }}
+      />
     </header>
     <article className="flex justify-between items-center mt6">
       {invoiceBarCodeNumber && <BarCode barCodeNumber={invoiceBarCodeNumber} />}
@@ -37,10 +30,10 @@ const BankInvoice: FunctionComponent<Props & InjectedIntlProps> = ({
         variation="secondary"
         openNewWindow
       >
-        {intl.formatMessage(
-          { id: 'header.bankinvoice.print' },
-          { paymentSystemName: paymentSystem }
-        )}
+        <FormattedMessage
+          id="store/header.bankinvoice.print"
+          values={{ paymentSystemName: paymentSystem }}
+        />
       </ButtonLink>
     </article>
     {!encrypted && (
@@ -51,4 +44,11 @@ const BankInvoice: FunctionComponent<Props & InjectedIntlProps> = ({
   </section>
 )
 
-export default injectIntl(BankInvoice)
+interface Props {
+  url: string
+  encrypted: boolean
+  invoiceBarCodeNumber: string | null
+  paymentSystem: string
+}
+
+export default BankInvoice

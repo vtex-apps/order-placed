@@ -1,5 +1,5 @@
 import React, { Fragment, FunctionComponent, useState } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { InjectedIntlProps, injectIntl, FormattedMessage } from 'react-intl'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
 import { getSubscriptionInfo } from '../../utils'
@@ -18,7 +18,6 @@ const SubscriptionAttachment: FunctionComponent<
     if (e.key !== ' ' && e.key !== 'Enter') {
       return
     }
-
     setIsOpen(!isOpen)
   }
 
@@ -26,13 +25,11 @@ const SubscriptionAttachment: FunctionComponent<
     <article className="bg-muted-5 pv3 ph5 br2 mv4" key={attachmentItem.name}>
       <div className="flex justify-between">
         <p className="c-on-base">
-          {intl.formatMessage({
-            id: 'items.attachments.subscription',
-          })}
+          <FormattedMessage id="store/items.attachments.subscription" />
         </p>
         <div className="flex items-center">
           <p className="mr5">
-            {intl.formatMessage({ id: 'order.totals.pickup.free' })}
+            <FormattedMessage id="store/order.totals.pickup.free" />
           </p>
           <div
             role="button"

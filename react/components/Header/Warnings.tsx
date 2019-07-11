@@ -1,24 +1,16 @@
 import React, { Fragment, FunctionComponent } from 'react'
-import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
 import { ButtonLink } from 'vtex.order-details'
 
 import { PaymentGroupInfo } from '../../utils'
 import Price from '../Payment/FormattedPrice'
 
-interface Props {
-  numOfOrders: number
-  hasDelivery: boolean
-  hasPickUp: boolean
-  bankInvoices: PaymentGroupInfo[]
-}
-
-const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
+const Warnings: FunctionComponent<Props> = ({
   numOfOrders,
   hasDelivery,
   hasPickUp,
   bankInvoices,
-  intl,
 }) => {
   const orderWasSplit = numOfOrders > 1
   const hasBankInvoice = bankInvoices.length > 0
@@ -31,7 +23,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
         {!hasBankInvoice && (
           <li className={`${listItem} ${bottomBorder}`}>
             <p className="pb4">
-              {intl.formatMessage({ id: 'warnings.payment.approval' })}
+              <FormattedMessage id="store/warnings.payment.approval" />
             </p>
           </li>
         )}
@@ -39,7 +31,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
           <Fragment>
             <li className={`${listItem} ${bottomBorder}`}>
               <p className="pv4">
-                {intl.formatMessage({ id: 'warnings.delivery.time' })}
+                <FormattedMessage id="store/warnings.delivery.time" />
               </p>
             </li>
             <li
@@ -48,7 +40,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
               }`}
             >
               <p className="pv4">
-                {intl.formatMessage({ id: 'warnings.delivery.tracking' })}
+                <FormattedMessage id="store/warnings.delivery.tracking" />
               </p>
             </li>
           </Fragment>
@@ -56,19 +48,19 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
         {hasPickUp && (
           <li className={`${listItem} ${orderWasSplit ? bottomBorder : ''}`}>
             <p className="pv4">
-              {intl.formatMessage({ id: 'warnings.pickup.time' })}
+              <FormattedMessage id="store/warnings.pickup.time" />
             </p>
           </li>
         )}
         {orderWasSplit && (
           <li className={`${listItem} ${hasBankInvoice ? bottomBorder : ''}`}>
             <p className="pv4">
-              {intl.formatMessage(
-                { id: 'warnings.order.split' },
-                {
+              <FormattedMessage
+                id="store/warnings.order.split"
+                values={{
                   numOrders: numOfOrders,
-                }
-              )}
+                }}
+              />
             </p>
           </li>
         )}
@@ -76,12 +68,12 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
           <Fragment>
             <li className={`${listItem} ${bottomBorder}`}>
               <p className="pv4">
-                {intl.formatMessage(
-                  {
-                    id: 'warnings.payment.bankInvoice.approval',
-                  },
-                  { paymentSystemName: bankInvoices[0].paymentSystemName }
-                )}
+                <FormattedMessage
+                  id="store/warnings.payment.bankInvoice.approval"
+                  values={{
+                    paymentSystemName: bankInvoices[0].paymentSystemName,
+                  }}
+                />
               </p>
             </li>
             <li className={listItem}>
@@ -89,7 +81,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
                 <p>
                   {bankInvoices[0].dueDate ? (
                     <FormattedMessage
-                      id={'warnings.payment.bankInvoice.value.duedate'}
+                      id="store/warnings.payment.bankInvoice.value.duedate"
                       values={{
                         paymentDueDate: (
                           <strong>
@@ -108,7 +100,7 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
                     />
                   ) : (
                     <FormattedMessage
-                      id={'warnings.payment.bankInvoice.value'}
+                      id="store/warnings.payment.bankInvoice.value"
                       values={{
                         paymentValue: (
                           <strong>
@@ -125,10 +117,12 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
                     variation="primary"
                     openNewWindow
                   >
-                    {intl.formatMessage(
-                      { id: 'payments.bankinvoice.print' },
-                      { paymentSystemName: bankInvoices[0].paymentSystemName }
-                    )}
+                    <FormattedMessage
+                      id="store/payments.bankinvoice.print"
+                      values={{
+                        paymentSystemName: bankInvoices[0].paymentSystemName,
+                      }}
+                    />
                   </ButtonLink>
                 )}
               </div>
@@ -140,4 +134,11 @@ const Warnings: FunctionComponent<Props & InjectedIntlProps> = ({
   )
 }
 
-export default injectIntl(Warnings)
+interface Props {
+  numOfOrders: number
+  hasDelivery: boolean
+  hasPickUp: boolean
+  bankInvoices: PaymentGroupInfo[]
+}
+
+export default Warnings
