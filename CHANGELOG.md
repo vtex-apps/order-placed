@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Intl messages to meet the requirements of the new **messages** builder api.
+
 ### Fixed
 
 - Check for the existence of a payment before retrieving values on `getPaymentGroupFromOrder`.
