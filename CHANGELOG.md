@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.3] - 2019-07-12
+
 ### Changed
 
 - Intl messages to meet the requirements of the new **messages** builder api.
