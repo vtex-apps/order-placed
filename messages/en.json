@@ -61,10 +61,10 @@
   "store/warnings.payment.bankInvoice.value.duedate": "Please make a payment of {paymentValue} up to {paymentDueDate} according to the data below.",
   "store/warnings.pickup.time": "The store pickup period starts from the moment your payment is confirmed.",
   "store/warnings.subscription": "Besides items purchased, your order includes one or more subscriptions.",
-  "order.error.invalid.title": "Page not found",
-  "order.error.invalid.message": "Seems like the page you were looking for doesn't exist. We suggest that you return to the home page.",
-  "order.error.not-logged-in.title": "You don't have permission",
-  "order.error.not-logged-in.message": "Seems like you don't have permission to access this page. Try to login and access again.",
-  "go-to-login": "Go to login page",
-  "go-to-home": "Go to home page"
+  "store/order.error.invalid.title": "Page not found",
+  "store/order.error.invalid.message": "Seems like the page you were looking for doesn't exist. We suggest that you return to the home page.",
+  "store/order.error.not-logged-in.title": "You don't have permission",
+  "store/order.error.not-logged-in.message": "Seems like you don't have permission to access this page. Try to login and access again.",
+  "store/go-to-login": "Go to login page",
+  "store/go-to-home": "Go to home page"
 }

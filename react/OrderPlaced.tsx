@@ -1,6 +1,11 @@
 import React, { FunctionComponent } from 'react'
 import { compose, graphql } from 'react-apollo'
-import { injectIntl, InjectedIntlProps, defineMessages } from 'react-intl'
+import {
+  injectIntl,
+  InjectedIntlProps,
+  defineMessages,
+  FormattedMessage,
+} from 'react-intl'
 import { branch, renderComponent } from 'recompose'
 
 import { Helmet, withRuntimeContext } from 'vtex.render-runtime'
@@ -87,7 +92,6 @@ export default compose(
     ({ orderGroupQuery }: any) => orderGroupQuery.loading,
     renderComponent(Skeleton)
   ),
-  injectIntl,
   /** if query errored display an error alert */
   branch(
     ({ orderGroupQuery: { error } }: any) => {
@@ -98,14 +102,16 @@ export default compose(
         (error.message && error.message.includes('403'))
       )
     },
-    renderComponent(({ intl }: any) => (
+    renderComponent(() => (
       <ErrorMessage
         icon={<Forbidden />}
-        errorId="order.error.not-logged-in.title"
-        messageId="order.error.not-logged-in.message"
+        errorId="store/order.error.not-logged-in.title"
+        messageId="store/order.error.not-logged-in.message"
       >
         <a href={`/login?returnUrl=${window.location.href}`}>
-          <Button>{intl.formatMessage({ id: 'go-to-login' })}</Button>
+          <Button>
+            <FormattedMessage id="store/go-to-login" />
+          </Button>
         </a>
       </ErrorMessage>
     ))
@@ -114,16 +120,19 @@ export default compose(
   branch(
     ({ orderGroupQuery: { orderGroup } }: any) =>
       orderGroup == null || orderGroup.orders == null,
-    renderComponent(({ intl }: any) => (
+    renderComponent(() => (
       <ErrorMessage
         icon={<NotFound />}
-        errorId="order.error.invalid.title"
-        messageId="order.error.invalid.message"
+        errorId="store/order.error.invalid.title"
+        messageId="store/order.error.invalid.message"
       >
         <a href="/">
-          <Button>{intl.formatMessage({ id: 'go-to-home' })}</Button>
+          <Button>
+            <FormattedMessage id="store/go-to-home" />
+          </Button>
         </a>
       </ErrorMessage>
     ))
-  )
+  ),
+  injectIntl
 )(OrderPlaced)

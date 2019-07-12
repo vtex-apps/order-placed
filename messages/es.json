@@ -61,10 +61,10 @@
   "store/warnings.payment.bankInvoice.value.duedate": "Realice un pago de {paymentValue} hasta {paymentDueDate} de acuerdo con los datos a continuación.",
   "store/warnings.pickup.time": "El período de recolección en la tienda comienza desde el momento en que se confirma su pago.",
   "store/warnings.subscription": "Además de los artículos comprados, su pedido incluye una o más suscripciones.",
-  "order.error.invalid.title": "Página no encontrada",
-  "order.error.invalid.message": "Parece que esta página ya no existe. Sugerimos que vuelva a la página de inicio.",
-  "order.error.not-logged-in.title": "Usted no tiene permiso",
-  "order.error.not-logged-in.message": "No tiene permiso para acceder a esta página. Ingrese su cuenta e inténtelo de nuevo.",
-  "go-to-login": "Hacer login",
-  "go-to-home": "Ir a la página principal"
+  "store/order.error.invalid.title": "Página no encontrada",
+  "store/order.error.invalid.message": "Parece que esta página ya no existe. Sugerimos que vuelva a la página de inicio.",
+  "store/order.error.not-logged-in.title": "Usted no tiene permiso",
+  "store/order.error.not-logged-in.message": "No tiene permiso para acceder a esta página. Ingrese su cuenta e inténtelo de nuevo.",
+  "store/go-to-login": "Hacer login",
+  "store/go-to-home": "Ir a la página principal"
 }
