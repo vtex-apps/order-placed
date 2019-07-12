@@ -22,7 +22,7 @@ describe('Store Pickup', () => {
     const pickup = order.pickUpParcels
     const { queryByText } = render(<StorePickUp pickUpPackages={pickup} />)
 
-    expect(queryByText(/ - n˚ \d of \d/)).toBeDefined()
+    expect(queryByText(/- n˚ \d of \d/)).toBeTruthy()
   })
 
   it('should not pickup counter when there is only one store pickup', () => {
