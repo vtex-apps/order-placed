@@ -5,9 +5,7 @@
   "title": "Order Placed",
   "description": "",
   "mustUpdateAt": "2019-10-15",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },

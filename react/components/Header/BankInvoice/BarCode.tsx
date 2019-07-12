@@ -1,16 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import Clipboard from 'react-clipboard.js'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
-interface Props {
-  barCodeNumber: string
-}
-
-const BarCode: FunctionComponent<Props & InjectedIntlProps> = ({
-  barCodeNumber,
-  intl,
-}) => (
+const BarCode: FunctionComponent<Props> = ({ barCodeNumber }) => (
   <div
     data-testid="bank-invoice-barcode"
     className="flex b--muted-4 ba br3 bw1"
@@ -24,10 +17,14 @@ const BarCode: FunctionComponent<Props & InjectedIntlProps> = ({
       className="b--muted-4 bl bw1 flex items-center"
     >
       <Button variation="tertiary">
-        {intl.formatMessage({ id: 'header.bankinvoice.copy' })}
+        <FormattedMessage id="store/header.bankinvoice.copy" />
       </Button>
     </Clipboard>
   </div>
 )
 
-export default injectIntl(BarCode)
+interface Props {
+  barCodeNumber: string
+}
+
+export default BarCode

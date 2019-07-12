@@ -1,19 +1,12 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 
 import Price from '../Payment/FormattedPrice'
 
-interface Props {
-  items: OrderItem[]
-  totals: OrderItemTotal[]
-  orderValue: number
-}
-
-const ShippingTotals: FunctionComponent<Props & InjectedIntlProps> = ({
+const ShippingTotals: FunctionComponent<Props> = ({
   items,
   totals,
   orderValue,
-  intl,
 }) => {
   const numItems = items.reduce((acc, item) => acc + item.quantity, 0)
   const totalsLine = 'flex justify-between items-center c-muted-1'
@@ -23,7 +16,10 @@ const ShippingTotals: FunctionComponent<Props & InjectedIntlProps> = ({
       <div className="mv8 w-100 w-60-l">
         <div className={totalsLine}>
           <p className="mv3">
-            {intl.formatMessage({ id: 'order.totals.subtotal' }, { numItems })}
+            <FormattedMessage
+              id="store/order.totals.subtotal"
+              values={{ numItems }}
+            />
           </p>
           <div className="c-on-base">
             <Price value={totals[0].value} />
@@ -31,7 +27,7 @@ const ShippingTotals: FunctionComponent<Props & InjectedIntlProps> = ({
         </div>
         <div className={totalsLine}>
           <p className="mv3">
-            {intl.formatMessage({ id: 'order.totals.delivery' })}
+            <FormattedMessage id="store/order.totals.delivery" />
           </p>
           <div className="c-on-base">
             <Price value={totals[2].value} />
@@ -39,7 +35,9 @@ const ShippingTotals: FunctionComponent<Props & InjectedIntlProps> = ({
         </div>
         <div className="flex justify-between items-center c-on-base">
           <p className="t-heading-2-ns t-heading-3 mv4">
-            <strong>{intl.formatMessage({ id: 'order.totals.total' })}</strong>
+            <strong>
+              <FormattedMessage id="store/order.totals.total" />
+            </strong>
           </p>
           <strong className="t-heading-2-ns t-heading-3 mv4">
             <Price value={orderValue} />
@@ -50,4 +48,10 @@ const ShippingTotals: FunctionComponent<Props & InjectedIntlProps> = ({
   )
 }
 
-export default injectIntl(ShippingTotals)
+interface Props {
+  items: OrderItem[]
+  totals: OrderItemTotal[]
+  orderValue: number
+}
+
+export default ShippingTotals

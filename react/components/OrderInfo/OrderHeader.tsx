@@ -1,42 +1,33 @@
 import React, { FunctionComponent } from 'react'
-import {
-  FormattedMessage,
-  FormattedTime,
-  InjectedIntlProps,
-  injectIntl,
-} from 'react-intl'
+import { FormattedMessage, FormattedTime } from 'react-intl'
 import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
 import { RenderContextProps, withRuntimeContext } from 'vtex.render-runtime'
 
 import OrderOptions from './OrderOptions'
 
-interface Props {
-  orderInfo: Order
-  splitOrder?: boolean
-  takeaway?: boolean
-  runtime?: { account: string }
-}
-
-const OrderHeader: FunctionComponent<
-  Props & InjectedIntlProps & RenderContextProps
-> = ({ orderInfo, splitOrder, takeaway, intl, runtime }) => {
+const OrderHeader: FunctionComponent<Props & RenderContextProps> = ({
+  orderInfo,
+  splitOrder,
+  takeaway,
+  runtime,
+}) => {
   const storeAccount = runtime.account
   const orderSeller = orderInfo.sellers[0].name
 
   return (
     <header className="flex justify-between items-center mt7">
       <p className="t-heading-3 lh-copy">
-        {intl.formatMessage(
-          { id: 'order.header.number' },
-          {
+        <FormattedMessage
+          id="store/order.header.number"
+          values={{
             orderId: orderInfo.orderId,
-          }
-        )}
+          }}
+        />
         <br />
         <small className="c-muted-2 t-body">
           <FormattedMessage
-            id={'order.header.date'}
+            id="store/order.header.date"
             values={{
               orderDate: (
                 <FormattedDate date={orderInfo.creationDate} style="short" />
@@ -49,7 +40,7 @@ const OrderHeader: FunctionComponent<
         {splitOrder && storeAccount !== orderSeller && (
           <small className="c-muted-2 t-body">
             <FormattedMessage
-              id={'order.header.seller'}
+              id="store/order.header.seller"
               values={{
                 seller: <span className="c-action-primary">{orderSeller}</span>,
               }}
@@ -59,7 +50,7 @@ const OrderHeader: FunctionComponent<
         {takeaway && (
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a className="c-action-primary t-small" href="#">
-            {intl.formatMessage({ id: 'order.header.receipt' })}
+            <FormattedMessage id="store/order.header.receipt" />
           </a>
         )}
       </p>
@@ -73,7 +64,13 @@ const OrderHeader: FunctionComponent<
   )
 }
 
-export default compose<Props & InjectedIntlProps & RenderContextProps, Props>(
-  withRuntimeContext,
-  injectIntl
-)(OrderHeader)
+interface Props {
+  orderInfo: Order
+  splitOrder?: boolean
+  takeaway?: boolean
+  runtime?: { account: string }
+}
+
+export default compose<Props & RenderContextProps, Props>(withRuntimeContext)(
+  OrderHeader
+)

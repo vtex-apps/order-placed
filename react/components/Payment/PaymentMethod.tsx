@@ -1,26 +1,41 @@
 import React, { FunctionComponent, useState } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import {
+  InjectedIntlProps,
+  injectIntl,
+  defineMessages,
+  FormattedMessage,
+} from 'react-intl'
 import { ButtonLink } from 'vtex.order-details'
 
 import InfoIcon from '../../Icons/Info'
 import AdditionalInfo from './AdditionalInfo'
 import Price from './FormattedPrice'
 
-interface Props {
-  payment: Payment
-  transactionId: string
-}
+const messages = defineMessages({
+  creditCard: {
+    id: 'store/payments.creditcard',
+    defaultMessage: '',
+  },
+  debitCard: {
+    id: 'store/payments.debitcard',
+    defaultMessage: '',
+  },
+  installments: {
+    id: 'store/payments.installments',
+    defaultMessage: '',
+  },
+})
 
-const paymentGroupSwitch = (payment: Payment, intl: ReactIntl.InjectedIntl) => {
+function paymentGroupSwitch(payment: Payment, intl: ReactIntl.InjectedIntl) {
   switch (payment.group) {
     case 'creditCard':
-      return intl.formatMessage({ id: 'payments.creditcard' })
+      return intl.formatMessage(messages.creditCard)
     case 'bankInvoice':
       return payment.paymentSystemName
     case 'promissory':
       return payment.paymentSystemName
     case 'debitCard':
-      return intl.formatMessage({ id: 'payments.debitcard' })
+      return intl.formatMessage(messages.debitCard)
     default:
       return payment.paymentSystemName
   }
@@ -41,23 +56,20 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
         <p className="c-on-base">{paymentGroupSwitch(payment, intl)}</p>
         {hasLastDigits && (
           <p className="c-muted-1 mb3">
-            {intl.formatMessage(
-              { id: 'payments.creditcard.lastDigits' },
-              {
+            <FormattedMessage
+              id="store/payments.creditcard.lastDigits"
+              values={{
                 lastDigits: payment.lastDigits,
-              }
-            )}
+              }}
+            />
           </p>
         )}
         <div className="flex items-center">
           <p className="c-muted-1 mv0">
             <Price value={payment.value} />
-            {` ${intl.formatMessage(
-              { id: 'payments.installments' },
-              {
-                installments: payment.installments,
-              }
-            )}`}
+            {` ${intl.formatMessage(messages.installments, {
+              installments: payment.installments,
+            })}`}
           </p>
           <div
             className="ml4"
@@ -77,16 +89,21 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
         {isBankInvoice && payment.url && (
           <div className="mt5">
             <ButtonLink to={payment.url} variation="primary" openNewWindow>
-              {intl.formatMessage(
-                { id: 'payments.bankinvoice.print' },
-                { paymentSystemName: payment.paymentSystemName }
-              )}
+              <FormattedMessage
+                id="store/payments.bankinvoice.print"
+                values={{ paymentSystemName: payment.paymentSystemName }}
+              />
             </ButtonLink>
           </div>
         )}
       </div>
     </article>
   )
+}
+
+interface Props {
+  payment: Payment
+  transactionId: string
 }
 
 export default injectIntl(PaymentMethod)

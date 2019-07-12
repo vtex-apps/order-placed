@@ -1,5 +1,5 @@
 import React, { Fragment, FunctionComponent, useState } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
@@ -7,15 +7,9 @@ import { isSubscription } from '../../utils'
 import Price from '../Payment/FormattedPrice'
 import Subscription from './Subscription'
 
-interface Props {
-  attachmentsInfo: Attachment[]
-  bundleInfo: Bundle[]
-}
-
-const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
+const ProductAttachment: FunctionComponent<Props> = ({
   bundleInfo,
   attachmentsInfo,
-  intl,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -98,7 +92,7 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
                 <p className="c-on-base">{attachmentItem.name}</p>
                 <div className="flex items-center">
                   <p className="mr5">
-                    {intl.formatMessage({ id: 'order.totals.pickup.free' })}
+                    <FormattedMessage id="store/order.totals.pickup.free" />
                   </p>
                   {attachmentItem.content && (
                     <div
@@ -133,4 +127,9 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
   )
 }
 
-export default injectIntl(ProductAttachment)
+interface Props {
+  attachmentsInfo: Attachment[]
+  bundleInfo: Bundle[]
+}
+
+export default ProductAttachment

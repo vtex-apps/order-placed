@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { ButtonWithIcon, IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
-interface Props {
-  url: string
-}
-
-interface State {
-  open: boolean
-}
-
-class Embedded extends Component<Props & InjectedIntlProps> {
+class Embedded extends Component<Props> {
   public state = { open: false }
 
   public handleClick = () => {
@@ -19,7 +11,7 @@ class Embedded extends Component<Props & InjectedIntlProps> {
 
   public render() {
     const open = this.state.open
-    const { url, intl } = this.props
+    const { url } = this.props
 
     return (
       <div className="mv9 flex flex-column b--muted-4 ba br3 bw1">
@@ -37,7 +29,7 @@ class Embedded extends Component<Props & InjectedIntlProps> {
             variation="tertiary"
             onClick={this.handleClick}
           >
-            {intl.formatMessage({ id: 'header.bankinvoice.embeded.collapse' })}
+            <FormattedMessage id="store/header.bankinvoice.embeded.collapse" />
           </ButtonWithIcon>
         ) : (
           <ButtonWithIcon
@@ -45,7 +37,7 @@ class Embedded extends Component<Props & InjectedIntlProps> {
             variation="tertiary"
             onClick={this.handleClick}
           >
-            {intl.formatMessage({ id: 'header.bankinvoice.embeded.expand' })}
+            <FormattedMessage id="store/header.bankinvoice.embeded.expand" />
           </ButtonWithIcon>
         )}
       </div>
@@ -53,4 +45,12 @@ class Embedded extends Component<Props & InjectedIntlProps> {
   }
 }
 
-export default injectIntl(Embedded)
+interface Props {
+  url: string
+}
+
+interface State {
+  open: boolean
+}
+
+export default Embedded
