@@ -25,9 +25,25 @@ import Forbidden from './Icons/Forbidden'
 
 export const CurrencyContext = React.createContext('BRL')
 
-const message = defineMessages({
+const messages = defineMessages({
   title: {
     id: 'store/page.title',
+    defaultMessage: '',
+  },
+  invalidTitle: {
+    id: 'store/order.error.invalid.title',
+    defaultMessage: '',
+  },
+  invalidMessage: {
+    id: 'store/order.error.invalid.message',
+    defaultMessage: '',
+  },
+  notLoggedTitle: {
+    id: 'store/order.error.not-logged-in.title',
+    defaultMessage: '',
+  },
+  notLoggedMessage: {
+    id: 'store/order.error.not-logged-in.message',
     defaultMessage: '',
   },
 })
@@ -44,7 +60,7 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
       value={orderGroup.orders[0].storePreferencesData.currencyCode}
     >
       <Helmet>
-        <title>{intl.formatMessage(message.title)}</title>
+        <title>{intl.formatMessage(messages.title)}</title>
       </Helmet>
       <AnalyticsWrapper eventList={orderGroup.analyticsData} />
       <Header
@@ -105,8 +121,8 @@ export default compose(
     renderComponent(() => (
       <ErrorMessage
         icon={<Forbidden />}
-        errorId="store/order.error.not-logged-in.title"
-        messageId="store/order.error.not-logged-in.message"
+        errorId={messages.notLoggedTitle.id}
+        messageId={messages.notLoggedMessage.id}
       >
         <a href={`/login?returnUrl=${window.location.href}`}>
           <Button>
@@ -123,8 +139,8 @@ export default compose(
     renderComponent(() => (
       <ErrorMessage
         icon={<NotFound />}
-        errorId="store/order.error.invalid.title"
-        messageId="store/order.error.invalid.message"
+        errorId={messages.invalidTitle.id}
+        messageId={messages.invalidMessage.id}
       >
         <a href="/">
           <Button>
