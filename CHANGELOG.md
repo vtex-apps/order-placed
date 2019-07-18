@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Removed `context.json` from wrong location.
+
 ## [1.2.5] - 2019-07-17
 
 ### Fixed
 
-- Add a `context.json`  as a fallback for a builder-hub bug.
+- Add a `context.json` as a fallback for a builder-hub bug.
 
 ## [1.2.4] - 2019-07-17
 
