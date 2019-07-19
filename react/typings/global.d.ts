@@ -134,6 +134,7 @@ interface Payment {
   bankIssuedInvoiceIdentificationNumberFormatted: string | null
   bankIssuedInvoiceBarCodeNumber: string | null
   bankIssuedInvoiceBarCodePNG: string | null
+  connectorResponses: any | null
 }
 
 interface Address {
@@ -168,4 +169,9 @@ interface Parcel {
 interface IconProps {
   color?: string
   size?: number
+}
+
+interface connectorResponse {
+  key: string,
+  value: string
 }

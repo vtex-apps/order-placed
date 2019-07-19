@@ -1,4 +1,8 @@
 import get from 'lodash/get'
+import flow from 'lodash/flow'
+import toPairs from 'lodash/toPairs'
+import filter from 'lodash/filter'
+import map from 'lodash/map'
 import { defineMessages } from 'react-intl'
 
 const messages = defineMessages({
@@ -39,6 +43,21 @@ const messages = defineMessages({
     defaultMessage: '',
   },
 })
+
+export const transformConnectorResponsesToArray = flow([
+  toPairs,
+  hasValueAndIsNotPrivate,
+  toKeyValue,
+])
+
+function hasValueAndIsNotPrivate(connectorResponses: any) {
+  return filter(connectorResponses, c => c[0] && c[1] && c[0].charAt(0) !== '_')
+}
+
+function toKeyValue(connectorResponses: any) {
+  return map(connectorResponses, c => ({ key: c[0], value: c[1] }))
+}
+
 
 export function getPaymentGroupFromOrder(order: Order) {
   const base = 'paymentData.transactions[0].payments[0]'

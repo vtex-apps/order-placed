@@ -66,5 +66,7 @@
   "store/order.error.not-logged-in.title": "Você não tem permissão",
   "store/order.error.not-logged-in.message": "Você não tem permissão para acessar essa página. Entre com sua conta e tente novamente.",
   "store/go-to-login": "Fazer login",
-  "store/go-to-home": "Ir para a página principal"
+  "store/go-to-home": "Ir para a página principal",
+  "store/paymentData.connectorResponse.mb.entity": "Entidade",
+  "store/paymentData.connectorResponse.mb.reference": "Referência"
 }

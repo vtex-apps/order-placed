@@ -66,5 +66,7 @@
   "store/order.error.not-logged-in.title": "You don't have permission",
   "store/order.error.not-logged-in.message": "Seems like you don't have permission to access this page. Try to login and access again.",
   "store/go-to-login": "Go to login page",
-  "store/go-to-home": "Go to home page"
+  "store/go-to-home": "Go to home page",
+  "store/paymentData.connectorResponse.mb.entity": "Entity",
+  "store/paymentData.connectorResponse.mb.reference": "Reference"
 }
