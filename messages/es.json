@@ -66,5 +66,7 @@
   "store/order.error.not-logged-in.title": "Usted no tiene permiso",
   "store/order.error.not-logged-in.message": "No tiene permiso para acceder a esta página. Ingrese su cuenta e inténtelo de nuevo.",
   "store/go-to-login": "Hacer login",
-  "store/go-to-home": "Ir a la página principal"
+  "store/go-to-home": "Ir a la página principal",
+  "store/paymentData.connectorResponse.mb.entity": "Entidad",
+  "store/paymentData.connectorResponse.mb.reference": "Referencia"
 }

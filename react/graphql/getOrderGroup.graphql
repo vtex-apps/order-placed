@@ -328,6 +328,7 @@ query getOrderGroup($orderGroup: String) {
             bankIssuedInvoiceBarCodePNG
             bankIssuedInvoiceBarCodeNumber
             bankIssuedInvoiceIdentificationNumberFormatted
+            connectorResponses
           }
         }
       }
