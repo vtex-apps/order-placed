@@ -6,10 +6,10 @@ const ConnectorResponseInfo: FunctionComponent<Props & InjectedIntlProps> = ({ l
     return (
         <div className="more-info__data__item f7">
             <span className="more-info__data__item__label mr2 fw5">
-            {intl.formatMessage({
-                id: `store/paymentData.connectorResponse.${label}`,
-                defaultMessage: label,
-            })}:
+                {intl.formatMessage({
+                    id: `store/paymentData.connectorResponse.${label}`,
+                    defaultMessage: label,
+                })}:
             </span>
             <span className="more-info__data__item__value">{value}</span>
         </div>
