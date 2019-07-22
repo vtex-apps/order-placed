@@ -10,7 +10,7 @@ import { ButtonLink } from 'vtex.order-details'
 import InfoIcon from '../../Icons/Info'
 import AdditionalInfo from './AdditionalInfo'
 import Price from './FormattedPrice'
-import ConnectorResponseInfo from './ConnectorResponseInfo';
+import ConnectorResponseInfo from './ConnectorResponseInfo'
 
 import { transformConnectorResponsesToArray } from '../../utils'
 
@@ -52,12 +52,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
   const [isOpen, setIsOpen] = useState(false)
   const hasLastDigits = !!payment.lastDigits
   const isBankInvoice = payment.group === 'bankInvoice'
-
-  const connectorResponses: connectorResponse[] = transformConnectorResponsesToArray(payment.connectorResponses)
-
-  console.log(connectorResponses)
-  console.log(payment.connectorResponses)
-  const isMultiBanco = payment.group === 'multibanco' 
+  const isMultiBanco = payment.group === 'multibanco'
 
   return (
     <article className="flex justify-between">
@@ -107,9 +102,15 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
         )}
         {isMultiBanco && payment.connectorResponses && (
           <div className="mt5">
-            {connectorResponses.map(({ key, value }) => (
-              <ConnectorResponseInfo key={`${key}-${value}`} label={key} value={value}/>
-            ))}
+            {transformConnectorResponsesToArray(payment.connectorResponses).map(
+              ({ key, value }) => (
+                <ConnectorResponseInfo
+                  key={`${key}-${value}`}
+                  label={key}
+                  value={value}
+                />
+              )
+            )}
           </div>
         )}
       </div>
