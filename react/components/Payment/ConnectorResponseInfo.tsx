@@ -4,22 +4,20 @@ import { defineMessages, FormattedMessage } from 'react-intl'
 defineMessages({
   entity: {
     id: 'store/paymentData.connectorResponse.mb.entity',
-    defaultMessage: ''
+    defaultMessage: '',
   },
   reference: {
     id: 'store/paymentData.connectorResponse.mb.reference',
-    defaultMessage: ''
-  }
+    defaultMessage: '',
+  },
 })
 
-const ConnectorResponseInfo: FunctionComponent<Props> = ({
-  label,
-  value
-}) => {
+const ConnectorResponseInfo: FunctionComponent<Props> = ({ label, value }) => {
   return (
     <div className="f7">
       <span className="mr2 fw5">
-        <FormattedMessage id={`store/paymentData.connectorResponse.${label}`}/>:
+        <FormattedMessage id={`store/paymentData.connectorResponse.${label}`} />
+        :
       </span>
       <span>{value}</span>
     </div>
