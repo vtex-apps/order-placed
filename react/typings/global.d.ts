@@ -134,7 +134,7 @@ interface Payment {
   bankIssuedInvoiceIdentificationNumberFormatted: string | null
   bankIssuedInvoiceBarCodeNumber: string | null
   bankIssuedInvoiceBarCodePNG: string | null
-  connectorResponses: any | null
+  connectorResponses: ConnectorResponses | null
 }
 
 interface Address {
@@ -171,7 +171,11 @@ interface IconProps {
   size?: number
 }
 
-interface connectorResponse {
-  key: string,
+interface ConnectorResponses {
+  [key: string]: any
+}
+
+interface ConnectorResponse {
+  key: string
   value: string
 }

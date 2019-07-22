@@ -44,20 +44,21 @@ const messages = defineMessages({
   },
 })
 
-export const transformConnectorResponsesToArray = flow([
-  toPairs,
-  hasValueAndIsNotPrivate,
-  toKeyValue,
-])
-
-function hasValueAndIsNotPrivate(connectorResponses: any) {
+function hasValueAndIsNotPrivate(connectorResponses: ConnectorResponses) {
   return filter(connectorResponses, c => c[0] && c[1] && c[0].charAt(0) !== '_')
 }
 
-function toKeyValue(connectorResponses: any) {
+function toKeyValue(connectorResponses: ConnectorResponses) {
   return map(connectorResponses, c => ({ key: c[0], value: c[1] }))
 }
 
+export function transformConnectorResponsesToArray(
+  connectorResponses: ConnectorResponses
+): ConnectorResponse[] {
+  return flow([toPairs, hasValueAndIsNotPrivate, toKeyValue])(
+    connectorResponses
+  )
+}
 
 export function getPaymentGroupFromOrder(order: Order) {
   const base = 'paymentData.transactions[0].payments[0]'

@@ -210,6 +210,7 @@ export const orderGroupQuery = {
                   bankIssuedInvoiceBarCodePNG: null,
                   bankIssuedInvoiceBarCodeNumber: null,
                   bankIssuedInvoiceIdentificationNumberFormatted: null,
+                  connectorResponses: null,
                 },
                 {
                   id: '98116FECFD674BD4878B854FD7158DF0',
@@ -224,6 +225,7 @@ export const orderGroupQuery = {
                   bankIssuedInvoiceBarCodePNG: null,
                   bankIssuedInvoiceBarCodeNumber: null,
                   bankIssuedInvoiceIdentificationNumberFormatted: null,
+                  connectorResponses: null,
                 },
               ],
             },

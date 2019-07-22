@@ -140,6 +140,7 @@ export const orderGroupQuery = {
                     '23793773500000001990001250000000000112345670',
                   bankIssuedInvoiceIdentificationNumberFormatted:
                     '23790.00124 50000.000005 01123.456707 3 77350000000199',
+                  connectorResponses: null,
                 },
               ],
             },

@@ -142,6 +142,7 @@ export const orderGroupQuery = {
                   bankIssuedInvoiceBarCodePNG: null,
                   bankIssuedInvoiceBarCodeNumber: null,
                   bankIssuedInvoiceIdentificationNumberFormatted: null,
+                  connectorResponses: null,
                 },
               ],
             },
