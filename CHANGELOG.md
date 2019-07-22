@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- Add **connector response** information to `PaymentMethod` component for **Multibanco** payments.
+- Add a generic `context.json` file to `messages` folder.
+- Add **en**, **es** and **pt** translations for **Multibanco** labels.
+
 ## [1.2.6] - 2019-07-18
 
 ### Fixed
