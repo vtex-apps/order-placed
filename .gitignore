@@ -3,3 +3,6 @@ node_modules/
 !Icon
 /.eslintrc
 /react/*.js.map
+.DS_Store
+react/.DS_Store
+
