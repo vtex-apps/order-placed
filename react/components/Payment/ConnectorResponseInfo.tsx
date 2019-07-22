@@ -1,30 +1,29 @@
-import PropTypes from 'prop-types'
 import React, { FunctionComponent } from 'react'
-import { injectIntl, InjectedIntlProps, intlShape } from 'react-intl'
+import { defineMessages, FormattedMessage } from 'react-intl'
 
-const ConnectorResponseInfo: FunctionComponent<Props & InjectedIntlProps> = ({
+defineMessages({
+  entity: {
+    id: 'store/paymentData.connectorResponse.mb.entity',
+    defaultMessage: ''
+  },
+  reference: {
+    id: 'store/paymentData.connectorResponse.mb.reference',
+    defaultMessage: ''
+  }
+})
+
+const ConnectorResponseInfo: FunctionComponent<Props> = ({
   label,
-  value,
-  intl,
+  value
 }) => {
   return (
-    <div className="more-info__data__item f7">
-      <span className="more-info__data__item__label mr2 fw5">
-        {intl.formatMessage({
-          id: `store/paymentData.connectorResponse.${label}`,
-          defaultMessage: label,
-        })}
-        :
+    <div className="f7">
+      <span className="mr2 fw5">
+        <FormattedMessage id={`store/paymentData.connectorResponse.${label}`}/>:
       </span>
-      <span className="more-info__data__item__value">{value}</span>
+      <span>{value}</span>
     </div>
   )
-}
-
-ConnectorResponseInfo.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  intl: intlShape,
 }
 
 interface Props {
@@ -32,4 +31,4 @@ interface Props {
   value: string
 }
 
-export default injectIntl(ConnectorResponseInfo)
+export default ConnectorResponseInfo
