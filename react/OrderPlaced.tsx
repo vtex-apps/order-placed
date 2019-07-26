@@ -8,7 +8,7 @@ import {
 } from 'react-intl'
 import { branch, renderComponent } from 'recompose'
 
-import { Helmet, withRuntimeContext } from 'vtex.render-runtime'
+import { Helmet, withRuntimeContext, ExtensionPoint } from 'vtex.render-runtime'
 import { Button } from 'vtex.styleguide'
 
 import AnalyticsWrapper from './Analytics'
@@ -63,6 +63,7 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
         <title>{intl.formatMessage(messages.title)}</title>
       </Helmet>
       <AnalyticsWrapper eventList={orderGroup.analyticsData} />
+      <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
       <Header
         orderGroup={orderGroup}
         profile={orderGroup.orders[0].clientProfileData}

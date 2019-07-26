@@ -1,27 +1,15 @@
-# OrderPlaced
+# Order Placed
 
-The OrderPlaced app for VTEX IO Stores, replacing checkout-confirmation-ui.
+> Order Placed page for VTEX IO stores.
 
-## IO Store
+### Adding extensions
 
-This app is made to be a store component and be placed as a dependency at VTEX IO Store. Althought it may also work on it's own, but without analytics.
+It is possible to add a component at the top of the page.
 
-## Order Group Query
+You can check how following the [example app](./order-placed-extension-example/). This component receives a prop called `orderGroup` with the order data.
 
-As a dependency to this app is `vtex.order-placed-graphql`, which exposes a GraphQL query defined as `getOrderGroup($orderGroup: String)` that receives an order group identification number and fetches the relevant data to the `OrderPlaced` component. This order group identification number needed for this app to work is obtained from the URL under which it is rendered, normally in this format: `.../checkout/orderPlaced?og=<orderGroupNumber>`, as a query parameter. Whithout this query parameter `og`, the GraphQL query cannot be performed and the app will not render.
-
-## Dependencies
-
-This app depends on:
-
-- `vtex.order-placed-graphql`
-- `vtex.styleguide`
-- `vtex.order-details`
-- `vtex.shipping-estimate-translator`
-- `vtex.address-form`
-- `vtex.profile-form`
-- `vtex.pixel-manager`
+![](./example.png)
 
 ## Contributing
 
-Check it out [how to contribute](https://github.com/vtex-apps/awesome-io#contributing) with this project. 
+Check it out [how to contribute](https://github.com/vtex-apps/awesome-io#contributing) with this project.

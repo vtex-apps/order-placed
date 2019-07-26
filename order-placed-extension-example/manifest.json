@@ -1,0 +1,15 @@
+{
+  "name": "order-placed-extension-example",
+  "vendor": "vtex",
+  "version": "1.0.0",
+  "title": "Order Placed Extension Example",
+  "description": "",
+  "builders": {
+    "react": "3.x",
+    "store": "0.x"
+  },
+  "dependencies": {
+    "vtex.order-placed": "1.x"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

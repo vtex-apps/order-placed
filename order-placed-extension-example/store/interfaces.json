@@ -1,0 +1,5 @@
+{
+  "order-placed-extension.example": {
+    "component": "Example"
+  }
+}

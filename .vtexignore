@@ -8,3 +8,4 @@ react/**/__mocks__/**
 react/**/*.test.tsx
 react/testUtils/**/*
 react/.babelrc
+order-placed-extension-example/
