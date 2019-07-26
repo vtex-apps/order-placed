@@ -4,7 +4,7 @@
   "scripts": {
     "test": "vtex-test-tools test",
     "test:watch": "vtex-test-tools test --watch",
-    "lint": "tsc --noEmit && eslint --ext ts,tsx .",
+    "lint": "tsc --noEmit",
     "lint:locales": "intl-equalizer"
   },
   "dependencies": {

@@ -13,3 +13,7 @@ export function withRuntimeContext(WrappedComponent: any) {
 export function NoSSR({ children }: any) {
   return <div>{children}</div>
 }
+
+export function ExtensionPoint({ id }: { id: string }) {
+  return <div>Extension point {id}</div>
+}

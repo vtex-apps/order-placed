@@ -14,4 +14,5 @@ declare module 'vtex.render-runtime' {
   export const canUseDOM: boolean
   export const withRuntimeContext: any
   export const Helmet: any
+  export const ExtensionPoint: any
 }

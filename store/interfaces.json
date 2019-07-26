@@ -1,5 +1,12 @@
 {
   "order-placed": {
-    "component": "OrderPlaced"
+    "component": "OrderPlaced",
+    "allowed": ["order-placed-top"]
+  },
+  "order-placed-top": {
+    "allowed": ["order-placed-extension"]
+  },
+  "order-placed-extension": {
+    "component": "*"
   }
 }
