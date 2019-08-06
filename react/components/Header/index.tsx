@@ -4,7 +4,11 @@ import { ButtonLink } from 'vtex.order-details'
 import { Button } from 'vtex.styleguide'
 
 import SuccessIcon from '../../Icons/Success'
-import { getPaymentGroupFromOrder, PaymentGroupInfo } from '../../utils'
+import {
+  getPaymentGroupFromOrder,
+  PaymentGroupInfo,
+  parseBankInvoiceUrl,
+} from '../../utils'
 import BankInvoice from './BankInvoice'
 import Summary from './Summary'
 import Warnings from './Warnings'
@@ -79,7 +83,7 @@ const Header: FunctionComponent<Props> = ({ orderGroup, profile, inStore }) => {
       )}
       {hasBankInvoice && bankInvoices[0].url && !hideBankInvoiceInfo && (
         <BankInvoice
-          url={bankInvoices[0].url}
+          url={parseBankInvoiceUrl(bankInvoices[0].url)}
           encrypted={!!encrypted}
           invoiceBarCodeNumber={bankInvoices[0].barCodeNumber}
           paymentSystem={bankInvoices[0].paymentSystemName}

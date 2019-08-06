@@ -188,3 +188,14 @@ export function orderSplitMessage({
     takeaways,
   })
 }
+
+export function parseBankInvoiceUrl(url: string) {
+  const isEncrypted = url.match(/(\*.\*.)+\*\w\*/g)
+
+  if (!isEncrypted) return url
+  if (!window || !window.location) return ''
+
+  return `/login?returnUrl=${encodeURIComponent(
+    window.location.pathname + window.location.search
+  )}`
+}

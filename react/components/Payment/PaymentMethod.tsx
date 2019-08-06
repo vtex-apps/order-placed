@@ -8,11 +8,13 @@ import {
 import { ButtonLink } from 'vtex.order-details'
 
 import InfoIcon from '../../Icons/Info'
+import {
+  transformConnectorResponsesToArray,
+  parseBankInvoiceUrl,
+} from '../../utils'
 import AdditionalInfo from './AdditionalInfo'
 import Price from './FormattedPrice'
 import ConnectorResponseInfo from './ConnectorResponseInfo'
-
-import { transformConnectorResponsesToArray } from '../../utils'
 
 const messages = defineMessages({
   creditCard: {
@@ -92,7 +94,11 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
         </div>
         {isBankInvoice && payment.url && (
           <div className="mt5">
-            <ButtonLink to={payment.url} variation="primary" openNewWindow>
+            <ButtonLink
+              to={parseBankInvoiceUrl(payment.url)}
+              variation="primary"
+              openNewWindow
+            >
               <FormattedMessage
                 id="store/payments.bankinvoice.print"
                 values={{ paymentSystemName: payment.paymentSystemName }}
