@@ -64,7 +64,11 @@ export function getPaymentGroupFromOrder(order: Order) {
   const base = 'paymentData.transactions[0].payments[0]'
 
   return {
-    barCodeNumber: get(order, `${base}.bankIssuedInvoiceBarCodeNumber`, null),
+    barCodeNumber: get(
+      order,
+      `${base}.bankIssuedInvoiceIdentificationNumber`,
+      null
+    ),
     barCodePNG: get(order, `${base}.bankIssuedInvoiceBarCodePNG`, null),
     dueDate: get(order, `${base}.dueDate`, null),
     paymentGroup: get(order, `${base}.group`, null),

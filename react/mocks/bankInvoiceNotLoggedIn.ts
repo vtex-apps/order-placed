@@ -136,8 +136,7 @@ export const orderGroupQuery = {
                   url:
                     '*t*p*:*/*a*a*k*t*l*c*.*t*x*a*m*n*s*c*m*b*:*4*/*a*k*s*u*d*n*o*c*/*r*n*a*t*o*/*9*C*4*B*0*D*2*8*7*1*3*3*8*6*1*5*P*y*e*t*0*F*5*F*C*7*4*7*A*8*4*6*1*4*9*8*/*n*t*l*m*n*/*I*s*a*l*e*t*',
                   bankIssuedInvoiceBarCodePNG: null,
-                  bankIssuedInvoiceBarCodeNumber: null,
-                  bankIssuedInvoiceIdentificationNumberFormatted: null,
+                  bankIssuedInvoiceIdentificationNumber: null,
                   connectorResponses: null,
                 },
               ],

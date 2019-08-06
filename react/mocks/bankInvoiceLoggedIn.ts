@@ -136,8 +136,7 @@ export const orderGroupQuery = {
                   url:
                     'https://qamarketplace.vtexpayments.com.br:443/BankIssuedInvoice/Transaction/B435F7822D254EBBB452DA84DFE60DCD/Payment/F3E16B58FA6F45558740D0046734B8B6/Installment/{Installment}',
                   bankIssuedInvoiceBarCodePNG: null,
-                  bankIssuedInvoiceBarCodeNumber: null,
-                  bankIssuedInvoiceIdentificationNumberFormatted: null,
+                  bankIssuedInvoiceIdentificationNumber: null,
                   connectorResponses: null,
                 },
               ],

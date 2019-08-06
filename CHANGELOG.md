@@ -7,13 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Use **bankIssuedInvoiceIdentificationNumber** instead of **bankIssuedInvoiceBarCodeNumber** to be copied to the clipboard.
+
 ## [1.4.0] - 2019-07-26
+
 ### Added
+
 - Extension point at the top of the Order Placed.
 
 ## [1.3.0] - 2019-07-24
 
 ### Added
+
 - **connector response** information to `PaymentMethod` component for **Multibanco** payments.
 
 ## [1.2.6] - 2019-07-18

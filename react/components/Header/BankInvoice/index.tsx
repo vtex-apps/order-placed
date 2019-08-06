@@ -14,7 +14,7 @@ const BankInvoice: FunctionComponent<Props> = ({
 }) => (
   <section
     data-testid="bank-invoice-info"
-    className="pv4 w-80-ns w-90 center bb b--muted-5"
+    className="pv4 mb4 w-80-ns w-90 center bb b--muted-5"
   >
     <header className="t-heading-4">
       <FormattedMessage
