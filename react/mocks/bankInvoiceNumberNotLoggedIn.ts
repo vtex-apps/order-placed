@@ -136,10 +136,8 @@ export const orderGroupQuery = {
                   url:
                     '*t*p*:*/*o*o*o*.*e*o*d*p*g*m*n*o*r*d*s*o*c*m*b*/*p*b*l*t*/*r*d*s*o*t*k*n*M*B*K*d*Q*t*c*l*a*Y*S*p*N*d*Y*w*Y*5*e*9*b*k*O*Z*b*8*N*J*U*h*a*N*Z*N*W*t*b*t*V*Z*Q*Q*b*.*',
                   bankIssuedInvoiceBarCodePNG: null,
-                  bankIssuedInvoiceBarCodeNumber:
-                    '23793773500000001990001250000000000112345670',
-                  bankIssuedInvoiceIdentificationNumberFormatted:
-                    '23790.00124 50000.000005 01123.456707 3 77350000000199',
+                  bankIssuedInvoiceIdentificationNumber:
+                    '23790001245000000000501123456707377350000000199',
                   connectorResponses: null,
                 },
               ],

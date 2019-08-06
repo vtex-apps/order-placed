@@ -136,10 +136,8 @@ export const orderGroupQuery = {
                   url:
                     'https://homolog.meiosdepagamentobradesco.com.br/apiboleto/Bradesco?token=czh0OEhYaEdxNWtqc21JVTZKS3hIbUdudmk3YzBKbGd3d282eXpQV3JZQVM4Ri9uYzZueXdxVG1WZktyTVBHQQ..',
                   bankIssuedInvoiceBarCodePNG: null,
-                  bankIssuedInvoiceBarCodeNumber:
-                    '23791770900000095490001250000000081712345670',
-                  bankIssuedInvoiceIdentificationNumberFormatted:
-                    '23790.00124 50000.000088 17123.456703 1 77090000009549',
+                  bankIssuedInvoiceIdentificationNumber:
+                    '23790001245000000008817123456703177090000009549',
                   connectorResponses: null,
                 },
               ],

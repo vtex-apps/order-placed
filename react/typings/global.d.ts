@@ -131,8 +131,7 @@ interface Payment {
   installments: number
   dueDate: string | null
   url: string | null
-  bankIssuedInvoiceIdentificationNumberFormatted: string | null
-  bankIssuedInvoiceBarCodeNumber: string | null
+  bankIssuedInvoiceIdentificationNumber: string | null
   bankIssuedInvoiceBarCodePNG: string | null
   connectorResponses: ConnectorResponses | null
 }
