@@ -89,4 +89,26 @@ describe('Bank invoice scenarios', () => {
 
     expect(bankInvoiceSection).toBeNull()
   })
+  it('should have the invoice url if the user is logged in.', () => {
+    const { queryByTestId } = render(
+      <Header
+        orderGroup={bankInvoiceLoggedIn.orderGroup}
+        profile={bankInvoiceLoggedIn.orderGroup.orders[0].clientProfileData}
+      />
+    )
+    const printButton = queryByTestId('button-link') as any
+
+    expect((printButton.href as string).includes('login')).toBe(false)
+  })
+  it('should redirect to login if the user is not logged in.', () => {
+    const { queryByTestId } = render(
+      <Header
+        orderGroup={bankInvoiceNotLoggedIn.orderGroup}
+        profile={bankInvoiceNotLoggedIn.orderGroup.orders[0].clientProfileData}
+      />
+    )
+    const printButton = queryByTestId('button-link') as any
+
+    expect((printButton.href as string).includes('login')).toBe(true)
+  })
 })

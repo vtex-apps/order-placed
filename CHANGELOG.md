@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Links to the bank invoice. The user has to be signed in to see it.
+
 ## [1.4.1] - 2019-08-06
 
 ### Fixed

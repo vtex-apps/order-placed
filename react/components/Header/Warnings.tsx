@@ -3,8 +3,8 @@ import { FormattedMessage } from 'react-intl'
 import { FormattedDate } from 'vtex.order-details'
 import { ButtonLink } from 'vtex.order-details'
 
-import { PaymentGroupInfo } from '../../utils'
 import Price from '../Payment/FormattedPrice'
+import { PaymentGroupInfo, parseBankInvoiceUrl } from '../../utils'
 
 const Warnings: FunctionComponent<Props> = ({
   numOfOrders,
@@ -113,7 +113,7 @@ const Warnings: FunctionComponent<Props> = ({
                 </p>
                 {bankInvoices[0].url && (
                   <ButtonLink
-                    to={bankInvoices[0].url}
+                    to={parseBankInvoiceUrl(bankInvoices[0].url)}
                     variation="primary"
                     openNewWindow
                   >

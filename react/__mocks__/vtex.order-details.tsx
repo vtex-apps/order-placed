@@ -1,25 +1,24 @@
-import React, { Component } from 'react'
+import React, { FunctionComponent } from 'react'
 
 export function FormattedDate() {
   return <span>FormattedDate</span>
-}
-
-export class ProductImage extends Component {
-  public render() {
-    return <div>ProductImage</div>
-  }
 }
 
 export function Address() {
   return <span>Address</span>
 }
 
-export class ButtonLink extends Component {
-  public render() {
-    return <span>{this.props.children}</span>
-  }
-}
-
 export function CustomerInfo() {
   return <span>CustomerInfo</span>
 }
+
+export const ProductImage: FunctionComponent = () => <div>ProductImage</div>
+
+export const ButtonLink: FunctionComponent<{ to: string }> = ({
+  to,
+  children,
+}) => (
+  <a href={to} data-testid="button-link">
+    {children}
+  </a>
+)
