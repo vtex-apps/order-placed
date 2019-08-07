@@ -190,7 +190,7 @@ export function orderSplitMessage({
 }
 
 export function parseBankInvoiceUrl(url: string) {
-  const isEncrypted = url.match(/(\*.\*.)+\*\w\*/g)
+  const isEncrypted = !!url.match(/(\*.\*.)+\*\w\*/g)
 
   if (!isEncrypted) return url
   if (!window || !window.location) return ''
