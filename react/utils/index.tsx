@@ -195,7 +195,7 @@ export function parseBankInvoiceUrl(url: string) {
   if (!isEncrypted) return url
   if (!window || !window.location) return ''
 
-  return `/login?returnUrl=${encodeURIComponent(
+  return `${__RUNTIME__.rootPath || ''}/login?returnUrl=${encodeURIComponent(
     window.location.pathname + window.location.search
   )}`
 }
