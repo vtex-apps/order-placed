@@ -10,6 +10,7 @@ import { branch, renderComponent } from 'recompose'
 
 import { Helmet, withRuntimeContext, ExtensionPoint } from 'vtex.render-runtime'
 import { Button } from 'vtex.styleguide'
+import { usePWA } from 'vtex.store-resources/PWAContext'	
 
 import AnalyticsWrapper from './Analytics'
 import Header from './components/Header'
@@ -17,7 +18,7 @@ import OrderInfo from './components/OrderInfo'
 import Skeleton from './Skeleton'
 import withoutSSR from './WithoutSSR'
 import ErrorMessage from './components/ErrorMessage'
-
+import InstallBanner from './components/InstallBanner'
 import * as getOrderGroup from './graphql/getOrderGroup.graphql'
 
 import NotFound from './Icons/NotFound'
@@ -54,6 +55,7 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
   intl,
 }) => {
   const { orderGroup } = orderGroupQuery
+  const { settings: { addToHomeScreenPrompt }, showInstallPrompt } = usePWA()
 
   return (
     <CurrencyContext.Provider
@@ -79,6 +81,7 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
             key={order.orderId}
           />
         ))}
+       {addToHomeScreenPrompt === "checkout" && <InstallBanner onInstall={showInstallPrompt}/>}
       </main>
     </CurrencyContext.Provider>
   )
