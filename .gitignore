@@ -5,4 +5,4 @@ node_modules/
 /react/*.js.map
 .DS_Store
 react/.DS_Store
-
+yarn-error.log
