@@ -68,5 +68,9 @@
   "store/go-to-login": "Go to login page",
   "store/go-to-home": "Go to home page",
   "store/paymentData.connectorResponse.mb.entity": "Entity",
-  "store/paymentData.connectorResponse.mb.reference": "Reference"
+  "store/paymentData.connectorResponse.mb.reference": "Reference",
+  "store/install-banner.title": "Keep track of your orders",
+  "store/install-banner.description": "Our app is fast, small, and works offline",
+  "store/install-banner.install-button.label": "Install",
+  "store/install-banner.dismiss-button.label": "Not Now"
 }

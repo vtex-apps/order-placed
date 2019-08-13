@@ -1,29 +1,29 @@
 import React, { FunctionComponent } from 'react'
 import { Button } from 'vtex.styleguide'
+import { FormattedMessage } from 'react-intl'
 
 interface Props {
   onInstall: () => any,
-  title: string,
-  description: string
+  onDismiss: () => any
 }
 
-const InstallBanner: FunctionComponent<Props> = ({
-  onInstall,
-  title,
-  description
-}) => {
+const InstallBanner: FunctionComponent<Props> = ({ onInstall, onDismiss }) => {
   return (
-    <div>
-      <h1>Install</h1>
-      <h2>lalala</h2>
-      <Button variation="tertiary">Not now</Button>
-      <Button onClick={onInstall}>Install</Button>
+    <div className="pa6 br2 bg-muted-5 mb8 mw5 w-80-ns w-90 center fr-l">
+        <p className="t-body">
+          <FormattedMessage id="store/install-banner.title"/>
+        </p>
+        <p className="t-small c-muted-1">
+          <FormattedMessage id="store/install-banner.description"/>
+        </p>
+        <Button onClick={onDismiss} variation="tertiary" size="small">
+          <FormattedMessage id="store/install-banner.dismiss-button.label"/>
+        </Button>
+        <Button onClick={onInstall} size="small">
+          <FormattedMessage id="store/install-banner.install-button.label"/>
+        </Button>
     </div>
   )
-}
-
-InstallBanner.schema = {
-  title: ''
 }
 
 export default InstallBanner

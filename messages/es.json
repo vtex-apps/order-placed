@@ -68,5 +68,9 @@
   "store/go-to-login": "Hacer login",
   "store/go-to-home": "Ir a la página principal",
   "store/paymentData.connectorResponse.mb.entity": "Entidad",
-  "store/paymentData.connectorResponse.mb.reference": "Referencia"
+  "store/paymentData.connectorResponse.mb.reference": "Referencia",
+  "store/install-banner.title": "Rastrea tus pedidos",
+  "store/install-banner.description": "Nuestra aplicación es rápida, pequeña y funciona sin conexión",
+  "store/install-banner.install-button.label": "Instalar",
+  "store/install-banner.dismiss-button.label": "Ahora no"
 }

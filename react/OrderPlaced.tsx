@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import { compose, graphql } from 'react-apollo'
 import {
   injectIntl,
@@ -56,7 +56,7 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
 }) => {
   const { orderGroup } = orderGroupQuery
   const { settings: { addToHomeScreenPrompt }, showInstallPrompt } = usePWA()
-
+  const [ showInstallBanner, setInstallBanner ] = useState(true)
   return (
     <CurrencyContext.Provider
       value={orderGroup.orders[0].storePreferencesData.currencyCode}
@@ -71,7 +71,7 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
         profile={orderGroup.orders[0].clientProfileData}
         inStore={inStore}
       />
-      <main>
+      <main className="mv6 w-80-ns w-90 center">
         {orderGroup.orders.map((order: Order, index: number) => (
           <OrderInfo
             order={order}
@@ -81,7 +81,9 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
             key={order.orderId}
           />
         ))}
-       {addToHomeScreenPrompt === "checkout" && <InstallBanner onInstall={showInstallPrompt}/>}
+       {addToHomeScreenPrompt === "checkout" && showInstallBanner && 
+        <InstallBanner onInstall={showInstallPrompt} onDismiss={() => setInstallBanner(false)}/>
+       }
       </main>
     </CurrencyContext.Provider>
   )
