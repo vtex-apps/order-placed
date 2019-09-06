@@ -1,6 +1,3 @@
-# import itemDetails from './itemDetails.graphql'
-# import parcelDetails from './parcelDetails.graphql'
-
 query getOrderGroup($orderGroup: String) {
   orderGroup(orderGroup: $orderGroup) {
     orders {
