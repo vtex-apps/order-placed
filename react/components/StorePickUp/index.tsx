@@ -12,8 +12,7 @@ const StorePickUp: FunctionComponent<Props> = ({ pickUpPackages }) => (
     {pickUpPackages.map((pickup: Parcel, index: number) => (
       <section
         className="mv8 flex-l justify-between flex-column flex-row-m"
-        key={index}
-      >
+        key={index}>
         <StorePickUpHeader
           shippingData={pickup}
           index={index}

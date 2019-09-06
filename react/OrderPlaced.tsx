@@ -57,8 +57,7 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
 
   return (
     <CurrencyContext.Provider
-      value={orderGroup.orders[0].storePreferencesData.currencyCode}
-    >
+      value={orderGroup.orders[0].storePreferencesData.currencyCode}>
       <Helmet>
         <title>{intl.formatMessage(messages.title)}</title>
       </Helmet>
@@ -123,8 +122,7 @@ export default compose(
       <ErrorMessage
         icon={<Forbidden />}
         errorId={messages.notLoggedTitle.id}
-        messageId={messages.notLoggedMessage.id}
-      >
+        messageId={messages.notLoggedMessage.id}>
         <a href={`/login?returnUrl=${window.location.href}`}>
           <Button>
             <FormattedMessage id="store/go-to-login" />
@@ -141,8 +139,7 @@ export default compose(
       <ErrorMessage
         icon={<NotFound />}
         errorId={messages.invalidTitle.id}
-        messageId={messages.invalidMessage.id}
-      >
+        messageId={messages.invalidMessage.id}>
         <a href="/">
           <Button>
             <FormattedMessage id="store/go-to-home" />

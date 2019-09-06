@@ -17,8 +17,7 @@ class MailIcon extends PureComponent<IconProps> {
         height={newSize.height}
         viewBox="0 0 16 14"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+        xmlns="http://www.w3.org/2000/svg">
         <path
           d="M15 0H1C0.4 0 0 0.4 0 1V2.4L8 6.9L16 2.5V1C16 0.4 15.6 0 15 0Z"
           fill={color}

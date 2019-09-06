@@ -36,8 +36,7 @@ const SubscriptionAttachment: FunctionComponent<
             tabIndex={0}
             className="c-action-primary"
             onClick={() => setIsOpen(!isOpen)}
-            onKeyDown={handleKeyDown}
-          >
+            onKeyDown={handleKeyDown}>
             {isOpen ? <IconCaretUp /> : <IconCaretDown />}
           </div>
         </div>

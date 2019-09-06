@@ -40,8 +40,8 @@ describe('OrderPlaced', () => {
       },
     }
 
+    // @ts-ignore
     const { queryByText } = render(<OrderPlaced />, {
-      // @ts-ignore
       graphql: { mocks: [mockRequest] },
     })
 
