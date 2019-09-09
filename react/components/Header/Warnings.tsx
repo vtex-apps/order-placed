@@ -37,8 +37,7 @@ const Warnings: FunctionComponent<Props> = ({
             <li
               className={`${listItem} ${
                 orderWasSplit || hasPickUp || hasBankInvoice ? bottomBorder : ''
-              }`}
-            >
+              }`}>
               <p className="pv4">
                 <FormattedMessage id="store/warnings.delivery.tracking" />
               </p>
@@ -115,8 +114,7 @@ const Warnings: FunctionComponent<Props> = ({
                   <ButtonLink
                     to={parseBankInvoiceUrl(bankInvoices[0].url)}
                     variation="primary"
-                    openNewWindow
-                  >
+                    openNewWindow>
                     <FormattedMessage
                       id="store/payments.bankinvoice.print"
                       values={{

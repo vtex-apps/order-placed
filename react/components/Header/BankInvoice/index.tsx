@@ -14,8 +14,7 @@ const BankInvoice: FunctionComponent<Props> = ({
 }) => (
   <section
     data-testid="bank-invoice-info"
-    className="pv4 mb4 w-80-ns w-90 center bb b--muted-5"
-  >
+    className="pv4 mb4 w-80-ns w-90 center bb b--muted-5">
     <header className="t-heading-4">
       <FormattedMessage
         id="store/header.bankinvoice.header"
@@ -28,8 +27,7 @@ const BankInvoice: FunctionComponent<Props> = ({
         to={url}
         icon={<PrinterIcon />}
         variation="secondary"
-        openNewWindow
-      >
+        openNewWindow>
         <FormattedMessage
           id="store/header.bankinvoice.print"
           values={{ paymentSystemName: paymentSystem }}

@@ -1,20 +1,18 @@
 {
-  "name": "order-placed",
   "vendor": "vtex",
+  "name": "order-placed",
   "version": "1.4.3",
   "title": "Order Placed",
   "description": "",
-  "mustUpdateAt": "2019-10-15",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },
   "builders": {
     "react": "3.x",
     "store": "0.x",
-    "messages": "1.x"
+    "messages": "1.x",
+    "docs": "0.x"
   },
   "dependencies": {
     "vtex.order-placed-graphql": "1.x",

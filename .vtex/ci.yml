@@ -9,9 +9,8 @@ phases:
   pre_build:
     commands:
       - echo Running tests...
-      - cd react
-      - npm run test
-      - echo Tests finished!
+      - npm run verify
+      - echo Lint and tests finished!
 cache:
   paths:
-    - "node_modules/**/*"
+    - 'node_modules/**/*'

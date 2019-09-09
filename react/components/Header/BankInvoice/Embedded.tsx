@@ -27,16 +27,14 @@ class Embedded extends Component<Props> {
           <ButtonWithIcon
             icon={<IconCaretUp />}
             variation="tertiary"
-            onClick={this.handleClick}
-          >
+            onClick={this.handleClick}>
             <FormattedMessage id="store/header.bankinvoice.embeded.collapse" />
           </ButtonWithIcon>
         ) : (
           <ButtonWithIcon
             icon={<IconCaretDown />}
             variation="tertiary"
-            onClick={this.handleClick}
-          >
+            onClick={this.handleClick}>
             <FormattedMessage id="store/header.bankinvoice.embeded.expand" />
           </ButtonWithIcon>
         )}

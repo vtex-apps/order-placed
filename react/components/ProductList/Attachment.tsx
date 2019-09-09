@@ -48,8 +48,7 @@ const ProductAttachment: FunctionComponent<Props> = ({
                       tabIndex={0}
                       className="c-action-primary ml5"
                       onKeyDown={handleKeyDown}
-                      onClick={() => setIsOpen(!isOpen)}
-                    >
+                      onClick={() => setIsOpen(!isOpen)}>
                       {isOpen ? <IconCaretUp /> : <IconCaretDown />}
                     </div>
                   )}
@@ -86,8 +85,7 @@ const ProductAttachment: FunctionComponent<Props> = ({
           ) : (
             <article
               className="bg-muted-5 pv3 ph5 br2 mv4"
-              key={attachmentItem.name}
-            >
+              key={attachmentItem.name}>
               <div className="flex justify-between">
                 <p className="c-on-base">{attachmentItem.name}</p>
                 <div className="flex items-center">
@@ -100,8 +98,7 @@ const ProductAttachment: FunctionComponent<Props> = ({
                       tabIndex={0}
                       className="c-action-primary"
                       onKeyDown={handleKeyDown}
-                      onClick={() => setIsOpen(!isOpen)}
-                    >
+                      onClick={() => setIsOpen(!isOpen)}>
                       {isOpen ? <IconCaretUp /> : <IconCaretDown />}
                     </div>
                   )}
