@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Web App Install Promotion Banner at the end of the page.
+
 ## [1.5.0] - 2019-09-09
 
 ### Added

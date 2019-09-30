@@ -38,7 +38,7 @@ const OrderInfo: FunctionComponent<Props> = ({
 
   return (
     <section>
-      <div className="mv6 w-80-ns w-90 center">
+      <div>
         <OrderHeader
           orderInfo={order}
           splitOrder={splitOrder}

@@ -1,7 +1,7 @@
 {
   "order-placed": {
     "component": "OrderPlaced",
-    "allowed": ["order-placed-top"]
+    "allowed": ["order-placed-top", "promotion-banner"]
   },
   "order-placed-top": {
     "allowed": ["order-placed-extension"]
