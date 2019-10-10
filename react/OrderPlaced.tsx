@@ -81,7 +81,7 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
           />
         ))}
         {promptOnCustomEvent === 'checkout' && (
-          <ExtensionPoint id="promotion-banner" />
+          <ExtensionPoint id="promotion-banner" type="install" />
         )}
       </main>
     </CurrencyContext.Provider>
