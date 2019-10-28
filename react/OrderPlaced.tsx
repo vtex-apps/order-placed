@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import { compose, graphql } from 'react-apollo'
 import {
   injectIntl,
@@ -57,6 +57,8 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
   const { orderGroup } = orderGroupQuery
   const { settings = {} } = usePWA() || {}
   const { promptOnCustomEvent } = settings
+  const [installDismissed, setInstallDismissed] = useState(false)
+
   return (
     <CurrencyContext.Provider
       value={orderGroup.orders[0].storePreferencesData.currencyCode}>
@@ -80,8 +82,14 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
             key={order.orderId}
           />
         ))}
-        {promptOnCustomEvent === 'checkout' && (
-          <ExtensionPoint id="promotion-banner" type="install" />
+        {promptOnCustomEvent === 'checkout' && !installDismissed && (
+          <ExtensionPoint
+            id="promotion-banner"
+            type="install"
+            onDismiss={() => {
+              setInstallDismissed(true)
+            }}
+          />
         )}
       </main>
     </CurrencyContext.Provider>
