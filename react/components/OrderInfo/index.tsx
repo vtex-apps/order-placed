@@ -38,61 +38,56 @@ const OrderInfo: FunctionComponent<Props> = ({
 
   return (
     <section>
-      <div>
-        <OrderHeader
-          orderInfo={order}
-          splitOrder={splitOrder}
-          takeaway={takeaway.length > 0}
+      <OrderHeader
+        orderInfo={order}
+        splitOrder={splitOrder}
+        takeaway={takeaway.length > 0}
+      />
+      {multipleDeliveries && (
+        <OrderSplitNotice
+          deliveries={delivery.length}
+          pickups={pickup.length}
+          takeaways={takeaway.length}
         />
-        {multipleDeliveries && (
-          <OrderSplitNotice
-            deliveries={delivery.length}
-            pickups={pickup.length}
-            takeaways={takeaway.length}
-          />
-        )}
-        {hasCustomerName && <CustomerInfo profile={profile} />}
+      )}
+      {hasCustomerName && <CustomerInfo profile={profile} />}
+      <OrderSection>
+        <div className="flex flex-column flex-row-m">
+          {paymentsData.map((payment, idx) => (
+            <div key={idx} className="pb8-s mr9-m">
+              <PaymentMethod payment={payment} transactionId={transactionId} />
+            </div>
+          ))}
+        </div>
+        <OrderOptions
+          className="dn-l mb8"
+          allowCancellation={order.allowCancellation}
+          fullWidth
+        />
+      </OrderSection>
+      {pickup.length > 0 && (
         <OrderSection>
-          <div className="flex flex-column flex-row-m">
-            {paymentsData.map((payment, idx) => (
-              <div key={idx} className="pb8-s mr9-m">
-                <PaymentMethod
-                  payment={payment}
-                  transactionId={transactionId}
-                />
-              </div>
-            ))}
-          </div>
-          <OrderOptions
-            className="dn-l mb8"
-            allowCancellation={order.allowCancellation}
-            fullWidth
+          <StorePickUp pickUpPackages={pickup} />
+        </OrderSection>
+      )}
+      {delivery.length > 0 && (
+        <OrderSection>
+          <Shipping
+            deliveryPackages={delivery}
+            giftRegistryData={giftRegistryData}
           />
         </OrderSection>
-        {pickup.length > 0 && (
-          <OrderSection>
-            <StorePickUp pickUpPackages={pickup} />
-          </OrderSection>
-        )}
-        {delivery.length > 0 && (
-          <OrderSection>
-            <Shipping
-              deliveryPackages={delivery}
-              giftRegistryData={giftRegistryData}
-            />
-          </OrderSection>
-        )}
-        {takeaway.length > 0 && (
-          <OrderSection>
-            <TakeAway takeAwayPackages={takeaway} />
-          </OrderSection>
-        )}
-        <OrderTotal
-          items={order.items}
-          totals={order.totals}
-          orderValue={order.value}
-        />
-      </div>
+      )}
+      {takeaway.length > 0 && (
+        <OrderSection>
+          <TakeAway takeAwayPackages={takeaway} />
+        </OrderSection>
+      )}
+      <OrderTotal
+        items={order.items}
+        totals={order.totals}
+        orderValue={order.value}
+      />
       {index < numOfOrders - 1 && <hr className="bg-muted-4 bt b--muted-4" />}
     </section>
   )
