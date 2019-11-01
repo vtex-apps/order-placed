@@ -1,5 +1,5 @@
 {
   "order-placed": {
-    "blocks": ["order-placed-top"]
+    "blocks": ["order-placed-top", "promotion-banner"]
   }
 }

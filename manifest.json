@@ -4,7 +4,9 @@
   "version": "1.5.0",
   "title": "Order Placed",
   "description": "",
-  "registries": ["smartcheckout"],
+  "registries": [
+    "smartcheckout"
+  ],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },
@@ -21,7 +23,9 @@
     "vtex.shipping-estimate-translator": "2.x",
     "vtex.address-form": "4.x",
     "vtex.profile-form": "3.x",
-    "vtex.pixel-manager": "1.x"
+    "vtex.pixel-manager": "1.x",
+    "vtex.pwa-components": "0.x",
+    "vtex.store-resources": "0.x"
   },
   "credentialType": "absolute",
   "policies": [

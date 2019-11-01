@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import { compose, graphql } from 'react-apollo'
 import {
   injectIntl,
@@ -10,6 +10,7 @@ import { branch, renderComponent } from 'recompose'
 
 import { Helmet, withRuntimeContext, ExtensionPoint } from 'vtex.render-runtime'
 import { Button } from 'vtex.styleguide'
+import { usePWA } from 'vtex.store-resources/PWAContext'
 
 import AnalyticsWrapper from './Analytics'
 import Header from './components/Header'
@@ -54,6 +55,9 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
   intl,
 }) => {
   const { orderGroup } = orderGroupQuery
+  const { settings = {} } = usePWA() || {}
+  const { promptOnCustomEvent } = settings
+  const [installDismissed, setInstallDismissed] = useState(false)
 
   return (
     <CurrencyContext.Provider
@@ -68,7 +72,7 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
         profile={orderGroup.orders[0].clientProfileData}
         inStore={inStore}
       />
-      <main>
+      <main className="mv6 w-80-ns w-90 center">
         {orderGroup.orders.map((order: Order, index: number) => (
           <OrderInfo
             order={order}
@@ -78,6 +82,15 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
             key={order.orderId}
           />
         ))}
+        {promptOnCustomEvent === 'checkout' && !installDismissed && (
+          <ExtensionPoint
+            id="promotion-banner"
+            type="install"
+            onDismiss={() => {
+              setInstallDismissed(true)
+            }}
+          />
+        )}
       </main>
     </CurrencyContext.Provider>
   )
