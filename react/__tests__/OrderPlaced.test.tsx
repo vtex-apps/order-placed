@@ -19,7 +19,7 @@ describe('OrderPlaced', () => {
 
   beforeAll(() => {
     delete window.location
-    window.location = { search: `?og=${orderGroupId}` }
+    window.location = { search: `?og=${orderGroupId}` } as Location
   })
 
   afterAll(() => {
@@ -35,6 +35,7 @@ describe('OrderPlaced', () => {
     const mockRequest = {
       ...requestSample,
       error: {
+        name: 'erro',
         message: '403: Forbidden',
       },
     }
