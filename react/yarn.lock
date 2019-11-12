@@ -5393,6 +5393,26 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+"vtex.address-form@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.address-form@4.2.5/public/_types/react":
+  version "0.0.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.address-form@4.2.5/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+
+"vtex.pwa-components@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.pwa-components@0.4.0/public/@types/vtex.pwa-components":
+  version "0.4.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.pwa-components@0.4.0/public/@types/vtex.pwa-components#730433a035d8cd64cd24e9f0c481fb39f3aece86"
+
+"vtex.render-runtime@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.77.0/public/@types/vtex.render-runtime":
+  version "8.77.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.77.0/public/@types/vtex.render-runtime#8c251dbbfca3786f932f4e29c1da6c26a00f8ac0"
+
+"vtex.store-resources@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.37.0/public/_types/react":
+  version "0.0.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.37.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+
+"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.96.2/public/@types/vtex.styleguide":
+  version "9.96.2"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.96.2/public/@types/vtex.styleguide#5c9408091134de24a2cdc975ca9532da8282e907"
+
 w3c-hr-time@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"

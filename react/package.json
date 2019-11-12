@@ -31,7 +31,12 @@
     "prop-types": "^15.7.2",
     "react-dom": "^16.7.0",
     "regenerator-runtime": "^0.13.1",
-    "typescript": "3.5.2"
+    "typescript": "3.5.2",
+    "vtex.render-runtime": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.77.0/public/@types/vtex.render-runtime",
+    "vtex.styleguide": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.96.2/public/@types/vtex.styleguide",
+    "vtex.store-resources": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.37.0/public/_types/react",
+    "vtex.address-form": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.address-form@4.2.5/public/_types/react",
+    "vtex.pwa-components": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.pwa-components@0.4.0/public/@types/vtex.pwa-components"
   },
   "version": "1.6.0"
 }
