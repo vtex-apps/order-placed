@@ -6,7 +6,8 @@
     "types": ["node", "jest", "graphql"],
     "module": "esnext",
     "moduleResolution": "node",
-    "target": "es2017"
+    "target": "es2017",
+    "lib": ["es2017", "dom", "es2018.promise", "esnext.asynciterable"]
   },
   "include": ["./typings/*.d.ts", "./**/*.tsx", "./**/*.ts"]
 }
