@@ -1,5 +1,7 @@
 import React, { Fragment, FunctionComponent } from 'react'
+
 import ProductList from '../ProductList'
+
 import ShippingHeader from './ShippingHeader'
 
 interface Props {
@@ -15,7 +17,8 @@ const Shipping: FunctionComponent<Props> = ({
     {deliveryPackages.map((delivery, index) => (
       <section
         className="mv8 flex-l justify-between flex-column flex-row-m"
-        key={index}>
+        key={index}
+      >
         <ShippingHeader
           shippingData={delivery}
           index={index}

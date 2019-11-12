@@ -16,7 +16,8 @@ const StorePickUpHeader: FunctionComponent<Props> = ({
     <header className="flex flex-column">
       <p
         data-testid="storepickup-header"
-        className="t-heading-4-ns t-heading-5">
+        className="t-heading-4-ns t-heading-5"
+      >
         <FormattedMessage id="store/pickup.header.title" />
         {multiplePickups && (
           <FormattedMessage

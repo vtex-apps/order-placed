@@ -23,7 +23,8 @@ const Product: FunctionComponent<Props> = ({ productInfo }) => {
             href={productInfo.detailUrl}
             className="t-body c-muted-1 no-underline"
             target="_blank"
-            rel="noopener noreferrer">
+            rel="noopener noreferrer"
+          >
             <p className="mt3">
               {productInfo.name}
               {showMeasurementUnit && (

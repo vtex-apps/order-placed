@@ -5,7 +5,6 @@ import { orderGroupQuery as bankInvoiceLoggedIn } from '../mocks/bankInvoiceLogg
 import { orderGroupQuery as bankInvoiceNotLoggedIn } from '../mocks/bankInvoiceNotLoggedIn'
 import { orderGroupQuery as bankInvoiceNumberLoggedIn } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as bankInvoiceNumberNotLoggedIn } from '../mocks/bankInvoiceNumberNotLoggedIn'
-
 import Header from '../components/Header'
 
 describe('Bank invoice scenarios', () => {

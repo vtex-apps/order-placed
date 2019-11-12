@@ -9,6 +9,7 @@ import {
   PaymentGroupInfo,
   parseBankInvoiceUrl,
 } from '../../utils'
+
 import BankInvoice from './BankInvoice'
 import Summary from './Summary'
 import Warnings from './Warnings'

@@ -7,7 +7,6 @@ import {
   FormattedMessage,
 } from 'react-intl'
 import { branch, renderComponent } from 'recompose'
-
 import { Helmet, withRuntimeContext, ExtensionPoint } from 'vtex.render-runtime'
 import { Button } from 'vtex.styleguide'
 import { usePWA } from 'vtex.store-resources/PWAContext'
@@ -18,9 +17,7 @@ import OrderInfo from './components/OrderInfo'
 import Skeleton from './Skeleton'
 import withoutSSR from './WithoutSSR'
 import ErrorMessage from './components/ErrorMessage'
-
 import * as getOrderGroup from './graphql/getOrderGroup.graphql'
-
 import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
 
@@ -61,7 +58,8 @@ const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
 
   return (
     <CurrencyContext.Provider
-      value={orderGroup.orders[0].storePreferencesData.currencyCode}>
+      value={orderGroup.orders[0].storePreferencesData.currencyCode}
+    >
       <Helmet>
         <title>{intl.formatMessage(messages.title)}</title>
       </Helmet>
@@ -135,7 +133,8 @@ export default compose(
       <ErrorMessage
         icon={<Forbidden />}
         errorId={messages.notLoggedTitle.id}
-        messageId={messages.notLoggedMessage.id}>
+        messageId={messages.notLoggedMessage.id}
+      >
         <a href={`/login?returnUrl=${window.location.href}`}>
           <Button>
             <FormattedMessage id="store/go-to-login" />
@@ -152,7 +151,8 @@ export default compose(
       <ErrorMessage
         icon={<NotFound />}
         errorId={messages.invalidTitle.id}
-        messageId={messages.invalidMessage.id}>
+        messageId={messages.invalidMessage.id}
+      >
         <a href="/">
           <Button>
             <FormattedMessage id="store/go-to-home" />

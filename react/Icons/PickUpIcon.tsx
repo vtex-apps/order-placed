@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+
 import { calcIconSize } from './utils'
 
 const iconBase = {
@@ -17,7 +18,8 @@ class PickUpIcon extends PureComponent<IconProps> {
         height={newSize.height}
         viewBox="0 0 26 24"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M21.6575 4.79333H4.17969"
           stroke={color}

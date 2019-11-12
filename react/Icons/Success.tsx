@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+
 import { calcIconSize } from './utils'
 
 const iconBase = {
@@ -18,7 +19,8 @@ class SuccessIcon extends PureComponent<IconProps> {
         height={newSize.height}
         viewBox="0 0 42 42"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M11.666 22.333L16.9993 27.6663L30.3327 14.333"
           stroke={color}

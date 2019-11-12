@@ -6,14 +6,16 @@ import { Button } from 'vtex.styleguide'
 const BarCode: FunctionComponent<Props> = ({ barCodeNumber }) => (
   <div
     data-testid="bank-invoice-barcode"
-    className="flex b--muted-4 ba br3 bw1">
+    className="flex b--muted-4 ba br3 bw1"
+  >
     <div className="tc ph9">
       <p className="c-on-base">{barCodeNumber}</p>
     </div>
     <Clipboard
       component="div"
       data-clipboard-text={barCodeNumber}
-      className="b--muted-4 bl bw1 flex items-center">
+      className="b--muted-4 bl bw1 flex items-center"
+    >
       <Button variation="tertiary">
         <FormattedMessage id="store/header.bankinvoice.copy" />
       </Button>
