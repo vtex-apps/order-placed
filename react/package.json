@@ -1,5 +1,5 @@
 {
-  "version": "1.7.0",
+  "version": "1.7.1",
   "scripts": {
     "lint": "tsc --noEmit && eslint --quiet --ext ts,tsx .",
     "test": "vtex-test-tools test"
