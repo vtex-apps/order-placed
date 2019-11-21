@@ -12,6 +12,7 @@ import {
   transformConnectorResponsesToArray,
   parseBankInvoiceUrl,
 } from '../../utils'
+
 import AdditionalInfo from './AdditionalInfo'
 import Price from './FormattedPrice'
 import ConnectorResponseInfo from './ConnectorResponseInfo'
@@ -80,7 +81,8 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
           <div
             className="ml4"
             onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}>
+            onMouseLeave={() => setIsOpen(false)}
+          >
             <InfoIcon colorToken="c-muted-3" />
           </div>
         </div>
@@ -96,7 +98,8 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
             <ButtonLink
               to={parseBankInvoiceUrl(payment.url)}
               variation="primary"
-              openNewWindow>
+              openNewWindow
+            >
               <FormattedMessage
                 id="store/payments.bankinvoice.print"
                 values={{ paymentSystemName: payment.paymentSystemName }}

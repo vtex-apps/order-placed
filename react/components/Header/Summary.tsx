@@ -24,7 +24,8 @@ const OrderSummary: FunctionComponent<Props> = ({
   return (
     <section
       data-testid="summary"
-      className="w-90 w-80-ns center bb b--muted-4 pb8 flex justify-between flex-wrap flex-nowrap-m">
+      className="w-90 w-80-ns center bb b--muted-4 pb8 flex justify-between flex-wrap flex-nowrap-m"
+    >
       <article className="ba b--muted-5 bw1 br3 w-50-m w-100 mr4-m mb4 mb0-m">
         <p className="t-heading-5 tc bb b--muted-5 bw1 pb5 c-on-base">
           <FormattedMessage id="store/summary.shipping" />

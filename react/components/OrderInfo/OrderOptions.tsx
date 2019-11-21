@@ -19,7 +19,8 @@ const OrderOptions: FunctionComponent<Props> = ({
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
-          to={`/account#/orders/${orderId}/edit`}>
+          to={`/account#/orders/${orderId}/edit`}
+        >
           <FormattedMessage id="store/order.header.update.button" />
         </ButtonLink>
       )}
@@ -29,7 +30,8 @@ const OrderOptions: FunctionComponent<Props> = ({
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
-          to="/account#/orders/">
+          to="/account#/orders/"
+        >
           <FormattedMessage id="store/order.header.myorders.button" />
         </ButtonLink>
       </div>
@@ -44,7 +46,8 @@ const OrderOptions: FunctionComponent<Props> = ({
           <ButtonLink
             variation="danger-tertiary"
             fullWidth={fullWidth}
-            to={`/account#/orders/${orderId}/cancel`}>
+            to={`/account#/orders/${orderId}/cancel`}
+          >
             <FormattedMessage id="store/order.header.cancel.button" />
           </ButtonLink>
         )}

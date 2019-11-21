@@ -4,9 +4,9 @@ import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
 import { getSubscriptionInfo } from '../../utils'
 
-const SubscriptionAttachment: FunctionComponent<
-  { attachmentItem: Attachment } & InjectedIntlProps
-> = ({ attachmentItem, intl }) => {
+const SubscriptionAttachment: FunctionComponent<{
+  attachmentItem: Attachment
+} & InjectedIntlProps> = ({ attachmentItem, intl }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const { subsFrequency, subsPurchaseDay } = getSubscriptionInfo(
@@ -36,7 +36,8 @@ const SubscriptionAttachment: FunctionComponent<
             tabIndex={0}
             className="c-action-primary"
             onClick={() => setIsOpen(!isOpen)}
-            onKeyDown={handleKeyDown}>
+            onKeyDown={handleKeyDown}
+          >
             {isOpen ? <IconCaretUp /> : <IconCaretDown />}
           </div>
         </div>

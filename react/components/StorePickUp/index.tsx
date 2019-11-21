@@ -1,6 +1,7 @@
 import React, { Fragment, FunctionComponent } from 'react'
 
 import ProductList from '../ProductList'
+
 import StorePickUpHeader from './StorePickUpHeader'
 
 interface Props {
@@ -12,7 +13,8 @@ const StorePickUp: FunctionComponent<Props> = ({ pickUpPackages }) => (
     {pickUpPackages.map((pickup: Parcel, index: number) => (
       <section
         className="mv8 flex-l justify-between flex-column flex-row-m"
-        key={index}>
+        key={index}
+      >
         <StorePickUpHeader
           shippingData={pickup}
           index={index}

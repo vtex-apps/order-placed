@@ -1,7 +1,7 @@
 import { render } from '@vtex/test-tools/react'
 import React from 'react'
-import * as getOrderGroup from '../graphql/getOrderGroup.graphql'
 
+import * as getOrderGroup from '../graphql/getOrderGroup.graphql'
 import OrderPlaced from '../OrderPlaced'
 
 const orderGroupId = '123123123'
@@ -19,8 +19,7 @@ describe('OrderPlaced', () => {
 
   beforeAll(() => {
     delete window.location
-    // @ts-ignore
-    window.location = { search: `?og=${orderGroupId}` }
+    window.location = { search: `?og=${orderGroupId}` } as Location
   })
 
   afterAll(() => {
@@ -36,11 +35,11 @@ describe('OrderPlaced', () => {
     const mockRequest = {
       ...requestSample,
       error: {
+        name: 'erro',
         message: '403: Forbidden',
       },
     }
 
-    // @ts-ignore
     const { queryByText } = render(<OrderPlaced />, {
       graphql: { mocks: [mockRequest] },
     })
@@ -61,7 +60,6 @@ describe('OrderPlaced', () => {
     }
 
     const { queryByText } = render(<OrderPlaced />, {
-      // @ts-ignore
       graphql: { mocks: [mockRequest] },
     })
 

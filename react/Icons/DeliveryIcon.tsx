@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+
 import { calcIconSize } from './utils'
 
 const iconBase = {
@@ -17,7 +18,8 @@ class DeliveryIcon extends PureComponent<IconProps> {
         height={newSize.height}
         viewBox="0 0 30 22"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M18.7344 4.80957H26.2004L29.0001 12.4286V18.1428H25.2205"
           stroke={color}

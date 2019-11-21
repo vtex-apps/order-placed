@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+
 import ProductAttachment from './Attachment'
 import Product from './Product'
 
@@ -12,7 +13,8 @@ const ProductList: FunctionComponent<Props> = ({ products }) => {
       {products.map((product: OrderItem, index: number) => (
         <article
           className={`${index !== products.length - 1 ? 'bb b--muted-4' : ''}`}
-          key={product.id}>
+          key={product.id}
+        >
           <Product productInfo={product} />
           {(product.bundleItems || product.attachments) && (
             <ProductAttachment
