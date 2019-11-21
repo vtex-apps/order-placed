@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Use `vtex.totalizer-translator` to correctly list all taxes applied to an order.
+
 ## [1.7.0] - 2019-11-21
 
 ### Added

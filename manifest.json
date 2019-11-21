@@ -25,7 +25,8 @@
     "vtex.profile-form": "3.x",
     "vtex.pixel-manager": "1.x",
     "vtex.pwa-components": "0.x",
-    "vtex.store-resources": "0.x"
+    "vtex.store-resources": "0.x",
+    "vtex.totalizer-translator": "2.x"
   },
   "credentialType": "absolute",
   "policies": [
