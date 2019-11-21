@@ -39,5 +39,5 @@
     "vtex.order-placed-graphql": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-placed-graphql@1.8.1/public/_types/react",
     "vtex.styleguide": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.96.3/public/@types/vtex.styleguide"
   },
-  "version": "1.6.0"
+  "version": "1.7.0"
 }
