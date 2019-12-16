@@ -5,6 +5,7 @@ declare module 'vtex.render-runtime' {
   export interface RenderContextProps {
     runtime: {
       account: string
+      query: Record<string, string>
     }
   }
 
@@ -15,4 +16,5 @@ declare module 'vtex.render-runtime' {
   export const withRuntimeContext: any
   export const Helmet: any
   export const ExtensionPoint: any
+  export const useRuntime: any
 }

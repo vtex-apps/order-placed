@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { ButtonLink } from 'vtex.order-details'
 import { Button } from 'vtex.styleguide'
 
 import SuccessIcon from '../../Icons/Success'
@@ -9,12 +8,15 @@ import {
   PaymentGroupInfo,
   parseBankInvoiceUrl,
 } from '../../utils'
-
 import BankInvoice from './BankInvoice'
 import Summary from './Summary'
 import Warnings from './Warnings'
+import { useOrderGroup } from '../OrderGroupContext'
 
-const Header: FunctionComponent<Props> = ({ orderGroup, profile, inStore }) => {
+const Header: FunctionComponent = () => {
+  const { orderGroup } = useOrderGroup()
+  const profile = orderGroup.orders[0].clientProfileData
+
   const bankInvoices = orderGroup.orders
     .reduce(
       (acc: PaymentGroupInfo[], currOrder: Order) => [
@@ -59,13 +61,6 @@ const Header: FunctionComponent<Props> = ({ orderGroup, profile, inStore }) => {
               <FormattedMessage id="store/header.print.button" />
             </Button>
           </div>
-          {inStore && (
-            <div className="tr c-action-primary ml4">
-              <ButtonLink variation="primary" to="/checkout/instore#/">
-                <FormattedMessage id="store/header.newpurchase.button" />
-              </ButtonLink>
-            </div>
-          )}
         </div>
       </section>
       {(hasDelivery || hasPickUp) && (
@@ -93,11 +88,4 @@ const Header: FunctionComponent<Props> = ({ orderGroup, profile, inStore }) => {
     </header>
   )
 }
-
-interface Props {
-  orderGroup: OrderGroup
-  profile: ClientProfile
-  inStore?: boolean
-}
-
 export default Header
