@@ -30,4 +30,4 @@ class AnalyticsWrapper extends Component<Props> {
   }
 }
 
-export default withPixel(withRuntimeContext(AnalyticsWrapper))
+export const Analytics = withPixel(withRuntimeContext(AnalyticsWrapper))

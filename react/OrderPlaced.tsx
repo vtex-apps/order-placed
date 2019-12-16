@@ -1,25 +1,36 @@
 import React, { FunctionComponent, useState } from 'react'
-import { compose, graphql } from 'react-apollo'
+import { useQuery } from 'react-apollo'
 import {
   injectIntl,
   InjectedIntlProps,
   defineMessages,
   FormattedMessage,
 } from 'react-intl'
-import { branch, renderComponent } from 'recompose'
-import { Helmet, withRuntimeContext, ExtensionPoint } from 'vtex.render-runtime'
+import { compose } from 'recompose'
+import {
+  Helmet,
+  withRuntimeContext,
+  ExtensionPoint,
+  useRuntime,
+} from 'vtex.render-runtime'
 import { Button } from 'vtex.styleguide'
 import { usePWA } from 'vtex.store-resources/PWAContext'
 
-import AnalyticsWrapper from './Analytics'
-import Header from './components/Header'
+import { Analytics } from './components/Analytics'
 import OrderInfo from './components/OrderInfo'
 import Skeleton from './Skeleton'
-import withoutSSR from './WithoutSSR'
+import withoutSSR from './components/WithoutSSR'
 import ErrorMessage from './components/ErrorMessage'
-import * as getOrderGroup from './graphql/getOrderGroup.graphql'
 import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
+import { OrderGroupContext } from './components/OrderGroupContext'
+import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
+
+type Props = InjectedIntlProps
+
+interface OrderGroupData {
+  orderGroup: OrderGroup
+}
 
 export const CurrencyContext = React.createContext('BRL')
 
@@ -46,90 +57,26 @@ const messages = defineMessages({
   },
 })
 
-const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
-  orderGroupQuery,
-  inStore,
-  intl,
-}) => {
-  const { orderGroup } = orderGroupQuery
+const OrderPlaced: FunctionComponent<Props> = ({ intl, children }) => {
+  const runtime = useRuntime()
   const { settings = {} } = usePWA() || {}
-  const { promptOnCustomEvent } = settings
   const [installDismissed, setInstallDismissed] = useState(false)
-
-  return (
-    <CurrencyContext.Provider
-      value={orderGroup.orders[0].storePreferencesData.currencyCode}
-    >
-      <Helmet>
-        <title>{intl.formatMessage(messages.title)}</title>
-      </Helmet>
-      <AnalyticsWrapper eventList={orderGroup.analyticsData} />
-      <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
-      <Header
-        orderGroup={orderGroup}
-        profile={orderGroup.orders[0].clientProfileData}
-        inStore={inStore}
-      />
-      <main className="mv6 w-80-ns w-90 center">
-        {orderGroup.orders.map((order: Order, index: number) => (
-          <OrderInfo
-            order={order}
-            profile={order.clientProfileData}
-            numOfOrders={orderGroup.orders.length}
-            index={index}
-            key={order.orderId}
-          />
-        ))}
-        {promptOnCustomEvent === 'checkout' && !installDismissed && (
-          <ExtensionPoint
-            id="promotion-banner"
-            type="install"
-            onDismiss={() => {
-              setInstallDismissed(true)
-            }}
-          />
-        )}
-      </main>
-    </CurrencyContext.Provider>
-  )
-}
-
-interface Props {
-  orderGroupQuery: any
-  inStore: boolean
-}
-
-export default compose(
-  withRuntimeContext,
-  withoutSSR,
-  graphql(getOrderGroup.default, {
-    name: 'orderGroupQuery',
-    options: () => {
-      const params = new URLSearchParams(location.search)
-      const orderGroup = params.get('og')
-      return {
-        variables: {
-          orderGroup,
-        },
-      }
+  const { data, loading, error } = useQuery<OrderGroupData>(GET_ORDER_GROUP, {
+    variables: {
+      orderGroup: runtime.query.og,
     },
-  }),
+  })
+
   /** render loading skeleton if query is still loading */
-  branch(
-    ({ orderGroupQuery }: any) => orderGroupQuery.loading,
-    renderComponent(Skeleton)
-  ),
-  /** if query errored display an error alert */
-  branch(
-    ({ orderGroupQuery: { error } }: any) => {
-      if (!error) return
+  if (loading) return <Skeleton />
 
-      return (
-        (error.extensions && error.extensions.response.status === 403) ||
-        (error.message && error.message.includes('403'))
-      )
-    },
-    renderComponent(() => (
+  if (
+    error?.message.includes('403') ||
+    // 'any' needed because graphql error type doesn't have 'extensions' prop
+    (error as any)?.extensions?.response?.status === 403
+  ) {
+    /** if query errored display an error alert */
+    return (
       <ErrorMessage
         icon={<Forbidden />}
         errorId={messages.notLoggedTitle.id}
@@ -141,13 +88,12 @@ export default compose(
           </Button>
         </a>
       </ErrorMessage>
-    ))
-  ),
+    )
+  }
+
   /** if query resulted in an invalid orderGroup display an error alert*/
-  branch(
-    ({ orderGroupQuery: { orderGroup } }: any) =>
-      orderGroup == null || orderGroup.orders == null,
-    renderComponent(() => (
+  if (data?.orderGroup?.orders == null) {
+    return (
       <ErrorMessage
         icon={<NotFound />}
         errorId={messages.invalidTitle.id}
@@ -159,7 +105,54 @@ export default compose(
           </Button>
         </a>
       </ErrorMessage>
-    ))
-  ),
+    )
+  }
+
+  const { orderGroup } = data
+  const { promptOnCustomEvent } = settings
+
+  return (
+    <OrderGroupContext.Provider value={orderGroup}>
+      <CurrencyContext.Provider
+        value={orderGroup.orders[0].storePreferencesData.currencyCode}
+      >
+        <Helmet>
+          <title>{intl.formatMessage(messages.title)}</title>
+        </Helmet>
+
+        <Analytics eventList={orderGroup.analyticsData} />
+
+        <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
+
+        {children}
+
+        <main className="mv6 w-80-ns w-90 center">
+          {orderGroup.orders.map((order, index) => (
+            <OrderInfo
+              order={order}
+              profile={order.clientProfileData}
+              numOfOrders={orderGroup.orders.length}
+              index={index}
+              key={order.orderId}
+            />
+          ))}
+          {promptOnCustomEvent === 'checkout' && !installDismissed && (
+            <ExtensionPoint
+              id="promotion-banner"
+              type="install"
+              onDismiss={() => {
+                setInstallDismissed(true)
+              }}
+            />
+          )}
+        </main>
+      </CurrencyContext.Provider>
+    </OrderGroupContext.Provider>
+  )
+}
+
+export default compose<Props, Props>(
+  withRuntimeContext,
+  withoutSSR,
   injectIntl
 )(OrderPlaced)
