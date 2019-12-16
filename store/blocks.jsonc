@@ -1,0 +1,30 @@
+{
+  "order-placed": {
+    "blocks": ["order-placed-header", "orders-list"]
+  },
+  "orders-list": {
+    "blocks": ["order-info"]
+  },
+  "order-info": {
+    "children": [
+      "order-header",
+      "order-split-notice",
+      "order-customer-info",
+      "order-section#payments"
+    ]
+  },
+  "order-section#payments": {
+    "children": [
+      "order-payment",
+      "responsive-layout.mobile#order-options-mobile"
+    ]
+  },
+  "responsive-layout.mobile#order-options-mobile": {
+    "children": ["order-options#mobile"]
+  },
+  "order-options#mobile": {
+    "props": {
+      "fullWidth": true
+    }
+  }
+}

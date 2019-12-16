@@ -1,7 +1,7 @@
 import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
-import OrderInfo from '../components/OrderInfo'
+import OrderInfo from '../OrderInfo'
 import { orderGroupQuery as serviceWithAttachment } from '../mocks/bundleServiceWithAttachment'
 import { orderGroupQuery as serviceWithNoAttachments } from '../mocks/bundleServiceWithNoAttachments'
 import { orderGroupQuery as serviceAndAttachment } from '../mocks/serviceAndAttachment'

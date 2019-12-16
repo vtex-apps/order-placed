@@ -30,5 +30,6 @@
       "directory": "node",
       "changeProcessCWD": true
     }
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

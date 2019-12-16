@@ -1,19 +1,18 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { FormattedMessage, FormattedTime } from 'react-intl'
-import { compose } from 'recompose'
 import { FormattedDate } from 'vtex.order-details'
-import { RenderContextProps, withRuntimeContext } from 'vtex.render-runtime'
+import { useRuntime } from 'vtex.render-runtime/react/components/RenderContext'
 
-import OrderOptions from './OrderOptions'
+import OrderOptions from './components/OrderInfo/OrderOptions'
+import { useOrder } from './components/OrderContext'
 
-const OrderHeader: FunctionComponent<Props & RenderContextProps> = ({
-  orderInfo,
-  splitOrder,
-  takeaway,
-  runtime,
-}) => {
+const OrderHeader: FC = () => {
+  const runtime = useRuntime()
+  const order = useOrder()
   const storeAccount = runtime.account
-  const orderSeller = orderInfo.sellers[0].name
+  const orderSeller = order.sellers[0].name
+
+  const hasTakeAwayParcels = order.takeAwayParcels.length > 0
 
   return (
     <header className="flex justify-between items-center mt7">
@@ -21,7 +20,7 @@ const OrderHeader: FunctionComponent<Props & RenderContextProps> = ({
         <FormattedMessage
           id="store/order.header.number"
           values={{
-            orderId: orderInfo.orderId,
+            orderId: order.orderId,
           }}
         />
         <br />
@@ -30,14 +29,14 @@ const OrderHeader: FunctionComponent<Props & RenderContextProps> = ({
             id="store/order.header.date"
             values={{
               orderDate: (
-                <FormattedDate date={orderInfo.creationDate} style="short" />
+                <FormattedDate date={order.creationDate} style="short" />
               ),
-              orderTime: <FormattedTime value={orderInfo.creationDate} />,
+              orderTime: <FormattedTime value={order.creationDate} />,
             }}
           />
         </small>
         <br />
-        {splitOrder && storeAccount !== orderSeller && (
+        {storeAccount !== orderSeller && (
           <small className="c-muted-2 t-body">
             <FormattedMessage
               id="store/order.header.seller"
@@ -47,7 +46,7 @@ const OrderHeader: FunctionComponent<Props & RenderContextProps> = ({
             />
           </small>
         )}
-        {takeaway && (
+        {hasTakeAwayParcels && (
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a className="c-action-primary t-small" href="#">
             <FormattedMessage id="store/order.header.receipt" />
@@ -56,21 +55,12 @@ const OrderHeader: FunctionComponent<Props & RenderContextProps> = ({
       </p>
       <OrderOptions
         className="dn-s flex-l"
-        allowCancellation={orderInfo.allowCancellation}
-        orderId={orderInfo.orderId}
-        takeaway={takeaway}
+        allowCancellation={order.allowCancellation}
+        orderId={order.orderId}
+        takeaway={hasTakeAwayParcels}
       />
     </header>
   )
 }
 
-interface Props {
-  orderInfo: Order
-  splitOrder?: boolean
-  takeaway?: boolean
-  runtime?: { account: string }
-}
-
-export default compose<Props & RenderContextProps, Props>(withRuntimeContext)(
-  OrderHeader
-)
+export default OrderHeader

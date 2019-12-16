@@ -26,22 +26,6 @@ const messages = defineMessages({
     id: 'store/items.attachments.subscription.purchaseday',
     defaultMessage: '',
   },
-  splitPickup: {
-    id: 'store/order.split.n.pickup.n.takeaway',
-    defaultMessage: '',
-  },
-  splitNoPickup: {
-    id: 'store/order.split.no.pickup.n.takeaway',
-    defaultMessage: '',
-  },
-  splitPickupNoTakeaway: {
-    id: 'store/order.split.n.pickup.no.takeaway',
-    defaultMessage: '',
-  },
-  splitNoPickupNoTakeaway: {
-    id: 'store/order.split.no.pickup.no.takeaway',
-    defaultMessage: '',
-  },
 })
 
 function hasValueAndIsNotPrivate(connectorResponses: ConnectorResponses) {
@@ -92,10 +76,7 @@ export function isSubscription(attachmentItem: Attachment) {
   return attachmentItem.name.indexOf('vtex.subscription') === 0
 }
 
-export function getSubscriptionInfo(
-  attachmentItem: Attachment,
-  intl: ReactIntl.InjectedIntl
-) {
+export function getSubscriptionInfo(attachmentItem: Attachment, intl: any) {
   if (!isSubscription(attachmentItem)) {
     return {}
   }
@@ -146,47 +127,6 @@ export function getSubscriptionInfo(
     subsValidityBegin,
     subsValidityEnd,
   }
-}
-
-export function orderSplitMessage({
-  deliveries,
-  pickups,
-  takeaways,
-  intl,
-}: {
-  deliveries: number
-  pickups: number
-  takeaways: number
-  intl: ReactIntl.InjectedIntl
-}) {
-  const nPickups = pickups > 1
-  const nTakeaways = takeaways > 1
-
-  if (nPickups && nTakeaways) {
-    return intl.formatMessage(messages.splitPickup, {
-      deliveries,
-      pickups,
-      takeaways,
-    })
-  } else if (nTakeaways) {
-    return intl.formatMessage(messages.splitNoPickup, {
-      deliveries,
-      pickups,
-      takeaways,
-    })
-  } else if (nPickups) {
-    return intl.formatMessage(messages.splitPickupNoTakeaway, {
-      deliveries,
-      pickups,
-      takeaways,
-    })
-  }
-
-  return intl.formatMessage(messages.splitNoPickupNoTakeaway, {
-    deliveries,
-    pickups,
-    takeaways,
-  })
 }
 
 export function parseBankInvoiceUrl(url: string) {
