@@ -26,7 +26,9 @@
     "vtex.pixel-manager": "1.x",
     "vtex.pwa-components": "0.x",
     "vtex.store-resources": "0.x",
-    "vtex.totalizer-translator": "2.x"
+    "vtex.totalizer-translator": "2.x",
+    "vtex.flex-layout": "0.x",
+    "vtex.responsive-layout": "0.x"
   },
   "credentialType": "absolute",
   "policies": [
