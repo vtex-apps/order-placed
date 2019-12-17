@@ -1,8 +1,8 @@
 import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
-import OrderInfo from '../components/OrderInfo'
-import OrderHeader from '../components/OrderInfo/OrderHeader'
+import OrderInfo from '../OrderInfo'
+import OrderHeader from '../OrderHeader'
 import { orderGroupQuery as bankInvoicePayment } from '../mocks/bankInvoiceLoggedIn'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as onePickUp } from '../mocks/onePickupSimple'

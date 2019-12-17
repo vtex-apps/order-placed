@@ -5,7 +5,7 @@ import { orderGroupQuery as bankInvoiceLoggedIn } from '../mocks/bankInvoiceLogg
 import { orderGroupQuery as bankInvoiceNotLoggedIn } from '../mocks/bankInvoiceNotLoggedIn'
 import { orderGroupQuery as bankInvoiceNumberLoggedIn } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as bankInvoiceNumberNotLoggedIn } from '../mocks/bankInvoiceNumberNotLoggedIn'
-import Header from '../components/Header'
+import Header from '../Header'
 
 describe('Bank invoice scenarios', () => {
   it('should render embedded bank invoice for logged in customer, but no number', () => {

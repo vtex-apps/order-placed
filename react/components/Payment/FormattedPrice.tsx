@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { FormattedNumber } from 'react-intl'
 
-import { CurrencyContext } from '../../OrderPlaced'
+import { CurrencyContext } from '../../index'
 
 interface Props {
   value: number

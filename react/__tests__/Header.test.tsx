@@ -1,7 +1,7 @@
 import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
-import Header from '../components/Header'
+import Header from '../OrderHeader'
 import { orderGroupQuery as bankInvoiceDueDate } from '../mocks/bankInvoiceLoggedIn'
 import { orderGroupQuery as bankInvoiceNoDueDate } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
