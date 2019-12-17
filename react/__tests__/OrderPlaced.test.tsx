@@ -1,14 +1,14 @@
 import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
-import * as getOrderGroup from '../graphql/getOrderGroup.graphql'
-import OrderPlaced from '../OrderPlaced'
+import GET_ORDER_GROUP from '../graphql/getOrderGroup.graphql'
+import OrderPlaced from '../index'
 
 const orderGroupId = '123123123'
 
 const requestSample = {
   request: {
-    query: getOrderGroup.default,
+    query: GET_ORDER_GROUP,
     name: 'orderGroupQuery',
     variables: { orderGroup: orderGroupId },
   },

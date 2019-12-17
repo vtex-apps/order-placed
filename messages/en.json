@@ -20,7 +20,7 @@
   "store/order.header.myorders.button": "My Orders",
   "store/order.header.number": "Order #{orderId}",
   "store/order.header.receipt": "View receipt",
-  "store/order.header.seller": "Sold and deliveried by {seller}",
+  "store/order.header.seller": "Sold and delivered by {seller}",
   "store/order.header.takeaway.cancel.button": "Cancel purchase",
   "store/order.header.takeaway.printreceipt.button": "Reprint receipt",
   "store/order.header.update.button": "Update order",

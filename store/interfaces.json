@@ -1,11 +1,39 @@
 {
   "order-placed": {
-    "component": "OrderPlaced",
-    "composition": "children",
-    "allowed": "*"
+    "component": "index",
+    "allowed": ["order-placed-header", "orders-list"]
   },
   "order-placed-header": {
     "component": "Header"
+  },
+  "orders-list": {
+    "component": "OrdersList",
+    "allowed": ["order-info"]
+  },
+  "order-info": {
+    "component": "OrderInfo",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "order-header": {
+    "component": "OrderHeader"
+  },
+  "order-split-notice": {
+    "component": "OrderSplitNotice"
+  },
+  "order-customer-info": {
+    "component": "OrderCustomerInfo"
+  },
+  "order-options": {
+    "component": "vtex.order-details/OrderOptions"
+  },
+  "order-payment": {
+    "component": "OrderPayment"
+  },
+  "order-section": {
+    "component": "OrderSection",
+    "composition": "children",
+    "allowed": "*"
   },
   "order-placed-extension": {
     "component": "*"

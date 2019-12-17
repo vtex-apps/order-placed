@@ -1,32 +1,19 @@
 import React, { FunctionComponent, useState } from 'react'
 import { useQuery } from 'react-apollo'
-import {
-  injectIntl,
-  InjectedIntlProps,
-  defineMessages,
-  FormattedMessage,
-} from 'react-intl'
-import { compose } from 'recompose'
-import {
-  Helmet,
-  withRuntimeContext,
-  ExtensionPoint,
-  useRuntime,
-} from 'vtex.render-runtime'
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl'
+import { Helmet, ExtensionPoint, useRuntime } from 'vtex.render-runtime'
 import { Button } from 'vtex.styleguide'
 import { usePWA } from 'vtex.store-resources/PWAContext'
 
-import { Analytics } from './components/Analytics'
-import OrderInfo from './components/OrderInfo'
-import Skeleton from './Skeleton'
+// import { Analytics } from './components/Analytics'
+import { OrderGroupContext } from './components/OrderGroupContext'
 import withoutSSR from './components/WithoutSSR'
 import ErrorMessage from './components/ErrorMessage'
+import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
 import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
-import { OrderGroupContext } from './components/OrderGroupContext'
-import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
-
-type Props = InjectedIntlProps
+import Skeleton from './Skeleton'
+import { orderGroupQuery as mockQuery } from './mocks/twoCreditCards'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -57,7 +44,8 @@ const messages = defineMessages({
   },
 })
 
-const OrderPlaced: FunctionComponent<Props> = ({ intl, children }) => {
+const OrderPlaced: FunctionComponent = () => {
+  const intl = useIntl()
   const runtime = useRuntime()
   const { settings = {} } = usePWA() || {}
   const [installDismissed, setInstallDismissed] = useState(false)
@@ -108,7 +96,7 @@ const OrderPlaced: FunctionComponent<Props> = ({ intl, children }) => {
     )
   }
 
-  const { orderGroup } = data
+  const { orderGroup } = mockQuery as any // data
   const { promptOnCustomEvent } = settings
 
   return (
@@ -120,29 +108,18 @@ const OrderPlaced: FunctionComponent<Props> = ({ intl, children }) => {
           <title>{intl.formatMessage(messages.title)}</title>
         </Helmet>
 
-        <Analytics eventList={orderGroup.analyticsData} />
+        {/* <Analytics eventList={orderGroup.analyticsData} /> */}
 
         <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
-
-        {children}
+        <ExtensionPoint id="order-placed-header" />
 
         <main className="mv6 w-80-ns w-90 center">
-          {orderGroup.orders.map((order, index) => (
-            <OrderInfo
-              order={order}
-              profile={order.clientProfileData}
-              numOfOrders={orderGroup.orders.length}
-              index={index}
-              key={order.orderId}
-            />
-          ))}
+          <ExtensionPoint id="orders-list" />
           {promptOnCustomEvent === 'checkout' && !installDismissed && (
             <ExtensionPoint
               id="promotion-banner"
               type="install"
-              onDismiss={() => {
-                setInstallDismissed(true)
-              }}
+              onDismiss={() => setInstallDismissed(true)}
             />
           )}
         </main>
@@ -151,8 +128,4 @@ const OrderPlaced: FunctionComponent<Props> = ({ intl, children }) => {
   )
 }
 
-export default compose<Props, Props>(
-  withRuntimeContext,
-  withoutSSR,
-  injectIntl
-)(OrderPlaced)
+export default withoutSSR(OrderPlaced)
