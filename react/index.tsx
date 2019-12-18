@@ -13,7 +13,7 @@ import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
 import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
 import Skeleton from './Skeleton'
-import { orderGroupQuery as mockQuery } from './mocks/twoCreditCards'
+import { orderGroupQuery as mockQuery } from './mocks/onePickupSimple'
 
 interface OrderGroupData {
   orderGroup: OrderGroup

@@ -46,6 +46,9 @@
     "composition": "children",
     "allowed": "*"
   },
+  "order-pickup-items-list": {
+    "component": "PickupItemsList"
+  },
   "order-placed-extension": {
     "component": "*"
   }

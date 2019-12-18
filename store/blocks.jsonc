@@ -10,13 +10,16 @@
       "flex-layout.row#order-header",
       "order-split-notice",
       "order-customer-info",
-      "order-section#payments"
+      "order-section#payments",
+      "order-pickup-items-list"
     ]
   },
+  // header
   "flex-layout.row#order-header": {
     "props": {
       "colSizing": "auto",
-      "marginBottom": 7
+      "colGap": 5,
+      "marginBottom": 5
     },
     "children": [
       "flex-layout.col#order-header-info",
@@ -29,15 +32,17 @@
   "flex-layout.col#order-header-options": {
     "children": ["responsive-layout.desktop#order-options-desktop"]
   },
+  "responsive-layout.desktop#order-options-desktop": {
+    "children": ["order-options"]
+  },
+  // payment section
   "order-section#payments": {
     "children": [
       "order-payment",
       "responsive-layout.mobile#order-options-mobile"
     ]
   },
-  "responsive-layout.desktop#order-options-desktop": {
-    "children": ["order-options"]
-  },
+  // bottom of top section of order header
   "responsive-layout.mobile#order-options-mobile": {
     "children": ["order-options#mobile"]
   },
