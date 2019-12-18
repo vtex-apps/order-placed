@@ -7,17 +7,36 @@
   },
   "order-info": {
     "children": [
-      "order-header",
+      "flex-layout.row#order-header",
       "order-split-notice",
       "order-customer-info",
       "order-section#payments"
     ]
+  },
+  "flex-layout.row#order-header": {
+    "props": {
+      "colSizing": "auto",
+      "marginBottom": 7
+    },
+    "children": [
+      "flex-layout.col#order-header-info",
+      "flex-layout.col#order-header-options"
+    ]
+  },
+  "flex-layout.col#order-header-info": {
+    "children": ["order-title", "order-datetime", "order-seller"]
+  },
+  "flex-layout.col#order-header-options": {
+    "children": ["responsive-layout.desktop#order-options-desktop"]
   },
   "order-section#payments": {
     "children": [
       "order-payment",
       "responsive-layout.mobile#order-options-mobile"
     ]
+  },
+  "responsive-layout.desktop#order-options-desktop": {
+    "children": ["order-options"]
   },
   "responsive-layout.mobile#order-options-mobile": {
     "children": ["order-options#mobile"]
