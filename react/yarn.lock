@@ -4744,10 +4744,6 @@ verror@1.10.0:
   version "0.1.1"
   resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.responsive-layout@0.1.1/public/@types/vtex.responsive-layout#11dc25b0bf358265930368317b943135391efa5c"
 
-"vtex.shipping-estimate-translator@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-estimate-translator@2.1.2/public/_types/react":
-  version "2.1.2"
-  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-estimate-translator@2.1.2/public/_types/react#95629f50253d1f857f9f401f8d4c575c1ac52c99"
-
 "vtex.store-resources@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.38.0/public/_types/react":
   version "0.0.0"
   resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.38.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"

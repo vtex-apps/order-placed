@@ -16,7 +16,18 @@
     "allowed": "*"
   },
   "order-header": {
-    "component": "OrderHeader"
+    "component": "OrderHeader",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "order-title": {
+    "component": "OrderTitle"
+  },
+  "order-datetime": {
+    "component": "OrderDatetime"
+  },
+  "order-seller": {
+    "component": "OrderSeller"
   },
   "order-split-notice": {
     "component": "OrderSplitNotice"
