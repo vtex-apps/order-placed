@@ -2,18 +2,26 @@ import React, { FC } from 'react'
 import { OrderOptions } from 'vtex.order-details'
 
 import { useOrder } from './components/OrderContext'
+import styles from './styles.css'
 
-const WrappedOrderOptions: FC = () => {
+interface Props {
+  fullWidth?: boolean
+}
+
+const WrappedOrderOptions: FC<Props> = ({ fullWidth = false }) => {
   const order = useOrder()
   const hasTakeAwayParcels = order.takeAwayParcels.length > 0
 
   return (
-    <OrderOptions
-      className="dn-s flex-l"
-      allowCancellation={order.allowCancellation}
-      orderId={order.orderId}
-      takeaway={hasTakeAwayParcels}
-    />
+    <div className={styles['orderOptionsWrapper--mobile']}>
+      <OrderOptions
+        className="flex-l"
+        allowCancellation={order.allowCancellation}
+        orderId={order.orderId}
+        takeaway={hasTakeAwayParcels}
+        fullWidth={fullWidth}
+      />
+    </div>
   )
 }
 
