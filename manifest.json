@@ -4,9 +4,7 @@
   "version": "1.7.1",
   "title": "Order Placed",
   "description": "",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },
