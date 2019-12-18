@@ -25,7 +25,7 @@
     "component": "OrderCustomerInfo"
   },
   "order-options": {
-    "component": "vtex.order-details/OrderOptions"
+    "component": "OrderOptions"
   },
   "order-payment": {
     "component": "OrderPayment"
