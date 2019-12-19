@@ -1,9 +1,6 @@
 {
   "order-placed": {
-    "blocks": ["order-placed-header", "orders-list"]
-  },
-  "orders-list": {
-    "blocks": ["order-info"]
+    "blocks": ["order-placed-header", "order-info"]
   },
   "order-info": {
     "children": [
@@ -11,7 +8,9 @@
       "order-split-notice",
       "order-customer-info",
       "order-section#payments",
-      "order-pickup-items-list"
+      "order-pickup-items",
+      "order-delivery-items",
+      "order-takeaway-items"
     ]
   },
   // header

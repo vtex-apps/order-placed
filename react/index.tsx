@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import React, { FunctionComponent, useState, Fragment } from 'react'
 import { useQuery } from 'react-apollo'
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl'
 import { Helmet, ExtensionPoint, useRuntime } from 'vtex.render-runtime'
@@ -13,7 +13,7 @@ import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
 import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
 import Skeleton from './Skeleton'
-import { orderGroupQuery as mockQuery } from './mocks/onePickupSimple'
+import { orderGroupQuery as mockQuery } from './mocks/splitOrderTwoSellers'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -96,8 +96,10 @@ const OrderPlaced: FunctionComponent = () => {
     )
   }
 
-  const { orderGroup } = mockQuery as any // data
+  const { orderGroup }: { orderGroup: OrderGroup } = mockQuery as any // data
   const { promptOnCustomEvent } = settings
+
+  console.log(orderGroup)
 
   return (
     <OrderGroupContext.Provider value={orderGroup}>
@@ -114,7 +116,14 @@ const OrderPlaced: FunctionComponent = () => {
         <ExtensionPoint id="order-placed-header" />
 
         <main className="mv6 w-80-ns w-90 center">
-          <ExtensionPoint id="orders-list" />
+          {orderGroup.orders.map((order, i, { length }) => (
+            <Fragment key={order.orderId}>
+              <ExtensionPoint id="order-info" order={order} />
+              {i < length - 1 && (
+                <hr className="bg-muted-4 bt b--muted-4 mv9" />
+              )}
+            </Fragment>
+          ))}
           {promptOnCustomEvent === 'checkout' && !installDismissed && (
             <ExtensionPoint
               id="promotion-banner"

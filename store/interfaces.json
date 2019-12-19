@@ -1,14 +1,10 @@
 {
   "order-placed": {
     "component": "index",
-    "allowed": ["order-placed-header", "orders-list"]
+    "allowed": ["order-placed-header", "order-info"]
   },
   "order-placed-header": {
     "component": "Header"
-  },
-  "orders-list": {
-    "component": "OrdersList",
-    "allowed": ["order-info"]
   },
   "order-info": {
     "component": "OrderInfo",
@@ -46,8 +42,14 @@
     "composition": "children",
     "allowed": "*"
   },
-  "order-pickup-items-list": {
-    "component": "PickupItemsList"
+  "order-pickup-items": {
+    "component": "PickupItems"
+  },
+  "order-delivery-items": {
+    "component": "DeliveryItems"
+  },
+  "order-takeaway-items": {
+    "component": "TakeAwayItems"
   },
   "order-placed-extension": {
     "component": "*"
