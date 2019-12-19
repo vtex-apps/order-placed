@@ -1,4 +1,4 @@
-import React, { Fragment, FC } from 'react'
+import React, { FC } from 'react'
 
 import { useOrder } from './components/OrderContext'
 import ProductList from './components/ProductList'
@@ -12,9 +12,9 @@ const PickupItemsList: FC = () => {
   }
 
   return (
-    <Fragment>
+    <section className="bb b--muted-4">
       {pickUpParcels.map((pickup: Parcel, index: number) => (
-        <section
+        <div
           className="mv8 flex-l justify-between flex-column flex-row-m"
           key={index}
         >
@@ -24,9 +24,9 @@ const PickupItemsList: FC = () => {
             numPackages={pickUpParcels.length}
           />
           <ProductList products={pickup.items} />
-        </section>
+        </div>
       ))}
-    </Fragment>
+    </section>
   )
 }
 
