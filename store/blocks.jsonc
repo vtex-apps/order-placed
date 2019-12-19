@@ -16,6 +16,7 @@
   // header
   "flex-layout.row#order-header": {
     "props": {
+      "fullWidth": true,
       "colSizing": "auto",
       "colGap": 5,
       "marginBottom": 5
