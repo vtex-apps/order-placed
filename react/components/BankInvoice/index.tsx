@@ -2,9 +2,16 @@ import React, { FunctionComponent } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { ButtonLink } from 'vtex.order-details'
 
-import PrinterIcon from '../../../Icons/PrinterIcon'
+import PrinterIcon from '../../Icons/PrinterIcon'
 import BarCode from './BarCode'
 import Embedded from './Embedded'
+
+interface Props {
+  url: string
+  encrypted: boolean
+  invoiceBarCodeNumber: string | null
+  paymentSystem: string
+}
 
 const BankInvoice: FunctionComponent<Props> = ({
   url,
@@ -14,7 +21,7 @@ const BankInvoice: FunctionComponent<Props> = ({
 }) => (
   <section
     data-testid="bank-invoice-info"
-    className="pv4 mb4 w-80-ns w-90 center bb b--muted-5"
+    className="mv9 pb9 w-80-ns w-90 center bb b--muted-5"
   >
     <header className="t-heading-4">
       <FormattedMessage
@@ -22,7 +29,7 @@ const BankInvoice: FunctionComponent<Props> = ({
         values={{ paymentSystemName: paymentSystem }}
       />
     </header>
-    <article className="flex justify-between items-center mt6">
+    <article className="flex justify-between items-center mv6">
       {invoiceBarCodeNumber && <BarCode barCodeNumber={invoiceBarCodeNumber} />}
       <ButtonLink
         to={url}
@@ -43,12 +50,5 @@ const BankInvoice: FunctionComponent<Props> = ({
     )}
   </section>
 )
-
-interface Props {
-  url: string
-  encrypted: boolean
-  invoiceBarCodeNumber: string | null
-  paymentSystem: string
-}
 
 export default BankInvoice

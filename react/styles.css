@@ -1,3 +1,7 @@
 .orderOptionsWrapper--mobile {
   margin-bottom: 2rem;
 }
+
+.noticeListItem:last-child {
+  border-bottom: none;
+}

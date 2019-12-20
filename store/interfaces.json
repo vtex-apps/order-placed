@@ -1,10 +1,25 @@
 {
   "order-placed": {
     "component": "index",
-    "allowed": ["order-placed-header", "order-info"]
+    "allowed": ["order-placed-header", "order-info"],
+    "require": ["order-placed-header", "order-info"]
   },
   "order-placed-header": {
-    "component": "Header"
+    "component": "OrderPlacedHeader",
+    "allowed": [
+      "order-placed-notices",
+      "order-placed-summary",
+      "order-placed-bank-invoice"
+    ]
+  },
+  "order-placed-notices": {
+    "component": "OrderPlacedNotices"
+  },
+  "order-placed-summary": {
+    "component": "OrderPlacedSummary"
+  },
+  "order-placed-bank-invoice": {
+    "component": "OrderPlacedBankInvoice"
   },
   "order-info": {
     "component": "OrderInfo",

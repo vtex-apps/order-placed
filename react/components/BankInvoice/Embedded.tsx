@@ -14,7 +14,7 @@ class Embedded extends Component<Props> {
     const { url } = this.props
 
     return (
-      <div className="mv9 flex flex-column b--muted-4 ba br3 bw1">
+      <div className="flex flex-column b--muted-4 ba br3 bw1">
         <div className="bg-muted-1 flex justify-center">
           <embed
             width="80%"
