@@ -1,37 +1,15 @@
 import React, { FunctionComponent } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { Button } from 'vtex.styleguide'
+import { ExtensionPoint } from 'vtex.render-runtime'
 
 import SuccessIcon from './Icons/Success'
-import {
-  getPaymentGroupFromOrder,
-  PaymentGroupInfo,
-  parseBankInvoiceUrl,
-} from './utils'
-import BankInvoice from './components/Header/BankInvoice'
-import Summary from './components/Header/Summary'
-import Warnings from './components/Header/Warnings'
 import { useOrderGroup } from './components/OrderGroupContext'
 
 const Header: FunctionComponent = () => {
   const orderGroup = useOrderGroup()
   const profile = orderGroup.orders[0].clientProfileData
 
-  const bankInvoices = orderGroup.orders
-    .reduce(
-      (acc: PaymentGroupInfo[], currOrder: Order) => [
-        ...acc,
-        getPaymentGroupFromOrder(currOrder),
-      ],
-      []
-    )
-    .filter((order: any) => !!order.url)
-  const hasBankInvoice = bankInvoices.length > 0
-  const encrypted =
-    hasBankInvoice &&
-    bankInvoices[0].url &&
-    bankInvoices[0].url.match(/(\*.\*.)+\*\w\*/g)
-  const hideBankInvoiceInfo = encrypted && !bankInvoices[0].barCodeNumber
   const hasDelivery = orderGroup.totalDeliveryParcels.length > 0
   const hasPickUp = orderGroup.totalPickUpParcels.length > 0
   const hasTakeAway = orderGroup.totalTakeAwayParcels.length > 0
@@ -64,27 +42,10 @@ const Header: FunctionComponent = () => {
         </div>
       </section>
       {(hasDelivery || hasPickUp) && (
-        <Warnings
-          numOfOrders={orderGroup.orders.length}
-          hasDelivery={hasDelivery}
-          hasPickUp={hasPickUp}
-          bankInvoices={bankInvoices}
-        />
+        <ExtensionPoint id="order-placed-notices" />
       )}
-      {hasDelivery && hasPickUp && (
-        <Summary
-          totalDeliveries={orderGroup.totalDeliveryParcels}
-          totalPickUps={orderGroup.totalPickUpParcels}
-        />
-      )}
-      {hasBankInvoice && bankInvoices[0].url && !hideBankInvoiceInfo && (
-        <BankInvoice
-          url={parseBankInvoiceUrl(bankInvoices[0].url)}
-          encrypted={!!encrypted}
-          invoiceBarCodeNumber={bankInvoices[0].barCodeNumber}
-          paymentSystem={bankInvoices[0].paymentSystemName}
-        />
-      )}
+      {hasDelivery && hasPickUp && <ExtensionPoint id="order-placed-summary" />}
+      <ExtensionPoint id="order-placed-bank-invoice" />
     </header>
   )
 }

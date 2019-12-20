@@ -1,30 +1,33 @@
+import React, { FC } from 'react'
 import estimateCalculator from '@vtex/estimate-calculator'
-import React, { FunctionComponent } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 
-const OrderSummary: FunctionComponent<Props> = ({
-  totalDeliveries,
-  totalPickUps,
-}) => {
-  const deliveryItemsQuantity = totalDeliveries.reduce(
+import { useOrderGroup } from './components/OrderGroupContext'
+
+const OrderSummary: FC = () => {
+  const { totalDeliveryParcels, totalPickUpParcels } = useOrderGroup()
+
+  const deliveryItemsQuantity = totalDeliveryParcels.reduce(
     (acc, deliveryPackage) => acc + deliveryPackage.items.length,
     0
   )
-  const pickUpItemsQuantity = totalPickUps.reduce(
+  const pickUpItemsQuantity = totalPickUpParcels.reduce(
     (acc, pickupPackage) => acc + pickupPackage.items.length,
     0
   )
 
   const longestDeliveryEstimate = estimateCalculator.getLatestSla(
-    totalDeliveries
+    totalDeliveryParcels
   )
-  const longestPickUpEstimate = estimateCalculator.getLatestSla(totalPickUps)
+  const longestPickUpEstimate = estimateCalculator.getLatestSla(
+    totalPickUpParcels
+  )
 
   return (
     <section
       data-testid="summary"
-      className="w-90 w-80-ns center bb b--muted-4 pb8 flex justify-between flex-wrap flex-nowrap-m"
+      className="bb b--muted-4 mb9 pb9 w-90 w-80-ns center flex-m justify-between"
     >
       <article className="ba b--muted-5 bw1 br3 w-50-m w-100 mr4-m mb4 mb0-m">
         <p className="t-heading-5 tc bb b--muted-5 bw1 pb5 c-on-base">
@@ -42,7 +45,7 @@ const OrderSummary: FunctionComponent<Props> = ({
           <FormattedMessage
             id="store/summary.shipping.quantity"
             values={{
-              shippings: totalDeliveries.length,
+              shippings: totalDeliveryParcels.length,
             }}
           />
         </p>
@@ -55,8 +58,8 @@ const OrderSummary: FunctionComponent<Props> = ({
           <FormattedMessage
             id="store/summary.shipping.address"
             values={{
-              addressNumber: totalDeliveries[0].address.number,
-              addressStreet: totalDeliveries[0].address.street,
+              addressNumber: totalDeliveryParcels[0].address.number,
+              addressStreet: totalDeliveryParcels[0].address.street,
             }}
           />
         </p>
@@ -77,7 +80,7 @@ const OrderSummary: FunctionComponent<Props> = ({
           <FormattedMessage
             id="store/summary.pickup.quantity"
             values={{
-              pickups: totalPickUps.length,
+              pickups: totalPickUpParcels.length,
             }}
           />
         </p>
@@ -90,18 +93,13 @@ const OrderSummary: FunctionComponent<Props> = ({
           <FormattedMessage
             id="store/summary.pickup.friendlyName"
             values={{
-              friendlyName: totalPickUps[0].pickupFriendlyName,
+              friendlyName: totalPickUpParcels[0].pickupFriendlyName,
             }}
           />
         </p>
       </article>
     </section>
   )
-}
-
-interface Props {
-  totalDeliveries: Parcel[]
-  totalPickUps: Parcel[]
 }
 
 export default OrderSummary
