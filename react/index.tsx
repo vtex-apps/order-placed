@@ -13,7 +13,7 @@ import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
 import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
 import Skeleton from './Skeleton'
-import { orderGroupQuery as mockQuery } from './mocks/splitOrderTwoSellers'
+import { orderGroupQuery as mockQuery } from './mocks/bankInvoiceNumberLoggedIn'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -98,8 +98,6 @@ const OrderPlaced: FunctionComponent = () => {
 
   const { orderGroup }: { orderGroup: OrderGroup } = mockQuery as any // data
   const { promptOnCustomEvent } = settings
-
-  console.log(orderGroup)
 
   return (
     <OrderGroupContext.Provider value={orderGroup}>
