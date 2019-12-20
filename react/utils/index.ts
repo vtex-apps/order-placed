@@ -5,6 +5,16 @@ import filter from 'lodash/filter'
 import map from 'lodash/map'
 import { defineMessages } from 'react-intl'
 
+export interface PaymentGroupInfo {
+  barCodeNumber: string | null
+  barCodePNG: string | null
+  dueDate: string | null
+  paymentGroup: string
+  paymentSystemName: string
+  url: string | null
+  value: number
+}
+
 const messages = defineMessages({
   frequencyDay: {
     id: 'store/items.attachments.subscription.frequency.day',
@@ -44,7 +54,7 @@ export function transformConnectorResponsesToArray(
   )
 }
 
-export function getPaymentGroupFromOrder(order: Order) {
+export function getPaymentGroupFromOrder(order: Order): PaymentGroupInfo {
   const base = 'paymentData.transactions[0].payments[0]'
 
   return {
@@ -60,16 +70,6 @@ export function getPaymentGroupFromOrder(order: Order) {
     url: get(order, `${base}.url`, null),
     value: get(order, `${base}.value`, null),
   }
-}
-
-export interface PaymentGroupInfo {
-  barCodeNumber: string | null
-  barCodePNG: string | null
-  dueDate: string | null
-  paymentGroup: string
-  paymentSystemName: string
-  url: string | null
-  value: number
 }
 
 export function isSubscription(attachmentItem: Attachment) {

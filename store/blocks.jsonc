@@ -2,6 +2,13 @@
   "order-placed": {
     "blocks": ["order-placed-header", "order-info"]
   },
+  "order-placed-header": {
+    "blocks": [
+      "order-placed-notices",
+      "order-placed-summary",
+      "order-placed-bank-invoice"
+    ]
+  },
   "order-info": {
     "children": [
       "flex-layout.row#order-header",
