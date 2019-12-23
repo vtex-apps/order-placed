@@ -13,7 +13,7 @@ import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
 import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
 import Skeleton from './Skeleton'
-import { orderGroupQuery as mockQuery } from './mocks/bankInvoiceNumberLoggedIn'
+import { orderGroupQuery as mockQuery } from './mocks/bankInvoiceLoggedIn'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -108,28 +108,36 @@ const OrderPlaced: FunctionComponent = () => {
           <title>{intl.formatMessage(messages.title)}</title>
         </Helmet>
 
-        {/* <Analytics eventList={orderGroup.analyticsData} /> */}
+        <article className="pt9 sans-serif">
+          {/* <Analytics eventList={orderGroup.analyticsData} /> */}
 
-        <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
-        <ExtensionPoint id="order-placed-header" />
+          <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
 
-        <main className="mv6 w-80-ns w-90 center">
-          {orderGroup.orders.map((order, i, { length }) => (
-            <Fragment key={order.orderId}>
-              <ExtensionPoint id="order-info" order={order} />
-              {i < length - 1 && (
-                <hr className="bg-muted-4 bt b--muted-4 mv9" />
-              )}
-            </Fragment>
-          ))}
-          {promptOnCustomEvent === 'checkout' && !installDismissed && (
-            <ExtensionPoint
-              id="promotion-banner"
-              type="install"
-              onDismiss={() => setInstallDismissed(true)}
-            />
-          )}
-        </main>
+          <header>
+            <ExtensionPoint id="order-placed-confirmation" />
+            <ExtensionPoint id="order-placed-notices" />
+            <ExtensionPoint id="order-placed-summary" />
+            <ExtensionPoint id="order-placed-bank-invoice" />
+          </header>
+
+          <div className="mv6 w-80-ns w-90 center">
+            {orderGroup.orders.map((order, i, { length }) => (
+              <Fragment key={order.orderId}>
+                <ExtensionPoint id="order-info" order={order} />
+                {i < length - 1 && (
+                  <hr className="bg-muted-4 bt b--muted-4 mv9" />
+                )}
+              </Fragment>
+            ))}
+            {promptOnCustomEvent === 'checkout' && !installDismissed && (
+              <ExtensionPoint
+                id="promotion-banner"
+                type="install"
+                onDismiss={() => setInstallDismissed(true)}
+              />
+            )}
+          </div>
+        </article>
       </CurrencyContext.Provider>
     </OrderGroupContext.Provider>
   )
