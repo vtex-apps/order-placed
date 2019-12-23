@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import ProductAttachment from './Attachment'
 import Product from './Product'
@@ -7,7 +7,7 @@ interface Props {
   products: OrderItem[]
 }
 
-const ProductList: FunctionComponent<Props> = ({ products }) => {
+const ProductList: FC<Props> = ({ products }) => {
   return (
     <div className="flex flex-column justify-between w-60-l w-100">
       {products.map((product: OrderItem, index: number) => (

@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent, useState } from 'react'
+import React, { Fragment, FC, useState } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
@@ -7,10 +7,7 @@ import { isSubscription } from '../../utils'
 import FormattedPrice from '../FormattedPrice'
 import Subscription from './Subscription'
 
-const ProductAttachment: FunctionComponent<Props> = ({
-  bundleInfo,
-  attachmentsInfo,
-}) => {
+const ProductAttachment: FC<Props> = ({ bundleInfo, attachmentsInfo }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
