@@ -20,7 +20,10 @@ const Notices: FC = () => {
   const isSplitOrder = numOrders > 1
   const [bankInvoice] = orders
     .map(getPaymentInfoFromOrder)
-    .filter(order => !!order.url)
+    .filter(
+      paymentInfo =>
+        paymentInfo.paymentGroup === 'bankInvoice' && !!paymentInfo.url
+    )
 
   const hasBankInvoice = bankInvoice != null
   const listItems = [

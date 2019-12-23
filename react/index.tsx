@@ -14,7 +14,7 @@ import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
 import Skeleton from './Skeleton'
 import { CurrencyContext } from './components/CurrencyContext'
-import { orderGroupQuery as mockQuery } from './mocks/scheduledDelivery'
+import { orderGroupQuery as mockQuery } from './mocks/bankInvoiceLoggedIn'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -130,6 +130,7 @@ const OrderPlaced: FC = () => {
                 )}
               </Fragment>
             ))}
+
             {promptOnCustomEvent === 'checkout' && !installDismissed && (
               <ExtensionPoint
                 id="promotion-banner"
