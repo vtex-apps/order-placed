@@ -1,14 +1,16 @@
 import { FormattedMessage } from 'react-intl'
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { ReactNode, FC } from 'react'
 
 import styles from './style.css'
 
-const ErrorMessage: FunctionComponent<Props> = ({
-  icon,
-  errorId,
-  messageId,
-  children,
-}) => {
+interface Props {
+  errorId: string
+  messageId?: string
+  children?: ReactNode
+  icon: ReactNode
+}
+
+const ErrorMessage: FC<Props> = ({ icon, errorId, messageId, children }) => {
   return (
     <div className={styles.errorWrapper}>
       <main>
@@ -27,13 +29,6 @@ const ErrorMessage: FunctionComponent<Props> = ({
       </main>
     </div>
   )
-}
-
-interface Props {
-  errorId: string
-  messageId?: string
-  children?: ReactNode
-  icon: ReactNode
 }
 
 export default ErrorMessage

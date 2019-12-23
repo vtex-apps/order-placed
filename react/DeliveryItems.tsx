@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import ProductList from './components/ProductList'
-import ShippingHeader from './components/Shipping/ShippingHeader'
+import ShippingHeader from './components/DeliveryHeader'
 import { useOrder } from './components/OrderContext'
 
 const Shipping: FC = () => {

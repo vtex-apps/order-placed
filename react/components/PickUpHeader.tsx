@@ -1,22 +1,24 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import { Address } from 'vtex.order-details'
 
-const StorePickUpHeader: FunctionComponent<Props> = ({
-  shippingData,
-  index,
-  numPackages,
-}) => {
+interface Props {
+  shippingData: Parcel
+  index: number
+  numPackages: number
+}
+
+const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
   const multiplePickups = numPackages > 1
   const receiverName = shippingData.address.receiverName
   const additionalInfo =
     shippingData.selectedSlaObj.pickupStoreInfo.additionalInfo
   return (
-    <header className="flex flex-column">
-      <p
+    <div>
+      <div
+        className="t-heading-4-ns t-heading-5 mb5"
         data-testid="storepickup-header"
-        className="t-heading-4-ns t-heading-5"
       >
         <FormattedMessage id="store/pickup.header.title" />
         {multiplePickups && (
@@ -36,7 +38,8 @@ const StorePickUpHeader: FunctionComponent<Props> = ({
             isPickup
           />
         </small>
-      </p>
+      </div>
+
       <div className="flex justify-left-m flex-column-s flex-column-l flex-row-m justify-between-l justify-start-l">
         <div className="mb5 mr10-m">
           <Address address={shippingData.address} pickup={shippingData} />
@@ -46,14 +49,8 @@ const StorePickUpHeader: FunctionComponent<Props> = ({
           <p className="c-muted-1">{additionalInfo}</p>
         </div>
       </div>
-    </header>
+    </div>
   )
-}
-
-interface Props {
-  shippingData: Parcel
-  index: number
-  numPackages: number
 }
 
 export default StorePickUpHeader
