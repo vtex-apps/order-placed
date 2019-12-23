@@ -4,7 +4,7 @@ import { ProductImage } from 'vtex.order-details'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
 import { isSubscription } from '../../utils'
-import Price from '../Payment/FormattedPrice'
+import FormattedPrice from '../Payment/FormattedPrice'
 import Subscription from './Subscription'
 
 const ProductAttachment: FunctionComponent<Props> = ({
@@ -41,7 +41,7 @@ const ProductAttachment: FunctionComponent<Props> = ({
                 )}
                 <p className="c-on-base">{bundleItem.name}</p>
                 <div className="flex items-center">
-                  <Price value={bundleItem.price} />
+                  <FormattedPrice value={bundleItem.price} />
                   {hasAttachments && (
                     <div
                       role="button"

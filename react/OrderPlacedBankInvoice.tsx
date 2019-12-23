@@ -10,15 +10,14 @@ import { getPaymentGroupFromOrder, parseBankInvoiceUrl } from './utils'
 
 const BankInvoice: FC = () => {
   const orderGroup = useOrderGroup()
-
   const bankInvoice = getPaymentGroupFromOrder(orderGroup.orders[0])
 
-  if (bankInvoice == null) {
+  if (bankInvoice?.paymentGroup !== 'bankInvoice') {
     return null
   }
 
   const { url, paymentSystemName, barCodeNumber } = bankInvoice
-  const isURLEncrypted = !!(url && url.match(/(\*.\*.)+\*\w\*/g))
+  const isURLEncrypted = url && !!url.match(/(\*.\*.)+\*\w\*/g)
   const isURLValid = !isURLEncrypted
   const hideBankInvoiceInfo = !isURLValid && !barCodeNumber
 
