@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import Clipboard from 'react-clipboard.js'
 import { FormattedMessage } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
 import styles from '../../styles.css'
 
-const BarCode: FunctionComponent<Props> = ({ barCodeNumber }) => (
+const BarCode: FC<Props> = ({ barCodeNumber }) => (
   <div
     data-testid="bank-invoice-barcode"
     className="flex-l b--muted-4 ba br3 bw1"

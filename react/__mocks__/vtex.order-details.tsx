@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 export function FormattedDate() {
   return <span>FormattedDate</span>
@@ -12,9 +12,9 @@ export function CustomerInfo() {
   return <span>CustomerInfo</span>
 }
 
-export const ProductImage: FunctionComponent = () => <div>ProductImage</div>
+export const ProductImage: FC = () => <div>ProductImage</div>
 
-export const ButtonLink: FunctionComponent<{ to: string }> = ({
+export const ButtonLink: FC<{ to: string }> = ({
   to,
   children,
 }) => (

@@ -1,10 +1,10 @@
-import React, { Fragment, FunctionComponent, useState } from 'react'
+import React, { Fragment, FC, useState } from 'react'
 import { InjectedIntlProps, injectIntl, FormattedMessage } from 'react-intl'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
 import { getSubscriptionInfo } from '../../utils'
 
-const SubscriptionAttachment: FunctionComponent<{
+const SubscriptionAttachment: FC<{
   attachmentItem: Attachment
 } & InjectedIntlProps> = ({ attachmentItem, intl }) => {
   const [isOpen, setIsOpen] = useState(false)
