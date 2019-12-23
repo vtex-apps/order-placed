@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import TranslateTotalizer from 'vtex.totalizer-translator/TranslateTotalizer'
 
-import FormattedPrice from './components/Payment/FormattedPrice'
+import FormattedPrice from './components/FormattedPrice'
 import { useOrder } from './components/OrderContext'
 
 const OrderTotal: FC = () => {
