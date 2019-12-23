@@ -31,7 +31,7 @@ const ProductAttachment: FunctionComponent<Props> = ({
             hasAttachments && bundleItem.attachments[0].name === 'message'
 
           return (
-            <article className="bg-muted-5 pv3 ph5 br2 mv4" key={bundleItem.id}>
+            <div className="bg-muted-5 pv3 ph5 br2 mv4" key={bundleItem.id}>
               <div className="flex justify-between">
                 {bundleItem.imageUrl && (
                   <ProductImage
@@ -76,7 +76,7 @@ const ProductAttachment: FunctionComponent<Props> = ({
                     })}
                 </div>
               )}
-            </article>
+            </div>
           )
         })}
       {attachmentsInfo.length > 0 &&
@@ -84,7 +84,7 @@ const ProductAttachment: FunctionComponent<Props> = ({
           return isSubscription(attachmentItem) ? (
             <Subscription attachmentItem={attachmentItem} />
           ) : (
-            <article
+            <div
               className="bg-muted-5 pv3 ph5 br2 mv4"
               key={attachmentItem.name}
             >
@@ -120,7 +120,7 @@ const ProductAttachment: FunctionComponent<Props> = ({
                   })}
                 </div>
               )}
-            </article>
+            </div>
           )
         })}
     </Fragment>

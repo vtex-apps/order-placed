@@ -9,6 +9,7 @@ interface Props {
 
 const FormattedPrice: FC<Props> = ({ value }) => {
   const currency = useCurrency()
+  console.log(currency)
   return (
     <FormattedNumber currency={currency} style="currency" value={value / 100} />
   )

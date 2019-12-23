@@ -11,9 +11,9 @@ const ProductList: FunctionComponent<Props> = ({ products }) => {
   return (
     <div className="flex flex-column justify-between w-60-l w-100">
       {products.map((product: OrderItem, index: number) => (
-        <article
-          className={`${index !== products.length - 1 ? 'bb b--muted-4' : ''}`}
+        <div
           key={product.id}
+          className={`${index !== products.length - 1 ? 'bb b--muted-4' : ''}`}
         >
           <Product productInfo={product} />
           {(product.bundleItems || product.attachments) && (
@@ -22,7 +22,7 @@ const ProductList: FunctionComponent<Props> = ({ products }) => {
               bundleInfo={product.bundleItems}
             />
           )}
-        </article>
+        </div>
       ))}
     </div>
   )
