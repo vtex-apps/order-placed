@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { FormattedMessage } from 'react-intl'
 import TranslateTotalizer from 'vtex.totalizer-translator/TranslateTotalizer'
 
-import Price from '../Payment/FormattedPrice'
+import FormattedPrice from '../Payment/FormattedPrice'
 
 const ShippingTotals: FunctionComponent<Props> = ({
   items,
@@ -24,7 +24,7 @@ const ShippingTotals: FunctionComponent<Props> = ({
               {total.id === 'Items' && ` (${numItems})`}
             </p>
             <div className="c-on-base">
-              <Price value={total.value} />
+              <FormattedPrice value={total.value} />
             </div>
           </div>
         ))}
@@ -35,7 +35,7 @@ const ShippingTotals: FunctionComponent<Props> = ({
             </strong>
           </p>
           <strong className="t-heading-2-ns t-heading-3 mv4">
-            <Price value={orderValue} />
+            <FormattedPrice value={orderValue} />
           </strong>
         </div>
       </div>
