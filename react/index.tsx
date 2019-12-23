@@ -14,7 +14,7 @@ import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
 import Skeleton from './Skeleton'
 import { CurrencyContext } from './components/CurrencyContext'
-import { orderGroupQuery as mockQuery } from './mocks/bankInvoiceLoggedIn'
+import { orderGroupQuery as mockQuery } from './mocks/pickupAndDelivery'
 
 interface OrderGroupData {
   orderGroup: OrderGroup

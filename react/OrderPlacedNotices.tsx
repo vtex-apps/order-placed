@@ -2,7 +2,7 @@ import React, { Fragment, FC } from 'react'
 import { FormattedMessage, FormattedDate } from 'react-intl'
 
 import ButtonLink from './components/ButtonLink'
-import FormattedPrice from './components/Payment/FormattedPrice'
+import FormattedPrice from './components/FormattedPrice'
 import { useOrderGroup } from './components/OrderGroupContext'
 import { parseBankInvoiceUrl, getPaymentInfoFromOrder } from './utils'
 import styles from './styles.css'

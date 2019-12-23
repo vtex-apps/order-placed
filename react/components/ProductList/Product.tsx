@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 
-import FormattedPrice from '../Payment/FormattedPrice'
+import FormattedPrice from '../FormattedPrice'
 
 const Product: FunctionComponent<Props> = ({ productInfo }) => {
   const showMeasurementUnit =

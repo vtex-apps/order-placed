@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import { useOrder } from './components/OrderContext'
 import ProductList from './components/ProductList'
-import StorePickUpHeader from './components/StorePickUp/StorePickUpHeader'
+import StorePickUpHeader from './components/PickUpHeader'
 
 const PickupItemsList: FC = () => {
   const { pickUpParcels } = useOrder()
