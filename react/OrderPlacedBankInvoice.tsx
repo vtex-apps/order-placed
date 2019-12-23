@@ -6,27 +6,25 @@ import ButtonLink from './components/ButtonLink'
 import BarCode from './components/BankInvoice/BarCode'
 import Embedded from './components/BankInvoice/Embedded'
 import { useOrderGroup } from './components/OrderGroupContext'
-import { getPaymentGroupFromOrder, parseBankInvoiceUrl } from './utils'
+import { getPaymentInfoFromOrder, parseBankInvoiceUrl } from './utils'
 
 const BankInvoice: FC = () => {
   const orderGroup = useOrderGroup()
-  const bankInvoice = getPaymentGroupFromOrder(orderGroup.orders[0])
+  const paymentInfo = getPaymentInfoFromOrder(orderGroup.orders[0])
 
-  if (bankInvoice?.paymentGroup !== 'bankInvoice') {
+  if (paymentInfo?.paymentGroup !== 'bankInvoice') {
     return null
   }
 
-  const { url, paymentSystemName, barCodeNumber } = bankInvoice
-  const isURLEncrypted = url && !!url.match(/(\*.\*.)+\*\w\*/g)
-  const isURLValid = !isURLEncrypted
+  const { url, paymentSystemName, barCodeNumber } = paymentInfo
+  const isURLValid = url && !url.match(/(\*.\*.)+\*\w\*/g)
   const hideBankInvoiceInfo = !isURLValid && !barCodeNumber
 
   if (hideBankInvoiceInfo) {
     return null
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const parsedUrl = parseBankInvoiceUrl(url!)
+  const parsedUrl = url && isURLValid ? parseBankInvoiceUrl(url) : ''
 
   return (
     <section
