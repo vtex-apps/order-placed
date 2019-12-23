@@ -13,13 +13,12 @@ import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
 import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
 import Skeleton from './Skeleton'
-import { orderGroupQuery as mockQuery } from './mocks/bankInvoiceLoggedIn'
+import { CurrencyContext } from './components/CurrencyContext'
+import { orderGroupQuery as mockQuery } from './mocks/pickupAndDelivery'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
 }
-
-export const CurrencyContext = React.createContext('BRL')
 
 const messages = defineMessages({
   title: {
@@ -55,15 +54,16 @@ const OrderPlaced: FunctionComponent = () => {
     },
   })
 
-  /** render loading skeleton if query is still loading */
+  // render loading skeleton if query is still loading
   if (loading) return <Skeleton />
 
+  // forbidden error
   if (
     error?.message.includes('403') ||
     // 'any' needed because graphql error type doesn't have 'extensions' prop
     (error as any)?.extensions?.response?.status === 403
   ) {
-    /** if query errored display an error alert */
+    // if query errored display an error alert
     return (
       <ErrorMessage
         icon={<Forbidden />}
@@ -79,6 +79,7 @@ const OrderPlaced: FunctionComponent = () => {
     )
   }
 
+  // not found error
   /** if query resulted in an invalid orderGroup display an error alert*/
   if (data?.orderGroup?.orders == null) {
     return (

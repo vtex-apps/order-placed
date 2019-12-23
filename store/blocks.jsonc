@@ -19,7 +19,7 @@
       "order-takeaway-items"
     ]
   },
-  // header
+  // each order header
   "flex-layout.row#order-header": {
     "props": {
       "fullWidth": true,
