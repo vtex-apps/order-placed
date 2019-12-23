@@ -5,3 +5,7 @@
 .noticeListItem:last-child {
   border-bottom: none;
 }
+
+.barCodeNumber {
+  word-break: break-all;
+}
