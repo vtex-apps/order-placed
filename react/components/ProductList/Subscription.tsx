@@ -22,7 +22,7 @@ const SubscriptionAttachment: FunctionComponent<{
   }
 
   return (
-    <article className="bg-muted-5 pv3 ph5 br2 mv4" key={attachmentItem.name}>
+    <div className="bg-muted-5 pv3 ph5 br2 mv4" key={attachmentItem.name}>
       <div className="flex justify-between">
         <p className="c-on-base">
           <FormattedMessage id="store/items.attachments.subscription" />
@@ -48,7 +48,7 @@ const SubscriptionAttachment: FunctionComponent<{
           {subsPurchaseDay && <p className="c-muted-1">{subsPurchaseDay}</p>}
         </Fragment>
       </div>
-    </article>
+    </div>
   )
 }
 

@@ -39,7 +39,7 @@ const BankInvoice: FC = () => {
           values={{ paymentSystemName }}
         />
       </header>
-      <article className="flex-l justify-between items-center mv6">
+      <div className="flex-l justify-between items-center mv6">
         {barCodeNumber && <BarCode barCodeNumber={barCodeNumber} />}
         {isURLValid && (
           <div className="mt5 ml5-l mt0-l">
@@ -56,11 +56,11 @@ const BankInvoice: FC = () => {
             </ButtonLink>
           </div>
         )}
-      </article>
+      </div>
       {isURLValid && (
-        <article>
+        <div>
           <Embedded url={parsedUrl} />
-        </article>
+        </div>
       )}
     </section>
   )
