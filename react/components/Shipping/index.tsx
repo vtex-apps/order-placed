@@ -1,7 +1,6 @@
 import React, { Fragment, FunctionComponent } from 'react'
 
 import ProductList from '../ProductList'
-
 import ShippingHeader from './ShippingHeader'
 
 interface Props {
