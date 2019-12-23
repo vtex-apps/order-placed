@@ -16,7 +16,8 @@
       "order-section#payments",
       "order-pickup-items",
       "order-delivery-items",
-      "order-takeaway-items"
+      "order-takeaway-items",
+      "order-total"
     ]
   },
   // each order header

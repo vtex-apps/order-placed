@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, Fragment } from 'react'
+import React, { FC, useState, Fragment } from 'react'
 import { useQuery } from 'react-apollo'
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl'
 import { Helmet, ExtensionPoint, useRuntime } from 'vtex.render-runtime'
@@ -14,7 +14,7 @@ import NotFound from './Icons/NotFound'
 import Forbidden from './Icons/Forbidden'
 import Skeleton from './Skeleton'
 import { CurrencyContext } from './components/CurrencyContext'
-import { orderGroupQuery as mockQuery } from './mocks/pickupAndDelivery'
+import { orderGroupQuery as mockQuery } from './mocks/scheduledDelivery'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -43,7 +43,7 @@ const messages = defineMessages({
   },
 })
 
-const OrderPlaced: FunctionComponent = () => {
+const OrderPlaced: FC = () => {
   const intl = useIntl()
   const runtime = useRuntime()
   const { settings = {} } = usePWA() || {}
