@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 
 import FormattedPrice from '../FormattedPrice'
 
-const Product: FunctionComponent<Props> = ({ productInfo }) => {
+const Product: FC<Props> = ({ productInfo }) => {
   const showMeasurementUnit =
     productInfo.unitMultiplier !== 1 || productInfo.measurementUnit !== 'un'
 

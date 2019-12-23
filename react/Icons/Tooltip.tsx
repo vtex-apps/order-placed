@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { baseClassname } from './utils'
 
-const Tooltip: FunctionComponent<{ colorToken?: string }> = ({
+const Tooltip: FC<{ colorToken?: string }> = ({
   colorToken,
 }) => (
   <svg

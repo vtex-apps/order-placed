@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
-const Forbidden: FunctionComponent = () => (
+const Forbidden: FC = () => (
   <svg
     width="72"
     height="60"

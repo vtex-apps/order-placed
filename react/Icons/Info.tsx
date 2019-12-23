@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { baseClassname } from './utils'
 
-const InfoIcon: FunctionComponent<{ colorToken: string }> = ({
+const InfoIcon: FC<{ colorToken: string }> = ({
   colorToken,
 }) => (
   <svg

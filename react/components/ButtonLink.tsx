@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactChild, ReactNode } from 'react'
+import React, { FC, ReactChild, ReactNode } from 'react'
 import { Link } from 'vtex.render-runtime'
 import { Button, ButtonWithIcon } from 'vtex.styleguide'
 
@@ -11,7 +11,7 @@ interface Props {
   children: ReactChild
 }
 
-const ButtonLink: FunctionComponent<Props> = ({
+const ButtonLink: FC<Props> = ({
   to,
   icon,
   fullWidth,
