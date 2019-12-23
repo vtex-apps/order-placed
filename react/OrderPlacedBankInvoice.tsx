@@ -5,8 +5,8 @@ import { ButtonLink } from 'vtex.order-details'
 import PrinterIcon from './Icons/PrinterIcon'
 import BarCode from './components/BankInvoice/BarCode'
 import Embedded from './components/BankInvoice/Embedded'
-import { getPaymentGroupFromOrder, parseBankInvoiceUrl } from './utils'
 import { useOrderGroup } from './components/OrderGroupContext'
+import { getPaymentGroupFromOrder, parseBankInvoiceUrl } from './utils'
 
 const BankInvoice: FC = () => {
   const orderGroup = useOrderGroup()
@@ -40,20 +40,22 @@ const BankInvoice: FC = () => {
           values={{ paymentSystemName }}
         />
       </header>
-      <article className="flex justify-between items-center mv6">
+      <article className="flex-l justify-between items-center mv6">
         {barCodeNumber && <BarCode barCodeNumber={barCodeNumber} />}
         {isURLValid && (
-          <ButtonLink
-            to={parsedUrl}
-            icon={<PrinterIcon />}
-            variation="secondary"
-            openNewWindow
-          >
-            <FormattedMessage
-              id="store/header.bankinvoice.print"
-              values={{ paymentSystemName }}
-            />
-          </ButtonLink>
+          <div className="mt5 ml5-l mt0-l">
+            <ButtonLink
+              to={parsedUrl}
+              icon={<PrinterIcon />}
+              variation="secondary"
+              openNewWindow
+            >
+              <FormattedMessage
+                id="store/header.bankinvoice.print"
+                values={{ paymentSystemName }}
+              />
+            </ButtonLink>
+          </div>
         )}
       </article>
       {isURLValid && (
