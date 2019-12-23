@@ -9,7 +9,7 @@ const Product: FunctionComponent<Props> = ({ productInfo }) => {
     productInfo.unitMultiplier !== 1 || productInfo.measurementUnit !== 'un'
 
   return (
-    <article className="flex justify-between flex-column-s flex-row-m pv7">
+    <div className="flex justify-between flex-column-s flex-row-m pv7">
       <div className="flex items-center flex-column flex-row-m mr8-m">
         <div>
           <ProductImage
@@ -48,7 +48,7 @@ const Product: FunctionComponent<Props> = ({ productInfo }) => {
       <p className="tc tr-m mt3">
         <FormattedPrice value={productInfo.price * productInfo.quantity} />
       </p>
-    </article>
+    </div>
   )
 }
 

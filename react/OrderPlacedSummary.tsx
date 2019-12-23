@@ -33,7 +33,7 @@ const OrderSummary: FC = () => {
       data-testid="summary"
       className="bb b--muted-4 mb9 pb9 w-90 w-80-ns center flex-m justify-between"
     >
-      <article className="ba b--muted-5 bw1 br3 w-50-m w-100 mr4-m mb4 mb0-m">
+      <div className="ba b--muted-5 bw1 br3 w-50-m w-100 mr4-m mb4 mb0-m">
         <p className="t-heading-5 tc bb b--muted-5 bw1 pb5 c-on-base">
           <FormattedMessage id="store/summary.shipping" />
         </p>
@@ -67,8 +67,8 @@ const OrderSummary: FC = () => {
             }}
           />
         </p>
-      </article>
-      <article className="ba b--muted-5 bw1 br3 w-50-m w-100 ml4-m mt4 mt0-m">
+      </div>
+      <div className="ba b--muted-5 bw1 br3 w-50-m w-100 ml4-m mt4 mt0-m">
         <p className="t-heading-5 tc bb b--muted-5 bw1 pb5 c-on-base">
           <FormattedMessage id="store/summary.pickup" />
         </p>
@@ -95,13 +95,13 @@ const OrderSummary: FC = () => {
         </p>
         <p className="c-muted-2 self-baseline mv6 lh-copy ph6">
           <FormattedMessage
-            id="store/summary.pickup.friendlyName"
+            id="store/summary.pickup.friendlyName"
             values={{
               friendlyName: totalPickUpParcels[0].pickupFriendlyName,
             }}
           />
         </p>
-      </article>
+      </div>
     </section>
   )
 }
