@@ -1,16 +1,23 @@
 {
   "order-placed": {
     "component": "index",
-    "allowed": ["order-placed-header", "order-info"],
-    "require": ["order-placed-header", "order-info"]
-  },
-  "order-placed-header": {
-    "component": "OrderPlacedHeader",
     "allowed": [
+      "order-placed-confirmation",
       "order-placed-notices",
       "order-placed-summary",
-      "order-placed-bank-invoice"
+      "order-placed-bank-invoice",
+      "order-info"
+    ],
+    "require": [
+      "order-placed-confirmation",
+      "order-placed-notices",
+      "order-placed-summary",
+      "order-placed-bank-invoice",
+      "order-info"
     ]
+  },
+  "order-placed-confirmation": {
+    "component": "OrderPlacedConfirmation"
   },
   "order-placed-notices": {
     "component": "OrderPlacedNotices"

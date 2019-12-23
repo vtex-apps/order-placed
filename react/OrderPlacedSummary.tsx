@@ -8,6 +8,10 @@ import { useOrderGroup } from './components/OrderGroupContext'
 const OrderSummary: FC = () => {
   const { totalDeliveryParcels, totalPickUpParcels } = useOrderGroup()
 
+  if (totalDeliveryParcels.length === 0 || totalPickUpParcels.length === 0) {
+    return null
+  }
+
   const deliveryItemsQuantity = totalDeliveryParcels.reduce(
     (acc, deliveryPackage) => acc + deliveryPackage.items.length,
     0
