@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { ButtonLink } from 'vtex.order-details'
+
+import ButtonLink from '../ButtonLink'
 
 const OrderOptions: FunctionComponent<Props> = ({
   allowCancellation,

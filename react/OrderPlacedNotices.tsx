@@ -1,14 +1,21 @@
 import React, { Fragment, FC } from 'react'
-import { FormattedMessage } from 'react-intl'
-import { FormattedDate, ButtonLink } from 'vtex.order-details'
+import { FormattedMessage, FormattedDate } from 'react-intl'
 
-import Price from './components/Payment/FormattedPrice'
-import { parseBankInvoiceUrl, getPaymentGroupFromOrder } from './utils'
+import ButtonLink from './components/ButtonLink'
+import FormattedPrice from './components/Payment/FormattedPrice'
 import { useOrderGroup } from './components/OrderGroupContext'
+import { parseBankInvoiceUrl, getPaymentGroupFromOrder } from './utils'
 import styles from './styles.css'
 
 const Notices: FC = () => {
   const { orders, totalDeliveryParcels, totalPickUpParcels } = useOrderGroup()
+  const hasDelivery = totalDeliveryParcels.length > 0
+  const hasPickUp = totalPickUpParcels.length > 0
+
+  if (!hasDelivery && !hasPickUp) {
+    return null
+  }
+
   const numOrders = orders.length
   const isSplitOrder = numOrders > 1
   const [bankInvoice] = orders
@@ -16,8 +23,6 @@ const Notices: FC = () => {
     .filter(order => !!order.url)
 
   const hasBankInvoice = bankInvoice != null
-  const hasDelivery = totalDeliveryParcels.length > 0
-  const hasPickUp = totalPickUpParcels.length > 0
   const listItems = [
     !hasBankInvoice && (
       <FormattedMessage id="store/warnings.payment.approval" />
@@ -47,12 +52,12 @@ const Notices: FC = () => {
             values={{
               paymentDueDate: (
                 <strong>
-                  <FormattedDate date={bankInvoice.dueDate} style="short" />
+                  <FormattedDate value={bankInvoice.dueDate} timeZone="utc" />
                 </strong>
               ),
               paymentValue: (
                 <strong>
-                  <Price value={bankInvoice.value} />
+                  <FormattedPrice value={bankInvoice.value} />
                 </strong>
               ),
             }}
@@ -63,7 +68,7 @@ const Notices: FC = () => {
             values={{
               paymentValue: (
                 <strong>
-                  <Price value={bankInvoice.value} />
+                  <FormattedPrice value={bankInvoice.value} />
                 </strong>
               ),
             }}
