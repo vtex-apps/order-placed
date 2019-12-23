@@ -54,7 +54,7 @@ export function transformConnectorResponsesToArray(
   )
 }
 
-export function getPaymentGroupFromOrder(order: Order): PaymentGroupInfo {
+export function getPaymentInfoFromOrder(order: Order): PaymentGroupInfo {
   const base = 'paymentData.transactions[0].payments[0]'
 
   return {
@@ -131,7 +131,6 @@ export function getSubscriptionInfo(attachmentItem: Attachment, intl: any) {
 
 export function parseBankInvoiceUrl(url: string) {
   const isEncrypted = !!url.match(/(\*.\*.)+\*\w\*/g)
-
   if (!isEncrypted) return url
 
   return `${get(

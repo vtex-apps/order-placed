@@ -4,7 +4,7 @@ import { FormattedMessage, FormattedDate } from 'react-intl'
 import ButtonLink from './components/ButtonLink'
 import FormattedPrice from './components/Payment/FormattedPrice'
 import { useOrderGroup } from './components/OrderGroupContext'
-import { parseBankInvoiceUrl, getPaymentGroupFromOrder } from './utils'
+import { parseBankInvoiceUrl, getPaymentInfoFromOrder } from './utils'
 import styles from './styles.css'
 
 const Notices: FC = () => {
@@ -19,7 +19,7 @@ const Notices: FC = () => {
   const numOrders = orders.length
   const isSplitOrder = numOrders > 1
   const [bankInvoice] = orders
-    .map(getPaymentGroupFromOrder)
+    .map(getPaymentInfoFromOrder)
     .filter(order => !!order.url)
 
   const hasBankInvoice = bankInvoice != null
