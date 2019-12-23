@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
-const NotFound: FunctionComponent = () => (
+const NotFound: FC = () => (
   <svg
     width="72"
     height="60"
