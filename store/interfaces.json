@@ -73,6 +73,9 @@
   "order-takeaway-items": {
     "component": "TakeAwayItems"
   },
+  "order-total": {
+    "component": "OrderTotal"
+  },
   "order-placed-extension": {
     "component": "*"
   }
