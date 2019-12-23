@@ -1,22 +1,17 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { FormattedNumber } from 'react-intl'
 
-import { CurrencyContext } from '../../index'
+import { useCurrency } from '../CurrencyContext'
 
 interface Props {
   value: number
 }
 
-const Price: FunctionComponent<Props> = ({ value }) => (
-  <CurrencyContext.Consumer>
-    {currency => (
-      <FormattedNumber
-        currency={currency}
-        style="currency"
-        value={value / 100}
-      />
-    )}
-  </CurrencyContext.Consumer>
-)
+const FormattedPrice: FC<Props> = ({ value }) => {
+  const currency = useCurrency()
+  return (
+    <FormattedNumber currency={currency} style="currency" value={value / 100} />
+  )
+}
 
-export default Price
+export default FormattedPrice
