@@ -2,9 +2,7 @@ import React, { FC } from 'react'
 
 import { baseClassname } from './utils'
 
-const InfoIcon: FC<{ colorToken: string }> = ({
-  colorToken,
-}) => (
+const InfoIcon: FC<{ colorToken: string }> = ({ colorToken }) => (
   <svg
     className={`${baseClassname('info')} ${colorToken ? colorToken : ''}`}
     width="16"
