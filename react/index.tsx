@@ -145,4 +145,4 @@ const OrderPlaced: FC = () => {
   )
 }
 
-export default withoutSSR(OrderPlaced)
+export default OrderPlaced
