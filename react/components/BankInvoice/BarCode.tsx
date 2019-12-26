@@ -5,6 +5,10 @@ import { Button } from 'vtex.styleguide'
 
 import styles from '../../styles.css'
 
+interface Props {
+  barCodeNumber: string
+}
+
 const BarCode: FC<Props> = ({ barCodeNumber }) => (
   <div
     data-testid="bank-invoice-barcode"
@@ -24,9 +28,5 @@ const BarCode: FC<Props> = ({ barCodeNumber }) => (
     </Clipboard>
   </div>
 )
-
-interface Props {
-  barCodeNumber: string
-}
 
 export default BarCode

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, Fragment } from 'react'
 
 import ProductAttachment from './Attachment'
 import Product from './Product'
@@ -9,20 +9,13 @@ interface Props {
 
 const ProductList: FC<Props> = ({ products }) => {
   return (
-    <div className="flex flex-column justify-between w-60-l w-100">
-      {products.map((product: OrderItem, index: number) => (
-        <div
-          key={product.id}
-          className={`${index !== products.length - 1 ? 'bb b--muted-4' : ''}`}
-        >
-          <Product productInfo={product} />
-          {(product.bundleItems || product.attachments) && (
-            <ProductAttachment
-              attachmentsInfo={product.attachments}
-              bundleInfo={product.bundleItems}
-            />
-          )}
-        </div>
+    <div className="w-60-l w-100">
+      {products.map((product, index, { length }) => (
+        <Fragment key={product.id}>
+          <Product product={product} />
+          <ProductAttachment product={product} />
+          <div className={`${index < length - 1 ? 'bb b--muted-4 mb7' : ''}`} />
+        </Fragment>
       ))}
     </div>
   )
