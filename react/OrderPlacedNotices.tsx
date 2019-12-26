@@ -7,7 +7,7 @@ import { useOrderGroup } from './components/OrderGroupContext'
 import { parseBankInvoiceUrl, getPaymentInfoFromOrder } from './utils'
 import styles from './styles.css'
 
-const Notices: FC = () => {
+const OrderPlacedNotices: FC = () => {
   const { orders, totalDeliveryParcels, totalPickUpParcels } = useOrderGroup()
   const hasDelivery = totalDeliveryParcels.length > 0
   const hasPickUp = totalPickUpParcels.length > 0
@@ -113,4 +113,4 @@ const Notices: FC = () => {
   )
 }
 
-export default Notices
+export default OrderPlacedNotices

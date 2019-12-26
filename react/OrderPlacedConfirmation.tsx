@@ -2,10 +2,10 @@ import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
-import SuccessIcon from './Icons/Success'
+import SuccessIcon from './icons/Success'
 import { useOrderGroup } from './components/OrderGroupContext'
 
-const Success: FC = () => {
+const OrderPlacedConfirmation: FC = () => {
   const orderGroup = useOrderGroup()
   const profile = orderGroup.orders[0].clientProfileData
 
@@ -41,4 +41,4 @@ const Success: FC = () => {
     </section>
   )
 }
-export default Success
+export default OrderPlacedConfirmation

@@ -5,7 +5,7 @@ import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 
 import { useOrderGroup } from './components/OrderGroupContext'
 
-const OrderSummary: FC = () => {
+const OrderPlacedSummary: FC = () => {
   const { totalDeliveryParcels, totalPickUpParcels } = useOrderGroup()
 
   if (totalDeliveryParcels.length === 0 || totalPickUpParcels.length === 0) {
@@ -106,4 +106,4 @@ const OrderSummary: FC = () => {
   )
 }
 
-export default OrderSummary
+export default OrderPlacedSummary

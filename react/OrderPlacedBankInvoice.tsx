@@ -1,14 +1,14 @@
 import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 
-import PrinterIcon from './Icons/PrinterIcon'
+import PrinterIcon from './icons/PrinterIcon'
 import ButtonLink from './components/ButtonLink'
 import BarCode from './components/BankInvoice/BarCode'
 import Embedded from './components/BankInvoice/Embedded'
 import { useOrderGroup } from './components/OrderGroupContext'
 import { getPaymentInfoFromOrder, parseBankInvoiceUrl } from './utils'
 
-const BankInvoice: FC = () => {
+const OrderPlacedBankInvoice: FC = () => {
   const orderGroup = useOrderGroup()
   const paymentInfo = getPaymentInfoFromOrder(orderGroup.orders[0])
 
@@ -60,4 +60,4 @@ const BankInvoice: FC = () => {
   )
 }
 
-export default BankInvoice
+export default OrderPlacedBankInvoice
