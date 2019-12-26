@@ -14,7 +14,8 @@
       "order-placed-summary",
       "order-placed-bank-invoice",
       "order-info"
-    ]
+    ],
+    "render": "client"
   },
   "order-placed-confirmation": {
     "component": "OrderPlacedConfirmation"
