@@ -3,6 +3,7 @@ import React, { FC } from 'react'
 import ProductList from './components/ProductList'
 import ShippingHeader from './components/DeliveryHeader'
 import { useOrder } from './components/OrderContext'
+import OrderSection from './OrderSection'
 
 const Shipping: FC = () => {
   const { deliveryParcels, giftRegistryData } = useOrder()
@@ -12,7 +13,7 @@ const Shipping: FC = () => {
   }
 
   return (
-    <section className="bb b--muted-4">
+    <OrderSection>
       {deliveryParcels.map((deliveryParcel, index) => (
         <div
           className="mv8 flex-l justify-between flex-column flex-row-m"
@@ -27,7 +28,7 @@ const Shipping: FC = () => {
           <ProductList products={deliveryParcel.items} />
         </div>
       ))}
-    </section>
+    </OrderSection>
   )
 }
 export default Shipping
