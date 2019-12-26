@@ -2,9 +2,7 @@ import React, { FC } from 'react'
 
 import { baseClassname } from './utils'
 
-const Tooltip: FC<{ colorToken?: string }> = ({
-  colorToken,
-}) => (
+const Tooltip: FC<{ colorToken?: string }> = ({ colorToken }) => (
   <svg
     className={`${baseClassname('tooltip')} ${colorToken ? colorToken : ''}`}
     width="20"
