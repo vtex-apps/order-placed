@@ -1,4 +1,4 @@
-import React, { Fragment, FC, useState } from 'react'
+import React, { FC, useState } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
@@ -7,8 +7,17 @@ import { isSubscription } from '../../utils'
 import FormattedPrice from '../FormattedPrice'
 import Subscription from './Subscription'
 
-const ProductAttachment: FC<Props> = ({ bundleInfo, attachmentsInfo }) => {
+interface Props {
+  product: OrderItem
+}
+
+const ProductAttachment: FC<Props> = ({ product }) => {
+  const { bundleItems: bundleInfo, attachments: attachmentsInfo } = product
   const [isOpen, setIsOpen] = useState(false)
+
+  if (bundleInfo == null || attachmentsInfo == null) {
+    return null
+  }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key !== ' ' && e.key !== 'Enter') {
@@ -19,7 +28,7 @@ const ProductAttachment: FC<Props> = ({ bundleInfo, attachmentsInfo }) => {
   }
 
   return (
-    <Fragment>
+    <div className="mt7">
       {bundleInfo &&
         bundleInfo.map(bundleItem => {
           const hasAttachments =
@@ -122,13 +131,8 @@ const ProductAttachment: FC<Props> = ({ bundleInfo, attachmentsInfo }) => {
             </div>
           )
         })}
-    </Fragment>
+    </div>
   )
-}
-
-interface Props {
-  attachmentsInfo: Attachment[]
-  bundleInfo: Bundle[]
 }
 
 export default ProductAttachment
