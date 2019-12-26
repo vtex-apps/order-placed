@@ -4,7 +4,7 @@ import { useRuntime } from 'vtex.render-runtime'
 
 import { useOrder } from './components/OrderContext'
 
-const OrderDate: FC = () => {
+const OrderSeller: FC = () => {
   const runtime = useRuntime()
   const order = useOrder()
 
@@ -27,4 +27,4 @@ const OrderDate: FC = () => {
   )
 }
 
-export default OrderDate
+export default OrderSeller

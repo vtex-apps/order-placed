@@ -4,7 +4,7 @@ import { useOrder } from './components/OrderContext'
 import ProductList from './components/ProductList'
 import StorePickUpHeader from './components/PickUpHeader'
 
-const PickupItemsList: FC = () => {
+const PickupItems: FC = () => {
   const { pickUpParcels } = useOrder()
 
   if (pickUpParcels.length === 0) {
@@ -30,4 +30,4 @@ const PickupItemsList: FC = () => {
   )
 }
 
-export default PickupItemsList
+export default PickupItems
