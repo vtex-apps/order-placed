@@ -4,9 +4,11 @@ import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
 import { getSubscriptionInfo } from '../../utils'
 
-const SubscriptionAttachment: FC<{
+interface Props {
   attachmentItem: Attachment
-}> = ({ attachmentItem }) => {
+}
+
+const SubscriptionAttachment: FC<Props> = ({ attachmentItem }) => {
   const intl = useIntl()
   const [isOpen, setIsOpen] = useState(false)
 
