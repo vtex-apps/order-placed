@@ -10,7 +10,6 @@ declare module 'vtex.render-runtime' {
   }
 
   export const Link: any
-  export const NoSSR: any
   export const RenderContextConsumer: ReactElement
   export const canUseDOM: boolean
   export const withRuntimeContext: any
