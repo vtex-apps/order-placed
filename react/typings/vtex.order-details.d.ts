@@ -4,6 +4,6 @@ declare module 'vtex.order-details' {
   export const OrderSplitNotice
   export const ProductImage
   export const Address
-  export const ButtonLink
+  export const ButtonLink: any
   export const CustomerInfo
 }

@@ -6,74 +6,69 @@ import { orderGroupQuery as serviceWithAttachment } from '../mocks/bundleService
 import { orderGroupQuery as serviceWithNoAttachments } from '../mocks/bundleServiceWithNoAttachments'
 import { orderGroupQuery as serviceAndAttachment } from '../mocks/serviceAndAttachment'
 import { orderGroupQuery as subscription } from '../mocks/subscriptions'
+import { renderWithOrderGroup } from './utils'
+import ProductList from '../components/ProductList'
 
-const getOrderFromOrderGroup = (orderGroup: OrderGroup, index: number) => {
-  return orderGroup.orders[index]
-}
+const getItemsFromOrderGroup = (
+  orderGroup: OrderGroup,
+  type: 'deliveryParcels' | 'pickUpParcels'
+) => orderGroup.orders[0][type][0].items
 
-describe('Product List component', () => {
-  it('should render Attachment component if product has service or attachment', () => {
-    const orderInfo = getOrderFromOrderGroup(
-      serviceWithNoAttachments.orderGroup,
-      0
-    )
-    const { queryByText } = render(
-      <OrderInfo
-        order={orderInfo}
-        profile={orderInfo.clientProfileData}
-        numOfOrders={1}
-        index={0}
-      />
-    )
+it('renders Attachment component if product has service or attachment', () => {
+  const { queryByText } = renderWithOrderGroup(
+    serviceWithNoAttachments.orderGroup,
+    <ProductList
+      products={getItemsFromOrderGroup(
+        serviceWithNoAttachments.orderGroup,
+        'deliveryParcels'
+      )}
+    />
+  )
 
-    expect(queryByText('[TESTE QA]')).toBeDefined()
-  })
+  expect(queryByText('[TESTE QA]')).toBeTruthy()
+})
 
-  it('should render attachment from bundleItems item', () => {
-    const orderInfo = getOrderFromOrderGroup(
-      serviceWithAttachment.orderGroup,
-      0
-    )
-    const { queryByText } = render(
-      <OrderInfo
-        order={orderInfo}
-        profile={orderInfo.clientProfileData}
-        numOfOrders={1}
-        index={0}
-      />
-    )
+it('renders attachment from bundleItems item', () => {
+  const { queryByText } = renderWithOrderGroup(
+    serviceWithAttachment.orderGroup,
+    <ProductList
+      products={getItemsFromOrderGroup(
+        serviceWithAttachment.orderGroup,
+        'deliveryParcels'
+      )}
+    />
+  )
 
-    expect(queryByText('This is a mock message')).toBeDefined()
-  })
+  expect(queryByText('This is a mock message')).toBeTruthy()
+})
 
-  it('should render attachments from item and also bundle items', () => {
-    const orderInfo = getOrderFromOrderGroup(serviceAndAttachment.orderGroup, 0)
-    const { queryByText } = render(
-      <OrderInfo
-        order={orderInfo}
-        profile={orderInfo.clientProfileData}
-        numOfOrders={1}
-        index={0}
-      />
-    )
+it('renders attachments from item and also bundle items', () => {
+  const { queryByText, debug } = renderWithOrderGroup(
+    serviceAndAttachment.orderGroup,
+    <ProductList
+      products={getItemsFromOrderGroup(
+        serviceAndAttachment.orderGroup,
+        'deliveryParcels'
+      )}
+    />
+  )
 
-    expect(queryByText('[TESTE QA]')).toBeDefined()
-    expect(queryByText('1 semana')).toBeDefined()
-  })
+  expect(queryByText('[TESTE QA]')).toBeTruthy()
+  expect(queryByText(/1\ssemana/)).toBeTruthy()
+})
 
-  it('should render correct information and messages for an item with a subscription', () => {
-    const orderInfo = getOrderFromOrderGroup(subscription.orderGroup, 0)
-    const { queryByText } = render(
-      <OrderInfo
-        order={orderInfo}
-        profile={orderInfo.clientProfileData}
-        numOfOrders={1}
-        index={0}
-      />
-    )
+it('renders correct information and messages for an item with a subscription', () => {
+  const { queryByText } = renderWithOrderGroup(
+    subscription.orderGroup,
+    <ProductList
+      products={getItemsFromOrderGroup(
+        subscription.orderGroup,
+        'deliveryParcels'
+      )}
+    />
+  )
 
-    expect(queryByText('Subscription')).toBeDefined()
-    expect(queryByText('Every 1 week')).toBeDefined()
-    expect(queryByText('Charged monthly at day 15'))
-  })
+  expect(queryByText('Subscription')).toBeTruthy()
+  expect(queryByText('Every 1 week')).toBeTruthy()
+  expect(queryByText('Charged monthly at day 15'))
 })
