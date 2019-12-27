@@ -3,15 +3,15 @@ import { IntlProvider } from 'react-intl'
 import * as defaultStrings from '../../messages/en.json'
 import { getSubscriptionInfo } from '../utils'
 
-const intlProvider = new IntlProvider(
+const {
+  state: { intl },
+} = new IntlProvider(
   {
     locale: 'en-US',
     messages: defaultStrings,
   },
   {}
 )
-
-const { intl } = intlProvider.getChildContext()
 
 const mockAttachmentItemNoSubscription = {
   content: {
