@@ -77,10 +77,12 @@ const ProductAttachment: FC<Props> = ({ bundleInfo, attachmentsInfo }) => {
           )
         })}
       {attachmentsInfo.length > 0 &&
-        attachmentsInfo.map(attachmentItem => {
-          return isSubscription(attachmentItem) ? (
-            <Subscription attachmentItem={attachmentItem} />
-          ) : (
+        attachmentsInfo.map((attachmentItem, index) => {
+          if (isSubscription(attachmentItem)) {
+            return <Subscription attachmentItem={attachmentItem} key={index} />
+          }
+
+          return (
             <div
               className="bg-muted-5 pv3 ph5 br2 mv4"
               key={attachmentItem.name}
