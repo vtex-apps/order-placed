@@ -12,7 +12,8 @@ import NotFound from './icons/NotFound'
 import Forbidden from './icons/Forbidden'
 import Skeleton from './Skeleton'
 import { CurrencyContext } from './components/CurrencyContext'
-import { Analytics } from './Analytics'
+// import { Analytics } from './Analytics'
+import { orderGroupQuery } from './mocks/serviceAndAttachment'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -52,6 +53,8 @@ const OrderPlaced: FC = () => {
     },
   })
 
+  console.log(loading)
+  console.log(error?.message)
   // render loading skeleton if query is still loading
   if (loading) return <Skeleton />
 
@@ -95,7 +98,7 @@ const OrderPlaced: FC = () => {
     )
   }
 
-  const { orderGroup }: { orderGroup: OrderGroup } = data
+  const { orderGroup }: { orderGroup: OrderGroup } = orderGroupQuery // data
   const { promptOnCustomEvent } = settings
 
   return (
@@ -108,7 +111,7 @@ const OrderPlaced: FC = () => {
         </Helmet>
 
         <article className="pt9 sans-serif">
-          <Analytics eventList={orderGroup.analyticsData} />
+          {/* <Analytics eventList={orderGroup.analyticsData} /> */}
 
           <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
 
