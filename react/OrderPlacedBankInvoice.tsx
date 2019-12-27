@@ -18,13 +18,12 @@ const OrderPlacedBankInvoice: FC = () => {
 
   const { url, paymentSystemName, barCodeNumber } = paymentInfo
   const isURLValid = url && !url.match(/(\*.\*.)+\*\w\*/g)
-  const hideBankInvoiceInfo = !isURLValid && !barCodeNumber
 
-  if (hideBankInvoiceInfo) {
+  if (!isURLValid && !barCodeNumber) {
     return null
   }
 
-  const parsedUrl = url && isURLValid ? parseBankInvoiceUrl(url) : ''
+  const parsedUrl = url ? parseBankInvoiceUrl(url) : ''
 
   return (
     <section
@@ -37,7 +36,7 @@ const OrderPlacedBankInvoice: FC = () => {
           values={{ paymentSystemName }}
         />
       </header>
-      <div className="flex-l justify-between items-center mv6">
+      <div className="flex-l justify-between items-center mt6">
         {barCodeNumber && <BarCode barCodeNumber={barCodeNumber} />}
         {isURLValid && (
           <div className={`mt5 mt0-l ${barCodeNumber ? 'ml5-l' : ''}`}>
@@ -55,7 +54,11 @@ const OrderPlacedBankInvoice: FC = () => {
           </div>
         )}
       </div>
-      {isURLValid && <Embedded url={parsedUrl} />}
+      {isURLValid && (
+        <div className="mt6">
+          <Embedded url={parsedUrl} />
+        </div>
+      )}
     </section>
   )
 }

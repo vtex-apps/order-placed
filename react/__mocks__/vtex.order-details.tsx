@@ -14,10 +14,7 @@ export function CustomerInfo() {
 
 export const ProductImage: FC = () => <div>ProductImage</div>
 
-export const ButtonLink: FC<{ to: string }> = ({
-  to,
-  children,
-}) => (
+export const ButtonLink: FC<{ to: string }> = ({ to, children }) => (
   <a href={to} data-testid="button-link">
     {children}
   </a>

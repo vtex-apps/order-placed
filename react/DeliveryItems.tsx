@@ -5,7 +5,7 @@ import DeliveryHeader from './components/DeliveryHeader'
 import { useOrder } from './components/OrderContext'
 import OrderSection from './OrderSection'
 
-const Shipping: FC = () => {
+const DeliveryItems: FC = () => {
   const { deliveryParcels, giftRegistryData } = useOrder()
 
   if (deliveryParcels.length === 0) {
@@ -33,4 +33,4 @@ const Shipping: FC = () => {
     </OrderSection>
   )
 }
-export default Shipping
+export default DeliveryItems
