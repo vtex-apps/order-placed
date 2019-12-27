@@ -9,6 +9,8 @@ interface Props {
 const Embedded: FC<Props> = ({ url }) => {
   const [isOpen, setIsOpen] = useState(false)
 
+  const toggle = () => setIsOpen(!isOpen)
+
   return (
     <div className="b--muted-4 ba br3 bw1">
       <div className="bg-muted-1">
@@ -23,7 +25,7 @@ const Embedded: FC<Props> = ({ url }) => {
         <ButtonWithIcon
           icon={<IconCaretUp />}
           variation="tertiary"
-          onClick={() => setIsOpen(false)}
+          onClick={toggle}
           block
         >
           <FormattedMessage id="store/header.bankinvoice.embeded.collapse" />
@@ -32,7 +34,7 @@ const Embedded: FC<Props> = ({ url }) => {
         <ButtonWithIcon
           icon={<IconCaretDown />}
           variation="tertiary"
-          onClick={() => setIsOpen(true)}
+          onClick={toggle}
           block
         >
           <FormattedMessage id="store/header.bankinvoice.embeded.expand" />
