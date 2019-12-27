@@ -41,9 +41,7 @@ const OrderPlacedNotices: FC = () => {
     bankInvoice != null && (
       <FormattedMessage
         id="store/warnings.payment.bankInvoice.approval"
-        values={{
-          paymentSystemName: bankInvoice.paymentSystemName,
-        }}
+        values={{ paymentSystemName: bankInvoice.paymentSystemName }}
       />
     ),
     bankInvoice != null && (
@@ -85,9 +83,7 @@ const OrderPlacedNotices: FC = () => {
             >
               <FormattedMessage
                 id="store/payments.bankinvoice.print"
-                values={{
-                  paymentSystemName: bankInvoice.paymentSystemName,
-                }}
+                values={{ paymentSystemName: bankInvoice.paymentSystemName }}
               />
             </ButtonLink>
           )}
