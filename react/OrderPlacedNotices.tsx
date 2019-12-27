@@ -25,9 +25,8 @@ const OrderPlacedNotices: FC = () => {
         paymentInfo.paymentGroup === 'bankInvoice' && !!paymentInfo.url
     )
 
-  const hasBankInvoice = bankInvoice != null
   const listItems = [
-    !hasBankInvoice && (
+    bankInvoice == null && (
       <FormattedMessage id="store/warnings.payment.approval" />
     ),
     hasDelivery && <FormattedMessage id="store/warnings.delivery.time" />,
@@ -39,7 +38,7 @@ const OrderPlacedNotices: FC = () => {
         values={{ numOrders }}
       />
     ),
-    hasBankInvoice && (
+    bankInvoice != null && (
       <FormattedMessage
         id="store/warnings.payment.bankInvoice.approval"
         values={{
@@ -47,7 +46,7 @@ const OrderPlacedNotices: FC = () => {
         }}
       />
     ),
-    hasBankInvoice && (
+    bankInvoice != null && (
       <Fragment>
         {bankInvoice.dueDate ? (
           <FormattedMessage
