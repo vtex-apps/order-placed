@@ -18,9 +18,9 @@ const OrderPlacedNotices: FC = () => {
 
   const numOrders = orders.length
   const isSplitOrder = numOrders > 1
-  const [bankInvoice] = orders
+  const bankInvoice = orders
     .map(getPaymentInfoFromOrder)
-    .filter(
+    .find(
       paymentInfo =>
         paymentInfo.paymentGroup === 'bankInvoice' && !!paymentInfo.url
     )
