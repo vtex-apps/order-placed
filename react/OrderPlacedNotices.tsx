@@ -1,7 +1,7 @@
 import React, { Fragment, FC } from 'react'
 import { FormattedMessage, FormattedDate } from 'react-intl'
+import { ButtonLink } from 'vtex.order-details'
 
-import ButtonLink from './components/ButtonLink'
 import FormattedPrice from './components/FormattedPrice'
 import { useOrderGroup } from './components/OrderGroupContext'
 import { parseBankInvoiceUrl, getPaymentInfoFromOrder } from './utils'
