@@ -2,6 +2,15 @@ import React, { FC, Fragment } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import { Address } from 'vtex.order-details'
+import { useCssHandles } from 'vtex.css-handles'
+
+const CSS_HANDLES = [
+  'deliveryHeader',
+  'deliveryShippingEstimate',
+  'deliverySLA',
+  'deliveryGiftDescription',
+  'deliveryAddressWrapper',
+]
 
 interface Props {
   shippingData: Parcel
@@ -10,18 +19,19 @@ interface Props {
   giftRegistry?: GiftRegistry | null
 }
 
-const ShippingHeader: FC<Props> = ({
+const DeliveryHeader: FC<Props> = ({
   shippingData,
   index,
   numPackages,
   giftRegistry,
 }) => {
+  const handles = useCssHandles(CSS_HANDLES)
   const multipleDeliveries = numPackages > 1
 
   return (
     <Fragment>
       <div
-        className="t-heading-4-ns t-heading-5 mb5"
+        className={`${handles.deliveryHeader} t-heading-4-ns t-heading-5 mb5`}
         data-testid="shipping-header"
       >
         <FormattedMessage id="store/shipping.header.title" />
@@ -32,26 +42,30 @@ const ShippingHeader: FC<Props> = ({
           />
         )}
         <br />
-        <small className="c-muted-2 t-small">
+        <small
+          className={`${handles.deliveryShippingEstimate} c-muted-2 t-small`}
+        >
           <TranslateEstimate
             shippingEstimate={shippingData.shippingEstimate}
             scheduled={shippingData.deliveryWindow}
           />
         </small>
         <br />
-        <small className="c-muted-2 t-small">{shippingData.selectedSla}</small>
+        <small className={`${handles.deliverySLA} c-muted-2 t-small`}>
+          {shippingData.selectedSla}
+        </small>
       </div>
 
       {giftRegistry &&
       giftRegistry.addressId === shippingData.address.addressId ? (
-        <div className="c-muted-1">
+        <div className={`${handles.deliveryGiftDescription} c-muted-1`}>
           <FormattedMessage
             id="store/shipping.header.wishlist.address"
             values={{ giftRegistryName: giftRegistry.description }}
           />
         </div>
       ) : (
-        <div className="mb5 mr10-m">
+        <div className={`${handles.deliveryAddressWrapper} mb5 mr10-m`}>
           <Address address={shippingData.address} />
         </div>
       )}
@@ -59,4 +73,4 @@ const ShippingHeader: FC<Props> = ({
   )
 }
 
-export default ShippingHeader
+export default DeliveryHeader
