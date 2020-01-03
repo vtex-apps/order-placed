@@ -1,17 +1,29 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, Fragment } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
+import { useCssHandles } from 'vtex.css-handles'
 
 import { isSubscription } from '../../utils'
 import FormattedPrice from '../FormattedPrice'
 import Subscription from './Subscription'
+
+const CSS_HANDLES = [
+  'attachmentWrapper',
+  'attachmentHeader',
+  'attachmentTitle',
+  'attachmentToggleWrapper',
+  'attachmentToggleButton',
+  'attachmentToggleLabel',
+  'attachmentContent',
+]
 
 interface Props {
   product: OrderItem
 }
 
 const ProductAttachment: FC<Props> = ({ product }) => {
+  const handles = useCssHandles(CSS_HANDLES)
   const { bundleItems: bundleInfo, attachments: attachmentsInfo } = product
   const [isOpen, setIsOpen] = useState(false)
 
@@ -27,8 +39,16 @@ const ProductAttachment: FC<Props> = ({ product }) => {
     setIsOpen(!isOpen)
   }
 
+  const attachmentWrapperClass = `${handles.attachmentWrapper} mt7 pv3 ph5 bg-muted-5 br2`
+  const attachmentHeaderClass = `${handles.attachmentHeader} flex justify-between items-center pv4`
+  const attachmentTitleClass = `${handles.attachmentTitle} c-on-base`
+  const attachmentToggleClass = `${handles.attachmentToggleWrapper} flex items-center`
+  const attachmentToggleButtonClass = `${handles.attachmentToggleButton} c-action-primary ml5`
+  const attachmentToggleLabel = `${handles.attachmentToggleLabel} mr5`
+  const attachmentContentClass = `${handles.attachmentContent} c-muted-1`
+
   return (
-    <div className="mt7">
+    <Fragment>
       {bundleInfo &&
         bundleInfo.map(bundleItem => {
           const hasAttachments =
@@ -37,22 +57,24 @@ const ProductAttachment: FC<Props> = ({ product }) => {
             hasAttachments && bundleItem.attachments[0].name === 'message'
 
           return (
-            <div className="bg-muted-5 pv3 ph5 br2 mv4" key={bundleItem.id}>
-              <div className="flex justify-between">
+            <div className={attachmentWrapperClass} key={bundleItem.id}>
+              <div className={attachmentHeaderClass}>
                 {bundleItem.imageUrl && (
                   <ProductImage
                     url={bundleItem.imageUrl}
                     alt={bundleItem.name}
                   />
                 )}
-                <p className="c-on-base">{bundleItem.name}</p>
-                <div className="flex items-center">
-                  <FormattedPrice value={bundleItem.price} />
+                <span className={attachmentTitleClass}>{bundleItem.name}</span>
+                <div className={attachmentToggleClass}>
+                  <div className={attachmentToggleLabel}>
+                    <FormattedPrice value={bundleItem.price} />
+                  </div>
                   {hasAttachments && (
                     <div
                       role="button"
                       tabIndex={0}
-                      className="c-action-primary ml5"
+                      className={attachmentToggleButtonClass}
                       onKeyDown={handleKeyDown}
                       onClick={() => setIsOpen(!isOpen)}
                     >
@@ -64,7 +86,7 @@ const ProductAttachment: FC<Props> = ({ product }) => {
               {hasAttachments && (
                 <div hidden={!isOpen}>
                   {isMessage && (
-                    <p className="c-muted-1">
+                    <p className={attachmentContentClass}>
                       {bundleItem.attachments[0].content.text}
                     </p>
                   )}
@@ -74,7 +96,7 @@ const ProductAttachment: FC<Props> = ({ product }) => {
                         const contentLabel = key
                         const contentValue = attachmentItem.content[key]
                         return (
-                          <p className="c-muted-1" key={key}>
+                          <p className={attachmentContentClass} key={key}>
                             {`${contentLabel}: ${contentValue}`}
                           </p>
                         )
@@ -92,21 +114,20 @@ const ProductAttachment: FC<Props> = ({ product }) => {
           }
 
           return (
-            <div
-              className="bg-muted-5 pv3 ph5 br2 mv4"
-              key={attachmentItem.name}
-            >
-              <div className="flex justify-between">
-                <p className="c-on-base">{attachmentItem.name}</p>
-                <div className="flex items-center">
-                  <p className="mr5">
+            <div className={attachmentWrapperClass} key={attachmentItem.name}>
+              <div className={attachmentHeaderClass}>
+                <span className={attachmentTitleClass}>
+                  {attachmentItem.name}
+                </span>
+                <div className={attachmentToggleClass}>
+                  <div className={attachmentToggleLabel}>
                     <FormattedMessage id="store/order.totals.pickup.free" />
-                  </p>
+                  </div>
                   {attachmentItem.content && (
                     <div
                       role="button"
                       tabIndex={0}
-                      className="c-action-primary"
+                      className={attachmentToggleButtonClass}
                       onKeyDown={handleKeyDown}
                       onClick={() => setIsOpen(!isOpen)}
                     >
@@ -121,7 +142,7 @@ const ProductAttachment: FC<Props> = ({ product }) => {
                     const contentLabel = key
                     const contentValue = attachmentItem.content[key]
                     return (
-                      <p className="c-muted-1" key={key}>
+                      <p className={attachmentContentClass} key={key}>
                         {`${contentLabel}: ${contentValue}`}
                       </p>
                     )
@@ -131,7 +152,7 @@ const ProductAttachment: FC<Props> = ({ product }) => {
             </div>
           )
         })}
-    </div>
+    </Fragment>
   )
 }
 

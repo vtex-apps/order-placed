@@ -2,14 +2,14 @@ import React, { FC, Fragment } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import { Address } from 'vtex.order-details'
-import { useCssHandles } from 'vtex.css-handles'
+import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 
 const CSS_HANDLES = [
-  'deliveryHeader',
-  'deliveryShippingEstimate',
-  'deliverySLA',
-  'deliveryGiftDescription',
-  'deliveryAddressWrapper',
+  'parcelHeader',
+  'parcelShippingEstimate',
+  'parcelSLA',
+  'parcelGiftDescription',
+  'parcelAddressWrapper',
 ]
 
 interface Props {
@@ -31,7 +31,10 @@ const DeliveryHeader: FC<Props> = ({
   return (
     <Fragment>
       <div
-        className={`${handles.deliveryHeader} t-heading-4-ns t-heading-5 mb5`}
+        className={`${applyModifiers(
+          handles.parcelHeader,
+          'delivery'
+        )} t-heading-4-ns t-heading-5 mb5`}
         data-testid="shipping-header"
       >
         <FormattedMessage id="store/shipping.header.title" />
@@ -43,7 +46,7 @@ const DeliveryHeader: FC<Props> = ({
         )}
         <br />
         <small
-          className={`${handles.deliveryShippingEstimate} c-muted-2 t-small`}
+          className={`${handles.parcelShippingEstimate} c-muted-2 t-small`}
         >
           <TranslateEstimate
             shippingEstimate={shippingData.shippingEstimate}
@@ -51,21 +54,21 @@ const DeliveryHeader: FC<Props> = ({
           />
         </small>
         <br />
-        <small className={`${handles.deliverySLA} c-muted-2 t-small`}>
+        <small className={`${handles.parcelSLA} c-muted-2 t-small`}>
           {shippingData.selectedSla}
         </small>
       </div>
 
       {giftRegistry &&
       giftRegistry.addressId === shippingData.address.addressId ? (
-        <div className={`${handles.deliveryGiftDescription} c-muted-1`}>
+        <div className={`${handles.parcelGiftDescription} c-muted-1`}>
           <FormattedMessage
             id="store/shipping.header.wishlist.address"
             values={{ giftRegistryName: giftRegistry.description }}
           />
         </div>
       ) : (
-        <div className={`${handles.deliveryAddressWrapper} mb5 mr10-m`}>
+        <div className={`${handles.parcelAddressWrapper} mb5 mr10-m`}>
           <Address address={shippingData.address} />
         </div>
       )}

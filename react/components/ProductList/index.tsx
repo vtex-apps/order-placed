@@ -1,21 +1,27 @@
-import React, { FC, Fragment } from 'react'
+import React, { FC } from 'react'
+import { useCssHandles } from 'vtex.css-handles'
 
 import ProductAttachment from './Attachment'
 import Product from './Product'
+
+const CSS_HANDLES = ['productListWrapper', 'productListItem']
 
 interface Props {
   products: OrderItem[]
 }
 
 const ProductList: FC<Props> = ({ products }) => {
+  const handles = useCssHandles(CSS_HANDLES)
   return (
-    <div className="w-60-l w-100">
-      {products.map((product, index, { length }) => (
-        <Fragment key={product.id}>
+    <div className={`${handles.productListWrapper} w-60-l w-100`}>
+      {products.map(product => (
+        <div
+          key={product.id}
+          className={`${handles.productListItem} bb b--muted-4 mb7 pb7`}
+        >
           <Product product={product} />
           <ProductAttachment product={product} />
-          <div className={`${index < length - 1 ? 'bb b--muted-4 mb7' : ''}`} />
-        </Fragment>
+        </div>
       ))}
     </div>
   )
