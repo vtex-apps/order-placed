@@ -15,10 +15,11 @@ const Embedded: FC<Props> = ({ url }) => {
     <div className="b--muted-4 ba br3 bw1">
       <div className="bg-muted-1">
         <embed
-          width="100%"
+          width="80%"
           height={isOpen ? 900 : 300}
           src={url}
           data-testid="embedded-bank-invoice"
+          className="db center"
         />
       </div>
       {isOpen ? (

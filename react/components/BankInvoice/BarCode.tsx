@@ -14,7 +14,9 @@ const BarCode: FC<Props> = ({ barCodeNumber }) => (
     data-testid="bank-invoice-barcode"
     className="flex-l b--muted-4 ba br3 bw1"
   >
-    <div className={`${styles.barCodeNumber} tc ph9 pv5 lh-copy c-on-base`}>
+    <div
+      className={`${styles.barCodeNumber} tc ph7 ph9-m pv4 lh-copy c-on-base`}
+    >
       {barCodeNumber}
     </div>
     <Clipboard
