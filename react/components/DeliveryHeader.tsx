@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, Fragment } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import { Address } from 'vtex.order-details'
@@ -19,7 +19,7 @@ const ShippingHeader: FC<Props> = ({
   const multipleDeliveries = numPackages > 1
 
   return (
-    <div>
+    <Fragment>
       <div
         className="t-heading-4-ns t-heading-5 mb5"
         data-testid="shipping-header"
@@ -55,7 +55,7 @@ const ShippingHeader: FC<Props> = ({
           <Address address={shippingData.address} />
         </div>
       )}
-    </div>
+    </Fragment>
   )
 }
 

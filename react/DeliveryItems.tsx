@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import ProductList from './components/ProductList'
-import ShippingHeader from './components/DeliveryHeader'
+import DeliveryHeader from './components/DeliveryHeader'
 import { useOrder } from './components/OrderContext'
 import OrderSection from './OrderSection'
 
@@ -19,12 +19,14 @@ const Shipping: FC = () => {
           className="mv8 flex-l justify-between flex-column flex-row-m"
           key={index}
         >
-          <ShippingHeader
-            shippingData={deliveryParcel}
-            index={index}
-            numPackages={deliveryParcels.length}
-            giftRegistry={giftRegistryData}
-          />
+          <div>
+            <DeliveryHeader
+              shippingData={deliveryParcel}
+              index={index}
+              numPackages={deliveryParcels.length}
+              giftRegistry={giftRegistryData}
+            />
+          </div>
           <ProductList products={deliveryParcel.items} />
         </div>
       ))}
