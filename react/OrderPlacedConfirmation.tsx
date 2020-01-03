@@ -15,7 +15,10 @@ const OrderPlacedConfirmation: FC = () => {
   const hasTakeAway = orderGroup.totalTakeAwayParcels.length > 0
 
   return (
-    <OrderSection borderless={(hasDelivery || hasPickUp) && !hasTakeAway}>
+    <OrderSection
+      id="confirmation"
+      borderless={(hasDelivery || hasPickUp) && !hasTakeAway}
+    >
       <div className="tc w-90 center">
         <div className="flex justify-center c-success">
           <SuccessIcon size={50} />

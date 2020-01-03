@@ -4,7 +4,9 @@
   "version": "1.7.1",
   "title": "Order Placed",
   "description": "",
-  "registries": ["smartcheckout"],
+  "registries": [
+    "smartcheckout"
+  ],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },
@@ -26,7 +28,8 @@
     "vtex.store-resources": "0.x",
     "vtex.totalizer-translator": "2.x",
     "vtex.flex-layout": "0.x",
-    "vtex.responsive-layout": "0.x"
+    "vtex.responsive-layout": "0.x",
+    "vtex.css-handles": "0.x"
   },
   "credentialType": "absolute",
   "policies": [

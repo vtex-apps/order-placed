@@ -55,6 +55,7 @@
   },
   "order-options#mobile": {
     "props": {
+      "blockClass": "mobile",
       "fullWidth": true
     }
   }

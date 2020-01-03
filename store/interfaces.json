@@ -40,7 +40,7 @@
     "allowed": "*"
   },
   "order-title": {
-    "component": "OrderTitle"
+    "component": "OrderNumber"
   },
   "order-datetime": {
     "component": "OrderDatetime"

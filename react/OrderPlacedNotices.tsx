@@ -1,13 +1,19 @@
 import React, { Fragment, FC } from 'react'
 import { FormattedMessage, FormattedDate } from 'react-intl'
 import { ButtonLink } from 'vtex.order-details'
+import { useCssHandles } from 'vtex.css-handles'
 
 import FormattedPrice from './components/FormattedPrice'
 import { useOrderGroup } from './components/OrderGroupContext'
 import { parseBankInvoiceUrl, getPaymentInfoFromOrder } from './utils'
 import styles from './styles.css'
+import OrderSection from './OrderSection'
+
+//TODO see how to handle css_handles + style modules
+const CSS_HANDLES = ['noticesList']
 
 const OrderPlacedNotices: FC = () => {
+  const handles = useCssHandles(CSS_HANDLES)
   const { orders, totalDeliveryParcels, totalPickUpParcels } = useOrderGroup()
   const hasDelivery = totalDeliveryParcels.length > 0
   const hasPickUp = totalPickUpParcels.length > 0
@@ -93,8 +99,10 @@ const OrderPlacedNotices: FC = () => {
   ].filter(Boolean)
 
   return (
-    <section data-testid="notices-section" className="mb9">
-      <ul className="list ma0 pl0 t-body bg-muted-5 tc-m lh-copy">
+    <OrderSection id="notices" borderless className="mb9">
+      <ul
+        className={`${handles.noticesList} list ma0 pl0 t-body bg-muted-5 tc-m lh-copy`}
+      >
         {listItems.map((item, index) => (
           <li
             className={`${styles.noticeListItem} pv6 w-80-ns w-90 center c-on-base b--muted-4 bb`}
@@ -104,7 +112,7 @@ const OrderPlacedNotices: FC = () => {
           </li>
         ))}
       </ul>
-    </section>
+    </OrderSection>
   )
 }
 

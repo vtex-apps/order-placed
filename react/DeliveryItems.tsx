@@ -13,7 +13,7 @@ const DeliveryItems: FC = () => {
   }
 
   return (
-    <OrderSection>
+    <OrderSection id="delivery-items">
       {deliveryParcels.map((deliveryParcel, index) => (
         <div
           className="mv8 flex-l justify-between flex-column flex-row-m"

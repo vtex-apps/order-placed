@@ -13,7 +13,7 @@ const PickupItems: FC = () => {
   }
 
   return (
-    <OrderSection>
+    <OrderSection id="pickup-items">
       {pickUpParcels.map((pickup: Parcel, index: number) => (
         <div
           className="mv8 flex-l justify-between flex-column flex-row-m"
