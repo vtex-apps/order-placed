@@ -93,7 +93,7 @@ const OrderPlacedNotices: FC = () => {
   ].filter(Boolean)
 
   return (
-    <section data-testid="notices-section" className="mt7 mb9">
+    <section data-testid="notices-section" className="mb9">
       <ul className="list ma0 pl0 t-body bg-muted-5 tc-m lh-copy">
         {listItems.map((item, index) => (
           <li
