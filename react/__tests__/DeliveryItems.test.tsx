@@ -1,11 +1,10 @@
-import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
 import { orderGroupQuery as giftRegistry } from '../mocks/giftRegistry'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as twoDeliveries } from '../mocks/twoDeliveries'
 import DeliveryItems from '../DeliveryItems'
-import { renderWithOrder } from './utils'
+import { renderWithOrder } from '../utils/testUtils'
 
 it('renders ShippingHeader with shipping estimate', () => {
   const { getByText } = renderWithOrder(

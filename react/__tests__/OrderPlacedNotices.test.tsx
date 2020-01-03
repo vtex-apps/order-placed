@@ -7,7 +7,7 @@ import { orderGroupQuery as bankInvoiceNotLoggedIn } from '../mocks/bankInvoiceN
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
 import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
-import { renderWithOrderGroup, queryByTextWithMarkup } from './utils'
+import { renderWithOrderGroup, queryByTextWithMarkup } from '../utils/testUtils'
 
 it('should render payment confirmation estimate', () => {
   const { getByText } = renderWithOrderGroup(

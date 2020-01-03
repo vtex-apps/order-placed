@@ -1,8 +1,11 @@
-import { render } from '@vtex/test-tools/react'
+import { wait } from '@vtex/test-tools/react'
 import React from 'react'
 
 import GET_ORDER_GROUP from '../graphql/getOrderGroup.graphql'
 import OrderPlaced from '../index'
+import requestNotFound from '../__mocks__/graphql/not-found.json'
+import requestForbidden from '../__mocks__/graphql/forbidden.json'
+import { renderWithIntl } from '../utils/testUtils'
 
 const orderGroupId = '123123123'
 
@@ -25,44 +28,48 @@ afterAll(() => {
   window.location = location
 })
 
+beforeEach(() => jest.useFakeTimers())
+
 test('should first render as as skeleton loading', async () => {
-  const { container } = render(<OrderPlaced />)
+  const { container } = renderWithIntl(<OrderPlaced />)
+
   expect(container.querySelector('.skeleton-shimmer')).toBeTruthy()
+
+  await wait(() => jest.runAllTimers())
+
+  expect(container.querySelector('.skeleton-shimmer')).toBeNull()
 })
 
-test.only('should render an alert for users not logged in', async () => {
-  const mockRequest = {
-    ...requestSample,
-    error: {
-      name: 'erro',
-      message: '403: Forbidden',
+test('should render an alert for users not logged in', async () => {
+  const { queryAllByText } = renderWithIntl(<OrderPlaced />, {
+    graphql: {
+      mocks: [
+        {
+          ...requestSample,
+          result: requestForbidden,
+        },
+      ],
     },
-  }
-
-  const { queryByText } = render(<OrderPlaced />, {
-    graphql: { mocks: [mockRequest] },
   })
 
-  await new Promise(resolve => setTimeout(resolve, 0))
+  await wait(() => jest.runAllTimers())
 
-  expect(queryByText(/permission/)).toBeTruthy()
+  expect(queryAllByText(/permission/)).toBeTruthy()
 })
 
-// test('should render an alert for invalid orders', async () => {
-//   const mockRequest = {
-//     ...requestSample,
-//     result: {
-//       data: {
-//         orderGroup: null,
-//       },
-//     },
-//   }
+test('should render an alert for invalid orders', async () => {
+  const { queryByText } = renderWithIntl(<OrderPlaced />, {
+    graphql: {
+      mocks: [
+        {
+          ...requestSample,
+          result: requestNotFound,
+        },
+      ],
+    },
+  })
 
-//   const { queryByText } = render(<OrderPlaced />, {
-//     graphql: { mocks: [mockRequest] },
-//   })
+  await wait(() => jest.runAllTimers())
 
-//   await new Promise(resolve => setTimeout(resolve, 0))
-
-//   expect(queryByText(/not found/)).toBeTruthy()
-// })
+  expect(queryByText(/not found/i)).toBeTruthy()
+})

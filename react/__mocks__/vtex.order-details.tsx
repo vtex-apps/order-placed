@@ -14,6 +14,10 @@ export function CustomerInfo() {
 
 export const ProductImage: FC = () => <div>ProductImage</div>
 
+export const PaymentMethod: FC<{ payment: any }> = ({ payment }) => (
+  <div>{payment.group}</div>
+)
+
 export const ButtonLink: FC<{ to: string }> = ({ to, children }) => (
   <a href={to} data-testid="button-link">
     {children}

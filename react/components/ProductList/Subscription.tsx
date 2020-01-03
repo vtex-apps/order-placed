@@ -1,12 +1,13 @@
 import React, { Fragment, FC, useState } from 'react'
-import { InjectedIntlProps, injectIntl, FormattedMessage } from 'react-intl'
+import { FormattedMessage, useIntl } from 'react-intl'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
 import { getSubscriptionInfo } from '../../utils'
 
 const SubscriptionAttachment: FC<{
   attachmentItem: Attachment
-} & InjectedIntlProps> = ({ attachmentItem, intl }) => {
+}> = ({ attachmentItem }) => {
+  const intl = useIntl()
   const [isOpen, setIsOpen] = useState(false)
 
   const { subsFrequency, subsPurchaseDay } = getSubscriptionInfo(
@@ -52,4 +53,4 @@ const SubscriptionAttachment: FC<{
   )
 }
 
-export default injectIntl(SubscriptionAttachment)
+export default SubscriptionAttachment

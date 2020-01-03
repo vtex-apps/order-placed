@@ -2,7 +2,7 @@ import React from 'react'
 
 import OrderPlacedConfirmation from '../OrderPlacedConfirmation'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
-import { renderWithOrderGroup } from './utils'
+import { renderWithOrderGroup } from '../utils/testUtils'
 
 it('should render success icon', () => {
   const { getByTestId } = renderWithOrderGroup(
