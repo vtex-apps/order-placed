@@ -16,10 +16,13 @@ export function ExtensionPoint({ id }: { id: string }) {
 
 export function useRuntime() {
   return {
-    query: Object.fromEntries(
-      window.location.search
-        .split('&')
-        .map(pair => pair.split('=').map(encodeURIComponent))
-    ),
+    query: window.location.search
+      .substr(1)
+      .split('&')
+      .map(pair => pair.split('='))
+      .reduce((acc: any, [key, val]) => {
+        acc[key] = encodeURIComponent(val)
+        return acc
+      }, {}),
   }
 }
