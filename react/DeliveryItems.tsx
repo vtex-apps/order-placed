@@ -1,11 +1,15 @@
 import React, { FC } from 'react'
+import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 
 import ProductList from './components/ProductList'
 import DeliveryHeader from './components/DeliveryHeader'
 import { useOrder } from './components/OrderContext'
 import OrderSection from './OrderSection'
 
+const CSS_HANDLES = ['parcel', 'deliveryHeaderColumn']
+
 const DeliveryItems: FC = () => {
+  const handles = useCssHandles(CSS_HANDLES)
   const { deliveryParcels, giftRegistryData } = useOrder()
 
   if (deliveryParcels.length === 0) {
@@ -16,10 +20,13 @@ const DeliveryItems: FC = () => {
     <OrderSection id="delivery-items">
       {deliveryParcels.map((deliveryParcel, index) => (
         <div
-          className="mv8 flex-l justify-between flex-column flex-row-m"
+          className={`${applyModifiers(
+            handles.parcel,
+            'delivery'
+          )} mv8 flex-l justify-between flex-column flex-row-m`}
           key={index}
         >
-          <div>
+          <div className={handles.deliveryHeaderColumn}>
             <DeliveryHeader
               shippingData={deliveryParcel}
               index={index}
