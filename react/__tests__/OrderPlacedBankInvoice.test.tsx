@@ -5,7 +5,7 @@ import { orderGroupQuery as bankInvoiceNotLoggedIn } from '../mocks/bankInvoiceN
 import { orderGroupQuery as bankInvoiceNumberLoggedIn } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as bankInvoiceNumberNotLoggedIn } from '../mocks/bankInvoiceNumberNotLoggedIn'
 import OrderPlacedBankInvoice from '../OrderPlacedBankInvoice'
-import { renderWithOrderGroup } from './utils'
+import { renderWithOrderGroup } from '../utils/testUtils'
 
 it('renders embedded bank invoice for logged in customer, but no number', () => {
   const { getByTestId, queryByTestId } = renderWithOrderGroup(

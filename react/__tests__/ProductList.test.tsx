@@ -1,12 +1,10 @@
-import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
-import OrderInfo from '../OrderInfo'
 import { orderGroupQuery as serviceWithAttachment } from '../mocks/bundleServiceWithAttachment'
 import { orderGroupQuery as serviceWithNoAttachments } from '../mocks/bundleServiceWithNoAttachments'
 import { orderGroupQuery as serviceAndAttachment } from '../mocks/serviceAndAttachment'
 import { orderGroupQuery as subscription } from '../mocks/subscriptions'
-import { renderWithOrderGroup } from './utils'
+import { renderWithOrderGroup } from '../utils/testUtils'
 import ProductList from '../components/ProductList'
 
 const getItemsFromOrderGroup = (
@@ -43,7 +41,7 @@ it('renders attachment from bundleItems item', () => {
 })
 
 it('renders attachments from item and also bundle items', () => {
-  const { queryByText, debug } = renderWithOrderGroup(
+  const { queryByText } = renderWithOrderGroup(
     serviceAndAttachment.orderGroup,
     <ProductList
       products={getItemsFromOrderGroup(
