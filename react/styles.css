@@ -9,3 +9,9 @@
 .barCodeNumber {
   word-break: break-all;
 }
+
+.productListItem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

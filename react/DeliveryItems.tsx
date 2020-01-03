@@ -6,7 +6,7 @@ import DeliveryHeader from './components/DeliveryHeader'
 import { useOrder } from './components/OrderContext'
 import OrderSection from './OrderSection'
 
-const CSS_HANDLES = ['parcel', 'deliveryHeaderColumn']
+const CSS_HANDLES = ['parcel', 'parcelHeaderColumn']
 
 const DeliveryItems: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
@@ -26,7 +26,7 @@ const DeliveryItems: FC = () => {
           )} mv8 flex-l justify-between flex-column flex-row-m`}
           key={index}
         >
-          <div className={handles.deliveryHeaderColumn}>
+          <div className={handles.parcelHeaderColumn}>
             <DeliveryHeader
               shippingData={deliveryParcel}
               index={index}
