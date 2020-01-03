@@ -19,11 +19,13 @@ const PickupItems: FC = () => {
           className="mv8 flex-l justify-between flex-column flex-row-m"
           key={index}
         >
-          <StorePickUpHeader
-            shippingData={pickup}
-            index={index}
-            numPackages={pickUpParcels.length}
-          />
+          <div>
+            <StorePickUpHeader
+              shippingData={pickup}
+              index={index}
+              numPackages={pickUpParcels.length}
+            />
+          </div>
           <ProductList products={pickup.items} />
         </div>
       ))}

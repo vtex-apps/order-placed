@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
+import { ButtonLink } from 'vtex.order-details'
 
 import PrinterIcon from './icons/PrinterIcon'
-import ButtonLink from './components/ButtonLink'
 import BarCode from './components/BankInvoice/BarCode'
 import Embedded from './components/BankInvoice/Embedded'
 import { useOrderGroup } from './components/OrderGroupContext'
