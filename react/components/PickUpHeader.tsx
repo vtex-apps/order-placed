@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, Fragment } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import { Address } from 'vtex.order-details'
@@ -15,7 +15,7 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
   const additionalInfo =
     shippingData.selectedSlaObj.pickupStoreInfo.additionalInfo
   return (
-    <div>
+    <Fragment>
       <div
         className="t-heading-4-ns t-heading-5 mb5"
         data-testid="storepickup-header"
@@ -49,7 +49,7 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
           <p className="c-muted-1">{additionalInfo}</p>
         </div>
       </div>
-    </div>
+    </Fragment>
   )
 }
 
