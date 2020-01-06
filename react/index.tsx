@@ -14,6 +14,7 @@ import Skeleton from './Skeleton'
 import { CurrencyContext } from './components/CurrencyContext'
 // import { Analytics } from './Analytics'
 import { orderGroupQuery } from './mocks/subscriptions'
+// to load default css handle styles
 import './styles.css'
 
 interface OrderGroupData {
