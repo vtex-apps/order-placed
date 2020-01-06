@@ -52,7 +52,7 @@ const OrderPlacedSummary: FC = () => {
 
   return (
     <OrderSection
-      section="summary"
+      name="summary"
       className={`${handles.summarySection} w-90 w-80-ns center mb9 pb9 flex-m justify-between`}
     >
       <div
