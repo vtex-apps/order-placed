@@ -1,3 +1,14 @@
+.errorWrapper {
+  margin: 200px auto;
+  max-width: 36em;
+  text-align: center;
+}
+
+.messageContainer {
+  max-width: 24em;
+  margin: 0 auto;
+}
+
 .orderOptionsWrapper--mobile {
   margin-bottom: 2rem;
 }
