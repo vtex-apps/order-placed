@@ -4,7 +4,7 @@ import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 interface Props {
   borderless?: boolean
   className?: string
-  section: string
+  name: string
 }
 
 const CSS_HANDLES = ['orderSection']
@@ -13,19 +13,19 @@ const OrderSection: FC<Props> = ({
   children,
   borderless = false,
   className = '',
-  section,
+  name,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const classes = [
     className,
-    applyModifiers(handles.orderSection, section),
+    applyModifiers(handles.orderSection, name),
     !borderless && 'bb b--muted-4',
   ]
     .filter(Boolean)
     .join(' ')
 
   return (
-    <section data-testid={section} className={classes}>
+    <section data-testid={name} className={classes}>
       {children}
     </section>
   )

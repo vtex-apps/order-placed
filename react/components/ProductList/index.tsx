@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
-import ProductAttachment from './Attachment'
+import BundleInfo from './BundleItems'
+import Attachment from './Attachments'
 import Product from './Product'
 
 const CSS_HANDLES = ['productListWrapper', 'productListItem']
@@ -20,7 +21,8 @@ const ProductList: FC<Props> = ({ products }) => {
           className={`${handles.productListItem} bb b--muted-4 mb7 pb7`}
         >
           <Product product={product} />
-          <ProductAttachment product={product} />
+          <BundleInfo product={product} />
+          <Attachment product={product} />
         </div>
       ))}
     </div>
