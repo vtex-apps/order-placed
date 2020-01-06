@@ -1,12 +1,10 @@
 .errorWrapper {
   margin: 200px auto;
   max-width: 36em;
-  text-align: center;
 }
 
-.errorMessageContainer {
+.errorMessage {
   max-width: 24em;
-  margin: 0 auto;
 }
 
 .confirmationIconWrapper {
