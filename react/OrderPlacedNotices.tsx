@@ -10,6 +10,7 @@ import OrderSection from './OrderSection'
 
 const CSS_HANDLES = ['noticesList', 'noticeListItem']
 
+// TODO: add json schema to add/remove extra notice messages
 const OrderPlacedNotices: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
   const { orders, totalDeliveryParcels, totalPickUpParcels } = useOrderGroup()
