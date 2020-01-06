@@ -39,7 +39,7 @@
     "composition": "children",
     "allowed": "*"
   },
-  "order-title": {
+  "order-number": {
     "component": "OrderNumber"
   },
   "order-datetime": {
