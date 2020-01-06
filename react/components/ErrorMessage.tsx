@@ -21,7 +21,7 @@ const ErrorMessage: FC<Props> = ({ icon, errorId, messageId, children }) => {
           <FormattedMessage id={errorId} />
         </h2>
         {typeof messageId === 'string' && (
-          <div className={handles.messageContainer}>
+          <div className={handles.errorMessageContainer}>
             <p className="mb7 c-muted-1 lh-copy">
               <FormattedMessage id={messageId} />
             </p>
