@@ -6,11 +6,9 @@ import { useCssHandles } from 'vtex.css-handles'
 import FormattedPrice from './components/FormattedPrice'
 import { useOrderGroup } from './components/OrderGroupContext'
 import { parseBankInvoiceUrl, getPaymentInfoFromOrder } from './utils'
-import styles from './styles.css'
 import OrderSection from './OrderSection'
 
-//TODO see how to handle css_handles + style modules
-const CSS_HANDLES = ['noticesList']
+const CSS_HANDLES = ['noticesList', 'noticeListItem']
 
 const OrderPlacedNotices: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
@@ -105,7 +103,7 @@ const OrderPlacedNotices: FC = () => {
       >
         {listItems.map((item, index) => (
           <li
-            className={`${styles.noticeListItem} pv6 w-80-ns w-90 center c-on-base b--muted-4 bb`}
+            className={`${handles.noticeListItem} pv6 w-80-ns w-90 center c-on-base b--muted-4 bb`}
             key={index}
           >
             {item}
