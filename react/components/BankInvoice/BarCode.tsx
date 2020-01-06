@@ -4,7 +4,11 @@ import { FormattedMessage } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 import { useCssHandles } from 'vtex.css-handles'
 
-const CSS_HANDLES = ['barCodeWrapper', 'barCodeNumber', 'barCodeCopyBtnWrapper']
+const CSS_HANDLES = [
+  'barCodeWrapper',
+  'barCodeNumber',
+  'barCodeCopyButtonWrapper',
+]
 
 interface Props {
   barCodeNumber: string
@@ -25,7 +29,7 @@ const BarCode: FC<Props> = ({ barCodeNumber }) => {
       <Clipboard
         component="div"
         data-clipboard-text={barCodeNumber}
-        className={`${handles.barCodeCopyBtnWrapper} b--muted-4 bl-l bt bt-0-l bw1 flex flex-row-l flex-column`}
+        className={`${handles.barCodeCopyButtonWrapper} b--muted-4 bl-l bt bt-0-l bw1 flex flex-row-l flex-column`}
       >
         <Button variation="tertiary">
           <FormattedMessage id="store/header.bankinvoice.copy" />
