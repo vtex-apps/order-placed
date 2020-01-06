@@ -9,6 +9,10 @@
   margin: 0 auto;
 }
 
+.confirmationIconWrapper {
+  line-height: 0;
+}
+
 .orderOptionsWrapper--mobile {
   margin-bottom: 2rem;
 }
