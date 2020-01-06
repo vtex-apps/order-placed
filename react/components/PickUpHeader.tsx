@@ -5,12 +5,12 @@ import { Address } from 'vtex.order-details'
 import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 
 const CSS_HANDLES = [
-  'parcelHeader',
-  'parcelShippingEstimate',
-  'parcelInfoWrapper',
-  'parcelAddressWrapper',
-  'parcelReceiver',
-  'parcelAdditionalInfo',
+  'packageHeader',
+  'packageShippingEstimate',
+  'packageInfoWrapper',
+  'packageAddressWrapper',
+  'packageReceiver',
+  'packageAdditionalInfo',
 ]
 
 interface Props {
@@ -29,7 +29,7 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
     <Fragment>
       <div
         className={`${applyModifiers(
-          handles.parcelHeader,
+          handles.packageHeader,
           'pickup'
         )} t-heading-4-ns t-heading-5 mb5`}
         data-testid="storepickup-header"
@@ -43,7 +43,7 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
         )}
         <br />
         <small
-          className={`${handles.parcelShippingEstimate} c-muted-2 t-small`}
+          className={`${handles.packageShippingEstimate} c-muted-2 t-small`}
         >
           <TranslateEstimate
             shippingEstimate={shippingData.shippingEstimate}
@@ -54,14 +54,14 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
       </div>
 
       <div
-        className={`${handles.parcelInfoWrapper} flex justify-left-m flex-column-s flex-column-l flex-row-m justify-between-l justify-start-l`}
+        className={`${handles.packageInfoWrapper} flex justify-left-m flex-column-s flex-column-l flex-row-m justify-between-l justify-start-l`}
       >
-        <div className={`${handles.parcelAddressWrapper} mb5 mr10-m`}>
+        <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
           <Address address={shippingData.address} pickup={shippingData} />
         </div>
-        <div className={`${handles.parcelReceiver} c-on-base lh-copy`}>
+        <div className={`${handles.packageReceiver} c-on-base lh-copy`}>
           <p>{receiverName}</p>
-          <p className={`${handles.parcelAdditionalInfo} c-muted-1`}>
+          <p className={`${handles.packageAdditionalInfo} c-muted-1`}>
             {additionalInfo}
           </p>
         </div>

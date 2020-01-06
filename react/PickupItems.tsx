@@ -6,7 +6,7 @@ import ProductList from './components/ProductList'
 import StorePickUpHeader from './components/PickUpHeader'
 import OrderSection from './OrderSection'
 
-const CSS_HANDLES = ['parcel', 'parcelHeaderColumn']
+const CSS_HANDLES = ['package', 'packageHeaderColumn']
 
 const PickupItems: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
@@ -21,12 +21,12 @@ const PickupItems: FC = () => {
       {pickUpParcels.map((pickup: Parcel, index: number) => (
         <div
           className={`${applyModifiers(
-            handles.parcel,
+            handles.package,
             'pickup'
           )} mv8 flex-l justify-between flex-column flex-row-m`}
           key={index}
         >
-          <div className={handles.parcelHeaderColumn}>
+          <div className={handles.packageHeaderColumn}>
             <StorePickUpHeader
               shippingData={pickup}
               index={index}
