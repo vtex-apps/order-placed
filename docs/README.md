@@ -32,6 +32,7 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `errorWrapper`                |
 | `errorMessageContainer`       |
 | `noticesList`                 |
+| `noticesListItem`             |
 | `orderDatetime`               |
 | `orderNumber`                 |
 | `orderOptionsWrapper`         |
