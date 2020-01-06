@@ -16,7 +16,7 @@ const OrderPlacedConfirmation: FC = () => {
 
   return (
     <OrderSection
-      id="confirmation"
+      section="confirmation"
       borderless={(hasDelivery || hasPickUp) && !hasTakeAway}
     >
       <div className="tc w-90 center">

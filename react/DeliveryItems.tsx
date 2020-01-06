@@ -17,7 +17,7 @@ const DeliveryItems: FC = () => {
   }
 
   return (
-    <OrderSection id="deliveryItems">
+    <OrderSection section="deliveryItems">
       {deliveryParcels.map((deliveryParcel, index) => (
         <div
           className={`${applyModifiers(
