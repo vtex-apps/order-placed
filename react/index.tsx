@@ -13,7 +13,7 @@ import Forbidden from './icons/Forbidden'
 import Skeleton from './Skeleton'
 import { CurrencyContext } from './components/CurrencyContext'
 // import { Analytics } from './Analytics'
-import { orderGroupQuery } from './mocks/subscriptions'
+import { orderGroupQuery } from './mocks/bundleServiceWithAttachment'
 // to load default css handle styles
 import './styles.css'
 
