@@ -34,7 +34,7 @@
     ]
   },
   "flex-layout.col#order-header-info": {
-    "children": ["order-title", "order-datetime", "order-seller"]
+    "children": ["order-number", "order-datetime", "order-seller"]
   },
   "flex-layout.col#order-header-options": {
     "children": ["responsive-layout.desktop#order-options-desktop"]
