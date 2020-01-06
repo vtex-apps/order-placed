@@ -10,6 +10,7 @@ const CSS_HANDLES = [
   'attachmentToggleButton',
   'attachmentToggleLabel',
   'attachmentContent',
+  'attachmentContentItem',
 ]
 
 interface Props {
@@ -39,39 +40,54 @@ const AttachmentAccordion: FC<Props> = ({
     setIsOpen(!isOpen)
   }
 
+  const attachmentWrapperClass = `${handles.attachmentWrapper} mt7 bg-muted-5 br2`
+  const attachmentHeaderClass = `${handles.attachmentHeader} flex pa5 justify-between items-center`
+  const attachmentTitleClass = `${handles.attachmentTitle} c-on-base`
+  const attachmentToggleWrapperClass = `${handles.attachmentToggleWrapper} flex items-center`
+  const attachmentToggleLabelClass = `${handles.attachmentToggleLabel}`
+  const attachmentToggleButtonClass = `${handles.attachmentToggleButton} c-action-primary ml5`
+  const attachmentContentClass = `${handles.attachmentContent} ph5 pv3`
+  const attachmentContentItemClass = `${handles.attachmentContentItem} mb4 c-muted-1`
+
+  // if it has no attachment content, no accordion is needed
+  if (!hasContent) {
+    return (
+      <div className={attachmentWrapperClass}>
+        <div className={attachmentHeaderClass}>
+          {beforeTitleLabel}
+          <span className={attachmentTitleClass}>{titleLabel}</span>
+          <div className={attachmentToggleWrapperClass}>
+            <div className={attachmentToggleLabelClass}>{toggleLabel}</div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className={`${handles.attachmentWrapper} mt7 bg-muted-5 br2`}>
+    <div className={attachmentWrapperClass} aria-expanded={isOpen}>
       <div
-        className={`${handles.attachmentHeader} flex pa5 justify-between items-center pv4`}
+        className={attachmentHeaderClass}
         role="button"
         tabIndex={0}
         onKeyDown={handleKeyDown}
         onClick={() => setIsOpen(!isOpen)}
       >
         {beforeTitleLabel}
-        <span className={`${handles.attachmentTitle} c-on-base`}>
-          {titleLabel}
-        </span>
-        <div className={`${handles.attachmentToggleWrapper} flex items-center`}>
-          <div className={`${handles.attachmentToggleLabel} mr5`}>
-            {toggleLabel}
-          </div>
+        <span className={attachmentTitleClass}>{titleLabel}</span>
+        <div className={attachmentToggleWrapperClass}>
+          <div className={attachmentToggleLabelClass}>{toggleLabel}</div>
           {hasContent && (
-            <div
-              className={`${handles.attachmentToggleButton} c-action-primary ml5`}
-            >
+            <div className={attachmentToggleButtonClass}>
               {isOpen ? <IconCaretUp /> : <IconCaretDown />}
             </div>
           )}
         </div>
       </div>
       {hasContent && (
-        <div hidden={!isOpen} className="ph5 pv3">
+        <div hidden={!isOpen} className={attachmentContentClass}>
           {filteredContent.map((line, i) => (
-            <div
-              key={i}
-              className={`${handles.attachmentContent} mb4 c-muted-1`}
-            >
+            <div key={i} className={attachmentContentItemClass}>
               {line}
             </div>
           ))}
