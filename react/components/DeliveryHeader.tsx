@@ -5,11 +5,11 @@ import { Address } from 'vtex.order-details'
 import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 
 const CSS_HANDLES = [
-  'parcelHeader',
-  'parcelShippingEstimate',
-  'parcelSLA',
-  'parcelGiftDescription',
-  'parcelAddressWrapper',
+  'packageHeader',
+  'packageShippingEstimate',
+  'packageSLA',
+  'packageGiftDescription',
+  'packageAddressWrapper',
 ]
 
 interface Props {
@@ -32,7 +32,7 @@ const DeliveryHeader: FC<Props> = ({
     <Fragment>
       <div
         className={`${applyModifiers(
-          handles.parcelHeader,
+          handles.packageHeader,
           'delivery'
         )} t-heading-4-ns t-heading-5 mb5`}
         data-testid="shipping-header"
@@ -46,7 +46,7 @@ const DeliveryHeader: FC<Props> = ({
         )}
         <br />
         <small
-          className={`${handles.parcelShippingEstimate} c-muted-2 t-small`}
+          className={`${handles.packageShippingEstimate} c-muted-2 t-small`}
         >
           <TranslateEstimate
             shippingEstimate={shippingData.shippingEstimate}
@@ -54,21 +54,21 @@ const DeliveryHeader: FC<Props> = ({
           />
         </small>
         <br />
-        <small className={`${handles.parcelSLA} c-muted-2 t-small`}>
+        <small className={`${handles.packageSLA} c-muted-2 t-small`}>
           {shippingData.selectedSla}
         </small>
       </div>
 
       {giftRegistry &&
       giftRegistry.addressId === shippingData.address.addressId ? (
-        <div className={`${handles.parcelGiftDescription} c-muted-1`}>
+        <div className={`${handles.packageGiftDescription} c-muted-1`}>
           <FormattedMessage
             id="store/shipping.header.wishlist.address"
             values={{ giftRegistryName: giftRegistry.description }}
           />
         </div>
       ) : (
-        <div className={`${handles.parcelAddressWrapper} mb5 mr10-m`}>
+        <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
           <Address address={shippingData.address} />
         </div>
       )}
