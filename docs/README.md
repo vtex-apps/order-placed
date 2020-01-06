@@ -30,7 +30,7 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `barCodeNumber`               |
 | `barCodeWrapper`              |
 | `errorWrapper`                |
-| `messageContainer`            |
+| `errorMessageContainer`       |
 | `noticesList`                 |
 | `orderDatetime`               |
 | `orderNumber`                 |
