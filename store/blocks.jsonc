@@ -44,6 +44,9 @@
   },
   // payment section
   "order-section#payments": {
+    "props": {
+      "name": "paymentMethods"
+    },
     "children": [
       "order-payment",
       "responsive-layout.mobile#order-options-mobile"
