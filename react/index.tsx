@@ -46,12 +46,10 @@ const OrderPlaced: FC = () => {
     // 'any' needed because graphql error type doesn't have 'extensions' prop
     (error as any)?.extensions?.response?.status === 403
   ) {
-    // if query errored display an error alert
     return <ForbiddenError />
   }
 
   // not found error
-  /** if query resulted in an invalid orderGroup display an error alert*/
   if (data?.orderGroup?.orders == null) {
     return <InvalidError />
   }
