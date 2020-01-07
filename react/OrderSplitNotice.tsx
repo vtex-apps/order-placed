@@ -1,10 +1,14 @@
 import React from 'react'
 import { OrderSplitNotice } from 'vtex.order-details'
 import { useIntl } from 'react-intl'
+import { useCssHandles } from 'vtex.css-handles'
 
 import { useOrder } from './components/OrderContext'
 
+const CSS_HANDLES = ['splitNotice']
+
 const WrappedOrderSplitNotice = () => {
+  const handles = useCssHandles(CSS_HANDLES)
   const order = useOrder()
   const intl = useIntl()
 
@@ -13,12 +17,14 @@ const WrappedOrderSplitNotice = () => {
   }
 
   return (
-    <OrderSplitNotice
-      deliveries={order.deliveryParcels.length}
-      pickups={order.pickUpParcels.length}
-      takeaways={order.takeAwayParcels.length}
-      intl={intl}
-    />
+    <div className={`${handles.splitNotice} mb5`}>
+      <OrderSplitNotice
+        deliveries={order.deliveryParcels.length}
+        pickups={order.pickUpParcels.length}
+        takeaways={order.takeAwayParcels.length}
+        intl={intl}
+      />
+    </div>
   )
 }
 
