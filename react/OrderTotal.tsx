@@ -22,7 +22,7 @@ const OrderTotal: FC = () => {
   return (
     <div className={`${handles.totalListWrapper} flex-l justify-end w-100`}>
       <ul
-        className={`${handles.totalList} list pa0 mv8 w-100 w-60-l c-muted-1`}
+        className={`${handles.totalList} list pa0 mt8 w-100 w-60-l c-muted-1`}
       >
         {totals.map(total => (
           <li
