@@ -1,21 +1,19 @@
-import React, { FC, useState, Fragment } from 'react'
+import React, { FC, useState } from 'react'
 import { useQuery } from 'react-apollo'
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl'
+import { useIntl, defineMessages } from 'react-intl'
 import { Helmet, ExtensionPoint, useRuntime } from 'vtex.render-runtime'
-import { Button } from 'vtex.styleguide'
 import { usePWA } from 'vtex.store-resources/PWAContext'
 
 import { OrderGroupContext } from './components/OrderGroupContext'
-import ErrorMessage from './components/ErrorMessage'
 import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
-import NotFound from './icons/NotFound'
-import Forbidden from './icons/Forbidden'
 import Skeleton from './Skeleton'
 import { CurrencyContext } from './components/CurrencyContext'
 // import { Analytics } from './Analytics'
-import { orderGroupQuery } from './mocks/bankInvoiceNumberLoggedIn'
+import ForbiddenError from './components/Errors/ForbiddenError'
+import InvalidError from './components/Errors/InvalidError'
 // to load default css handle styles
 import './styles.css'
+import { orderGroupQuery } from './mocks/fiftyItemOrder'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -24,22 +22,6 @@ interface OrderGroupData {
 const messages = defineMessages({
   title: {
     id: 'store/page.title',
-    defaultMessage: '',
-  },
-  invalidTitle: {
-    id: 'store/order.error.invalid.title',
-    defaultMessage: '',
-  },
-  invalidMessage: {
-    id: 'store/order.error.invalid.message',
-    defaultMessage: '',
-  },
-  notLoggedTitle: {
-    id: 'store/order.error.not-logged-in.title',
-    defaultMessage: '',
-  },
-  notLoggedMessage: {
-    id: 'store/order.error.not-logged-in.message',
     defaultMessage: '',
   },
 })
@@ -65,37 +47,13 @@ const OrderPlaced: FC = () => {
     (error as any)?.extensions?.response?.status === 403
   ) {
     // if query errored display an error alert
-    return (
-      <ErrorMessage
-        icon={<Forbidden />}
-        errorId={messages.notLoggedTitle.id}
-        messageId={messages.notLoggedMessage.id}
-      >
-        <a href={`/login?returnUrl=${window.location.href}`}>
-          <Button>
-            <FormattedMessage id="store/go-to-login" />
-          </Button>
-        </a>
-      </ErrorMessage>
-    )
+    return <ForbiddenError />
   }
 
   // not found error
   /** if query resulted in an invalid orderGroup display an error alert*/
   if (data?.orderGroup?.orders == null) {
-    return (
-      <ErrorMessage
-        icon={<NotFound />}
-        errorId={messages.invalidTitle.id}
-        messageId={messages.invalidMessage.id}
-      >
-        <a href="/">
-          <Button>
-            <FormattedMessage id="store/go-to-home" />
-          </Button>
-        </a>
-      </ErrorMessage>
-    )
+    return <InvalidError />
   }
 
   const { orderGroup }: { orderGroup: OrderGroup } = orderGroupQuery as any // data
@@ -115,22 +73,10 @@ const OrderPlaced: FC = () => {
 
           <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
 
-          <header>
-            <ExtensionPoint id="order-placed-confirmation" />
-            <ExtensionPoint id="order-placed-notices" />
-            <ExtensionPoint id="order-placed-summary" />
-            <ExtensionPoint id="order-placed-bank-invoice" />
-          </header>
+          <ExtensionPoint id="order-placed-header" />
 
           <div className="mv6 w-80-ns w-90 center">
-            {orderGroup.orders.map((order, i, { length }) => (
-              <Fragment key={order.orderId}>
-                <ExtensionPoint id="order-info" order={order} />
-                {i < length - 1 && (
-                  <hr className="bg-muted-4 bt b--muted-4 mv9" />
-                )}
-              </Fragment>
-            ))}
+            <ExtensionPoint id="order-list" />
 
             {promptOnCustomEvent === 'checkout' && !installDismissed && (
               <ExtensionPoint
