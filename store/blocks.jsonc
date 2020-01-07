@@ -1,14 +1,19 @@
 {
   "order-placed": {
-    "blocks": [
+    "blocks": ["order-placed-header", "order-list"]
+  },
+  "order-placed-header": {
+    "children": [
       "order-placed-confirmation",
       "order-placed-notices",
       "order-placed-summary",
-      "order-placed-bank-invoice",
-      "order-info"
+      "order-placed-bank-invoice"
     ]
   },
-  "order-info": {
+  "order-list": {
+    "blocks": ["order"]
+  },
+  "order": {
     "children": [
       "flex-layout.row#order-header",
       "order-split-notice",
