@@ -1,21 +1,17 @@
 {
   "order-placed": {
     "component": "index",
-    "allowed": [
-      "order-placed-confirmation",
-      "order-placed-notices",
-      "order-placed-summary",
-      "order-placed-bank-invoice",
-      "order-info"
-    ],
-    "require": [
-      "order-placed-confirmation",
-      "order-placed-notices",
-      "order-placed-summary",
-      "order-placed-bank-invoice",
-      "order-info"
-    ],
+    "allowed": ["order-placed-header", "order-list"],
     "render": "client"
+  },
+  "order-placed-header": {
+    "component": "OrderPlacedHeader",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "order-list": {
+    "component": "OrderList",
+    "required": ["order"]
   },
   "order-placed-confirmation": {
     "component": "OrderPlacedConfirmation"
@@ -29,13 +25,8 @@
   "order-placed-bank-invoice": {
     "component": "OrderPlacedBankInvoice"
   },
-  "order-info": {
-    "component": "OrderInfo",
-    "composition": "children",
-    "allowed": "*"
-  },
-  "order-header": {
-    "component": "OrderHeader",
+  "order": {
+    "component": "Order",
     "composition": "children",
     "allowed": "*"
   },

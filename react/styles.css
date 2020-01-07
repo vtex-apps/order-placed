@@ -23,6 +23,7 @@
   word-break: break-all;
 }
 
+.orderListItem:last-child,
 .productListItem:last-child {
   border-bottom: none;
   margin-bottom: 0;
