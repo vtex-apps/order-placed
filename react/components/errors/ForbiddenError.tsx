@@ -1,5 +1,5 @@
-import { FormattedMessage, defineMessages } from 'react-intl'
 import React, { FC } from 'react'
+import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
 import Forbidden from '../../icons/Forbidden'
