@@ -29,7 +29,8 @@
     "vtex.totalizer-translator": "2.x",
     "vtex.flex-layout": "0.x",
     "vtex.responsive-layout": "0.x",
-    "vtex.css-handles": "0.x"
+    "vtex.css-handles": "0.x",
+    "vtex.responsive-values": "0.x"
   },
   "credentialType": "absolute",
   "policies": [

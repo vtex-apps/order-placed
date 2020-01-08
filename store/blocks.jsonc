@@ -14,7 +14,12 @@
   "order-section#summary": {
     "props": {
       "name": "summary",
-      "className": "w-90 w-80-ns center mb9 pb9"
+      "marginBottom": 9,
+      "paddingBottom": 9,
+      "width": {
+        "desktop": "80%",
+        "mobile": "90%"
+      }
     },
     "children": ["flex-layout.row#summary"]
   },
