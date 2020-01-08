@@ -4824,9 +4824,9 @@ verror@1.10.0:
   version "0.0.0"
   resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.41.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
-"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.104.0/public/@types/vtex.styleguide":
-  version "9.104.0"
-  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.104.0/public/@types/vtex.styleguide#987b927042f3bd3f6328761efc2c4c39af20e5d6"
+"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.104.1/public/@types/vtex.styleguide":
+  version "9.104.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.104.1/public/@types/vtex.styleguide#5e6bea397dc309c399aa646478ca0d033899c2c7"
 
 "vtex.totalizer-translator@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.totalizer-translator@2.1.0/public/_types/react":
   version "0.0.0"

@@ -98,7 +98,7 @@ const OrderPlacedNotices: FC = () => {
   ].filter(Boolean)
 
   return (
-    <OrderSection name="notices" borderless className="mb9">
+    <OrderSection name="notices" borderless marginBottom={9}>
       <ul
         className={`${handles.noticesList} list ma0 pl0 t-body bg-muted-5 tc-m lh-copy`}
       >
