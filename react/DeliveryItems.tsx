@@ -1,10 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, Fragment } from 'react'
 import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 
 import ProductList from './components/ProductList'
 import DeliveryHeader from './components/DeliveryHeader'
 import { useOrder } from './components/OrderContext'
-import Section from './Section'
 
 const CSS_HANDLES = ['package', 'packageHeaderColumn']
 
@@ -17,7 +16,7 @@ const DeliveryItems: FC = () => {
   }
 
   return (
-    <Section name="deliveryItems">
+    <Fragment>
       {deliveryParcels.map((deliveryParcel, index) => (
         <div
           className={`${applyModifiers(
@@ -37,7 +36,7 @@ const DeliveryItems: FC = () => {
           <ProductList products={deliveryParcel.items} />
         </div>
       ))}
-    </Section>
+    </Fragment>
   )
 }
 export default DeliveryItems
