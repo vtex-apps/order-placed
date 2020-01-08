@@ -4,7 +4,7 @@ import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 import ProductList from './components/ProductList'
 import DeliveryHeader from './components/DeliveryHeader'
 import { useOrder } from './components/OrderContext'
-import OrderSection from './OrderSection'
+import Section from './Section'
 
 const CSS_HANDLES = ['package', 'packageHeaderColumn']
 
@@ -17,7 +17,7 @@ const DeliveryItems: FC = () => {
   }
 
   return (
-    <OrderSection name="deliveryItems">
+    <Section name="deliveryItems">
       {deliveryParcels.map((deliveryParcel, index) => (
         <div
           className={`${applyModifiers(
@@ -37,7 +37,7 @@ const DeliveryItems: FC = () => {
           <ProductList products={deliveryParcel.items} />
         </div>
       ))}
-    </OrderSection>
+    </Section>
   )
 }
 export default DeliveryItems

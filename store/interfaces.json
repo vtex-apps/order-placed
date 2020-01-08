@@ -1,75 +1,92 @@
 {
   "order-placed": {
     "component": "index",
-    "allowed": ["order-placed-header", "order-list"],
+    "allowed": [
+      "op-header",
+      "op-order-list",
+      "order-placed-top",
+      "promotion-banner"
+    ],
     "render": "client"
   },
-  "order-placed-header": {
-    "component": "OrderPlacedHeader",
+  "op-section": {
+    "component": "Section",
     "composition": "children",
     "allowed": "*"
   },
-  "order-list": {
+  "op-header": {
+    "component": "Header",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "op-order-list": {
     "component": "OrderList",
-    "required": ["order"]
+    "required": ["op-order"]
   },
-  "order-placed-confirmation": {
-    "component": "OrderPlacedConfirmation"
+  "op-confirmation-icon": {
+    "component": "ConfirmationIcon"
   },
-  "order-placed-notices": {
-    "component": "OrderPlacedNotices"
+  "op-confirmation-thanks": {
+    "component": "ConfirmationThanks"
   },
-  "pickup-summary": {
+  "op-confirmation-message": {
+    "component": "ConfirmationMessage"
+  },
+  "op-print-button": {
+    "component": "PrintButton"
+  },
+  "op-notices": {
+    "component": "Notices"
+  },
+  "op-pickup-summary": {
     "component": "PickupSummary"
   },
-  "delivery-summary": {
+  "op-delivery-summary": {
     "component": "DeliverySummary"
   },
-  "order-placed-bank-invoice": {
-    "component": "OrderPlacedBankInvoice"
+  "op-bank-invoice": {
+    "component": "BankInvoice"
   },
-  "order": {
+  "op-order": {
     "component": "Order",
     "composition": "children",
     "allowed": "*"
   },
-  "order-number": {
+  "op-order-number": {
     "component": "OrderNumber"
   },
-  "order-datetime": {
+  "op-order-datetime": {
     "component": "OrderDatetime"
   },
-  "order-seller": {
+  "op-order-seller": {
     "component": "OrderSeller"
   },
-  "order-split-notice": {
+  "op-order-split-notice": {
     "component": "OrderSplitNotice"
   },
-  "order-customer-info": {
+  "op-order-customer-info": {
     "component": "OrderCustomerInfo"
   },
-  "order-options": {
+  "op-order-options": {
     "component": "OrderOptions"
   },
-  "order-payment": {
+  "op-order-payment": {
     "component": "OrderPayment"
   },
-  "order-section": {
-    "component": "OrderSection",
-    "composition": "children",
-    "allowed": "*"
-  },
-  "order-pickup-items": {
+  "op-order-pickup-items": {
     "component": "PickupItems"
   },
-  "order-delivery-items": {
+  "op-order-delivery-items": {
     "component": "DeliveryItems"
   },
-  "order-takeaway-items": {
+  "op-order-takeaway-items": {
     "component": "TakeAwayItems"
   },
-  "order-total": {
+  "op-order-total": {
     "component": "OrderTotal"
+  },
+  "order-placed-top": {
+    "allowed": ["order-placed-extension"]
   },
   "order-placed-extension": {
     "component": "*"

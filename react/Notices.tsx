@@ -6,12 +6,11 @@ import { useCssHandles } from 'vtex.css-handles'
 import FormattedPrice from './components/FormattedPrice'
 import { useOrderGroup } from './components/OrderGroupContext'
 import { parseBankInvoiceUrl, getPaymentInfoFromOrder } from './utils'
-import OrderSection from './OrderSection'
 
 const CSS_HANDLES = ['noticesList', 'noticeListItem']
 
 // TODO: add json schema to add/remove extra notice messages
-const OrderPlacedNotices: FC = () => {
+const Notices: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
   const { orders, totalDeliveryParcels, totalPickUpParcels } = useOrderGroup()
   const hasDelivery = totalDeliveryParcels.length > 0
@@ -98,21 +97,19 @@ const OrderPlacedNotices: FC = () => {
   ].filter(Boolean)
 
   return (
-    <OrderSection name="notices" borderless marginBottom={9}>
-      <ul
-        className={`${handles.noticesList} list ma0 pl0 t-body bg-muted-5 tc-m lh-copy`}
-      >
-        {listItems.map((item, index) => (
-          <li
-            className={`${handles.noticeListItem} pv6 w-80-ns w-90 center c-on-base b--muted-4 bb`}
-            key={index}
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-    </OrderSection>
+    <ul
+      className={`${handles.noticesList} list ma0 pl0 t-body bg-muted-5 tc-m lh-copy`}
+    >
+      {listItems.map((item, index) => (
+        <li
+          className={`${handles.noticeListItem} pv6 w-80-ns w-90 center c-on-base b--muted-4 bb`}
+          key={index}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
   )
 }
 
-export default OrderPlacedNotices
+export default Notices

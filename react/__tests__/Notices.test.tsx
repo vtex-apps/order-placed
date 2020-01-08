@@ -1,6 +1,6 @@
 import React from 'react'
 
-import OrderPlacedNotices from '../OrderPlacedNotices'
+import OrderPlacedNotices from '../Notices'
 import { orderGroupQuery as bankInvoiceDueDate } from '../mocks/bankInvoiceLoggedIn'
 import { orderGroupQuery as bankInvoiceNoDueDate } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as bankInvoiceNotLoggedIn } from '../mocks/bankInvoiceNotLoggedIn'
