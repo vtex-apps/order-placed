@@ -1,17 +1,50 @@
 {
   "order-placed": {
-    "blocks": ["order-placed-header", "order-list"]
+    "blocks": ["op-header", "op-order-list"]
   },
-  "order-placed-header": {
+  "op-header": {
     "children": [
-      "order-placed-confirmation",
-      "order-placed-notices",
-      "order-section#summary",
-      "order-placed-bank-invoice"
+      "op-section#confirmation",
+      "op-section#notices",
+      "op-section#summary",
+      "op-bank-invoice"
     ]
   },
-  // payment section
-  "order-section#summary": {
+  "op-section#confirmation": {
+    "props": {
+      "name": "confirmation",
+      "marginBottom": 9,
+      "borderless": true
+    },
+    "children": [
+      "op-confirmation-icon",
+      "op-confirmation-thanks",
+      "op-confirmation-message",
+      "flex-layout.row#confirmation-buttons"
+    ]
+  },
+  "flex-layout.row#confirmation-buttons": {
+    "props": {
+      "blockClass": "confirmationButtons",
+      "marginTop": 8,
+      "marginBottom": 8,
+      "horizontalAlign": "center",
+      "preventHorizontalStretch": true
+    },
+    "children": ["flex-layout.col#confirmation-buttons"]
+  },
+  "flex-layout.col#confirmation-buttons": {
+    "children": ["op-print-button"]
+  },
+  "op-section#notices": {
+    "props": {
+      "name": "notices",
+      "marginBottom": 9,
+      "borderless": true
+    },
+    "children": ["op-notices"]
+  },
+  "op-section#summary": {
     "props": {
       "name": "summary",
       "marginBottom": 9,
@@ -36,24 +69,24 @@
     ]
   },
   "flex-layout.col#delivery-summary": {
-    "children": ["delivery-summary"]
+    "children": ["op-delivery-summary"]
   },
   "flex-layout.col#pickup-summary": {
-    "children": ["pickup-summary"]
+    "children": ["op-pickup-summary"]
   },
-  "order-list": {
-    "blocks": ["order"]
+  "op-order-list": {
+    "blocks": ["op-order"]
   },
-  "order": {
+  "op-order": {
     "children": [
       "flex-layout.row#order-header",
-      "order-split-notice",
-      "order-customer-info",
-      "order-section#payments",
-      "order-pickup-items",
-      "order-delivery-items",
-      "order-takeaway-items",
-      "order-total"
+      "op-order-split-notice",
+      "op-order-customer-info",
+      "op-section#payments",
+      "op-order-pickup-items",
+      "op-order-delivery-items",
+      "op-order-takeaway-items",
+      "op-order-total"
     ]
   },
   // each order header
@@ -70,29 +103,29 @@
     ]
   },
   "flex-layout.col#order-header-info": {
-    "children": ["order-number", "order-datetime", "order-seller"]
+    "children": ["op-order-number", "op-order-datetime", "op-order-seller"]
   },
   "flex-layout.col#order-header-options": {
     "children": ["responsive-layout.desktop#order-options-desktop"]
   },
   "responsive-layout.desktop#order-options-desktop": {
-    "children": ["order-options"]
+    "children": ["op-order-options"]
   },
   // payment section
-  "order-section#payments": {
+  "op-section#payments": {
     "props": {
       "name": "paymentMethods"
     },
     "children": [
-      "order-payment",
+      "op-order-payment",
       "responsive-layout.mobile#order-options-mobile"
     ]
   },
   // bottom of top section of order header
   "responsive-layout.mobile#order-options-mobile": {
-    "children": ["order-options#mobile"]
+    "children": ["op-order-options#mobile"]
   },
-  "order-options#mobile": {
+  "op-order-options#mobile": {
     "props": {
       "blockClass": "mobile",
       "fullWidth": true

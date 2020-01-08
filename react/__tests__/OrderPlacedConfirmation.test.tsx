@@ -1,13 +1,14 @@
 import React from 'react'
 
-import OrderPlacedConfirmation from '../OrderPlacedConfirmation'
+import ConfirmationIcon from '../ConfirmationIcon'
+import ConfirmationThanks from '../ConfirmationThanks'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { renderWithOrderGroup } from '../utils/testUtils'
 
 it('should render success icon', () => {
   const { getByTestId } = renderWithOrderGroup(
     oneDelivery.orderGroup,
-    <OrderPlacedConfirmation />
+    <ConfirmationIcon />
   )
 
   const icon = getByTestId('sucessIcon')
@@ -17,7 +18,7 @@ it('should render success icon', () => {
 it('should render thank you message', () => {
   const { getByText } = renderWithOrderGroup(
     oneDelivery.orderGroup,
-    <OrderPlacedConfirmation />
+    <ConfirmationThanks />
   )
 
   const thankYouMessage = getByText(/Thanks for the purchase!/)
