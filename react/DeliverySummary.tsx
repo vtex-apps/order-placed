@@ -24,7 +24,7 @@ const OrderPlacedSummary: FC = () => {
   return (
     <SummaryBox
       type="delivery"
-      title={<FormattedMessage id="store/summary.delivery" />}
+      title={<FormattedMessage id="store/summary.shipping" />}
       itemQuantity={
         <FormattedMessage
           id="store/summary.items"
