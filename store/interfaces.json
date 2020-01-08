@@ -19,8 +19,11 @@
   "order-placed-notices": {
     "component": "OrderPlacedNotices"
   },
-  "order-placed-summary": {
-    "component": "OrderPlacedSummary"
+  "pickup-summary": {
+    "component": "PickupSummary"
+  },
+  "delivery-summary": {
+    "component": "DeliverySummary"
   },
   "order-placed-bank-invoice": {
     "component": "OrderPlacedBankInvoice"

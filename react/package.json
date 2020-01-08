@@ -30,18 +30,19 @@
     "react-dom": "^16.12.0",
     "regenerator-runtime": "^0.13.3",
     "typescript": "3.7.3",
-    "vtex.address-form": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.address-form@4.3.5/public/_types/react",
+    "vtex.shipping-estimate-translator": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-estimate-translator@2.1.2/public/_types/react",
     "vtex.css-handles": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.css-handles@0.4.1/public/@types/vtex.css-handles",
     "vtex.flex-layout": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.flex-layout@0.13.1/public/@types/vtex.flex-layout",
-    "vtex.order-details": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-details@1.0.2/public/@types/vtex.order-details",
-    "vtex.order-placed-graphql": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-placed-graphql@1.8.1/public/_types/react",
-    "vtex.pixel-manager": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.pixel-manager@1.1.4/public/@types/vtex.pixel-manager",
+    "vtex.render-runtime": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.88.0/public/@types/vtex.render-runtime",
+    "vtex.styleguide": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.104.0/public/@types/vtex.styleguide",
+    "vtex.address-form": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.address-form@4.4.0/public/_types/react",
     "vtex.profile-form": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.profile-form@3.3.0/public/_types/react",
-    "vtex.pwa-components": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.pwa-components@0.4.1/public/@types/vtex.pwa-components",
-    "vtex.render-runtime": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.84.0/public/@types/vtex.render-runtime",
+    "vtex.totalizer-translator": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.totalizer-translator@2.1.0/public/_types/react",
     "vtex.responsive-layout": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.responsive-layout@0.1.1/public/@types/vtex.responsive-layout",
-    "vtex.store-resources": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.38.0/public/_types/react",
-    "vtex.styleguide": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.100.2/public/@types/vtex.styleguide",
-    "vtex.totalizer-translator": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.totalizer-translator@2.1.0/public/_types/react"
+    "vtex.store-resources": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.41.0/public/_types/react",
+    "vtex.pwa-components": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.pwa-components@0.4.1/public/@types/vtex.pwa-components",
+    "vtex.order-placed-graphql": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-placed-graphql@1.8.1/public/_types/react",
+    "vtex.order-details": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-details@1.0.2/public/@types/vtex.order-details",
+    "vtex.pixel-manager": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.pixel-manager@1.1.4/public/@types/vtex.pixel-manager"
   }
 }
