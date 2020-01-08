@@ -71,10 +71,10 @@ const OrderPlaced: FC = () => {
 
           <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
 
-          <ExtensionPoint id="order-placed-header" />
+          <ExtensionPoint id="op-header" />
 
           <div className="mv6 w-80-ns w-90 center">
-            <ExtensionPoint id="order-list" />
+            <ExtensionPoint id="op-order-list" />
 
             {promptOnCustomEvent === 'checkout' && !installDismissed && (
               <ExtensionPoint

@@ -10,9 +10,9 @@ interface Props {
   name: string
 }
 
-const CSS_HANDLES = ['orderSection']
+const CSS_HANDLES = ['section']
 
-const OrderSection: FC<Props> = ({
+const Section: FC<Props> = ({
   children,
   borderless = false,
   marginBottom,
@@ -24,7 +24,7 @@ const OrderSection: FC<Props> = ({
   const responsiveWidth = useResponsiveValue(width)
   const classes = [
     'center',
-    applyModifiers(handles.orderSection, name),
+    applyModifiers(handles.section, name),
     marginBottom && `mb${marginBottom}`,
     paddingBottom && `pb${paddingBottom}`,
     !borderless && 'bb b--muted-4',
@@ -43,4 +43,4 @@ const OrderSection: FC<Props> = ({
   )
 }
 
-export default OrderSection
+export default Section
