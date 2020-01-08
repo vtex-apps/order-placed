@@ -6,9 +6,35 @@
     "children": [
       "order-placed-confirmation",
       "order-placed-notices",
-      "order-placed-summary",
+      "order-section#summary",
       "order-placed-bank-invoice"
     ]
+  },
+  // payment section
+  "order-section#summary": {
+    "props": {
+      "name": "summary",
+      "className": "w-90 w-80-ns center mb9 pb9"
+    },
+    "children": ["flex-layout.row#summary"]
+  },
+  "flex-layout.row#summary": {
+    "props": {
+      "fullWidth": true,
+      "colSizing": "equal",
+      "colGap": 4,
+      "rowGap": 4
+    },
+    "children": [
+      "flex-layout.col#delivery-summary",
+      "flex-layout.col#pickup-summary"
+    ]
+  },
+  "flex-layout.col#delivery-summary": {
+    "children": ["delivery-summary"]
+  },
+  "flex-layout.col#pickup-summary": {
+    "children": ["pickup-summary"]
   },
   "order-list": {
     "blocks": ["order"]
