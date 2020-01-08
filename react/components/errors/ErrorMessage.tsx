@@ -1,5 +1,5 @@
-import { FormattedMessage } from 'react-intl'
 import React, { ReactNode, FC } from 'react'
+import { FormattedMessage } from 'react-intl'
 import { useCssHandles } from 'vtex.css-handles'
 
 const CSS_HANDLES = ['errorWrapper', 'errorTitle', 'errorMessage']
