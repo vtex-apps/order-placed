@@ -83,8 +83,8 @@
       "op-order-split-notice",
       "op-order-customer-info",
       "op-section#payments",
-      "op-order-pickup-items",
-      "op-order-delivery-items",
+      "op-section#pickup-items",
+      "op-section#delivery-items",
       "op-order-takeaway-items",
       "op-order-total"
     ]
@@ -130,5 +130,17 @@
       "blockClass": "mobile",
       "fullWidth": true
     }
+  },
+  "op-section#pickup-items": {
+    "props": {
+      "name": "pickupItems"
+    },
+    "children": ["op-order-pickup-items"]
+  },
+  "op-section#delivery-items": {
+    "props": {
+      "name": "deliveryItems"
+    },
+    "children": ["op-order-delivery-items"]
   }
 }
