@@ -1,10 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, Fragment } from 'react'
 import { applyModifiers, useCssHandles } from 'vtex.css-handles'
 
 import { useOrder } from './components/OrderContext'
 import ProductList from './components/ProductList'
 import StorePickUpHeader from './components/PickUpHeader'
-import Section from './Section'
 
 const CSS_HANDLES = ['package', 'packageHeaderColumn']
 
@@ -17,7 +16,7 @@ const PickupItems: FC = () => {
   }
 
   return (
-    <Section name="pickupItems">
+    <Fragment>
       {pickUpParcels.map((pickup: Parcel, index: number) => (
         <div
           className={`${applyModifiers(
@@ -36,7 +35,7 @@ const PickupItems: FC = () => {
           <ProductList products={pickup.items} />
         </div>
       ))}
-    </Section>
+    </Fragment>
   )
 }
 
