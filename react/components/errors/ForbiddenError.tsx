@@ -23,11 +23,9 @@ const ForbiddenError: FC = () => {
       errorId={messages.notLoggedTitle.id}
       messageId={messages.notLoggedMessage.id}
     >
-      <a href={`/login?returnUrl=${window.location.href}`}>
-        <Button>
-          <FormattedMessage id="store/go-to-login" />
-        </Button>
-      </a>
+      <Button href={`/login?returnUrl=${window.location.href}`}>
+        <FormattedMessage id="store/go-to-login" />
+      </Button>
     </ErrorMessage>
   )
 }
