@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
-import Forbidden from '../../icons/Forbidden'
+import ForbiddenIcon from '../../icons/Forbidden'
 import ErrorMessage from './ErrorMessage'
 
 const messages = defineMessages({
@@ -19,7 +19,7 @@ const messages = defineMessages({
 const ForbiddenError: FC = () => {
   return (
     <ErrorMessage
-      icon={<Forbidden />}
+      icon={<ForbiddenIcon />}
       errorId={messages.notLoggedTitle.id}
       messageId={messages.notLoggedMessage.id}
     >
