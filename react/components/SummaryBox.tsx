@@ -14,11 +14,11 @@ const CSS_HANDLES = [
 
 interface Props {
   type: 'pickup' | 'delivery'
-  title: ReactNode | string
-  itemQuantity: ReactNode | string
-  parcelQuantity: ReactNode | string
+  title: ReactNode
+  itemQuantity: ReactNode
+  parcelQuantity: ReactNode
   shippingEstimate: unknown
-  shippingAddress: ReactNode | string
+  shippingAddress: ReactNode
 }
 
 const SummaryBox: FC<Props> = ({
