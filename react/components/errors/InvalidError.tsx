@@ -23,11 +23,9 @@ const InvalidError: FC = () => {
       errorId={messages.invalidTitle.id}
       messageId={messages.invalidMessage.id}
     >
-      <a href="/">
-        <Button>
-          <FormattedMessage id="store/go-to-home" />
-        </Button>
-      </a>
+      <Button href="/">
+        <FormattedMessage id="store/go-to-home" />
+      </Button>
     </ErrorMessage>
   )
 }
