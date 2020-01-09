@@ -3,6 +3,7 @@ import { useQuery } from 'react-apollo'
 import { useIntl, defineMessages } from 'react-intl'
 import { Helmet, ExtensionPoint, useRuntime } from 'vtex.render-runtime'
 import { usePWA } from 'vtex.store-resources/PWAContext'
+import { useCssHandles } from 'vtex.css-handles'
 
 import { OrderGroupContext } from './components/OrderGroupContext'
 import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
@@ -26,7 +27,10 @@ const messages = defineMessages({
   },
 })
 
+const CSS_HANDLES = ['orderPlacedWrapper', 'orderPlacedMainWrapper']
+
 const OrderPlaced: FC = () => {
+  const handles = useCssHandles(CSS_HANDLES)
   const intl = useIntl()
   const runtime = useRuntime()
   const { settings = {} } = usePWA() || {}
@@ -66,14 +70,16 @@ const OrderPlaced: FC = () => {
           <title>{intl.formatMessage(messages.title)}</title>
         </Helmet>
 
-        <article className="pt9 sans-serif">
+        <div className={`${handles.orderPlacedWrapper} pt9 sans-serif`}>
           {/* <Analytics eventList={orderGroup.analyticsData} /> */}
 
           <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
 
           <ExtensionPoint id="op-header" />
 
-          <div className="mv6 w-80-ns w-90 center">
+          <main
+            className={`${handles.orderPlacedMainWrapper} mv6 w-80-ns w-90 center`}
+          >
             <ExtensionPoint id="op-order-list" />
 
             {promptOnCustomEvent === 'checkout' && !installDismissed && (
@@ -83,8 +89,8 @@ const OrderPlaced: FC = () => {
                 onDismiss={() => setInstallDismissed(true)}
               />
             )}
-          </div>
-        </article>
+          </main>
+        </div>
       </CurrencyContext.Provider>
     </OrderGroupContext.Provider>
   )
