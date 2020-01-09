@@ -4,6 +4,13 @@ import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import { Address } from 'vtex.order-details'
 import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 
+interface Props {
+  shippingData: Parcel
+  index: number
+  numPackages: number
+  giftRegistry?: GiftRegistry | null
+}
+
 const CSS_HANDLES = [
   'packageHeader',
   'packageShippingEstimate',
@@ -11,13 +18,6 @@ const CSS_HANDLES = [
   'packageGiftDescription',
   'packageAddressWrapper',
 ]
-
-interface Props {
-  shippingData: Parcel
-  index: number
-  numPackages: number
-  giftRegistry?: GiftRegistry | null
-}
 
 const DeliveryHeader: FC<Props> = ({
   shippingData,
