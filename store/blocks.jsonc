@@ -6,7 +6,7 @@
     "children": [
       "op-section#confirmation",
       "op-section#notices",
-      "op-section#summary",
+      "op-summary-display-controller",
       "op-bank-invoice"
     ]
   },
@@ -43,6 +43,9 @@
       "borderless": true
     },
     "children": ["op-notices"]
+  },
+  "op-summary-display-controller": {
+    "children": ["op-section#summary"]
   },
   "op-section#summary": {
     "props": {
