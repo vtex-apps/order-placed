@@ -34,6 +34,11 @@
   "op-notices": {
     "component": "Notices"
   },
+  "op-summary-display-controller": {
+    "component": "SummaryDisplayController",
+    "composition": "children",
+    "allowed": "*"
+  },
   "op-pickup-summary": {
     "component": "PickupSummary"
   },
