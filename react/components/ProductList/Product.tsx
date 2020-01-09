@@ -5,6 +5,10 @@ import { useCssHandles } from 'vtex.css-handles'
 
 import FormattedPrice from '../FormattedPrice'
 
+interface Props {
+  product: OrderItem
+}
+
 const CSS_HANDLES = [
   'productWrapper',
   'productImageColumn',
@@ -15,10 +19,6 @@ const CSS_HANDLES = [
   'productQuantity',
   'productPriceColumn',
 ]
-
-interface Props {
-  product: OrderItem
-}
 
 const Product: FC<Props> = ({ product }) => {
   const {

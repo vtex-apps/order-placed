@@ -5,11 +5,11 @@ import BundleInfo from './BundleItems'
 import Attachment from './Attachments'
 import Product from './Product'
 
-const CSS_HANDLES = ['productListWrapper', 'productListItem']
-
 interface Props {
   products: OrderItem[]
 }
+
+const CSS_HANDLES = ['productListWrapper', 'productListItem']
 
 const ProductList: FC<Props> = ({ products }) => {
   const handles = useCssHandles(CSS_HANDLES)

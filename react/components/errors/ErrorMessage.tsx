@@ -2,14 +2,14 @@ import React, { ReactNode, FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { useCssHandles } from 'vtex.css-handles'
 
-const CSS_HANDLES = ['errorWrapper', 'errorTitle', 'errorMessage']
-
 interface Props {
   errorId: string
   messageId?: string
   children?: ReactNode
   icon: ReactNode
 }
+
+const CSS_HANDLES = ['errorWrapper', 'errorTitle', 'errorMessage']
 
 const ErrorMessage: FC<Props> = ({ icon, errorId, messageId, children }) => {
   const handles = useCssHandles(CSS_HANDLES)
