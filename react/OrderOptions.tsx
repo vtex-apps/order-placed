@@ -4,11 +4,11 @@ import { useCssHandles } from 'vtex.css-handles'
 
 import { useOrder } from './components/OrderContext'
 
-const CSS_HANDLES = ['orderOptionsWrapper']
-
 interface Props {
   fullWidth?: boolean
 }
+
+const CSS_HANDLES = ['orderOptionsWrapper']
 
 const WrappedOrderOptions: FC<Props> = ({ fullWidth = false }) => {
   const order = useOrder()

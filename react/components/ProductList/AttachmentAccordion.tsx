@@ -2,6 +2,13 @@ import React, { FC, useState, ReactNode } from 'react'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 import { useCssHandles } from 'vtex.css-handles'
 
+interface Props {
+  content: (string | ReactNode)[]
+  beforeTitleLabel?: string | ReactNode
+  titleLabel: string | ReactNode
+  toggleLabel?: string | ReactNode
+}
+
 const CSS_HANDLES = [
   'attachmentWrapper',
   'attachmentHeader',
@@ -12,13 +19,6 @@ const CSS_HANDLES = [
   'attachmentContent',
   'attachmentContentItem',
 ]
-
-interface Props {
-  content: (string | ReactNode)[]
-  beforeTitleLabel?: string | ReactNode
-  titleLabel: string | ReactNode
-  toggleLabel?: string | ReactNode
-}
 
 const AttachmentAccordion: FC<Props> = ({
   beforeTitleLabel,

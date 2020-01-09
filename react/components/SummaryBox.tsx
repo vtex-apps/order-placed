@@ -2,6 +2,15 @@ import React, { FC, ReactNode } from 'react'
 import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 
+interface Props {
+  type: 'pickup' | 'delivery'
+  title: ReactNode
+  itemQuantity: ReactNode
+  parcelQuantity: ReactNode
+  shippingEstimate: unknown
+  shippingAddress: ReactNode
+}
+
 const CSS_HANDLES = [
   'summarySection',
   'summaryBox',
@@ -11,15 +20,6 @@ const CSS_HANDLES = [
   'summaryShipping',
   'summaryAddress',
 ]
-
-interface Props {
-  type: 'pickup' | 'delivery'
-  title: ReactNode
-  itemQuantity: ReactNode
-  parcelQuantity: ReactNode
-  shippingEstimate: unknown
-  shippingAddress: ReactNode
-}
 
 const SummaryBox: FC<Props> = ({
   type,
