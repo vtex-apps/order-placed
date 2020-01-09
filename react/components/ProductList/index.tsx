@@ -9,12 +9,12 @@ interface Props {
   products: OrderItem[]
 }
 
-const CSS_HANDLES = ['productListWrapper', 'productListItem']
+const CSS_HANDLES = ['productList', 'productListItem']
 
 const ProductList: FC<Props> = ({ products }) => {
   const handles = useCssHandles(CSS_HANDLES)
   return (
-    <ul className={`${handles.productListWrapper} w-60-l w-100 list pl0`}>
+    <ul className={`${handles.productList} w-60-l w-100 list pl0`}>
       {products.map(product => (
         <li
           key={product.id}

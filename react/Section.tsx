@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { useCssHandles, applyModifiers } from 'vtex.css-handles'
-import { useResponsiveValue } from 'vtex.responsive-values'
+import { useResponsiveValues } from 'vtex.responsive-values'
 
 interface Props {
   borderless?: MaybeResponsiveInput<boolean>
@@ -12,20 +12,15 @@ interface Props {
 
 const CSS_HANDLES = ['section']
 
-const Section: FC<Props> = ({
-  children,
-  borderless: borderlessProp = false,
-  marginBottom: marginBottomProp,
-  paddingBottom: paddingBottomProp,
-  width: widthProp,
-  name,
-}) => {
+const Section: FC<Props> = ({ children, name, ...layoutProps }) => {
   const handles = useCssHandles(CSS_HANDLES)
 
-  const borderless = useResponsiveValue(borderlessProp)
-  const width = useResponsiveValue(widthProp)
-  const marginBottom = useResponsiveValue(marginBottomProp)
-  const paddingBottom = useResponsiveValue(paddingBottomProp)
+  const {
+    borderless,
+    width,
+    marginBottom,
+    paddingBottom,
+  } = useResponsiveValues(layoutProps)
 
   const classes = [
     'center',

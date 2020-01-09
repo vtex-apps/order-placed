@@ -3,13 +3,13 @@ import React from 'react'
 import { orderGroupQuery as giftRegistry } from '../mocks/giftRegistry'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as twoDeliveries } from '../mocks/twoDeliveries'
-import DeliveryItems from '../DeliveryItems'
+import DeliveryPackages from '../DeliveryPackages'
 import { renderWithOrder } from '../utils/testUtils'
 
 it('renders ShippingHeader with shipping estimate', () => {
   const { getByText } = renderWithOrder(
     oneDelivery.orderGroup,
-    <DeliveryItems />
+    <DeliveryPackages />
   )
 
   expect(getByText('Delivery')).toBeDefined()
@@ -19,7 +19,7 @@ it('renders ShippingHeader with shipping estimate', () => {
 it('renders delivery counter when multiple deliveries', () => {
   const { queryAllByText } = renderWithOrder(
     twoDeliveries.orderGroup,
-    <DeliveryItems />
+    <DeliveryPackages />
   )
 
   expect(queryAllByText(/- n˚ \d of \d/)).toHaveLength(2)
@@ -28,7 +28,7 @@ it('renders delivery counter when multiple deliveries', () => {
 it("doesn't render delivery counter when there is only one delivery", () => {
   const { queryByText } = renderWithOrder(
     oneDelivery.orderGroup,
-    <DeliveryItems />
+    <DeliveryPackages />
   )
 
   expect(queryByText(/- n˚ \d of \d/)).toBeNull()
@@ -37,7 +37,7 @@ it("doesn't render delivery counter when there is only one delivery", () => {
 it('renders product list', () => {
   const { getByText } = renderWithOrder(
     twoDeliveries.orderGroup,
-    <DeliveryItems />
+    <DeliveryPackages />
   )
 
   expect(
@@ -50,7 +50,7 @@ it('renders product list', () => {
 it('renders correct messsage when order is from a Gift Registry and not render address component', () => {
   const { queryByText, queryByTestId } = renderWithOrder(
     giftRegistry.orderGroup,
-    <DeliveryItems />
+    <DeliveryPackages />
   )
 
   expect(queryByText('Address from: Lista Lucas QA')).toBeDefined()

@@ -3,10 +3,10 @@ import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 import { useCssHandles } from 'vtex.css-handles'
 
 interface Props {
-  content: (string | ReactNode)[]
-  beforeTitleLabel?: string | ReactNode
-  titleLabel: string | ReactNode
-  toggleLabel?: string | ReactNode
+  content: ReactNode[]
+  beforeTitleLabel?: ReactNode
+  titleLabel: ReactNode
+  toggleLabel?: ReactNode
 }
 
 const CSS_HANDLES = [
