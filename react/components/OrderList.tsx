@@ -2,8 +2,8 @@ import React, { FC } from 'react'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { useCssHandles } from 'vtex.css-handles'
 
-import { useOrderGroup } from './components/OrderGroupContext'
-import { OrderContext } from './components/OrderContext'
+import { useOrderGroup } from './OrderGroupContext'
+import { OrderContext } from './OrderContext'
 
 const CSS_HANDLES = ['orderList', 'orderListItem']
 

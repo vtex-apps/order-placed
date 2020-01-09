@@ -10,7 +10,7 @@ const CSS_HANDLES = [
   'totalListWrapper',
   'totalList',
   'totalListItem',
-  'totalListItemName',
+  'totalListItemLabel',
   'totalListItemValue',
 ]
 
@@ -29,7 +29,7 @@ const OrderTotal: FC = () => {
             className={`${handles.totalListItem} pv3 flex justify-between items-center`}
             key={total.id}
           >
-            <span className={`${handles.totalListItemName}`}>
+            <span className={`${handles.totalListItemLabel}`}>
               <TranslateTotalizer totalizer={total} />
               {total.id === 'Items' && ` (${numItems})`}
             </span>
@@ -41,7 +41,7 @@ const OrderTotal: FC = () => {
         <li
           className={`${handles.totalListItem} pv3 flex justify-between items-center c-on-base t-heading-2-ns t-heading-3`}
         >
-          <strong className={`${handles.totalListItemName}`}>
+          <strong className={`${handles.totalListItemLabel}`}>
             <FormattedMessage id="store/order.totals.total" />
           </strong>
           <strong className={`${handles.totalListItemValue}`}>

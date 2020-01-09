@@ -14,10 +14,10 @@ const CSS_HANDLES = [
   'productImageColumn',
   'productImageWrapper',
   'productInfoColumn',
-  'productLink',
+  'productName',
   'productMeasurementUnit',
   'productQuantity',
-  'productPriceColumn',
+  'productPrice',
 ]
 
 const Product: FC<Props> = ({ product }) => {
@@ -45,7 +45,7 @@ const Product: FC<Props> = ({ product }) => {
       >
         <a
           href={detailUrl}
-          className={`${handles.productLink} t-body c-muted-1 no-underline`}
+          className={`${handles.productName} t-body c-muted-1 no-underline`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -58,7 +58,7 @@ const Product: FC<Props> = ({ product }) => {
             </small>
           )}
         </a>
-        <div
+        <small
           className={`${handles.productQuantity} t-mini c-muted-1 mt3 mt0-m`}
         >
           <FormattedMessage
@@ -67,9 +67,9 @@ const Product: FC<Props> = ({ product }) => {
               quantity: quantity,
             }}
           />
-        </div>
+        </small>
       </div>
-      <div className={`${handles.productPriceColumn} ml-auto mt3 mt0-m`}>
+      <div className={`${handles.productPrice} ml-auto mt3 mt0-m`}>
         <FormattedPrice value={price * quantity} />
       </div>
     </div>

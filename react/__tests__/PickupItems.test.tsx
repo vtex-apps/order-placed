@@ -3,10 +3,13 @@ import React from 'react'
 import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'
 import { orderGroupQuery as twoPickups } from '../mocks/twoPickups'
 import { renderWithOrder } from '../utils/testUtils'
-import PickupItems from '../PickupItems'
+import PickupPackages from '../PickupPackages'
 
 it('should render StorePickUpHeader with shipping estimate and receiver info', () => {
-  const { getByText } = renderWithOrder(onePickup.orderGroup, <PickupItems />)
+  const { getByText } = renderWithOrder(
+    onePickup.orderGroup,
+    <PickupPackages />
+  )
 
   expect(getByText('Pickup')).toBeDefined()
   expect(getByText('TranslateEstimate')).toBeDefined()
@@ -17,14 +20,17 @@ it('should render StorePickUpHeader with shipping estimate and receiver info', (
 it('should render pickup counter when multiple store pickups', () => {
   const { queryAllByText } = renderWithOrder(
     twoPickups.orderGroup,
-    <PickupItems />
+    <PickupPackages />
   )
 
   expect(queryAllByText(/- n˚ \d of \d/)).toHaveLength(2)
 })
 
 it('should not pickup counter when there is only one store pickup', () => {
-  const { queryByText } = renderWithOrder(onePickup.orderGroup, <PickupItems />)
+  const { queryByText } = renderWithOrder(
+    onePickup.orderGroup,
+    <PickupPackages />
+  )
 
   expect(queryByText(/ - n˚ \d of \d/)).toBeNull()
 })
@@ -32,7 +38,7 @@ it('should not pickup counter when there is only one store pickup', () => {
 it('should render product list', () => {
   const { queryAllByText } = renderWithOrder(
     twoPickups.orderGroup,
-    <PickupItems />
+    <PickupPackages />
   )
 
   expect(queryAllByText('Pickup múltiplas SLAs RJ Tipo 1')).toHaveLength(2)

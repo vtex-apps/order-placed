@@ -14,7 +14,8 @@ import ForbiddenError from './components/Errors/ForbiddenError'
 import InvalidError from './components/Errors/InvalidError'
 // to load default css handle styles
 import './styles.css'
-import { orderGroupQuery } from './mocks/fiftyItemOrder'
+import { orderGroupQuery } from './mocks/bankInvoiceNumberLoggedIn'
+import OrderList from './components/OrderList'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -80,7 +81,7 @@ const OrderPlaced: FC = () => {
           <main
             className={`${handles.orderPlacedMainWrapper} mv6 w-80-ns w-90 center`}
           >
-            <ExtensionPoint id="op-order-list" />
+            <OrderList />
 
             {promptOnCustomEvent === 'checkout' && !installDismissed && (
               <ExtensionPoint

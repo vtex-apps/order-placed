@@ -11,9 +11,9 @@ const OrderNumber = () => {
   const handles = useCssHandles(CSS_HANDLES)
 
   return (
-    <div className={`${handles.orderNumber} t-heading-3 lh-copy`}>
+    <h3 className={`${handles.orderNumber} mv0 t-heading-3 lh-copy`}>
       <FormattedMessage id="store/order.header.number" values={{ orderId }} />
-    </div>
+    </h3>
   )
 }
 

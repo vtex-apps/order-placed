@@ -7,7 +7,7 @@ import { useOrder } from './components/OrderContext'
 
 const CSS_HANDLES = ['package', 'packageHeaderColumn']
 
-const DeliveryItems: FC = () => {
+const DeliveryPackages: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
   const { deliveryParcels, giftRegistryData } = useOrder()
 
@@ -39,4 +39,4 @@ const DeliveryItems: FC = () => {
     </Fragment>
   )
 }
-export default DeliveryItems
+export default DeliveryPackages
