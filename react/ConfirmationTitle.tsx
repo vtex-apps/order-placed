@@ -4,7 +4,7 @@ import { useCssHandles } from 'vtex.css-handles'
 
 const CSS_HANDLES = ['confirmationTitle']
 
-const ConfirmationThanks: FC = () => {
+const ConfirmationTitle: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
 
   return (
@@ -15,4 +15,4 @@ const ConfirmationThanks: FC = () => {
     </h4>
   )
 }
-export default ConfirmationThanks
+export default ConfirmationTitle

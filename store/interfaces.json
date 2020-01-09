@@ -3,7 +3,7 @@
     "component": "index",
     "allowed": [
       "op-header",
-      "op-order-list",
+      "op-order",
       "order-placed-top",
       "promotion-banner"
     ],
@@ -19,15 +19,11 @@
     "composition": "children",
     "allowed": "*"
   },
-  "op-order-list": {
-    "component": "OrderList",
-    "required": ["op-order"]
-  },
   "op-confirmation-icon": {
     "component": "ConfirmationIcon"
   },
-  "op-confirmation-thanks": {
-    "component": "ConfirmationThanks"
+  "op-confirmation-title": {
+    "component": "ConfirmationTitle"
   },
   "op-confirmation-message": {
     "component": "ConfirmationMessage"
@@ -64,7 +60,7 @@
   "op-order-split-notice": {
     "component": "OrderSplitNotice"
   },
-  "op-order-customer-info": {
+  "op-order-customer": {
     "component": "OrderCustomerInfo"
   },
   "op-order-options": {
@@ -73,11 +69,11 @@
   "op-order-payment": {
     "component": "OrderPayment"
   },
-  "op-order-pickup-items": {
-    "component": "PickupItems"
+  "op-order-pickup-packages": {
+    "component": "PickupPackages"
   },
-  "op-order-delivery-items": {
-    "component": "DeliveryItems"
+  "op-order-delivery-packages": {
+    "component": "DeliveryPackages"
   },
   "op-order-takeaway-items": {
     "component": "TakeAwayItems"

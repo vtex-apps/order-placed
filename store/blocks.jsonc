@@ -1,6 +1,6 @@
 {
   "order-placed": {
-    "blocks": ["op-header", "op-order-list"]
+    "blocks": ["op-header", "op-order"]
   },
   "op-header": {
     "children": [
@@ -18,7 +18,7 @@
     },
     "children": [
       "op-confirmation-icon",
-      "op-confirmation-thanks",
+      "op-confirmation-title",
       "op-confirmation-message",
       "flex-layout.row#confirmation-buttons"
     ]
@@ -74,14 +74,11 @@
   "flex-layout.col#pickup-summary": {
     "children": ["op-pickup-summary"]
   },
-  "op-order-list": {
-    "blocks": ["op-order"]
-  },
   "op-order": {
     "children": [
       "flex-layout.row#order-header",
       "op-order-split-notice",
-      "op-order-customer-info",
+      "op-order-customer",
       "op-section#payments",
       "op-section#pickup-items",
       "op-section#delivery-items",
@@ -133,14 +130,14 @@
   },
   "op-section#pickup-items": {
     "props": {
-      "name": "pickupItems"
+      "name": "pickupPackages"
     },
-    "children": ["op-order-pickup-items"]
+    "children": ["op-order-pickup-packages"]
   },
   "op-section#delivery-items": {
     "props": {
-      "name": "deliveryItems"
+      "name": "deliveryPackages"
     },
-    "children": ["op-order-delivery-items"]
+    "children": ["op-order-delivery-packages"]
   }
 }

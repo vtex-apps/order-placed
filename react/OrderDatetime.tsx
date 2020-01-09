@@ -15,8 +15,16 @@ const OrderDate = () => {
       <FormattedMessage
         id="store/order.header.date"
         values={{
-          orderDate: <FormattedDate value={creationDate} />,
-          orderTime: <FormattedTime value={creationDate} />,
+          orderDate: (
+            <time dateTime={creationDate}>
+              <FormattedDate value={creationDate} />
+            </time>
+          ),
+          orderTime: (
+            <time dateTime={creationDate}>
+              <FormattedTime value={creationDate} />
+            </time>
+          ),
         }}
       />
     </small>

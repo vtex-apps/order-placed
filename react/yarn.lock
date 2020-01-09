@@ -4776,9 +4776,9 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-"vtex.address-form@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.address-form@4.4.0/public/_types/react":
+"vtex.address-form@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.address-form@4.4.1/public/_types/react":
   version "0.0.0"
-  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.address-form@4.4.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.address-form@4.4.1/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
 "vtex.css-handles@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.css-handles@0.4.1/public/@types/vtex.css-handles":
   version "0.4.1"
@@ -4816,6 +4816,10 @@ verror@1.10.0:
   version "0.1.1"
   resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.responsive-layout@0.1.1/public/@types/vtex.responsive-layout#11dc25b0bf358265930368317b943135391efa5c"
 
+"vtex.responsive-values@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.responsive-values@0.2.0/public/_types/react":
+  version "0.0.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.responsive-values@0.2.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+
 "vtex.shipping-estimate-translator@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-estimate-translator@2.1.2/public/_types/react":
   version "2.1.2"
   resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-estimate-translator@2.1.2/public/_types/react#95629f50253d1f857f9f401f8d4c575c1ac52c99"
@@ -4824,9 +4828,9 @@ verror@1.10.0:
   version "0.0.0"
   resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.41.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
-"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.104.1/public/@types/vtex.styleguide":
-  version "9.104.1"
-  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.104.1/public/@types/vtex.styleguide#5e6bea397dc309c399aa646478ca0d033899c2c7"
+"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.104.5/public/@types/vtex.styleguide":
+  version "9.104.5"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.104.5/public/@types/vtex.styleguide#2fa57fa8ab053c592e7da377e05abfff5ee72cd8"
 
 "vtex.totalizer-translator@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.totalizer-translator@2.1.0/public/_types/react":
   version "0.0.0"
