@@ -4,15 +4,15 @@ import { FormattedMessage } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 import { useCssHandles } from 'vtex.css-handles'
 
+interface Props {
+  barCodeNumber: string
+}
+
 const CSS_HANDLES = [
   'barCodeWrapper',
   'barCodeNumber',
   'barCodeCopyButtonWrapper',
 ]
-
-interface Props {
-  barCodeNumber: string
-}
 
 const BarCode: FC<Props> = ({ barCodeNumber }) => {
   const handles = useCssHandles(CSS_HANDLES)

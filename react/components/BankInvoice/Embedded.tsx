@@ -3,15 +3,15 @@ import { FormattedMessage } from 'react-intl'
 import { ButtonWithIcon, IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 import { useCssHandles } from 'vtex.css-handles'
 
+interface Props {
+  url: string
+}
+
 const CSS_HANDLES = [
   'bankInvoiceEmbedWrapper',
   'bankInvoiceEmbedBackground',
   'bankInvoiceEmbed',
 ]
-
-interface Props {
-  url: string
-}
 
 const Embedded: FC<Props> = ({ url }) => {
   const handles = useCssHandles(CSS_HANDLES)
