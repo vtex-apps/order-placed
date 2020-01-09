@@ -352,7 +352,22 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 
 #### `op-bank-invoice`
 
-TODO
+> Renders the bank invoice and bank invoice number if payment method chosen was bank invoice.
+
+**Composition:** none.
+
+**Props:** none.
+
+**CSS Handles:**
+
+| CSS Handle                   | Description                                   |
+| ---------------------------- | --------------------------------------------- |
+| `barCodeWrapper`             | Wrapper of the barcode number and copy button |
+| `barCodeNumber`              | Barcode number element                        |
+| `barCodeCopyButtonWrapper`   | Wrapper of the copy button                    |
+| `bankInvoiceEmbedWrapper`    | Wrapper of the bank invoice iframe            |
+| `bankInvoiceEmbedBackground` | Background of the bank invoice iframe         |
+| `bankInvoiceEmbed`           | Embed of the bank invoice PDF                 |
 
 #### `op-order`
 
