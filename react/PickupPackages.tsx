@@ -7,7 +7,7 @@ import StorePickUpHeader from './components/PickUpHeader'
 
 const CSS_HANDLES = ['package', 'packageHeaderColumn']
 
-const PickupItems: FC = () => {
+const PickupPackages: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
   const { pickUpParcels } = useOrder()
 
@@ -39,4 +39,4 @@ const PickupItems: FC = () => {
   )
 }
 
-export default PickupItems
+export default PickupPackages

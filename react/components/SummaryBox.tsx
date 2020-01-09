@@ -12,12 +12,11 @@ interface Props {
 }
 
 const CSS_HANDLES = [
-  'summarySection',
   'summaryBox',
   'summaryTitle',
   'summaryContent',
   'summaryItems',
-  'summaryShipping',
+  'summaryShippingSLA',
   'summaryAddress',
 ]
 
@@ -49,7 +48,7 @@ const SummaryBox: FC<Props> = ({
           <strong>{itemQuantity}</strong>
           {parcelQuantity}
         </div>
-        <div className={`${handles.summaryShipping} t-heading-5 mb8`}>
+        <div className={`${handles.summaryShippingSLA} t-heading-5 mb8`}>
           <TranslateEstimate shippingEstimate={shippingEstimate} />
         </div>
         <div className={`${handles.summaryAddress} c-muted-2 lh-copy`}>
