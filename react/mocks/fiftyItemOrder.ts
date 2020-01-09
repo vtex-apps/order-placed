@@ -1836,13 +1836,13 @@ export const orderGroupQuery = {
         paymentData: {
           transactions: [
             {
-              transactionId: '4E6B86F5D30A42EFA7056F80323D799B',
+              transactionId: '458D7F86C4434D0D906FD2AE07056CDF',
               payments: [
                 {
-                  id: '93041A0DEB334A95827D9FF13EDE8F79',
+                  id: '6F3F16B6482F474F9BA3EB97A46A2834',
                   paymentSystem: '4',
                   paymentSystemName: 'Mastercard',
-                  value: 2201682104,
+                  value: 5399,
                   installments: 1,
                   lastDigits: '1234',
                   group: 'creditCard',
@@ -2212,6 +2212,7 @@ export const orderGroupQuery = {
                   url: null,
                   bankIssuedInvoiceBarCodePNG: null,
                   bankIssuedInvoiceIdentificationNumber: null,
+                  connectorResponses: null,
                 },
               ],
             },
@@ -2381,6 +2382,7 @@ export const orderGroupQuery = {
                   url: null,
                   bankIssuedInvoiceBarCodePNG: null,
                   bankIssuedInvoiceIdentificationNumber: null,
+                  connectorResponses: null,
                 },
               ],
             },
@@ -2584,6 +2586,7 @@ export const orderGroupQuery = {
                   url: null,
                   bankIssuedInvoiceBarCodePNG: null,
                   bankIssuedInvoiceIdentificationNumber: null,
+                  connectorResponses: null,
                 },
               ],
             },
