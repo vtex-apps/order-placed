@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { ButtonLink } from 'vtex.order-details'
+import { ButtonWithIcon } from 'vtex.styleguide'
 
 import PrinterIcon from './Icons/PrinterIcon'
 import BarCode from './components/BankInvoice/BarCode'
@@ -43,17 +43,17 @@ const BankInvoiceSection: FC = () => {
         {barCodeNumber && <BarCode barCodeNumber={barCodeNumber} />}
         {isURLValid && (
           <div className={`mt5 mt0-l ${barCodeNumber ? 'ml5-l' : ''}`}>
-            <ButtonLink
-              to={parsedUrl}
+            <ButtonWithIcon
+              href={parsedUrl}
               icon={<PrinterIcon />}
               variation="secondary"
-              openNewWindow
+              target="_blank"
             >
               <FormattedMessage
                 id="store/header.bankinvoice.print"
                 values={{ paymentSystemName }}
               />
-            </ButtonLink>
+            </ButtonWithIcon>
           </div>
         )}
       </div>

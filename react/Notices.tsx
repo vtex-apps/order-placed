@@ -1,6 +1,6 @@
 import React, { Fragment, FC } from 'react'
 import { FormattedMessage, FormattedDate } from 'react-intl'
-import { ButtonLink } from 'vtex.order-details'
+import { Button } from 'vtex.styleguide'
 import { useCssHandles } from 'vtex.css-handles'
 
 import FormattedPrice from './components/FormattedPrice'
@@ -80,16 +80,16 @@ const Notices: FC = () => {
         )}
         <div className="mt4">
           {bankInvoice.url && (
-            <ButtonLink
-              to={parseBankInvoiceUrl(bankInvoice.url)}
+            <Button
+              href={parseBankInvoiceUrl(bankInvoice.url)}
               variation="primary"
-              openNewWindow
+              target="_blank"
             >
               <FormattedMessage
                 id="store/payments.bankinvoice.print"
                 values={{ paymentSystemName: bankInvoice.paymentSystemName }}
               />
-            </ButtonLink>
+            </Button>
           )}
         </div>
       </Fragment>
