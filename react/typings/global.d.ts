@@ -180,9 +180,9 @@ interface ConnectorResponse {
 }
 
 interface ResponsiveInput<T> {
-  mobile: T
-  desktop: T
-  tablet: T
+  mobile?: T
+  desktop?: T
+  tablet?: T
 }
 
 type MaybeResponsiveInput<T> = ResponsiveInput<T> | T
