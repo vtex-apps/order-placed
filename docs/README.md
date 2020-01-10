@@ -161,13 +161,13 @@ Splits your page into separate and semantic sections.
 
 **Props:**
 
-| Prop name       | Type                                      | Description                                                    | Default value |
-| --------------- | ----------------------------------------- | -------------------------------------------------------------- | ------------- |
-| `borderless`    | `MaybeResponsiveInput<boolean> | boolean` | Remove the bottom border of the section                        | `false`       |
-| `marginBottom`  | `MaybeResponsiveInput<number> | number`   | Margin space below the section                                 | `0`           |
-| `paddingBottom` | `MaybeResponsiveInput<number> | number`   | Padding space below the section                                | `0`           |
-| `width`         | `MaybeResponsiveInput<string> | string`   | Width of the section                                           | `100%`        |
-| `name`          | `string`                                  | Name of the section. Use it to have custom css handles for it. | `undefined`   |
+| Prop name       | Type                                       | Description                                                    | Default value |
+| --------------- | ------------------------------------------ | -------------------------------------------------------------- | ------------- |
+| `borderless`    | `MaybeResponsiveInput<boolean> \| boolean` | Remove the bottom border of the section                        | `false`       |
+| `marginBottom`  | `MaybeResponsiveInput<number> \| number`   | Margin space below the section                                 | `0`           |
+| `paddingBottom` | `MaybeResponsiveInput<number> \| number`   | Padding space below the section                                | `0`           |
+| `width`         | `MaybeResponsiveInput<string> \| string`   | Width of the section                                           | `100%`        |
+| `name`          | `string`                                   | Name of the section. Use it to have custom css handles for it. | `undefined`   |
 
 **CSS Handles:**
 
