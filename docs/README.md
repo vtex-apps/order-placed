@@ -140,8 +140,8 @@ _Note: this is the default `order-placed` layout implementation._
 
 Main block, responsible for rendering the whole order placed page. It accepts the following blocks:
 
-- `op-header`
-- `op-order-list`
+- [`op-header`](#op-header)
+- [`op-order-list`](#op-order-list)
 - `order-placed-top`
 - `promotion-banner`
 
@@ -159,13 +159,13 @@ Accepts an array of any kind of children blocks.
 
 **Props:**
 
-| Prop name       | Type                                       | Description                                                    | Default value |
-| --------------- | ------------------------------------------ | -------------------------------------------------------------- | ------------- |
-| `borderless`    | `MaybeResponsiveInput<boolean> \| boolean` | Remove the bottom border of the section                        | `false`       |
-| `marginBottom`  | `MaybeResponsiveInput<number> \| number`   | Margin space below the section                                 | `0`           |
-| `paddingBottom` | `MaybeResponsiveInput<number> \| number`   | Padding space below the section                                | `0`           |
-| `width`         | `MaybeResponsiveInput<string> \| string`   | Width of the section                                           | `100%`        |
-| `name`          | `string`                                   | Name of the section. Use it to have custom css handles for it. | `undefined`   |
+| Prop name       | Type                                         | Description                                                    | Default value |
+| --------------- | -------------------------------------------- | -------------------------------------------------------------- | ------------- |
+| `borderless`    | `MaybeResponsiveInput<boolean>` or `boolean` | Remove the bottom border of the section                        | `false`       |
+| `marginBottom`  | `MaybeResponsiveInput<number>` or `number`   | Margin space below the section                                 | `0`           |
+| `paddingBottom` | `MaybeResponsiveInput<number>` or `number`   | Padding space below the section                                | `0`           |
+| `width`         | `MaybeResponsiveInput<string>` or `string`   | Width of the section                                           | `100%`        |
+| `name`          | `string`                                     | Name of the section. Use it to have custom css handles for it. | `undefined`   |
 
 **CSS Handles:**
 
@@ -364,7 +364,7 @@ Defines an order context to be able to render its meta information and packages.
 
 #### `op-order-number`
 
-Renders the order id number. Must be placed inside an `op-order` block.
+Renders the order id number. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
 
@@ -384,7 +384,7 @@ Renders the order id number. Must be placed inside an `op-order` block.
 
 #### `op-order-datetime`
 
-Renders the date and time an order was placed. Must be placed inside an `op-order` block.
+Renders the date and time an order was placed. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
 
@@ -404,7 +404,7 @@ Renders the date and time an order was placed. Must be placed inside an `op-orde
 
 #### `op-order-seller`
 
-Renders the seller of an order. Must be placed inside an `op-order` block.
+Renders the seller of an order. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
 
@@ -425,7 +425,7 @@ Renders the seller of an order. Must be placed inside an `op-order` block.
 
 #### `op-order-split-notice`
 
-Renders a message with the number of packages of an order if the order was split in more than one package. Must be placed inside an `op-order` block.
+Renders a message with the number of packages of an order if the order was split in more than one package. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
 
@@ -445,7 +445,7 @@ Renders a message with the number of packages of an order if the order was split
 
 #### `op-order-customer`
 
-Renders the customer information. Must be placed inside an `op-order` block.
+Renders the customer information. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
 
@@ -461,7 +461,7 @@ Renders the customer information. Must be placed inside an `op-order` block.
 
 #### `op-order-options`
 
-Renders the customer information. Must be placed inside an `op-order` block.
+Renders the customer information. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
 
@@ -485,7 +485,7 @@ Renders the customer information. Must be placed inside an `op-order` block.
 
 #### `op-order-payment`
 
-Renders the customer information. Must be placed inside an `op-order` block.
+Renders the customer information. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
 
@@ -502,54 +502,9 @@ Renders the customer information. Must be placed inside an `op-order` block.
 
 ---
 
-#### `op-order-pickup-packages`
-
-Renders an order pickup packages information and product list. Must be placed inside an `op-order` block.
-
-**Composition:** none.
-
-**CSS Handles:**
-
-| CSS Handles               | Description                                         |
-| ------------------------- | --------------------------------------------------- |
-| `package`                 | All package sections                                |
-| `package--delivery`       | The delivery package section                        |
-| `packageHeaderColumn`     | Column of header of a package section               |
-| `packageHeader`           | Header of a package section                         |
-| `packageHeader--delivery` | Header of the delivery package section              |
-| `packageShippingEstimate` | Delivery estimate `small` element                   |
-| `packageInfoWrapper`      | Wrapper of a package's information                  |
-| `packageAddressWrapper`   | Wrapper of the package shipping address             |
-| `packageReceiver`         | Name of the package's receiver                      |
-| `packageAdditionalInfo`   | Wrapper of additional information about the package |
-| `productList`             | Product list `ul` element                           |
-| `productListItem`         | Product list `li` item element                      |
-| `productWrapper`          | Wrapper of a single product                         |
-| `productImageColumn`      | Column of a product's image                         |
-| `productImageWrapper`     | Wrapper of a product's image                        |
-| `productInfoColumn`       | Column of a product's information                   |
-| `productName`             | Product's `a` element                               |
-| `productMeasurementUnit`  | Product's measurement unit `small` element          |
-| `productQuantity`         | Product's quantity `small` element                  |
-| `productPrice`            | Product's price                                     |
-| `attachmentWrapper`       | Wrapper for a product's attachment                  |
-| `attachmentHeader`        | Header of an attachment                             |
-| `attachmentTitle`         | Title of a attachment                               |
-| `attachmentToggleWrapper` | Wrapper of the toggle button of an attachment       |
-| `attachmentToggleButton`  | Button for toggling the attachment's accordion      |
-| `attachmentToggleLabel`   | Attachment's toggle label                           |
-| `attachmentContent`       | Attachment's content wrapper                        |
-| `attachmentContentItem`   | Each attachment's content paragraph                 |
-
-| Default appearance                                                 |
-| ------------------------------------------------------------------ |
-| ![op-order-pickup-packages](./images/op-order-pickup-packages.png) |
-
----
-
 #### `op-order-delivery-packages`
 
-Renders an order delivery packages information and product list. Must be placed inside an `op-order` block.
+Renders an order delivery packages information and product list. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
 
@@ -589,9 +544,33 @@ Renders an order delivery packages information and product list. Must be placed 
 
 ---
 
+#### `op-order-pickup-packages`
+
+Renders an order pickup packages information and product list. Must be placed inside an [`op-order`](#op-order) block.
+
+**Composition:** none.
+
+**CSS Handles:**
+
+_Note: Include the same CSS handles as [`op-order-delivery-packages`](#op-order-delivery-packages)_
+
+| CSS Handles             | Description                                                  |
+| ----------------------- | ------------------------------------------------------------ |
+| `package`               | All package sections                                         |
+| `package--pickup`       | The pickup package section                                   |
+| `packageInfoWrapper`    | Wrapper of a **pickup** package's information                |
+| `packageReceiver`       | Name of the package's **pickup** receiver                    |
+| `packageAdditionalInfo` | Wrapper of additional information about a **pickup** package |
+
+| Default appearance                                                 |
+| ------------------------------------------------------------------ |
+| ![op-order-pickup-packages](./images/op-order-pickup-packages.png) |
+
+---
+
 #### `op-order-total`
 
-Renders an order delivery packages information and product list. Must be placed inside an `op-order` block.
+Renders an order delivery packages information and product list. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
 
