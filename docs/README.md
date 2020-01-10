@@ -99,8 +99,8 @@ _Note: this is the default `order-placed` layout implementation._
       "op-order-split-notice",
       "op-order-customer",
       "op-section#payments",
-      "op-section#pickup-items",
-      "op-section#delivery-items",
+      "op-section#pickup-packages",
+      "op-section#delivery-packages",
       "op-order-takeaway-items",
       "op-order-total"
     ]
@@ -147,13 +147,13 @@ _Note: this is the default `order-placed` layout implementation._
       "fullWidth": true
     }
   },
-  "op-section#pickup-items": {
+  "op-section#pickup-packages": {
     "props": {
       "name": "pickupPackages"
     },
     "children": ["op-order-pickup-packages"]
   },
-  "op-section#delivery-items": {
+  "op-section#delivery-packages": {
     "props": {
       "name": "deliveryPackages"
     },
@@ -169,9 +169,9 @@ _Note: this is the default `order-placed` layout implementation._
 Main block, responsible for rendering the whole order placed page. It accepts the following blocks:
 
 - [`op-header`](#op-header)
-- [`op-order-list`](#op-order-list)
-- `order-placed-top`
-- `promotion-banner`
+- [`op-order`](#op-order)
+- [`order-placed-top` (DEPRECATED)](#order-placed-top-deprecated)
+- [`order-placed-extension` (DEPRECATED)](#order-placed-extension-deprecated)
 
 _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace them with common blocks in your `blocks.json`._
 
@@ -180,7 +180,6 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 Splits your page into separate and semantic sections.
 
 **Composition:**
-
 Accepts an array of any kind of children blocks.
 
 **Props:**
@@ -204,7 +203,8 @@ Accepts an array of any kind of children blocks.
 
 Defines the header content of the page.
 
-**Composition:** accepts an array of any kind of children blocks.
+**Composition:**
+Accepts an array of any kind of children blocks.
 
 **Props:** none.
 
@@ -315,7 +315,6 @@ If a placed order is split between delivery and pickup, renders a summary of all
 | ---------------------- | ------------------------------------------- |
 | `section--summary`     | Summary whole section                       |
 | `summaryRow`           | Row wrapper of both summary boxes           |
-| `summaryRow`           | Row wrapper of both summary boxes           |
 | `summaryCol`           | Column wrapper of each summary box          |
 | `summaryAddress`       | Wrapper of the pickup address               |
 | `summaryBox`           | Surrounding box of the summary              |
@@ -358,7 +357,8 @@ Renders the bank invoice section if payment method chosen was bank invoice.
 
 Defines an order context to be able to render its meta information and packages. Must be used to display order data.
 
-**Composition:** accepts an array of any kind of children blocks.
+**Composition:**
+Accepts an array of any kind of children blocks.
 
 **Props:** none.
 
@@ -473,9 +473,9 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 | --------------------- | ----------------------------- |
 | `orderOptionsWrapper` | Wrapper of the option buttons |
 
-| Default appearance                                           |
-| ------------------------------------------------------------ |
-| ![op-order-options](./images/op-order-options_hadg3sulo.png) |
+| Default appearance                                 |
+| -------------------------------------------------- |
+| ![op-order-options](./images/op-order-options.png) |
 
 ### `op-order-payment`
 
@@ -580,7 +580,8 @@ Renders an order delivery packages information and product list. Must be placed 
 
 Renders an extension point at the top of the page.
 
-**Composition:** accepts the following blocks:
+**Composition:**
+Accepts the following blocks:
 
 - `order-placed-extension`
 
