@@ -6,8 +6,8 @@
     "children": [
       "op-section#confirmation",
       "op-section#notices",
-      "op-summary-display-controller",
-      "op-bank-invoice"
+      "op-summary-section",
+      "op-bank-invoice-section"
     ]
   },
   "op-section#confirmation": {
@@ -44,39 +44,7 @@
     },
     "children": ["op-notices"]
   },
-  "op-summary-display-controller": {
-    "children": ["op-section#summary"]
-  },
-  "op-section#summary": {
-    "props": {
-      "name": "summary",
-      "marginBottom": 9,
-      "paddingBottom": 9,
-      "width": {
-        "desktop": "80%",
-        "mobile": "90%"
-      }
-    },
-    "children": ["flex-layout.row#summary"]
-  },
-  "flex-layout.row#summary": {
-    "props": {
-      "fullWidth": true,
-      "colSizing": "equal",
-      "colGap": 4,
-      "rowGap": 4
-    },
-    "children": [
-      "flex-layout.col#delivery-summary",
-      "flex-layout.col#pickup-summary"
-    ]
-  },
-  "flex-layout.col#delivery-summary": {
-    "children": ["op-delivery-summary"]
-  },
-  "flex-layout.col#pickup-summary": {
-    "children": ["op-pickup-summary"]
-  },
+  // each order section
   "op-order": {
     "children": [
       "flex-layout.row#order-header",

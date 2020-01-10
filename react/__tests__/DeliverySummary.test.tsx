@@ -1,6 +1,6 @@
 import React from 'react'
 
-import DeliverySummary from '../DeliverySummary'
+import DeliverySummary from '../components/DeliverySummary'
 import { orderGroupQuery as fiftyItemOrder } from '../mocks/fiftyItemOrder'
 import { renderWithOrderGroup } from '../utils/testUtils'
 
