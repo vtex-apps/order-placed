@@ -120,12 +120,11 @@ it('should render notice for bank invoices without due date', () => {
 })
 
 it('redirects to login if the user is not logged in.', () => {
-  const { queryByTestId } = renderWithOrderGroup(
+  const { container } = renderWithOrderGroup(
     bankInvoiceNotLoggedIn.orderGroup,
     <OrderPlacedNotices />
   )
 
-  const printButton = queryByTestId('button-link') as HTMLAnchorElement
-
+  const printButton = container.querySelector('a[href]') as HTMLAnchorElement
   expect(printButton.href.includes('login')).toBe(true)
 })

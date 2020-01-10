@@ -68,12 +68,11 @@ it('renders bank invoice barcode number for user not logged in', () => {
 })
 
 it('has the invoice url if the user is logged in.', () => {
-  const { queryByTestId } = renderWithOrderGroup(
+  const { container } = renderWithOrderGroup(
     bankInvoiceLoggedIn.orderGroup,
     <BankInvoiceSection />
   )
 
-  const printButton = queryByTestId('button-link') as HTMLAnchorElement
-
+  const printButton = container.querySelector('a[href]') as HTMLAnchorElement
   expect(printButton.href.includes('login')).toBe(false)
 })

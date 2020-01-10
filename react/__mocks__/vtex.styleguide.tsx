@@ -1,37 +1,31 @@
-import React, { Component } from 'react'
+import React, { FC } from 'react'
 
-export class Button extends Component {
-  public render() {
-    return <button>{this.props.children}</button>
-  }
+export const Button: FC<{ href?: string }> = props => {
+  if (props.href)
+    return (
+      <a href={props.href}>
+        <button>{props.children}</button>
+      </a>
+    )
+  return <button>{props.children}</button>
 }
 
-export class ButtonWithIcon extends Component {
-  public render() {
-    return <button>{this.props.children}</button>
-  }
+export const ButtonWithIcon: FC = props => {
+  return <Button {...props}>{props.children}</Button>
 }
 
-export class IconCaretDown extends Component {
-  public render() {
-    return <div data-testid="icon-caret-down">IconCaretDown</div>
-  }
+export const IconCaretDown: FC = () => {
+  return <div data-testid="icon-caret-down">IconCaretDown</div>
 }
 
-export class IconCaretUp extends Component {
-  public render() {
-    return <div data-testid="icon-caret-up">IconCaretUp</div>
-  }
+export const IconCaretUp: FC = () => {
+  return <div data-testid="icon-caret-up">IconCaretUp</div>
 }
 
-export class PageBlock extends Component {
-  public render() {
-    return <div data-testid="summary">PageBlock</div>
-  }
+export const PageBlock: FC = () => {
+  return <div data-testid="summary">PageBlock</div>
 }
 
-export class Alert extends Component {
-  public render() {
-    return <div data-testid="alert">{this.props.children}</div>
-  }
+export const Alert: FC = props => {
+  return <div data-testid="alert">{props.children}</div>
 }
