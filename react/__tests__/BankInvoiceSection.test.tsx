@@ -4,16 +4,16 @@ import { orderGroupQuery as bankInvoiceLoggedIn } from '../mocks/bankInvoiceLogg
 import { orderGroupQuery as bankInvoiceNotLoggedIn } from '../mocks/bankInvoiceNotLoggedIn'
 import { orderGroupQuery as bankInvoiceNumberLoggedIn } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as bankInvoiceNumberNotLoggedIn } from '../mocks/bankInvoiceNumberNotLoggedIn'
-import OrderPlacedBankInvoice from '../BankInvoice'
+import BankInvoiceSection from '../BankInvoiceSection'
 import { renderWithOrderGroup } from '../utils/testUtils'
 
 it('renders embedded bank invoice for logged in customer, but no number', () => {
   const { getByTestId, queryByTestId } = renderWithOrderGroup(
     bankInvoiceLoggedIn.orderGroup,
-    <OrderPlacedBankInvoice />
+    <BankInvoiceSection />
   )
 
-  const bankInvoiceSection = getByTestId('bank-invoice-info')
+  const bankInvoiceSection = getByTestId('bank-invoice')
   const barCodeNumber = queryByTestId('bank-invoice-barcode')
   const embedded = queryByTestId('embedded-bank-invoice')
 
@@ -25,10 +25,10 @@ it('renders embedded bank invoice for logged in customer, but no number', () => 
 it('renders embedded bank invoice for logged in customer, along with barcode number', () => {
   const { getByTestId, queryByTestId } = renderWithOrderGroup(
     bankInvoiceNumberLoggedIn.orderGroup,
-    <OrderPlacedBankInvoice />
+    <BankInvoiceSection />
   )
 
-  const bankInvoiceSection = getByTestId('bank-invoice-info')
+  const bankInvoiceSection = getByTestId('bank-invoice')
   const barCodeNumber = queryByTestId('bank-invoice-barcode')
   const embedded = queryByTestId('embedded-bank-invoice')
 
@@ -40,10 +40,10 @@ it('renders embedded bank invoice for logged in customer, along with barcode num
 it("doesn't render bank invoice section for customer not logged in", () => {
   const { queryByTestId } = renderWithOrderGroup(
     bankInvoiceNotLoggedIn.orderGroup,
-    <OrderPlacedBankInvoice />
+    <BankInvoiceSection />
   )
 
-  const bankInvoiceSection = queryByTestId('bank-invoice-info')
+  const bankInvoiceSection = queryByTestId('bank-invoice')
   const barCodeNumber = queryByTestId('bank-invoice-barcode')
   const embedded = queryByTestId('embedded-bank-invoice')
 
@@ -55,10 +55,10 @@ it("doesn't render bank invoice section for customer not logged in", () => {
 it('renders bank invoice barcode number for user not logged in', () => {
   const { queryByTestId } = renderWithOrderGroup(
     bankInvoiceNumberNotLoggedIn.orderGroup,
-    <OrderPlacedBankInvoice />
+    <BankInvoiceSection />
   )
 
-  const bankInvoiceSection = queryByTestId('bank-invoice-info')
+  const bankInvoiceSection = queryByTestId('bank-invoice')
   const barCodeNumber = queryByTestId('bank-invoice-barcode')
   const embedded = queryByTestId('embedded-bank-invoice')
 
@@ -70,7 +70,7 @@ it('renders bank invoice barcode number for user not logged in', () => {
 it('has the invoice url if the user is logged in.', () => {
   const { queryByTestId } = renderWithOrderGroup(
     bankInvoiceLoggedIn.orderGroup,
-    <OrderPlacedBankInvoice />
+    <BankInvoiceSection />
   )
 
   const printButton = queryByTestId('button-link') as HTMLAnchorElement
