@@ -3,7 +3,7 @@ import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
 import ErrorMessage from './ErrorMessage'
-import NotFound from '../../icons/NotFound'
+import NotFound from '../../Icons/NotFound'
 
 const messages = defineMessages({
   invalidTitle: {
