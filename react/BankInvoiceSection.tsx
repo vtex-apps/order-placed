@@ -2,13 +2,14 @@ import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { ButtonLink } from 'vtex.order-details'
 
-import PrinterIcon from './icons/PrinterIcon'
+import PrinterIcon from './Icons/PrinterIcon'
 import BarCode from './components/BankInvoice/BarCode'
 import Embedded from './components/BankInvoice/Embedded'
 import { useOrderGroup } from './components/OrderGroupContext'
 import { getPaymentInfoFromOrder, parseBankInvoiceUrl } from './utils'
+import Section from './Section'
 
-const OrderPlacedBankInvoice: FC = () => {
+const BankInvoiceSection: FC = () => {
   const orderGroup = useOrderGroup()
   const paymentInfo = getPaymentInfoFromOrder(orderGroup.orders[0])
 
@@ -26,9 +27,11 @@ const OrderPlacedBankInvoice: FC = () => {
   const parsedUrl = url ? parseBankInvoiceUrl(url) : ''
 
   return (
-    <section
-      data-testid="bank-invoice-info"
-      className="mv9 pb9 w-80-ns w-90 center bb b--muted-5"
+    <Section
+      name="bank-invoice"
+      marginBottom={9}
+      paddingBottom={9}
+      width={{ mobile: '90%', desktop: '80%' }}
     >
       <header className="t-heading-4">
         <FormattedMessage
@@ -59,8 +62,8 @@ const OrderPlacedBankInvoice: FC = () => {
           <Embedded url={parsedUrl} />
         </div>
       )}
-    </section>
+    </Section>
   )
 }
 
-export default OrderPlacedBankInvoice
+export default BankInvoiceSection
