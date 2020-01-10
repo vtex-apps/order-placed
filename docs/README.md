@@ -7,30 +7,30 @@
 <!-- code_chunk_output -->
 
 - [Configuration](#configuration)
-  - [Blocks](#blocks)
-    - [`order-placed`](#order-placed-1)
-    - [`op-section`](#op-section)
-    - [`op-header`](#op-header)
-    - [`op-confirmation-icon`](#op-confirmation-icon)
-    - [`op-confirmation-title`](#op-confirmation-title)
-    - [`op-confirmation-message`](#op-confirmation-message)
-    - [`op-print-button`](#op-print-button)
-    - [`op-notices`](#op-notices)
-    - [`op-summary-section`](#op-summary-section)
-    - [`op-bank-invoice-section`](#op-bank-invoice-section)
-    - [`op-order`](#op-order)
-    - [`op-order-number`](#op-order-number)
-    - [`op-order-datetime`](#op-order-datetime)
-    - [`op-order-seller`](#op-order-seller)
-    - [`op-order-split-notice`](#op-order-split-notice)
-    - [`op-order-customer`](#op-order-customer)
-    - [`op-order-options`](#op-order-options)
-    - [`op-order-payment`](#op-order-payment)
-    - [`op-order-delivery-packages`](#op-order-delivery-packages)
-    - [`op-order-pickup-packages`](#op-order-pickup-packages)
-    - [`op-order-total`](#op-order-total)
-    - [`order-placed-top` (DEPRECATED)](#order-placed-top-deprecated)
-    - [`order-placed-extension` (DEPRECATED)](#order-placed-extension-deprecated)
+- [Blocks](#blocks)
+  - [`order-placed`](#order-placed-1)
+  - [`op-section`](#op-section)
+  - [`op-header`](#op-header)
+  - [`op-confirmation-icon`](#op-confirmation-icon)
+  - [`op-confirmation-title`](#op-confirmation-title)
+  - [`op-confirmation-message`](#op-confirmation-message)
+  - [`op-print-button`](#op-print-button)
+  - [`op-notices`](#op-notices)
+  - [`op-summary-section`](#op-summary-section)
+  - [`op-bank-invoice-section`](#op-bank-invoice-section)
+  - [`op-order`](#op-order)
+  - [`op-order-number`](#op-order-number)
+  - [`op-order-datetime`](#op-order-datetime)
+  - [`op-order-seller`](#op-order-seller)
+  - [`op-order-split-notice`](#op-order-split-notice)
+  - [`op-order-customer`](#op-order-customer)
+  - [`op-order-options`](#op-order-options)
+  - [`op-order-payment`](#op-order-payment)
+  - [`op-order-delivery-packages`](#op-order-delivery-packages)
+  - [`op-order-pickup-packages`](#op-order-pickup-packages)
+  - [`op-order-total`](#op-order-total)
+  - [`order-placed-top` (DEPRECATED)](#order-placed-top-deprecated)
+  - [`order-placed-extension` (DEPRECATED)](#order-placed-extension-deprecated)
 - [Customization](#customization)
 - [Contributing](#contributing)
 
@@ -38,15 +38,9 @@
 
 ## Configuration
 
-1. Import the modal layout's app to your theme's dependencies in the `manifest.json`, for example:
+The `order-placed` app comes already installed on all stores and with it, it's possible to build your own page with the blocks exported by the app.
 
-```jsonc
-{
-  "vtex.order-placed": "1.x"
-}
-```
-
-2. Now you can build your own order placed page with the blocks exported by the app. First, you have to define a `order-placed` block, i.e inside your `store/blocks` directory:
+After defining a `order-placed` block inside your `store/blocks` directory or in your `blocks.json` file, the page can be constructed with [blocks](#blocks) and customized with [css handles](#css-handles).
 
 _Note: this is the default `order-placed` layout implementation._
 
@@ -168,9 +162,9 @@ _Note: this is the default `order-placed` layout implementation._
 }
 ```
 
-### Blocks
+## Blocks
 
-#### `order-placed`
+### `order-placed`
 
 Main block, responsible for rendering the whole order placed page. It accepts the following blocks:
 
@@ -181,9 +175,7 @@ Main block, responsible for rendering the whole order placed page. It accepts th
 
 _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace them with common blocks in your `blocks.json`._
 
----
-
-#### `op-section`
+### `op-section`
 
 Splits your page into separate and semantic sections.
 
@@ -208,9 +200,7 @@ Accepts an array of any kind of children blocks.
 | `section`         | All section blocks   |
 | `section--{name}` | Section named `name` |
 
----
-
-#### `op-header`
+### `op-header`
 
 Defines the header content of the page.
 
@@ -224,9 +214,7 @@ Defines the header content of the page.
 | ------------------- | --------------- |
 | `orderPlacedHeader` | The page header |
 
----
-
-#### `op-confirmation-icon`
+### `op-confirmation-icon`
 
 Renders the confirmation icon.
 
@@ -244,9 +232,7 @@ Renders the confirmation icon.
 | ---------------------------------------------------------- |
 | ![op-confirmation-icon](./images/op-confirmation-icon.png) |
 
----
-
-#### `op-confirmation-title`
+### `op-confirmation-title`
 
 Renders the confirmation title.
 
@@ -264,9 +250,7 @@ Renders the confirmation title.
 | ------------------------------------------------------------ |
 | ![op-confirmation-title](./images/op-confirmation-title.png) |
 
----
-
-#### `op-confirmation-message`
+### `op-confirmation-message`
 
 Renders the confirmation message, containing the clients email.
 
@@ -284,9 +268,7 @@ Renders the confirmation message, containing the clients email.
 | ---------------------------------------------------------------- |
 | ![op-confirmation-message](./images/op-confirmation-message.png) |
 
----
-
-#### `op-print-button`
+### `op-print-button`
 
 Renders a button that triggers a full page print.
 
@@ -300,9 +282,7 @@ Renders a button that triggers a full page print.
 | ---------------------------------- |
 | ![op-print](./images/op-print.png) |
 
----
-
-#### `op-notices`
+### `op-notices`
 
 Renders a list of important informations relevant to the currently placed order. The messages may vary according to the type of order.
 
@@ -321,9 +301,7 @@ Renders a list of important informations relevant to the currently placed order.
 | -------------------------------------- |
 | ![op-notices](./images/op-notices.png) |
 
----
-
-#### `op-summary-section`
+### `op-summary-section`
 
 If a placed order is split between delivery and pickup, renders a summary of all pickup and delivery packages with informations such as number of items, packages, pickup/delivery address and pickup/delivery SLA.
 
@@ -352,9 +330,7 @@ If a placed order is split between delivery and pickup, renders a summary of all
 | ------------------------------------------------------ |
 | ![op-summary-section](./images/op-summary-section.png) |
 
----
-
-#### `op-bank-invoice-section`
+### `op-bank-invoice-section`
 
 Renders the bank invoice section if payment method chosen was bank invoice.
 
@@ -378,9 +354,7 @@ Renders the bank invoice section if payment method chosen was bank invoice.
 | ---------------------------------------------------------------- |
 | ![op-bank-invoice-section](./images/op-bank-invoice-section.png) |
 
----
-
-#### `op-order`
+### `op-order`
 
 Defines an order context to be able to render its meta information and packages. Must be used to display order data.
 
@@ -394,9 +368,7 @@ Defines an order context to be able to render its meta information and packages.
 | -------------- | ------------------------------------------------- |
 | `orderWrapper` | Wrapper of an order meta information and packages |
 
----
-
-#### `op-order-number`
+### `op-order-number`
 
 Renders the order id number. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -414,9 +386,7 @@ Renders the order id number. Must be placed inside an [`op-order`](#op-order) bl
 | ------------------------------------------------ |
 | ![op-order-number](./images/op-order-number.png) |
 
----
-
-#### `op-order-datetime`
+### `op-order-datetime`
 
 Renders the date and time an order was placed. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -434,9 +404,7 @@ Renders the date and time an order was placed. Must be placed inside an [`op-ord
 | ---------------------------------------------------- |
 | ![op-order-datetime](./images/op-order-datetime.png) |
 
----
-
-#### `op-order-seller`
+### `op-order-seller`
 
 Renders the seller of an order. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -455,9 +423,7 @@ Renders the seller of an order. Must be placed inside an [`op-order`](#op-order)
 | ------------------------------------------------ |
 | ![op-order-seller](./images/op-order-seller.png) |
 
----
-
-#### `op-order-split-notice`
+### `op-order-split-notice`
 
 Renders a message with the number of packages of an order if the order was split in more than one package. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -475,9 +441,7 @@ Renders a message with the number of packages of an order if the order was split
 | ------------------------------------------------------------ |
 | ![op-order-split-notice](./images/op-order-split-notice.png) |
 
----
-
-#### `op-order-customer`
+### `op-order-customer`
 
 Renders the customer information. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -491,9 +455,7 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 | ---------------------------------------------------- |
 | ![op-order-customer](./images/op-order-customer.png) |
 
----
-
-#### `op-order-options`
+### `op-order-options`
 
 Renders the customer information. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -515,9 +477,7 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 | ------------------------------------------------------------ |
 | ![op-order-options](./images/op-order-options_hadg3sulo.png) |
 
----
-
-#### `op-order-payment`
+### `op-order-payment`
 
 Renders the customer information. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -534,9 +494,7 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 | -------------------------------------------------- |
 | ![op-order-payment](./images/op-order-payment.png) |
 
----
-
-#### `op-order-delivery-packages`
+### `op-order-delivery-packages`
 
 Renders an order delivery packages information and product list. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -576,9 +534,7 @@ Renders an order delivery packages information and product list. Must be placed 
 | ---------------------------------------------------------------------- |
 | ![op-order-delivery-packages](./images/op-order-delivery-packages.png) |
 
----
-
-#### `op-order-pickup-packages`
+### `op-order-pickup-packages`
 
 Renders an order pickup packages information and product list. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -600,9 +556,7 @@ _Note: Include the same CSS handles as [`op-order-delivery-packages`](#op-order-
 | ------------------------------------------------------------------ |
 | ![op-order-pickup-packages](./images/op-order-pickup-packages.png) |
 
----
-
-#### `op-order-total`
+### `op-order-total`
 
 Renders an order delivery packages information and product list. Must be placed inside an [`op-order`](#op-order) block.
 
@@ -622,9 +576,7 @@ Renders an order delivery packages information and product list. Must be placed 
 | ---------------------------------------------- |
 | ![op-order-total](./images/op-order-total.png) |
 
----
-
-#### `order-placed-top` (DEPRECATED)
+### `order-placed-top` (DEPRECATED)
 
 Renders an extension point at the top of the page.
 
@@ -632,9 +584,7 @@ Renders an extension point at the top of the page.
 
 - `order-placed-extension`
 
----
-
-#### `order-placed-extension` (DEPRECATED)
+### `order-placed-extension` (DEPRECATED)
 
 Allows to render a component at the top of the page.
 
