@@ -51,8 +51,8 @@
       "op-order-split-notice",
       "op-order-customer",
       "op-section#payments",
-      "op-section#pickup-items",
-      "op-section#delivery-items",
+      "op-section#pickup-packages",
+      "op-section#delivery-packages",
       "op-order-takeaway-items",
       "op-order-total"
     ]
@@ -99,13 +99,13 @@
       "fullWidth": true
     }
   },
-  "op-section#pickup-items": {
+  "op-section#pickup-packages": {
     "props": {
       "name": "pickupPackages"
     },
     "children": ["op-order-pickup-packages"]
   },
-  "op-section#delivery-items": {
+  "op-section#delivery-packages": {
     "props": {
       "name": "deliveryPackages"
     },
