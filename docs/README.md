@@ -185,13 +185,13 @@ Accepts an array of any kind of children blocks.
 
 **Props:**
 
-| Prop name       | Type                                         | Description                                                    | Default value |
-| --------------- | -------------------------------------------- | -------------------------------------------------------------- | ------------- |
-| `borderless`    | `MaybeResponsiveInput<boolean>` or `boolean` | Remove the bottom border of the section                        | `false`       |
-| `marginBottom`  | `MaybeResponsiveInput<number>` or `number`   | Margin space below the section                                 | `0`           |
-| `paddingBottom` | `MaybeResponsiveInput<number>` or `number`   | Padding space below the section                                | `0`           |
-| `width`         | `MaybeResponsiveInput<string>` or `string`   | Width of the section                                           | `100%`        |
-| `name`          | `string`                                     | Name of the section. Use it to have custom css handles for it. | `undefined`   |
+| Prop name       | Type                                             | Description                                                    | Default value |
+| --------------- | ------------------------------------------------ | -------------------------------------------------------------- | ------------- |
+| `borderless`    | `MaybeResponsiveInput<boolean>` &#124; `boolean` | Remove the bottom border of the section                        | `false`       |
+| `marginBottom`  | `MaybeResponsiveInput<number>` &#124; `number`   | Margin space below the section                                 | `0`           |
+| `paddingBottom` | `MaybeResponsiveInput<number>` &#124; `number`   | Padding space below the section                                | `0`           |
+| `width`         | `MaybeResponsiveInput<string>` &#124; `string`   | Width of the section                                           | `100%`        |
+| `name`          | `string`                                         | Name of the section. Use it to have custom css handles for it. | `undefined`   |
 
 **CSS Handles:**
 
