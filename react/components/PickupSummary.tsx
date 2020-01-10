@@ -2,10 +2,10 @@ import React, { FC } from 'react'
 import estimateCalculator from '@vtex/estimate-calculator'
 import { FormattedMessage } from 'react-intl'
 
-import { useOrderGroup } from './components/OrderGroupContext'
-import SummaryBox from './components/SummaryBox'
+import { useOrderGroup } from './OrderGroupContext'
+import SummaryBox from './SummaryBox'
 
-const OrderPlacedSummary: FC = () => {
+const PickupSummary: FC = () => {
   const { totalPickUpParcels } = useOrderGroup()
 
   if (totalPickUpParcels.length === 0) {
@@ -50,4 +50,4 @@ const OrderPlacedSummary: FC = () => {
   )
 }
 
-export default OrderPlacedSummary
+export default PickupSummary

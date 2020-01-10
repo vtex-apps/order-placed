@@ -34,19 +34,11 @@
   "op-notices": {
     "component": "Notices"
   },
-  "op-summary-display-controller": {
-    "component": "SummaryDisplayController",
-    "composition": "children",
-    "allowed": "*"
+  "op-summary-section": {
+    "component": "SummarySection"
   },
-  "op-pickup-summary": {
-    "component": "PickupSummary"
-  },
-  "op-delivery-summary": {
-    "component": "DeliverySummary"
-  },
-  "op-bank-invoice": {
-    "component": "BankInvoice"
+  "op-bank-invoice-section": {
+    "component": "BankInvoiceSection"
   },
   "op-order": {
     "component": "Order",

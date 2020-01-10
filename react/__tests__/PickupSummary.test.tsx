@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PickupSummary from '../PickupSummary'
+import PickupSummary from '../components/PickupSummary'
 import { orderGroupQuery as fiftyItemOrder } from '../mocks/fiftyItemOrder'
 import { renderWithOrderGroup } from '../utils/testUtils'
 
