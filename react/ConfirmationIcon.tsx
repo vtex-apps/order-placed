@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
-import SuccessIcon from './icons/Success'
+import SuccessIcon from './Icons/Success'
 
 const CSS_HANDLES = ['confirmationIconWrapper']
 
