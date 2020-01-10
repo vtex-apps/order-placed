@@ -14,7 +14,7 @@ import ForbiddenError from './components/Errors/ForbiddenError'
 import InvalidError from './components/Errors/InvalidError'
 // to load default css handle styles
 import './styles.css'
-import { orderGroupQuery } from './mocks/pickupAndDelivery'
+import { orderGroupQuery } from './mocks/bankInvoiceNumberLoggedIn'
 import OrderList from './components/OrderList'
 
 interface OrderGroupData {

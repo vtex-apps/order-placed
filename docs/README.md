@@ -26,8 +26,8 @@ _Note: this is the default `order-placed` layout implementation._
     "children": [
       "op-section#confirmation",
       "op-section#notices",
-      "op-section#summary",
-      "op-bank-invoice"
+      "op-summary-section",
+      "op-bank-invoice-section"
     ]
   },
   "op-section#confirmation": {
@@ -64,36 +64,7 @@ _Note: this is the default `order-placed` layout implementation._
     },
     "children": ["op-notices"]
   },
-  "op-section#summary": {
-    "props": {
-      "name": "summary",
-      "marginBottom": 9,
-      "paddingBottom": 9,
-      "width": {
-        "desktop": "80%",
-        "mobile": "90%"
-      }
-    },
-    "children": ["flex-layout.row#summary"]
-  },
-  "flex-layout.row#summary": {
-    "props": {
-      "fullWidth": true,
-      "colSizing": "equal",
-      "colGap": 4,
-      "rowGap": 4
-    },
-    "children": [
-      "flex-layout.col#delivery-summary",
-      "flex-layout.col#pickup-summary"
-    ]
-  },
-  "flex-layout.col#delivery-summary": {
-    "children": ["op-delivery-summary"]
-  },
-  "flex-layout.col#pickup-summary": {
-    "children": ["op-pickup-summary"]
-  },
+  // each order section
   "op-order": {
     "children": [
       "flex-layout.row#order-header",
@@ -150,13 +121,13 @@ _Note: this is the default `order-placed` layout implementation._
   },
   "op-section#pickup-items": {
     "props": {
-      "name": "pickupItems"
+      "name": "pickupPackages"
     },
     "children": ["op-order-pickup-packages"]
   },
   "op-section#delivery-items": {
     "props": {
-      "name": "deliveryItems"
+      "name": "deliveryPackages"
     },
     "children": ["op-order-delivery-packages"]
   }
@@ -167,9 +138,11 @@ _Note: this is the default `order-placed` layout implementation._
 
 #### `order-placed`
 
-> Main block, responsible for rendering the whole order placed page.
+Main block, responsible for rendering the whole order placed page.
 
-**Composition:** accepts the following blocks:
+**Composition:**
+
+The main order placed block accepts the following blocks:
 
 - `op-header`
 - `op-order-list`
@@ -178,9 +151,11 @@ _Note: this is the default `order-placed` layout implementation._
 
 _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace them with common blocks in your `blocks.json`._
 
+---
+
 #### `op-section`
 
-> Splits your page into separate and semantic sections.
+Splits your page into separate and semantic sections.
 
 **Composition:** accepts an array of any kind of children blocks.
 
@@ -201,9 +176,11 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | `section`         | All section blocks   |
 | `section--{name}` | Section named `name` |
 
+---
+
 #### `op-header`
 
-> Defines the header content of the page.
+Defines the header content of the page.
 
 **Composition:** accepts an array of any kind of children blocks.
 
@@ -215,9 +192,11 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | ------------------- | --------------- |
 | `orderPlacedHeader` | The page header |
 
+---
+
 #### `op-confirmation-icon`
 
-> Renders the confirmation icon.
+Renders the confirmation icon.
 
 **Composition:** none.
 
@@ -229,13 +208,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | ------------------------- | ------------ |
 | `confirmationIconWrapper` | Icon wrapper |
 
-**Default appearance:**
+| Default appearance                                         |
+| ---------------------------------------------------------- |
+| ![op-confirmation-icon](./images/op-confirmation-icon.png) |
 
-![op-confirmation-icon](./images/op-confirmation-icon.png)
+---
 
 #### `op-confirmation-title`
 
-> Renders the confirmation title.
+Renders the confirmation title.
 
 **Composition:** none.
 
@@ -247,13 +228,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | ------------------- | ------------------------------- |
 | `confirmationTitle` | Confirmation title `h4` element |
 
-**Default appearance:**
+| Default appearance                                           |
+| ------------------------------------------------------------ |
+| ![op-confirmation-title](./images/op-confirmation-title.png) |
 
-![op-confirmation-title](./images/op-confirmation-title.png)
+---
 
 #### `op-confirmation-message`
 
-> Renders the confirmation message, containing the clients email.
+Renders the confirmation message, containing the clients email.
 
 **Composition:** none.
 
@@ -265,13 +248,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | --------------------- | -------------------------------- |
 | `confirmationMessage` | Confirmation message `p` element |
 
-**Default appearance:**
+| Default appearance                                               |
+| ---------------------------------------------------------------- |
+| ![op-confirmation-message](./images/op-confirmation-message.png) |
 
-![op-confirmation-message].(imagesassets/op-confirmation-message_9udwhdf64.png)
+---
 
 #### `op-print-button`
 
-> Renders a button that triggers a full page print.
+Renders a button that triggers a full page print.
 
 **Composition:** none.
 
@@ -279,13 +264,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 
 **CSS Handles:**: none.
 
-**Default appearance:**
+| Default appearance                 |
+| ---------------------------------- |
+| ![op-print](./images/op-print.png) |
 
-![op-print](./images/op-print.png)
+---
 
 #### `op-notices`
 
-> Renders a list of important informations relevant to the currently placed order. The messages may vary according to the type of order.
+Renders a list of important informations relevant to the currently placed order. The messages may vary according to the type of order.
 
 **Composition:** none.
 
@@ -298,37 +285,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | `noticesList`    | List `ul` element           |
 | `noticeListItem` | Each list `li` item element |
 
-**Default appearance:**
+| Default appearance                     |
+| -------------------------------------- |
+| ![op-notices](./images/op-notices.png) |
 
-![op-notices](./images/op-notices.png)
+---
 
-#### `op-pickup-summary`
+#### `op-summary-section`
 
-> If a placed order is split between delivery and pickup, renders a summary of all pickup packages with informations such as number of items, packages, pickup address and pickup SLA.
-
-**Composition:** none.
-
-**Props:** none.
-
-**CSS Handles:**
-
-| CSS Handle           | Description                                 |
-| -------------------- | ------------------------------------------- |
-| `summaryBox`         | Surrounding box of the summary              |
-| `summaryBox--pickup` | Surrounding box of the pickup summary       |
-| `summaryContent`     | Wrapper of the whole content of the box     |
-| `summaryAddress`     | Wrapper of the pickup address               |
-| `summaryItems`       | Wrapper of the number of items and packages |
-| `summaryShippingSLA` | Wrapper of the shipping SLA information     |
-| `summaryTitle`       | Box `h5` title element                      |
-
-**Default appearance:**
-
-![op-pickup-summary](./images/op-pickup-summary.png)
-
-#### `op-delivery-summary`
-
-> If a placed order is split between delivery and pickup, renders a summary of all delivery packages with informations such as number of items, packages, delivery address and shipping SLA.
+If a placed order is split between delivery and pickup, renders a summary of all pickup and delivery packages with informations such as number of items, packages, pickup/delivery address and pickup/delivery SLA.
 
 **Composition:** none.
 
@@ -338,21 +303,28 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 
 | CSS Handle             | Description                                 |
 | ---------------------- | ------------------------------------------- |
+| `section--summary`     | Summary whole section                       |
+| `summaryRow`           | Row wrapper of both summary boxes           |
+| `summaryRow`           | Row wrapper of both summary boxes           |
+| `summaryCol`           | Column wrapper of each summary box          |
+| `summaryAddress`       | Wrapper of the pickup address               |
 | `summaryBox`           | Surrounding box of the summary              |
 | `summaryBox--delivery` | Surrounding box of the delivery summary     |
+| `summaryBox--pickup`   | Surrounding box of the pickup summary       |
 | `summaryContent`       | Wrapper of the whole content of the box     |
-| `summaryAddress`       | Wrapper of the delivery address             |
 | `summaryItems`         | Wrapper of the number of items and packages |
 | `summaryShippingSLA`   | Wrapper of the shipping SLA information     |
 | `summaryTitle`         | Box `h5` title element                      |
 
-**Default appearance:**
+| Default appearance                                     |
+| ------------------------------------------------------ |
+| ![op-summary-section](./images/op-summary-section.png) |
 
-![op-pickup-summary](./images/op-pickup-summary.png)
+---
 
-#### `op-bank-invoice`
+#### `op-bank-invoice-section`
 
-> Renders the bank invoice and bank invoice number if payment method chosen was bank invoice.
+Renders the bank invoice section if payment method chosen was bank invoice.
 
 **Composition:** none.
 
@@ -362,6 +334,7 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 
 | CSS Handle                   | Description                                   |
 | ---------------------------- | --------------------------------------------- |
+| `section--bankInvoice`       | Bank invoice whole section                    |
 | `barCodeWrapper`             | Wrapper of the barcode number and copy button |
 | `barCodeNumber`              | Barcode number element                        |
 | `barCodeCopyButtonWrapper`   | Wrapper of the copy button                    |
@@ -369,9 +342,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | `bankInvoiceEmbedBackground` | Background of the bank invoice iframe         |
 | `bankInvoiceEmbed`           | Embed of the bank invoice PDF                 |
 
+| Default appearance                                               |
+| ---------------------------------------------------------------- |
+| ![op-bank-invoice-section](./images/op-bank-invoice-section.png) |
+
+---
+
 #### `op-order`
 
-> Defines an order context to be able to render its meta information and packages. Must be used to display order data.
+Defines an order context to be able to render its meta information and packages. Must be used to display order data.
 
 **Composition:** accepts an array of any kind of children blocks.
 
@@ -383,9 +362,11 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | -------------- | ------------------------------------------------- |
 | `orderWrapper` | Wrapper of an order meta information and packages |
 
+---
+
 #### `op-order-number`
 
-> Renders the order id number. Must be placed inside an `op-order` block.
+Renders the order id number. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -397,13 +378,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | ------------- | ------------------------- |
 | `orderNumber` | Order number `h3` element |
 
-**Default appearance:**
+| Default appearance                               |
+| ------------------------------------------------ |
+| ![op-order-number](./images/op-order-number.png) |
 
-![op-order-number](./images/op-order-number.png)
+---
 
 #### `op-order-datetime`
 
-> Renders the date and time an order was placed. Must be placed inside an `op-order` block.
+Renders the date and time an order was placed. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -415,13 +398,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | --------------- | ----------------------------------- |
 | `orderDatetime` | Order date and time `small` element |
 
-**Default appearance:**
+| Default appearance                                   |
+| ---------------------------------------------------- |
+| ![op-order-datetime](./images/op-order-datetime.png) |
 
-![op-order-datetime](./images/op-order-datetime.png)
+---
 
 #### `op-order-seller`
 
-> Renders the seller of an order. Must be placed inside an `op-order` block.
+Renders the seller of an order. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -434,13 +419,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | `orderSoldBy` | Seller phrase `small` element |
 | `orderSeller` | Seller name `span` element    |
 
-**Default appearance:**
+| Default appearance                               |
+| ------------------------------------------------ |
+| ![op-order-seller](./images/op-order-seller.png) |
 
-![op-order-seller](./images/op-order-seller.png)
+---
 
 #### `op-order-split-notice`
 
-> Renders a message with the number of packages of an order if the order was split in more than one package. Must be placed inside an `op-order` block.
+Renders a message with the number of packages of an order if the order was split in more than one package. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -452,13 +439,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | ------------- | ------------------------------ |
 | `splitNotice` | Wrapper of the message element |
 
-**Default appearance:**
+| Default appearance                                           |
+| ------------------------------------------------------------ |
+| ![op-order-split-notice](./images/op-order-split-notice.png) |
 
-![op-order-split-notice](./images/op-order-split-notice.png)
+---
 
 #### `op-order-customer`
 
-> Renders the customer information. Must be placed inside an `op-order` block.
+Renders the customer information. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -466,13 +455,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 
 **CSS Handles:** none.
 
-**Default appearance:**
+| Default appearance                                   |
+| ---------------------------------------------------- |
+| ![op-order-customer](./images/op-order-customer.png) |
 
-![op-order-customer](./images/op-order-customer.png)
+---
 
 #### `op-order-options`
 
-> Renders the customer information. Must be placed inside an `op-order` block.
+Renders the customer information. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -488,13 +479,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | --------------------- | ----------------------------- |
 | `orderOptionsWrapper` | Wrapper of the option buttons |
 
-**Default appearance:**
+| Default appearance                                           |
+| ------------------------------------------------------------ |
+| ![op-order-options](./images/op-order-options_hadg3sulo.png) |
 
-![op-order-options](./images/op-order-options_hadg3sulo.png)
+---
 
 #### `op-order-payment`
 
-> Renders the customer information. Must be placed inside an `op-order` block.
+Renders the customer information. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -505,13 +498,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | `orderPaymentWrapper` | Wrapper of the payment methods list |
 | `orderPaymentItem`    | Wrapper of each payment method item |
 
-**Default appearance:**
+| Default appearance                                 |
+| -------------------------------------------------- |
+| ![op-order-payment](./images/op-order-payment.png) |
 
-![op-order-payment](./images/op-order-payment.png)
+---
 
 #### `op-order-pickup-packages`
 
-> Renders an order pickup packages information and product list. Must be placed inside an `op-order` block.
+Renders an order pickup packages information and product list. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -548,13 +543,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | `attachmentContent`       | Attachment's content wrapper                        |
 | `attachmentContentItem`   | Each attachment's content paragraph                 |
 
-**Default appearance:**
+| Default appearance                                                 |
+| ------------------------------------------------------------------ |
+| ![op-order-pickup-packages](./images/op-order-pickup-packages.png) |
 
-![op-order-pickup-packages](./images/op-order-pickup-packages.png)
+---
 
 #### `op-order-delivery-packages`
 
-> Renders an order delivery packages information and product list. Must be placed inside an `op-order` block.
+Renders an order delivery packages information and product list. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -588,13 +585,15 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | `attachmentContent`       | Attachment's content wrapper                   |
 | `attachmentContentItem`   | Each attachment's content paragraph            |
 
-**Default appearance:**
+| Default appearance                                                     |
+| ---------------------------------------------------------------------- |
+| ![op-order-delivery-packages](./images/op-order-delivery-packages.png) |
 
-![op-order-delivery-packages].(imagesassets/op-order-delivery-packages.png)
+---
 
 #### `op-order-total`
 
-> Renders an order delivery packages information and product list. Must be placed inside an `op-order` block.
+Renders an order delivery packages information and product list. Must be placed inside an `op-order` block.
 
 **Composition:** none.
 
@@ -608,21 +607,25 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 | `totalListItemLabel` | Label of a price item                       |
 | `totalListItemValue` | Value of a price item                       |
 
-**Default appearance:**
+| Default appearance                             |
+| ---------------------------------------------- |
+| ![op-order-total](./images/op-order-total.png) |
 
-![op-order-total](./images/op-order-total.png)
+---
 
 #### `order-placed-top` (DEPRECATED)
 
-> Renders an extension point at the top of the page.
+Renders an extension point at the top of the page.
 
 **Composition:** accepts the following blocks:
 
 - `order-placed-extension`
 
+---
+
 #### `order-placed-extension` (DEPRECATED)
 
-> Allows to render a component at the top of the page.
+Allows to render a component at the top of the page.
 
 You can check how following the [example app](./order-placed-extension-example/). This component receives a prop called `orderGroup` with the order data.
 
@@ -691,6 +694,7 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `productPrice`               |
 | `productQuantity`            |
 | `productWrapper`             |
+| `section--bank-invoice`      |
 | `section--confirmation`      |
 | `section--deliveryPackages`  |
 | `section--notices`           |
@@ -699,6 +703,8 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `section--summary`           |
 | `section`                    |
 | `splitNotice`                |
+| `summaryRow`                 |
+| `summaryCol`                 |
 | `summaryAddress`             |
 | `summaryBox--delivery`       |
 | `summaryBox--pickup`         |
