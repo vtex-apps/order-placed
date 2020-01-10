@@ -2,6 +2,40 @@
 
 # Order Placed
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Configuration](#configuration)
+  - [Blocks](#blocks)
+    - [`order-placed`](#order-placed-1)
+    - [`op-section`](#op-section)
+    - [`op-header`](#op-header)
+    - [`op-confirmation-icon`](#op-confirmation-icon)
+    - [`op-confirmation-title`](#op-confirmation-title)
+    - [`op-confirmation-message`](#op-confirmation-message)
+    - [`op-print-button`](#op-print-button)
+    - [`op-notices`](#op-notices)
+    - [`op-summary-section`](#op-summary-section)
+    - [`op-bank-invoice-section`](#op-bank-invoice-section)
+    - [`op-order`](#op-order)
+    - [`op-order-number`](#op-order-number)
+    - [`op-order-datetime`](#op-order-datetime)
+    - [`op-order-seller`](#op-order-seller)
+    - [`op-order-split-notice`](#op-order-split-notice)
+    - [`op-order-customer`](#op-order-customer)
+    - [`op-order-options`](#op-order-options)
+    - [`op-order-payment`](#op-order-payment)
+    - [`op-order-delivery-packages`](#op-order-delivery-packages)
+    - [`op-order-pickup-packages`](#op-order-pickup-packages)
+    - [`op-order-total`](#op-order-total)
+    - [`order-placed-top` (DEPRECATED)](#order-placed-top-deprecated)
+    - [`order-placed-extension` (DEPRECATED)](#order-placed-extension-deprecated)
+- [Customization](#customization)
+- [Contributing](#contributing)
+
+<!-- /code_chunk_output -->
+
 ## Configuration
 
 1. Import the modal layout's app to your theme's dependencies in the `manifest.json`, for example:
