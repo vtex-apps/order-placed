@@ -138,11 +138,7 @@ _Note: this is the default `order-placed` layout implementation._
 
 #### `order-placed`
 
-Main block, responsible for rendering the whole order placed page.
-
-**Composition:**
-
-The main order placed block accepts the following blocks:
+Main block, responsible for rendering the whole order placed page. It accepts the following blocks:
 
 - `op-header`
 - `op-order-list`
@@ -157,7 +153,9 @@ _Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace the
 
 Splits your page into separate and semantic sections.
 
-**Composition:** accepts an array of any kind of children blocks.
+**Composition:**
+
+Accepts an array of any kind of children blocks.
 
 **Props:**
 
