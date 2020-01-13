@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl'
 
 import ProductList from './components/ProductList'
 import { useOrder } from './components/OrderContext'
+import Section from './Section'
 
 const TakeAway: FC = () => {
   const { takeAwayParcels } = useOrder()
@@ -12,11 +13,11 @@ const TakeAway: FC = () => {
   }
 
   return (
-    <section className="bb b--muted-4">
+    <Section name="takeaway">
       <div className="mv8 flex flex-column justify-between">
         <header>
           <p
-            data-testid="shipping-header"
+            data-testid="takeaway-header"
             className="t-heading-4-ns t-heading-5"
           >
             <FormattedMessage id="store/takeaway.header.title" />
@@ -24,7 +25,7 @@ const TakeAway: FC = () => {
         </header>
         <ProductList products={takeAwayParcels[0].items} />
       </div>
-    </section>
+    </Section>
   )
 }
 export default TakeAway
