@@ -21,6 +21,6 @@ it('should render thank you message', () => {
     <ConfirmationTitle />
   )
 
-  const thankYouMessage = getByText(/Thanks for the purchase!/)
+  const thankYouMessage = getByText(/Thank you for your purchase!/)
   expect(thankYouMessage.textContent).toBeTruthy()
 })
