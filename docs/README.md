@@ -29,8 +29,6 @@
   - [`op-order-delivery-packages`](#op-order-delivery-packages)
   - [`op-order-pickup-packages`](#op-order-pickup-packages)
   - [`op-order-total`](#op-order-total)
-  - [`order-placed-top` (DEPRECATED)](#order-placed-top-deprecated)
-  - [`order-placed-extension` (DEPRECATED)](#order-placed-extension-deprecated)
 - [Customization](#customization)
 - [Contributing](#contributing)
 
@@ -101,7 +99,7 @@ _Note: this is the default `order-placed` layout implementation._
       "op-section#payments",
       "op-section#pickup-packages",
       "op-section#delivery-packages",
-      "op-order-takeaway-items",
+      "op-order-takeaway-packages",
       "op-order-total"
     ]
   },
@@ -170,10 +168,6 @@ Main block, responsible for rendering the whole order placed page. It accepts th
 
 - [`op-header`](#op-header)
 - [`op-order`](#op-order)
-- [`order-placed-top` (DEPRECATED)](#order-placed-top-deprecated)
-- [`order-placed-extension` (DEPRECATED)](#order-placed-extension-deprecated)
-
-_Note: `order-placed-top`,`promotion-banner` are deprecated. You can replace them with common blocks in your `blocks.json`._
 
 ### `op-section`
 
@@ -575,21 +569,6 @@ Renders an order delivery packages information and product list. Must be placed 
 | Default appearance                             |
 | ---------------------------------------------- |
 | ![op-order-total](./images/op-order-total.png) |
-
-### `order-placed-top` (DEPRECATED)
-
-Renders an extension point at the top of the page.
-
-**Composition:**
-Accepts the following blocks:
-
-- `order-placed-extension`
-
-### `order-placed-extension` (DEPRECATED)
-
-Allows to render a component at the top of the page.
-
-You can check how following the [example app](./order-placed-extension-example/). This component receives a prop called `orderGroup` with the order data.
 
 ## Customization
 
