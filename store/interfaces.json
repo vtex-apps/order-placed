@@ -77,11 +77,5 @@
   },
   "op-order-total": {
     "component": "OrderTotal"
-  },
-  "order-placed-top": {
-    "allowed": ["order-placed-extension"]
-  },
-  "order-placed-extension": {
-    "component": "*"
   }
 }
