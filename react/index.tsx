@@ -71,8 +71,6 @@ const OrderPlaced: FC = () => {
         <div className={`${handles.orderPlacedWrapper} pt9 sans-serif`}>
           <Analytics eventList={orderGroup.analyticsData} />
 
-          <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
-
           <ExtensionPoint id="op-header" />
 
           <main
