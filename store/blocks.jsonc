@@ -54,7 +54,7 @@
       "op-section#payments",
       "op-section#pickup-packages",
       "op-section#delivery-packages",
-      "op-order-takeaway-items",
+      "op-order-takeaway-packages",
       "op-order-total"
     ]
   },
