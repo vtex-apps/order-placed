@@ -72,8 +72,8 @@
   "op-order-delivery-packages": {
     "component": "DeliveryPackages"
   },
-  "op-order-takeaway-items": {
-    "component": "TakeAwayItems"
+  "op-order-takeaway-packages": {
+    "component": "TakeAwayPackages"
   },
   "op-order-total": {
     "component": "OrderTotal"
