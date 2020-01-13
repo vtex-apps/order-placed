@@ -6,33 +6,30 @@ import { usePWA } from 'vtex.store-resources/PWAContext'
 import { useCssHandles } from 'vtex.css-handles'
 
 import { OrderGroupContext } from './components/OrderGroupContext'
-import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
-import Skeleton from './Skeleton'
 import { CurrencyContext } from './components/CurrencyContext'
-// import { Analytics } from './Analytics'
 import ForbiddenError from './components/Errors/ForbiddenError'
 import InvalidError from './components/Errors/InvalidError'
+import OrderList from './components/OrderList'
+import Skeleton from './Skeleton'
+import Analytics from './Analytics'
+import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
+
 // to load default css handle styles
 import './styles.css'
-import { orderGroupQuery } from './mocks/bankInvoiceNumberLoggedIn'
-import OrderList from './components/OrderList'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
 }
 
 const messages = defineMessages({
-  title: {
-    id: 'store/page.title',
-    defaultMessage: '',
-  },
+  title: { id: 'store/page.title', defaultMessage: '' },
 })
 
 const CSS_HANDLES = ['orderPlacedWrapper', 'orderPlacedMainWrapper']
 
 const OrderPlaced: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
-  const intl = useIntl()
+  const { formatMessage } = useIntl()
   const runtime = useRuntime()
   const { settings = {} } = usePWA() || {}
   const [installDismissed, setInstallDismissed] = useState(false)
@@ -59,7 +56,7 @@ const OrderPlaced: FC = () => {
     return <InvalidError />
   }
 
-  const { orderGroup }: { orderGroup: OrderGroup } = orderGroupQuery as any // data
+  const { orderGroup }: { orderGroup: OrderGroup } = data
   const { promptOnCustomEvent } = settings
 
   return (
@@ -68,11 +65,11 @@ const OrderPlaced: FC = () => {
         value={orderGroup.orders[0].storePreferencesData.currencyCode}
       >
         <Helmet>
-          <title>{intl.formatMessage(messages.title)}</title>
+          <title>{formatMessage(messages.title)}</title>
         </Helmet>
 
         <div className={`${handles.orderPlacedWrapper} pt9 sans-serif`}>
-          {/* <Analytics eventList={orderGroup.analyticsData} /> */}
+          <Analytics eventList={orderGroup.analyticsData} />
 
           <ExtensionPoint id="order-placed-top" orderGroup={orderGroup} />
 
