@@ -7,14 +7,16 @@ import { OrderGroupContext } from '../components/OrderGroupContext'
 import { OrderContext } from '../components/OrderContext'
 import { CurrencyContext } from '../components/CurrencyContext'
 
+const doesNodeMatchesText = (node: HTMLElement, regexp: RegExp) =>
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  !!node.textContent!.match(regexp)
+
 export const queryByTextWithMarkup = (container: HTMLElement, regexp: RegExp) =>
   queryByText(container, (_: string, node: HTMLElement) => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const hasText = (node: HTMLElement) => !!node.textContent!.match(regexp)
     const childrenDontHaveText = Array.from(node.children).every(
-      child => !hasText(child as HTMLElement)
+      child => !doesNodeMatchesText(child as HTMLElement, regexp)
     )
-    return hasText(node) && childrenDontHaveText
+    return doesNodeMatchesText(node, regexp) && childrenDontHaveText
   })
 
 export const renderWithIntl = (component: ReactElement, options?: any) => {
