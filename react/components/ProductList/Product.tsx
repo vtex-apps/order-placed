@@ -63,9 +63,7 @@ const Product: FC<Props> = ({ product }) => {
         >
           <FormattedMessage
             id="store/products.quantity"
-            values={{
-              quantity: quantity,
-            }}
+            values={{ quantity }}
           />
         </small>
       </div>
