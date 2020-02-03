@@ -86,6 +86,8 @@ const OrderPlaced: FC = () => {
               />
             )}
           </main>
+
+          <ExtensionPoint id="op-footer" />
         </div>
       </CurrencyContext.Provider>
     </OrderGroupContext.Provider>

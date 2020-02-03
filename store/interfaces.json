@@ -1,7 +1,7 @@
 {
   "order-placed": {
     "component": "index",
-    "allowed": ["op-header", "op-order", "promotion-banner"],
+    "allowed": ["op-header", "op-order", "op-footer", "promotion-banner"],
     "render": "client"
   },
   "op-section": {
@@ -11,6 +11,11 @@
   },
   "op-header": {
     "component": "Header",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "op-footer": {
+    "component": "Footer",
     "composition": "children",
     "allowed": "*"
   },
