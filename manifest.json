@@ -17,6 +17,7 @@
     "docs": "0.x"
   },
   "dependencies": {
+    "vtex.store": "2.x",
     "vtex.order-placed-graphql": "1.x",
     "vtex.styleguide": "9.x",
     "vtex.order-details": "1.x",
