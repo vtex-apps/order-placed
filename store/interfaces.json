@@ -1,4 +1,11 @@
 {
+  "store.orderplaced": {
+    "required": ["order-placed"],
+    "preview": {
+      "type": "spinner",
+      "height": 600
+    }
+  },
   "order-placed": {
     "component": "index",
     "allowed": ["op-header", "op-order", "promotion-banner"],
