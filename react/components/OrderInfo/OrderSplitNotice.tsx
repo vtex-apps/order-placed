@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { WrappedComponentProps, injectIntl } from 'react-intl'
 import { Alert } from 'vtex.styleguide'
 
 import { orderSplitMessage } from '../../utils'
 
-const OrderSplitNotice: FunctionComponent<Props & InjectedIntlProps> = ({
+const OrderSplitNotice: FunctionComponent<Props & WrappedComponentProps> = ({
   deliveries,
   pickups,
   takeaways,

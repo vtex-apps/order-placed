@@ -1,9 +1,9 @@
 import React, { FunctionComponent, useState } from 'react'
 import {
-  InjectedIntlProps,
   injectIntl,
   defineMessages,
   FormattedMessage,
+  WrappedComponentProps,
 } from 'react-intl'
 import { ButtonLink } from 'vtex.order-details'
 
@@ -12,7 +12,6 @@ import {
   transformConnectorResponsesToArray,
   parseBankInvoiceUrl,
 } from '../../utils'
-
 import AdditionalInfo from './AdditionalInfo'
 import Price from './FormattedPrice'
 import ConnectorResponseInfo from './ConnectorResponseInfo'
@@ -32,7 +31,10 @@ const messages = defineMessages({
   },
 })
 
-function paymentGroupSwitch(payment: Payment, intl: ReactIntl.InjectedIntl) {
+function paymentGroupSwitch(
+  payment: Payment,
+  intl: WrappedComponentProps['intl']
+) {
   switch (payment.group) {
     case 'creditCard':
       return intl.formatMessage(messages.creditCard)
@@ -47,7 +49,7 @@ function paymentGroupSwitch(payment: Payment, intl: ReactIntl.InjectedIntl) {
   }
 }
 
-const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
+const PaymentMethod: FunctionComponent<Props & WrappedComponentProps> = ({
   payment,
   transactionId,
   intl,

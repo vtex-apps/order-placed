@@ -3,7 +3,7 @@ import flow from 'lodash/flow'
 import toPairs from 'lodash/toPairs'
 import filter from 'lodash/filter'
 import map from 'lodash/map'
-import { defineMessages } from 'react-intl'
+import { defineMessages, WrappedComponentProps } from 'react-intl'
 
 const messages = defineMessages({
   frequencyDay: {
@@ -94,7 +94,7 @@ export function isSubscription(attachmentItem: Attachment) {
 
 export function getSubscriptionInfo(
   attachmentItem: Attachment,
-  intl: ReactIntl.InjectedIntl
+  intl: WrappedComponentProps['intl']
 ) {
   if (!isSubscription(attachmentItem)) {
     return {}
@@ -157,7 +157,7 @@ export function orderSplitMessage({
   deliveries: number
   pickups: number
   takeaways: number
-  intl: ReactIntl.InjectedIntl
+  intl: WrappedComponentProps['intl']
 }) {
   const nPickups = pickups > 1
   const nTakeaways = takeaways > 1

@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from 'react'
 import { compose, graphql } from 'react-apollo'
 import {
   injectIntl,
-  InjectedIntlProps,
+  WrappedComponentProps,
   defineMessages,
   FormattedMessage,
 } from 'react-intl'
@@ -46,7 +46,7 @@ const messages = defineMessages({
   },
 })
 
-const OrderPlaced: FunctionComponent<Props & InjectedIntlProps> = ({
+const OrderPlaced: FunctionComponent<Props & WrappedComponentProps> = ({
   orderGroupQuery,
   inStore,
   intl,

@@ -5,7 +5,6 @@ import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
 import { isSubscription } from '../../utils'
 import Price from '../Payment/FormattedPrice'
-
 import Subscription from './Subscription'
 
 const ProductAttachment: FunctionComponent<Props> = ({

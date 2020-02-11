@@ -5,7 +5,6 @@ import PaymentMethod from '../Payment/PaymentMethod'
 import Shipping from '../Shipping'
 import StorePickUp from '../StorePickUp'
 import TakeAway from '../TakeAway'
-
 import OrderHeader from './OrderHeader'
 import OrderOptions from './OrderOptions'
 import OrderSection from './OrderSection'
