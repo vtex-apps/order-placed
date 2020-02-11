@@ -3,7 +3,6 @@ import { FormattedMessage } from 'react-intl'
 import { ButtonLink } from 'vtex.order-details'
 
 import PrinterIcon from '../../../Icons/PrinterIcon'
-
 import BarCode from './BarCode'
 import Embedded from './Embedded'
 
