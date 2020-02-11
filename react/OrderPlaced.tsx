@@ -99,7 +99,7 @@ interface Props {
   inStore: boolean
 }
 
-export default compose<any, any>(
+export default compose<Props & WrappedComponentProps, {}>(
   withRuntimeContext,
   withoutSSR,
   graphql(getOrderGroup.default, {
