@@ -1,7 +1,7 @@
-import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
 import Header from '../components/Header'
+import { renderWithIntl } from '../utils/testUtils'
 import { orderGroupQuery as bankInvoiceDueDate } from '../mocks/bankInvoiceLoggedIn'
 import { orderGroupQuery as bankInvoiceNoDueDate } from '../mocks/bankInvoiceNumberLoggedIn'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
@@ -11,7 +11,7 @@ import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
 
 describe('Confirmation messages', () => {
   it('should render success icon', () => {
-    const { getByTestId } = render(
+    const { getByTestId } = renderWithIntl(
       <Header
         orderGroup={oneDelivery.orderGroup}
         profile={oneDelivery.orderGroup.orders[0].clientProfileData}
@@ -23,7 +23,7 @@ describe('Confirmation messages', () => {
   })
 
   it('should render thank you message', () => {
-    const { getByText } = render(
+    const { getByText } = renderWithIntl(
       <Header
         orderGroup={oneDelivery.orderGroup}
         profile={oneDelivery.orderGroup.orders[0].clientProfileData}
@@ -37,7 +37,7 @@ describe('Confirmation messages', () => {
 
 describe('Warnings', () => {
   it('should render payment confirmation estimate', () => {
-    const { getByText } = render(
+    const { getByText } = renderWithIntl(
       <Header
         orderGroup={oneDelivery.orderGroup}
         profile={oneDelivery.orderGroup.orders[0].clientProfileData}
@@ -51,7 +51,7 @@ describe('Warnings', () => {
   })
 
   it('should render shipping estimate disclaimers if order has shipping items', () => {
-    const { getByText } = render(
+    const { getByText } = renderWithIntl(
       <Header
         orderGroup={oneDelivery.orderGroup}
         profile={oneDelivery.orderGroup.orders[0].clientProfileData}
@@ -70,7 +70,7 @@ describe('Warnings', () => {
   })
 
   it('should not render shipping estimate disclaimers if order has no shipping items', () => {
-    const { queryByText } = render(
+    const { queryByText } = renderWithIntl(
       <Header
         orderGroup={onePickup.orderGroup}
         profile={onePickup.orderGroup.orders[0].clientProfileData}
@@ -89,7 +89,7 @@ describe('Warnings', () => {
   })
 
   it('should render pickup estimate disclaimer if order has pickup items', () => {
-    const { getByText } = render(
+    const { getByText } = renderWithIntl(
       <Header
         orderGroup={onePickup.orderGroup}
         profile={onePickup.orderGroup.orders[0].clientProfileData}
@@ -104,7 +104,7 @@ describe('Warnings', () => {
   })
 
   it('should not render pickup estimate disclaimers if order has no pickup items', () => {
-    const { queryByText } = render(
+    const { queryByText } = renderWithIntl(
       <Header
         orderGroup={oneDelivery.orderGroup}
         profile={oneDelivery.orderGroup.orders[0].clientProfileData}
@@ -119,7 +119,7 @@ describe('Warnings', () => {
   })
 
   it('should render disclaimer for split orders', () => {
-    const { queryByText } = render(
+    const { queryByText } = renderWithIntl(
       <Header
         orderGroup={splitOrder.orderGroup}
         profile={splitOrder.orderGroup.orders[0].clientProfileData}
@@ -133,7 +133,7 @@ describe('Warnings', () => {
   })
 
   it('should render warning for bank invoices with due date', () => {
-    const { queryByText } = render(
+    const { queryByText } = renderWithIntl(
       <Header
         orderGroup={bankInvoiceDueDate.orderGroup}
         profile={bankInvoiceDueDate.orderGroup.orders[0].clientProfileData}
@@ -146,7 +146,7 @@ describe('Warnings', () => {
   })
 
   it('should render warning for bank invoices without due date', () => {
-    const { queryByText } = render(
+    const { queryByText } = renderWithIntl(
       <Header
         orderGroup={bankInvoiceNoDueDate.orderGroup}
         profile={bankInvoiceNoDueDate.orderGroup.orders[0].clientProfileData}
@@ -162,7 +162,7 @@ describe('Warnings', () => {
 
 describe('Purchase summary', () => {
   it('should render summary when there are shippings and store pickups in the same purchase', () => {
-    const { getByTestId } = render(
+    const { getByTestId } = renderWithIntl(
       <Header
         orderGroup={deliveryAndPickup.orderGroup}
         profile={deliveryAndPickup.orderGroup.orders[0].clientProfileData}

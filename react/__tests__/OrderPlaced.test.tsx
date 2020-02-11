@@ -1,6 +1,6 @@
-import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
+import { renderWithIntl } from '../utils/testUtils'
 import * as getOrderGroup from '../graphql/getOrderGroup.graphql'
 import OrderPlaced from '../OrderPlaced'
 
@@ -27,7 +27,7 @@ describe('OrderPlaced', () => {
   })
 
   test('should first render as as skeleton loading', async () => {
-    const { container } = render(<OrderPlaced />)
+    const { container } = renderWithIntl(<OrderPlaced />)
     expect(container.querySelector('.skeleton-shimmer')).toBeTruthy()
   })
 
@@ -40,13 +40,13 @@ describe('OrderPlaced', () => {
       },
     }
 
-    const { queryByText } = render(<OrderPlaced />, {
+    const { queryAllByText } = renderWithIntl(<OrderPlaced />, {
       graphql: { mocks: [mockRequest] },
     })
 
     await new Promise(resolve => setTimeout(resolve, 0))
 
-    expect(queryByText(/permission/)).toBeTruthy()
+    expect(queryAllByText(/permission/)).toBeTruthy()
   })
 
   test('should render an alert for invalid orders', async () => {
@@ -59,7 +59,7 @@ describe('OrderPlaced', () => {
       },
     }
 
-    const { queryByText } = render(<OrderPlaced />, {
+    const { queryByText } = renderWithIntl(<OrderPlaced />, {
       graphql: { mocks: [mockRequest] },
     })
 

@@ -20,9 +20,9 @@ describe('Shipping (delivery)', () => {
     const order = twoDeliveries.orderGroup.orders[0]
     const delivery = order.deliveryParcels
 
-    const { queryByText } = render(<Shipping deliveryPackages={delivery} />)
+    const { queryAllByText } = render(<Shipping deliveryPackages={delivery} />)
 
-    expect(queryByText(/- n˚ \d of \d/)).toBeTruthy()
+    expect(queryAllByText(/- n˚ \d of \d/)).toBeTruthy()
   })
 
   it('should not render delivery counter when there is only one delivery', () => {

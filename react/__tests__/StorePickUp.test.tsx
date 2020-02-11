@@ -20,9 +20,9 @@ describe('Store Pickup', () => {
   it('should render pickup counter when multiple store pickups', () => {
     const order = twoPickups.orderGroup.orders[0]
     const pickup = order.pickUpParcels
-    const { queryByText } = render(<StorePickUp pickUpPackages={pickup} />)
+    const { queryAllByText } = render(<StorePickUp pickUpPackages={pickup} />)
 
-    expect(queryByText(/- n˚ \d of \d/)).toBeTruthy()
+    expect(queryAllByText(/- n˚ \d of \d/)).toBeTruthy()
   })
 
   it('should not pickup counter when there is only one store pickup', () => {
