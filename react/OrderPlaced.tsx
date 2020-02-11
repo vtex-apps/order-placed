@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useState } from 'react'
-import { compose, graphql } from 'react-apollo'
+import { graphql } from 'react-apollo'
 import {
   injectIntl,
   WrappedComponentProps,
   defineMessages,
   FormattedMessage,
 } from 'react-intl'
-import { branch, renderComponent } from 'recompose'
+import { compose, branch, renderComponent } from 'recompose'
 import { Helmet, withRuntimeContext, ExtensionPoint } from 'vtex.render-runtime'
 import { Button } from 'vtex.styleguide'
 import { usePWA } from 'vtex.store-resources/PWAContext'
@@ -99,7 +99,7 @@ interface Props {
   inStore: boolean
 }
 
-export default compose(
+export default compose<any, any>(
   withRuntimeContext,
   withoutSSR,
   graphql(getOrderGroup.default, {
