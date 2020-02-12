@@ -7,11 +7,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Added
-
-- `store.orderplaced` interface definition, previously contained in `vtex.store`.
-- `/checkout/orderPlaced` route definition, also from `vtex.store`.
-
 ## [1.7.1] - 2019-11-21
 
 ### Fixed
