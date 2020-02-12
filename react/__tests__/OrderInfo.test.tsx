@@ -1,8 +1,8 @@
 import React from 'react'
+import { render } from '@vtex/test-tools/react'
 
 import OrderInfo from '../components/OrderInfo'
 import OrderHeader from '../components/OrderInfo/OrderHeader'
-import { renderWithIntl } from '../utils/testUtils'
 import { orderGroupQuery as bankInvoicePayment } from '../mocks/bankInvoiceLoggedIn'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { orderGroupQuery as onePickUp } from '../mocks/onePickupSimple'
@@ -18,7 +18,7 @@ const getOrderFromOrderGroup = (orderGroup: OrderGroup, index: number) => {
 describe('OrderHeader', () => {
   it('should render correct order number and options', () => {
     const orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
-    const { getByText } = renderWithIntl(
+    const { getByText } = render(
       <OrderHeader orderInfo={orderInfo} runtime={{ account: 'vtexgame1' }} />
     )
 
@@ -35,7 +35,7 @@ describe('OrderHeader', () => {
 
   it('should render seller name for an order processed by another seller', () => {
     const orderInfo = getOrderFromOrderGroup(splitOrder.orderGroup, 0)
-    const { getByText } = renderWithIntl(
+    const { getByText } = render(
       <OrderHeader
         orderInfo={orderInfo}
         splitOrder
@@ -52,7 +52,7 @@ describe('OrderHeader', () => {
 describe('Order split notice', () => {
   it('should render OrderSplitNotice', () => {
     const orderInfo = getOrderFromOrderGroup(multipleDeliveries.orderGroup, 0)
-    const { getByText } = renderWithIntl(
+    const { getByText } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -72,7 +72,7 @@ describe('Order split notice', () => {
 describe('Payment methods', () => {
   it('should render credit card info', () => {
     const orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
-    const { getByText } = renderWithIntl(
+    const { getByText } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -85,7 +85,7 @@ describe('Payment methods', () => {
 
   it('should render credit card info for two credit cards', () => {
     const orderInfo = getOrderFromOrderGroup(twoCreditCards.orderGroup, 0)
-    const { queryAllByText } = renderWithIntl(
+    const { queryAllByText } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -98,7 +98,7 @@ describe('Payment methods', () => {
 
   it('should render bank invoice payment method', () => {
     const orderInfo = getOrderFromOrderGroup(bankInvoicePayment.orderGroup, 0)
-    const { getByText } = renderWithIntl(
+    const { getByText } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -112,7 +112,7 @@ describe('Payment methods', () => {
 
   it('should render custom payment method (Cash)', () => {
     const orderInfo = getOrderFromOrderGroup(promissory.orderGroup, 0)
-    const { getByText } = renderWithIntl(
+    const { getByText } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -128,7 +128,7 @@ describe('Payment methods', () => {
 describe('Shippings', () => {
   it('should render Shipping if there are items for delivery', () => {
     const orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
-    const { getByTestId } = renderWithIntl(
+    const { getByTestId } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -141,7 +141,7 @@ describe('Shippings', () => {
 
   it('should not render Shipping if there are no items for delivery', () => {
     const orderInfo = getOrderFromOrderGroup(onePickUp.orderGroup, 0)
-    const { queryByTestId } = renderWithIntl(
+    const { queryByTestId } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -156,7 +156,7 @@ describe('Shippings', () => {
 describe('Store Pickups', () => {
   it('should render StorePickUp if there are items to be picked-up', () => {
     const orderInfo = getOrderFromOrderGroup(onePickUp.orderGroup, 0)
-    const { queryByTestId } = renderWithIntl(
+    const { queryByTestId } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}
@@ -169,7 +169,7 @@ describe('Store Pickups', () => {
 
   it('should not render StorePickUp if there are no items for pickup', () => {
     const orderInfo = getOrderFromOrderGroup(oneDelivery.orderGroup, 0)
-    const { queryByTestId } = renderWithIntl(
+    const { queryByTestId } = render(
       <OrderInfo
         order={orderInfo}
         profile={orderInfo.clientProfileData}

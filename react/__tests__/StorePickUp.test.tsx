@@ -1,5 +1,5 @@
-import { render } from '@vtex/test-tools/react'
 import React from 'react'
+import { render } from '@vtex/test-tools/react'
 
 import StorePickUp from '../components/StorePickUp'
 import { orderGroupQuery as onePickup } from '../mocks/onePickupSimple'

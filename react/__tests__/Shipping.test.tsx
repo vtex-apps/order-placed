@@ -1,5 +1,5 @@
-import { render } from '@vtex/test-tools/react'
 import React from 'react'
+import { render } from '@vtex/test-tools/react'
 
 import Shipping from '../components/Shipping'
 import { orderGroupQuery as giftRegistry } from '../mocks/giftRegistry'
