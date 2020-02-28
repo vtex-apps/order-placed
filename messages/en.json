@@ -53,7 +53,7 @@
   "store/warnings.delivery.time": "The delivery period starts to count from the moment your payment is confirmed.",
   "store/warnings.delivery.tracking": "A tracking code will be sent to your email when the delivery process begins.",
   "store/warnings.order.split": "Your purchase was split into {numOrders} orders as some of the items were sold by partners. But this does not affect shipping estimates.",
-  "store/warnings.payment.approval": "Payment approval may take from 5 minutes up to 5 bussiness days.",
+  "store/warnings.payment.approval": "Payment approval may take from 5 minutes up to 5 business days.",
   "store/warnings.payment.bankInvoice.approval": "Payment approval for {paymentSystemName} may take up to 3 bussiness days. If payment is not due, your order will be automatically cancelled.",
   "store/warnings.payment.bankInvoice.value": "Please make a payment of {paymentValue} up to the due date according to the data below.",
   "store/warnings.payment.bankInvoice.value.duedate": "Please make a payment of {paymentValue} up to {paymentDueDate} according to the data below.",
