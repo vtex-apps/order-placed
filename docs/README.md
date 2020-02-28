@@ -160,6 +160,14 @@ _Note: this is the default `order-placed` layout implementation._
 }
 ```
 
+Make sure you have the Order Placed page defined in your theme:
+
+```json
+  "store.orderplaced": {
+    "children": ["order-placed"]
+  },
+```
+
 ## Blocks
 
 ### `order-placed`
