@@ -45,7 +45,7 @@ describe('Warnings', () => {
     )
 
     const paymentApproval = getByText(
-      /Payment approval may take from \d minutes up to \d bussiness days/i
+      /Payment approval may take from \d minutes up to \d business days/i
     )
     expect(paymentApproval).toBeDefined()
   })
