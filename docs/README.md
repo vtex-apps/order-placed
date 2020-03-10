@@ -179,6 +179,7 @@ Main block, responsible for rendering the whole order placed page. It accepts th
 
 - [`op-header`](#op-header)
 - [`op-order`](#op-order)
+- [`op-footer`](#op-footer)
 
 ### `op-section`
 
@@ -218,6 +219,21 @@ Accepts an array of any kind of children blocks.
 | CSS Handles         | Description     |
 | ------------------- | --------------- |
 | `orderPlacedHeader` | The page header |
+
+### `op-footer`
+
+Defines the footer content of the page.
+
+**Composition:**
+Accepts an array of any kind of children blocks.
+
+**Props:** none.
+
+**CSS Handles:**
+
+| CSS Handles         | Description     |
+| ------------------- | --------------- |
+| `orderPlacedFooter` | The page footer |
 
 ### `op-confirmation-icon`
 
@@ -616,6 +632,7 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `orderOptionsWrapper`        |
 | `orderPaymentItem`           |
 | `orderPaymentWrapper`        |
+| `orderPlacedFooter`          |
 | `orderPlacedHeader`          |
 | `orderPlacedMainWrapper`     |
 | `orderPlacedWrapper`         |
