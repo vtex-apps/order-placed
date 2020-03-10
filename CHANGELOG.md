@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.1.0] - 2020-03-10
+
 ## [2.0.2] - 2020-02-28
 ### Fixed
 - Add the page block to the docs.
