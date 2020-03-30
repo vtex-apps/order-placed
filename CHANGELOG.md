@@ -6,27 +6,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-
-### Fixed
-
-- The order context is exported to be accessed from other custom projects.
+### Added
+- Export the `useOrder` and `useOrderGroup` hooks.
 
 ## [2.1.0] - 2020-03-10
-
 ### Added
-
 - `footer` extension point.
 
 ## [2.0.2] - 2020-02-28
-
 ### Fixed
-
 - Add the page block to the docs.
 
 ## [2.0.1] - 2020-02-28
-
 ### Fixed
-
 - English translation.
 
 ## [2.0.0] - 2020-02-03

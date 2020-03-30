@@ -1,3 +1,3 @@
-import { useOrder, OrderContext } from './components/OrderContext'
+import { useOrder } from './components/OrderContext'
 
-export default { useOrder, OrderContext }
+export default { useOrder }

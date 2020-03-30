@@ -1,6 +1,3 @@
-import {
-  OrderGroupContext,
-  useOrderGroup,
-} from './components/OrderGroupContext'
+import { useOrderGroup } from './components/OrderGroupContext'
 
-export default { OrderGroupContext, useOrderGroup }
+export default { useOrderGroup }
