@@ -1,6 +1,9 @@
 📢 Use this project, [contribute](https://github.com/vtex-apps/order-placed) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Order Placed
@@ -14,6 +17,7 @@
   - [`order-placed`](#order-placed-1)
   - [`op-section`](#op-section)
   - [`op-header`](#op-header)
+  - [`op-footer`](#op-footer)
   - [`op-confirmation-icon`](#op-confirmation-icon)
   - [`op-confirmation-title`](#op-confirmation-title)
   - [`op-confirmation-message`](#op-confirmation-message)
@@ -32,8 +36,10 @@
   - [`op-order-delivery-packages`](#op-order-delivery-packages)
   - [`op-order-pickup-packages`](#op-order-pickup-packages)
   - [`op-order-total`](#op-order-total)
+- [API](#api)
 - [Customization](#customization)
 - [Contributing](#contributing)
+- [Contributors ✨](#contributors)
 
 <!-- /code_chunk_output -->
 
@@ -597,6 +603,28 @@ Renders an order delivery packages information and product list. Must be placed 
 | ---------------------------------------------- |
 | ![op-order-total](./images/op-order-total.png) |
 
+## API
+
+The `order-placed` app exports two hooks to allow customization using the current order data: `useOrderGroup` and `useOrder`.
+
+`useOrderGroup`: used to get the data of the current order group. An order group is the collection of all orders created by an users's purchase.
+
+```js
+import { useOrderGroup } from 'vtex.order-placed'
+
+//...
+const orderGroup = useOrderGroup()
+```
+
+`useOrder`: used to get the data of the current order being accessed in the order loop.
+
+```js
+import { useOrder } from 'vtex.order-placed'
+
+//...
+const order = useOrder()
+```
+
 ## Customization
 
 In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
@@ -701,6 +729,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
