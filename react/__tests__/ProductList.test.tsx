@@ -12,7 +12,7 @@ const getItemsFromOrderGroup = (
   type: 'deliveryParcels' | 'pickUpParcels'
 ) => orderGroup.orders[0][type][0].items
 
-it('renders Attachment component if product has service or attachment', () => {
+test('renders Attachment component if product has service or attachment', () => {
   const { queryByText } = renderWithOrderGroup(
     serviceWithNoAttachments.orderGroup,
     <ProductList
@@ -26,7 +26,7 @@ it('renders Attachment component if product has service or attachment', () => {
   expect(queryByText('[TESTE QA]')).toBeTruthy()
 })
 
-it('renders attachment from bundleItems item', () => {
+test('renders attachment from bundleItems item', () => {
   const { queryByText } = renderWithOrderGroup(
     serviceWithAttachment.orderGroup,
     <ProductList
@@ -40,7 +40,7 @@ it('renders attachment from bundleItems item', () => {
   expect(queryByText('This is a mock message')).toBeTruthy()
 })
 
-it('renders attachments from item and also bundle items', () => {
+test('renders attachments from item and also bundle items', () => {
   const { queryByText } = renderWithOrderGroup(
     serviceAndAttachment.orderGroup,
     <ProductList
@@ -55,7 +55,7 @@ it('renders attachments from item and also bundle items', () => {
   expect(queryByText(/1\ssemana/)).toBeTruthy()
 })
 
-it('renders correct information and messages for an item with a subscription', () => {
+test('renders correct information and messages for an item with a subscription', () => {
   const { queryByText } = renderWithOrderGroup(
     subscription.orderGroup,
     <ProductList
@@ -68,5 +68,5 @@ it('renders correct information and messages for an item with a subscription', (
 
   expect(queryByText('Subscription')).toBeTruthy()
   expect(queryByText('Every 1 week')).toBeTruthy()
-  expect(queryByText('Charged monthly at day 15'))
+  expect(queryByText('Charged monthly at day 15')).toBeTruthy()
 })
