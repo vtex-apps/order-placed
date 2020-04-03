@@ -4,7 +4,7 @@ import TranslateTotalizer from 'vtex.totalizer-translator/TranslateTotalizer'
 
 import Price from '../Payment/FormattedPrice'
 import { getTotals } from '../../utils'
-import TaxTooltip from './TaxTooltip'
+import TaxInfo from './TaxInfo'
 
 const ShippingTotals: FunctionComponent<Props> = ({
   items,
@@ -28,7 +28,9 @@ const ShippingTotals: FunctionComponent<Props> = ({
                 <TranslateTotalizer totalizer={total} />
                 {total.id === 'Items' && ` (${numItems})`}
                 {total.id === 'Tax' && taxes.length > 0 && (
-                  <TaxTooltip taxesTotals={taxes} />
+                  <div className="mt1 ml2">
+                    <TaxInfo taxesTotals={taxes} />
+                  </div>
                 )}
               </p>
               <div className="c-on-base">
