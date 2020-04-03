@@ -30,6 +30,6 @@
     "@vtex/tsconfig": "^0.3.0",
     "react-dom": "^16.7.0",
     "regenerator-runtime": "^0.13.1",
-    "typescript": "3.7.3"
+    "typescript": "3.8.3"
   }
 }

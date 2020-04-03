@@ -105,6 +105,7 @@ export default compose<Props & WrappedComponentProps, {}>(
   graphql(getOrderGroup.default, {
     name: 'orderGroupQuery',
     options: () => {
+      // eslint-disable-next-line no-restricted-globals
       const params = new URLSearchParams(location.search)
       const orderGroup = params.get('og')
       return {
@@ -143,7 +144,7 @@ export default compose<Props & WrappedComponentProps, {}>(
       </ErrorMessage>
     ))
   ),
-  /** if query resulted in an invalid orderGroup display an error alert*/
+  /** if query resulted in an invalid orderGroup display an error alert */
   branch(
     ({ orderGroupQuery: { orderGroup } }: any) =>
       orderGroup == null || orderGroup.orders == null,

@@ -6,7 +6,7 @@ const Tooltip: FunctionComponent<{ colorToken?: string }> = ({
   colorToken,
 }) => (
   <svg
-    className={`${baseClassname('tooltip')} ${colorToken ? colorToken : ''}`}
+    className={`${baseClassname('tooltip')} ${colorToken || ''}`}
     width="20"
     height="9"
     viewBox="0 0 20 9"

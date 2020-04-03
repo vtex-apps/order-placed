@@ -6,7 +6,7 @@ const InfoIcon: FunctionComponent<{ colorToken: string }> = ({
   colorToken,
 }) => (
   <svg
-    className={`${baseClassname('info')} ${colorToken ? colorToken : ''}`}
+    className={`${baseClassname('info')} ${colorToken || ''}`}
     width="16"
     height="16"
     viewBox="0 0 16 16"

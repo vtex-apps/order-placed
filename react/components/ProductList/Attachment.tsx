@@ -23,66 +23,65 @@ const ProductAttachment: FunctionComponent<Props> = ({
 
   return (
     <Fragment>
-      {bundleInfo &&
-        bundleInfo.map(bundleItem => {
-          const hasAttachments =
-            bundleItem.attachments && bundleItem.attachments.length > 0
-          const isMessage =
-            hasAttachments && bundleItem.attachments[0].name === 'message'
+      {bundleInfo?.map(bundleItem => {
+        const hasAttachments =
+          bundleItem.attachments && bundleItem.attachments.length > 0
+        const isMessage =
+          hasAttachments && bundleItem.attachments[0].name === 'message'
 
-          return (
-            <article className="bg-muted-5 pv3 ph5 br2 mv4" key={bundleItem.id}>
-              <div className="flex justify-between">
-                {bundleItem.imageUrl && (
-                  <ProductImage
-                    url={bundleItem.imageUrl}
-                    alt={bundleItem.name}
-                  />
-                )}
-                <p className="c-on-base">{bundleItem.name}</p>
-                <div className="flex items-center">
-                  <Price value={bundleItem.price} />
-                  {hasAttachments && (
-                    <div
-                      role="button"
-                      tabIndex={0}
-                      className="c-action-primary ml5"
-                      onKeyDown={handleKeyDown}
-                      onClick={() => setIsOpen(!isOpen)}
-                    >
-                      {isOpen ? <IconCaretUp /> : <IconCaretDown />}
-                    </div>
-                  )}
-                </div>
-              </div>
-              {hasAttachments && (
-                <div hidden={!isOpen}>
-                  {isMessage && (
-                    <p className="c-muted-1">
-                      {bundleItem.attachments[0].content.text}
-                    </p>
-                  )}
-                  {!isMessage &&
-                    bundleItem.attachments.map(attachmentItem => {
-                      Object.keys(attachmentItem.content).map(key => {
-                        const contentLabel = key
-                        const contentValue = attachmentItem.content[key]
-                        return (
-                          <p className="c-muted-1" key={key}>
-                            {`${contentLabel}: ${contentValue}`}
-                          </p>
-                        )
-                      })
-                    })}
-                </div>
+        return (
+          <article className="bg-muted-5 pv3 ph5 br2 mv4" key={bundleItem.id}>
+            <div className="flex justify-between">
+              {bundleItem.imageUrl && (
+                <ProductImage url={bundleItem.imageUrl} alt={bundleItem.name} />
               )}
-            </article>
-          )
-        })}
+              <p className="c-on-base">{bundleItem.name}</p>
+              <div className="flex items-center">
+                <Price value={bundleItem.price} />
+                {hasAttachments && (
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    className="c-action-primary ml5"
+                    onKeyDown={handleKeyDown}
+                    onClick={() => setIsOpen(!isOpen)}
+                  >
+                    {isOpen ? <IconCaretUp /> : <IconCaretDown />}
+                  </div>
+                )}
+              </div>
+            </div>
+            {hasAttachments && (
+              <div hidden={!isOpen}>
+                {isMessage && (
+                  <p className="c-muted-1">
+                    {bundleItem.attachments[0].content.text}
+                  </p>
+                )}
+                {!isMessage &&
+                  bundleItem.attachments.map(attachmentItem =>
+                    Object.keys(attachmentItem.content).map(key => {
+                      const contentLabel = key
+                      const contentValue = attachmentItem.content[key]
+                      return (
+                        <p className="c-muted-1" key={key}>
+                          {`${contentLabel}: ${contentValue}`}
+                        </p>
+                      )
+                    })
+                  )}
+              </div>
+            )}
+          </article>
+        )
+      })}
       {attachmentsInfo.length > 0 &&
         attachmentsInfo.map(attachmentItem => {
           return isSubscription(attachmentItem) ? (
-            <Subscription attachmentItem={attachmentItem} />
+            <Subscription
+              key={attachmentItem.name}
+              attachmentItem={attachmentItem}
+            />
           ) : (
             <article
               className="bg-muted-5 pv3 ph5 br2 mv4"

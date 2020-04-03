@@ -74,6 +74,6 @@ describe('Product List component', () => {
 
     expect(queryByText('Subscription')).toBeDefined()
     expect(queryByText('Every 1 week')).toBeDefined()
-    expect(queryByText('Charged monthly at day 15'))
+    expect(queryByText('Charged monthly at day 15')).toBeDefined()
   })
 })

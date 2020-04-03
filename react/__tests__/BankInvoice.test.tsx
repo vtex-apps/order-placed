@@ -97,7 +97,7 @@ describe('Bank invoice scenarios', () => {
     )
     const printButton = queryAllByTestId('button-link') as HTMLAnchorElement[]
 
-    expect((printButton[0].href as string).includes('login')).toBe(false)
+    expect(printButton[0].href as string).not.toContain('login')
   })
   it('should redirect to login if the user is not logged in.', () => {
     const { queryByTestId } = render(
@@ -108,6 +108,6 @@ describe('Bank invoice scenarios', () => {
     )
     const printButton = queryByTestId('button-link') as any
 
-    expect((printButton.href as string).includes('login')).toBe(true)
+    expect(printButton.href as string).toContain('login')
   })
 })

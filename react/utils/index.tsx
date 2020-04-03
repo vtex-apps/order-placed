@@ -168,13 +168,15 @@ export function orderSplitMessage({
       pickups,
       takeaways,
     })
-  } else if (nTakeaways) {
+  }
+  if (nTakeaways) {
     return intl.formatMessage(messages.splitNoPickup, {
       deliveries,
       pickups,
       takeaways,
     })
-  } else if (nPickups) {
+  }
+  if (nPickups) {
     return intl.formatMessage(messages.splitPickupNoTakeaway, {
       deliveries,
       pickups,
