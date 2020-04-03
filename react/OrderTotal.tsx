@@ -6,7 +6,7 @@ import { useCssHandles } from 'vtex.css-handles'
 import FormattedPrice from './components/FormattedPrice'
 import { useOrder } from './components/OrderContext'
 import { getTotals } from './utils'
-import TaxTooltip from './TaxTooltip'
+import TaxInfo from './TaxInfo'
 
 const CSS_HANDLES = [
   'totalListWrapper',
@@ -38,7 +38,7 @@ const OrderTotal: FC = () => {
                 <TranslateTotalizer totalizer={total} />
                 {total.id === 'Items' && ` (${numItems})`}
                 {total.id === 'Tax' && taxes.length > 0 && (
-                  <TaxTooltip taxesTotals={taxes} className="pl2 pt1" />
+                  <TaxInfo taxesTotals={taxes} className="pl2 pt1" />
                 )}
               </span>
               <span className={`${handles.totalListItemValue} c-on-base`}>

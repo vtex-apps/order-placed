@@ -4,10 +4,7 @@ import TranslateTotalizer from 'vtex.totalizer-translator/TranslateTotalizer'
 
 import FormattedPrice from './components/FormattedPrice'
 
-const TaxTooltip: FunctionComponent<Props> = ({
-  taxesTotals,
-  className = '',
-}) => {
+const TaxInfo: FunctionComponent<Props> = ({ taxesTotals, className = '' }) => {
   const tooltipLabel = (
     <ul className="list pa0 ma0">
       {taxesTotals.map(total => (
@@ -39,4 +36,4 @@ interface Props {
   className?: string
 }
 
-export default TaxTooltip
+export default TaxInfo
