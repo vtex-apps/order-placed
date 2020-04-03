@@ -38,7 +38,7 @@ const OrderTotal: FC = () => {
                 <TranslateTotalizer totalizer={total} />
                 {total.id === 'Items' && ` (${numItems})`}
                 {total.id === 'Tax' && taxes.length > 0 && (
-                  <TaxTooltip taxesTotals={taxes} />
+                  <TaxTooltip taxesTotals={taxes} className="pl2 pt1" />
                 )}
               </span>
               <span className={`${handles.totalListItemValue} c-on-base`}>

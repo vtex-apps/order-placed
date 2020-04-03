@@ -4,7 +4,10 @@ import TranslateTotalizer from 'vtex.totalizer-translator/TranslateTotalizer'
 
 import FormattedPrice from './components/FormattedPrice'
 
-const TaxTooltip: FunctionComponent<Props> = ({ taxesTotals }) => {
+const TaxTooltip: FunctionComponent<Props> = ({
+  taxesTotals,
+  className = '',
+}) => {
   const tooltipLabel = (
     <ul className="list pa0 ma0">
       {taxesTotals.map(total => (
@@ -21,16 +24,19 @@ const TaxTooltip: FunctionComponent<Props> = ({ taxesTotals }) => {
   )
 
   return (
-    <Tooltip label={tooltipLabel}>
-      <span className="pointer flex items-start pl2 pt1">
-        <IconInfo size={12} />
-      </span>
-    </Tooltip>
+    <span className={className}>
+      <Tooltip label={tooltipLabel}>
+        <span className="pointer flex items-start">
+          <IconInfo size={12} />
+        </span>
+      </Tooltip>
+    </span>
   )
 }
 
 interface Props {
   taxesTotals: OrderItemTotal[]
+  className?: string
 }
 
 export default TaxTooltip
