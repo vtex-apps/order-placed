@@ -29,7 +29,7 @@
     "@vtex/tsconfig": "^0.3.0",
     "react-dom": "^16.12.0",
     "regenerator-runtime": "^0.13.3",
-    "typescript": "3.7.3",
+    "typescript": "3.8.3",
     "vtex.css-handles": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.css-handles@0.4.1/public/@types/vtex.css-handles",
     "vtex.pixel-manager": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.pixel-manager@1.1.4/public/@types/vtex.pixel-manager",
     "vtex.responsive-layout": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.responsive-layout@0.1.1/public/@types/vtex.responsive-layout",

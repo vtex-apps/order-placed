@@ -98,19 +98,19 @@ export function getSubscriptionInfo(attachmentItem: Attachment, intl: any) {
     ? intl.formatMessage(
         {
           id: `store/items.attachments.subscription.frequency.${
-            (numberPeriodRegex.exec(subsFrequency) || [])[2]
+            (numberPeriodRegex.exec(subsFrequency) ?? [])[2]
           }`,
         },
         {
           frequencyNumber: parseInt(
-            (numberPeriodRegex.exec(subsFrequency) || [])[1],
+            (numberPeriodRegex.exec(subsFrequency) ?? [])[1],
             10
           ),
         }
       )
     : intl.formatMessage({
         id: `store/items.attachments.subscription.frequency.${
-          (wordlyPeriodRegex.exec(subsFrequency) || [])[1]
+          (wordlyPeriodRegex.exec(subsFrequency) ?? [])[1]
         }`,
       })
 
@@ -140,4 +140,23 @@ export function parseBankInvoiceUrl(url: string) {
   )}/login?returnUrl=${encodeURIComponent(
     window.location.pathname + window.location.search
   )}`
+}
+
+export const getTotals = (totals: OrderItemTotal[]) => {
+  const newTotals: OrderItemTotal[] = []
+  const taxes: OrderItemTotal[] = []
+
+  const totalTaxes = totals.reduce((sum, total) => {
+    if (total.id === 'CustomTax') {
+      taxes.push({ ...total })
+      return sum + total.value
+    }
+    newTotals.push({ ...total })
+    return sum
+  }, 0)
+
+  const taxTotal = newTotals.findIndex(({ id }) => id === 'Tax')
+  newTotals[taxTotal].value += totalTaxes
+
+  return [newTotals, taxes]
 }
