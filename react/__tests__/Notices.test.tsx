@@ -126,5 +126,5 @@ it('redirects to login if the user is not logged in.', () => {
   )
 
   const printButton = container.querySelector('a[href]') as HTMLAnchorElement
-  expect(printButton.href.includes('login')).toBe(true)
+  expect(printButton.href).toContain('login')
 })

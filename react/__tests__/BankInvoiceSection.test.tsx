@@ -74,5 +74,5 @@ it('has the invoice url if the user is logged in.', () => {
   )
 
   const printButton = container.querySelector('a[href]') as HTMLAnchorElement
-  expect(printButton.href.includes('login')).toBe(false)
+  expect(printButton.href).not.toContain('login')
 })
