@@ -142,7 +142,7 @@ export function parseBankInvoiceUrl(url: string) {
   )}`
 }
 
-export const getTotals = (totals: OrderItemTotal[]) => {
+export function getTotals(totals: OrderItemTotal[]) {
   const newTotals: OrderItemTotal[] = []
   const taxes: OrderItemTotal[] = []
 
