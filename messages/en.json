@@ -5,6 +5,8 @@
   "store/header.bankinvoice.embeded.expand": "Expand",
   "store/header.bankinvoice.header": "Information on your {paymentSystemName}",
   "store/header.bankinvoice.print": "Print {paymentSystemName}",
+  "store/header.backinvoice.help": "Unable to see your {paymentSystemName}?",
+  "store/header.backinvoice.tooltip": "Your {paymentSystemName} still works. You can click on {message} or copy the {paymentSystemName} number and make the payment.",
   "store/header.email": "In up to 5 minutes, you will receive an email at {userEmail} with all of your purchase details.{lineBreak}Remember to check your spam or promotions inbox",
   "store/header.newpurchase.button": "Start new order",
   "store/header.print.button": "Print",

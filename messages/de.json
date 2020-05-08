@@ -5,6 +5,8 @@
   "store/header.bankinvoice.embeded.expand": "Erweitern",
   "store/header.bankinvoice.header": "Information zu Ihrem {paymentSystemName}",
   "store/header.bankinvoice.print": "Drucken {paymentSystemName}",
+  "store/header.backinvoice.help": "Kannst du deinen {paymentSystemName} nicht sehen?",
+  "store/header.backinvoice.tooltip": "Ihr {paymentSystemName} funktioniert weiterhin. Sie können auf {message} klicken oder die {paymentSystemName} Nummer kopieren und die Zahlung vornehmen.",
   "store/header.email": "In bis zu 5 Minuten erhalten Sie eine E-Mail an {userEmail} mit all Ihren Kaufdaten.{LineBreak}Denken Sie daran, Ihren Spam- oder Werbe-Posteingang zu überprüfen",
   "store/header.newpurchase.button": "Neue Bestellung starten",
   "store/header.print.button": "Drucken",
