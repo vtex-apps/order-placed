@@ -100,8 +100,8 @@ const PaymentMethod: FunctionComponent<Props & WrappedComponentProps> = ({
                 </div>
               }
             >
-              <span className="c-muted-3">
-                <IconInfo />
+              <span className="c-muted-3 flex items-center">
+                <IconInfo size={14} />
               </span>
             </Tooltip>
           </div>

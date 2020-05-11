@@ -60,14 +60,14 @@ const BankInvoice: FunctionComponent<Props & WrappedComponentProps> = ({
           <Embedded url={url} />
         </article>
       )}
-      <div className="c-muted-1 mt6 t-small mb9">
+      <div className="c-muted-1 mt6 t-small mb9 flex">
         <FormattedMessage
           id="store/header.backinvoice.help"
           values={{ paymentSystemName: paymentSystem }}
         />
         <Tooltip label={tooltip} position="bottom">
-          <span className="c-muted-3 pl2">
-            <IconInfo />
+          <span className="c-muted-3 flex items-center ml3">
+            <IconInfo size={12} />
           </span>
         </Tooltip>
       </div>
