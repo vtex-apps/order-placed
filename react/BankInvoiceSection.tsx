@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import { FormattedMessage } from 'react-intl'
-import { ButtonWithIcon } from 'vtex.styleguide'
+import { FormattedMessage, defineMessages, useIntl } from 'react-intl'
+import { ButtonWithIcon, Tooltip, IconInfo } from 'vtex.styleguide'
 
 import PrinterIcon from './Icons/PrinterIcon'
 import BarCode from './components/BankInvoice/BarCode'
@@ -9,9 +9,15 @@ import { useOrderGroup } from './components/OrderGroupContext'
 import { getPaymentInfoFromOrder, parseBankInvoiceUrl } from './utils'
 import Section from './Section'
 
+const messages = defineMessages({
+  print: { id: 'store/header.bankinvoice.print', defaultMessage: '' },
+  tooltip: { id: 'store/header.backinvoice.tooltip', defaultMessage: '' },
+})
+
 const BankInvoiceSection: FC = () => {
   const orderGroup = useOrderGroup()
   const paymentInfo = getPaymentInfoFromOrder(orderGroup.orders[0])
+  const { formatMessage } = useIntl()
 
   if (paymentInfo?.paymentGroup !== 'bankInvoice') {
     return null
@@ -25,6 +31,11 @@ const BankInvoiceSection: FC = () => {
   }
 
   const parsedUrl = url ? parseBankInvoiceUrl(url) : ''
+  const printInvoice = formatMessage(messages.print, { paymentSystemName })
+  const tooltip = formatMessage(messages.tooltip, {
+    paymentSystemName,
+    message: `"${printInvoice}"`,
+  })
 
   return (
     <Section
@@ -49,10 +60,7 @@ const BankInvoiceSection: FC = () => {
               variation="secondary"
               target="_blank"
             >
-              <FormattedMessage
-                id="store/header.bankinvoice.print"
-                values={{ paymentSystemName }}
-              />
+              {printInvoice}
             </ButtonWithIcon>
           </div>
         )}
@@ -62,6 +70,17 @@ const BankInvoiceSection: FC = () => {
           <Embedded url={parsedUrl} />
         </div>
       )}
+      <div className="c-muted-1 mt6 t-small mb9 flex">
+        <FormattedMessage
+          id="store/header.backinvoice.help"
+          values={{ paymentSystemName }}
+        />
+        <Tooltip label={tooltip} position="bottom">
+          <span className="c-muted-3 flex items-center ml3">
+            <IconInfo size={12} />
+          </span>
+        </Tooltip>
+      </div>
     </Section>
   )
 }

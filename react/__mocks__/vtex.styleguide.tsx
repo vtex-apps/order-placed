@@ -29,3 +29,11 @@ export const PageBlock: FC = () => {
 export const Alert: FC = props => {
   return <div data-testid="alert">{props.children}</div>
 }
+
+export const Tooltip: FC = props => {
+  return <div data-testid="tooltip">{props.children}</div>
+}
+
+export const IconInfo: FC = props => {
+  return <div data-testid="icon-info">{props.children}</div>
+}
