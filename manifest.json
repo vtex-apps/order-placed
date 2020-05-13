@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "order-placed",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "title": "Order Placed",
   "description": "",
   "registries": [
