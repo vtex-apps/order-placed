@@ -35,3 +35,15 @@ export class Alert extends Component {
     return <div data-testid="alert">{this.props.children}</div>
   }
 }
+
+export class Tooltip extends Component {
+  public render() {
+    return <div data-testid="tooltip">{this.props.children}</div>
+  }
+}
+
+export class IconInfo extends Component {
+  public render() {
+    return <div data-testid="icon-info">{this.props.children}</div>
+  }
+}

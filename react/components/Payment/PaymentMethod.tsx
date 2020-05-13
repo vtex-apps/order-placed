@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import React, { FunctionComponent } from 'react'
 import {
   injectIntl,
   defineMessages,
@@ -6,13 +6,12 @@ import {
   WrappedComponentProps,
 } from 'react-intl'
 import { ButtonLink } from 'vtex.order-details'
+import { IconInfo, Tooltip } from 'vtex.styleguide'
 
-import InfoIcon from '../../Icons/Info'
 import {
   transformConnectorResponsesToArray,
   parseBankInvoiceUrl,
 } from '../../utils'
-import AdditionalInfo from './AdditionalInfo'
 import Price from './FormattedPrice'
 import ConnectorResponseInfo from './ConnectorResponseInfo'
 
@@ -54,7 +53,6 @@ const PaymentMethod: FunctionComponent<Props & WrappedComponentProps> = ({
   transactionId,
   intl,
 }) => {
-  const [isOpen, setIsOpen] = useState(false)
   const hasLastDigits = !!payment.lastDigits
   const isBankInvoice = payment.group === 'bankInvoice'
   const isMultiBanco = payment.group === 'multibanco'
@@ -80,20 +78,33 @@ const PaymentMethod: FunctionComponent<Props & WrappedComponentProps> = ({
               installments: payment.installments,
             })}`}
           </p>
-          <div
-            className="ml4"
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
-          >
-            <InfoIcon colorToken="c-muted-3" />
+          <div className="ml4">
+            <Tooltip
+              position="bottom"
+              label={
+                <div className="t-mini">
+                  <p className="c-on-base--inverted tc">
+                    <FormattedMessage
+                      id="store/payments.id"
+                      values={{ id: payment.id }}
+                    />
+                  </p>
+                  <p className="c-on-base--inverted tc">
+                    <FormattedMessage
+                      id="store/payments.transaction.id"
+                      values={{
+                        id: transactionId,
+                      }}
+                    />
+                  </p>
+                </div>
+              }
+            >
+              <span className="c-muted-3 flex items-center">
+                <IconInfo size={14} />
+              </span>
+            </Tooltip>
           </div>
-        </div>
-        <div hidden={!isOpen} className="mt2 z-2 absolute">
-          <AdditionalInfo
-            paymentId={payment.id}
-            transactionId={transactionId}
-            showTooltip
-          />
         </div>
         {isBankInvoice && payment.url && (
           <div className="mt5">
