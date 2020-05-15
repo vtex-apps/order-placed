@@ -11,7 +11,7 @@ import Section from './Section'
 
 const messages = defineMessages({
   print: { id: 'store/header.bankinvoice.print', defaultMessage: '' },
-  tooltip: { id: 'store/header.backinvoice.tooltip', defaultMessage: '' },
+  tooltip: { id: 'store/header.bankinvoice.tooltip', defaultMessage: '' },
 })
 
 const BankInvoiceSection: FC = () => {
@@ -72,7 +72,7 @@ const BankInvoiceSection: FC = () => {
       )}
       <div className="c-muted-1 mt6 t-small mb9 flex">
         <FormattedMessage
-          id="store/header.backinvoice.help"
+          id="store/header.bankinvoice.help"
           values={{ paymentSystemName }}
         />
         <Tooltip label={tooltip} position="bottom">
