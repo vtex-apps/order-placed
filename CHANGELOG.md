@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Italian translation.
+
 ## [2.2.5] - 2020-06-22
 
 ## [2.2.4] - 2020-06-22
@@ -15,6 +19,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Possible duped keys in `OrderTotal`.
 
 ## [2.2.3] - 2020-05-15
+
+### Fixed
+
+- Typo in messages key.
 
 ## [2.2.2] - 2020-05-13
 
