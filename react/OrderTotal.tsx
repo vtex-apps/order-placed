@@ -27,12 +27,15 @@ const OrderTotal: FC = () => {
       <ul
         className={`${handles.totalList} list pa0 mt8 w-100 w-60-l c-muted-1`}
       >
-        {newTotals.map(total => {
-          if (total.value === 0) return null
+        {newTotals.map((total, i) => {
+          if (total.value === 0) {
+            return null
+          }
+
           return (
             <li
               className={`${handles.totalListItem} pv3 flex justify-between items-center`}
-              key={total.id}
+              key={`${total.id}_${i}`}
             >
               <span className={`${handles.totalListItemLabel} flex`}>
                 <TranslateTotalizer totalizer={total} />
