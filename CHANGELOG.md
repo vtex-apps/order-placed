@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.2.5] - 2020-06-22
+
 ## [2.2.4] - 2020-06-22
 ### Fixed
 - `main` tag not working properly in IE 11.
