@@ -73,7 +73,8 @@ const OrderPlaced: FC = () => {
 
           <ExtensionPoint id="op-header" />
 
-          <main
+          <div
+            role="main"
             className={`${handles.orderPlacedMainWrapper} mv6 w-80-ns w-90 center`}
           >
             <OrderList />
@@ -85,7 +86,7 @@ const OrderPlaced: FC = () => {
                 onDismiss={() => setInstallDismissed(true)}
               />
             )}
-          </main>
+          </div>
 
           <ExtensionPoint id="op-footer" />
         </div>
