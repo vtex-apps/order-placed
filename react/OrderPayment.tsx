@@ -12,7 +12,7 @@ const OrderPayment = () => {
   const currency = useCurrency()
   const handles = useCssHandles(CSS_HANDLES)
 
-  const { payments, transactionId } = order.paymentData.transactions[0]
+  const [{ payments, transactionId }] = order.paymentData.transactions
 
   return (
     <div

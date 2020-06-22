@@ -5,7 +5,7 @@ import { orderGroupQuery as twoPickups } from '../mocks/twoPickups'
 import { renderWithOrder } from '../utils/testUtils'
 import PickupPackages from '../PickupPackages'
 
-it('should render StorePickUpHeader with shipping estimate and receiver info', () => {
+test('should render StorePickUpHeader with shipping estimate and receiver info', () => {
   const { getByText } = renderWithOrder(
     onePickup.orderGroup,
     <PickupPackages />
@@ -17,7 +17,7 @@ it('should render StorePickUpHeader with shipping estimate and receiver info', (
   expect(getByText('não entre de sunga não entre sem sunga')).toBeDefined()
 })
 
-it('should render pickup counter when multiple store pickups', () => {
+test('should render pickup counter when multiple store pickups', () => {
   const { queryAllByText } = renderWithOrder(
     twoPickups.orderGroup,
     <PickupPackages />
@@ -26,7 +26,7 @@ it('should render pickup counter when multiple store pickups', () => {
   expect(queryAllByText(/- n˚ \d of \d/)).toHaveLength(2)
 })
 
-it('should not pickup counter when there is only one store pickup', () => {
+test('should not pickup counter when there is only one store pickup', () => {
   const { queryByText } = renderWithOrder(
     onePickup.orderGroup,
     <PickupPackages />
@@ -35,7 +35,7 @@ it('should not pickup counter when there is only one store pickup', () => {
   expect(queryByText(/ - n˚ \d of \d/)).toBeNull()
 })
 
-it('should render product list', () => {
+test('should render product list', () => {
   const { queryAllByText } = renderWithOrder(
     twoPickups.orderGroup,
     <PickupPackages />

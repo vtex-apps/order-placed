@@ -5,7 +5,7 @@ import ConfirmationTitle from '../ConfirmationTitle'
 import { orderGroupQuery as oneDelivery } from '../mocks/oneDeliverySimple'
 import { renderWithOrderGroup } from '../utils/testUtils'
 
-it('should render success icon', () => {
+test('should render success icon', () => {
   const { getByTestId } = renderWithOrderGroup(
     oneDelivery.orderGroup,
     <ConfirmationIcon />
@@ -15,7 +15,7 @@ it('should render success icon', () => {
   expect(icon).toBeTruthy()
 })
 
-it('should render thank you message', () => {
+test('should render thank you message', () => {
   const { getByText } = renderWithOrderGroup(
     oneDelivery.orderGroup,
     <ConfirmationTitle />

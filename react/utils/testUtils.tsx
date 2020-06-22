@@ -14,7 +14,7 @@ const doesNodeMatchesText = (node: HTMLElement, regexp: RegExp) =>
 export const queryByTextWithMarkup = (container: HTMLElement, regexp: RegExp) =>
   queryByText(container, (_: string, node: HTMLElement) => {
     const childrenDontHaveText = Array.from(node.children).every(
-      child => !doesNodeMatchesText(child as HTMLElement, regexp)
+      (child) => !doesNodeMatchesText(child as HTMLElement, regexp)
     )
     return doesNodeMatchesText(node, regexp) && childrenDontHaveText
   })

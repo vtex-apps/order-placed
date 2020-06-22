@@ -25,7 +25,7 @@ const Notices: FC = () => {
   const bankInvoice = orders
     .map(getPaymentInfoFromOrder)
     .find(
-      paymentInfo =>
+      (paymentInfo) =>
         paymentInfo.paymentGroup === 'bankInvoice' && !!paymentInfo.url
     )
 

@@ -39,11 +39,14 @@ const messages = defineMessages({
 })
 
 function hasValueAndIsNotPrivate(connectorResponses: ConnectorResponses) {
-  return filter(connectorResponses, c => c[0] && c[1] && c[0].charAt(0) !== '_')
+  return filter(
+    connectorResponses,
+    (c) => c[0] && c[1] && c[0].charAt(0) !== '_'
+  )
 }
 
 function toKeyValue(connectorResponses: ConnectorResponses) {
-  return map(connectorResponses, c => ({ key: c[0], value: c[1] }))
+  return map(connectorResponses, (c) => ({ key: c[0], value: c[1] }))
 }
 
 export function transformConnectorResponsesToArray(

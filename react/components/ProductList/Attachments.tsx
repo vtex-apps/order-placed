@@ -18,7 +18,7 @@ const ProductAttachment: FC<Props> = ({ product }) => {
 
   return (
     <Fragment>
-      {attachments.map(attachmentItem => {
+      {attachments.map((attachmentItem) => {
         let content: string[]
         let titleLabel: string | ReactNode
         let toggleLabel: string | ReactNode
@@ -36,7 +36,7 @@ const ProductAttachment: FC<Props> = ({ product }) => {
           titleLabel = attachmentItem.name
           toggleLabel = <FormattedMessage id="store/order.totals.pickup.free" />
           content = Object.keys(attachmentItem.content).map(
-            key => `${key}: ${attachmentItem.content[key]}`
+            (key) => `${key}: ${attachmentItem.content[key]}`
           )
         }
 

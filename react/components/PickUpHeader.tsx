@@ -22,9 +22,8 @@ const CSS_HANDLES = [
 const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const multiplePickups = numPackages > 1
-  const receiverName = shippingData.address.receiverName
-  const additionalInfo =
-    shippingData.selectedSlaObj.pickupStoreInfo.additionalInfo
+  const { receiverName } = shippingData.address
+  const { additionalInfo } = shippingData.selectedSlaObj.pickupStoreInfo
   return (
     <Fragment>
       <div

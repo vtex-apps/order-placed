@@ -1,0 +1,14 @@
+{
+  "extends": "vtex-react/io",
+  "env": {
+    "browser": true
+  },
+  "overrides": [
+    {
+      "files": ["**/__mocks__/**"],
+      "rules": {
+        "react/prefer-stateless-function": "off"
+      }
+    }
+  ]
+}
