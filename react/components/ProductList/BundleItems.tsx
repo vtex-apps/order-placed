@@ -17,14 +17,14 @@ const BundleItems: FC<Props> = ({ product }) => {
 
   return (
     <Fragment>
-      {bundleItems.map(bundleItem => {
+      {bundleItems.map((bundleItem) => {
         const isMessage = bundleItem?.attachments?.[0]?.name === 'message'
         const content = isMessage
           ? [bundleItem.attachments[0].content.text]
           : ([] as string[]).concat(
-              ...bundleItem.attachments.map(attachmentItem => {
+              ...bundleItem.attachments.map((attachmentItem) => {
                 return Object.keys(attachmentItem.content).map(
-                  key => `${key}: ${attachmentItem.content[key]}`
+                  (key) => `${key}: ${attachmentItem.content[key]}`
                 )
               })
             )

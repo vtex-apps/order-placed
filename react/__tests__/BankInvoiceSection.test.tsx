@@ -7,7 +7,7 @@ import { orderGroupQuery as bankInvoiceNumberNotLoggedIn } from '../mocks/bankIn
 import BankInvoiceSection from '../BankInvoiceSection'
 import { renderWithOrderGroup } from '../utils/testUtils'
 
-it('renders embedded bank invoice for logged in customer, but no number', () => {
+test('renders embedded bank invoice for logged in customer, but no number', () => {
   const { getByTestId, queryByTestId } = renderWithOrderGroup(
     bankInvoiceLoggedIn.orderGroup,
     <BankInvoiceSection />
@@ -22,7 +22,7 @@ it('renders embedded bank invoice for logged in customer, but no number', () => 
   expect(embedded).toBeTruthy()
 })
 
-it('renders embedded bank invoice for logged in customer, along with barcode number', () => {
+test('renders embedded bank invoice for logged in customer, along with barcode number', () => {
   const { getByTestId, queryByTestId } = renderWithOrderGroup(
     bankInvoiceNumberLoggedIn.orderGroup,
     <BankInvoiceSection />
@@ -37,7 +37,7 @@ it('renders embedded bank invoice for logged in customer, along with barcode num
   expect(embedded).toBeTruthy()
 })
 
-it("doesn't render bank invoice section for customer not logged in", () => {
+test("doesn't render bank invoice section for customer not logged in", () => {
   const { queryByTestId } = renderWithOrderGroup(
     bankInvoiceNotLoggedIn.orderGroup,
     <BankInvoiceSection />
@@ -52,7 +52,7 @@ it("doesn't render bank invoice section for customer not logged in", () => {
   expect(embedded).toBeNull()
 })
 
-it('renders bank invoice barcode number for user not logged in', () => {
+test('renders bank invoice barcode number for user not logged in', () => {
   const { queryByTestId } = renderWithOrderGroup(
     bankInvoiceNumberNotLoggedIn.orderGroup,
     <BankInvoiceSection />
@@ -67,7 +67,7 @@ it('renders bank invoice barcode number for user not logged in', () => {
   expect(embedded).toBeNull()
 })
 
-it('has the invoice url if the user is logged in.', () => {
+test('has the invoice url if the user is logged in.', () => {
   const { container } = renderWithOrderGroup(
     bankInvoiceLoggedIn.orderGroup,
     <BankInvoiceSection />

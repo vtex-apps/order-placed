@@ -11,7 +11,7 @@ interface Props {
 const TaxInfo: FunctionComponent<Props> = ({ taxesTotals }) => {
   const tooltipLabel = (
     <ul className="list pa0 ma0">
-      {taxesTotals.map(total => (
+      {taxesTotals.map((total) => (
         <li className="flex justify-between items-center" key={total.name}>
           <span className="pr5">
             <TranslateTotalizer totalizer={total} />

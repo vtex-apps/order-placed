@@ -12,7 +12,7 @@ const Analytics: FC<Props> = ({ eventList, push }) => {
   const { route } = useRuntime()
 
   useEffect(() => {
-    eventList.forEach(event => push(event))
+    eventList.forEach((event) => push(event))
   }, [eventList, push, route.path])
 
   return null

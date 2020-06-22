@@ -3,8 +3,8 @@ import React from 'react'
 
 import GET_ORDER_GROUP from '../graphql/getOrderGroup.graphql'
 import OrderPlaced from '../index'
-import requestNotFound from '../mocks/graphql/not-found.json'
-import requestForbidden from '../mocks/graphql/forbidden.json'
+import requestNotFound from './fixtures/graphql/not-found.json'
+import requestForbidden from './fixtures/graphql/forbidden.json'
 import { renderWithIntl } from '../utils/testUtils'
 
 const orderGroupId = '123123123'

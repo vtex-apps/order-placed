@@ -15,7 +15,7 @@ const ProductList: FC<Props> = ({ products }) => {
   const handles = useCssHandles(CSS_HANDLES)
   return (
     <ul className={`${handles.productList} w-60-l w-100 list pl0`}>
-      {products.map(product => (
+      {products.map((product) => (
         <li
           key={product.id}
           className={`${handles.productListItem} db bb b--muted-4 mb7 pb7`}

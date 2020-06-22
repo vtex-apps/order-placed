@@ -4,7 +4,7 @@ import { orderGroupQuery as splitOrder } from '../mocks/splitOrderTwoSellers'
 import { renderWithOrder } from '../utils/testUtils'
 import OrderSeller from '../OrderSeller'
 
-it('should render seller name for an order processed by another seller', () => {
+test('should render seller name for an order processed by another seller', () => {
   const { getByText } = renderWithOrder(splitOrder.orderGroup, <OrderSeller />)
 
   const seller = 'Sold and delivered by'

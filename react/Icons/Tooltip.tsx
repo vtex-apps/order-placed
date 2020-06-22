@@ -4,7 +4,7 @@ import { baseClassname } from './utils'
 
 const Tooltip: FC<{ colorToken?: string }> = ({ colorToken }) => (
   <svg
-    className={`${baseClassname('tooltip')} ${colorToken || ''}`}
+    className={`${baseClassname('tooltip')} ${colorToken ?? ''}`}
     width="20"
     height="9"
     viewBox="0 0 20 9"
