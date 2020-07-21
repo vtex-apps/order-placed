@@ -8,6 +8,13 @@ import Embedded from './components/BankInvoice/Embedded'
 import { useOrderGroup } from './components/OrderGroupContext'
 import { getPaymentInfoFromOrder, parseBankInvoiceUrl } from './utils'
 import Section from './Section'
+import { useCssHandles } from 'vtex.css-handles'
+
+const CSS_HANDLES = [
+  'barCodeFlexContainer',
+  'printBilletButtonWrapper',
+  'printHintWrapper'
+]
 
 const messages = defineMessages({
   print: { id: 'store/header.bankinvoice.print', defaultMessage: '' },
@@ -37,6 +44,8 @@ const BankInvoiceSection: FC = () => {
     message: `"${printInvoice}"`,
   })
 
+  const handles = useCssHandles(CSS_HANDLES)
+
   return (
     <Section
       name="bank-invoice"
@@ -50,10 +59,10 @@ const BankInvoiceSection: FC = () => {
           values={{ paymentSystemName }}
         />
       </header>
-      <div className="flex-l justify-between items-center mt6">
+      <div className={`${handles.barCodeFlexContainer} flex-l justify-between items-center mt6`}>
         {barCodeNumber && <BarCode barCodeNumber={barCodeNumber} />}
         {isURLValid && (
-          <div className={`mt5 mt0-l ${barCodeNumber ? 'ml5-l' : ''}`}>
+          <div className={`${handles.printBilletButtonWrapper} mt5 mt0-l ${barCodeNumber ? 'ml5-l' : ''}`}>
             <ButtonWithIcon
               href={parsedUrl}
               icon={<PrinterIcon />}
@@ -70,7 +79,7 @@ const BankInvoiceSection: FC = () => {
           <Embedded url={parsedUrl} />
         </div>
       )}
-      <div className="c-muted-1 mt6 t-small mb9 flex">
+      <div className={`${handles.printHintWrapper} c-muted-1 mt6 t-small mb9 flex`}>
         <FormattedMessage
           id="store/header.bankinvoice.help"
           values={{ paymentSystemName }}
