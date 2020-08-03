@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { FormattedMessage, defineMessages, useIntl } from 'react-intl'
 import { ButtonWithIcon, Tooltip, IconInfo } from 'vtex.styleguide'
+import { useCssHandles } from 'vtex.css-handles'
 
 import PrinterIcon from './Icons/PrinterIcon'
 import BarCode from './components/BankInvoice/BarCode'
@@ -8,13 +9,12 @@ import Embedded from './components/BankInvoice/Embedded'
 import { useOrderGroup } from './components/OrderGroupContext'
 import { getPaymentInfoFromOrder, parseBankInvoiceUrl } from './utils'
 import Section from './Section'
-import { useCssHandles } from 'vtex.css-handles'
 
 const CSS_HANDLES = [
-  'barCodeFlexContainer',
-  'printBilletButtonWrapper',
-  'printHintWrapper'
-]
+  'barCodeContainer',
+  'printButtonWrapper',
+  'printHintWrapper',
+] as const
 
 const messages = defineMessages({
   print: { id: 'store/header.bankinvoice.print', defaultMessage: '' },
@@ -22,6 +22,7 @@ const messages = defineMessages({
 })
 
 const BankInvoiceSection: FC = () => {
+  const handles = useCssHandles(CSS_HANDLES)
   const orderGroup = useOrderGroup()
   const paymentInfo = getPaymentInfoFromOrder(orderGroup.orders[0])
   const { formatMessage } = useIntl()
@@ -44,8 +45,6 @@ const BankInvoiceSection: FC = () => {
     message: `"${printInvoice}"`,
   })
 
-  const handles = useCssHandles(CSS_HANDLES)
-
   return (
     <Section
       name="bank-invoice"
@@ -59,10 +58,16 @@ const BankInvoiceSection: FC = () => {
           values={{ paymentSystemName }}
         />
       </header>
-      <div className={`${handles.barCodeFlexContainer} flex-l justify-between items-center mt6`}>
+      <div
+        className={`${handles.barCodeContainer} flex-l justify-between items-center mt6`}
+      >
         {barCodeNumber && <BarCode barCodeNumber={barCodeNumber} />}
         {isURLValid && (
-          <div className={`${handles.printBilletButtonWrapper} mt5 mt0-l ${barCodeNumber ? 'ml5-l' : ''}`}>
+          <div
+            className={`${handles.printButtonWrapper} mt5 mt0-l ${
+              barCodeNumber ? 'ml5-l' : ''
+            }`}
+          >
             <ButtonWithIcon
               href={parsedUrl}
               icon={<PrinterIcon />}
@@ -79,7 +84,9 @@ const BankInvoiceSection: FC = () => {
           <Embedded url={parsedUrl} />
         </div>
       )}
-      <div className={`${handles.printHintWrapper} c-muted-1 mt6 t-small mb9 flex`}>
+      <div
+        className={`${handles.printHintWrapper} c-muted-1 mt6 t-small mb9 flex`}
+      >
         <FormattedMessage
           id="store/header.bankinvoice.help"
           values={{ paymentSystemName }}
