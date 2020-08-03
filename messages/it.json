@@ -5,6 +5,8 @@
   "store/header.bankinvoice.embeded.expand": "Espandi",
   "store/header.bankinvoice.header": "Informazioni sul tuo {paymentSystemName}",
   "store/header.bankinvoice.print": "Stampa {paymentSystemName}",
+  "store/header.bankinvoice.help": "Impossibile visualizzare {paymentSystemName}?",
+  "store/header.bankinvoice.tooltip": "Il tuo {paymentSystemName} funziona correttamente. Fai clic su {messaggio} o copia il codice a barre per procedere con il pagamento.",
   "store/header.email": "Entro circa 5 minuti riceverai una e-mail all'indirizzo {userEmail} contenente tutti i dettagli dell'acquisto.{lineBreak}Ricorda di controllare la tua cartella di spam o delle promozioni",
   "store/header.newpurchase.button": "Inizia un nuovo ordine",
   "store/header.print.button": "Stampa",

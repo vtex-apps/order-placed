@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { FormattedMessage, defineMessages, useIntl } from 'react-intl'
 import { ButtonWithIcon, Tooltip, IconInfo } from 'vtex.styleguide'
+import { useCssHandles } from 'vtex.css-handles'
 
 import PrinterIcon from './Icons/PrinterIcon'
 import BarCode from './components/BankInvoice/BarCode'
@@ -9,12 +10,19 @@ import { useOrderGroup } from './components/OrderGroupContext'
 import { getPaymentInfoFromOrder, parseBankInvoiceUrl } from './utils'
 import Section from './Section'
 
+const CSS_HANDLES = [
+  'barCodeContainer',
+  'printButtonWrapper',
+  'printHintWrapper',
+] as const
+
 const messages = defineMessages({
   print: { id: 'store/header.bankinvoice.print', defaultMessage: '' },
   tooltip: { id: 'store/header.bankinvoice.tooltip', defaultMessage: '' },
 })
 
 const BankInvoiceSection: FC = () => {
+  const handles = useCssHandles(CSS_HANDLES)
   const orderGroup = useOrderGroup()
   const paymentInfo = getPaymentInfoFromOrder(orderGroup.orders[0])
   const { formatMessage } = useIntl()
@@ -50,10 +58,16 @@ const BankInvoiceSection: FC = () => {
           values={{ paymentSystemName }}
         />
       </header>
-      <div className="flex-l justify-between items-center mt6">
+      <div
+        className={`${handles.barCodeContainer} flex-l justify-between items-center mt6`}
+      >
         {barCodeNumber && <BarCode barCodeNumber={barCodeNumber} />}
         {isURLValid && (
-          <div className={`mt5 mt0-l ${barCodeNumber ? 'ml5-l' : ''}`}>
+          <div
+            className={`${handles.printButtonWrapper} mt5 mt0-l ${
+              barCodeNumber ? 'ml5-l' : ''
+            }`}
+          >
             <ButtonWithIcon
               href={parsedUrl}
               icon={<PrinterIcon />}
@@ -70,7 +84,9 @@ const BankInvoiceSection: FC = () => {
           <Embedded url={parsedUrl} />
         </div>
       )}
-      <div className="c-muted-1 mt6 t-small mb9 flex">
+      <div
+        className={`${handles.printHintWrapper} c-muted-1 mt6 t-small mb9 flex`}
+      >
         <FormattedMessage
           id="store/header.bankinvoice.help"
           values={{ paymentSystemName }}
