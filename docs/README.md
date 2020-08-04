@@ -257,7 +257,7 @@ Renders the confirmation icon.
 
 | Default appearance                                         |
 | ---------------------------------------------------------- |
-| ![op-confirmation-icon](./images/op-confirmation-icon.png) |
+| ![op-confirmation-icon](https://user-images.githubusercontent.com/17712401/89224372-c38c5080-d5ae-11ea-8112-9870c854e5a2.png) |
 
 ### `op-confirmation-title`
 
@@ -275,7 +275,7 @@ Renders the confirmation title.
 
 | Default appearance                                           |
 | ------------------------------------------------------------ |
-| ![op-confirmation-title](./images/op-confirmation-title.png) |
+| ![op-confirmation-title](https://user-images.githubusercontent.com/17712401/89224442-df8ff200-d5ae-11ea-824a-25d7530249dd.png) |
 
 ### `op-confirmation-message`
 
@@ -293,7 +293,7 @@ Renders the confirmation message, containing the clients email.
 
 | Default appearance                                               |
 | ---------------------------------------------------------------- |
-| ![op-confirmation-message](./images/op-confirmation-message.png) |
+| ![op-confirmation-message](https://user-images.githubusercontent.com/17712401/89224480-f0406800-d5ae-11ea-8602-0cb9541b0459.png) |
 
 ### `op-print-button`
 
@@ -307,7 +307,7 @@ Renders a button that triggers a full page print.
 
 | Default appearance                 |
 | ---------------------------------- |
-| ![op-print](./images/op-print.png) |
+| ![op-print](https://user-images.githubusercontent.com/17712401/89224547-0817ec00-d5af-11ea-9b6a-9ae33a89daef.png) |
 
 ### `op-notices`
 
@@ -326,7 +326,7 @@ Renders a list of important informations relevant to the currently placed order.
 
 | Default appearance                     |
 | -------------------------------------- |
-| ![op-notices](./images/op-notices.png) |
+| ![op-notices](https://user-images.githubusercontent.com/17712401/89224594-16fe9e80-d5af-11ea-9c3e-4cfddcf76a4c.png) |
 
 ### `op-summary-section`
 
@@ -354,7 +354,7 @@ If a placed order is split between delivery and pickup, renders a summary of all
 
 | Default appearance                                     |
 | ------------------------------------------------------ |
-| ![op-summary-section](./images/op-summary-section.png) |
+| ![op-summary-section](https://user-images.githubusercontent.com/17712401/89224626-267de780-d5af-11ea-80c1-7771c6dae670.png) |
 
 ### `op-bank-invoice-section`
 
@@ -378,7 +378,7 @@ Renders the bank invoice section if payment method chosen was bank invoice.
 
 | Default appearance                                               |
 | ---------------------------------------------------------------- |
-| ![op-bank-invoice-section](./images/op-bank-invoice-section.png) |
+| ![op-bank-invoice-section](https://user-images.githubusercontent.com/17712401/89224654-3695c700-d5af-11ea-9b17-98c68450370d.png) |
 
 ### `op-order`
 
@@ -411,7 +411,7 @@ Renders the order id number. Must be placed inside an [`op-order`](#op-order) bl
 
 | Default appearance                               |
 | ------------------------------------------------ |
-| ![op-order-number](./images/op-order-number.png) |
+| ![op-order-number](https://user-images.githubusercontent.com/17712401/89224695-4c0af100-d5af-11ea-866e-bea733073346.png) |
 
 ### `op-order-datetime`
 
@@ -429,7 +429,7 @@ Renders the date and time an order was placed. Must be placed inside an [`op-ord
 
 | Default appearance                                   |
 | ---------------------------------------------------- |
-| ![op-order-datetime](./images/op-order-datetime.png) |
+| ![op-order-datetime](https://user-images.githubusercontent.com/17712401/89224728-5a590d00-d5af-11ea-8901-7654c543d9e9.png) |
 
 ### `op-order-seller`
 
@@ -448,7 +448,7 @@ Renders the seller of an order. Must be placed inside an [`op-order`](#op-order)
 
 | Default appearance                               |
 | ------------------------------------------------ |
-| ![op-order-seller](./images/op-order-seller.png) |
+| ![op-order-seller](https://user-images.githubusercontent.com/17712401/89224779-765cae80-d5af-11ea-9320-29902e7f47dd.png) |
 
 ### `op-order-split-notice`
 
@@ -466,7 +466,7 @@ Renders a message with the number of packages of an order if the order was split
 
 | Default appearance                                           |
 | ------------------------------------------------------------ |
-| ![op-order-split-notice](./images/op-order-split-notice.png) |
+| ![op-order-split-notice](https://user-images.githubusercontent.com/17712401/89224825-88d6e800-d5af-11ea-8801-7f2d5267da5b.png) |
 
 ### `op-order-customer`
 
@@ -480,7 +480,7 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 
 | Default appearance                                   |
 | ---------------------------------------------------- |
-| ![op-order-customer](./images/op-order-customer.png) |
+| ![op-order-customer](https://user-images.githubusercontent.com/17712401/89224880-a015d580-d5af-11ea-8314-bc223b3da0aa.png) |
 
 ### `op-order-options`
 
@@ -502,7 +502,7 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 
 | Default appearance                                 |
 | -------------------------------------------------- |
-| ![op-order-options](./images/op-order-options.png) |
+| ![op-order-options](https://user-images.githubusercontent.com/17712401/89224923-b754c300-d5af-11ea-8b28-0efa82329e96.png) |
 
 ### `op-order-payment`
 
@@ -519,7 +519,7 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 
 | Default appearance                                 |
 | -------------------------------------------------- |
-| ![op-order-payment](./images/op-order-payment.png) |
+| ![op-order-payment](https://user-images.githubusercontent.com/17712401/89225037-eec36f80-d5af-11ea-82af-267cb69c7d7b.png) |
 
 ### `op-order-delivery-packages`
 
@@ -559,7 +559,7 @@ Renders an order delivery packages information and product list. Must be placed 
 
 | Default appearance                                                     |
 | ---------------------------------------------------------------------- |
-| ![op-order-delivery-packages](./images/op-order-delivery-packages.png) |
+| ![op-order-delivery-packages](https://user-images.githubusercontent.com/17712401/89225054-f8e56e00-d5af-11ea-9c0a-b2cc37fe34f4.png) |
 
 ### `op-order-pickup-packages`
 
@@ -581,7 +581,7 @@ _Note: Include the same CSS handles as [`op-order-delivery-packages`](#op-order-
 
 | Default appearance                                                 |
 | ------------------------------------------------------------------ |
-| ![op-order-pickup-packages](./images/op-order-pickup-packages.png) |
+| ![op-order-pickup-packages](https://user-images.githubusercontent.com/17712401/89225074-03076c80-d5b0-11ea-840e-69998a41ec9d.png) |
 
 ### `op-order-total`
 
@@ -601,7 +601,7 @@ Renders an order delivery packages information and product list. Must be placed 
 
 | Default appearance                             |
 | ---------------------------------------------- |
-| ![op-order-total](./images/op-order-total.png) |
+| ![op-order-total](https://user-images.githubusercontent.com/17712401/89225092-0b5fa780-d5b0-11ea-976e-da3c64453eff.png) |
 
 ## API
 
