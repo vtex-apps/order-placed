@@ -1,7 +1,7 @@
 {
   "store/common.header.counter": " - Nr {index} von {numPackages}",
   "store/header.bankinvoice.copy": "Kopie",
-  "store/header.bankinvoice.embeded.collapse": "Ausfall",
+  "store/header.bankinvoice.embeded.collapse": "Auswahl",
   "store/header.bankinvoice.embeded.expand": "Erweitern",
   "store/header.bankinvoice.header": "Information über Ihr {paymentSystemName}",
   "store/header.bankinvoice.print": "Drucken {paymentSystemName}",
