@@ -6,11 +6,17 @@ import { useOrder } from './components/OrderContext'
 
 interface Props {
   fullWidth?: boolean
+  displayUpdateOrderButton?: boolean
+  displayMyOrdersButton?: boolean
 }
 
 const CSS_HANDLES = ['orderOptionsWrapper']
 
-const WrappedOrderOptions: FC<Props> = ({ fullWidth = false }) => {
+const WrappedOrderOptions: FC<Props> = ({
+  fullWidth = false,
+  displayUpdateOrderButton = true,
+  displayMyOrdersButton = true,
+}) => {
   const order = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
   const hasTakeAwayParcels = order.takeAwayParcels.length > 0
@@ -22,6 +28,8 @@ const WrappedOrderOptions: FC<Props> = ({ fullWidth = false }) => {
       orderId={order.orderId}
       takeaway={hasTakeAwayParcels}
       fullWidth={fullWidth}
+      displayUpdateOrderButton={displayUpdateOrderButton}
+      displayMyOrdersButton={displayMyOrdersButton}
     />
   )
 }
