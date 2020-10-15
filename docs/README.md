@@ -493,8 +493,8 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 | Prop name   | Type      | Description                                         | Default value |
 | ----------- | --------- | --------------------------------------------------- | ------------- |
 | `fullWidth` | `boolean` | Make the options wrapper take full horizontal space | `false`       |
-| `displayMyOrdersButton` | `boolean` | Hide or show "My Orders" button | `true`       |
-| `displayUpdateOrderButton` | `boolean` | Hide or show "Update order" button | `true`       |
+| `displayMyOrdersButton` | `boolean` | Whether the `My Orders` button should be displayed (`true`) or not (`false`). | `true`       |
+| `displayUpdateOrderButton` | `boolean` | Whether the `Update order` button should be displayed (`true`) or not (`false`). | `true`       |
 
 **CSS Handles:**
 
