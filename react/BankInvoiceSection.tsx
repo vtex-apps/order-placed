@@ -27,10 +27,6 @@ const BankInvoiceSection: FC = () => {
   const paymentInfo = getPaymentInfoFromOrder(orderGroup.orders[0])
   const { formatMessage } = useIntl()
 
-  if (paymentInfo?.paymentGroup !== 'bankInvoice') {
-    return null
-  }
-
   const { url, paymentSystemName, barCodeNumber } = paymentInfo
   const isURLValid = url && !url.match(/(\*.\*.)+\*\w\*/g)
 
