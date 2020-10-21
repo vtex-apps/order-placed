@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.4.3] - 2020-10-21
+
 ### Fixed
 
 - Display of embedded info for non `bankIvoice` payments.
