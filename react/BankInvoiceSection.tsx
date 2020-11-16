@@ -28,8 +28,8 @@ const BankInvoiceSection: FC = () => {
   const { formatMessage } = useIntl()
 
   const { url, paymentSystemName, barCodeNumber } = paymentInfo
-  const isURLValid = url && !url.match(/(\*.\*.)+\*\w\*/g)
-  const hideBankInvoice = !isURLValid && !barCodeNumber
+  const isEncryptedURL = Boolean(url?.match(/(\*.\*.)+\*\w\*/g))
+  const hideBankInvoice = isEncryptedURL && !barCodeNumber
 
   if (hideBankInvoice) {
     return null
@@ -59,7 +59,7 @@ const BankInvoiceSection: FC = () => {
         className={`${handles.barCodeContainer} flex-l justify-between items-center mt6`}
       >
         {barCodeNumber && <BarCode barCodeNumber={barCodeNumber} />}
-        {parsedUrl && (
+        {!isEncryptedURL && (
           <div
             className={`${handles.printButtonWrapper} mt5 mt0-l ${
               barCodeNumber ? 'ml5-l' : ''
@@ -76,7 +76,7 @@ const BankInvoiceSection: FC = () => {
           </div>
         )}
       </div>
-      {isURLValid && (
+      {!isEncryptedURL && (
         <div className="mt6">
           <Embedded url={parsedUrl} />
         </div>

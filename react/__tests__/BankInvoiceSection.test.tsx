@@ -18,9 +18,9 @@ test('renders embedded bank invoice for logged in customer, but no number', () =
   const barCodeNumber = queryByTestId('bank-invoice-barcode')
   const embedded = queryByTestId('embedded-bank-invoice')
 
-  expect(bankInvoiceSection).toBeTruthy()
-  expect(barCodeNumber).toBeNull()
-  expect(embedded).toBeTruthy()
+  expect(bankInvoiceSection).toBeInTheDocument()
+  expect(barCodeNumber).not.toBeInTheDocument()
+  expect(embedded).toBeInTheDocument()
 })
 
 test('renders embedded bank invoice for logged in customer, along with barcode number', () => {
@@ -33,9 +33,9 @@ test('renders embedded bank invoice for logged in customer, along with barcode n
   const barCodeNumber = queryByTestId('bank-invoice-barcode')
   const embedded = queryByTestId('embedded-bank-invoice')
 
-  expect(bankInvoiceSection).toBeTruthy()
-  expect(barCodeNumber).toBeTruthy()
-  expect(embedded).toBeTruthy()
+  expect(bankInvoiceSection).toBeInTheDocument()
+  expect(barCodeNumber).toBeInTheDocument()
+  expect(embedded).toBeInTheDocument()
 })
 
 test("doesn't render bank invoice section for customer not logged in", () => {
@@ -48,9 +48,9 @@ test("doesn't render bank invoice section for customer not logged in", () => {
   const barCodeNumber = queryByTestId('bank-invoice-barcode')
   const embedded = queryByTestId('embedded-bank-invoice')
 
-  expect(bankInvoiceSection).toBeNull()
-  expect(barCodeNumber).toBeNull()
-  expect(embedded).toBeNull()
+  expect(bankInvoiceSection).not.toBeInTheDocument()
+  expect(barCodeNumber).not.toBeInTheDocument()
+  expect(embedded).not.toBeInTheDocument()
 })
 
 test('renders bank invoice barcode number for user not logged in', () => {
@@ -63,9 +63,9 @@ test('renders bank invoice barcode number for user not logged in', () => {
   const barCodeNumber = queryByTestId('bank-invoice-barcode')
   const embedded = queryByTestId('embedded-bank-invoice')
 
-  expect(bankInvoiceSection).toBeTruthy()
-  expect(barCodeNumber).toBeTruthy()
-  expect(embedded).toBeNull()
+  expect(bankInvoiceSection).toBeInTheDocument()
+  expect(barCodeNumber).toBeInTheDocument()
+  expect(embedded).not.toBeInTheDocument()
 })
 
 test('has the invoice url if the user is logged in.', () => {
@@ -79,15 +79,19 @@ test('has the invoice url if the user is logged in.', () => {
   expect(printButton.href).not.toContain('login')
 })
 
-test('redirects to the log-in url if the user is not logged in.', () => {
-  const { container } = renderWithOrderGroup(
+test('has the log-in url if the user is not logged in.', () => {
+  const { container, queryByTestId } = renderWithOrderGroup(
     bankInvoiceNumberNotLoggedIn.orderGroup,
     <BankInvoiceSection />
   )
 
   const printButton = container.querySelector('a[href]') as HTMLAnchorElement
+  const embedded = queryByTestId('embedded-bank-invoice')
 
   expect(printButton.href).toContain('login')
+
+  // no embedded without a valid URL
+  expect(embedded).not.toBeInTheDocument()
 })
 
 test('renders embedded for other types of payments besides bank invoice', () => {
@@ -98,5 +102,5 @@ test('renders embedded for other types of payments besides bank invoice', () => 
 
   const embedded = queryByTestId('embedded-bank-invoice')
 
-  expect(embedded).toBeTruthy()
+  expect(embedded).toBeInTheDocument()
 })
