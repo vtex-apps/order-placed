@@ -75,7 +75,19 @@ test('has the invoice url if the user is logged in.', () => {
   )
 
   const printButton = container.querySelector('a[href]') as HTMLAnchorElement
+
   expect(printButton.href).not.toContain('login')
+})
+
+test('redirects to the log-in url if the user is not logged in.', () => {
+  const { container } = renderWithOrderGroup(
+    bankInvoiceNumberNotLoggedIn.orderGroup,
+    <BankInvoiceSection />
+  )
+
+  const printButton = container.querySelector('a[href]') as HTMLAnchorElement
+
+  expect(printButton.href).toContain('login')
 })
 
 test('renders embedded for other types of payments besides bank invoice', () => {
