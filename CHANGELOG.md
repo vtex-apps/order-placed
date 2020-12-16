@@ -25,6 +25,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- Removing assemblies from the items count
+  
+### Added
+
 - `parentItemIndex` field in GraphQL query.
 
 ## [2.4.3] - 2020-10-21
