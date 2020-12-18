@@ -14,7 +14,7 @@
   "store/items.attachments.subscription": "Subscription",
   "store/items.attachments.subscription.frequency.day": "{frequencyNumber, plural, one {Every # day} few {Every # days} many {Every # days} other {Every # days}}",
   "store/items.attachments.subscription.frequency.month": "{frequencyNumber, plural, one {Every # month} few {Every # months} many {Every # months} other {Every # months}}",
-  "store/items.attachments.subscription.frequency.week": "{frequencyNumber, plural, one {Every # week} few {Every # weeks} many {Every # weeks} other {Every # weeks}}her {# weeks}}",
+  "store/items.attachments.subscription.frequency.week": "{frequencyNumber, plural, one {Every # week} few {Every # weeks} many {Every # weeks} other {Every # weeks}}",
   "store/items.attachments.subscription.frequency.year": "{frequencyNumber, plural, one {Every # year} few {Every # years} many {Every # years} other {Every # years}}",
   "store/items.attachments.subscription.purchaseday": "Charged monthly at day {purchaseday}",
   "store/order.header.cancel.button": "Cancel order",
