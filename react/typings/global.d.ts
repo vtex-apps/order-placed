@@ -50,6 +50,7 @@ interface OrderItem {
   listPrice: number
   bundleItems: Bundle[]
   isGift: boolean
+  parentItemIndex: null | number
   quantity: number
   seller: string
   imageUrl: string
