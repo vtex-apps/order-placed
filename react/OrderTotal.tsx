@@ -19,7 +19,12 @@ const CSS_HANDLES = [
 const OrderTotal: FC = () => {
   const { items, totals, value: totalValue } = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
-  const numItems = items.reduce((acc, item) => acc + item.quantity, 0)
+  const numItems = items.reduce((acc, item) => {
+    if (item.parentItemIndex === null) {
+      return acc + item.quantity
+    }
+    return acc
+  }, 0)
   const [newTotals, taxes] = getTotals(totals)
 
   return (
