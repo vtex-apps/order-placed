@@ -5141,17 +5141,17 @@ verror@1.10.0:
   version "1.6.1"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pixel-manager@1.6.1/public/@types/vtex.pixel-manager#a9cf803f14aa60290a622155fb59e5243c4197bc"
 
-"vtex.profile-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.3.3/public/_types/react":
+"vtex.profile-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.4.0/public/_types/react":
   version "0.0.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.3.3/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.4.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
 "vtex.pwa-components@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pwa-components@0.4.1/public/@types/vtex.pwa-components":
   version "0.4.1"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pwa-components@0.4.1/public/@types/vtex.pwa-components#a576d7799f8e4c5c4db1ff539dcebe0cf95dbbd9"
 
-"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.4/public/@types/vtex.render-runtime":
-  version "8.126.4"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.4/public/@types/vtex.render-runtime#40d7ad8a7b04c50e61ff84a1089dcf7045efd548"
+"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.6/public/@types/vtex.render-runtime":
+  version "8.126.6"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.6/public/@types/vtex.render-runtime#78ae3da048ec823ab104425aef14e66165ed1303"
 
 "vtex.responsive-layout@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.responsive-layout@0.1.2/public/@types/vtex.responsive-layout":
   version "0.1.2"
@@ -5165,9 +5165,9 @@ verror@1.10.0:
   version "2.2.2"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.2.2/public/@types/vtex.shipping-estimate-translator#0daa482f261e7c40a06c27be07e9e5b9d70cf063"
 
-"vtex.store-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.75.0/public/@types/vtex.store-resources":
-  version "0.75.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.75.0/public/@types/vtex.store-resources#0741ba5f5430217a41f72a06b2a6bc3565be188e"
+"vtex.store-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.75.1/public/@types/vtex.store-resources":
+  version "0.75.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.75.1/public/@types/vtex.store-resources#6374ad0729cb1ee5b06f7e094b4bdbeb1e2679d0"
 
 "vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.134.1/public/@types/vtex.styleguide":
   version "9.134.1"

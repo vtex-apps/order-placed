@@ -46,6 +46,7 @@ interface OrderItem {
   attachments: Attachment[]
   skuName: string
   name: string
+  productId: string
   price: number
   listPrice: number
   bundleItems: Bundle[]
