@@ -69,7 +69,7 @@ const Product: FC<Props> = ({ product }) => {
         </small>
       </div>
       <div className={`${handles.productPrice} ml-auto mt3 mt0-m`}>
-        <FormattedPrice value={subtotalProduct} />
+        <FormattedPrice value={productSubtotal} />
       </div>
     </div>
   )
