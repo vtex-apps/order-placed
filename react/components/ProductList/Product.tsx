@@ -32,7 +32,11 @@ const Product: FC<Props> = ({ product }) => {
   } = product
   const handles = useCssHandles(CSS_HANDLES)
   const showMeasurementUnit = unitMultiplier !== 1 || measurementUnit !== 'un'
-  const productSubtotal = useMemo( () => (price * quantity * unitMultiplier) ,[price, quantity, unitMultiplier])
+  const productSubtotal = useMemo(() => price * quantity * unitMultiplier, [
+    price,
+    quantity,
+    unitMultiplier,
+  ])
 
   return (
     <div className={`${handles.productWrapper} w-100 flex-m tc tl-m`}>
