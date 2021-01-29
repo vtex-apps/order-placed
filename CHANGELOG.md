@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Product Subtotal in `ProductList/Product.tsx`, adding unitMultiplier in product subtotal
+
 ## [2.8.0] - 2021-01-19
 
 ### Added

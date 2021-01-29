@@ -32,6 +32,7 @@ const Product: FC<Props> = ({ product }) => {
   } = product
   const handles = useCssHandles(CSS_HANDLES)
   const showMeasurementUnit = unitMultiplier !== 1 || measurementUnit !== 'un'
+  const productSubtotal = price * quantity * unitMultiplier
 
   return (
     <div className={`${handles.productWrapper} w-100 flex-m tc tl-m`}>
@@ -68,7 +69,7 @@ const Product: FC<Props> = ({ product }) => {
         </small>
       </div>
       <div className={`${handles.productPrice} ml-auto mt3 mt0-m`}>
-        <FormattedPrice value={price * quantity} />
+        <FormattedPrice value={productSubtotal} />
       </div>
     </div>
   )
