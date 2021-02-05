@@ -493,6 +493,7 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 | `fullWidth` | `boolean` | Make the options wrapper take full horizontal space | `false`       |
 | `displayMyOrdersButton` | `boolean` | Whether the `My Orders` button should be displayed (`true`) or not (`false`). | `true`       |
 | `displayUpdateOrderButton` | `boolean` | Whether the `Update order` button should be displayed (`true`) or not (`false`). | `true`       |
+| `displayCancelOrderButton` | `boolean` | Whether the `Cancel order` button should be displayed (`true`) or not (`false`). | `true`       |
 
 **CSS Handles:**
 
