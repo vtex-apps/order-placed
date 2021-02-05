@@ -8,6 +8,7 @@ interface Props {
   fullWidth?: boolean
   displayUpdateOrderButton?: boolean
   displayMyOrdersButton?: boolean
+  displayCancelOrderButton?: boolean
 }
 
 const CSS_HANDLES = ['orderOptionsWrapper']
@@ -16,6 +17,7 @@ const WrappedOrderOptions: FC<Props> = ({
   fullWidth = false,
   displayUpdateOrderButton = true,
   displayMyOrdersButton = true,
+  displayCancelOrderButton = true,
 }) => {
   const order = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
@@ -30,6 +32,7 @@ const WrappedOrderOptions: FC<Props> = ({
       fullWidth={fullWidth}
       displayUpdateOrderButton={displayUpdateOrderButton}
       displayMyOrdersButton={displayMyOrdersButton}
+      displayCancelOrderButton={displayCancelOrderButton}
     />
   )
 }

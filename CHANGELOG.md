@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - `displayMyOrdersButton` prop to op-order-options
 - `displayUpdateOrderButton` prop to op-order-options
+- `displayCancelOrderButton` prop to op-order-options
 
 ## [2.8.1] - 2021-01-29
 
