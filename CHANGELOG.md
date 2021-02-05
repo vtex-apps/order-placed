@@ -10,18 +10,77 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `displayMyOrdersButton` prop to op-order-options
 - `displayUpdateOrderButton` prop to op-order-options
 
-## [2.4.2] - 2020-08-04
+## [2.8.1] - 2021-01-29
+
+### Fixed
+
+- Product Subtotal in `ProductList/Product.tsx`, adding unitMultiplier in product subtotal
+
+## [2.8.0] - 2021-01-19
+
+### Added
+
+- I18n pt-PT.
+
+## [2.7.0] - 2021-01-19
+### Added
+
+- `productId` property to `getOrderGroup` query
+
+## [2.6.2] - 2020-12-22
+
+### Fixed
+
+- Types.
+
+## [2.6.1] - 2020-12-22
+
+### Added
+
+- Removing assemblies from the items count
+
+## [2.6.0] - 2020-12-17
+
+### Added
+
+- I18n Cs, Fr, Nl and Ro.
+
+### Fixed
+
+- I18n it.
+
+### Changed
+
+- Crowdin configuration file.
+
+## [2.5.0] - 2020-12-15
+
+### Added
+
+- `parentItemIndex` field in GraphQL query.
+
+## [2.4.3] - 2020-10-21
+
+### Fixed
+
+- Display of embedded info for non `bankIvoice` payments.
 
 ## [2.4.2] - 2020-08-04
+
 ### Added
+
 - Fixed display of images on the website.
 
 ## [2.4.1] - 2020-08-03
+
 ### Added
+
 - IO app typings.
 
 ## [2.4.0] - 2020-08-03
+
 ### Added
+
 - New css handles: `barCodeContainer`, `printButtonWrapper` and `printHintWrapper`.
 
 ## [2.3.0] - 2020-07-08
@@ -33,7 +92,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [2.2.5] - 2020-06-22
 
 ## [2.2.4] - 2020-06-22
+
 ### Fixed
+
 - `main` tag not working properly in IE 11.
 - Possible duped keys in `OrderTotal`.
 

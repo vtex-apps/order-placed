@@ -23,9 +23,11 @@ query getOrderGroup($orderGroup: String) {
           id
           skuName
           name
+          productId
           price
           listPrice
           isGift
+          parentItemIndex
           quantity
           attachments {
             content
@@ -109,9 +111,11 @@ query getOrderGroup($orderGroup: String) {
           id
           skuName
           name
+          productId
           price
           listPrice
           isGift
+          parentItemIndex
           quantity
           attachments {
             content
@@ -195,9 +199,11 @@ query getOrderGroup($orderGroup: String) {
           id
           skuName
           name
+          productId
           price
           listPrice
           isGift
+          parentItemIndex
           quantity
           attachments {
             content
@@ -265,9 +271,11 @@ query getOrderGroup($orderGroup: String) {
         id
         skuName
         name
+        productId
         price
         listPrice
         isGift
+        parentItemIndex
         quantity
         attachments {
           content
@@ -355,9 +363,11 @@ query getOrderGroup($orderGroup: String) {
         id
         skuName
         name
+        productId
         price
         listPrice
         isGift
+        parentItemIndex
         quantity
         attachments {
           content
@@ -441,9 +451,11 @@ query getOrderGroup($orderGroup: String) {
         id
         skuName
         name
+        productId
         price
         listPrice
         isGift
+        parentItemIndex
         quantity
         attachments {
           content
@@ -527,9 +539,11 @@ query getOrderGroup($orderGroup: String) {
         id
         skuName
         name
+        productId
         price
         listPrice
         isGift
+        parentItemIndex
         quantity
         attachments {
           content
