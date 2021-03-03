@@ -1,6 +1,7 @@
 import { Button } from 'vtex.styleguide'
 import React, { FC } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
+import { Link } from 'vtex.render-runtime'
 
 import ForbiddenIcon from '../../Icons/Forbidden'
 import ErrorMessage from './ErrorMessage'
@@ -23,9 +24,11 @@ const ForbiddenError: FC = () => {
       errorId={messages.notLoggedInTitle.id}
       messageId={messages.notLoggedInMessage.id}
     >
-      <Button href={`/login?returnUrl=${window.location.href}`}>
-        <FormattedMessage id="store/go-to-login" />
-      </Button>
+      <Link to={`/login?returnUrl=${window.location.href}`}>
+        <Button>
+          <FormattedMessage id="store/go-to-login" />
+        </Button>
+      </Link>
     </ErrorMessage>
   )
 }

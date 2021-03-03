@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Relative links to the store using the **Link** component from `render-runtime`.
+
 ## [2.8.1] - 2021-01-29
 
 ### Fixed
@@ -20,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - I18n pt-PT.
 
 ## [2.7.0] - 2021-01-19
+
 ### Added
 
 - `productId` property to `getOrderGroup` query
