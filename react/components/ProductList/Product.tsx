@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 import { useCssHandles } from 'vtex.css-handles'
+import { Link } from 'vtex.render-runtime'
 
 import FormattedPrice from '../FormattedPrice'
 
@@ -44,8 +45,8 @@ const Product: FC<Props> = ({ product }) => {
       <div
         className={`${handles.productInfoColumn} flex-m flex-column justify-between lh-copy`}
       >
-        <a
-          href={detailUrl}
+        <Link
+          to={detailUrl}
           className={`${handles.productName} t-body c-muted-1 no-underline`}
           target="_blank"
           rel="noopener noreferrer"
@@ -58,7 +59,7 @@ const Product: FC<Props> = ({ product }) => {
               {`${unitMultiplier} ${measurementUnit}`}
             </small>
           )}
-        </a>
+        </Link>
         <small
           className={`${handles.productQuantity} t-mini c-muted-1 mt3 mt0-m`}
         >
