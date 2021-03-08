@@ -7,7 +7,13 @@ import StorePickUpHeader from './components/PickUpHeader'
 
 const CSS_HANDLES = ['package', 'packageHeaderColumn']
 
-const PickupPackages: FC = () => {
+interface Props {
+  displayTitle?: boolean
+}
+
+const PickupPackages: FC<Props> = ({
+  displayTitle = false
+}) => {
   const handles = useCssHandles(CSS_HANDLES)
   const { pickUpParcels } = useOrder()
 
@@ -30,6 +36,7 @@ const PickupPackages: FC = () => {
               shippingData={pickup}
               index={index}
               numPackages={pickUpParcels.length}
+              displayTitle={displayTitle}
             />
           </div>
           <ProductList products={pickup.items} />

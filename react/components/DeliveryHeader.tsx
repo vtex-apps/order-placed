@@ -9,6 +9,7 @@ interface Props {
   index: number
   numPackages: number
   giftRegistry?: GiftRegistry | null
+  displayTitle?: boolean
 }
 
 const CSS_HANDLES = [
@@ -17,6 +18,8 @@ const CSS_HANDLES = [
   'packageSLA',
   'packageGiftDescription',
   'packageAddressWrapper',
+  'packageAddressTitle',
+  'packageDeliveryTitle'
 ]
 
 const DeliveryHeader: FC<Props> = ({
@@ -24,6 +27,7 @@ const DeliveryHeader: FC<Props> = ({
   index,
   numPackages,
   giftRegistry,
+  displayTitle
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const multipleDeliveries = numPackages > 1
@@ -37,13 +41,15 @@ const DeliveryHeader: FC<Props> = ({
         )} t-heading-4-ns t-heading-5 mb5`}
         data-testid="shipping-header"
       >
-        <FormattedMessage id="store/shipping.header.title" />
-        {multipleDeliveries && (
-          <FormattedMessage
-            id="store/common.header.counter"
-            values={{ index: index + 1, numPackages }}
-          />
-        )}
+        <span className={`${handles.packageDeliveryTitle}`}>
+          <FormattedMessage id="store/shipping.header.title" />
+          {multipleDeliveries && (
+            <FormattedMessage
+              id="store/common.header.counter"
+              values={{ index: index + 1, numPackages }}
+            />
+          )}
+        </span>
         <br />
         <small
           className={`${handles.packageShippingEstimate} c-muted-2 t-small`}
@@ -60,18 +66,24 @@ const DeliveryHeader: FC<Props> = ({
       </div>
 
       {giftRegistry &&
-      giftRegistry.addressId === shippingData.address.addressId ? (
-        <div className={`${handles.packageGiftDescription} c-muted-1`}>
-          <FormattedMessage
-            id="store/shipping.header.wishlist.address"
-            values={{ giftRegistryName: giftRegistry.description }}
-          />
-        </div>
-      ) : (
-        <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
-          <Address address={shippingData.address} />
-        </div>
-      )}
+        giftRegistry.addressId === shippingData.address.addressId ? (
+          <div className={`${handles.packageGiftDescription} c-muted-1`}>
+            {displayTitle ? (<span className={`${handles.packageAddressTitle}`}>
+              <FormattedMessage id="store/shipping.header.address" />
+            </span>) : ""}
+            <FormattedMessage
+              id="store/shipping.header.wishlist.address"
+              values={{ giftRegistryName: giftRegistry.description }}
+            />
+          </div>
+        ) : (
+          <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
+            {displayTitle ? (<span className={`${handles.packageAddressTitle}`}>
+              <FormattedMessage id="store/shipping.header.address" />
+            </span>) : ""}
+            <Address address={shippingData.address} />
+          </div>
+        )}
     </Fragment>
   )
 }

@@ -8,6 +8,7 @@ interface Props {
   shippingData: Parcel
   index: number
   numPackages: number
+  displayTitle?: boolean
 }
 
 const CSS_HANDLES = [
@@ -19,7 +20,7 @@ const CSS_HANDLES = [
   'packageAdditionalInfo',
 ]
 
-const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
+const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages, displayTitle }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const multiplePickups = numPackages > 1
   const { receiverName } = shippingData.address
@@ -55,6 +56,9 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
       <div
         className={`${handles.packageInfoWrapper} flex justify-left-m flex-column-s flex-column-l flex-row-m justify-between-l justify-start-l`}
       >
+        {displayTitle ? (<span className={`${handles.packageAddressTitle}`}>
+          <FormattedMessage id="store/shipping.header.address" />
+        </span>) : ""}
         <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
           <Address address={shippingData.address} pickup={shippingData} />
         </div>
