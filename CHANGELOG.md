@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added - 2021-03-09
+
+- Added `displayTitle` & `displayProducts` props to PickupPackages and DeliveryPackages
+- Added `displayName` prop to ConfirmationTitle
+- Added CSS Handles (`packageAddressTitle` & `packageDeliveryTitle`) to DeliveryHeader
+- Added new messages in all languages
+
 ## [2.8.2] - 2021-03-03
 
 ### Fixed
