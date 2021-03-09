@@ -41,6 +41,7 @@
   "store/payments.id": "Identifiant de paiement : {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "Identifiant de transaction : {id}",
+  "store/payments.billing.title": "Adresse de facturation",
   "store/pickup.header.title": "Relais colis",
   "store/products.isGift": "Gratuit",
   "store/products.quantity": "{quantity, plural, one {# unité} other {# unités}}",

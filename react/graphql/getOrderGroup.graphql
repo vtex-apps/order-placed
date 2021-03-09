@@ -342,6 +342,11 @@ query getOrderGroup($orderGroup: String) {
       }
       creationDate
       value
+      customData {
+        customApps {
+          fields
+        }
+      }
     }
     totalPickUpParcels {
       address {

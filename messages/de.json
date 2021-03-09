@@ -41,6 +41,7 @@
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "Transaktions-ID: {id}",
   "store/pickup.header.title": "Abholung",
+  "store/payments.billing.title": "Rechnungsadresse",
   "store/products.isGift": "Kostenlos",
   "store/products.quantity": "{quantity, plural, one {# Einheit} other {# Einheiten}}",
   "store/shipping.header.title": "Lieferung",

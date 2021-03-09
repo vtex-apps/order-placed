@@ -41,6 +41,7 @@
   "store/payments.id": "ID do pagamento: {id}",
   "store/payments.installments": "{installments, plural, one {à vista} other { (#x)}}",
   "store/payments.transaction.id": "ID da transação: {id}",
+  "store/payments.billing.title": "Endereço de cobranç",
   "store/pickup.header.title": "Retirada no ponto",
   "store/products.isGift": "Grátis",
   "store/products.quantity": "{quantity, plural, one {# unidade} other {# unidades}}",

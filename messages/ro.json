@@ -41,6 +41,7 @@
   "store/payments.id": "ID plată: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "ID tranzacție: {id}",
+  "store/payments.billing.title": "Adresa de facturare",
   "store/pickup.header.title": "Preluare",
   "store/products.isGift": "Gratuit",
   "store/products.quantity": "{quantity, plural, one {# unitate} other {# unități}}",

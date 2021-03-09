@@ -41,6 +41,7 @@
   "store/payments.id": "Payment ID: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "Transaction ID: {id}",
+  "store/payments.billing.title": "Billing address",
   "store/pickup.header.title": "Pickup",
   "store/products.isGift": "Free",
   "store/products.quantity": "{quantity, plural, one {# unit} other {# units}}",

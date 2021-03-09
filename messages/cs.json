@@ -41,6 +41,7 @@
   "store/payments.id": "ID platby: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "ID transakce: {id}",
+  "store/payments.billing.title": "Fakturační adresa",
   "store/pickup.header.title": "Vyzvednutí",
   "store/products.isGift": "Zdarma",
   "store/products.quantity": "{quantity, plural, one {# jednotka} few {# jednotky} many {# jednotky} other {# jednotek}}",

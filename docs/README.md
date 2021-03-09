@@ -31,6 +31,7 @@
   - [`op-order-customer`](#op-order-customer)
   - [`op-order-options`](#op-order-options)
   - [`op-order-payment`](#op-order-payment)
+  - [`op-order-billing`](#op-order-billing)
   - [`op-order-delivery-packages`](#op-order-delivery-packages)
   - [`op-order-pickup-packages`](#op-order-pickup-packages)
   - [`op-order-total`](#op-order-total)
@@ -522,6 +523,33 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 | Default appearance                                 |
 | -------------------------------------------------- |
 | ![op-order-payment](https://user-images.githubusercontent.com/17712401/89225037-eec36f80-d5af-11ea-82af-267cb69c7d7b.png) |
+
+### `op-order-billing`
+
+Renders the billing details set in CustomData during checkout (must have the following fields: `name`, `phone_number`, `city`, `street` defined ). Must be placed inside an [`op-order`](#op-order) block.
+
+**Composition:** none.
+
+**Props:**
+
+| Prop name        | Type      | Description                                         | Default value |
+| -----------------| --------- | --------------------------------------------------- | ------------- |
+| `displayTitle`   | `boolean` | Displays a title for the billing address container  | `true`        |
+
+**CSS Handles:**
+
+| CSS Handles               | Description                                    |
+| ------------------------- | ---------------------------------------------- |
+| `billingAddressContainer` | Wrapper for the billing address                |
+| `billingAddressTitle`     | Wrapper for the billing address title          |
+| `billingName`             | Billing name `small` element                   |
+| `billingPhone`            | Billing phone `small` element                  |
+| `billingStreet`           | Billing street `small` element                 |
+| `billingCity`             | Billing city `small` element                   |
+
+| Default appearance                                                     |
+| ---------------------------------------------------------------------- |
+| ![op-order-billing](https://user-images.githubusercontent.com/71461884/110479414-06d31280-80ee-11eb-92f3-76aec84008a2.png) |
 
 ### `op-order-delivery-packages`
 
