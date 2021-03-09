@@ -21,6 +21,22 @@ interface Order {
   storePreferencesData: StorePreferencesData
   creationDate: string
   value: number
+  customData: CustomData | null
+}
+
+interface CustomData {
+  customApps: CustomApp[]
+}
+
+interface CustomApp {
+  fields: Fields
+}
+
+interface Fields {
+  city: string
+  name: string
+  phone_number: string
+  street: string
 }
 
 interface GiftRegistry {

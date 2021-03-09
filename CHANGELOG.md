@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added `displayName` prop to ConfirmationTitle
 - Added CSS Handles (`packageAddressTitle` & `packageDeliveryTitle`) to DeliveryHeader
 - Added new messages in all languages
+- Added `op-order-billing` component
 
 ## [2.8.2] - 2021-03-03
 

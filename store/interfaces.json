@@ -1,7 +1,12 @@
 {
   "order-placed": {
     "component": "index",
-    "allowed": ["op-header", "op-order", "op-footer", "promotion-banner"],
+    "allowed": [
+      "op-header",
+      "op-order",
+      "op-footer",
+      "promotion-banner"
+    ],
     "render": "client"
   },
   "op-section": {
@@ -47,6 +52,9 @@
   },
   "op-order-number": {
     "component": "OrderNumber"
+  },
+  "op-order-billing": {
+    "component": "OrderBilling"
   },
   "op-order-datetime": {
     "component": "OrderDatetime"
