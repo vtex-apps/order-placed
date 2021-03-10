@@ -587,6 +587,12 @@ Renders an order delivery packages information and product list. Must be placed 
 
 **Composition:** none.
 
+**Props:**
+
+| Prop name   | Type      | Description                                         | Default value |
+| ----------- | --------- | --------------------------------------------------- | ------------- |
+| `hideTax`   | `boolean` | Hide the taxes                                      | `false`       |
+
 **CSS Handles:**
 
 | CSS Handles          | Description                                 |

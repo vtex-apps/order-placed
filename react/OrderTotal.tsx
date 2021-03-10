@@ -16,7 +16,13 @@ const CSS_HANDLES = [
   'totalListItemValue',
 ]
 
-const OrderTotal: FC = () => {
+interface Props {
+  hideTax?: boolean
+}
+
+const OrderTotal: FC<Props> = ({
+  hideTax = false
+}) => {
   const { items, totals, value: totalValue } = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
   const numItems = items.reduce((acc, item) => {
@@ -33,7 +39,7 @@ const OrderTotal: FC = () => {
         className={`${handles.totalList} list pa0 mt8 w-100 w-60-l c-muted-1`}
       >
         {newTotals.map((total, i) => {
-          if (total.value === 0) {
+          if (total.value === 0 || (total.id === 'Tax' && hideTax)) {
             return null
           }
 
