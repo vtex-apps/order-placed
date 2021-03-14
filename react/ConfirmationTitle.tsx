@@ -19,16 +19,17 @@ const ConfirmationTitle: FC<Props> = ({ displayName = false }) => {
     <h4
       className={`${handles.confirmationTitle} tc c-on-base mt7 mb0 t-heading-4`}
     >
-      {displayName
-        ? <FormattedMessage
+      {displayName ? (
+        <FormattedMessage
           id="store/header.thanks.name"
           values={{
             firstName: profile.firstName,
-            lastName: profile.lastName
+            lastName: profile.lastName,
           }}
         />
-        : <FormattedMessage id="store/header.thanks" />
-      }
+      ) :  (
+        <FormattedMessage id="store/header.thanks" />
+      )}
 
     </h4>
   )

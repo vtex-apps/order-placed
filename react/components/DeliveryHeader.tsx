@@ -19,7 +19,7 @@ const CSS_HANDLES = [
   'packageGiftDescription',
   'packageAddressWrapper',
   'packageAddressTitle',
-  'packageDeliveryTitle'
+  'packageDeliveryTitle',
 ]
 
 const DeliveryHeader: FC<Props> = ({
@@ -27,7 +27,7 @@ const DeliveryHeader: FC<Props> = ({
   index,
   numPackages,
   giftRegistry,
-  displayTitle
+  displayTitle,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const multipleDeliveries = numPackages > 1
@@ -66,24 +66,32 @@ const DeliveryHeader: FC<Props> = ({
       </div>
 
       {giftRegistry &&
-        giftRegistry.addressId === shippingData.address.addressId ? (
-          <div className={`${handles.packageGiftDescription} c-muted-1`}>
-            {displayTitle ? (<span className={`${handles.packageAddressTitle}`}>
+      giftRegistry.addressId === shippingData.address.addressId ? (
+        <div className={`${handles.packageGiftDescription} c-muted-1`}>
+          {displayTitle ? (
+            <span className={`${handles.packageAddressTitle}`}>
               <FormattedMessage id="store/shipping.header.address" />
-            </span>) : ""}
-            <FormattedMessage
-              id="store/shipping.header.wishlist.address"
-              values={{ giftRegistryName: giftRegistry.description }}
-            />
-          </div>
-        ) : (
-          <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
-            {displayTitle ? (<span className={`${handles.packageAddressTitle}`}>
+            </span>
+          ) : (
+            ''
+          )}
+          <FormattedMessage
+            id="store/shipping.header.wishlist.address"
+            values={{ giftRegistryName: giftRegistry.description }}
+          />
+        </div>
+      ) : (
+        <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
+          {displayTitle ? (
+            <span className={`${handles.packageAddressTitle}`}>
               <FormattedMessage id="store/shipping.header.address" />
-            </span>) : ""}
+            </span>
+          ) : (
+            ''
+          )}
             <Address address={shippingData.address} />
-          </div>
-        )}
+        </div>
+      )}
     </Fragment>
   )
 }
