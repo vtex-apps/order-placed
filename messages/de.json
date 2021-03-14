@@ -11,7 +11,7 @@
   "store/header.newpurchase.button": "Neue Bestellung starten",
   "store/header.print.button": "Drucken",
   "store/header.thanks": "Vielen Dank für den Kauf!",
-  "store/header.thanks.name": "Vielen Dank für den Kauf, {lastName} {firstName}!",
+  "store/header.thanks.name": "Vielen Dank für Ihren Kauf, {lastName} {firstName}!",
   "store/items.attachments.subscription": "Abonnement",
   "store/items.attachments.subscription.frequency.day": "Jeden {frequencyNumber, plural, one {# Tag} other {# Tage}}",
   "store/items.attachments.subscription.frequency.month": "Jeden {frequencyNumber, plural, one {# Monat} other {# Monate}}",
