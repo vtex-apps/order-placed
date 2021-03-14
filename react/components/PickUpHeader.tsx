@@ -21,9 +21,9 @@ const CSS_HANDLES = [
 ]
 
 const StorePickUpHeader: FC<Props> = ({
-  shippingData, 
-  index, 
-  numPackages, 
+  shippingData,
+  index,
+  numPackages,
   displayTitle,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)

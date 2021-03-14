@@ -27,10 +27,9 @@ const ConfirmationTitle: FC<Props> = ({ displayName = false }) => {
             lastName: profile.lastName,
           }}
         />
-      ) :  (
+      ) : (
         <FormattedMessage id="store/header.thanks" />
       )}
-
     </h4>
   )
 }

@@ -21,7 +21,7 @@ const OrderBilling: FC<Props> = ({ displayTitle = true }) => {
   const { customData } = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
 
-  if (!customData || customData.customApps.length === 0) return null;
+  if (!customData || customData.customApps.length === 0) return null
 
   return (
     <div className={`${handles.billingAddressContainer} lh-copy`}>
