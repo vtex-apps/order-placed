@@ -89,7 +89,7 @@ const DeliveryHeader: FC<Props> = ({
           ) : (
             ''
           )}
-            <Address address={shippingData.address} />
+          <Address address={shippingData.address} />
         </div>
       )}
     </Fragment>
