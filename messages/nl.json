@@ -41,7 +41,7 @@
   "store/payments.id": "Betaal-ID: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "Transactie-ID: {id}",
-  "store/payments.billing.title": "Facturatie adres",
+  "store/payments.billing.title": "Factuuradres",
   "store/pickup.header.title": "Afhalen",
   "store/products.isGift": "Gratis",
   "store/products.quantity": "{quantity, plural, one {# eenheid} other {# eenheden}}",
