@@ -20,9 +20,7 @@ interface Props {
   hideTax?: boolean
 }
 
-const OrderTotal: FC<Props> = ({
-  hideTax = false
-}) => {
+const OrderTotal: FC<Props> = ({ hideTax = false }) => {
   const { items, totals, value: totalValue } = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
   const numItems = items.reduce((acc, item) => {
