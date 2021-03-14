@@ -8,13 +8,13 @@ import { useOrder } from './components/OrderContext'
 const CSS_HANDLES = ['package', 'packageHeaderColumn']
 
 interface Props {
-  displayProducts?: boolean,
+  displayProducts?: boolean
   displayTitle?: boolean
 }
 
 const DeliveryPackages: FC<Props> = ({
   displayProducts = true,
-  displayTitle = false
+  displayTitle = false,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const { deliveryParcels, giftRegistryData } = useOrder()
@@ -42,10 +42,11 @@ const DeliveryPackages: FC<Props> = ({
               displayTitle={displayTitle}
             />
           </div>
-          {displayProducts
-            ? <ProductList products={deliveryParcel.items} />
-            : ""
-          }
+          {displayProducts ? (
+            <ProductList products={deliveryParcel.items} />
+          ) : (
+            ''
+          )}
         </div>
       ))}
     </Fragment>

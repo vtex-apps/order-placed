@@ -8,13 +8,13 @@ import StorePickUpHeader from './components/PickUpHeader'
 const CSS_HANDLES = ['package', 'packageHeaderColumn']
 
 interface Props {
-  displayTitle?: boolean,
+  displayTitle?: boolean
   displayProducts?: boolean
 }
 
 const PickupPackages: FC<Props> = ({
   displayTitle = false,
-  displayProducts = true
+  displayProducts = true,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const { pickUpParcels } = useOrder()
@@ -41,7 +41,7 @@ const PickupPackages: FC<Props> = ({
               displayTitle={displayTitle}
             />
           </div>
-          {displayProducts ? <ProductList products={pickup.items} /> : ""}
+          {displayProducts ? <ProductList products={pickup.items} /> : ''}
         </div>
       ))}
     </Fragment>
