@@ -9,7 +9,7 @@ const CSS_HANDLES = ['orderDatetime']
 const OrderDate = () => {
   const { creationDate, deliveryParcels } = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
-  const {shippingEstimateDate} = deliveryParcels?.[0] || {}
+  const { shippingEstimateDate } = deliveryParcels?.[0] || {}
   
   return (
     <small className={`${handles.orderDatetime} c-muted-2 t-body lh-copy`}>
@@ -27,8 +27,8 @@ const OrderDate = () => {
             </time>
           ),
           shippingEstimate: (
-            <time dateTime={shippingEstimateDate || ""}>
-              <FormattedDate value={shippingEstimateDate || ""} />
+            <time dateTime={shippingEstimateDate || ''}>
+              <FormattedDate value={shippingEstimateDate || ''} />
             </time>
           ),
         }}
