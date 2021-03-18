@@ -10,7 +10,7 @@ const OrderDate = () => {
   const { creationDate, deliveryParcels } = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
   const { shippingEstimateDate } = deliveryParcels?.[0] || {}
-  
+
   return (
     <small className={`${handles.orderDatetime} c-muted-2 t-body lh-copy`}>
       <FormattedMessage
