@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Add _FREE_ as a price tag for all products that are gifts
+
 ## [2.8.2] - 2021-03-03
 
 ### Fixed
