@@ -30,6 +30,7 @@ const Product: FC<Props> = ({ product }) => {
     price,
     quantity,
     unitMultiplier,
+    isGift,
   } = product
   const handles = useCssHandles(CSS_HANDLES)
   const showMeasurementUnit = unitMultiplier !== 1 || measurementUnit !== 'un'
@@ -70,7 +71,7 @@ const Product: FC<Props> = ({ product }) => {
         </small>
       </div>
       <div className={`${handles.productPrice} ml-auto mt3 mt0-m`}>
-        <FormattedPrice value={productSubtotal} />
+        {isGift ? <FormattedMessage id="store/products.isGift" /> : <FormattedPrice value={productSubtotal} />}
       </div>
     </div>
   )

@@ -41,6 +41,7 @@
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "Transactie-ID: {id}",
   "store/pickup.header.title": "Afhalen",
+  "store/products.isGift": "Gratis",
   "store/products.quantity": "{quantity, plural, one {# eenheid} other {# eenheden}}",
   "store/shipping.header.title": "Levering",
   "store/shipping.header.wishlist.address": "Adres van: {giftRegistryName}",
