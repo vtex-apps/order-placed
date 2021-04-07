@@ -41,6 +41,7 @@
     "store/payments.installments": "{installments, plural, one {à vista} other { (#x)}}",
     "store/payments.transaction.id": "ID da transação: {id}",
     "store/pickup.header.title": "Retirada no ponto",
+    "store/products.isGift": "Grátis",
     "store/products.quantity": "{quantity, plural, one {# unidade} other {# unidades}}",
     "store/shipping.header.title": "Entrega em casa",
     "store/shipping.header.wishlist.address": "Endereço de: {giftRegistryName}",

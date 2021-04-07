@@ -4,7 +4,8 @@ import { orderGroupQuery as serviceWithAttachment } from '../mocks/bundleService
 import { orderGroupQuery as serviceWithNoAttachments } from '../mocks/bundleServiceWithNoAttachments'
 import { orderGroupQuery as serviceAndAttachment } from '../mocks/serviceAndAttachment'
 import { orderGroupQuery as subscription } from '../mocks/subscriptions'
-import { renderWithOrderGroup } from '../utils/testUtils'
+import { orderWithGift } from '../mocks/orderWithGift'
+import { renderWithOrderGroup, renderWithIntl } from '../utils/testUtils'
 import ProductList from '../components/ProductList'
 
 const getItemsFromOrderGroup = (
@@ -69,4 +70,12 @@ test('renders correct information and messages for an item with a subscription',
   expect(queryByText('Subscription')).toBeTruthy()
   expect(queryByText('Every 1 week')).toBeTruthy()
   expect(queryByText('Charged monthly at day 15')).toBeTruthy()
+})
+
+test('renders FREE instead of the price for all items that are gifts', async () => {
+  const { queryByText } = renderWithIntl(
+    <ProductList products={orderWithGift.products} />
+  )
+
+  expect(queryByText('Free')).toBeTruthy()
 })

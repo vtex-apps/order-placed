@@ -41,6 +41,7 @@
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "ID tranzacție: {id}",
   "store/pickup.header.title": "Preluare",
+  "store/products.isGift": "Gratuit",
   "store/products.quantity": "{quantity, plural, one {# unitate} other {# unități}}",
   "store/shipping.header.title": "Livrare",
   "store/shipping.header.wishlist.address": "Adresa din: {giftRegistryName}",

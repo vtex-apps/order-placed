@@ -41,6 +41,7 @@
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "Transaction ID: {id}",
   "store/pickup.header.title": "Pickup",
+  "store/products.isGift": "Free",
   "store/products.quantity": "{quantity, plural, one {# unit} other {# units}}",
   "store/shipping.header.title": "Delivery",
   "store/shipping.header.wishlist.address": "Address from: {giftRegistryName}",
