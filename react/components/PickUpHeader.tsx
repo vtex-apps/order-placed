@@ -24,7 +24,7 @@ const StorePickUpHeader: FC<Props> = ({
   shippingData,
   index,
   numPackages,
-  displayTitle,
+  displayTitle = false,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const multiplePickups = numPackages > 1
