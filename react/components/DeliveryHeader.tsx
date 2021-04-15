@@ -27,7 +27,7 @@ const DeliveryHeader: FC<Props> = ({
   index,
   numPackages,
   giftRegistry,
-  displayTitle,
+  displayTitle = false,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const multipleDeliveries = numPackages > 1
