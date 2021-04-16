@@ -263,11 +263,7 @@ Renders the confirmation title.
 
 **Composition:** none.
 
-**Props:**
-
-| Prop name     | Type      | Description                                         | Default value |
-| --------------| --------- | --------------------------------------------------- | ------------- |
-| `displayName` | `boolean` | Displays the firstname and lastname of the customer | `false`       |
+**Props:** none.
 
 **CSS Handles:**
 
