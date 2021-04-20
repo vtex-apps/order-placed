@@ -525,14 +525,6 @@ Renders an order delivery packages information and product list. Must be placed 
 
 **Composition:** none.
 
-**Props:**
-
-| Prop name        | Type      | Description                                         | Default value |
-| -----------------| --------- | --------------------------------------------------- | ------------- |
-| `displayTitle`   | `boolean` | Displays a title for the address                    | `false`       |
-| `displayProducts`| `boolean` | Displays the products                               | `true`        |
-
-
 **CSS Handles:**
 
 | CSS Handles               | Description                                    |
@@ -574,11 +566,6 @@ Renders an order delivery packages information and product list. Must be placed 
 Renders an order pickup packages information and product list. Must be placed inside an [`op-order`](#op-order) block.
 
 **Composition:** none.
-
-| Prop name        | Type      | Description                                         | Default value |
-| -----------------| --------- | --------------------------------------------------- | ------------- |
-| `displayTitle`   | `boolean` | Displays a title for the address                    | `false`       |
-| `displayProducts`| `boolean` | Displays the products                               | `true`        |
 
 **CSS Handles:**
 

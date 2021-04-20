@@ -6,11 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
 ### Added
 
-- `displayTitle` & `displayProducts` props to PickupPackages and DeliveryPackages
-- CSS Handles (`packageAddressTitle` & `packageDeliveryTitle`) to DeliveryHeader
-- new messages in all languages
+- CSS Handles: `packageAddressTitle` and `packageDeliveryTitle`
+- New messages in all languages.
 
 ## [2.9.0] - 2021-04-22
 
