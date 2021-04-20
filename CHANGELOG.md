@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+
+- Modifier to `totalListItem` CSS Handle, making it possible to hide one specific totalizer.
 
 ## [2.10.0] - 2021-04-29
 

@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import TranslateTotalizer from 'vtex.totalizer-translator/TranslateTotalizer'
-import { useCssHandles } from 'vtex.css-handles'
+import { applyModifiers, useCssHandles } from 'vtex.css-handles'
 
 import FormattedPrice from './components/FormattedPrice'
 import { useOrder } from './components/OrderContext'
@@ -14,7 +14,7 @@ const CSS_HANDLES = [
   'totalListItem',
   'totalListItemLabel',
   'totalListItemValue',
-]
+] as const
 
 const OrderTotal: FC = () => {
   const { items, totals, value: totalValue } = useOrder()
@@ -39,7 +39,10 @@ const OrderTotal: FC = () => {
 
           return (
             <li
-              className={`${handles.totalListItem} pv3 flex justify-between items-center`}
+              className={`${applyModifiers(
+                handles.totalListItem,
+                total.id
+              )} pv3 flex justify-between items-center`}
               key={`${total.id}_${i}`}
             >
               <span className={`${handles.totalListItemLabel} flex`}>
