@@ -1,3 +1,7 @@
+declare interface Window {
+  __RUNTIME__: any
+}
+
 interface OrderGroup {
   orders: Order[]
   totalDeliveryParcels: Parcel[]

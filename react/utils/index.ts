@@ -83,12 +83,15 @@ export function getSubscriptionInfo(attachmentItem: Attachment, intl: any) {
   if (!isSubscription(attachmentItem)) {
     return {}
   }
+
   const vtexSubsPrefix = 'vtex.subscription.key.'
   const subsFrequency: string =
     attachmentItem.content[`${vtexSubsPrefix}frequency`]
+
   const subsPurchaseDay = attachmentItem.content[`${vtexSubsPrefix}purchaseday`]
   const subsValidityBegin =
     attachmentItem.content[`${vtexSubsPrefix}validity.begin`]
+
   const subsValidityEnd =
     attachmentItem.content[`${vtexSubsPrefix}validity.end`]
 
@@ -134,15 +137,17 @@ export function getSubscriptionInfo(attachmentItem: Attachment, intl: any) {
 
 export function parseBankInvoiceUrl(url: string) {
   const isEncrypted = !!url.match(/(\*.\*.)+\*\w\*/g)
-  if (!isEncrypted) return url
 
-  return `${get(
-    window,
-    '__RUNTIME__.rootPath',
-    ''
-  )}/login?returnUrl=${encodeURIComponent(
+  if (!isEncrypted || typeof window === 'undefined') {
+    return url
+  }
+
+  const rootPath = window?.__RUNTIME__.rootPath ?? ''
+  const encodedPath = encodeURIComponent(
     window.location.pathname + window.location.search
-  )}`
+  )
+
+  return `${rootPath}/login?returnUrl=${encodedPath}`
 }
 
 export function getTotals(totals: OrderItemTotal[]) {
@@ -152,13 +157,17 @@ export function getTotals(totals: OrderItemTotal[]) {
   const totalTaxes = totals.reduce((sum, total) => {
     if (total.id === 'CustomTax') {
       taxes.push({ ...total })
+
       return sum + total.value
     }
+
     newTotals.push({ ...total })
+
     return sum
   }, 0)
 
   const taxTotal = newTotals.findIndex(({ id }) => id === 'Tax')
+
   newTotals[taxTotal].value += totalTaxes
 
   return [newTotals, taxes]
