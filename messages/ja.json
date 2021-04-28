@@ -44,6 +44,7 @@
   "store/products.isGift": "無料",
   "store/products.quantity": "{quantity, plural, one {# ユニット} other {# ユニット}}",
   "store/shipping.header.title": "配送",
+  "store/shipping.header.address": "住所",
   "store/shipping.header.wishlist.address": "住所登録: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# 項目} other {# 項目}}",
   "store/summary.pickup": "ストアピックアップ",

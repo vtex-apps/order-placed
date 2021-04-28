@@ -44,6 +44,7 @@
   "store/products.isGift": "Gratis",
   "store/products.quantity": "{quantity, plural, one {# unit} other {# units}}",
   "store/shipping.header.title": "Leverans",
+  "store/shipping.header.address": "Adress",
   "store/shipping.header.wishlist.address": "Adress från: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# item} other {# items}}",
   "store/summary.pickup": "Butik hämta",

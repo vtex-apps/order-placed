@@ -44,6 +44,7 @@
   "store/products.isGift": "Zadarmo",
   "store/products.quantity": "{quantity, plural, one {# jednotka} other {# jednotky (jednotiek)}}",
   "store/shipping.header.title": "Dodanie",
+  "store/shipping.header.address": "Adresa",
   "store/shipping.header.wishlist.address": "Adresa od: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# položka} other {# položky (položiek)}}",
   "store/summary.pickup": "Vyzdvihnutie v obchode",

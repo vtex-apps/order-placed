@@ -44,6 +44,7 @@
   "store/products.isGift": "Безплатно",
   "store/products.quantity": "{quantity, plural, one {# единица} other {# единици}}",
   "store/shipping.header.title": "Доставка",
+  "store/shipping.header.address": "Адрес",
   "store/shipping.header.wishlist.address": "Адрес от: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# продукт} other {# продукт}}",
   "store/summary.pickup": "Получаване от магазин",

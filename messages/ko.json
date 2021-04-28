@@ -44,6 +44,7 @@
   "store/products.isGift": "무료",
   "store/products.quantity": "{quantity, plural, one {# 품목} other {# 품목}}",
   "store/shipping.header.title": "배달",
+  "store/shipping.header.address": "주소",
   "store/shipping.header.wishlist.address": "보내는 곳 주소: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# 품목} other {# 품목}}",
   "store/summary.pickup": "매장 픽업",
