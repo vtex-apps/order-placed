@@ -44,6 +44,7 @@
   "store/products.isGift": "Ilmainen",
   "store/products.quantity": "{quantity, plural, one {# yksikkö} other {# yksikköä}}",
   "store/shipping.header.title": "Toimitus",
+  "store/shipping.header.address": "Osoite",
   "store/shipping.header.wishlist.address": "Osoite kohteesta: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# yksikkö} other {# yksikköä}}",
   "store/summary.pickup": "Nouto myymälästä",

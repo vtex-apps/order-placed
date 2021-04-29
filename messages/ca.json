@@ -44,6 +44,7 @@
   "store/products.isGift": "Gratuït",
   "store/products.quantity": "{quantity, plural, one {# unitat} other {# unitats}}",
   "store/shipping.header.title": "Lliurament",
+  "store/shipping.header.address": "Adreça",
   "store/shipping.header.wishlist.address": "Adreça de: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# article} other {# articles}}",
   "store/summary.pickup": "Recollida en botiga",

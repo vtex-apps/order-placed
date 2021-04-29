@@ -536,6 +536,8 @@ Renders an order delivery packages information and product list. Must be placed 
 | `packageHeader--delivery` | Header of the delivery package section         |
 | `packageShippingEstimate` | Delivery estimate `small` element              |
 | `packageAddressWrapper`   | Wrapper of the package shipping address        |
+| `packageAddressTitle`     | Wrapper of the address title                   |
+| `packageDeliveryTitle`    | Wrapper of the delivery title                  |
 | `productList`             | Product list `ul` element                      |
 | `productListItem`         | Product list `li` item element                 |
 | `productWrapper`          | Wrapper of a single product                    |

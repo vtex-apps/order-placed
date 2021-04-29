@@ -1,7 +1,12 @@
 {
   "order-placed": {
     "component": "index",
-    "allowed": ["op-header", "op-order", "op-footer", "promotion-banner"],
+    "allowed": [
+      "op-header",
+      "op-order",
+      "op-footer",
+      "promotion-banner"
+    ],
     "render": "client"
   },
   "op-section": {

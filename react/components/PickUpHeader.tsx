@@ -17,7 +17,8 @@ const CSS_HANDLES = [
   'packageAddressWrapper',
   'packageReceiver',
   'packageAdditionalInfo',
-]
+  'packageAddressTitle',
+] as const
 
 const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
   const handles = useCssHandles(CSS_HANDLES)
@@ -55,6 +56,9 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
       <div
         className={`${handles.packageInfoWrapper} flex justify-left-m flex-column-s flex-column-l flex-row-m justify-between-l justify-start-l`}
       >
+        <span className={`${handles.packageAddressTitle} dn`}>
+          <FormattedMessage id="store/shipping.header.address" />
+        </span>
         <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
           <Address address={shippingData.address} pickup={shippingData} />
         </div>

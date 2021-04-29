@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- New element that is invisible by default: Address title.
+- CSS Handles: `packageAddressTitle` and `packageDeliveryTitle`
+- Variables to `store/header.thanks` message with the user `firstName` and `lastName`.
+
 ## [2.9.0] - 2021-04-22
 
 ### Added

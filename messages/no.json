@@ -44,6 +44,7 @@
   "store/products.isGift": "Gratis",
   "store/products.quantity": "{quantity, plural, one {# enhet} other {# enheter}}",
   "store/shipping.header.title": "Levering",
+  "store/shipping.header.address": "Adresse",
   "store/shipping.header.wishlist.address": "Adresse fra: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# vare} other {# varer}}",
   "store/summary.pickup": "Hent i butikk",

@@ -44,6 +44,7 @@
   "store/products.isGift": "Brezplačno",
   "store/products.quantity": "{quantity, plural, one {# enota} two {# enoti} few {# enot} other {# enote}}",
   "store/shipping.header.title": "Dobava",
+  "store/shipping.header.address": "Naslov",
   "store/shipping.header.wishlist.address": "Naslov od: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, =0 {} one {# predmet} two {# predmeta} few {# predmetov} other {# predmeti}}",
   "store/summary.pickup": "Prevzem v trgovini",

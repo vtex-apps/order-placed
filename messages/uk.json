@@ -44,6 +44,7 @@
   "store/products.isGift": "Без оплати",
   "store/products.quantity": "{quantity, plural, one {# одиниця} few {# одиниці} many {# одиниць} other {# одиниць}}",
   "store/shipping.header.title": "Доставка",
+  "store/shipping.header.address": "Адреса",
   "store/shipping.header.wishlist.address": "Адреса: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# одиниця} few {# одиниці} many {# одиниць} other {# одиниць}}",
   "store/summary.pickup": "Видача в магазині",

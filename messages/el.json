@@ -44,6 +44,7 @@
   "store/products.isGift": "Δωρεάν",
   "store/products.quantity": "{quantity, plural, one {# μονάδα} other {# μονάδες}}",
   "store/shipping.header.title": "Παράδοση",
+  "store/shipping.header.address": "Διεύθυνση",
   "store/shipping.header.wishlist.address": "Διεύθυνση από: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# προϊόν} other {# προϊόντα}}",
   "store/summary.pickup": "Αποθήκευση Παραλαβής",

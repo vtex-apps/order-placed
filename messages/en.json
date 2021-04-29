@@ -44,6 +44,7 @@
   "store/products.isGift": "Free",
   "store/products.quantity": "{quantity, plural, one {# unit} other {# units}}",
   "store/shipping.header.title": "Delivery",
+  "store/shipping.header.address": "Address",
   "store/shipping.header.wishlist.address": "Address from: {giftRegistryName}",
   "store/summary.items": "{itemsQuantity, plural, one {# item} other {# items}}",
   "store/summary.pickup": "Store Pickup",
