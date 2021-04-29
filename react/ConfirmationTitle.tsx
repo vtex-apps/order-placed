@@ -4,7 +4,7 @@ import { useCssHandles } from 'vtex.css-handles'
 
 import { useOrderGroup } from './components/OrderGroupContext'
 
-const CSS_HANDLES = ['confirmationTitle']
+const CSS_HANDLES = ['confirmationTitle'] as const
 
 const ConfirmationTitle: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)

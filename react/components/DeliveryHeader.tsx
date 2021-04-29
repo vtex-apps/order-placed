@@ -19,7 +19,7 @@ const CSS_HANDLES = [
   'packageAddressWrapper',
   'packageAddressTitle',
   'packageDeliveryTitle',
-]
+] as const
 
 const DeliveryHeader: FC<Props> = ({
   shippingData,
