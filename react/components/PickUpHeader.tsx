@@ -16,6 +16,7 @@ const CSS_HANDLES = [
   'packageInfoWrapper',
   'packageAddressWrapper',
   'packageReceiver',
+  'packageReceiverName',
   'packageAdditionalInfo',
   'packageAddressTitle',
 ] as const
@@ -63,7 +64,7 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
           <Address address={shippingData.address} pickup={shippingData} />
         </div>
         <div className={`${handles.packageReceiver} c-on-base lh-copy`}>
-          <p>{receiverName}</p>
+          <p className={`${handles.packageReceiverName}`}>{receiverName}</p>
           <p className={`${handles.packageAdditionalInfo} c-muted-1`}>
             {additionalInfo}
           </p>
