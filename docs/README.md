@@ -576,7 +576,8 @@ _Note: Include the same CSS handles as [`op-order-delivery-packages`](#op-order-
 | `package`               | All package sections                                         |
 | `package--pickup`       | The pickup package section                                   |
 | `packageInfoWrapper`    | Wrapper of a **pickup** package's information                |
-| `packageReceiver`       | Name of the package's **pickup** receiver                    |
+| `packageReceiver`       | Package's **pickup** receiver information container          |
+| `packageReceiverName`   | Name of the package's **pickup** receiver                    |
 | `packageAdditionalInfo` | Wrapper of additional information about a **pickup** package |
 
 | Default appearance                                                 |
@@ -680,6 +681,7 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `packageHeaderColumn`        |
 | `packageInfoWrapper`         |
 | `packageReceiver`            |
+| `packageReceiverName`        |
 | `packageShippingEstimate`    |
 | `packageSLA`                 |
 | `printButtonWrapper`         |
