@@ -24,7 +24,7 @@ query getOrderGroup($orderGroup: String) {
           skuName
           name
           productId
-          price
+          sellingPrice
           listPrice
           isGift
           parentItemIndex
