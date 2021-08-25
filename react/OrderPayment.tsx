@@ -12,17 +12,17 @@ const OrderPayment = () => {
   const currency = useCurrency()
   const handles = useCssHandles(CSS_HANDLES)
 
-  const [{ payments, transactionId }] = order.paymentData.transactions
+  const transactions = order.paymentData.transactions
 
   return (
     <div
       className={`${handles.orderPaymentWrapper} flex flex-column flex-row-m`}
     >
-      {payments.map((payment, idx) => (
+      {transactions.map((payment, idx) => (
         <div key={idx} className={`${handles.orderPaymentItem} pb8-s mr9-m`}>
           <PaymentMethod
-            payment={payment}
-            transactionId={transactionId}
+            payment={payment.payments[0]}
+            transactionId={payment.transactionId}
             currency={currency}
           />
         </div>
