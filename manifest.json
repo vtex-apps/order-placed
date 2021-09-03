@@ -4,9 +4,7 @@
   "version": "2.12.0",
   "title": "Order Placed",
   "description": "",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },
@@ -20,6 +18,7 @@
     "vtex.order-placed-graphql": "1.x",
     "vtex.styleguide": "9.x",
     "vtex.order-details": "1.x",
+    "vtex.order-manager": "0.x",
     "vtex.shipping-estimate-translator": "2.x",
     "vtex.address-form": "4.x",
     "vtex.profile-form": "3.x",
