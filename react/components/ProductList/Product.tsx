@@ -34,7 +34,7 @@ const Product: FC<Props> = ({ product }) => {
   } = product
   const handles = useCssHandles(CSS_HANDLES)
   const showMeasurementUnit = unitMultiplier !== 1 || measurementUnit !== 'un'
-  const productSubtotal = sellingPrice * quantity * unitMultiplier
+  const productSubtotal = sellingPrice * quantity
   return (
     <div className={`${handles.productWrapper} w-100 flex-m tc tl-m`}>
       <div className={`${handles.productImageColumn} mr6-m mb6-s mb0-m`}>
