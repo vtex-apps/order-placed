@@ -1,12 +1,10 @@
 {
   "vendor": "vtex",
   "name": "order-placed",
-  "version": "2.8.1",
+  "version": "2.12.1",
   "title": "Order Placed",
   "description": "",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },

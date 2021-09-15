@@ -17,7 +17,9 @@ const CSS_HANDLES = [
   'packageSLA',
   'packageGiftDescription',
   'packageAddressWrapper',
-]
+  'packageAddressTitle',
+  'packageDeliveryTitle',
+] as const
 
 const DeliveryHeader: FC<Props> = ({
   shippingData,
@@ -37,13 +39,15 @@ const DeliveryHeader: FC<Props> = ({
         )} t-heading-4-ns t-heading-5 mb5`}
         data-testid="shipping-header"
       >
-        <FormattedMessage id="store/shipping.header.title" />
-        {multipleDeliveries && (
-          <FormattedMessage
-            id="store/common.header.counter"
-            values={{ index: index + 1, numPackages }}
-          />
-        )}
+        <span className={`${handles.packageDeliveryTitle}`}>
+          <FormattedMessage id="store/shipping.header.title" />
+          {multipleDeliveries && (
+            <FormattedMessage
+              id="store/common.header.counter"
+              values={{ index: index + 1, numPackages }}
+            />
+          )}
+        </span>
         <br />
         <small
           className={`${handles.packageShippingEstimate} c-muted-2 t-small`}
@@ -62,6 +66,9 @@ const DeliveryHeader: FC<Props> = ({
       {giftRegistry &&
       giftRegistry.addressId === shippingData.address.addressId ? (
         <div className={`${handles.packageGiftDescription} c-muted-1`}>
+          <span className={`${handles.packageAddressTitle} dn`}>
+            <FormattedMessage id="store/shipping.header.address" />
+          </span>
           <FormattedMessage
             id="store/shipping.header.wishlist.address"
             values={{ giftRegistryName: giftRegistry.description }}
@@ -69,6 +76,9 @@ const DeliveryHeader: FC<Props> = ({
         </div>
       ) : (
         <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
+          <span className={`${handles.packageAddressTitle} dn`}>
+            <FormattedMessage id="store/shipping.header.address" />
+          </span>
           <Address address={shippingData.address} />
         </div>
       )}

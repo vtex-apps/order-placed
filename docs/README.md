@@ -1,7 +1,7 @@
 📢 Use this project, [contribute](https://github.com/vtex-apps/order-placed) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Order Placed
@@ -539,6 +539,8 @@ Renders an order delivery packages information and product list. Must be placed 
 | `packageHeader--delivery` | Header of the delivery package section         |
 | `packageShippingEstimate` | Delivery estimate `small` element              |
 | `packageAddressWrapper`   | Wrapper of the package shipping address        |
+| `packageAddressTitle`     | Wrapper of the address title                   |
+| `packageDeliveryTitle`    | Wrapper of the delivery title                  |
 | `productList`             | Product list `ul` element                      |
 | `productListItem`         | Product list `li` item element                 |
 | `productWrapper`          | Wrapper of a single product                    |
@@ -577,7 +579,8 @@ _Note: Include the same CSS handles as [`op-order-delivery-packages`](#op-order-
 | `package`               | All package sections                                         |
 | `package--pickup`       | The pickup package section                                   |
 | `packageInfoWrapper`    | Wrapper of a **pickup** package's information                |
-| `packageReceiver`       | Name of the package's **pickup** receiver                    |
+| `packageReceiver`       | Package's **pickup** receiver information container          |
+| `packageReceiverName`   | Name of the package's **pickup** receiver                    |
 | `packageAdditionalInfo` | Wrapper of additional information about a **pickup** package |
 
 | Default appearance                                                 |
@@ -681,6 +684,7 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `packageHeaderColumn`        |
 | `packageInfoWrapper`         |
 | `packageReceiver`            |
+| `packageReceiverName`        |
 | `packageShippingEstimate`    |
 | `packageSLA`                 |
 | `printButtonWrapper`         |
@@ -733,12 +737,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/gustavopvasconcellos"><img src="https://avatars1.githubusercontent.com/u/49173685?v=4" width="100px;" alt=""/><br /><sub><b>gustavopvasconcellos</b></sub></a><br /><a href="https://github.com/vtex-apps/order-placed/commits?author=gustavopvasconcellos" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/gustavopvasconcellos"><img src="https://avatars1.githubusercontent.com/u/49173685?v=4?s=100" width="100px;" alt=""/><br /><sub><b>gustavopvasconcellos</b></sub></a><br /><a href="https://github.com/vtex-apps/order-placed/commits?author=gustavopvasconcellos" title="Code">💻</a></td>
+    <td align="center"><a href="https://razvanudrea.com"><img src="https://avatars.githubusercontent.com/u/71461884?v=4?s=100" width="100px;" alt=""/><br /><sub><b>razvanudream</b></sub></a><br /><a href="https://github.com/vtex-apps/order-placed/commits?author=razvanudream" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/claudiu-iviteb"><img src="https://avatars.githubusercontent.com/u/73105476?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Claudiu Ionita</b></sub></a><br /><a href="https://github.com/vtex-apps/order-placed/commits?author=claudiu-iviteb" title="Code">💻</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

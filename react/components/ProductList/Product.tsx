@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { ProductImage } from 'vtex.order-details'
 import { useCssHandles } from 'vtex.css-handles'
+import { Link } from 'vtex.render-runtime'
 
 import FormattedPrice from '../FormattedPrice'
 
@@ -26,14 +27,14 @@ const Product: FC<Props> = ({ product }) => {
     imageUrl,
     measurementUnit,
     name,
-    price,
+    sellingPrice,
     quantity,
     unitMultiplier,
+    isGift,
   } = product
   const handles = useCssHandles(CSS_HANDLES)
   const showMeasurementUnit = unitMultiplier !== 1 || measurementUnit !== 'un'
-  const productSubtotal = price * quantity * unitMultiplier
-
+  const productSubtotal = sellingPrice * quantity * unitMultiplier
   return (
     <div className={`${handles.productWrapper} w-100 flex-m tc tl-m`}>
       <div className={`${handles.productImageColumn} mr6-m mb6-s mb0-m`}>
@@ -44,8 +45,8 @@ const Product: FC<Props> = ({ product }) => {
       <div
         className={`${handles.productInfoColumn} flex-m flex-column justify-between lh-copy`}
       >
-        <a
-          href={detailUrl}
+        <Link
+          to={detailUrl}
           className={`${handles.productName} t-body c-muted-1 no-underline`}
           target="_blank"
           rel="noopener noreferrer"
@@ -58,7 +59,7 @@ const Product: FC<Props> = ({ product }) => {
               {`${unitMultiplier} ${measurementUnit}`}
             </small>
           )}
-        </a>
+        </Link>
         <small
           className={`${handles.productQuantity} t-mini c-muted-1 mt3 mt0-m`}
         >
@@ -69,7 +70,11 @@ const Product: FC<Props> = ({ product }) => {
         </small>
       </div>
       <div className={`${handles.productPrice} ml-auto mt3 mt0-m`}>
-        <FormattedPrice value={productSubtotal} />
+        {isGift ? (
+          <FormattedMessage id="store/products.isGift" />
+        ) : (
+          <FormattedPrice value={productSubtotal} />
+        )}
       </div>
     </div>
   )

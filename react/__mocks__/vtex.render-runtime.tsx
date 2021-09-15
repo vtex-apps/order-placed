@@ -26,3 +26,7 @@ export function useRuntime() {
       }, {}),
   }
 }
+
+export function Link({ children }: any) {
+  return <>{children}</>
+}

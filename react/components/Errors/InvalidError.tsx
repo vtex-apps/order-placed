@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
+import { Link } from 'vtex.render-runtime'
 
 import ErrorMessage from './ErrorMessage'
 import NotFound from '../../Icons/NotFound'
@@ -23,9 +24,11 @@ const InvalidError: FC = () => {
       errorId={messages.invalidTitle.id}
       messageId={messages.invalidMessage.id}
     >
-      <Button href="/">
-        <FormattedMessage id="store/go-to-home" />
-      </Button>
+      <Link to="/">
+        <Button>
+          <FormattedMessage id="store/go-to-home" />
+        </Button>
+      </Link>
     </ErrorMessage>
   )
 }

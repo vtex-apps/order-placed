@@ -11,6 +11,47 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `displayUpdateOrderButton` prop to op-order-options
 - `displayCancelOrderButton` prop to op-order-options
 
+## [2.12.1] - 2021-09-13
+
+## [2.12.0] - 2021-05-26
+### Added
+
+- CSS Handle: `packageReceiverName`
+## [2.11.0] - 2021-04-29
+### Added
+
+- Modifier to `totalListItem` CSS Handle, making it possible to hide one specific totalizer.
+
+## [2.10.0] - 2021-04-29
+
+### Added
+
+- New element that is invisible by default: Address title.
+- CSS Handles: `packageAddressTitle` and `packageDeliveryTitle`
+- Variables to `store/header.thanks` message with the user `firstName` and `lastName`.
+
+## [2.9.0] - 2021-04-22
+
+### Added
+
+- New translations.
+
+### Changed
+
+- I18n Fr and It.
+- Crowdin configuration files.
+
+## [2.8.3] - 2021-04-07
+
+### Added
+- Add _FREE_ as a price tag for all products that are gifts
+
+## [2.8.2] - 2021-03-03
+
+### Fixed
+
+- Relative links to the store using the **Link** component from `render-runtime`.
+
 ## [2.8.1] - 2021-01-29
 
 ### Fixed
@@ -24,6 +65,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - I18n pt-PT.
 
 ## [2.7.0] - 2021-01-19
+
 ### Added
 
 - `productId` property to `getOrderGroup` query
