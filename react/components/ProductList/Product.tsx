@@ -27,14 +27,14 @@ const Product: FC<Props> = ({ product }) => {
     imageUrl,
     measurementUnit,
     name,
-    sellingPrice,
+    price,
     quantity,
     unitMultiplier,
     isGift,
   } = product
   const handles = useCssHandles(CSS_HANDLES)
   const showMeasurementUnit = unitMultiplier !== 1 || measurementUnit !== 'un'
-  const productSubtotal = sellingPrice * quantity * unitMultiplier
+  const productSubtotal = price * quantity * unitMultiplier
 
   return (
     <div className={`${handles.productWrapper} w-100 flex-m tc tl-m`}>

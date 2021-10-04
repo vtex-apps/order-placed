@@ -47,7 +47,7 @@ interface OrderItem {
   skuName: string
   name: string
   productId: string
-  sellingPrice: number
+  price: number
   listPrice: number
   bundleItems: Bundle[]
   isGift: boolean
