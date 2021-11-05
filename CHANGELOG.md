@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.13.1] - 2021-11-05
+
 ### Fixed
 
 - `Product` now uses `item.sellingPrice` instead of `item.price` to take into account any discounts.
