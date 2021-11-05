@@ -25,6 +25,7 @@ query getOrderGroup($orderGroup: String) {
           name
           productId
           price
+          sellingPrice
           listPrice
           isGift
           parentItemIndex
@@ -113,6 +114,7 @@ query getOrderGroup($orderGroup: String) {
           name
           productId
           price
+          sellingPrice
           listPrice
           isGift
           parentItemIndex
@@ -201,6 +203,7 @@ query getOrderGroup($orderGroup: String) {
           name
           productId
           price
+          sellingPrice
           listPrice
           isGift
           parentItemIndex
@@ -273,6 +276,7 @@ query getOrderGroup($orderGroup: String) {
         name
         productId
         price
+        sellingPrice
         listPrice
         isGift
         parentItemIndex
@@ -365,6 +369,7 @@ query getOrderGroup($orderGroup: String) {
         name
         productId
         price
+        sellingPrice
         listPrice
         isGift
         parentItemIndex
@@ -453,6 +458,7 @@ query getOrderGroup($orderGroup: String) {
         name
         productId
         price
+        sellingPrice
         listPrice
         isGift
         parentItemIndex
@@ -541,6 +547,7 @@ query getOrderGroup($orderGroup: String) {
         name
         productId
         price
+        sellingPrice
         listPrice
         isGift
         parentItemIndex
