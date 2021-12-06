@@ -36,6 +36,7 @@ const OrderPlaced: FC = () => {
   const { data, loading, error } = useQuery<OrderGroupData>(GET_ORDER_GROUP, {
     variables: {
       orderGroup: runtime.query.og,
+      title: runtime.route?.title,
     },
   })
 
@@ -65,7 +66,7 @@ const OrderPlaced: FC = () => {
         value={orderGroup.orders[0].storePreferencesData.currencyCode}
       >
         <Helmet>
-          <title>{formatMessage(messages.title)}</title>
+          <title>title || {formatMessage(messages.title)}</title>
         </Helmet>
 
         <div className={`${handles.orderPlacedWrapper} pt9 sans-serif`}>
