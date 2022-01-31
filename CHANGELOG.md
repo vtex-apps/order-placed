@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.14.0] - 2022-01-31
+
 ### Added
 
 - `myAccountPath` prop to `op-order-options` block (`WrappedOrderOptions` component).
