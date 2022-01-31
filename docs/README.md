@@ -491,6 +491,7 @@ Renders the customer information. Must be placed inside an [`op-order`](#op-orde
 | Prop name   | Type      | Description                                         | Default value |
 | ----------- | --------- | --------------------------------------------------- | ------------- |
 | `fullWidth` | `boolean` | Make the options wrapper take full horizontal space | `false`       |
+| `myAccountPath` | `string` | The path to redirect a user to their profile page (rendered by the `vtex.my-account` app). | `/account`       |
 
 **CSS Handles:**
 
