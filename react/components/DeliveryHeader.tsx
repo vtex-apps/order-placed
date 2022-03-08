@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
-import { Address } from 'vtex.order-details'
+import { Address } from 'thefoschini.order-details'
 import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 
 interface Props {

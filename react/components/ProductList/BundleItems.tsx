@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from 'react'
-import { ProductImage } from 'vtex.order-details'
+import { ProductImage } from 'thefoschini.order-details'
 
 import FormattedPrice from '../FormattedPrice'
 import AttachmentAccordion from './AttachmentAccordion'

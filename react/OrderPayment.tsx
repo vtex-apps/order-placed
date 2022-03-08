@@ -1,5 +1,5 @@
 import React from 'react'
-import { PaymentMethod } from 'vtex.order-details'
+import { PaymentMethod } from 'thefoschini.order-details'
 import { useCssHandles } from 'vtex.css-handles'
 
 import { useOrder } from './components/OrderContext'

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { ProductImage } from 'vtex.order-details'
+import { ProductImage } from 'thefoschini.order-details'
 import { useCssHandles } from 'vtex.css-handles'
 import { Link } from 'vtex.render-runtime'
 

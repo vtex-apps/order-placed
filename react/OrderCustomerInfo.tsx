@@ -1,5 +1,5 @@
 import React from 'react'
-import { CustomerInfo } from 'vtex.order-details'
+import { CustomerInfo } from 'thefoschini.order-details'
 
 import { useOrder } from './components/OrderContext'
 
