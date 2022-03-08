@@ -12,7 +12,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn locales:lint && yarn locales:fix"
+      "pre-commit": "lint-staged && yarn locales:lint && yarn locales:fix",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -25,6 +26,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.0.2",
+    "@commitlint/config-conventional": "^16.0.0",
     "@types/node": "^14.0.13",
     "@vtex/intl-equalizer": "^2.4.2",
     "@vtex/prettier-config": "^0.3.1",
