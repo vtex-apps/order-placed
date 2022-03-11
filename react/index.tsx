@@ -12,6 +12,7 @@ import InvalidError from './components/Errors/InvalidError'
 import OrderList from './components/OrderList'
 import Skeleton from './Skeleton'
 import Analytics from './Analytics'
+import { useGetCustomerEmail } from './hooks/useGetCustomerEmail'
 import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
 
 // to load default css handle styles
@@ -38,9 +39,12 @@ const OrderPlaced: FC = () => {
       orderGroup: runtime.query.og,
     },
   })
+  const { customerEmail, customerEmailLoading } = useGetCustomerEmail(
+    data?.orderGroup.orders[0].clientProfileData.email
+  )
 
   // render loading skeleton if query is still loading
-  if (loading) return <Skeleton />
+  if (loading || customerEmailLoading) return <Skeleton />
 
   // forbidden error
   if (
@@ -56,7 +60,11 @@ const OrderPlaced: FC = () => {
     return <InvalidError />
   }
 
-  const { orderGroup }: { orderGroup: OrderGroup } = data
+  const { orderGroup }: { orderGroup: OrderGroup } = {
+    ...data,
+  }
+  orderGroup.orders[0].clientProfileData.customerEmail = customerEmail
+
   const { promptOnCustomEvent } = settings
 
   return (

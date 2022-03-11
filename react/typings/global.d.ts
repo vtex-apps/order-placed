@@ -39,6 +39,7 @@ interface ClientProfile {
   document: string | null
   documentType: string | null
   phone: string | null
+  customerEmail: string | null
 }
 
 interface OrderItem {
