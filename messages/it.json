@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Non riesci a visualizzare il tuo {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "Il tuo {paymentSystemName} funziona normalmente. Fai clic su {message} o copia il suo codice a barre per procedere con il pagamento.",
   "store/header.email": "Entro circa 5 minuti riceverai un'email all'indirizzo {userEmail} contenente tutti i dettagli del tuo acquisto.{lineBreak}Ricorda di controllare la tua cartella Spam o Promozioni",
+  "store/header.phone": "Riceverai un SMS di conferma dell'ordine a {phone} entro 5 minuti.{lineBreak}Puoi monitorare lo stato del tuo ordine nella sezione Ordini del tuo profilo.",
   "store/header.newpurchase.button": "Inizia un nuovo ordine",
   "store/header.print.button": "Stampa",
   "store/header.thanks": "Grazie per il tuo acquisto!",

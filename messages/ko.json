@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "{paymentSystemName} 이 보이지 않습니까?",
   "store/header.bankinvoice.tooltip": "{paymentSystemName} 이 정상적으로 작동합니다. 결제를 진행하려면 {message} 를 클릭하거나 바코드를 복사하세요.",
   "store/header.email": "5분 내에 {userEmail}로 모든 구매 상세 정보가 포함된 이메일을 수신하게 됩니다.{lineBreak}스팸함이나 프로모션 수신함 확인을 잊지 마십시오",
+  "store/header.phone": "5분 이내에 {phone}(으)로 주문 확인 SMS를 받게 됩니다.{lineBreak}프로필의 주문 섹션에서 주문 상태를 추적할 수 있습니다.",
   "store/header.newpurchase.button": "새 주문 시작하기",
   "store/header.print.button": "인쇄",
   "store/header.thanks": "구매해 주셔서 감사합니다!",

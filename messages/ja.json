@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "{paymentSystemName} が表示されませんか？",
   "store/header.bankinvoice.tooltip": "{paymentSystemName} が正常に作動していません。{message} をクリックするか、またはバーコードをコピーして支払いを進めてください。",
   "store/header.email": "5 分以内に、すべての購入品の詳細について {userEmail} へメールが届きます。{lineBreak}迷惑メールフォルダやプロモーションの受信トレイもご確認ください。",
+  "store/header.phone": "5分以内に{phone}宛ての注文確認SMSが届きます。{lineBreak}プロフィールの[注文]セクションで注文のステータスを追跡できます。",
   "store/header.newpurchase.button": "新しい注文を始める",
   "store/header.print.button": "印刷",
   "store/header.thanks": "お買い上げいただき、ありがとうございます！",

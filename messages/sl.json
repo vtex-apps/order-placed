@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Ne morete videti vašega {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "Vaš {paymentSystemName} deluje normalno. Kliknite na {message} ali kopirajte njegovo črtno kodo, da nadaljujete s plačilom.",
   "store/header.email": "V 5 minuta boste prejeli e-pošto na {userEmail} z vsemi vašimi podrobnostmi nakupa.{lineBreak}Spomnite se, da preverite vašo nezaželeno pošto ali promocijski poštni predal",
+  "store/header.phone": "Na {phone} boste prejeli SMS s potrditvijo naročila v 5 minutah.{lineBreak}Stanje svojega naročila lahko spremljate v razdelku Naročila v svojem profilu.",
   "store/header.newpurchase.button": "Začnite novo naročilo",
   "store/header.print.button": "Tiskaj",
   "store/header.thanks": "Hvala vam za vaš nakup!",

@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Nevidíte {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "Váš {paymentSystemName} funguje normálne. Kliknite na {message} alebo skopírujte príslušný čiarový kód pokračujte v platbe.",
   "store/header.email": "Do 5 minút dostanete e-mail na adresu {userEmail} so všetkými podrobnosťami o nákupe.{lineBreak}Nezabudnite skontrolovať priečinok doručenej pošty alebo priečinok reklamy",
+  "store/header.phone": "Do 5 minút dostanete SMS s potvrdením objednávky na číslo {phone}.{lineBreak}Stav svojej objednávky môžete sledovať vo svojom profile v sekcii Objednávky.",
   "store/header.newpurchase.button": "Začať novú objednávku",
   "store/header.print.button": "Vytlačiť",
   "store/header.thanks": "Ďakujeme vám za nákup!",

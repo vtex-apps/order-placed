@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Kan du ikke se {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "{paymentSystemName} fungerer normalt. Klikk på {message} eller kopier strekkoden for å fortsette med betalingen.",
   "store/header.email": "I løpet av fem minutter vil du motta en e-post på {userEmail} med alle kjøpsdetaljene dine. {lineBreak} Husk å sjekke innboksen for søppelpost eller kampanjer",
+  "store/header.phone": "Du vil motta en bestillingsbekreftelses-SMS til {phone} innen 5 minutter.{lineBreak}Du kan spore statusen til bestillingen din i Bestillinger-delen i profilen din.",
   "store/header.newpurchase.button": "Start ny bestilling",
   "store/header.print.button": "Skriv ut",
   "store/header.thanks": "Takk for kjøpet!",
