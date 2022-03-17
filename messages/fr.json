@@ -10,7 +10,7 @@
   "store/header.email": "Dans les 5 prochaines minutes, vous recevrez un courriel à {userEmail} avec tous les détails de votre achat.{lineBreak} N'oubliez pas de consulter votre boîte de réception de spam ou de promotions",
   "store/header.newpurchase.button": "Démarrer une nouvelle commande",
   "store/header.print.button": "Imprimer",
-  "store/header.thanks": "Merci pour votre achat!",
+  "store/header.thanks": "Merci pour votre achat !",
   "store/items.attachments.subscription": "Abonnement",
   "store/items.attachments.subscription.frequency.day": "Tous les {frequencyNumber, plural, one {# jour} other {# jours}}",
   "store/items.attachments.subscription.frequency.month": "Tous les {frequencyNumber, plural, one {# mois} other {# mois}}",
