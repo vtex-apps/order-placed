@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Не видите ваш {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "Ваш {paymentSystemName} работает нормально. Нажмите на «{message}» или скопируйте штрихкод, чтобы выполнить платёж.",
   "store/header.email": "В течении 5 минут, на адрес {userEmail} будет отправлено письмо со всеми деталями вашего заказа.{lineBreak}Не забудьте проверить спам",
+  "store/header.phone": "Вы получите SMS с подтверждением заказа на {phone} в течение 5 минут.{lineBreak}Вы можете отслеживать статус своего заказа в разделе Заказы в своем профиле.",
   "store/header.newpurchase.button": "Начать новый заказ",
   "store/header.print.button": "Распечатать",
   "store/header.thanks": "Спасибо за покупку!",

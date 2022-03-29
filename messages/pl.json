@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Nie widzisz swojego {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "Twój {paymentSystemName} działa normalnie. Kliknij {message} lub skopiuj jej kod kreskowy, aby przejść do płatności.",
   "store/header.email": "Za najwyżej 5 minut otrzymasz od nas email na adres {userEmail} ze wszystkimi szczegółami Twojego zakupu.{lineBreak}Pamiętaj, aby sprawdzić SPAM lub skrzynkę email z promocjami",
+  "store/header.phone": "W ciągu 5 minut otrzymasz SMS z potwierdzeniem zamówienia na {phone}.{lineBreak}Możesz śledzić status swojego zamówienia w sekcji Zamówienia w swoim Profilu.",
   "store/header.newpurchase.button": "Rozpocznij nowe zamówienie",
   "store/header.print.button": "Drukuj",
   "store/header.thanks": "Dziękujemy za zakup!",

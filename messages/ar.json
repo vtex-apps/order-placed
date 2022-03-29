@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "هل تجد صعوبة في مشاهد {paymentSystemName} الخاص بك؟",
   "store/header.bankinvoice.tooltip": "{paymentSystemName} الخاص بك يعمل بشكل طبيعي. انقر فوق {message} أو انسخ الرمز الشريطي الخاص بها لمتابعة الدفع.",
   "store/header.email": "في غضون 5 دقائق، ستتلقى رسالة بريد إلكتروني على {userEmail} تحتوي على جميع تفاصيل الشراء. {lineBreak} تذكر أن تتحقق من البريد العشوائي أو صندوق الوارد الخاص بالعروض الترويجية",
+  "store/header.phone": "ستتلقى رسالة نصية قصيرة لتأكيد الطلب إلى {phone} في غضون 5 دقائق. {lineBreak} يمكنك تتبع حالة طلبك في قسم الطلبات في ملفك الشخصي.",
   "store/header.newpurchase.button": "بدء طلب جديد",
   "store/header.print.button": "طباعة",
   "store/header.thanks": "شكرًا لك على شرائك!",
