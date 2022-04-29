@@ -1,15 +1,17 @@
-#### What is the purpose of this pull request?
-<!--- Describe your changes in detail. -->
+### What problem is this solving?
 
-#### What problem is this solving?
-<!--- What is the motivation and context for this change? -->
+#### How it works
 
-#### How should this be manually tested?
+#### How to test it?
 
-#### Screenshots or example usage
+[Workspace]()
 
-#### Types of changes
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to change)
-- [ ] Requires change to documentation, which has been updated accordingly.
+### Screenshots/Video example usage:
+- Desktop
+- Tablet
+- Movil
+
+### Related to / Depends on
+
+#### How does this PR make you feel? :link:
+![]()
