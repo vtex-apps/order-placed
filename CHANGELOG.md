@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.15.1] - 2022-05-31
+### Added
+- Updated translations at Order confirmation page
+
+## [2.15.0] - 2022-03-29
+### Added
+- `useGetCustomerEmail` added and used in `OrderContext` and `OrderGroupContext` to use in multiple places of app and pass to another depended app (`order-details`).
+- Use customer email or phone depended of context with custom message translated in multiple languages
+
 ## [2.14.0] - 2022-01-31
 
 ### Added

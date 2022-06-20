@@ -41,6 +41,11 @@
 
 <!-- /code_chunk_output -->
 
+## App customized to TFG
+
+### Features added
+- release 2.15.0 ([83e474c](https://github.com/TFG-Labs/order-placed/commit/83e474c927802a994148e9284659a7f52c327519))
+
 ## Configuration
 
 The `order-placed` app comes already installed on all stores and with it, it's possible to build your own page with the blocks exported by the app.
