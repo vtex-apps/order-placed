@@ -23,7 +23,7 @@ export const useGetCustomerEmail = (email: string | undefined) => {
       .then((response) => response.json())
       .catch((_) => setCustomerEmailLoading(false))
       .then((data) => {
-        const [customer] = data
+        const [customer] = data?.data || []
         setCustomerEmail(customer?.customerEmail || null)
       })
       .finally(() => setCustomerEmailLoading(false))
