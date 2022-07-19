@@ -4,6 +4,7 @@ import toPairs from 'lodash/toPairs'
 import filter from 'lodash/filter'
 import map from 'lodash/map'
 import { defineMessages } from 'react-intl'
+export * from './constants'
 
 export interface PaymentGroupInfo {
   barCodeNumber: string | null
