@@ -15,7 +15,7 @@
   "store/items.attachments.subscription.frequency.day": "Tiap {frequencyNumber, plural, one {# hari} other {# hari}}",
   "store/items.attachments.subscription.frequency.month": "Tiap {frequencyNumber, plural, one {# bulan} other {# bulan}}",
   "store/items.attachments.subscription.frequency.week": "Tiap {frequencyNumber, plural, one {# minggu} other {# minggu}}",
-  "store/items.attachments.subscription.frequency.year": "Tiap {frequencyNumber, plural, satu {# year} other {# years}}",
+  "store/items.attachments.subscription.frequency.year": "Tiap {frequencyNumber, plural, one {# tahun} other {# tahun}}",
   "store/items.attachments.subscription.purchaseday": "Ditagih per bulan pada hari {purchaseday}",
   "store/order.header.cancel.button": "Batalkan pesanan",
   "store/order.header.date": "Dipesan pada {orderDate} pukul {orderTime}",
