@@ -31,7 +31,7 @@
   "store/order.split.no.pickup.n.takeaway": "Podzielimy zamówienie na {deliveries} dostawy,{takeaways, plural, one {i jeden produkt na wynos} other {i # produkty na wynos}}. W ten sposób szybciej otrzymasz produkty, które są bliżej Ciebie.",
   "store/order.split.no.pickup.no.takeaway": "Podzielimy zamówienie na {deliveries} dostawy. W ten sposób szybciej otrzymasz produkty, które są bliżej Ciebie.",
   "store/order.totals.pickup.free": "Darmowa",
-  "store/order.totals.total": "Suma",
+  "store/order.totals.total": "Do zapłaty",
   "store/page.title": "Zamówienie złożone",
   "store/payments.bankinvoice.print": "Otwarte {paymentSystemName}",
   "store/payments.creditcard": "Karta kredytowa",
