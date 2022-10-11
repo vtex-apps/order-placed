@@ -6,11 +6,15 @@ import { useOrder } from './components/OrderContext'
 
 interface Props {
   fullWidth?: boolean
+  myAccountPath?: string
 }
 
 const CSS_HANDLES = ['orderOptionsWrapper']
 
-const WrappedOrderOptions: FC<Props> = ({ fullWidth = false }) => {
+const WrappedOrderOptions: FC<Props> = ({
+  fullWidth = false,
+  myAccountPath = '/account',
+}) => {
   const order = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
   const hasTakeAwayParcels = order.takeAwayParcels.length > 0
@@ -22,6 +26,7 @@ const WrappedOrderOptions: FC<Props> = ({ fullWidth = false }) => {
       orderId={order.orderId}
       takeaway={hasTakeAwayParcels}
       fullWidth={fullWidth}
+      myAccountPath={myAccountPath}
     />
   )
 }

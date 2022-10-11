@@ -20,7 +20,7 @@
   "store/order.header.cancel.button": "إلغاء الطلب",
   "store/order.header.date": "تم بتاريخ {orderDate} على الساعة {orderTime}",
   "store/order.header.myorders.button": "طلباتي",
-  "store/order.header.number": "الطلب #{orderId}",
+  "store/order.header.number": "رقم الطلب #{orderId}",
   "store/order.header.receipt": "عرض الايصال",
   "store/order.header.seller": "تم البيع والتسليم بواسطة {seller}",
   "store/order.header.takeaway.cancel.button": "إلغاء عملية الشراء",

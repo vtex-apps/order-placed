@@ -7,9 +7,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+
 ### Added
 
-- title now considers page title, when exists, instead of only the one in messages
+- Title now considers page title, when exists, instead of only the one in messages
+
+## [2.16.0] - 2022-03-17
+
+### Added
+
+- Hungarian translation.
+
+### Fixed
+
+- Arabic and French translations.
+
+## [2.15.0] - 2022-03-08
+
+### Added
+
+- Norwegian variant translation.
+
+## [2.14.0] - 2022-01-31
+
+### Added
+
+- `myAccountPath` prop to `op-order-options` block (`WrappedOrderOptions` component).
 
 ## [2.13.1] - 2021-11-05
 
