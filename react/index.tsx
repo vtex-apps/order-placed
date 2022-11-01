@@ -57,6 +57,8 @@ const OrderPlaced: FC = () => {
   }
 
   const { orderGroup }: { orderGroup: OrderGroup } = data
+  const title = runtime.route.title || formatMessage(messages.title)
+
   const { promptOnCustomEvent } = settings
 
   return (
@@ -65,7 +67,7 @@ const OrderPlaced: FC = () => {
         value={orderGroup.orders[0].storePreferencesData.currencyCode}
       >
         <Helmet>
-          <title>{formatMessage(messages.title)}</title>
+          <title>{title}</title>
         </Helmet>
 
         <div className={`${handles.orderPlacedWrapper} pt9 sans-serif`}>
