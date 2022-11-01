@@ -57,7 +57,7 @@ const OrderPlaced: FC = () => {
   }
 
   const { orderGroup }: { orderGroup: OrderGroup } = data
-  const title = runtime.route.title || formatMessage(messages.title)
+  const title = runtime.route?.title || formatMessage(messages.title)
 
   const { promptOnCustomEvent } = settings
 
