@@ -328,6 +328,7 @@ query getOrderGroup($orderGroup: String) {
             id
             paymentSystem
             paymentSystemName
+            paymentOrigin
             value
             installments
             lastDigits
