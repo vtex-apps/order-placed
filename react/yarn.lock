@@ -5133,9 +5133,9 @@ verror@1.10.0:
   version "1.6.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-details@1.6.0/public/@types/vtex.order-details#c0d92d3784984c58667df5b1d5c88ae58c722cec"
 
-"vtex.order-placed-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.16.0/public/@types/vtex.order-placed-graphql":
-  version "1.16.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.16.0/public/@types/vtex.order-placed-graphql#5895b2640912eae5a5ca67bb2273a10bc7a424fb"
+"vtex.order-placed-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.17.0/public/@types/vtex.order-placed-graphql":
+  version "1.17.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.17.0/public/@types/vtex.order-placed-graphql#da9a271064812cec1bc992d59eb1406c2e2508e0"
 
 "vtex.order-placed@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed@2.12.0/public/@types/vtex.order-placed":
   version "2.12.0"

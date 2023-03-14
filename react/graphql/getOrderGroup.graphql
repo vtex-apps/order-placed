@@ -1,5 +1,5 @@
 query getOrderGroup($orderGroup: String) {
-  orderGroup(orderGroup: $orderGroup) {
+  orderGroup(orderGroup: $orderGroup) @context(provider: "vtex.order-placed-graphql") {
     orders {
       allowCancellation
       orderId
@@ -328,6 +328,7 @@ query getOrderGroup($orderGroup: String) {
             id
             paymentSystem
             paymentSystemName
+            paymentOrigin
             value
             installments
             lastDigits

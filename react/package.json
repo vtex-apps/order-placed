@@ -29,7 +29,7 @@
     "vtex.flex-layout": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.flex-layout@0.19.0/public/@types/vtex.flex-layout",
     "vtex.order-details": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-details@1.6.0/public/@types/vtex.order-details",
     "vtex.order-placed": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed@2.12.0/public/@types/vtex.order-placed",
-    "vtex.order-placed-graphql": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.16.0/public/@types/vtex.order-placed-graphql",
+    "vtex.order-placed-graphql": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.17.0/public/@types/vtex.order-placed-graphql",
     "vtex.pixel-manager": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pixel-manager@1.8.0/public/@types/vtex.pixel-manager",
     "vtex.profile-form": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.9.1/public/@types/vtex.profile-form",
     "vtex.pwa-components": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pwa-components@0.4.1/public/@types/vtex.pwa-components",
