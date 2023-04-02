@@ -4911,9 +4911,9 @@ test-exclude@^5.2.3:
   version "1.9.6"
   resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-details@1.9.6/public/@types/thefoschini.order-details#faa5c63e6f0b4303eac80d93d44356db554e850d"
 
-"thefoschini.order-placed@http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.2/public/@types/thefoschini.order-placed":
+"thefoschini.order-placed@https://bpf726--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.order-placed@2.15.2+build1680444938/public/@types/thefoschini.order-placed":
   version "2.15.2"
-  resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.2/public/@types/thefoschini.order-placed#25687bd48c2b1b4153a2f4d7ea508cf98b43cb30"
+  resolved "https://bpf726--thefoschini.myvtex.com/_v/private/typings/linked/v1/thefoschini.order-placed@2.15.2+build1680444938/public/@types/thefoschini.order-placed#b99580e1e63690051c5946e8789d569cb46595c6"
 
 throat@^4.0.0:
   version "4.1.0"
@@ -5125,17 +5125,17 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-"vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.17.0/public/@types/vtex.address-form":
-  version "4.17.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.17.0/public/@types/vtex.address-form#aeb3a20eea4494c888783ff999669214afccc19d"
+"vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.17.3/public/@types/vtex.address-form":
+  version "4.17.3"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.17.3/public/@types/vtex.address-form#1ef0ccb8b5a5e8bbf7d3161515310137457c6c0e"
 
 "vtex.css-handles@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles":
   version "0.4.4"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles#8c45c6decf9acd2b944e07261686decff93d6422"
 
-"vtex.flex-layout@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.flex-layout@0.20.1/public/@types/vtex.flex-layout":
-  version "0.20.1"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.flex-layout@0.20.1/public/@types/vtex.flex-layout#dce9424c910091f0ba1f5229ce8ae80c9f7b7765"
+"vtex.flex-layout@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.flex-layout@0.21.0/public/@types/vtex.flex-layout":
+  version "0.21.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.flex-layout@0.21.0/public/@types/vtex.flex-layout#aa4a7225567408a4299a9d030c99dcb71555628a"
 
 "vtex.order-placed-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.17.0/public/@types/vtex.order-placed-graphql":
   version "1.17.0"
