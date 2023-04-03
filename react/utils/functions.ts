@@ -1,4 +1,4 @@
-import { accountName, baseApi, baseApiQA } from "./constants"
+import { accountName, baseApi, baseApiQA } from './constants'
 
 interface Endpoints {
   clientsApiUrl: string
