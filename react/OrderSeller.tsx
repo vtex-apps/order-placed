@@ -10,7 +10,7 @@ const OrderSeller: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
 
   const storeAccount = runtime.account
-  const orderSeller = "The Foschini Retail Group (Pty) Ltd" // https://tfginfotec.atlassian.net/browse/TLF-968 hardcoded for now
+  const orderSeller = "Foschini Retail Group (Pty) Ltd" // https://tfginfotec.atlassian.net/browse/TLF-968 hardcoded for now
 
   if (storeAccount === orderSeller) {
     return null
