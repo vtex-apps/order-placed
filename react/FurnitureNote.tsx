@@ -35,7 +35,7 @@ export const FurnitureNote = ({ shippingMethod }: FurnitureNoteProps) => {
         {shippingMethod === 'deliver' ? deliveryMessage : collectMessage}
         <br />{' '}
       </p>
-      <a href="#/customer-service/help" className={handles.noteLink}>
+      <a href="https://help.bash.com/support/solutions" className={handles.noteLink}>
         Frequently asked questions
       </a>
     </div>
