@@ -4,6 +4,8 @@ import { FormattedMessage } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 import { useCssHandles } from 'vtex.css-handles'
 
+import { getLoginUrl } from '../../utils'
+
 interface Props {
   barCodeNumber: string
 }
@@ -16,6 +18,8 @@ const CSS_HANDLES = [
 
 const BarCode: FC<Props> = ({ barCodeNumber }) => {
   const handles = useCssHandles(CSS_HANDLES)
+  const isEncrypted = barCodeNumber.includes('*')
+
   return (
     <div
       data-testid="bank-invoice-barcode"
@@ -26,15 +30,25 @@ const BarCode: FC<Props> = ({ barCodeNumber }) => {
       >
         {barCodeNumber}
       </div>
-      <Clipboard
-        component="div"
-        data-clipboard-text={barCodeNumber}
-        className={`${handles.barCodeCopyButtonWrapper} b--muted-4 bl-l bt bt-0-l bw1 flex flex-row-l flex-column`}
-      >
-        <Button variation="tertiary">
-          <FormattedMessage id="store/header.bankinvoice.copy" />
-        </Button>
-      </Clipboard>
+      {isEncrypted ? (
+        <div
+          className={`${handles.barCodeCopyButtonWrapper} b--muted-4 bl-l bt bt-0-l bw1 flex flex-row-l flex-column`}
+        >
+          <Button variation="tertiary" href={getLoginUrl()} target="_blank">
+            <FormattedMessage id="store/header.bankinvoice.copy" />
+          </Button>
+        </div>
+      ) : (
+        <Clipboard
+          component="div"
+          data-clipboard-text={barCodeNumber}
+          className={`${handles.barCodeCopyButtonWrapper} b--muted-4 bl-l bt bt-0-l bw1 flex flex-row-l flex-column`}
+        >
+          <Button variation="tertiary">
+            <FormattedMessage id="store/header.bankinvoice.copy" />
+          </Button>
+        </Clipboard>
+      )}
     </div>
   )
 }
