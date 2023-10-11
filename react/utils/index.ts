@@ -136,6 +136,12 @@ export function parseBankInvoiceUrl(url: string) {
   const isEncrypted = !!url.match(/(\*.\*.)+\*\w\*/g)
   if (!isEncrypted) return url
 
+  const loginUrl = getLoginUrl()
+
+  return loginUrl
+}
+
+export function getLoginUrl() {
   return `${get(
     window,
     '__RUNTIME__.rootPath',
