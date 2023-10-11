@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix bank invoice barcode smart checkout vulnerability.
+
 ## [2.17.0] - 2023-03-14
 
 ### Added
@@ -50,10 +54,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [2.12.1] - 2021-09-13 [DEPRECATED]
 
 ## [2.12.0] - 2021-05-26
+
 ### Added
 
 - CSS Handle: `packageReceiverName`
+
 ## [2.11.0] - 2021-04-29
+
 ### Added
 
 - Modifier to `totalListItem` CSS Handle, making it possible to hide one specific totalizer.
@@ -80,6 +87,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [2.8.3] - 2021-04-07
 
 ### Added
+
 - Add _FREE_ as a price tag for all products that are gifts
 
 ## [2.8.2] - 2021-03-03
