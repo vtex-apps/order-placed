@@ -7,7 +7,7 @@
   "store/header.bankinvoice.print": "Print {paymentSystemName}",
   "store/header.bankinvoice.help": "Can't see your {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "Your {paymentSystemName} is working normally. Click on {message} or copy its barcode to proceed with payment.",
-  "store/header.email": "You’ll receive an order confirmation email to {userEmail} within 5 minutes with all your purchase information.{lineBreak}Remember to check your spam or promotions inbox.{lineBreak}The delivery period starts to count from the moment your payment is confirmed. A tracking code will be sent to your email when the delivery process begins.",
+  "store/header.email": "You’ll receive an order confirmation email to {userEmail}.{lineBreak}Remember to check your spam or promotions inbox.",
   "store/header.phone": "You’ll receive an order confirmation SMS to {phone} within 5 minutes.{lineBreak}You can track the status of your order in the Orders section in your Profile.{lineBreak}The delivery period starts to count the moment your payment is confirmed. A tracking code will be sent to your cellphone number when the delivery process begins.",
   "store/header.newpurchase.button": "Start new order",
   "store/header.print.button": "Print",
