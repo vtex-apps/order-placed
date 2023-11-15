@@ -11,7 +11,7 @@ export type NoticeType = {
   web?: boolean
 }
 
-const sampleNotices: NoticeType[] = [
+export const sampleNotices: NoticeType[] = [
   {
     content: 'Message goes here. Max of 2 lines.',
     level: 'info',
@@ -34,14 +34,6 @@ const getNoticesBaseApi = () => {
 }
 
 export const fetchNotices = async (slots: string) => {
-  // This is to get around cors issue.
-  if (
-    window.location.host.includes('thefoschini.myvtex.com') ||
-    window.location.host.includes('thefoschiniqa.myvtex.com')
-  ) {
-    return Promise.resolve(sampleNotices)
-  }
-
   const baseUrl = getNoticesBaseApi()
 
   const url = new URL(baseUrl)

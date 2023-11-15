@@ -4911,9 +4911,9 @@ test-exclude@^5.2.3:
   version "1.9.6"
   resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-details@1.9.6/public/@types/thefoschini.order-details#faa5c63e6f0b4303eac80d93d44356db554e850d"
 
-"thefoschini.order-placed@http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.2/public/@types/thefoschini.order-placed":
-  version "2.15.2"
-  resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.2/public/@types/thefoschini.order-placed#25687bd48c2b1b4153a2f4d7ea508cf98b43cb30"
+"thefoschini.order-placed@http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.4/public/@types/thefoschini.order-placed":
+  version "2.15.4"
+  resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.4/public/@types/thefoschini.order-placed#d0d352aa931904480584ea237e841f81013ab810"
 
 throat@^4.0.0:
   version "4.1.0"
@@ -5125,9 +5125,9 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-"vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.22.4/public/@types/vtex.address-form":
-  version "4.22.4"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.22.4/public/@types/vtex.address-form#aa2423ec31d295c1861a6f08b7216f995f747a98"
+"vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.22.6/public/@types/vtex.address-form":
+  version "4.22.6"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.22.6/public/@types/vtex.address-form#c66292e32521e5fef1474d90f448a3b6e46ba683"
 
 "vtex.css-handles@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles":
   version "0.4.4"
@@ -5137,25 +5137,25 @@ verror@1.10.0:
   version "0.21.3"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.flex-layout@0.21.3/public/@types/vtex.flex-layout#407f0e310545ff006f08afb35f5d38ace4546435"
 
-"vtex.order-placed-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.18.0/public/@types/vtex.order-placed-graphql":
-  version "1.18.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.18.0/public/@types/vtex.order-placed-graphql#cbfce7a15784b1386de56504a7a913cf37ca34ef"
+"vtex.order-placed-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.18.1/public/@types/vtex.order-placed-graphql":
+  version "1.18.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.18.1/public/@types/vtex.order-placed-graphql#c79d100f4a76fc17511c169f3a891dfb575f558f"
 
 "vtex.pixel-manager@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pixel-manager@1.9.0/public/@types/vtex.pixel-manager":
   version "1.9.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pixel-manager@1.9.0/public/@types/vtex.pixel-manager#eb61e263c4f8024430ef1a19d28bcf608db3d481"
 
-"vtex.profile-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.15.1/public/@types/vtex.profile-form":
-  version "3.15.1"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.15.1/public/@types/vtex.profile-form#7086a5a7413bec0104967abbff41c78015c8623d"
+"vtex.profile-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.16.1/public/@types/vtex.profile-form":
+  version "3.16.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.16.1/public/@types/vtex.profile-form#0dea9a61e35e5c9ffe0c9bce6866b613d356aef7"
 
 "vtex.pwa-components@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pwa-components@0.4.1/public/@types/vtex.pwa-components":
   version "0.4.1"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pwa-components@0.4.1/public/@types/vtex.pwa-components#a576d7799f8e4c5c4db1ff539dcebe0cf95dbbd9"
 
-"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.1/public/@types/vtex.render-runtime":
-  version "8.134.1"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.1/public/@types/vtex.render-runtime#da48779c477fbef1521010718b0f779ee1ae1ffe"
+"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.2/public/@types/vtex.render-runtime":
+  version "8.134.2"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.2/public/@types/vtex.render-runtime#ae69e2b2a471291c6c6b155e17510150fbfc2d0e"
 
 "vtex.responsive-layout@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.responsive-layout@0.1.4/public/@types/vtex.responsive-layout":
   version "0.1.4"
@@ -5169,9 +5169,9 @@ verror@1.10.0:
   version "2.2.3"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.2.3/public/@types/vtex.shipping-estimate-translator#56c520e45e61572c253542572c153eb1ad0f993f"
 
-"vtex.store-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.92.0/public/@types/vtex.store-resources":
-  version "0.92.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.92.0/public/@types/vtex.store-resources#f19eb16e4863c04864ccfa1b5c5d31843767559c"
+"vtex.store-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.93.0/public/@types/vtex.store-resources":
+  version "0.93.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.93.0/public/@types/vtex.store-resources#f7d82498aa2871d25df89c54f8fff2f5a7ac22f7"
 
 "vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.146.9/public/@types/vtex.styleguide":
   version "9.146.9"
