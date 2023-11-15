@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react'
+import type { FC } from 'react'
+import React, { useState } from 'react'
 import { useQuery } from 'react-apollo'
 import { useIntl, defineMessages } from 'react-intl'
 import { Helmet, ExtensionPoint, useRuntime } from 'vtex.render-runtime'
@@ -14,8 +15,9 @@ import Skeleton from './Skeleton'
 import Analytics from './Analytics'
 import { useGetCustomerEmail } from './hooks/useGetCustomerEmail'
 import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
-
-// to load default css handle styles
+import type { NoticeType } from './hooks/useGetNotices'
+import useGetNotices from './hooks/useGetNotices'
+import Notice from './components/Notice'
 import './styles.css'
 
 interface OrderGroupData {
@@ -39,9 +41,12 @@ const OrderPlaced: FC = () => {
       orderGroup: runtime.query.og,
     },
   })
+
   const { customerEmail, customerEmailLoading } = useGetCustomerEmail(
     data?.orderGroup.orders[0].clientProfileData.email
   )
+
+  const notices = useGetNotices()
 
   // render loading skeleton if query is still loading
   if (loading || customerEmailLoading) return <Skeleton />
@@ -63,9 +68,14 @@ const OrderPlaced: FC = () => {
   const { orderGroup }: { orderGroup: OrderGroup } = {
     ...data,
   }
+
   orderGroup.orders[0].clientProfileData.customerEmail = customerEmail
 
   const { promptOnCustomEvent } = settings
+
+  const overallNotice = notices.find(
+    (notice: NoticeType) => notice.slotName === 'ORDER_COMPLETE_OVERALL'
+  )
 
   return (
     <OrderGroupContext.Provider value={orderGroup}>
@@ -85,6 +95,12 @@ const OrderPlaced: FC = () => {
             role="main"
             className={`${handles.orderPlacedMainWrapper} mv6 w-80-ns w-90 center`}
           >
+            {overallNotice && (
+              <Notice level={overallNotice.level}>
+                {overallNotice.content}
+              </Notice>
+            )}
+
             <OrderList />
 
             {promptOnCustomEvent === 'checkout' && !installDismissed && (

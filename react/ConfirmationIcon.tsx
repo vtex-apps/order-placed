@@ -1,17 +1,21 @@
-import React, { FC } from 'react'
-import { useCssHandles } from 'vtex.css-handles'
-
-import SuccessIcon from './Icons/Success'
-
-const CSS_HANDLES = ['confirmationIconWrapper']
+import type { FC } from 'react'
+import React from 'react'
 
 const ConfirmationIcon: FC = () => {
-  const handles = useCssHandles(CSS_HANDLES)
-
   return (
-    <div className={`${handles.confirmationIconWrapper} tc c-success`}>
-      <SuccessIcon size={50} />
-    </div>
+    <img
+      src="https://assets-files-r2.bash.com/bash-assets/order-confirmation-unboxing-small.png"
+      alt="Success! Thank you for your purchase."
+      style={{
+        margin: '0 auto',
+        maxWidth: '200px',
+        width: '80%',
+        display: 'block',
+        minWidth: '160px',
+      }}
+      id="order-success-image"
+    />
   )
 }
+
 export default ConfirmationIcon
