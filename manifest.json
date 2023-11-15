@@ -4,11 +4,9 @@
   "version": "2.15.6",
   "title": "Order Placed",
   "description": "",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
-    "postreleasy": "vtex publish --public"
+    "postreleasy": "vtex publish --verbose"
   },
   "builders": {
     "react": "3.x",
