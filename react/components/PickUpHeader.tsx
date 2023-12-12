@@ -25,7 +25,11 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const multiplePickups = numPackages > 1
   const { receiverName } = shippingData.address
-  const { additionalInfo } = shippingData.selectedSlaObj.pickupStoreInfo
+  const {
+    additionalInfo,
+    address,
+  } = shippingData.selectedSlaObj.pickupStoreInfo
+
   return (
     <Fragment>
       <div
@@ -61,7 +65,7 @@ const StorePickUpHeader: FC<Props> = ({ shippingData, index, numPackages }) => {
           <FormattedMessage id="store/shipping.header.address" />
         </span>
         <div className={`${handles.packageAddressWrapper} mb5 mr10-m`}>
-          <Address address={shippingData.address} pickup={shippingData} />
+          <Address address={address} pickup={shippingData} />
         </div>
         <div className={`${handles.packageReceiver} c-on-base lh-copy`}>
           <p className={`${handles.packageReceiverName}`}>{receiverName}</p>
