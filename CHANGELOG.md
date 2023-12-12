@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.17.2] - 2023-12-12
+
 ### Fixed
 - Unmask data for pickup point address.
 
