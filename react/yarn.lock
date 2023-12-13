@@ -5117,9 +5117,9 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-"vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.10.0/public/@types/vtex.address-form":
-  version "4.10.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.10.0/public/@types/vtex.address-form#bc53ff7f5a4cbbf5dde23f1b72c502c630e32924"
+"vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.22.6/public/@types/vtex.address-form":
+  version "4.22.6"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.22.6/public/@types/vtex.address-form#c66292e32521e5fef1474d90f448a3b6e46ba683"
 
 "vtex.css-handles@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles":
   version "0.4.4"
@@ -5136,10 +5136,6 @@ verror@1.10.0:
 "vtex.order-placed-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.17.0/public/@types/vtex.order-placed-graphql":
   version "1.17.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed-graphql@1.17.0/public/@types/vtex.order-placed-graphql#da9a271064812cec1bc992d59eb1406c2e2508e0"
-
-"vtex.order-placed@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed@2.12.0/public/@types/vtex.order-placed":
-  version "2.12.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-placed@2.12.0/public/@types/vtex.order-placed#1899985df826aac3ceff9ec9086e135e988059ad"
 
 "vtex.pixel-manager@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pixel-manager@1.8.0/public/@types/vtex.pixel-manager":
   version "1.8.0"
@@ -5165,21 +5161,21 @@ verror@1.10.0:
   version "0.4.2"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.responsive-values@0.4.2/public/@types/vtex.responsive-values#ba7b7a888e931be81d64e8348d99bd6310385ac9"
 
-"vtex.shipping-estimate-translator@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.2.2/public/@types/vtex.shipping-estimate-translator":
-  version "2.2.2"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.2.2/public/@types/vtex.shipping-estimate-translator#0daa482f261e7c40a06c27be07e9e5b9d70cf063"
+"vtex.shipping-estimate-translator@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.2.3/public/@types/vtex.shipping-estimate-translator":
+  version "2.2.3"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.2.3/public/@types/vtex.shipping-estimate-translator#56c520e45e61572c253542572c153eb1ad0f993f"
 
-"vtex.store-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.85.0/public/@types/vtex.store-resources":
-  version "0.85.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.85.0/public/@types/vtex.store-resources#c320bf775471cec37977bfb8af2cfccd4c857c63"
+"vtex.store-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.92.0/public/@types/vtex.store-resources":
+  version "0.92.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.92.0/public/@types/vtex.store-resources#f19eb16e4863c04864ccfa1b5c5d31843767559c"
 
-"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.145.0/public/@types/vtex.styleguide":
-  version "9.145.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.145.0/public/@types/vtex.styleguide#41dfb32af8756eb5528dbd452e47003a8f67fe8c"
+"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.146.9/public/@types/vtex.styleguide":
+  version "9.146.9"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.146.9/public/@types/vtex.styleguide#d1601fedfb665c6173334753171717da64e670bc"
 
-"vtex.totalizer-translator@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.totalizer-translator@2.2.1/public/@types/vtex.totalizer-translator":
-  version "2.2.1"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.totalizer-translator@2.2.1/public/@types/vtex.totalizer-translator#8c9f85c33fcb505c585e276fce15ef7a3c654006"
+"vtex.totalizer-translator@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.totalizer-translator@2.5.0/public/@types/vtex.totalizer-translator":
+  version "2.5.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.totalizer-translator@2.5.0/public/@types/vtex.totalizer-translator#ef262778630085a1f1a3b8a3de09267d069eb33f"
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"

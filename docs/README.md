@@ -612,7 +612,7 @@ The `order-placed` app exports two hooks to allow customization using the curren
 `useOrderGroup`: used to get the data of the current order group. An order group is the collection of all orders created by an users's purchase.
 
 ```js
-import { useOrderGroup } from 'vtex.order-placed/OrderGroupContext'
+import { useOrderGroup } from 'auchan.order-placed/OrderGroupContext'
 
 //...
 const orderGroup = useOrderGroup()
@@ -621,7 +621,7 @@ const orderGroup = useOrderGroup()
 `useOrder`: used to get the data of the current order being accessed in the order loop.
 
 ```js
-import { useOrder } from 'vtex.order-placed/OrderContext'
+import { useOrder } from 'auchan.order-placed/OrderContext'
 
 //...
 const order = useOrder()
