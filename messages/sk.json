@@ -54,7 +54,7 @@
   "store/summary.shipping.address": "Na adresu {addressStreet}, {addressNumber}",
   "store/summary.shipping.quantity": "{shippings, plural, one {, v 1 dodávke} other {, rozdelené do # dodávok}}",
   "store/summary.bagsTax": "Estimare cost ambalare",
-  "store/summary.tooltipContent": "Cost estimat in funcție de produsele din cos. După procesarea comenzii, vei gasi costul final si detalii (tipuri de ambalaj si numar) in mail si contul tau.",
+  "store/summary.tooltipContent": "Cost estimat in functie de produsele din cos. Dupa procesarea comenzii, vei gasi costul final si detalii (tipuri de ambalaj si numar) in mail si in contul tau.",
   "store/summary.sgrTax": "Garantie",
   "store/takeaway.header.title": "„So sebou“",
   "store/warnings.delivery.time": "Dodacia lehota sa počíta od momentu potvrdenia vašej platby.",

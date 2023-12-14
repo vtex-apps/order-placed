@@ -21,7 +21,6 @@ const CSS_HANDLES = [
   'totalList',
   'totalListItem',
   'totalListItemLabel',
-  'totalListItemText',
   'totalListItemValue',
   'bagsIcon',
 ] as const
@@ -115,10 +114,8 @@ const OrderTotal: FC = () => {
               )} pv3 flex justify-between items-center`}
               key={`${total.id}_${i}`}
             >
-              <span className={`${handles.totalListItemLabel} flex items-center`}>
-                <div className={handles.totalListItemText}>
-                  <TranslateTotalizer totalizer={total} />
-                </div>
+              <span className={`${handles.totalListItemLabel} flex`}>
+                <TranslateTotalizer totalizer={total} />
                 {(total.id === BAGS_ID) &&
                   <div className={`${handles.bagsIcon} ml2`}>
                     <Tooltip label={formatMessage(messages.tooltipContent)}>

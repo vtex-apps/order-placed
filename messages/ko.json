@@ -54,7 +54,7 @@
   "store/summary.shipping.address": "{addressStreet}, {addressNumber}에서",
   "store/summary.shipping.quantity": "{shippings, plural, one {, 단일 배송} other {, # 배송으로 분할}}",
   "store/summary.bagsTax": "Estimare cost ambalare",
-  "store/summary.tooltipContent": "Cost estimat in funcție de produsele din cos. După procesarea comenzii, vei gasi costul final si detalii (tipuri de ambalaj si numar) in mail si contul tau.",
+  "store/summary.tooltipContent": "Cost estimat in functie de produsele din cos. Dupa procesarea comenzii, vei gasi costul final si detalii (tipuri de ambalaj si numar) in mail si in contul tau.",
   "store/summary.sgrTax": "Garantie",
   "store/takeaway.header.title": "테이크아웃",
   "store/warnings.delivery.time": "귀하의 결제가 확인된 순간부터 배송 기간을 세기 시작합니다.",

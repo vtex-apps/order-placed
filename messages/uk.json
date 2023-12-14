@@ -54,7 +54,7 @@
   "store/summary.shipping.address": "За адресою {addressStreet}, {addressNumber}",
   "store/summary.shipping.quantity": "{shippings, plural, one {, в одній доставці} few {, розбито на # доставки} many {, розбито на # доставок} other {, розбито на # доставок}}",
   "store/summary.bagsTax": "Estimare cost ambalare",
-  "store/summary.tooltipContent": "Cost estimat in funcție de produsele din cos. După procesarea comenzii, vei gasi costul final si detalii (tipuri de ambalaj si numar) in mail si contul tau.",
+  "store/summary.tooltipContent": "Cost estimat in functie de produsele din cos. Dupa procesarea comenzii, vei gasi costul final si detalii (tipuri de ambalaj si numar) in mail si in contul tau.",
   "store/summary.sgrTax": "Garantie",
   "store/takeaway.header.title": "На винос",
   "store/warnings.delivery.time": "Період доставки починає рахуватися з моменту підтвердження оплати.",

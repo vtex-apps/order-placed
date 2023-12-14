@@ -13,13 +13,13 @@ interface Props {
 const CSS_HANDLES = ['productList', 'productListItem']
 
 const ProductList: FC<Props> = ({ products }) => {
-  const { bagsIDs } = useGetBagsSgrIDs()
-  const prodsWithoutBags = products?.filter(prod => !bagsIDs?.includes(prod.id))
+  const { bagsIDs, sgrIDs } = useGetBagsSgrIDs()
+  const prodsWithoutBagsOrSgr = products?.filter(prod => !bagsIDs?.includes(prod.id) && !sgrIDs?.includes(prod.id))
 
   const handles = useCssHandles(CSS_HANDLES)
   return (
     <ul className={`${handles.productList} w-60-l w-100 list pl0`}>
-      {prodsWithoutBags.map((product: OrderItem) => (
+      {prodsWithoutBagsOrSgr.map((product: OrderItem) => (
         <li
           key={product.id}
           className={`${handles.productListItem} db bb b--muted-4 mb7 pb7`}
