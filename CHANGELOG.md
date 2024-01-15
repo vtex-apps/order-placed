@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed removing SGR items from product list.
+
 ### Added
 
 - Added subtotals for bags and SGR, reorder bags items. 
