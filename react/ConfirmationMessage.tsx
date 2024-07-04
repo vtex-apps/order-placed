@@ -4,6 +4,7 @@ import { useCssHandles } from 'vtex.css-handles'
 
 import { useOrderGroup } from './components/OrderGroupContext'
 import { FurnitureNote } from './FurnitureNote'
+import { hasFurnitureDelivery } from './utils/functions'
 
 const CSS_HANDLES = ['confirmationMessage']
 
@@ -14,12 +15,7 @@ const ConfirmationMessage: FC = () => {
   const shippingMethod =
     orderGroup.orders[0].pickUpParcels.length > 0 ? 'collect' : 'deliver'
 
-  const shippingValue =
-    // eslint-disable-next-line prettier/prettier
-    orderGroup.orders[0].totals.find((item) => item.id === 'Shipping')?.value ??
-    0
-
-  const hasFurniture = orderGroup.orders[0].value > 50000 && shippingValue > 0
+  const hasFurniture = hasFurnitureDelivery(orderGroup)
 
   return (
     <div className={`${handles.confirmationContainer}`}>
@@ -52,7 +48,7 @@ const ConfirmationMessage: FC = () => {
           />
         )}
       </p>
-      {hasFurniture ? <FurnitureNote shippingMethod={shippingMethod} /> : null}
+      {hasFurniture && shippingMethod !== 'collect' ? <FurnitureNote shippingMethod={shippingMethod} /> : null}
     </div>
   )
 }

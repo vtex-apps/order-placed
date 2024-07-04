@@ -16,9 +16,11 @@ const CSS_HANDLES = [
 const deliveryMessage = `
   we’ll call the recipient in the next few days to arrange the furniture
   delivery.
-  <br /> Please ensure sufficient space to receive the goods and keep in
+  <br/>
+  <br/>
+  Please ensure sufficient space to receive the goods and keep in
   mind that the couriers can’t hoist goods onto balconies.
-  <br />
+  <br/>
 `
 
 const collectMessage = `
@@ -30,11 +32,9 @@ export const FurnitureNote = ({ shippingMethod }: FurnitureNoteProps) => {
 
   return (
     <div className={`${handles.furnitureNote}`}>
-      <h4 className={`${handles.noteTitle}`}>furniture delivery</h4>
-      <p>
-        {shippingMethod === 'deliver' ? deliveryMessage : collectMessage}
-        <br />{' '}
-      </p>
+      <h4 className={`${handles.noteTitle}`}>Furniture delivery</h4>
+      {/* using dangerouslySetInnerHTML because the <br/> tags were not being added previously */}
+      <p dangerouslySetInnerHTML={{ __html: shippingMethod === 'deliver' ? deliveryMessage : collectMessage }} />
       <a href="https://help.bash.com/support/solutions" className={handles.noteLink}>
         Frequently asked questions
       </a>
