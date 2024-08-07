@@ -4911,9 +4911,9 @@ test-exclude@^5.2.3:
   version "1.9.6"
   resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-details@1.9.6/public/@types/thefoschini.order-details#faa5c63e6f0b4303eac80d93d44356db554e850d"
 
-"thefoschini.order-placed@http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.8/public/@types/thefoschini.order-placed":
-  version "2.15.8"
-  resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.8/public/@types/thefoschini.order-placed#fc86c87444ee2357495f16c767c873cfd47cd1af"
+"thefoschini.order-placed@http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.9/public/@types/thefoschini.order-placed":
+  version "2.15.9"
+  resolved "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.9/public/@types/thefoschini.order-placed#96cba238c212f471f2205350ae629fb52579c090"
 
 throat@^4.0.0:
   version "4.1.0"
@@ -5125,9 +5125,9 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-"vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.24.3/public/@types/vtex.address-form":
-  version "4.24.3"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.24.3/public/@types/vtex.address-form#001990f5774e8b2175d14536c01df3981356e2a2"
+"vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.24.6/public/@types/vtex.address-form":
+  version "4.24.6"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.24.6/public/@types/vtex.address-form#d84b94826cd443f3f1fcfbb9ac8112b43be35572"
 
 "vtex.css-handles@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles":
   version "0.4.4"
