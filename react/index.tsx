@@ -18,6 +18,7 @@ import type { NoticeType } from './hooks/useGetNotices'
 import useGetNotices from './hooks/useGetNotices'
 import Notice from './components/Notice'
 import './styles.css'
+import { getCookie } from './utils/functions'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -35,7 +36,7 @@ const OrderPlaced: FC = () => {
   const runtime = useRuntime()
   const { settings = {} } = usePWA() || {}
   const [installDismissed, setInstallDismissed] = useState(false)
-  const [appCookie, setAppCookie] = useState<string | null>(null)
+  const [isApp, setIsApp] = useState(false)
 
   const { data, loading, error } = useQuery<OrderGroupData>(GET_ORDER_GROUP, {
     variables: {
@@ -44,11 +45,8 @@ const OrderPlaced: FC = () => {
   })
 
   useEffect(() => {
-    const isAppCookie =
-      document.cookie
-        .match('(^|;)\\s*' + 'is_app' + '\\s*=\\s*([^;]+)')
-        ?.pop() ?? null
-    isAppCookie && setAppCookie(isAppCookie)
+    const isAppCookie = getCookie('is_app')
+    setIsApp(isAppCookie === 'true')
   }, [])
 
   const { customerEmail, customerEmailLoading } = useGetCustomerEmail(
@@ -121,7 +119,7 @@ const OrderPlaced: FC = () => {
             )}
           </div>
 
-          {!appCookie && <ExtensionPoint id="op-footer" />}
+          {!isApp && <ExtensionPoint id="op-footer" />}
         </div>
       </CurrencyContext.Provider>
     </OrderGroupContext.Provider>
