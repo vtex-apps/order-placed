@@ -1,5 +1,4 @@
-import type { FC } from 'react'
-import React, { useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { useQuery } from 'react-apollo'
 import { useIntl, defineMessages } from 'react-intl'
 import { Helmet, ExtensionPoint, useRuntime } from 'vtex.render-runtime'
@@ -19,6 +18,7 @@ import type { NoticeType } from './hooks/useGetNotices'
 import useGetNotices from './hooks/useGetNotices'
 import Notice from './components/Notice'
 import './styles.css'
+import { getCookie } from './utils/functions'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -36,11 +36,18 @@ const OrderPlaced: FC = () => {
   const runtime = useRuntime()
   const { settings = {} } = usePWA() || {}
   const [installDismissed, setInstallDismissed] = useState(false)
+  const [isApp, setIsApp] = useState(false)
+
   const { data, loading, error } = useQuery<OrderGroupData>(GET_ORDER_GROUP, {
     variables: {
       orderGroup: runtime.query.og,
     },
   })
+
+  useEffect(() => {
+    const isAppCookie = getCookie('is_app')
+    setIsApp(!!isAppCookie)
+  }, [])
 
   const { customerEmail, customerEmailLoading } = useGetCustomerEmail(
     data?.orderGroup.orders[0].clientProfileData.email
@@ -112,7 +119,7 @@ const OrderPlaced: FC = () => {
             )}
           </div>
 
-          <ExtensionPoint id="op-footer" />
+          {!isApp && <ExtensionPoint id="op-footer" />}
         </div>
       </CurrencyContext.Provider>
     </OrderGroupContext.Provider>
