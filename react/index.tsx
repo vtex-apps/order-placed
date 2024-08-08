@@ -46,7 +46,7 @@ const OrderPlaced: FC = () => {
 
   useEffect(() => {
     const isAppCookie = getCookie('is_app')
-    setIsApp(isAppCookie === 'true')
+    setIsApp(!!isAppCookie)
   }, [])
 
   const { customerEmail, customerEmailLoading } = useGetCustomerEmail(
