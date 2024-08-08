@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Sie können Ihren {paymentSystemName} nicht sehen?",
   "store/header.bankinvoice.tooltip": "Ihr {paymentSystemName} funktioniert einwandfrei. Klicken Sie auf {message} oder kopieren Sie ihren Barcode, um mit der Zahlung fortzufahren.",
   "store/header.email": "Innerhalb von 5 Minuten erhalten Sie eine E-Mail an {userEmail} mit all Ihren Kaufdetails. {lineBreak} Denken Sie daran, Ihren Spam- oder Werbepostfach zu überprüfen",
+  "store/header.guest-email": "Innerhalb von 5 Minuten erhalten Sie eine E-Mail an {userEmail} mit all Ihren Kaufdetails. {lineBreak} Denken Sie daran, Ihren Spam- oder Werbepostfach zu überprüfen",
   "store/header.newpurchase.button": "Neue Bestellung starten",
   "store/header.print.button": "Drucken",
   "store/header.thanks": "Vielen Dank für Ihren Kauf!",

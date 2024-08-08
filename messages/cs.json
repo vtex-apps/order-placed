@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Nevidíte {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "{paymentSystemName} funguje normálně. Pro zaplacení klikněte na {message} nebo zkopírujte čárový kód.",
   "store/header.email": "Během 5 minut dostanete na adresu {userEmail} e-mail obsahující podrobnosti o vašem nákupu.{lineBreak}Nezapomeňte zkontrolovat složku pro spam nebo obchodní nabídky",
+  "store/header.guest-email": "Během 5 minut dostanete na adresu {userEmail} e-mail obsahující podrobnosti o vašem nákupu.{lineBreak}Nezapomeňte zkontrolovat složku pro spam nebo obchodní nabídky",
   "store/header.newpurchase.button": "Založit novou objednávku",
   "store/header.print.button": "Vytisknout",
   "store/header.thanks": "Děkujeme za váš nákup!",

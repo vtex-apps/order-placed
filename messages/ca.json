@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "No podeu veure el vostre {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "El vostre {paymentSystemName} funciona amb normalitat. Feu clic a {message} o copieu-ne el codi de barres per procedir al pagament.",
   "store/header.email": "Dins d'un termini de 5 minuts, rebreu un correu electrònic a {userEmail} amb tota la informació sobre la vostra compra.{lineBreak}Recordeu revisar la safata de correu brossa o la pestanya Promocions",
+  "store/header.guest-email": "Dins d'un termini de 5 minuts, rebreu un correu electrònic a {userEmail} amb tota la informació sobre la vostra compra.{lineBreak}Recordeu revisar la safata de correu brossa o la pestanya Promocions",
   "store/header.newpurchase.button": "Inicia una comanda nova",
   "store/header.print.button": "Imprimeix",
   "store/header.thanks": "Gràcies per la vostra compra!",
