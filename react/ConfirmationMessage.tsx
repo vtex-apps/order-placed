@@ -7,7 +7,13 @@ import { useSessionResponse } from './utils/useSessionResponse'
 
 const CSS_HANDLES = ['confirmationMessage']
 
-const ConfirmationMessage: FC = () => {
+interface Props {
+  enableGuestMessage: boolean
+}
+
+const ConfirmationMessage: FC<Props> = ({
+  enableGuestMessage = false,
+}: Props) => {
   const handles = useCssHandles(CSS_HANDLES)
   const orderGroup = useOrderGroup()
   const profile = orderGroup.orders[0].clientProfileData
@@ -22,9 +28,9 @@ const ConfirmationMessage: FC = () => {
     <p
       className={`${handles.confirmationMessage} mt5 t-body tc c-muted-1 lh-copy`}
     >
-      {isLoggedIn ? (
+      {!isLoggedIn && enableGuestMessage ? (
         <FormattedMessage
-          id="store/header.email"
+          id="store/header.guest-email"
           values={{
             lineBreak: <br />,
             userEmail: <strong className="nowrap">{profile.email}</strong>,
@@ -32,7 +38,7 @@ const ConfirmationMessage: FC = () => {
         />
       ) : (
         <FormattedMessage
-          id="store/header.guest-email"
+          id="store/header.email"
           values={{
             lineBreak: <br />,
             userEmail: <strong className="nowrap">{profile.email}</strong>,
