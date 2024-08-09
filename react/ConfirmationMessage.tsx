@@ -24,6 +24,9 @@ const ConfirmationMessage: FC<Props> = ({
     setIsLoggedIn(!!sessionResponse?.namespaces?.profile?.email)
   }, [sessionResponse, setIsLoggedIn])
 
+  // by default "header.email" and "header.guest-email" texts are the same
+  // if the customer enables the guest message option, they will also need to change the guest text via GraphQL
+
   return (
     <p
       className={`${handles.confirmationMessage} mt5 t-body tc c-muted-1 lh-copy`}
