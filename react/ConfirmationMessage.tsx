@@ -20,7 +20,7 @@ const ConfirmationMessage: FC = () => {
 
   const handleClick = () => {
     if (typeof window !== 'undefined') {
-      window.location.replace('https://bash.com')
+      window.location.replace('com.tfglabs.manhattan.beta://auth')
     }
   }
 
