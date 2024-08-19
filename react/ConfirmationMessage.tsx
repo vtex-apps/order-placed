@@ -27,15 +27,12 @@ const ConfirmationMessage: FC = () => {
     if (typeof window === 'undefined') {
       return
     }
-    let redirectUrl
-    if (isApp) {
-      redirectUrl = window.location.hostname.includes('staging')
-        ? appHomeStaging
-        : appHomeProd
-    } else {
-      redirectUrl = 'https://bash.com'
-    }
 
+    const redirectUrl = window.location.hostname.includes('staging')
+      ? appHomeStaging
+      : appHomeProd
+    /* eslint no-console: ["error", { allow: ["log", "error"] }] */
+    console.log(redirectUrl)
     window.location.replace(redirectUrl)
   }
 
