@@ -31,8 +31,6 @@ const ConfirmationMessage: FC = () => {
     const redirectUrl = window.location.hostname.includes('staging')
       ? appHomeStaging
       : appHomeProd
-    /* eslint no-console: ["error", { allow: ["log", "error"] }] */
-    console.log(redirectUrl)
     window.location.replace(redirectUrl)
   }
 
