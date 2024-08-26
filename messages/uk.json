@@ -70,5 +70,6 @@
   "store/go-to-login": "Перейдіть на сторінку входу",
   "store/go-to-home": "Перейдіть на домашню сторінку",
   "store/paymentData.connectorResponse.mb.entity": "Організація",
-  "store/paymentData.connectorResponse.mb.reference": "Посилання"
+  "store/paymentData.connectorResponse.mb.reference": "Посилання",
+  "store/header.bankinvoice.copy.barcode": "Код скопійовано"
 }

@@ -70,5 +70,6 @@
   "store/go-to-login": "Преминете към страницата за вход",
   "store/go-to-home": "Преминете към началната страница",
   "store/paymentData.connectorResponse.mb.entity": "Лице",
-  "store/paymentData.connectorResponse.mb.reference": "Препратка"
+  "store/paymentData.connectorResponse.mb.reference": "Препратка",
+  "store/header.bankinvoice.copy.barcode": "Копиран код"
 }

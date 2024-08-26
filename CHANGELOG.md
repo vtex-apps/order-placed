@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Shows toast message when user copy bar code 
+
 ## [2.17.2] - 2023-12-12
 
 ### Fixed

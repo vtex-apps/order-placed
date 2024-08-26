@@ -70,5 +70,6 @@
   "store/go-to-login": "Ugrás a bejelentkezési oldalra",
   "store/go-to-home": "Ugrás a kezdőlapra",
   "store/paymentData.connectorResponse.mb.entity": "Entitás",
-  "store/paymentData.connectorResponse.mb.reference": "Referencia"
+  "store/paymentData.connectorResponse.mb.reference": "Referencia",
+  "store/header.bankinvoice.copy.barcode": "Másolt kód"
 }

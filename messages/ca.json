@@ -70,5 +70,6 @@
   "store/go-to-login": "Ves a la pàgina d'inici de sessió",
   "store/go-to-home": "Ves a la pàgina d'inici",
   "store/paymentData.connectorResponse.mb.entity": "Entitat",
-  "store/paymentData.connectorResponse.mb.reference": "Referència"
+  "store/paymentData.connectorResponse.mb.reference": "Referència",
+  "store/header.bankinvoice.copy.barcode": "Codi copiat"
 }

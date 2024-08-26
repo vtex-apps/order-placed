@@ -70,5 +70,6 @@
   "store/go-to-login": "Prejdite na prihlasovaciu stránku",
   "store/go-to-home": "Prejdite na domovskú stránku",
   "store/paymentData.connectorResponse.mb.entity": "Subjekt",
-  "store/paymentData.connectorResponse.mb.reference": "Referencia"
+  "store/paymentData.connectorResponse.mb.reference": "Referencia",
+  "store/header.bankinvoice.copy.barcode": "Kód skopírovaný"
 }

@@ -70,5 +70,6 @@
   "store/go-to-login": "Vai alla pagina di login",
   "store/go-to-home": "Vai alla home page",
   "store/paymentData.connectorResponse.mb.entity": "Entità",
-  "store/paymentData.connectorResponse.mb.reference": "Riferimento"
+  "store/paymentData.connectorResponse.mb.reference": "Riferimento",
+  "store/header.bankinvoice.copy.barcode": "Codice copiato"
 }

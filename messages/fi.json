@@ -70,5 +70,6 @@
   "store/go-to-login": "Siirry kirjautumissivulle",
   "store/go-to-home": "Siirry etusivulle",
   "store/paymentData.connectorResponse.mb.entity": "Yksikkö",
-  "store/paymentData.connectorResponse.mb.reference": "Viite"
+  "store/paymentData.connectorResponse.mb.reference": "Viite",
+  "store/header.bankinvoice.copy.barcode": "Koodi kopioitu"
 }

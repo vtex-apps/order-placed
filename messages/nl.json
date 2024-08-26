@@ -70,5 +70,6 @@
   "store/go-to-login": "Ga naar de loginpagina",
   "store/go-to-home": "Ga naar de startpagina",
   "store/paymentData.connectorResponse.mb.entity": "Entiteit",
-  "store/paymentData.connectorResponse.mb.reference": "Referentie"
+  "store/paymentData.connectorResponse.mb.reference": "Referentie",
+  "store/header.bankinvoice.copy.barcode": "Nambari imeakiliwa"
 }

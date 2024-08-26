@@ -70,5 +70,6 @@
   "store/go-to-login": "Pojdite na stran registracije",
   "store/go-to-home": "Pojdite na domačo stran",
   "store/paymentData.connectorResponse.mb.entity": "Entiteta",
-  "store/paymentData.connectorResponse.mb.reference": "Referenca"
+  "store/paymentData.connectorResponse.mb.reference": "Referenca",
+  "store/header.bankinvoice.copy.barcode": "Koda kopirana"
 }

@@ -7,4 +7,5 @@ declare module 'vtex.styleguide' {
   export const IconInfo
   export const PageBlock
   export const Tooltip
+  export const withToast
 }

@@ -70,5 +70,6 @@
   "store/go-to-login": "로그인 페이지로 가기",
   "store/go-to-home": "홈 페이지로 가기",
   "store/paymentData.connectorResponse.mb.entity": "엔티티",
-  "store/paymentData.connectorResponse.mb.reference": "참조"
+  "store/paymentData.connectorResponse.mb.reference": "참조",
+  "store/header.bankinvoice.copy.barcode": "코드 복사됨"
 }

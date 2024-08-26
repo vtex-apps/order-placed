@@ -70,5 +70,6 @@
   "store/go-to-login": "Mergi la pagina de conectare",
   "store/go-to-home": "Mergi la pagina principală",
   "store/paymentData.connectorResponse.mb.entity": "Entitate",
-  "store/paymentData.connectorResponse.mb.reference": "Referinţă"
+  "store/paymentData.connectorResponse.mb.reference": "Referinţă",
+  "store/header.bankinvoice.copy.barcode": "Cod copiat"
 }
