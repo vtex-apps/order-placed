@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Δεν μπορείτε να δείτε {paymentSystemName};",
   "store/header.bankinvoice.tooltip": "Το {paymentSystemName} σας λειτουργεί κανονικά. Κάντε κλικ στο {message} ή αντιγράψτε τον γραμμωτό κώδικα για να προχωρήσει η πληρωμή.",
   "store/header.email": "Εντός 5 λεπτών, θα λάβετε email στο {userEmail} με όλα τα στοιχεία της αγοράς σας.{lineBreak}Θυμηθείτε να ελέγχετε την ανεπιθύμητη αλληλογραφία ή τα διαφημιστικά μηνύματα",
+  "store/header.guest-email": "Εντός 5 λεπτών, θα λάβετε email στο {userEmail} με όλα τα στοιχεία της αγοράς σας.{lineBreak}Θυμηθείτε να ελέγχετε την ανεπιθύμητη αλληλογραφία ή τα διαφημιστικά μηνύματα",
   "store/header.newpurchase.button": "Ξεκίνημα νέας παραγγελίας",
   "store/header.print.button": "Εκτύπωση",
   "store/header.thanks": "Ευχαριστούμε για την αγορά σας!",

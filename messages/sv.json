@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Kan inte se din {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "Din {paymentSystemName} fungerar normalt. Klicka på {message} eller kopiera streckkoden för att fortsätta med betalningen.",
   "store/header.email": "Inom 5 minuter kommer du att få ett e-postmeddelande till {userEmail} med all dina köpinformation. {lineBreak}Kom ihåg att kolla din skräppost eller inkorg för kampanjer",
+  "store/header.guest-email": "Inom 5 minuter kommer du att få ett e-postmeddelande till {userEmail} med all dina köpinformation. {lineBreak}Kom ihåg att kolla din skräppost eller inkorg för kampanjer",
   "store/header.newpurchase.button": "Påbörja ny beställning",
   "store/header.print.button": "Skriv ut",
   "store/header.thanks": "Tack för ditt köp!",

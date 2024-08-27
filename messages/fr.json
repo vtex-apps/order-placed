@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Vous ne voyez pas votre {paymentSystemName} ?",
   "store/header.bankinvoice.tooltip": "Votre {paymentSystemName} fonctionne normalement. Cliquez sur {message} ou copiez son code barre pour procéder au paiement.",
   "store/header.email": "Dans les 5 prochaines minutes, vous recevrez un courriel à {userEmail} avec tous les détails de votre achat.{lineBreak} N'oubliez pas de consulter votre boîte de réception de spam ou de promotions",
+  "store/header.guest-email": "Dans les 5 prochaines minutes, vous recevrez un courriel à {userEmail} avec tous les détails de votre achat.{lineBreak} N'oubliez pas de consulter votre boîte de réception de spam ou de promotions",
   "store/header.newpurchase.button": "Démarrer une nouvelle commande",
   "store/header.print.button": "Imprimer",
   "store/header.thanks": "Merci pour votre achat !",

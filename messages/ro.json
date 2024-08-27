@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Nu poți vedea {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "{paymentSystemName} funcționează normal. Apasă pe {message} sau copiază codul de bare pentru a continua cu plata.",
   "store/header.email": "În cel mult 5 minute vei primi un e-mail la {userEmail} cu toate detaliile achiziției tale.{lineBreak} Verifică mesajele spam sau promoționale",
+  "store/header.guest-email": "În cel mult 5 minute vei primi un e-mail la {userEmail} cu toate detaliile achiziției tale.{lineBreak} Verifică mesajele spam sau promoționale",
   "store/header.newpurchase.button": "Începe comandă nouă ",
   "store/header.print.button": "Imprimare ",
   "store/header.thanks": "Mulțumim pentru achiziție!",
