@@ -71,5 +71,6 @@
   "store/go-to-login": "Перейти на страницу входа",
   "store/go-to-home": "Перейти на главную страницу",
   "store/paymentData.connectorResponse.mb.entity": "Лицо",
-  "store/paymentData.connectorResponse.mb.reference": "Ссылка"
+  "store/paymentData.connectorResponse.mb.reference": "Ссылка",
+  "store/header.bankinvoice.copy.barcode": "Код скопирован"
 }

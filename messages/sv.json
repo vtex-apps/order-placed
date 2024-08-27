@@ -71,5 +71,6 @@
   "store/go-to-login": "Gå till sidan för inloggning",
   "store/go-to-home": "gå till hemsidan",
   "store/paymentData.connectorResponse.mb.entity": "Företag",
-  "store/paymentData.connectorResponse.mb.reference": "Referens"
+  "store/paymentData.connectorResponse.mb.reference": "Referens",
+  "store/header.bankinvoice.copy.barcode": "Kod kopierad"
 }

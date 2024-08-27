@@ -71,5 +71,6 @@
   "store/go-to-login": "Gå til påloggingssiden",
   "store/go-to-home": "Gå til hjemmesiden",
   "store/paymentData.connectorResponse.mb.entity": "Enhet",
-  "store/paymentData.connectorResponse.mb.reference": "Referanse"
+  "store/paymentData.connectorResponse.mb.reference": "Referanse",
+  "store/header.bankinvoice.copy.barcode": "Kode kopiert"
 }

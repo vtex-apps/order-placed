@@ -1,13 +1,14 @@
 import React, { FC } from 'react'
 import Clipboard from 'react-clipboard.js'
-import { FormattedMessage } from 'react-intl'
-import { Button } from 'vtex.styleguide'
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl'
 import { useCssHandles } from 'vtex.css-handles'
+import { Button, withToast } from 'vtex.styleguide'
 
 import { getLoginUrl } from '../../utils'
 
 interface Props {
   barCodeNumber: string
+  showToast?: (params: { message: string }) => void
 }
 
 const CSS_HANDLES = [
@@ -16,9 +17,14 @@ const CSS_HANDLES = [
   'barCodeCopyButtonWrapper',
 ]
 
-const BarCode: FC<Props> = ({ barCodeNumber }) => {
+const messages = defineMessages({
+  copy: { id: 'store/header.bankinvoice.copy.barcode', defaultMessage: '' },
+})
+
+const BarCode: FC<Props> = ({ barCodeNumber, showToast }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const isEncrypted = barCodeNumber.includes('*')
+  const { formatMessage } = useIntl()
 
   return (
     <div
@@ -44,7 +50,14 @@ const BarCode: FC<Props> = ({ barCodeNumber }) => {
           data-clipboard-text={barCodeNumber}
           className={`${handles.barCodeCopyButtonWrapper} b--muted-4 bl-l bt bt-0-l bw1 flex flex-row-l flex-column`}
         >
-          <Button variation="tertiary">
+          <Button
+            variation="tertiary"
+            onClick={() => {
+              showToast({
+                message: formatMessage(messages.copy),
+              })
+            }}
+          >
             <FormattedMessage id="store/header.bankinvoice.copy" />
           </Button>
         </Clipboard>
@@ -53,4 +66,4 @@ const BarCode: FC<Props> = ({ barCodeNumber }) => {
   )
 }
 
-export default BarCode
+export default withToast(BarCode)

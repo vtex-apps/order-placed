@@ -71,5 +71,6 @@
   "store/go-to-login": "Μεταβείτε στη σελίδα σύνδεσης",
   "store/go-to-home": "Μεταβείτε στην αρχική σελίδα",
   "store/paymentData.connectorResponse.mb.entity": "Φορέας",
-  "store/paymentData.connectorResponse.mb.reference": "Αναφορά"
+  "store/paymentData.connectorResponse.mb.reference": "Αναφορά",
+  "store/header.bankinvoice.copy.barcode": "Αντιγραμμένος κωδικός"
 }

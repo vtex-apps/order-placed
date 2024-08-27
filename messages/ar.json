@@ -71,5 +71,6 @@
   "store/go-to-login": "انتقل لصفحة الدخول",
   "store/go-to-home": "انتقل للصفحة الرئيسية",
   "store/paymentData.connectorResponse.mb.entity": "المؤسسة",
-  "store/paymentData.connectorResponse.mb.reference": "المرجع"
+  "store/paymentData.connectorResponse.mb.reference": "المرجع",
+  "store/header.bankinvoice.copy.barcode": "الكود المنسوخ"
 }

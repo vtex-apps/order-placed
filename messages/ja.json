@@ -71,5 +71,6 @@
   "store/go-to-login": "ログインページに進む",
   "store/go-to-home": "ホームページに進む",
   "store/paymentData.connectorResponse.mb.entity": "エンティティ",
-  "store/paymentData.connectorResponse.mb.reference": "参照"
+  "store/paymentData.connectorResponse.mb.reference": "参照",
+  "store/header.bankinvoice.copy.barcode": "コードがコピーされました"
 }

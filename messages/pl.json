@@ -71,5 +71,6 @@
   "store/go-to-login": "Przejdź do strony logowania",
   "store/go-to-home": "Przejdź do strony głównej",
   "store/paymentData.connectorResponse.mb.entity": "Spółka",
-  "store/paymentData.connectorResponse.mb.reference": "Odniesienie"
+  "store/paymentData.connectorResponse.mb.reference": "Odniesienie",
+  "store/header.bankinvoice.copy.barcode": "Kode kopiert"
 }
