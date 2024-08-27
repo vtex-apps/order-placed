@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Не бачите ваш {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "Ваш {paymentSystemName} працює нормально. Натисніть на «{message}» або скопіюйте штрихкод, щоби здійснити платіж.",
   "store/header.email": "Протягом 5 хвилин ви отримаєте електронний лист на {userEmail} з усіма деталями покупки.{lineBreak}Не забудьте перевірити папку \"Спам\" або \"Акції\"",
+  "store/header.guest-email": "Протягом 5 хвилин ви отримаєте електронний лист на {userEmail} з усіма деталями покупки.{lineBreak}Не забудьте перевірити папку \"Спам\" або \"Акції\"",
   "store/header.newpurchase.button": "Почати нове замовлення",
   "store/header.print.button": "Друкувати",
   "store/header.thanks": "Дякуємо за покупку!",

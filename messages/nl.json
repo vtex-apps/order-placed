@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Kan je uw {paymentSystemName} niet zien?",
   "store/header.bankinvoice.tooltip": "Uw {paymentSystemName} werkt normaal. Klik op {message} of kopieer zijn barcode om door te gaan met de betaling.",
   "store/header.email": "Binnen 5 minuten ontvangt u een e-mail op {userEmail} met al uw aankoopgegevens.{lineBreak}Vergeet niet om uw spam of promoties inbox te controleren",
+  "store/header.guest-email": "Binnen 5 minuten ontvangt u een e-mail op {userEmail} met al uw aankoopgegevens.{lineBreak}Vergeet niet om uw spam of promoties inbox te controleren",
   "store/header.newpurchase.button": "Start nieuwe bestelling",
   "store/header.print.button": "Print",
   "store/header.thanks": "Bedankt voor uw aankoop!",

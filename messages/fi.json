@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Etkö näe maksupalvelua {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "Maksupalvelusi {paymentSystemName} toimii normaalisti. Napsauta {message} tai kopioi sen viivakoodi jatkaaksesi maksamista.",
   "store/header.email": "Saat viiden minuutin kuluessa osoitteeseen {userEmail} viestin, joka sisältää kaikki ostotapahtuman tiedot.{lineBreak}Muista tarkastaa roskaposti- tai mainoslaatikko",
+  "store/header.guest-email": "Saat viiden minuutin kuluessa osoitteeseen {userEmail} viestin, joka sisältää kaikki ostotapahtuman tiedot.{lineBreak}Muista tarkastaa roskaposti- tai mainoslaatikko",
   "store/header.newpurchase.button": "Aloita uusi tilaus",
   "store/header.print.button": "Tulosta",
   "store/header.thanks": "Kiitos ostostasi!",

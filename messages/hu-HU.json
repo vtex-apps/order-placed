@@ -8,6 +8,7 @@
   "store/header.bankinvoice.help": "Nem látja a következőt: {paymentSystemName}?",
   "store/header.bankinvoice.tooltip": "A(z) {paymentSystemName} megfelelően működik. Kattintson a(z) {message} lehetőségre, vagy másolja ki a vonalkódot a fizetés folytatásához.",
   "store/header.email": "5 percen belül e-mailt kap a(z) {userEmail} címre a vásárlás részleteiről.{lineBreak}Ne felejtse el ellenőrizni a levélszemetet vagy hirdetéseket tartalmazó mappákat",
+  "store/header.guest-email": "5 percen belül e-mailt kap a(z) {userEmail} címre a vásárlás részleteiről.{lineBreak}Ne felejtse el ellenőrizni a levélszemetet vagy hirdetéseket tartalmazó mappákat",
   "store/header.newpurchase.button": "Új megrendelés indítása",
   "store/header.print.button": "Nyomtatás",
   "store/header.thanks": "Köszönjük a vásárlást!",
