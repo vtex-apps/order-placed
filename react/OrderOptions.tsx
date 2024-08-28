@@ -1,8 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { OrderOptions } from 'thefoschini.order-details'
 import { useCssHandles } from 'vtex.css-handles'
 
 import { useOrder } from './components/OrderContext'
+import { getCookie } from './utils/functions'
 
 interface Props {
   fullWidth?: boolean
@@ -18,6 +19,12 @@ const WrappedOrderOptions: FC<Props> = ({
   const order = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
   const hasTakeAwayParcels = order.takeAwayParcels.length > 0
+  const [isApp, setIsApp] = useState(false)
+
+  useEffect(() => {
+    const isAppCookie = getCookie('is_app')
+    setIsApp(isAppCookie === 'true')
+  }, [])
 
   return (
     <OrderOptions
@@ -27,6 +34,7 @@ const WrappedOrderOptions: FC<Props> = ({
       takeaway={hasTakeAwayParcels}
       fullWidth={fullWidth}
       myAccountPath={myAccountPath}
+      isApp={isApp}
     />
   )
 }
