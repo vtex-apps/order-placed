@@ -5,21 +5,19 @@ import { useRuntime } from 'vtex.render-runtime'
 
 import { pushPayEvent } from '../utils/events'
 
-const useTracking = () => {
+const useTracking = (orderTotal?: number) => {
   const runtime = useRuntime()
-
   const { account } = runtime
 
   useEffect(() => {
-    console.info({ account, runtime })
-
     pushPayEvent(
       {
-        event: 'puchase',
+        event: 'purchase',
+        value: orderTotal ? orderTotal / 100 : 0,
       },
       account
     )
-  }, [account])
+  }, [account, orderTotal])
 }
 
 export default useTracking
