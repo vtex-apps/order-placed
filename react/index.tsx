@@ -19,6 +19,7 @@ import useGetNotices from './hooks/useGetNotices'
 import Notice from './components/Notice'
 import './styles.css'
 import { getCookie } from './utils/functions'
+import useTracking from './hooks/useTracking'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -43,6 +44,8 @@ const OrderPlaced: FC = () => {
       orderGroup: runtime.query.og,
     },
   })
+
+  useTracking()
 
   useEffect(() => {
     const isAppCookie = getCookie('is_app')
