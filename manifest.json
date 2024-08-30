@@ -1,12 +1,10 @@
 {
-  "vendor": "thefoschini",
+  "vendor": "thefoschiniqa",
   "name": "order-placed",
   "version": "2.15.12",
   "title": "Order Placed",
   "description": "",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --verbose"
   },
