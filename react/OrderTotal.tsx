@@ -7,6 +7,7 @@ import FormattedPrice from './components/FormattedPrice'
 import { useOrder } from './components/OrderContext'
 import { getTotals } from './utils'
 import TaxInfo from './TaxInfo'
+import useTracking from './hooks/useTracking'
 
 const CSS_HANDLES = [
   'totalListWrapper',
@@ -19,6 +20,8 @@ const CSS_HANDLES = [
 const OrderTotal: FC = () => {
   const { items, totals, value: totalValue } = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
+  useTracking({ orderTotal: totalValue || 0 })
+
   const numItems = items.reduce((acc, item) => {
     if (item.parentItemIndex === null) {
       return acc + item.quantity
