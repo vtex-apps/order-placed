@@ -9,7 +9,7 @@ const useTracking = ({
   event = 'purchase',
   orderTotal,
 }: {
-  event: string
+  event?: string
   orderTotal?: number
 }) => {
   const runtime = useRuntime()

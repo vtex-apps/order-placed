@@ -20,7 +20,7 @@ const CSS_HANDLES = [
 const OrderTotal: FC = () => {
   const { items, totals, value: totalValue } = useOrder()
   const handles = useCssHandles(CSS_HANDLES)
-  useTracking(totalValue)
+  useTracking({ orderTotal: totalValue || 0 })
 
   const numItems = items.reduce((acc, item) => {
     if (item.parentItemIndex === null) {
