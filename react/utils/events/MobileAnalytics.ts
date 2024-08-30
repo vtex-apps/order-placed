@@ -8,12 +8,11 @@ class MobileAnalytics {
   public flushInterval: number
   public retries: number
   public maxRetries: number
-  constructor(
-    flushInterval = 3000,
-    maxRetries = 3,
-    endpoint = 'https://store-api.www.bash.com/custom-api/analytics/collect'
-  ) {
-    this.endpoint = endpoint
+  constructor(flushInterval = 3000, maxRetries = 3, account = 'thefoschini') {
+    this.endpoint =
+      account === 'thefoschini'
+        ? 'https://store-api.www.bash.com/custom-api/analytics/collect'
+        : 'https://store-api.staging.tfglabs.dev/custom-api/analytics/collect'
     this.buffer = []
     this.flushInterval = flushInterval
     this.retries = 0

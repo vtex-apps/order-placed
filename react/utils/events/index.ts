@@ -98,7 +98,7 @@ export const pushPayEvent = (
   account: 'thefoschini' | 'thefoschiniqa' = 'thefoschini'
 ) => {
   if (!eventData) return
-  const analytics = new MobileAnalytics()
+  const analytics = new MobileAnalytics(3000, 3, account)
 
   const isApp = document?.cookie.includes('is_app=true')
   let transformedEventData: { [key: string]: string | object } = {
