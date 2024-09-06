@@ -1,13 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
 
 import { getCookieValue } from '.'
 
-class MobileAnalytics {
+class EventAnalytics {
   public endpoint: string
   public buffer: any[]
   public flushInterval: number
   public retries: number
   public maxRetries: number
+  public clientId?: string
+  public sessionId?: string
+  private isApp: boolean
   constructor(flushInterval = 3000, maxRetries = 3, account = 'thefoschini') {
     this.endpoint =
       account === 'thefoschini'
@@ -17,6 +21,8 @@ class MobileAnalytics {
     this.flushInterval = flushInterval
     this.retries = 0
     this.maxRetries = maxRetries
+    this.isApp = getCookieValue('is_app') === 'true'
+
     // Start the interval to periodically send the buffered events
     setInterval(() => this.flush(), this.flushInterval)
   }
@@ -51,6 +57,52 @@ class MobileAnalytics {
     }
   }
 
+  private async getWebTrackingConfig() {
+    // Platform is App
+    if (this.isApp) {
+      return {}
+    }
+
+    if (typeof window.gtag !== 'function') {
+      console.warn('🕸️ Web Analytics: GTM is not ready / configured.')
+      return {}
+    }
+
+    const clientIdPromise = new Promise<void>((resolve) => {
+      window.gtag(
+        'get',
+        process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+        'client_id',
+        (id: string) => {
+          this.clientId = id
+          resolve()
+        }
+      )
+    })
+
+    const sessionIdPromise = new Promise<void>((resolve) => {
+      window.gtag(
+        'get',
+        process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+        'session_id',
+        (id: string) => {
+          this.sessionId = id
+          resolve()
+        }
+      )
+    })
+
+    // Wait for both clientId and sessionId to be retrieved
+    await Promise.all([clientIdPromise, sessionIdPromise])
+
+    return {
+      platform: 'Web',
+      clientId: this.clientId,
+      sessionId: this.sessionId,
+      feature_flag_parameters: ['is_bash_pay'],
+    }
+  }
+
   private async flush() {
     if (this.buffer.length === 0 || this.retries >= this.maxRetries) {
       return
@@ -60,21 +112,31 @@ class MobileAnalytics {
     this.buffer = []
 
     const cookieData = this.getAppAnalyticsCookieData()
+    const webData = await this.getWebTrackingConfig()
 
     const body = JSON.stringify({
       ...cookieData,
+      ...webData,
       events: eventsToSend,
     })
 
-    // If there is no app instance id, don't send the events
-    // It will build up errors on store-api.
-    if (this.endpoint && !cookieData.appInstanceId) {
+    // For App, there must be an app instance id
+    if (this.isApp && !cookieData.appInstanceId) {
       console.warn('📱 Mobile Analytics: No app instance id found')
+      return
+    }
+    // For Web, there must be a client id
+    if (
+      !this.isApp &&
+      process.env.NEXT_PUBLIC_APP_ANALYTICS_URL &&
+      !this.clientId
+    ) {
+      console.warn('🕸️ Web Analytics: No client id found')
       return
     }
 
     try {
-      if (this.endpoint) {
+      if (process.env.NEXT_PUBLIC_APP_ANALYTICS_URL) {
         const response = await fetch(this.endpoint, {
           method: 'POST',
           headers: {
@@ -92,16 +154,20 @@ class MobileAnalytics {
           this.retries = 0
         }
       } else {
-        console.info('📱 Mobile Analytics: Events sent', eventsToSend)
+        console.info('📈 Events Analytics: Events sent', eventsToSend)
         this.retries = 0
       }
     } catch (error) {
       // If an error occurs, re-add the events back to the buffer
 
-      if (this.endpoint) {
-        console.info('📱 Mobile Analytics: Attempted to send ', {
+      if (process.env.NEXT_PUBLIC_APP_ANALYTICS_URL) {
+        console.info('📈 Events Analytics: Attempted to send ', {
           retries: this.retries,
-          body: { ...cookieData, events: eventsToSend },
+          body: {
+            ...cookieData,
+            ...webData,
+            events: eventsToSend,
+          },
         })
         this.buffer.push(...eventsToSend)
         this.retries += 1
@@ -110,4 +176,4 @@ class MobileAnalytics {
   }
 }
 
-export default MobileAnalytics
+export default EventAnalytics
