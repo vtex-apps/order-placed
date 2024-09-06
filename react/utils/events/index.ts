@@ -47,6 +47,7 @@ const getUserId = (
  * @description Get the customer items from ga_data cookie
  * @returns array of items for Google ecommerce events
  */
+
 const getCustomerItems = () => {
   const customerItems = getCookieValue('ga_data')
   if (!customerItems) return []
@@ -150,6 +151,8 @@ export const pushPayEvent = (
     transformedEventData.event = 'gaEvent'
   }
 
+  console.info({ transformedEventData })
+
   // If the event is not a GA event, send it to the mobile analytics endpoint.
   // After renaming events due to popular demand, we discovered that GA Web
   // does not like events that are not named 'gaEvent'.
@@ -166,6 +169,8 @@ export const pushPayEvent = (
         }, {}),
       },
     }
+
+    console.info({ eventForAnalytics })
 
     analytics.trackEvent(eventForAnalytics)
 

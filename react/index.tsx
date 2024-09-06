@@ -19,6 +19,7 @@ import useGetNotices from './hooks/useGetNotices'
 import Notice from './components/Notice'
 import './styles.css'
 import { getCookie } from './utils/functions'
+import { gaMeasurementId } from './utils'
 
 interface OrderGroupData {
   orderGroup: OrderGroup
@@ -47,6 +48,35 @@ const OrderPlaced: FC = () => {
   useEffect(() => {
     const isAppCookie = getCookie('is_app')
     setIsApp(!!isAppCookie)
+  }, [])
+
+  // Google Analytics Setup
+  useEffect(() => {
+    const handleGtagInitialization = () => {
+      if (typeof window !== 'undefined' && window.dataLayer && !window.gtag) {
+        window.gtag = function () {
+          // eslint-disable-next-line prefer-rest-params
+          window.dataLayer.push(arguments)
+        }
+        window.gtag('js', new Date())
+        window.gtag('config', gaMeasurementId, {
+          user_properties: {
+            platform_type: document.cookie.includes('is_app=true')
+              ? 'App'
+              : 'Web',
+          },
+        })
+      }
+
+      window.dispatchEvent(new Event('gtag_loaded'))
+    }
+
+    handleGtagInitialization()
+    window.addEventListener('gtm.js', handleGtagInitialization)
+
+    return () => {
+      window.removeEventListener('gtm.js', handleGtagInitialization)
+    }
   }, [])
 
   const { customerEmail, customerEmailLoading } = useGetCustomerEmail(

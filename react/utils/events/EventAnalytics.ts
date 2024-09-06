@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 
 import { getCookieValue } from '.'
+import { gaMeasurementId } from '../constants'
 
 class EventAnalytics {
   public endpoint: string
@@ -28,6 +29,7 @@ class EventAnalytics {
   }
 
   public trackEvent(event: any) {
+    console.info('TRACK EVENT', event)
     this.buffer.push(event)
     if (this.buffer.length === 1) {
       this.flush()
@@ -69,27 +71,17 @@ class EventAnalytics {
     }
 
     const clientIdPromise = new Promise<void>((resolve) => {
-      window.gtag(
-        'get',
-        process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
-        'client_id',
-        (id: string) => {
-          this.clientId = id
-          resolve()
-        }
-      )
+      window.gtag('get', gaMeasurementId, 'client_id', (id: string) => {
+        this.clientId = id
+        resolve()
+      })
     })
 
     const sessionIdPromise = new Promise<void>((resolve) => {
-      window.gtag(
-        'get',
-        process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
-        'session_id',
-        (id: string) => {
-          this.sessionId = id
-          resolve()
-        }
-      )
+      window.gtag('get', gaMeasurementId, 'session_id', (id: string) => {
+        this.sessionId = id
+        resolve()
+      })
     })
 
     // Wait for both clientId and sessionId to be retrieved
@@ -120,23 +112,21 @@ class EventAnalytics {
       events: eventsToSend,
     })
 
+    console.info({ webData })
+
     // For App, there must be an app instance id
     if (this.isApp && !cookieData.appInstanceId) {
       console.warn('📱 Mobile Analytics: No app instance id found')
       return
     }
     // For Web, there must be a client id
-    if (
-      !this.isApp &&
-      process.env.NEXT_PUBLIC_APP_ANALYTICS_URL &&
-      !this.clientId
-    ) {
+    if (!this.isApp && this.endpoint && !this.clientId) {
       console.warn('🕸️ Web Analytics: No client id found')
       return
     }
 
     try {
-      if (process.env.NEXT_PUBLIC_APP_ANALYTICS_URL) {
+      if (this.endpoint) {
         const response = await fetch(this.endpoint, {
           method: 'POST',
           headers: {
@@ -160,7 +150,7 @@ class EventAnalytics {
     } catch (error) {
       // If an error occurs, re-add the events back to the buffer
 
-      if (process.env.NEXT_PUBLIC_APP_ANALYTICS_URL) {
+      if (this.endpoint) {
         console.info('📈 Events Analytics: Attempted to send ', {
           retries: this.retries,
           body: {
