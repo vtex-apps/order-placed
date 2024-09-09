@@ -24,7 +24,7 @@
     "apollo-cache-inmemory": "^1.6.5",
     "graphql": "^14.6.0",
     "thefoschini.order-details": "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-details@1.9.15/public/@types/thefoschini.order-details",
-    "thefoschini.order-placed": "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.22/public/@types/thefoschini.order-placed",
+    "thefoschini.order-placed": "http://thefoschini.vtexassets.com/_v/public/typings/v1/thefoschini.order-placed@2.15.23/public/@types/thefoschini.order-placed",
     "typescript": "3.9.7",
     "vtex.address-form": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.24.6/public/@types/vtex.address-form",
     "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles",
