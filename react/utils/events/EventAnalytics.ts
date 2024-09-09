@@ -29,7 +29,6 @@ class EventAnalytics {
   }
 
   public trackEvent(event: any) {
-    console.info('TRACK EVENT', event)
     this.buffer.push(event)
     if (this.buffer.length === 1) {
       this.flush()
@@ -104,6 +103,7 @@ class EventAnalytics {
     this.buffer = []
 
     const cookieData = this.getAppAnalyticsCookieData()
+
     const webData = await this.getWebTrackingConfig()
 
     const body = JSON.stringify({

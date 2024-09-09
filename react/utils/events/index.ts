@@ -151,8 +151,6 @@ export const pushPayEvent = (
     transformedEventData.event = 'gaEvent'
   }
 
-  console.info({ transformedEventData })
-
   // If the event is not a GA event, send it to the mobile analytics endpoint.
   // After renaming events due to popular demand, we discovered that GA Web
   // does not like events that are not named 'gaEvent'.
@@ -169,8 +167,6 @@ export const pushPayEvent = (
         }, {}),
       },
     }
-
-    console.info({ eventForAnalytics })
 
     analytics.trackEvent(eventForAnalytics)
 
