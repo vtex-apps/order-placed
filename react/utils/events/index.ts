@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import MobileAnalytics from './MobileAnalytics'
+import EventAnalytics from './EventAnalytics'
 import { DataLayerObject } from './types'
 
 export function getCookieValue(name: string) {
@@ -39,7 +39,7 @@ const getUserId = (
 
   const { userId, sub } = data
 
-  return { userId, sub }
+  return { userId, sub: String(sub)?.split('@')[0] || undefined }
 }
 
 /**
@@ -47,6 +47,7 @@ const getUserId = (
  * @description Get the customer items from ga_data cookie
  * @returns array of items for Google ecommerce events
  */
+
 const getCustomerItems = () => {
   const customerItems = getCookieValue('ga_data')
   if (!customerItems) return []
@@ -93,12 +94,24 @@ const pushToDataLayer = (
   window.dataLayer?.push(forDataLayer)
 }
 
+/**
+ * truncateString
+ * Truncate a string to a specified length.
+ * @param str
+ * @param maxLength
+ * @returns string
+ */
+export const truncateString = (str: string, maxLength = 100): string => {
+  if (!str) return ''
+  return str.length > maxLength ? `${str.slice(0, maxLength - 3)}...` : str
+}
+
 export const pushPayEvent = (
   eventData: DataLayerObject,
   account: 'thefoschini' | 'thefoschiniqa' = 'thefoschini'
 ) => {
   if (!eventData) return
-  const analytics = new MobileAnalytics(3000, 3, account)
+  const analytics = new EventAnalytics(3000, 3, account)
 
   const isApp = document?.cookie.includes('is_app=true')
   let transformedEventData: { [key: string]: string | object } = {
@@ -107,6 +120,8 @@ export const pushPayEvent = (
     eventLabel: eventData.event_label || 'Pay_Event',
     eventDescription: eventData.event_description || 'Pay Event',
   }
+
+  eventData.event_description = truncateString(eventData.event_description, 100)
 
   if (eventData.event_detail) {
     transformedEventData.eventDescription = JSON.stringify(
@@ -129,15 +144,18 @@ export const pushPayEvent = (
         ...eventData,
         currency: 'ZAR',
         items,
-        user_id: getUserId(account)?.userId || undefined,
+        user_id: getUserId()?.sub ?? undefined,
       },
     }
   } else {
     transformedEventData.event = 'gaEvent'
   }
 
-  if (isApp) {
-    const eventForMobile = {
+  // If the event is not a GA event, send it to the mobile analytics endpoint.
+  // After renaming events due to popular demand, we discovered that GA Web
+  // does not like events that are not named 'gaEvent'.
+  if (isApp || transformedEventData.event !== 'gaEvent') {
+    const eventForAnalytics = {
       name: transformedEventData.event,
       params: {
         ...((transformedEventData.ecommerce as object) || {}),
@@ -150,7 +168,7 @@ export const pushPayEvent = (
       },
     }
 
-    analytics.trackEvent(eventForMobile)
+    analytics.trackEvent(eventForAnalytics)
 
     // If we're on app, don't send the GTM event as well.
     if (isApp) return
