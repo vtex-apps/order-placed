@@ -170,12 +170,12 @@ export const pushPayEvent = (
 
     analytics.trackEvent(eventForAnalytics)
 
-    // If we're on app, don't send the GTM event as well.
-    if (isApp) return
+    // Don't push to the dataLayer as well for regular GTM.
+    return
   }
 
   pushToDataLayer({
-    event: eventData.event ?? 'gaEvent',
+    event: 'gaEvent',
     platform: 'Web',
     ...transformedEventData,
   })
