@@ -20,6 +20,20 @@ const Notices: FC = () => {
     return null
   }
 
+  orders.forEach((order) => {
+    order.paymentData.transactions.sort((transaction) =>
+      transaction.payments.some((payment) => payment.group === 'bankInvoice')
+        ? -1
+        : 1
+    )
+
+    order.paymentData.transactions.forEach((transaction) => {
+      transaction.payments.sort((payment) =>
+        payment.group === 'bankInvoice' ? -1 : 1
+      )
+    })
+  })
+
   const numOrders = orders.length
   const isSplitOrder = numOrders > 1
   const bankInvoice = orders

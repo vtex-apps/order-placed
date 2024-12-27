@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.18.1] - 2024-12-27
+
+### Fixed
+
+- Fix the display of bank invoice information when it isn't the first payment of the first transaction.
+
 ## [2.18.0] - 2024-08-27
 
 ### Added
