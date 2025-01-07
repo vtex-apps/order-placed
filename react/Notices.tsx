@@ -20,23 +20,52 @@ const Notices: FC = () => {
     return null
   }
 
-  orders.forEach((order) => {
-    order.paymentData.transactions.sort((transaction) =>
-      transaction.payments.some((payment) => payment.group === 'bankInvoice')
-        ? -1
-        : 1
-    )
+  const sortTransactions = (transactions: Transaction[]) => {
+    return transactions.slice().sort((a, b) => {
+      const hasBankInvoiceA = a.payments.some((p) => p.group === 'bankInvoice')
+      const hasBankInvoiceB = b.payments.some((p) => p.group === 'bankInvoice')
 
-    order.paymentData.transactions.forEach((transaction) => {
-      transaction.payments.sort((payment) =>
-        payment.group === 'bankInvoice' ? -1 : 1
-      )
+      if (hasBankInvoiceA !== hasBankInvoiceB) {
+        if (hasBankInvoiceA) {
+          return -1
+        }
+
+        if (hasBankInvoiceB) {
+          return 1
+        }
+      }
+
+      return 0
     })
-  })
+  }
+
+  const sortPayments = (payments: Payment[]) => {
+    return payments
+      .slice()
+      .sort(
+        (a, b) =>
+          Number(b.group === 'bankInvoice') - Number(a.group === 'bankInvoice')
+      )
+  }
+
+  const updatedOrders = orders.map((order) => ({
+    ...order,
+    paymentData: {
+      ...order.paymentData,
+      transactions: sortTransactions(order.paymentData.transactions).map(
+        (transaction) => {
+          return {
+            ...transaction,
+            payments: sortPayments(transaction.payments),
+          }
+        }
+      ),
+    },
+  }))
 
   const numOrders = orders.length
   const isSplitOrder = numOrders > 1
-  const bankInvoice = orders
+  const bankInvoice = updatedOrders
     .map(getPaymentInfoFromOrder)
     .find(
       (paymentInfo) =>
