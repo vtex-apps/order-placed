@@ -75,6 +75,45 @@ export function getPaymentInfoFromOrder(order: Order): PaymentGroupInfo {
   }
 }
 
+export function getPaymentMethodsInfoFromOrder(
+  order: Order
+): PaymentGroupInfo[] {
+  const { transactions } = order.paymentData
+
+  if (!transactions || transactions.length === 0) {
+    return []
+  }
+  // eslint-disable-next-line prefer-destructuring
+  const { payments } = transactions[0]
+
+  if (!payments || payments.length === 0) {
+    return []
+  }
+
+  const paymentsGroupInfo = payments.map(
+    ({
+      bankIssuedInvoiceBarCodePNG,
+      dueDate,
+      group,
+      paymentSystemName,
+      url,
+      value,
+      bankIssuedInvoiceIdentificationNumber,
+    }) =>
+      ({
+        barCodeNumber: bankIssuedInvoiceIdentificationNumber,
+        barCodePNG: bankIssuedInvoiceBarCodePNG,
+        paymentGroup: group,
+        dueDate,
+        paymentSystemName,
+        url,
+        value,
+      } as PaymentGroupInfo)
+  )
+
+  return paymentsGroupInfo
+}
+
 export function isSubscription(attachmentItem: Attachment) {
   return attachmentItem.name.indexOf('vtex.subscription') === 0
 }
