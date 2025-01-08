@@ -5,7 +5,7 @@ import { useCssHandles } from 'vtex.css-handles'
 
 import FormattedPrice from './components/FormattedPrice'
 import { useOrderGroup } from './components/OrderGroupContext'
-import { parseBankInvoiceUrl, getPaymentInfoFromOrder } from './utils'
+import { parseBankInvoiceUrl, getPaymentMethodsInfoFromOrder } from './utils'
 
 const CSS_HANDLES = ['noticesList', 'noticeListItem']
 
@@ -22,12 +22,18 @@ const Notices: FC = () => {
 
   const numOrders = orders.length
   const isSplitOrder = numOrders > 1
-  const bankInvoice = orders
-    .map(getPaymentInfoFromOrder)
-    .find(
-      (paymentInfo) =>
-        paymentInfo.paymentGroup === 'bankInvoice' && !!paymentInfo.url
-    )
+
+  const paymentMethodsFromOrders = orders.map(getPaymentMethodsInfoFromOrder)
+
+  // eslint-disable-next-line no-console
+  console.log('paymentMethodsFromOrders', paymentMethodsFromOrders)
+
+  const bankInvoice = paymentMethodsFromOrders
+    .flat()
+    .find(({ paymentGroup, url }) => paymentGroup === 'bankInvoice' && !!url)
+
+  // eslint-disable-next-line no-console
+  console.log('bankInvoice', bankInvoice)
 
   const listItems = [
     bankInvoice == null && (
