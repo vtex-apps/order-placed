@@ -25,18 +25,18 @@ const Notices: FC = () => {
       const hasBankInvoiceA = a.payments.some((p) => p.group === 'bankInvoice')
       const hasBankInvoiceB = b.payments.some((p) => p.group === 'bankInvoice')
 
-      if (hasBankInvoiceA !== hasBankInvoiceB) {
-        if (hasBankInvoiceA) {
-          return -1
-        }
-
-        if (hasBankInvoiceB) {
-          return 1
-        }
+      if (hasBankInvoiceA === hasBankInvoiceB) {
+            return 0
       }
-
-      return 0
-    })
+      
+      if (hasBankInvoiceA) {
+            return -1
+      }
+      
+      if (hasBankInvoiceB) {
+            return 1
+      }
+    
   }
 
   const sortPayments = (payments: Payment[]) => {
