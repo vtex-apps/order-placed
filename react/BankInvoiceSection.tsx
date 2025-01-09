@@ -33,9 +33,8 @@ const BankInvoiceSection: FC = () => {
     .flat()
     .find(({ paymentGroup, url }) => paymentGroup === 'bankInvoice' && !!url)
 
-  if (!bankInvoice) return null
-
-  const { url, paymentSystemName, barCodeNumber } = bankInvoice
+  const { url, paymentSystemName, barCodeNumber } =
+    bankInvoice ?? paymentMethodsFromOrder[0]
   const isURLValid = url && !url.match(/(\*.\*.)+\*\w\*/g)
 
   if (!isURLValid && !barCodeNumber) {
