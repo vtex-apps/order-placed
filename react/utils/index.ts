@@ -1,3 +1,4 @@
+import get from 'lodash/get'
 import flow from 'lodash/flow'
 import toPairs from 'lodash/toPairs'
 import filter from 'lodash/filter'
@@ -162,9 +163,11 @@ export function parseBankInvoiceUrl(url: string) {
 }
 
 export function getLoginUrl() {
-  return `${
-    (window as any).__RUNTIME__?.rootPath || ''
-  }/login?returnUrl=${encodeURIComponent(
+  return `${get(
+    window,
+    '__RUNTIME__.rootPath',
+    ''
+  )}/login?returnUrl=${encodeURIComponent(
     window.location.pathname + window.location.search
   )}`
 }

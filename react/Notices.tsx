@@ -25,15 +25,9 @@ const Notices: FC = () => {
 
   const paymentMethodsFromOrders = orders.map(getPaymentMethodsInfoFromOrder)
 
-  // eslint-disable-next-line no-console
-  console.log('paymentMethodsFromOrders', paymentMethodsFromOrders)
-
   const bankInvoice = paymentMethodsFromOrders
     .flat()
     .find(({ paymentGroup, url }) => paymentGroup === 'bankInvoice' && !!url)
-
-  // eslint-disable-next-line no-console
-  console.log('bankInvoice', bankInvoice)
 
   const listItems = [
     bankInvoice == null && (
