@@ -26,10 +26,10 @@ const BankInvoiceSection: FC = () => {
   const orderGroup = useOrderGroup()
   const { formatMessage } = useIntl()
 
-  const paymentMethodsFromOrders = getPaymentMethodsInfoFromOrder(
+  const paymentMethodsFromOrder = getPaymentMethodsInfoFromOrder(
     orderGroup.orders[0]
   )
-  const bankInvoice = paymentMethodsFromOrders
+  const bankInvoice = paymentMethodsFromOrder
     .flat()
     .find(({ paymentGroup, url }) => paymentGroup === 'bankInvoice' && !!url)
 
