@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Refactor of `getPaymentInfoFromOrder` to `getPaymentInfoFromOrder`, now returns an array with all payment methods.
+- Refactor of `getPaymentInfoFromOrder` to `getPaymentMethodsInfoFromOrder`, now returns an array with all payment methods.
 
 ## [2.18.0] - 2024-08-27
 
