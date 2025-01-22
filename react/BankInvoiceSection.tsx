@@ -7,7 +7,7 @@ import PrinterIcon from './Icons/PrinterIcon'
 import BarCode from './components/BankInvoice/BarCode'
 import Embedded from './components/BankInvoice/Embedded'
 import { useOrderGroup } from './components/OrderGroupContext'
-import { getPaymentInfoFromOrder, parseBankInvoiceUrl } from './utils'
+import { getPaymentMethodsInfoFromOrder, parseBankInvoiceUrl } from './utils'
 import Section from './Section'
 
 const CSS_HANDLES = [
@@ -24,10 +24,17 @@ const messages = defineMessages({
 const BankInvoiceSection: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
   const orderGroup = useOrderGroup()
-  const paymentInfo = getPaymentInfoFromOrder(orderGroup.orders[0])
   const { formatMessage } = useIntl()
 
-  const { url, paymentSystemName, barCodeNumber } = paymentInfo
+  const paymentMethodsFromOrder = getPaymentMethodsInfoFromOrder(
+    orderGroup.orders[0]
+  )
+  const bankInvoice = paymentMethodsFromOrder
+    .flat()
+    .find(({ paymentGroup, url }) => paymentGroup === 'bankInvoice' && !!url)
+
+  const { url, paymentSystemName, barCodeNumber } =
+    bankInvoice ?? paymentMethodsFromOrder[0]
   const isURLValid = url && !url.match(/(\*.\*.)+\*\w\*/g)
 
   if (!isURLValid && !barCodeNumber) {

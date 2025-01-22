@@ -57,22 +57,43 @@ export function transformConnectorResponsesToArray(
   )
 }
 
-export function getPaymentInfoFromOrder(order: Order): PaymentGroupInfo {
-  const base = 'paymentData.transactions[0].payments[0]'
+export function getPaymentMethodsInfoFromOrder(
+  order: Order
+): PaymentGroupInfo[] {
+  const { transactions } = order.paymentData
 
-  return {
-    barCodeNumber: get(
-      order,
-      `${base}.bankIssuedInvoiceIdentificationNumber`,
-      null
-    ),
-    barCodePNG: get(order, `${base}.bankIssuedInvoiceBarCodePNG`, null),
-    dueDate: get(order, `${base}.dueDate`, null),
-    paymentGroup: get(order, `${base}.group`, null),
-    paymentSystemName: get(order, `${base}.paymentSystemName`, null),
-    url: get(order, `${base}.url`, null),
-    value: get(order, `${base}.value`, null),
+  if (!transactions || transactions.length === 0) {
+    return []
   }
+  // eslint-disable-next-line prefer-destructuring
+  const { payments } = transactions[0]
+
+  if (!payments || payments.length === 0) {
+    return []
+  }
+
+  const paymentsGroupInfo = payments.map(
+    ({
+      bankIssuedInvoiceBarCodePNG,
+      dueDate,
+      group,
+      paymentSystemName,
+      url,
+      value,
+      bankIssuedInvoiceIdentificationNumber,
+    }) =>
+      ({
+        barCodeNumber: bankIssuedInvoiceIdentificationNumber,
+        barCodePNG: bankIssuedInvoiceBarCodePNG,
+        paymentGroup: group,
+        dueDate,
+        paymentSystemName,
+        url,
+        value,
+      } as PaymentGroupInfo)
+  )
+
+  return paymentsGroupInfo
 }
 
 export function isSubscription(attachmentItem: Attachment) {
