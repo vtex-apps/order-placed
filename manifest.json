@@ -1,12 +1,10 @@
 {
   "vendor": "auchan",
   "name": "order-placed",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "title": "Order Placed",
   "description": "",
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "scripts": {
     "postreleasy": "vtex publish --public"
   },
