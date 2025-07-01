@@ -56,6 +56,9 @@
   "op-order-datetime": {
     "component": "OrderDatetime"
   },
+  "op-order-webviewbutton": {
+    "component": "WebViewButton"
+  },
   "op-order-seller": {
     "component": "OrderSeller"
   },

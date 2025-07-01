@@ -1,6 +1,9 @@
 {
   "order-placed": {
-    "blocks": ["op-header", "op-order"]
+    "blocks": [
+      "op-header",
+      "op-order"
+    ]
   },
   "op-header": {
     "children": [
@@ -32,10 +35,14 @@
       "preventHorizontalStretch": true,
       "preserveLayoutOnMobile": true
     },
-    "children": ["flex-layout.col#confirmation-buttons"]
+    "children": [
+      "flex-layout.col#confirmation-buttons"
+    ]
   },
   "flex-layout.col#confirmation-buttons": {
-    "children": ["op-print-button"]
+    "children": [
+      "op-print-button"
+    ]
   },
   "op-section#notices": {
     "props": {
@@ -43,7 +50,9 @@
       "marginBottom": 9,
       "borderless": true
     },
-    "children": ["op-notices"]
+    "children": [
+      "op-notices"
+    ]
   },
   // each order section
   "op-order": {
@@ -72,13 +81,22 @@
     ]
   },
   "flex-layout.col#order-header-info": {
-    "children": ["op-order-number", "op-order-datetime", "op-order-seller"]
+    "children": [
+      "op-order-number",
+      "op-order-datetime",
+      "op-order-seller",
+      "op-order-webviewbutton"
+    ]
   },
   "flex-layout.col#order-header-options": {
-    "children": ["responsive-layout.desktop#order-options-desktop"]
+    "children": [
+      "responsive-layout.desktop#order-options-desktop"
+    ]
   },
   "responsive-layout.desktop#order-options-desktop": {
-    "children": ["op-order-options"]
+    "children": [
+      "op-order-options"
+    ]
   },
   // payment section
   "op-section#payments": {
@@ -92,7 +110,9 @@
   },
   // bottom of top section of order header
   "responsive-layout.mobile#order-options-mobile": {
-    "children": ["op-order-options#mobile"]
+    "children": [
+      "op-order-options#mobile"
+    ]
   },
   "op-order-options#mobile": {
     "props": {
@@ -104,12 +124,16 @@
     "props": {
       "name": "pickupPackages"
     },
-    "children": ["op-order-pickup-packages"]
+    "children": [
+      "op-order-pickup-packages"
+    ]
   },
   "op-section#delivery-packages": {
     "props": {
       "name": "deliveryPackages"
     },
-    "children": ["op-order-delivery-packages"]
+    "children": [
+      "op-order-delivery-packages"
+    ]
   }
 }
