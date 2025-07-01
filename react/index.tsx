@@ -14,7 +14,6 @@ import Skeleton from './Skeleton'
 import Analytics from './Analytics'
 import GET_ORDER_GROUP from './graphql/getOrderGroup.graphql'
 
-// to load default css handle styles
 import './styles.css'
 
 interface OrderGroupData {
@@ -25,7 +24,7 @@ const messages = defineMessages({
   title: { id: 'store/page.title', defaultMessage: '' },
 })
 
-const CSS_HANDLES = ['orderPlacedWrapper', 'orderPlacedMainWrapper']
+const CSS_HANDLES = ['orderPlacedWrapper', 'orderPlacedMainWrapper', 'specialButton']
 
 const OrderPlaced: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
@@ -33,25 +32,22 @@ const OrderPlaced: FC = () => {
   const runtime = useRuntime()
   const { settings = {} } = usePWA() || {}
   const [installDismissed, setInstallDismissed] = useState(false)
+
   const { data, loading, error } = useQuery<OrderGroupData>(GET_ORDER_GROUP, {
     variables: {
       orderGroup: runtime.query.og,
     },
   })
 
-  // render loading skeleton if query is still loading
   if (loading) return <Skeleton />
 
-  // forbidden error
   if (
     error?.message.includes('403') ||
-    // 'any' needed because graphql error type doesn't have 'extensions' prop
     (error as any)?.extensions?.response?.status === 403
   ) {
     return <ForbiddenError />
   }
 
-  // not found error
   if (data?.orderGroup?.orders == null) {
     return <InvalidError />
   }

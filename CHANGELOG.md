@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- add webview button on mobile checkout
+
 ## [0.0.2] - 2024-01-15
 
 ### Fixed
