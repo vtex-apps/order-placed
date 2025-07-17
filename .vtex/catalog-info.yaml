@@ -2,22 +2,22 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: order-placed
-  description: "VTEX IO app for order placed storefront page "
-  annotations:
-    github.com/project-slug: vtex-apps/order-placed
-    vtex.com/o11y-os-index: ""
-    vtex.com/janus-acronym: ""
-    grafana/dashboard-selector: ""
-    backstage.io/techdocs-ref: dir:../
-    vtex.com/application-id: GZ20FRE0
+  description: Storefront app responsible to render order information after the
+    checkout flow
   tags:
     - typescript
     - react
+  annotations:
+    vtex.com/janus-acronym: ""
+    vtex.com/o11y-os-index: ""
+    grafana/dashboard-selector: ""
+    github.com/project-slug: vtex-apps/order-placed
+    vtex.com/platform-flow-id: ""
+    backstage.io/techdocs-ref: dir:../
+    vtex.com/application-id: GZ20FRE0
 spec:
+  system: orders
+  lifecycle: stable
+  owner: te-0020
   type: frontend-ui
-  lifecycle: experimental
-  owner: te-0001
-  system: checkout
-  dependsOn:
-    - component:order-placed-graphql
-    - component:address-form
+  dependsOn: []
