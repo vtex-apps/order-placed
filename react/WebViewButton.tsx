@@ -10,15 +10,20 @@ const WebViewButton = () => {
 
   useEffect(() => {
     const detectWebView = () => {
-      const userAgent = navigator.userAgent || navigator.vendor
-      const isMobile = /android|iphone|ipad|ipod/i.test(userAgent)
+      const ua = navigator.userAgent || navigator.vendor || ''
+      const isIOS = /iPhone|iPod|iPad/i.test(ua)
+      const isAndroid = /Android/i.test(ua)
 
-      const isWebView =
-        /FBAN|FBAV|Instagram|Twitter|Line|Snapchat|WeChat|Messenger/i.test(userAgent) ||
-        ((navigator as any).standalone !== undefined && (navigator as any).standalone === false)
+      const androidWebView = isAndroid && /; wv\)|Version\/[\d.]+/i.test(ua)
 
-      return isMobile && isWebView
+      const iosWebView = isIOS && !/Safari/i.test(ua)
+
+      const inAppBrowser =
+        /FBAN|FBAV|Instagram|Twitter|Line|Snapchat|WeChat|Messenger/i.test(ua)
+
+      return androidWebView || iosWebView || inAppBrowser
     }
+
 
     const webViewDetected = detectWebView()
     setIsWebView(webViewDetected)
