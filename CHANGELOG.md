@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- change mobile app link hre for button in checkout page
+
+### Changed
+
 - try to fix mobile app link for button in checkout page
 
 ## [0.0.4] - 2025-09-03

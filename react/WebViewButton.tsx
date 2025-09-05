@@ -24,9 +24,13 @@ const WebViewButton = () => {
 
   const handleClick = () => {
     try {
-      window.location.href = 'auchan://'
+      // QA environment:
+      window.location.href = 'https://auchanqa.myvtex.com/mobile_app_redirection'
+
+      // Production environment:
+      // window.location.href = 'https://auchan.ro/mobile_app_redirection'
     } catch (e) {
-      console.error('Deep link failed', e)
+      console.error('Redirect failed', e)
     }
   }
 
