@@ -34,10 +34,7 @@ const WebViewButton = () => {
 
   const handleClick = () => {
     try {
-      window.location.href =
-        'https://auchanqa.myvtex.com/mobile_app_redirection'
-      // Production:
-      // window.location.href = 'https://auchan.ro/mobile_app_redirection'
+      window.location.href = `${window.location.origin}/mobile_app_redirection`
     } catch (e) {
       console.error('Redirect failed', e)
     }
