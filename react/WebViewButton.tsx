@@ -27,7 +27,7 @@ const WebViewButton = () => {
         '.vtex-store-components-3-x-logoLink--mobileLogo'
       )
       if (logoLink) {
-        logoLink.addEventListener('click', e => e.preventDefault())
+        logoLink.removeAttribute('href')
       }
     }
   }, [])
