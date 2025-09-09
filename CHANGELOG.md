@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Disable logo link in mobile webview
+
 ## [0.0.6] - 2025-09-05
 
 ## [0.0.5] - 2025-09-04

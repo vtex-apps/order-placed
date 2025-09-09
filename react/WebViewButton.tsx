@@ -19,16 +19,22 @@ const WebViewButton = () => {
       return androidWebView || iosWebView || inAppBrowser
     }
 
-    setIsWebView(detectWebView())
+    const webView = detectWebView()
+    setIsWebView(webView)
+
+    if (webView) {
+      const logoLink = document.querySelector<HTMLAnchorElement>(
+        '.vtex-store-components-3-x-logoLink--mobileLogo'
+      )
+      if (logoLink) {
+        logoLink.addEventListener('click', e => e.preventDefault())
+      }
+    }
   }, [])
 
   const handleClick = () => {
     try {
-      // QA environment:
-      window.location.href = 'https://auchanqa.myvtex.com/mobile_app_redirection'
-
-      // Production environment:
-      // window.location.href = 'https://auchan.ro/mobile_app_redirection'
+      window.location.href = `${window.location.origin}/mobile_app_redirection`
     } catch (e) {
       console.error('Redirect failed', e)
     }
