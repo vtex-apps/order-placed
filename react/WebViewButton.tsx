@@ -29,7 +29,26 @@ const WebViewButton = () => {
       if (logoLink) {
         logoLink.removeAttribute('href')
       }
+
+      const observer = new MutationObserver((_, obs) => {
+        const logoLink = document.querySelector<HTMLAnchorElement>(
+          '.vtex-store-components-3-x-logoLink--mobileLogo'
+        )
+        if (logoLink) {
+          logoLink.removeAttribute('href')
+          obs.disconnect()
+        }
+      })
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      })
+
+      return () => observer.disconnect()
     }
+
+    return undefined
   }, [])
 
   const handleClick = () => {
