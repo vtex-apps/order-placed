@@ -23,19 +23,31 @@ const WebViewButton = () => {
     setIsWebView(webView)
 
     if (webView) {
-      const logoLink = document.querySelector<HTMLAnchorElement>(
-        '.vtex-store-components-3-x-logoLink--mobileLogo'
-      )
-      if (logoLink) {
-        logoLink.removeAttribute('href')
+      const disableLogoInteraction = () => {
+        const logoLink = document.querySelector<HTMLAnchorElement>(
+          '.vtex-store-components-3-x-logoLink--mobileLogo'
+        )
+        const logoContainer = document.querySelector<HTMLElement>(
+          '.vtex-flex-layout-0-x-flexCol--logoMobile'
+        )
+
+        if (logoLink) {
+          logoLink.removeAttribute('href')
+        }
+
+        if (logoContainer) {
+          logoContainer.style.pointerEvents = 'none'
+        }
       }
+
+      disableLogoInteraction()
 
       const observer = new MutationObserver((_, obs) => {
         const logoLink = document.querySelector<HTMLAnchorElement>(
           '.vtex-store-components-3-x-logoLink--mobileLogo'
         )
         if (logoLink) {
-          logoLink.removeAttribute('href')
+          disableLogoInteraction()
           obs.disconnect()
         }
       })
