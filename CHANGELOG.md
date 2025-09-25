@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Remove header/footer from mobile webview in thankyou page
+
 ## [0.0.10] - 2025-09-10
 
 ### Fixed

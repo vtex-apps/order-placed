@@ -23,7 +23,7 @@ const WebViewButton = () => {
     setIsWebView(webView)
 
     if (webView) {
-      const disableLogoInteraction = () => {
+      const cleanupWebViewElements = () => {
         const logoLink = document.querySelector<HTMLAnchorElement>(
           '.vtex-store-components-3-x-logoLink--mobileLogo'
         )
@@ -38,16 +38,24 @@ const WebViewButton = () => {
         if (logoContainer) {
           logoContainer.style.pointerEvents = 'none'
         }
+
+        const elementsToRemove = document.querySelectorAll<HTMLElement>(
+          '[class*="headerMobile"], [class*="footerMobile"], [class*="headerDesktop"], [class*="footerLayout"]'
+        )
+
+        elementsToRemove.forEach(element => {
+          element.remove()
+        })
       }
 
-      disableLogoInteraction()
+      cleanupWebViewElements()
 
       const observer = new MutationObserver((_, obs) => {
         const logoLink = document.querySelector<HTMLAnchorElement>(
           '.vtex-store-components-3-x-logoLink--mobileLogo'
         )
         if (logoLink) {
-          disableLogoInteraction()
+          cleanupWebViewElements()
           obs.disconnect()
         }
       })
