@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Ξεκίνημα νέας παραγγελίας",
   "store/header.print.button": "Εκτύπωση",
   "store/header.thanks": "Ευχαριστούμε για την αγορά σας!",
+  "store/header.processing.order": "We're processing your order...",
+  "store/header.reviewing.order.information": "We're reviewing your order information and will confirm approval in a moment.",
   "store/items.attachments.subscription": "Συνδρομή",
   "store/items.attachments.subscription.frequency.day": "Κάθε {frequencyNumber, plural, one {# ημέρα} other {# ημέρες}}",
   "store/items.attachments.subscription.frequency.month": "Κάθε {frequencyNumber, plural, one {# μήνα} other {# μήνες}}",

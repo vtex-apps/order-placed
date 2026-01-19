@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Inizia un nuovo ordine",
   "store/header.print.button": "Stampa",
   "store/header.thanks": "Grazie per il tuo acquisto!",
+  "store/header.processing.order": "We're processing your order...",
+  "store/header.reviewing.order.information": "We're reviewing your order information and will confirm approval in a moment.",
   "store/items.attachments.subscription": "Abbonamento",
   "store/items.attachments.subscription.frequency.day": "Ogni {frequencyNumber, plural, one {# giorno} other {# giorni}}",
   "store/items.attachments.subscription.frequency.month": "Ogni {frequencyNumber, plural, one {# mese} other {# mesi}}",

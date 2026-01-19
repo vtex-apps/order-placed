@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Start ny bestilling",
   "store/header.print.button": "Skriv ut",
   "store/header.thanks": "Takk for kjøpet!",
+  "store/header.processing.order": "We're processing your order...",
+  "store/header.reviewing.order.information": "We're reviewing your order information and will confirm approval in a moment.",
   "store/items.attachments.subscription": "Abonnement",
   "store/items.attachments.subscription.frequency.day": "Hver {frequencyNumber, plural, one {# dag} other {# dager}}",
   "store/items.attachments.subscription.frequency.month": "Hver {frequencyNumber, plural, one {# måned} other {# måneder}}",

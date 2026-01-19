@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Založit novou objednávku",
   "store/header.print.button": "Vytisknout",
   "store/header.thanks": "Děkujeme za váš nákup!",
+  "store/header.processing.order": "We're processing your order...",
+  "store/header.reviewing.order.information": "We're reviewing your order information and will confirm approval in a moment.",
   "store/items.attachments.subscription": "Předplatné",
   "store/items.attachments.subscription.frequency.day": "Každý/každé/Každých {frequencyNumber, plural, one {# den} few {# dny} many {# dnů} other {# dnů}}",
   "store/items.attachments.subscription.frequency.month": "{frequencyNumber, plural, one {Každý # měsíc} few {Každé # měsíce} many { Každého # měsíce} other {Každých # měsíců}}",

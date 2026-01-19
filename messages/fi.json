@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Aloita uusi tilaus",
   "store/header.print.button": "Tulosta",
   "store/header.thanks": "Kiitos ostostasi!",
+  "store/header.processing.order": "We're processing your order...",
+  "store/header.reviewing.order.information": "We're reviewing your order information and will confirm approval in a moment.",
   "store/items.attachments.subscription": "Tilaus",
   "store/items.attachments.subscription.frequency.day": "Välein {frequencyNumber, plural, one {# päivän} other {# päivän}}",
   "store/items.attachments.subscription.frequency.month": "Välein {frequencyNumber, plural, one {# kuukauden} other {# kuukauden}}",

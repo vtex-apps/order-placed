@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Începe comandă nouă ",
   "store/header.print.button": "Imprimare ",
   "store/header.thanks": "Mulțumim pentru achiziție!",
+  "store/header.processing.order": "We're processing your order...",
+  "store/header.reviewing.order.information": "We're reviewing your order information and will confirm approval in a moment.",
   "store/items.attachments.subscription": "Abonament",
   "store/items.attachments.subscription.frequency.day": "La fiecare {frequencyNumber, plural, one {# zi} other {# zile}}",
   "store/items.attachments.subscription.frequency.month": "La fiecare {frequencyNumber, plural, one {# lună} other {# luni}}",
