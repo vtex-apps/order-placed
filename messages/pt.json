@@ -12,6 +12,7 @@
   "store/header.newpurchase.button": "Iniciar nova venda",
   "store/header.print.button": "Imprimir página",
   "store/header.thanks": "Obrigado por sua compra!",
+  "store/header.processing.order": "Estamos processando seu pedido...",
   "store/items.attachments.subscription": "Assinatura",
   "store/items.attachments.subscription.frequency.day": "A cada {frequencyNumber, plural, one {# dia} other {# dias}}",
   "store/items.attachments.subscription.frequency.month": "A cada {frequencyNumber, plural, one {# mês} other {# meses}}",

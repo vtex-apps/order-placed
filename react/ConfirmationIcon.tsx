@@ -8,11 +8,11 @@ const CSS_HANDLES = ['confirmationIconWrapper']
 
 const ConfirmationIcon: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
-  const { status: orderStatus } = useOrderGroup()
+  const { status } = useOrderGroup()
 
   return (
     <div className={`${handles.confirmationIconWrapper} tc c-success`}>
-      {orderStatus === 'pending' ? (
+      {status === 'pending' ? (
         <LoadingDotsIcon size={50} />
       ) : (
         <SuccessIcon size={50} />

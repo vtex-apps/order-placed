@@ -10,18 +10,23 @@ const ConfirmationTitle: FC = () => {
   const handles = useCssHandles(CSS_HANDLES)
   const orderGroup = useOrderGroup()
   const profile = orderGroup.orders[0].clientProfileData
+  const { status } = orderGroup
 
   return (
     <h4
       className={`${handles.confirmationTitle} tc c-on-base mt7 mb0 t-heading-4`}
     >
-      <FormattedMessage
-        id="store/header.thanks"
-        values={{
-          firstName: profile.firstName,
-          lastName: profile.lastName,
-        }}
-      />
+      {status === 'pending' ? (
+        <FormattedMessage id="store/header.processing.order" />
+      ) : (
+        <FormattedMessage
+          id="store/header.thanks"
+          values={{
+            firstName: profile.firstName,
+            lastName: profile.lastName,
+          }}
+        />
+      )}
     </h4>
   )
 }
