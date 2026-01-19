@@ -17,6 +17,7 @@ const ConfirmationMessage: FC<Props> = ({
   const handles = useCssHandles(CSS_HANDLES)
   const orderGroup = useOrderGroup()
   const profile = orderGroup.orders[0].clientProfileData
+  const { status } = orderGroup
   const sessionResponse = useSessionResponse()
   const [isLoggedIn, setIsLoggedIn] = useState(true)
 
@@ -31,7 +32,9 @@ const ConfirmationMessage: FC<Props> = ({
     <p
       className={`${handles.confirmationMessage} mt5 t-body tc c-muted-1 lh-copy`}
     >
-      {!isLoggedIn && enableGuestMessage ? (
+      {status === 'pending' ? (
+        <FormattedMessage id="store/header.reviewing.order.information" />
+      ) : !isLoggedIn && enableGuestMessage ? (
         <FormattedMessage
           id="store/header.guest-email"
           values={{
