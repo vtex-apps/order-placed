@@ -14,7 +14,7 @@ const ConfirmationTitle: FC = () => {
 
   return (
     <h4
-      className={`${handles.confirmationTitle} tc c-on-base mt7 mb0 t-heading-4`}
+      className={`${handles.confirmationTitle} tc c-on-base mt6 mb0 t-heading-4`}
     >
       {status === 'pending' ? (
         <FormattedMessage id="store/header.processing.order" />
