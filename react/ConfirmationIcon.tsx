@@ -4,6 +4,7 @@ import { useCssHandles } from 'vtex.css-handles'
 import SuccessIcon from './Icons/Success'
 import LoadingDotsIcon from './Icons/LoadingDots'
 import { useOrderGroup } from './components/OrderGroupContext'
+
 const CSS_HANDLES = ['confirmationIconWrapper']
 
 const ConfirmationIcon: FC = () => {
