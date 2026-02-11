@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "新しい注文を始める",
   "store/header.print.button": "印刷",
   "store/header.thanks": "お買い上げいただき、ありがとうございます！",
+  "store/header.processing.order": "注文の処理…",
+  "store/header.reviewing.order.information": "ご注文情報を確認しています。間もなく確定します。",
   "store/items.attachments.subscription": "登録",
   "store/items.attachments.subscription.frequency.day": "{frequencyNumber, plural, one {# 日} other {# 日}} ごと",
   "store/items.attachments.subscription.frequency.month": "{frequencyNumber, plural, one {# か月} other {# か月}} ごと",

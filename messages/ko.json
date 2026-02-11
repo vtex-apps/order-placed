@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "새 주문 시작하기",
   "store/header.print.button": "인쇄",
   "store/header.thanks": "구매해 주셔서 감사합니다!",
+  "store/header.processing.order": "주문 처리 중...",
+  "store/header.reviewing.order.information": "주문 정보를 검토 중이며 곧 확인해 드리겠습니다.",
   "store/items.attachments.subscription": "구독",
   "store/items.attachments.subscription.frequency.day": "{frequencyNumber, plural, one {# 일} other {# 일}}마다",
   "store/items.attachments.subscription.frequency.month": "{frequencyNumber, plural, one {#월} other {#월}}마다",

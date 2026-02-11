@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Démarrer une nouvelle commande",
   "store/header.print.button": "Imprimer",
   "store/header.thanks": "Merci pour votre achat !",
+  "store/header.processing.order": "Délai de traitement...",
+  "store/header.reviewing.order.information": "Nous vérifions les informations relatives à votre commande et vous les confirmerons dans un instant.",
   "store/items.attachments.subscription": "Abonnement",
   "store/items.attachments.subscription.frequency.day": "Tous les {frequencyNumber, plural, one {# jour} other {# jours}}",
   "store/items.attachments.subscription.frequency.month": "Tous les {frequencyNumber, plural, one {# mois} other {# mois}}",

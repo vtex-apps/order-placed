@@ -616,5 +616,6 @@ query getOrderGroup($orderGroup: String) {
       selectedSlaType
     }
     analyticsData
+    status
   }
 }

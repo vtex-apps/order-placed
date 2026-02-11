@@ -4,6 +4,7 @@ interface OrderGroup {
   totalPickUpParcels: Parcel[]
   totalTakeAwayParcels: Parcel[]
   analyticsData?: any[]
+  status: OrderStatus
 }
 
 interface Order {
@@ -188,5 +189,7 @@ interface ResponsiveInput<T> {
   desktop?: T
   tablet?: T
 }
+
+type OrderStatus = 'pending' | 'confirmed'
 
 type MaybeResponsiveInput<T> = ResponsiveInput<T> | T

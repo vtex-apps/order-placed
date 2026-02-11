@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Start new order",
   "store/header.print.button": "Print",
   "store/header.thanks": "Thank you for your purchase!",
+  "store/header.processing.order": "Processing order...",
+  "store/header.reviewing.order.information": "We're reviewing your order information and will confirm it in a moment.",
   "store/items.attachments.subscription": "Subscription",
   "store/items.attachments.subscription.frequency.day": "Every {frequencyNumber, plural, one {# day} other {# days}}",
   "store/items.attachments.subscription.frequency.month": "Every {frequencyNumber, plural, one {# month} other {# months}}",

@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Начало на нова поръчка",
   "store/header.print.button": "Печат",
   "store/header.thanks": "Благодарим ви за покупката!",
+  "store/header.processing.order": "Поръчката се обработва...",
+  "store/header.reviewing.order.information": "Проверяваме информацията за вашата поръчка и ще я потвърдим след малко.",
   "store/items.attachments.subscription": "Абонамент",
   "store/items.attachments.subscription.frequency.day": "На всеки {frequencyNumber, plural, one {# ден} other {# ден}}",
   "store/items.attachments.subscription.frequency.month": "На всеки {frequencyNumber, plural, one {# месец} other {# месеца}}",

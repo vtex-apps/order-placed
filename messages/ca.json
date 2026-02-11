@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Inicia una comanda nova",
   "store/header.print.button": "Imprimeix",
   "store/header.thanks": "Gràcies per la vostra compra!",
+  "store/header.processing.order": "S'està processant la comanda...",
+  "store/header.reviewing.order.information": "Estem revisant la informació de la comanda i la confirmarem en un moment.",
   "store/items.attachments.subscription": "Subscripció",
   "store/items.attachments.subscription.frequency.day": "Cada {frequencyNumber, plural, one {# dia} other {# dies}}",
   "store/items.attachments.subscription.frequency.month": "Cada {frequencyNumber, plural, one {# mes} other {# mesos}}",

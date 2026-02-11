@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Почати нове замовлення",
   "store/header.print.button": "Друкувати",
   "store/header.thanks": "Дякуємо за покупку!",
+  "store/header.processing.order": "Замовлення обробляється...",
+  "store/header.reviewing.order.information": "Ми перевіряємо інформацію про ваше замовлення й скоро його підтвердимо.",
   "store/items.attachments.subscription": "Передплата",
   "store/items.attachments.subscription.frequency.day": "Раз на {frequencyNumber, plural, one {# день} few {# дні} many {# днів} other {# днів}}",
   "store/items.attachments.subscription.frequency.month": "Раз на {frequencyNumber, plural, one {# місяць} few {# місяці} many {# місяців} other {# місяців}}",

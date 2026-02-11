@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Start nieuwe bestelling",
   "store/header.print.button": "Print",
   "store/header.thanks": "Bedankt voor uw aankoop!",
+  "store/header.processing.order": "Verwerking van de bestelling...",
+  "store/header.reviewing.order.information": "We bekijken uw bestelgegevens en bevestigen deze zo dadelijk.",
   "store/items.attachments.subscription": "Abonnement",
   "store/items.attachments.subscription.frequency.day": "Elke {frequencyNumber, plural, one {# dag} other {# dagen}}",
   "store/items.attachments.subscription.frequency.month": "Elke {frequencyNumber, plural, one {# maand} other {# maanden}}",

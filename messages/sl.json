@@ -12,6 +12,8 @@
   "store/header.newpurchase.button": "Začnite novo naročilo",
   "store/header.print.button": "Tiskaj",
   "store/header.thanks": "Hvala vam za vaš nakup!",
+  "store/header.processing.order": "Obdelujem naročilo...",
+  "store/header.reviewing.order.information": "Preverjamo informacije o vašem naročilu in ga bomo kmalu potrdili.",
   "store/items.attachments.subscription": "Naročnina",
   "store/items.attachments.subscription.frequency.day": "Every {frequencyNumber, plural, one {# dan} two {# dneva} few {# dni} other {# dnevi}}",
   "store/items.attachments.subscription.frequency.month": "Every {frequencyNumber, plural, one {# mesec} two {# meseca} few {# mesecev} other {# meseci}}",
