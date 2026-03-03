@@ -12,7 +12,7 @@ test('renders ShippingHeader with shipping estimate', () => {
     <DeliveryPackages />
   )
 
-  expect(getByText('Delivery')).toBeDefined()
+  expect(getByText('Shipping')).toBeDefined()
   expect(getByText('TranslateEstimate')).toBeDefined()
 })
 
@@ -22,7 +22,7 @@ test('renders delivery counter when multiple deliveries', () => {
     <DeliveryPackages />
   )
 
-  expect(queryAllByText(/- n˚ \d of \d/)).toHaveLength(2)
+  expect(queryAllByText(/- \d of \d/)).toHaveLength(2)
 })
 
 test("doesn't render delivery counter when there is only one delivery", () => {
@@ -31,7 +31,7 @@ test("doesn't render delivery counter when there is only one delivery", () => {
     <DeliveryPackages />
   )
 
-  expect(queryByText(/- n˚ \d of \d/)).toBeNull()
+  expect(queryByText(/- \d of \d/)).toBeNull()
 })
 
 test('renders product list', () => {

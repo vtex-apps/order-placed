@@ -23,7 +23,7 @@ test('should render pickup counter when multiple store pickups', () => {
     <PickupPackages />
   )
 
-  expect(queryAllByText(/- n˚ \d of \d/)).toHaveLength(2)
+  expect(queryAllByText(/- \d of \d/)).toHaveLength(2)
 })
 
 test('should not pickup counter when there is only one store pickup', () => {
@@ -32,7 +32,7 @@ test('should not pickup counter when there is only one store pickup', () => {
     <PickupPackages />
   )
 
-  expect(queryByText(/ - n˚ \d of \d/)).toBeNull()
+  expect(queryByText(/- \d of \d/)).toBeNull()
 })
 
 test('should render product list', () => {

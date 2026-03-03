@@ -19,7 +19,7 @@ test('renders the number of deliveries', () => {
     <DeliverySummary />
   )
 
-  expect(queryByText(/9 deliveries/)).toBeTruthy()
+  expect(queryByText(/split into 9 shipments/)).toBeTruthy()
 })
 
 test('renders the shipping address', () => {
@@ -28,5 +28,5 @@ test('renders the shipping address', () => {
     <DeliverySummary />
   )
 
-  expect(queryByText(/praia de botafogo, 300/i)).toBeTruthy()
+  expect(queryByText(/to 300 praia de botafogo/i)).toBeTruthy()
 })
