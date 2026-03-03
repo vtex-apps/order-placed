@@ -31,7 +31,7 @@ test('should render shipping estimate disclaimers if order has shipping items', 
     /The delivery period starts to count when your payment is confirmed/
   )
   const trackingDisclaimer = getByText(
-    /A tracking code will be sent to your email when the delivery process begins./
+    /A tracking number will be sent to your email when shipping begins/
   )
 
   expect(paymentDisclaimer).toBeTruthy()
