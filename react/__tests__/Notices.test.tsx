@@ -16,7 +16,7 @@ test('should render payment confirmation estimate', () => {
   )
 
   const paymentApproval = getByText(
-    /Payment approval may take from \d minutes up to \d business days/i
+    /Payment approval may take from \d minutes to \d business days/i
   )
   expect(paymentApproval).toBeTruthy()
 })
@@ -28,10 +28,10 @@ test('should render shipping estimate disclaimers if order has shipping items', 
   )
 
   const paymentDisclaimer = getByText(
-    /The delivery period starts to count from the moment your payment is confirmed/
+    /The delivery period starts to count when your payment is confirmed/
   )
   const trackingDisclaimer = getByText(
-    /A tracking code will be sent to your email when the delivery process begins./
+    /A tracking number will be sent to your email when shipping begins/
   )
 
   expect(paymentDisclaimer).toBeTruthy()
@@ -62,7 +62,7 @@ test('should render pickup estimate disclaimer if order has pickup items', () =>
   )
 
   const paymentDisclaimer = getByText(
-    /The store pickup period starts from the moment your payment is confirmed/
+    /The in-store pickup period starts from the moment your payment is confirmed/
   )
 
   expect(paymentDisclaimer).toBeTruthy()
@@ -88,7 +88,7 @@ test('should render disclaimer for split orders', () => {
   )
 
   const splitOrderDisclaimer = queryByText(
-    /Your purchase was split into \d orders as some of the items were sold by partners. But this does not affect shipping estimates/
+    /Your purchase was split into \d orders because some items were sold by partners. This doesn't affect shipping estimates./
   )
   expect(splitOrderDisclaimer).toBeTruthy()
 })
@@ -101,7 +101,7 @@ test('should render notice for bank invoices with due date', () => {
 
   const bankInvoiceWarning = queryByTextWithMarkup(
     container,
-    /Please make a payment of .*? up to .*? according to the data below/
+    /Make a payment of .*? by .*? using the information below/
   )
   expect(bankInvoiceWarning).toBeTruthy()
 })
@@ -114,7 +114,7 @@ test('should render notice for bank invoices without due date', () => {
 
   const bankInvoiceWarning = queryByTextWithMarkup(
     container,
-    /Please make a payment of .*? up to the due date according to the data below/
+    /Make a payment of .*? by the due date using the information below/
   )
   expect(bankInvoiceWarning).toBeTruthy()
 })

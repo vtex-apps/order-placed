@@ -68,8 +68,8 @@ test('renders correct information and messages for an item with a subscription',
   )
 
   expect(queryByText('Subscription')).toBeTruthy()
-  expect(queryByText('Every 1 week')).toBeTruthy()
-  expect(queryByText('Charged monthly at day 15')).toBeTruthy()
+  expect(queryByText('Every week')).toBeTruthy()
+  expect(queryByText('Charged monthly on the 15')).toBeTruthy()
 })
 
 test('renders FREE instead of the price for all items that are gifts', async () => {

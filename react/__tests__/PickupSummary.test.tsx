@@ -19,7 +19,7 @@ test('renders the number of stores', () => {
     <PickupSummary />
   )
 
-  expect(queryByText(/one store/)).toBeTruthy()
+  expect(queryByText(/in 1 in-store pickup/)).toBeTruthy()
 })
 
 test('renders the pickup address', () => {

@@ -64,7 +64,7 @@ describe('getSubscriptionInfo function tests', () => {
       subsValidityEnd,
     } = getSubscriptionInfo(mockItemSubscriptionNoPurchaseDay, intl)
 
-    expect(subsFrequency).toBe('Every 1 week')
+    expect(subsFrequency).toBe('Every week')
     expect(subsPurchaseDay).toBeNull()
     expect(subsValidityBegin).toBe('2019-02-13')
     expect(subsValidityEnd).toBe('2019-10-16')
@@ -78,8 +78,8 @@ describe('getSubscriptionInfo function tests', () => {
       subsValidityEnd,
     } = getSubscriptionInfo(mockItemSubscriptionComplete, intl)
 
-    expect(subsFrequency).toBe('Every 1 week')
-    expect(subsPurchaseDay).toBe('Charged monthly at day 12')
+    expect(subsFrequency).toBe('Every week')
+    expect(subsPurchaseDay).toBe('Charged monthly on the 12')
     expect(subsValidityBegin).toBe('2019-02-13')
     expect(subsValidityEnd).toBe('2019-10-16')
   })
