@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Display receiver name
+
 ## [2.20.1] - 2026-03-03
 
 ### Fixed
