@@ -19,6 +19,8 @@ const CSS_HANDLES = [
   'packageAddressWrapper',
   'packageAddressTitle',
   'packageDeliveryTitle',
+  'packageReceiver',
+  'packageReceiverName',
 ] as const
 
 const DeliveryHeader: FC<Props> = ({
@@ -29,6 +31,7 @@ const DeliveryHeader: FC<Props> = ({
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const multipleDeliveries = numPackages > 1
+  const { receiverName } = shippingData.address
 
   return (
     <Fragment>
@@ -80,6 +83,11 @@ const DeliveryHeader: FC<Props> = ({
             <FormattedMessage id="store/shipping.header.address" />
           </span>
           <Address address={shippingData.address} />
+          {receiverName && (
+            <div className={`${handles.packageReceiver} c-on-base lh-copy mt5`}>
+              <p className={`${handles.packageReceiverName}`}>{receiverName}</p>
+            </div>
+          )}
         </div>
       )}
     </Fragment>
