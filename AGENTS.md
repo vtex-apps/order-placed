@@ -1,10 +1,5 @@
 # order-placed — Agent Context
 
-<!-- SPECKIT START -->
-For additional context about technologies to be used, project structure,
-shell commands, and other important information, read the current plan
-<!-- SPECKIT END -->
-
 ## Project Purpose
 
 `vtex.order-placed` is a VTEX IO Store Framework app that renders the **order confirmation page** shown to customers immediately after a purchase. It displays order metadata (number, date, seller), payment info, delivery and pickup packages, order total, bank invoice section (when applicable), and a print button.
@@ -101,6 +96,10 @@ For development tasks, agents should use the following skills in order:
 | SDD Full — Implementation plan | `/speckit-plan` |
 | SDD Full — Tasks | `/speckit-tasks` |
 | SDD Full — Implement | `/speckit-implement` |
+
+## Expected MCPs
+
+This repository does not require external MCPs. It is a VTEX IO Store Framework app with no Admin UI, AI Workspace backend, or cross-repository dependencies. Use the GitHub MCP only if cross-repo pattern lookup is needed during implementation.
 
 ## Autonomy Limits
 
