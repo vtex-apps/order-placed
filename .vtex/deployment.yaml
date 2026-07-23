@@ -1,0 +1,11 @@
+- acronym: order-placed
+  name: order-placed
+  description: VTEX IO app for order placed storefront page
+  referenceId: GZ20FRE0
+  build:
+    provider: dkcicd
+    pipelines:
+      - name: node-ci-v1
+        when:
+          - event: pull_request
+            source: branch
