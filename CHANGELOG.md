@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- `.vtex/deployment.yaml` with deployment pipeline configuration
+
 ## [2.20.2] - 2026-04-16
 
 ### Fixed
