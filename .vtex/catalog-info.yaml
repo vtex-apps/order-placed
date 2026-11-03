@@ -17,7 +17,7 @@ metadata:
     - typescript
     - react
 spec:
-  type: frontend-ui
+  type: frontend
   lifecycle: experimental
   owner: te-0001
   system: checkout
